@@ -1,0 +1,106 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[latin1]{inputenc}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+\usepackage{mathenv}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{caption}
+\usepackage[bottom]{footmisc}
+\usepackage{cancel}
+\usepackage{multirow}
+\usepackage[toc,page]{appendix}
+
+\setlength{\parskip}{1em}
+\setlength{\parindent}{0em}
+
+\begin{document}
+
+%Titlepage
+
+\pagenumbering{roman}
+\begin{titlepage}
+
+	\centering
+	\includegraphics[width=0.15\textwidth]{figs/image_UC.png}\par
+	{\scshape\LARGE Facultad de Ciencias \par}
+	
+	\vspace{1.5cm}
+	
+	%English title
+	\noindent\rule{15cm}{0.4pt}\par 
+	{\LARGE\bfseries Search for dark matter production in association with top quarks in the dilepton final state at $\sqrt{s} = $ 13 TeV\par}
+	\noindent\rule{15cm}{0.4pt}\par 
+	
+	{\scshape\Large A thesis submitted in fulfilment of the requirements for the \par \textbf{Degree of Doctor of Philosophy} \par \noindent\rule{15cm}{0.4pt}}
+	
+	\vspace{1.5cm}
+	{\Large Written by \\ Cédric PRIEËLS\par}
+	{\Large Under the supervision of \par Jónatan PIEDRA GÓMEZ \\
+	Pablo MARTÍNEZ RUIZ DEL ÁRBOL\\}
+	\vspace{2.5cm}
+	{\Large \textbf{December 2020}}
+	\vfill
+
+\end{titlepage}
+
+%Empty page
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+
+%Abstract and keywords
+
+\setcounter{page}{1}
+
+\section*{\huge{Abstract}}
+\newpage
+
+\section*{\huge{Resumen}}
+\newpage
+
+\section*{\huge{Agradecimientos}}
+\newpage
+
+%Table of contents
+
+\tableofcontents
+
+\thispagestyle{empty}
+\newpage
+
+%Here it starts!
+\pagenumbering{arabic}
+
+%Introduction
+
+\chapter{Introduction}
+
+\begin{appendices}
+  
+\end{appendices}
+
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\begin{thebibliography}{1}
+
+\bibitem{QFT} \textsc{M. Born}, \textsc{P. Jordan} \& \textsc{W. Heisenberg}, \textit{Zur Quantenmechanik. II.}, Physik, 1926 \\ 
+\url{http://link.springer.com/article/10.1007\%2FBF01379806}
+          
+\end{thebibliography}
+
+\end{document}
