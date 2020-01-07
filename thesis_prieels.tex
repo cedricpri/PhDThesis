@@ -1,4 +1,4 @@
-\documentclass[a4paper, 12pt]{report}
+\documentclass[a4paper, 11pt]{report}
 \usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -21,13 +21,33 @@
 \usepackage{cancel}
 \usepackage{multirow}
 \usepackage[toc,page]{appendix}
+\usepackage[]{acronym}
+\usepackage{setspace}
+%\usepackage[Sonny]{fncychap}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
 
-\setlength{\parskip}{1em}
-\setlength{\parindent}{0em}
+\makeatletter
+\titleformat{\chapter}[block]
+  {\Huge}{\filright\enspace \@chapapp~\thechapter\enspace \\}
+  {8pt}{\Huge\bfseries\filcenter}
+\titlespacing*{\chapter}
+  {0pt}{-70pt}{20pt}
+\makeatother
+
+%\setlength{\headheight}{20pt}
+%\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+%\rhead{\thepage \hfill \leftmark}
+%\lhead{\thepage \hfill \leftmark}
+%\cfoot{}
 
 \begin{document}
 
 %Titlepage
+\doublespacing
+\baselineskip=0.8\baselineskip
+\setlength{\parindent}{0pt}	
 
 \pagenumbering{roman}
 \begin{titlepage}
@@ -50,7 +70,7 @@
 	{\Large Under the supervision of \\ \textbf{Jónatan Piedra Gómez} \\
 	\textbf{Pablo Martínez Ruiz del Árbol}\\}
 	\vspace{3.0cm}
-	{\Large \textbf{December 2020}}
+	{\Large \textbf{June 2020}}
 	\vfill
 
 \end{titlepage}
@@ -67,41 +87,84 @@
 
 \setcounter{page}{1}
 
-%\section*{\huge{Abstract}}
-%\newpage
+\chapter*{\huge{Abstract}}
+\newpage
 %
-%\section*{\huge{Resumen}}
-%\newpage
+\chapter*{\huge{Resumen}}
+\newpage
 %
-%\section*{\huge{Acknowledgements}}
-%\newpage
+\chapter*{\huge{Acknowledgements}}
+\newpage
 %
-%\section*{\huge{Acronyms}}
-%\newpage
+\chapter*{\huge{Acronyms used}}
+\begin{acronym}
+
+%List all the acronyms used
+\acro{SM}[SM]{Standard Model}
+\acro{DM}[DM]{Dark Matter}
+\acro{LHC}[LHC]{Large Hadron Collider}
+\acro{CMS}[CMS]{Compact Muon Solenoid}
+\acro{ATLAS}[ATLAS]{A Toroidal LHC ApparatuS}
+\acro{CERN}[CERN]{European Council for Nuclear Research}
+\acro{CMB}[CMB]{Cosmic Microwave Background}
+\acro{ML}[ML]{Machine Learning}
+
+\end{acronym}
+\newpage
 
 %Table of contents
-
 \tableofcontents
 
 \thispagestyle{empty}
 \newpage
 
 %Here it starts!
+\setlength{\parskip}{20pt}
 \pagenumbering{arabic}
 
 %Introduction
 
 \chapter{Introduction}
 
-\chapter{Dark matter case}
-\section{At the origins of dark matter}
-\section{Dark matter properties}
-\section{Dark matter production at the LHC}
-\section{Production associated with top quarks}
-\subsection{The single top production channel}
-\subsection{The $t \bar t$ production channel}
+The \ac{SM} of particle physics is nowadays the most accepted mathematical model used to describe the elementary particles and three of the four fundamental forces of nature (electromagnetic, weak and strong interactions). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself in 2012 \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} and \ac{ATLAS} experiments of the \ac{CERN}. 
 
-\chapter{Experimental device}
+However, as accurate as it seems to be, this model is known to have several shortcomings which require further investigation. Eventual exotic particles which do not fit in the current model could be the sign of new physics and have therefore been extensively searched for over the course of the last decades in order to enhance our understanding of the Universe and all its constituants. In this context, the first serious \ac{DM} hypothesis was introduced in 1970 because of gravitational anomalies observed by several astrophysicists, as a way to explain the apparent non-luminous missing mass in the Universe. Indeed, the visible mass seemed to be way too low to explain several astrophysical processes, such as the rotation curves of the galaxies \cite{RotationCurves}, which seems to be incompatible with the well established laws of gravitation. This observation on its own could be the results of other physical phenomena, but some additional measurements of the gravitational lensing (in the Bullet Cluster, for example \cite{BulletCluster}) and the anisotropies observed in the \ac{CMB} \cite{CMBAnisotropies} can be quoted amongst other evidences for the existence of \ac{DM}, as explained in details in Section~\ref{section:DMOrigins}.
+
+As far as we currently know from cosmological measurements, ordinary baryonic matter only constitutes around 5\% of the Universe, while dark matter represents around 26\% of the energy density of the Universe (the rest is being considered as dark energy) \cite{Repartition}. Understanding the nature and properties of this new kind of exotic matter is therefore crucial to try and understand the physics in the Universe. Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly so far. The target of this investigation is in fact to try and discover it.
+
+Over the last decades, several different ways to search for hints for the existence of such exotic matter have been put in place, as described in Section~\ref{section:DMSearches}. Direct and/or indirect detection is used as the driving process of many of these experiments, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. However, observing \ac{DM} is still extremely difficult, mainly because it barely interacts with ordinary baryonic matter, except through gravity. This means that nowadays, all the experiments searching for \ac{DM} have only been able to put constraints on the \ac{DM} particle mass and on the interaction cross sections between the dark and standard sectors. 
+
+Since \ac{DM} is barely expected to interact with ordinary matter, detecting it is not an easy task. Indeed, even if the collisions between protons produced by the LHC do have an sufficient amount of energy to produce this kind of particles, we would not expect them to interact with our detector, meaning that a direct detection is out of our hands for now. The eventual presence of such matter has to be inferred from the study of the interaction between standard particles and \ac{CMS}, since a typical \ac{DM}-like event consists of one energetic \ac{SM} produced in association with a large imbalance in the transverse momentum due to the presence of an eventual \ac{DM} candidate that was able to escape our detection. This kind of collider searches can be grouped under the name of \textit{mono-X} searches, where the \textit{X} stands for any kind of \ac{SM} particle (a jet, a lepton or a photon for example). 
+
+In the context of this work, \ac{DM} is searched for in association with one or two top quarks which plays the role of the \textit{X} standard particle allowing us to trigger the event. This is indeed a perfect channel for this kind of searches, mainly because the interaction between the dark and standard sectors can be characterized with the Yukawa coupling. TO BE COMPLETED, explain why this channel is simply the best.
+
+After a detailed introduction about \ac{DM} in general, the experimental device will be detailed in Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$ during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV.
+
+DETAIL PREVIOUS RESULTS
+
+Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained) is not a straighforward task. To obtain some discriminations between these kind of processes, top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to make them learn how to combine the discriminating power of a set of input variables in order to create a single ouput variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in the Section~\ref{section:Discrimination} of this work.
+
+Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel, for the simplified models considered in this analysis.
+\\
+
+%Empty page
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+
+\chapter{The Dark Matter case}
+\section{At the origins of Dark Matter} \label{section:DMOrigins}
+\section{Dark Matter properties}
+\subsection{Dark Matter candidates}
+\subsection{Dark Matter searches} \label{section:DMSearches}
+\subsection{Production at the LHC}
+\subsubsection{The single top production channel}
+\subsubsection{The $t \bar t$ production channel}
+
+\chapter{The experimental device} \label{chapter:Device}
 \section{The LHC accelerator}
 \section{The CMS detector}
 \subsection{Tracker}
@@ -112,21 +175,37 @@
 \subsection{Data aquisition}
 
 \chapter{Objects reconstruction}
-\section{Particule Flow algorithm}
+\section{Particle Flow algorithm}
+\section{Leptons reconstruction}
 \subsection{Electrons}
 \subsection{Muons}
-\subsection{Jets}
-\subsection{MET}
+\section{Jets reconstruction}
+\subsection{B-tagging}
+\section{Missing transverse energy}
+
+\chapter{Data, signals and backgrounds}
+\section{Data samples}
+\section{Signal samples}
+\section{Background prediction}
+\subsection{The main background: $t \bar t$}
+\subsection{Drell-Yan estimation}
+\subsection{Non prompt contamination}
+\subsection{Smaller bakgrounds}
+\subsection{Weights and corrections applied}
 
 \chapter{Event selection}
+\section{Signal regions}
+\section{Control regions}
+\section{Background-signal discrimination} \label{section:Discrimination}
+\subsection{Dscriminating variables}
+\subsection{Neural network}
 
-\chapter{Signal discrimination}
-
-\chapter{Background estimation}
-
-\chapter{Results}
+\chapter{Results and interpretations} \label{chapter:FinalResults}
+\section{Systematics and uncertainties}
+\section{Results}
 
 \chapter{Conclusions}
+\section{Future prospects}
 
 \begin{appendices}
   
@@ -136,9 +215,46 @@
 
 \begin{thebibliography}{1}
 
-\bibitem{QFT} \textsc{M. Born}, \textsc{P. Jordan} \& \textsc{W. Heisenberg}, \textit{Zur Quantenmechanik. II.}, Physik, 1926 \\ 
-\url{http://link.springer.com/article/10.1007\%2FBF01379806}
-          
+\bibitem{HiggsPostulate1} 
+F. Englert and R. Brout, 
+"Broken symmetry and the mass of gauge vector mesons",
+Phys. Rev. Lett., vol. 13, pp. 321-323, Aug 1964
+
+\bibitem{HiggsPostulate2} 
+P. W. Higgs, 
+"Broken symmetries and the masses of gauge bosons",
+Phys. Rev. Lett., vol. 13, pp. 508-509, Oct 1964
+
+\bibitem{HiggsDiscovery1} 
+S. Chatrchyan et al.,
+"Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC",
+Phys. Lett., vol. B716, pp. 30?61, 2012
+
+\bibitem{HiggsDiscovery2} 
+G. Aad et al.,
+"Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC", 
+Phys. Lett., vol. B716, pp. 1-29, 2012
+
+\bibitem{RotationCurves}
+K.G. Begeman, A.H. Broeils and R.H. Sanders,
+"Extended rotation curves of spiral galaxies - Dark haloes and modified dynamics",
+Monthly Notices of the Royal Astronomical Society (ISSN 0035-8711), 1991
+
+\bibitem{BulletCluster}
+A. Robertson, R. Massey and V. Eke,
+"What does the Bullet Cluster tell us about self-interacting dark matter?",
+Monthly Notices of the Royal Astronomical Society, vol. 465, issue 1, pp.569-587, 2017
+
+\bibitem{CMBAnisotropies} 
+J.B. Muñoz, C. Dvorkin \& A. Loeb,
+"21-cm Fluctuations from Charged Dark Matter",
+Phys. Rev. Lett., vol. 121, pp 1-6, 2018
+
+\bibitem{Repartition}
+A. Natarajan,
+"A closer look at CMB constraints on WIMP dark matter",
+Phys. Rev.  vol. D85, 2012
+
 \end{thebibliography}
 
 \end{document}
