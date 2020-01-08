@@ -1,5 +1,5 @@
 \documentclass[a4paper, 11pt]{report}
-\usepackage[top=3cm, bottom=3cm, left=3cm, right=3cm]{geometry}
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
@@ -26,6 +26,7 @@
 %\usepackage[Sonny]{fncychap}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
+\usepackage{gensymb}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -110,8 +111,9 @@
 \acro{CMB}[CMB]{Cosmic Microwave Background}
 \acro{ML}[ML]{Machine Learning}
 \acro{MFV}[MFV]{Minimal Flavour Violation}
-\acro{WIMP}[WIMP]{Weakly Interactive Massive Particle}
+\acro{WIMP}[WIMP]{Weakly Interactive Massive Particles}
 \acro{PF}[PF]{Particle Flow}
+\acro{BSM}[BSM]{Beyond the Standard Model}
 
 \end{acronym}
 \newpage
@@ -138,7 +140,7 @@ In this context, the first serious \ac{DM} hypothesis was introduced in the 1970
 
 As far as we currently know from cosmological measurements, ordinary baryonic matter only constitutes around 5\% of the Universe, while  \ac{DM} represents around 26\% of the energy density of the Universe (the rest is being considered as dark energy) \cite{Repartition}. Understanding the nature and properties of this new kind of exotic matter is therefore crucial to try and understand the physics in the Universe. 
 
-Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effecs. While its nature is still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}s, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of beyond the \ac{SM} particles. 
+Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effecs. While its nature is still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}s, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of \ac{BSM} physics. 
 
 However, observing \ac{DM} is still extremely difficult, mainly because it barely interacts with ordinary baryonic matter, except through gravity (we have to assume that it does interact with \ac{SM} at least weakly for the sake of this work though, as we would not be able to discover it as an individual particle if it were not the case). This means that nowadays, all the experiments searching for \ac{DM} have only been able to put constraints on the \ac{DM} particle mass and on the interaction cross sections between the dark and standard sectors. Actually, even if the collisions between protons produced by the LHC do have an sufficient amount of energy to produce this kind of particles, we would not expect them to interact with our detector, meaning that a direct detection is out of our hands for now. The eventual presence of such matter has to be inferred from the study of the interaction between \ac{SM} particles and \ac{CMS} itself, since a typical \ac{DM}-like event consists of at least one energetic \ac{SM} particle produced in association with a large imbalance in the transverse momentum due to the presence of an eventual \ac{DM} candidate that was able to escape our detection. %This kind of collider searches can be grouped under the name of \textit{mono-X} searches, where the \textit{X} stands for any kind of \ac{SM} particle (a jet, a lepton or a photon for example). 
 
@@ -148,11 +150,11 @@ However, this also means that its phenomenology is mostly driven by its large ma
 
 The LHC has now been running for 10 years, and several similar searches have already been carried out and published in the past by the CMS and ATLAS collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the CMS (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and ATLAS collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. At 13 TeV, the ATLAS collaboration published on one hand several studies, considering different final states \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the CMS collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the single top and $t \bar t$ analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis that was performed while considering a larger dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
-After a detailed introduction about \ac{DM} in general, the experimental device will be detailed in Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the seelction of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and ~\ref{chapter:Selection}.
+After a detailed introduction about \ac{DM} in general, the experimental device will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the seelction of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and ~\ref{chapter:Selection}.
 
-Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straighforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discriminations between these kind of processes, an algebric recontruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single ouput variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in the Section~\ref{section:Discrimination} of this work.
+Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straighforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discriminations between these kind of processes, an algebric recontruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single ouput variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in the Section~\ref{section:Discrimination}.
 
-Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional future prospects will then finally be presented in Chapter~\ref{chapter:Conclusion}.
+Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in the Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional future prospects will then finally be presented in the Chapter~\ref{chapter:Conclusion}.
 \\
 
 %Empty page
@@ -164,13 +166,96 @@ Finally, a statistical interpretation of our data will be performed and differen
 %\newpage
 
 \chapter{The Dark Matter case}
-\section{At the origins of Dark Matter} \label{section:DMOrigins}
-\section{Dark Matter properties} \label{section:DMProperties}
-\subsection{Dark Matter candidates}
-\subsection{Dark Matter searches} \label{section:DMSearches}
-\subsection{Production at the LHC} \label{section:ourChannel}
-\subsubsection{The single top production channel} \label{subsection:singleTopChannel}
-\subsubsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
+
+In this chapter the case for \acf{DM} will be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter in Section~\ref{section:DMProperties}, nowaday's most accepted \ac{DM} candidates, such as the \acf{WIMP} briefly introduced previously will be presented in Section~\ref{section:DMCandidates} and the main ways we have to search for this new physics will be shown in Section~\ref{section:DMSearches}. 
+
+Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion plots published over the course of the previous years by the ATLAS and CMS collaborations will be displayed in Section~\ref{section:PreviousResults}.
+
+\section{At the origins of dark matter} \label{section:DMOrigins}
+
+The origin of the concept of dark matter can be traced back to the 17 and 18th centuries, shortly after Newton's works on gravitation, even though this concept changed a lot over the years. Back then, \ac{DM} was more considered to be ordinary matter which simply did not emit any kind of electromagnetic radiation and is therefore invisible and dark, but which does have a strong impact in the gravitational point of view because of its mass. It was for example considered in the 20th century to be found in massive astronomical objects able to absorb the light or other objects located behind them, such as black holes.
+
+\subsection{Zwicky and the virial theorem}
+
+Around this time, the first experimental evidences for the existence of dark matter were shown. In 1933, Fritz Zwicky managed to determine the mass of the Coma Cluster using the virial theorem \cite{Zwicky}, which states that if we consider thousands of stars interacting gravitationnaly with each other in a galaxy, the average kinetic energy of any given star can be directly related to the average gravitational potential energy of this star. Mathematically, the virial theorem can be written in the Equation~\ref{equation:Virial}, where $\overrightarrow{r_i}$ is the position of the mass $m_i$ and $\overrightarrow{F_i}$ is the vectoral force applied to this mass.
+
+\begin{equation} \label{equation:Virial}
+\sum_i \frac{1}{2} m_i v_i^2 = - \frac{1}{2} \sum_i \overrightarrow{r_i} \cdot \overrightarrow{F_i}
+\end{equation}
+
+By applying Newton's third law and the universal law of gravitation, the virial theorem can be written for a particular system of gravitationally interacting masses as Equation~\ref{equation:NewVirial}, where the universal constants of gravitation $G = 6.67 \cdot 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$.
+
+\begin{equation} \label{equation:NewVirial}
+\sum_i m_i v_i^2 = \sum_i \sum_{i < j} \frac{G m_i m_j}{r_{ij}}
+\end{equation} 
+
+By assuming a spheric distribution of the masses in the Coma Cluster and by knowing from astronomical observations and calculations the radius of cluster, its total mass and the mean square velocity of stars within this cluster, Zwicky then managed to compute the average mass to light ratio of the galaxies in this cluster and concluded that the value obtained was around 500 times larger than the mass previously estimated by Edwin Hubble, who simply considered the number of visible galaxies in this cluster. One plausible explanation for this discrepancy is to introduce the concept dark matter, which contributes to the mass of the cluster without increasing the galactic luminosity.
+
+Zwicky's results were actually quite controversial since they were based on statistical calculations relying on different hypotheses not always justified, such as the fact that the galaxies in the cluster must be gravitationnaly bound with each other and they were actually proven to be overestimated later on \cite{ZwickyWrong}.
+
+\subsection{Spiral galaxies rotation curves}
+
+Despite being controversial and slighlty off, Zwicky's results were soon followed by a series of additional astronomical observations leading to the same conclusion, the possible existance of nonluminous matter in all the galaxies, dark matter. The most famous of these results is the study of the observed and expected rotation curves of the stars within spiral galaxies in the 1970s \cite{RotationCurves}. 
+
+According to this study, if we assume that we can apply Newton's universal laws of gravitation at the galactic scale, then the stars within this kind of galaxies should rotate with a velocity depending on the radius to the galactic center given by the Equation~\ref{equation:RotationVelocity}, where $M(r)$ accounts for the total mass encountered within a radius $r$.
+
+\begin{equation} \label{equation:RotationVelocity}
+v_{\text{rotation}}(r) = \sqrt{\frac{G M(r)}{r}}
+\end{equation}
+
+At first approximation, one can assume that most of the most within this kind of galaxies comes from the inner core, meaning that, at large radius, the velocity of individual stars is expected to decrease proportionnaly to $\frac{1}{\sqrt{r}}$. 
+
+However, observations made by Vera Rubin and her team in the early 1970s with a new spectrograph designed the velocity curves of spiral galaxies with a degree of accuracy never reached before, did not confirm these expectations \cite{VeraRubin}. Indeed, according to these results, from a given value of the radius, the velocity curve appears to be flat instead of decreasing as expected. These results are illustrated in Figure~\ref{figure:RotationCurves}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=6cm]{figs/RotationCurve.jpeg}
+\caption{Expected and observed rotation curves of the galaxy NGC 6503 \cite{RotationCurves}. The black dots correspond to the data and the \textit{Luminous} line corresponds to the expected rotation curve.}
+\label{figure:RotationCurves}
+\end{center}
+\end{figure}
+
+\vspace{-10pt}
+\subsection{\acf{CMB} anisotropies}
+
+The \ac{CMB} is a mostly uniform background of primary radio waves emitted when the Universe became transparent around 380.000 years after the Big Bang and was discovered accidentaly in the 1940s \cite{CMBDiscovery}. Studying it is extremely important, as it is actually made out of the oldest and cleanest electromagnetic radiation we can find in the Universe. 
+
+Precise measurements of this radiation are actually critical in many different fields of physics, since any proposed model of the Universe must be able to explain this radiation, its temperature and anisotropies. Recent measurements determined that the \ac{CMB} can be considered as emitting a thermal black body spectrum at a temperature of $(2.72548\pm 0.00057)$K \cite{CMBTemperature}. However, we now know that this temperature is actually not constant as some small anisotropies (at the $10^{-5}$ level) depending on the value of the angular angles of observation can be observed. 
+
+We see these fluctuations projected over a 2D sphere, and it is therefore natural to introduce at this point Laplace's spherical harmonics, $Y_{lm} (\theta, \phi)$, a complete set of orthogonal functions defined on a sphere and defined by a few parameters such as $l$, the multipole, representing a given angular angle in the sky (l=100 corresponds to $\sim 1\degree$) and $m$, the number of poles, such as $-l \leq m \leq l$ \cite{PowerSpectrum}. The temperature fluctuations, whose value depend on the two usual spherical angles $\theta$ and $\phi$ can then be expanded using these generic functions, according to the Equation~\ref{equation:SphericalHarmonics}.
+
+\begin{equation} \label{equation:SphericalHarmonics}
+\frac{\Delta T}{T}(\theta, \phi) = \sum_{l, m} a_{lm} Y_{lm} (\theta, \phi)
+\end{equation}
+
+The information about the anisotropies can be extracted from the values of the $a_{lm}$ coefficients, from which we can obtain the values needed to represent the power spectrum of the \ac{CMB}, according to the Equation~\ref{equation:PowerSpectrum}, and from which most of the cosmological information of the \ac{CMB} can actually be derived.
+
+\begin{equation} \label{equation:PowerSpectrum}
+D_l = \frac{l(l-1) C_l} {2\pi} = \sum_m |a_{lm}^2|
+\end{equation}
+
+Interestingly enough, this spectrum is directly affected by the value of the density of the dark matter in the Universe. Doing a multi-parameters fit on the observed data in this plot is then able to give us directly the energy density of baryonic $\Omega_b$ and dark $\Omega_\chi$ matter. Today's most precise measurements have been obtained using the Plank satellite, and lead to the determination of these two quantities: $\Omega_b h^2 = 0.02226 \pm 0.00023$ and $\Omega_\chi h^2 = 0.1186 \pm 0.0020$ \cite{Planck} and the actual power spectrum obtained is represented in the Figure~\ref{figure:CMBSpectrum}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=6cm]{figs/PlanckSpectrum.png}
+\caption{Power spectrum of the \ac{CMB} obtained by Planck, representing the fluctuations of the temperature of this radiation with respect to the angular angle of observation.}
+\label{figure:CMBSpectrum}
+\end{center}
+\end{figure}
+
+
+\subsection{Other evidences}
+\subsubsection{Bullet Cluster}
+\subsubsection{Gravitationnal lensing}
+
+\section{Dark matter properties} \label{section:DMProperties}
+\section{Dark matter candidates} \label{section:DMCandidates}
+\section{Dark matter searches} \label{section:DMSearches}
+\section{Production at the LHC} \label{section:ourChannel}
+\subsection{The single top production channel} \label{subsection:singleTopChannel}
+\subsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
+\section{Previous results} \label{section:PreviousResults}
 
 \chapter{The experimental device} \label{chapter:Device}
 \section{The LHC accelerator}
@@ -255,7 +340,7 @@ Astrophysical Journal 238, pp. 471-487, 1980}
 Monthly Notices of the Royal Astronomical Society, vol. 249, issue 3, ISSN 0035-8711, 1991}
 
 \bibitem{BulletCluster}
-\href{https://arxiv.org/abs/1605.04307}{A. Robertson, R. Massey and V. Eke,
+\href{https://arxiv.org/abs/1605.04307}{A. Robertson, R. Massey and V. EkCMBTemperaturee,
 "What does the Bullet Cluster tell us about self-interacting dark matter?",
 Monthly Notices of the Royal Astronomical Society, vol. 465, issue 1, 2017}
 
@@ -344,6 +429,48 @@ Phys. Rev. Lett. 122, 011803 (2019)}
 \href{https://arxiv.org/abs/1901.01553}{CMS Collaboration,
 "Search for dark matter produced in association with a single top quark or a top quark pair in proton-proton collisions at $\sqrt{s} = 13$ TeV",
 JHEP, vol. 03 141, 2019}
+
+\bibitem{Zwicky} 
+\href{http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1933AcHPh...6..110Z&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf}{
+F. Zwicky,
+"Die Rotverschiebung von extragalaktischen Nebeln",
+Helvetica Physica Acta , vol. 6, pp. 110-127, 1933}
+
+\bibitem{ZwickyWrong}
+\href{https://arxiv.org/pdf/astro-ph/9904251.pdf}{S. Van den Bergh,
+"The early history of dark matter",
+Dominion Astrophysical Observatory, 1999
+}
+
+\bibitem{VeraRubin}
+\href{https://ui.adsabs.harvard.edu/abs/1970ApJ...159..379R/abstract}{V.C. Rubin, W.K. Ford,
+"Rotation of the Andromeda Nebula from a Spectroscopic Survey of Emission Regions",
+The Astrophysical Journal 159, p. 379, 1970
+}
+
+\bibitem{CMBDiscovery}
+\href{https://ui.adsabs.harvard.edu/abs/1965ApJ...142..419P/abstract}{A. A. Penzias, R.W. Wilson,
+"A Measurement of Excess Antenna Temperature at 4080 Mc/s",
+Astrophysical Journal 142, pp. 419-421
+}
+
+\bibitem{CMBTemperature}
+\href{https://iopscience.iop.org/article/10.1088/0004-637X/707/2/916}{D.J. Fixsen,
+"The temperature of the cosmic microwave background",
+Astrophysical Journal, 2009
+}
+
+\bibitem{PowerSpectrum}
+\href{https://www.roe.ac.uk/ifa/postgrad/pedagogy/2006_tojeiro.pdf}{R. Tojeiro,
+"Understanding the Cosmic Microwave Background Temperature Power Spectrum",
+2006
+}
+
+\bibitem{Planck}
+\href{https://arxiv.org/abs/1502.01589}{Planck Collaboration, 
+"Planck 2015 results. XIII. Cosmological parameters",
+A\& A 594, A13 (2016)
+}
 
 \end{thebibliography}
 
