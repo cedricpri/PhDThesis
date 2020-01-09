@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.26)  9 JAN 2020 14:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2019/dev/Debian) (preloaded format=pdflatex 2019.8.26)  9 JAN 2020 15:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -462,20 +462,20 @@ File: block.tss 2016/03/15
 (./thesis_prieels.aux)
 \openout1 = `thesis_prieels.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
-LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 49.
+LaTeX Font Info:    ... okay on input line 49.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -542,7 +542,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box32
-Package hyperref Info: Link coloring ON on input line 48.
+Package hyperref Info: Link coloring ON on input line 49.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -552,9 +552,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count141
 )
-LaTeX Info: Redefining \ref on input line 48.
-LaTeX Info: Redefining \pageref on input line 48.
-LaTeX Info: Redefining \nameref on input line 48.
+LaTeX Info: Redefining \ref on input line 49.
+LaTeX Info: Redefining \pageref on input line 49.
+LaTeX Info: Redefining \nameref on input line 49.
 
 (./thesis_prieels.out) (./thesis_prieels.out)
 \@outlinefile=\write3
@@ -562,22 +562,22 @@ LaTeX Info: Redefining \nameref on input line 48.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Info: Redefining \celsius on input line 48.
-Package gensymb Info: Faking symbols for \degree and \celsius on input line 48.
+LaTeX Info: Redefining \celsius on input line 49.
+Package gensymb Info: Faking symbols for \degree and \celsius on input line 49.
 
 
 
 Package gensymb Warning: Not defining \perthousand.
 
-LaTeX Info: Redefining \ohm on input line 48.
-Package gensymb Info: Using \Omega for \ohm on input line 48.
+LaTeX Info: Redefining \ohm on input line 49.
+Package gensymb Info: Using \Omega for \ohm on input line 49.
 
 Package gensymb Warning: Not defining \micro.
 
 <figs/image_UC.png, id=217, 400.49625pt x 401.5pt>
 File: figs/image_UC.png Graphic file (type png)
 <use figs/image_UC.png>
-Package pdftex.def Info: figs/image_UC.png  used on input line 62.
+Package pdftex.def Info: figs/image_UC.png  used on input line 63.
 (pdftex.def)             Requested size: 68.28383pt x 68.45013pt.
 [1
 
@@ -586,8 +586,8 @@ X warning (ext4): destination with the same identifier (name{page.i}) has been
 already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.98 \newpage
-              [1
+l.100 \newpage
+               [1
 
 ] [2
 
@@ -608,24 +608,24 @@ although it is yet undefined on input line 7.
 [10]
 Chapter 1.
 Package acronym Info: Label `acro:SM' newly defined as it shall be overridden
-although it is yet undefined on input line 140.
+although it is yet undefined on input line 143.
 Package acronym Info: Label `acro:CMS' newly defined as it shall be overridden
-although it is yet undefined on input line 140.
+although it is yet undefined on input line 143.
 Package acronym Info: Label `acro:ATLAS' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 140.
+although it is yet undefined on input line 143.
 Package acronym Info: Label `acro:CERN' newly defined as it shall be overridden
 
-although it is yet undefined on input line 140.
+although it is yet undefined on input line 143.
 Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 144.
+although it is yet undefined on input line 147.
 Package acronym Info: Label `acro:WIMP' newly defined as it shall be overridden
 
-although it is yet undefined on input line 148.
+although it is yet undefined on input line 151.
 Package acronym Info: Label `acro:LHC' newly defined as it shall be overridden
-although it is yet undefined on input line 148.
+although it is yet undefined on input line 151.
 Package acronym Info: Label `acro:BSM' newly defined as it shall be overridden
-although it is yet undefined on input line 148.
+although it is yet undefined on input line 151.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -633,17 +633,17 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 Package acronym Info: Label `acro:MFV' newly defined as it shall be overridden
-although it is yet undefined on input line 152.
+although it is yet undefined on input line 155.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 Package acronym Info: Label `acro:PF' newly defined as it shall be overridden
-although it is yet undefined on input line 158.
+although it is yet undefined on input line 161.
 Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 160.
+although it is yet undefined on input line 163.
 
-Underfull \hbox (badness 10000) in paragraph at lines 162--164
+Underfull \hbox (badness 10000) in paragraph at lines 165--167
 
  []
 
@@ -651,64 +651,69 @@ Underfull \hbox (badness 10000) in paragraph at lines 162--164
 
 ]
 Chapter 2.
-
-Underfull \vbox (badness 3148) has occurred while \output is active []
-
- [5]
-[6]
-<figs/RotationCurve.jpeg, id=506, 661.47125pt x 522.95375pt>
+[5] [6]
+<figs/RotationCurve.jpeg, id=507, 661.47125pt x 522.95375pt>
 File: figs/RotationCurve.jpeg Graphic file (type jpg)
 <use figs/RotationCurve.jpeg>
-Package pdftex.def Info: figs/RotationCurve.jpeg  used on input line 223.
+Package pdftex.def Info: figs/RotationCurve.jpeg  used on input line 226.
 (pdftex.def)             Requested size: 227.61232pt x 170.71602pt.
-
-Underfull \vbox (badness 1400) has occurred while \output is active []
-
- [7 <./figs/RotationCurve.jpeg>]
-<figs/PlanckSpectrum.png, id=533, 678.535pt x 450.68375pt>
+<figs/PlanckTemperature.png, id=516, 1022.82124pt x 542.025pt>
+File: figs/PlanckTemperature.png Graphic file (type png)
+<use figs/PlanckTemperature.png>
+Package pdftex.def Info: figs/PlanckTemperature.png  used on input line 241.
+(pdftex.def)             Requested size: 398.33682pt x 170.71396pt.
+ [7 <./figs/RotationCurve.jpeg> <./figs/PlanckTemperature.png>]
+<figs/PlanckSpectrum.png, id=541, 678.535pt x 450.68375pt>
 File: figs/PlanckSpectrum.png Graphic file (type png)
 <use figs/PlanckSpectrum.png>
-Package pdftex.def Info: figs/PlanckSpectrum.png  used on input line 256.
+Package pdftex.def Info: figs/PlanckSpectrum.png  used on input line 268.
 (pdftex.def)             Requested size: 284.52719pt x 170.71832pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
  [8 <./figs/PlanckSpectrum.png>]
-<figs/BulletCluster.png, id=547, 1783.66376pt x 601.24625pt>
+<figs/BulletCluster.png, id=557, 1783.66376pt x 601.24625pt>
 File: figs/BulletCluster.png Graphic file (type png)
 <use figs/BulletCluster.png>
-Package pdftex.def Info: figs/BulletCluster.png  used on input line 270.
+Package pdftex.def Info: figs/BulletCluster.png  used on input line 282.
 (pdftex.def)             Requested size: 398.31322pt x 170.71475pt.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 282.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 294.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 282.
- [9 <./figs/BulletCluster.png>]
-<figs/ColdWarmDM.png, id=581, 980.66376pt x 491.8375pt>
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 294.
+
+[9 <./figs/BulletCluster.png>]
+<figs/ColdWarmDM.png, id=591, 980.66376pt x 491.8375pt>
 File: figs/ColdWarmDM.png Graphic file (type png)
 <use figs/ColdWarmDM.png>
-Package pdftex.def Info: figs/ColdWarmDM.png  used on input line 303.
+Package pdftex.def Info: figs/ColdWarmDM.png  used on input line 315.
 (pdftex.def)             Requested size: 398.33382pt x 170.71228pt.
-<figs/FreezeOut.png, id=586, 725.71124pt x 477.785pt>
+<figs/FreezeOut.png, id=596, 725.71124pt x 477.785pt>
 File: figs/FreezeOut.png Graphic file (type png)
 <use figs/FreezeOut.png>
-Package pdftex.def Info: figs/FreezeOut.png  used on input line 311.
+Package pdftex.def Info: figs/FreezeOut.png  used on input line 323.
 (pdftex.def)             Requested size: 284.53223pt x 170.71207pt.
+ [10] [11 <./figs/ColdWarmDM.png> <./figs/FreezeOut.png>]
+Package acronym Info: Label `acro:MACHO' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 336.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 323.
+(hyperref)                removing `math shift' on input line 345.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 323.
+(hyperref)                removing `math shift' on input line 345.
 
-[10 <./figs/ColdWarmDM.png>] [11 <./figs/FreezeOut.png>] [12
-
-]
+[12]
 Chapter 3.
-[13] [14
+[13
+
+] [14
 
 ]
 Chapter 4.
@@ -718,11 +723,11 @@ Chapter 4.
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 371.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 349.
+(hyperref)                removing `math shift' on input line 371.
 
 [17] [18
 
@@ -756,25 +761,21 @@ Chapter 8.
 [29] [30
 
 ] [31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 576.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 604.
  [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 576.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 604.
  (./thesis_prieels.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 576.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 576.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 604.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 604.
 Package rerunfilecheck Info: File `thesis_prieels.out' has not changed.
-(rerunfilecheck)             Checksum: 9F3A61CE67B4592288BE0A818D084BB9;3581.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 576.
+(rerunfilecheck)             Checksum: 0A53686D377BAB7953A552011A9268C1;3581.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 604.
  ) 
 Here is how much of TeX's memory you used:
- 10296 strings out of 492615
- 152911 string characters out of 6131390
- 281089 words of memory out of 5000000
- 13869 multiletter control sequences out of 15000+600000
+ 10312 strings out of 492615
+ 153207 string characters out of 6131390
+ 282374 words of memory out of 5000000
+ 13880 multiletter control sequences out of 15000+600000
  13168 words of font info for 47 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,8n,43p,1452b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -791,10 +792,10 @@ onts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on thesis_prieels.pdf (43 pages, 2561036 bytes).
+Output written on thesis_prieels.pdf (43 pages, 3616450 bytes).
 PDF statistics:
- 870 PDF objects out of 1000 (max. 8388607)
- 784 compressed objects within 8 object streams
- 171 named destinations out of 1000 (max. 500000)
- 455 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 894 PDF objects out of 1000 (max. 8388607)
+ 803 compressed objects within 9 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 460 words of extra memory for PDF output out of 10000 (max. 10000000)
 

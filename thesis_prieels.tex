@@ -29,13 +29,14 @@
 \usepackage{titlesec}
 \usepackage{gensymb}
 \usepackage{emptypage}
+\usepackage{fancyhdr}
 
 \makeatletter
 \titleformat{\chapter}[block]
   {\Huge}{\filright\enspace \@chapapp~\thechapter\enspace \\}
   {8pt}{\Huge\bfseries\filcenter}
 \titlespacing*{\chapter}
-  {0pt}{0pt}{20pt}
+  {0pt}{0pt}{50pt}
 \makeatother
 
 %\setlength{\headheight}{20pt}
@@ -92,6 +93,7 @@
 
 %Abstract and keywords
 
+\setlength{\parskip}{5pt}
 \setcounter{page}{1}
 
 \chapter*{\huge{Abstract}}
@@ -119,6 +121,7 @@
 \acro{WIMP}[WIMP]{Weakly Interactive Massive Particles}
 \acro{PF}[PF]{Particle Flow}
 \acro{BSM}[BSM]{Beyond the Standard Model}
+\acro{MACHO}[MACHO]{Massive Compact Halo Objects}
 
 \end{acronym}
 \newpage
@@ -145,13 +148,13 @@ In this context, the first serious \ac{DM} hypothesis was introduced in the 1970
 
 As far as we currently know from cosmological measurements, ordinary baryonic matter only constitutes around 5\% of the Universe, while  \ac{DM} represents around 26\% of the energy density of the Universe (the rest is being considered as dark energy) \cite{Repartition}. Understanding the nature and properties of this new kind of exotic matter is therefore crucial to try and understand the physics in the Universe. 
 
-Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effects. While its nature is still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}s, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of \ac{BSM} physics. 
+Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effects. While its mass, spin, nature and basic properties are still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of \ac{BSM} physics. 
 
 However, observing \ac{DM} is still extremely difficult, mainly because it barely interacts with ordinary baryonic matter, except through gravity (we have to assume that it does interact with \ac{SM} at least weakly for the sake of this work though, as we would not be able to discover it as an individual particle if it were not the case). This means that nowadays, all the experiments searching for \ac{DM} have only been able to put constraints on the \ac{DM} particle mass and on the interaction cross sections between the dark and standard sectors. Actually, even if the collisions between protons produced by the LHC do have an sufficient amount of energy to produce this kind of particles, we would not expect them to interact with our detector, meaning that a direct detection is out of our hands for now. The eventual presence of such matter has to be inferred from the study of the interaction between \ac{SM} particles and \ac{CMS} itself, since a typical \ac{DM}-like event consists of at least one energetic \ac{SM} particle produced in association with a large imbalance in the transverse momentum due to the presence of an eventual \ac{DM} candidate that was able to escape our detection. %This kind of collider searches can be grouped under the name of \textit{mono-X} searches, where the \textit{X} stands for any kind of \ac{SM} particle (a jet, a lepton or a photon for example). 
 
 In the context of this work, \ac{DM} is searched for in association with one or two top quarks which play the role of the \ac{SM} particle allowing us to trigger the event. This is indeed a perfect channel for this kind of searches if we assume that the interaction between the dark and standard sectors respect the principle of \ac{MFV}, which can be consistently defined independently of the structure of the new physics model \cite{MFVYukawa}. In this case, this interaction should follow the same Higgs-like Yukawa coupling structure as the usual \ac{SM} baryonic particles. This is an important consequence, since it will be shown in Section~\ref{section:DMProperties} that this coupling is actually stronger with more massive particles: the heavier the \ac{SM} particle considered is, the easier it is for this particle to couple with the dark sector. This makes the top quark, the most massive of all the fundamental particles observed by far, is therefore an excellent object to study in this context.
 
-However, this also means that its phenomenology is mostly driven by its large mass and that it decays before hadronization can occur, usually into a W boson and and a bottom quark ($\sim$96\% branching ratio \cite{PDG}). The final state of the process we are interested in is then be made out of some b jets, leptons and/or quarks and is be categorized depending on this number of b jets and on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly since this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}. Additionally, leptons are by reconstruction much cleaner than jets. This means that their identification and momentum calculation is easier to perform, and that the uncertainties associated to these measurements will be smaller.
+However, this also means that its phenomenology is mostly driven by its large mass and that it decays before hadronization can occur, usually into a W boson and and a bottom quark ($\sim$96\% branching ratio \cite{PDG}). The final state of the process we are interested in is then be made of some b jets, leptons and/or quarks and is be categorized depending on this number of b jets and on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly since this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}. Additionally, leptons are by reconstruction much cleaner than jets. This means that their identification and momentum calculation is easier to perform, and that the uncertainties associated to these measurements will be smaller.
 
 The LHC has now been running for 10 years, and several similar searches have already been carried out and published in the past by the CMS and ATLAS collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the CMS (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and ATLAS collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. At 13 TeV, the ATLAS collaboration published on one hand several studies, considering different final states \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the CMS collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the single top and $t \bar t$ analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis that was performed while considering a larger dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
@@ -208,13 +211,13 @@ Zwicky's results were actually quite controversial since they were based on stat
 
 Despite being controversial and slightly off, Zwicky's results were soon followed by a series of additional astronomical observations leading to the same conclusion, the possible existence of non-luminous matter in all the galaxies, called dark matter. The most famous of these results is the study of the observed and expected rotation curves of the stars within spiral galaxies such as the Milky Way in the 1970s \cite{RotationCurves}. 
 
-According to this study, if we assume that we can apply Newton's universal laws of gravitation at the galactic scale, then the stars within this kind of galaxies should rotate with a velocity depending on the radius to the galactic center obtained by the usual equation for centripetal acceleration in a gravitational field and represented in Equation~\ref{equation:RotationVelocity}, where $M(r)$ accounts for the total mass encountered within a radius $r$.
+According to this study, if we assume that we can apply Newton's universal laws of gravitation at the galactic scale, then the stars within this kind of galaxies should rotate with a velocity depending on the radius to the galactic center obtained by the usual equation for centripetal acceleration in a gravitational field and represented in Equation~\ref{equation:RotationVelocity}, where $M(r)$ accounts for the total mass encountered in a radius $r$.
 
 \begin{equation} \label{equation:RotationVelocity}
 v_{\text{rotation}}(r) = \sqrt{\frac{G M(r)}{r}}
 \end{equation}
 
-At first approximation, one can assume that most of the most within this kind of galaxies comes from the inner core, meaning that, at large radius, the velocity of individual stars is expected to decrease proportionally to $r^{-1/2}$. 
+At first approximation, one can assume that most of the most within this kind of galaxies comes from the inner core, meaning that, at large radius, the velocity of individual stars is expected to decrease proportionally to $r^{-1/2}$. Any deviation to this rule suggest that either our understanding of gravite at large scales has to be revised, or that our basic understanding of galaxies as a celestial body made of stars, dust and gas, has to be revised.
 
 However, observations made by Vera Rubin and her team in the early 1970s with a new spectrograph designed the velocity curves of spiral galaxies with a degree of accuracy never reached before, did not confirm these expectations \cite{VeraRubin}. Indeed, according to these results, from a given value of the radius, the velocity curve appears to be flat instead of decreasing as expected, as illustrated in Figure~\ref{figure:RotationCurves}.
 
@@ -229,9 +232,18 @@ However, observations made by Vera Rubin and her team in the early 1970s with a 
 \vspace{-10pt}
 \subsection{\acf{CMB} anisotropies} \label{subsection:CMB}
 
-The \ac{CMB} is a mostly uniform background of primary radio waves emitted when the Universe became transparent around 380.000 years after the Big Bang and was discovered accidentally in the 1940s \cite{CMBDiscovery}. Studying it is extremely important, as it is actually made out of the oldest and cleanest electromagnetic radiation we can find in the Universe. Precise measurements of this radiation are actually critical in many different fields of physics, since any proposed model of the Universe must be able to explain this radiation, its temperature and anisotropies. 
+The \ac{CMB} is a mostly uniform background of primary radio waves emitted when the Universe became transparent around 380.000 years after the Big Bang and was discovered accidentally in the 1940s \cite{CMBDiscovery}. Studying it is extremely important, as it is actually made of the oldest and cleanest electromagnetic radiation we can find in the Universe. Precise measurements of this radiation are actually critical in many different fields of physics, since any proposed model of the Universe must be able to explain this radiation, its temperature and anisotropies. 
 
-Recent measurements determined that the \ac{CMB} can be considered as emitting a thermal black body spectrum at a temperature of $(2.72548\pm 0.00057)$K \cite{CMBTemperature}. However, we now know that this temperature is actually not constant as some small anisotropies (at the $10^{-5}$ level) depending on the value of the angular angle of observation can be observed. 
+Recent measurements determined that the \ac{CMB} can be considered as emitting a thermal black body spectrum at a temperature of $(2.72548\pm 0.00057)$K \cite{CMBTemperature}. However, we now know that this temperature is actually not constant as some small anisotropies (at the $10^{-5}$ level) depending on the value of the angular angle of observation can be observed, as represented on Figure~\ref{figure:PlanckTemperature}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/PlanckTemperature.png}
+\caption{Anisotropies in the temperature of the \ac{CMB}, as observed by the Planck satellite in 2018 \cite{PlanckTemperature}.}
+\label{figure:PlanckTemperature}
+\end{center}
+\end{figure}
+
 
 We see these fluctuations projected over a 2D sphere, and it is therefore natural to introduce at this point Laplace's spherical harmonics, $Y_{lm} (\theta, \phi)$, a complete set of orthogonal functions defined on a sphere and defined by a few parameters such as $l$, the multipole, representing a given angular angle in the sky (l=100 corresponds to $\sim 1\degree$) and $m$, the number of poles, such as $-l \leq m \leq l$ \cite{PowerSpectrum}. 
 
@@ -261,7 +273,7 @@ By dividing these results with the value of the scaling factor for Hubble expans
 
 \subsection{Gravitational lensing}
 
-The last evidence supporting the existence of dark matter has been obtained by observing several clusters of galaxies in the Universe, such as the Bullet Cluster, and by studying their mass distribution through gravitational lensing. This effect is a consequence of the general relativity, stating that massive objects lying between distant sources and an observer should act as a lens and bend the light of the object emitted by the source. This deviation of the light is actually proportional to the mass of the object in between the source and the observer, meaning that the gravitational lensing can give us a way to measure the mass distribution within massive objects, such as galaxy clusters.
+The last evidence supporting the existence of dark matter has been obtained by observing several clusters of galaxies in the Universe, such as the Bullet Cluster, and by studying their mass distribution through gravitational lensing. This effect is a consequence of the general relativity, a theory developed by Einstein has a way to represent gravity using the geometry or spacetime, stating that massive objects lying between distant sources and an observer should act as a lens and bend the light of the object emitted by the source. This deviation of the light is actually proportional to the mass of the object in between the source and the observer, meaning that the gravitational lensing can give us a way to measure the mass distribution within massive objects, such as galaxy clusters.
 
 The bullet Cluster is particularly interesting in this context since it actually provides an evidence for the eventual existence of dark matter which does not rely on any mathematical assumption and cannot at principle be explained by alternate laws of gravitation. Indeed, some observations showed that the spatial deviations between the center of the total mass and the center of the baryonic mass cannot be explained with an alteration of the gravitational force law alone, with a statistical significance of around $8 \sigma$ \cite{BulletClusterSigma}.
 
@@ -279,10 +291,10 @@ As seen in Figure~\ref{figure:BulletCluster}, the image taken by Chandra clearly
 
 All the previous observations allow us to list some of the most important properties that the perfect dark matter candidate should have. Even though several theories exist, each giving different properties to the \ac{DM}, we will consider in this work the following mostly accepted properties for such particles:
 \begin{itemize}
-\item First of all, we will assume that \ac{DM} is a \textbf{particle}. As far as we know, the Universe, is simply composed of particles so there is no objective reason to think that \ac{DM}, being matter with a certain mass, might not be made out of some kind of indivisible particle at some level.
+\item First of all, we will assume that \ac{DM} is a \textbf{particle}. As far as we know, the Universe, is simply composed of particles so there is no objective reason to think that \ac{DM}, being matter with a certain mass, might not be made of some kind of indivisible particle at some level.
 \item First of all, the perfect \ac{DM} candidate should of course be \textbf{dark}. This means that it should not interact at all in with electromagnetic radiation such as light, and that it should therefore be \textbf{electrically neutral}. However, it has to interact gravitationnaly because of the evidences for the evidence of such a particle explained before, mostly relying on gravitational effects.
 \item It has to be \textbf{non-baryonic}, mainly because the energy density for the baryonic matter obtained by observing the power spectrum of the \ac{CMB} is too low to account for \ac{DM} as well, as explained in Section~\ref{subsection:CMB}. Indeed, according to these results, baryonic matter account for around 5\% while dark matter accounts for more than 25\% of the energy density of the Universe. 
-\item We will also only consider \textbf{cold} dark matter, since the widely accepted $\Lambda CDM$ cosmological model is actually based on this assumption. By cold, we do not refer to the temperature of these particles but actually to their size, and therefore to the velocity by which they can travel in the Universe. Large scale structures of the Universe such as we can observe them today cannot actually not be explained if \ac{DM} is made out of hot/relativistic particles, as represented in Figure~\ref{figure:ColdWarmDM}.
+\item We will also only consider \textbf{cold} dark matter, since the widely accepted $\Lambda CDM$ cosmological model is actually based on this assumption. By cold, we do not refer to the temperature of these particles but actually to their size, and therefore to the velocity by which they can travel in the Universe. Large scale structures of the Universe such as we can observe them today cannot actually not be explained if \ac{DM} is made of hot/relativistic particles, as represented in Figure~\ref{figure:ColdWarmDM}.
 \item It is interesting to report as well that \ac{DM} particles are expected to be found near the electroweak symmetry breaking scale, between \textbf{10 GeV and 1 TeV}. This is a consequence of the expected production mechanism of such particles, the so-called thermal freeze-out. 
 
 This principle tells us that at some point in the history, \ac{DM} was in thermal equilibrium with other primordial standard particles, meaning that its production and annihilation rates were equal. However, because of the expansion of the Universe, at some point \ac{DM} particles were simply too far apart from each other and these reactions maintaining this equilibrium became not efficient enough to maintain this equilibrium. At this stage, the abundance of \ac{DM} became fixed: this is the freeze-out, as represented in Figure~\ref{figure:FreezeOut}.
@@ -317,6 +329,16 @@ By using a typical value for $g$ of the order of the Fermi coupling constant $G_
 All these properties narrow quite a lot the number of possible \ac{DM} candidates, as we will see in the following section.
 
 \section{Dark matter candidates} \label{section:DMCandidates}
+
+Several different categories of particles could pretend to be good candidates for dark matter. However, only the most interesting ones will be quoted here, since an extensive list of all the different possible candidates is out of the scope of this work.
+
+\begin{itemize}
+\item The first \ac{DM} candidate are the so-called \textbf{\ac{MACHO}}. These objects are massive astronomical non-luminous bodies (such as black holes) made of baryonic matter that could be responsible of the gravitational lensing observed and that could explain the apparent missing mass in the Universe. However, as we saw in Section~\ref{section:DMProperties}, \ac{DM} is not expected to be made of such ordinary matter, basically because observational data of the \ac{CMB} and the deduced baryonic density of energy in the Universe is able to rule out this possibility.
+\item Axions
+\item Sterile neutrinos
+\item Last but not least, WIMP. Hierarchy problem solved.
+\end{itemize}
+
 \section{Dark matter searches} \label{section:DMSearches}
 \section{Production at the LHC} \label{section:ourChannel}
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
@@ -531,6 +553,12 @@ Astrophysical Journal 142, pp. 419-421
 "The temperature of the cosmic microwave background",
 Astrophysical Journal, 2009
 }
+
+\bibitem{PlanckTemperature}
+\href{https://arxiv.org/abs/1807.06205}{Planck Collaboration, 
+"Planck 2018 results. I. Overview and the cosmological legacy of Planck", 2018
+}
+
 
 \bibitem{PowerSpectrum}
 \href{https://www.roe.ac.uk/ifa/postgrad/pedagogy/2006_tojeiro.pdf}{R. Tojeiro,
