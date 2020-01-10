@@ -128,6 +128,10 @@
 \acro{CAST}[CAST]{CERN Axion Solar Telescope}
 \acro{IAXO}[IAXO]{International Axion Observatory}
 \acro{UED}[UED]{Universal Extra Dimensions}
+\acro{NFW}[NFW]{Navarro-Frenk-White}
+\acro{LAT}[LAT]{Fermi Large Telescope}
+\acro{IACT}[IACT]{Imaging Atmospheric Cherenkov Telescopes}
+\acro{CTA}[CTA]{Cherenkov Telescope Array}
 
 \end{acronym}
 \newpage
@@ -345,8 +349,8 @@ All these properties narrow quite a lot the number of possible \ac{DM} candidate
 
 Several different categories of particles could pretend to be good candidates for dark matter. However, only the most interesting ones will be quoted here, since an extensive list of all the different possible candidates is out of the scope of this work.
 
-\begin{itemize}
-\item The first obvious \ac{DM} candidate are the so-called \textbf{\ac{MACHO}}. These objects are massive astronomical non-luminous bodies (such as black holes) made of baryonic matter and very hard to detect, that could be responsible of the gravitational lensing observed and that could explain the apparent missing mass in the Universe. However, as we saw in Section~\ref{section:DMProperties}, \ac{DM} is not expected to be made of such ordinary matter, mainly because observational data of the \ac{CMB} and the deduced baryonic density of energy in the Universe is able to rule out this possibility.
+\subsubsection*{\acf{MACHO}}
+The first obvious \ac{DM} candidate are the so-called \ac{MACHO}. These objects are massive astronomical non-luminous bodies (such as black holes) made of baryonic matter and very hard to detect, that could be responsible of the gravitational lensing observed and that could explain the apparent missing mass in the Universe. However, as we saw in Section~\ref{section:DMProperties}, \ac{DM} is not expected to be made of such ordinary matter, mainly because observational data of the \ac{CMB} and the deduced baryonic density of energy in the Universe is able to rule out this possibility.
 
 Several different experiments did try to search for such \ac{DM} anyway, and managed to constrain the properties of this kind of objects. The main way to search for such massive objects is through their gravitational lensing effect (actually, we talk about microlensing in this case since this effect is tiny) since, according to the general relativity, they should bend the light of luminous objects, such as stars, located behind them, and this bending actually depends on the mass of the eventual \ac{MACHO}. Experiments like the \ac{MACHO} project \cite{MACHOProject} and EROS \cite{EROS} observed in this context $\Theta (10^7)$ stars for several years, looking for microlensing events in order to constrain this particular \ac{DM} model. Results published in 2000 from the MACHO project, after studying almost 12 million stars actually observed between 13 and 17 such events, way lower than expected if \ac{DM} was only made out of \ac{MACHO}s. The collaboration actually managed to exclude at the 95\% \ac{CL} the possibility of the dark halo to be entirely made of such baryonic particles \cite{MACHOProject}. On the other hand, the EROS collaboration only observed 1 microlensing after observing more than 30 millions of bright stars during 6.7 years, while $\sim39$ events were expected \cite{EROS}. Both results have also been combined in order to obtain the exclusion plot represented in Figure~\ref{figure:ExclusionMACHO}. From this study, \ac{MACHO} objects with low masses ($10^{-7}M_\odot < m < 10^{-3}M_\odot$) make up less than 25\% of the dark matter halo for most models considered at the 95\% \ac{CL} \cite{ExclusionMACHO}.
 
@@ -358,7 +362,8 @@ Several different experiments did try to search for such \ac{DM} anyway, and man
 \end{center}
 \end{figure}
 
-\item \textbf{\ac{SM} neutrinos} have been considered as good \ac{DM} candidates for a long time as well. However, two physical reasons can explain why we do not really believe in this hypothesis any more. First of all, their relative abundance does not match the expected one for \ac{DM} from the freeze-out mechanism explained in Section~\ref{section:DMProperties}. Indeed, their freeze-out abundance can be computed quite easily from Equation~\ref{equation:neutrinoRelic} \cite{WIMPBook}, where the sum of the masses of the three neutrino flavors has been calculated in 2017 to be lower than 0.17 eV at the 95\% \ac{CL} from cosmological studies \cite{NeutrinoMass}, giving us an abundance much lower than the measured one for \ac{DM} from the studies of the \ac{CMB}, for example. 
+\subsubsection*{\ac{SM} neutrinos}
+\ac{SM} neutrinos have been considered as good \ac{DM} candidates for a long time as well. However, two physical reasons can explain why we do not really believe in this hypothesis any more. First of all, their relative abundance does not match the expected one for \ac{DM} from the freeze-out mechanism explained in Section~\ref{section:DMProperties}. Indeed, their freeze-out abundance can be computed quite easily from Equation~\ref{equation:neutrinoRelic} \cite{WIMPBook}, where the sum of the masses of the three neutrino flavors has been calculated in 2017 to be lower than 0.17 eV at the 95\% \ac{CL} from cosmological studies \cite{NeutrinoMass}, giving us an abundance much lower than the measured one for \ac{DM} from the studies of the \ac{CMB}, for example. 
 
 \begin{equation}
 \label{equation:neutrinoRelic}
@@ -367,7 +372,8 @@ Several different experiments did try to search for such \ac{DM} anyway, and man
 
 Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expect to be cold, i.e. non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today. We can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
 
-\item \textbf{Axions} could also explain the particle nature of \ac{DM}, since its existence could explain 100\% of the \ac{DM} in the Universe, unlike the other candidates presented so far. Axions are hypothetical stable neutral particles, with masses of the order of the meV, introduced as a consequence of the solution of the CP violation issue of \ac{QCD}. This issue is the following: in the usual $\Theta$ term of the \ac{QCD} Lagrangian shown in Equation~\ref{equation:Lag} \cite{QCDLag} should be responsible of breaking the CP symmetry, but this effect has never been observed so far. This is the so-called the strong CP problem. Two ways to explain that we never observed this phenomena exist: the first is to assume that one of the quarks of the \ac{SM} is massless but does not match the current observations, and the second is to assume that the parameter $\Theta$, the \ac{QCD} vacuum angle, is small enough, so that this term becomes negligible. However, by definition, the $\Theta$ angle should be between 0 and $2\pi$, so there is no physical reason for this parameter to be small, unless some new physics, as the one developed in 1977 by Peccei and Quinn \cite{Peccei} by relaxing $\Theta$ from a parameter to  a dynamic variable and absorbing it through the introduction of a new pseudoscalar particle called the axion.
+\subsubsection*{Axions}
+Axions could also explain the particle nature of \ac{DM}, since its existence could explain 100\% of the \ac{DM} in the Universe, unlike the other candidates presented so far. Axions are hypothetical stable neutral particles, with masses of the order of the meV, introduced as a consequence of the solution of the CP violation issue of \ac{QCD}. This issue is the following: in the usual $\Theta$ term of the \ac{QCD} Lagrangian shown in Equation~\ref{equation:Lag} \cite{QCDLag} should be responsible of breaking the CP symmetry, but this effect has never been observed so far. This is the so-called the strong CP problem. Two ways to explain that we never observed this phenomena exist: the first is to assume that one of the quarks of the \ac{SM} is massless but does not match the current observations, and the second is to assume that the parameter $\Theta$, the \ac{QCD} vacuum angle, is small enough, so that this term becomes negligible. However, by definition, the $\Theta$ angle should be between 0 and $2\pi$, so there is no physical reason for this parameter to be small, unless some new physics, as the one developed in 1977 by Peccei and Quinn \cite{Peccei} by relaxing $\Theta$ from a parameter to  a dynamic variable and absorbing it through the introduction of a new pseudoscalar particle called the axion.
 
 \begin{equation}
 \label{equation:Lag}
@@ -391,16 +397,25 @@ Several axions searches experiments have therefore been set up, such as the \ac{
 \end{center}
 \end{figure}
 
-\item The actual \ac{DM} candidate that will be mostly considered throughout this work are the so-called \textbf{\acf{WIMP}}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle". Several strategies can be used to detect such particles, as we will now see in the Section~\ref{section:DMSearches}. This kind of particle basically arises in various \ac{BSM} theories, such as the lightest supersymmetric particle in SUSY. According to this theory, each \ac{SM} particle should have a superpartner whose quantum numbers would be identical except for their spins, which would differ by one half. All of these superpartners would then be new and undiscovered particles, giving us a perfect \ac{DM} candidate, the neutralino $\chi$.
+\subsubsection*{\acf{WIMP}} 
+The actual \ac{DM} candidate that will be mostly considered throughout this work are the so-called \acf{WIMP}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle", an important concept that can be translated mathematically as well. Indeed, because of the freeze-out scenario explained in Section~\ref{section:DMProperties}, we can find an expression relating the actual abundance of \ac{DM} $\Omega_\chi$ with its annihilation cross section $\langle \sigma_A v \rangle$ through Equation~\ref{eq:Annihilation} \cite{IndirectSearches}.
+
+\begin{equation}
+\label{eq:Annihilation}
+\Omega_\chi h² \sim \frac{3 \cdot 10^{-27} \text{ cm}^3 \text{ s}^{-1}}{\langle \sigma_A v \rangle}
+\end{equation}
+
+This equation implies that, since we do know the current abundance of \ac{DM} in the Universe, the total annihilation cross section of \ac{DM} should be equal to $\sim 3 \cdot 10^{-26} $ cm$^3 $ s$^{-1}$, which corresponds to the typical value given by \ac{WIMP}s for a range of dark matter masses matching the expected one.
+
+Several strategies can be used to detect such particles, as we will now see in the Section~\ref{section:DMSearches}. This kind of particle basically arises in various \ac{BSM} theories, such as the lightest supersymmetric particle in SUSY. According to this theory, each \ac{SM} particle should have a superpartner whose quantum numbers would be identical except for their spins, which would differ by one half. All of these superpartners would then be new and undiscovered particles, giving us a perfect \ac{DM} candidate, the neutralino $\chi$.
 
 The \ac{WIMP} are also interesting in the sense that introducing them in the terms of this supersymmetric theory would not only give us a \ac{DM} candidate, but also solve the hierarchy problem, the apparent large discrepancy between multiple aspects of the weak and gravitational forces ($10^{24}$ less times stronger).
-\end{itemize}
 
 \section{Dark matter searches} \label{section:DMSearches}
 
 As previously stated, several cosmological evidences allow us to introduce the concept of dark matter, but its properties such as its mass, coupling and interaction cross-section are difficult to study in this context. Several different ways can then be used in order to try and detect \ac{DM} particles in order to study them, strategies which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will be the focus of this work. Let's now discuss about these different detection strategies.
 
-\subsection{Direct searches}
+\subsection{Direct searches} \label{subsection:DirectSearches}
 
 From cosmological observations, we know that we live in a halo of dark matter. In this case, \ac{WIMP}s should cross the Earth every day and, even if they interact only weakly, we should be able to directly detect them through their interaction with ordinary baryonic matter, for example because of their scattering with the nuclei of these particles. Indeed, the transfer of momentum between these two particles in this case might be detectable with the correct experimental device, typically placed deep underground to have the lowest possible background, which is the main source of perturbations of such experiments. To study this particular category of searches, let's first of all introduce the rate of expected WIMP scattering off a target nucleus of mass $m_N$ with Equation~\ref{equation:WIMPRate} \cite{DirectSearches}.
 
@@ -409,36 +424,56 @@ From cosmological observations, we know that we live in a halo of dark matter. I
 \frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv
 \end{equation}
 
+An important parameters that all the direct and indirect detection experiments need to take into account is the annual modulation of the observed count rate, due to the movement of the Earth around the Sun, as shown in Figure~\ref{fig:AnnualModulation} \cite{AnnualModulation}. From our perspective, it seems indeed that the velocity of the speed of WIMP particles arriving is changing depending on the month of the year, since the Earth is sometimes moving in the direction of the WIMP source, and is sometimes moving away: the maximal velocity is reached around June. This is extremely important to take into account this effect since, as we saw on Equation~\ref{eq:Annihilation}, the count rate of incoming particles actually depends on this velocity, and this modulation then introduces a sinusoidal modulation that we need to take into account. This effect is also important because an experiment performed during a long period of time can actually help us finding an eventual hint of \ac{DM} particles, since our signal is expect to follow this sinusoidal deviation while the background is expected to be constant.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/AnnualModulation.png}
+\caption{Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite{AnnualModulation}.}
+\label{figure:AxionSummary}
+\end{center}
+\end{figure}
+
 \subsection{Indirect searches}
 
-The indirect detection of \ac{DM} particles consists basically in searching in space for \ac{SM} products coming from the annihilation of two \ac{DM} particles or from its eventual direct decay. In this case, this interaction can be probed by both observatories placed either on the ground or in space directly. Many extensions to the \ac{SM}, such as SUSY or \ac{UED} do provide \ac{DM} candidates (the lightest supersymmetric particle and the lightest Kaluza-Klein state, respectively) expected to interact with each other, resulting in the immediate production of \ac{SM} (un)stable particles that we could detect.
+The indirect detection of \ac{DM} particles consists basically in searching for \ac{SM} products coming from the annihilation of two \ac{DM} particles or from its eventual direct decay, usually under the form of a flux of $\gamma$-rays, neutrinos, cosmic-rays or anti-matter appearing as an excess over the expected background. Indeed, many extensions to the \ac{SM}, such as SUSY or \ac{UED} do provide solid \ac{DM} candidates (the lightest supersymmetric particle and the lightest Kaluza-Klein state, respectively) expected to interact with each other, resulting in the immediate production of \ac{SM} (un)stable particles that can be detected by telescopes either placed on the ground or directly in space. Another point to make is that indirect searches are also affected by the annual fluctuation induced by the movement of the Earth around the Sun, as explained in the previous Section~\ref{subsection:DirectSearches}.
 
-Because of the freeze-out scenario explained in Section~\ref{section:DMProperties}, we can find an expression relating the actual abundance of \ac{DM} $\Omega_\chi$ with its through Equation~\ref{eq:Annihilation} \cite{IndirectSearches}, where the quantity $\langle \sigma_A v \rangle$ corresponds to the \ac{DM} annihilation cross section.
-
-\begin{equation}
-\label{eq:Annihilation}
-\Omega_\chi h² \sim \frac{3 \cdot 10^{-27} cm^3 s^{-1}}{\langle \sigma_A v \rangle}
-\end{equation}
-
-This equation implies that, since we do not the current abundance of \ac{DM} in the Universe, the total annihilation cross section of \ac{DM} should be equal to $\sim 3 \cdot 10^{-26} cm^3 s^{-1}$, the typical value given by \ac{WIMP}s, as discussed previously. The experiments trying to indirectly detect \ac{DM} therefore mostly focus on \ac{WIMP} searches for this reason. Sterile neutrinos can also be searched indirectly, since they are expected to decay into active neutrinos, producing a photon at exactly half the sterile neutrino mass, which could be detected as well. Several strategies can be used in order to detect \ac{DM} indirectly:
-
-\begin{itemize}
-\item The golden channel for such searches are through the production of \textbf{$\gamma$-rays}, mainly because the energy scale of the \ac{WIMP}s implies that most of the annihilation and decay radiation will be emitted in this range of energies, and because $\gamma$-rays are usually not deflecting when traveling to the observer. The flux of such $\gamma$-rays received within a solid angle $\Delta \Omega$ depends on two factors, as described in Equation~\ref{eq:Flux}: the first one depending on the physics itself (such as the \ac{DM} properties), while the second one, also called J-factor, depends only on the distribution of \ac{DM} within the system considered, where $l$ is the line of sight considered \cite{JFactor}.
+Indirect searches are actually extremely useful since it is sensitive to the \ac{DM} its annihilation cross section, its mass and the density profile of \ac{DM} halos $\rho(\overrightarrow{r}(s, \Omega))$, usually represented by a \ac{NFW} profile, as shown in Equation~\ref{eq:NFW} \cite{FluxIndirect}, where $r_s = 20$ kpc is the scale radius of the \ac{DM} halo for the Milky Way and $r$ is the distance to the center of the cluster considered, assumed to be spherical.
 
 \begin{equation}
-\label{eq:Flux}
-\begin{dcases}
-\frac{d \phi_\gamma}{dE_\gamma} = \phi^{PP}(E) \cdot J(\Delta \Omega) \\
-J = \iint \rho_{DM}^2(l,\Omega) \text{ } dl \text{ } d\Omega
-\end{dcases}
-\end{equation}
+\label{eq:NFW}
+\rho(r) \propto \frac{r_s}{r \cdot \left (1+\frac{r}{r_s})^2 \right )}
+\end{equation} 
 
-This J-factor is then actually a measurement of the quality of a astronomical object for an indirect measurement, since the higher the flux received, the better the measurement will be in general (even though this is not the only factor which matters, since for example the galactic center has a higher J-factor than the best dwarf galaxy observable, but also has a lot of backgrounds affecting the measurement).
+The flux coming from the annihilation of two \ac{DM} particles is then expected to be proportional to its annihilation cross section $\sigma v$, the solid angle of observation $\Omega$ and the number of particles emitted by this annihilation $\frac{dN}{dE}$, according to Equation~\ref{eq:FluxIndirect}, where the integration is done over the line of sight $l$ and the solid angle of observation $\Omega$.
 
-As we just saw, $\gamma$-rays are perfect candidates for the indirect detection of \ac{DM} but they do have one drawback as well: the Earth's atmosphere is usually opaque to this kind of radiation. This means that most of experiments searching for them have to be sent to space. QUOTE EXAMPLES
+\begin{equation}
+\label{eq:FluxIndirect}
+\frac{d \Phi}{d\Omega dE} = \frac{\sigma v}{8 \pi m_\chi^2} \cdot \frac{dN}{dE} \iint_{l, \Omega} \rho^2(\overrightarrow{r}(s, \Omega)) \text{ } dl \text{ } d\Omega \equiv P \cdot J(\Delta \Omega)
+\end{equation} 
 
-\item OTHER CHANNELS
-\end{itemize}
+This equation is extremely important for two reasons. First of all, it shows that, if a signal is found in direct detection, we could use this detection to determine the new object mass and scattering cross section and then use this information in order to obtain the \ac{DM} density profile through Equation~\ref{eq:FluxIndirect}. The data obtained by the different strategies of detection are actually complementary. The second reason is that as we can see, the flux of incoming particles can actually be divided into two factors: $P$, entirely dependent on the physics of the \ac{DM} particle, and the J-factor $J(\Delta \Omega)$, depending only on the distribution of \ac{DM} within the system considered. This J-factor is in this sense actually a measurement of the quality of an astronomical object for an indirect measurement, since the higher the flux received, the better the measurement will be in general (even though this is not the only factor which matters, since for example the galactic center has a higher J-factor than the best dwarf galaxy observable, but also has a lot of backgrounds affecting the measurement).
+
+As different channels of observations are available for us to analyze the eventual annihilation of \ac{DM}, several strategies can be used in order to detect \ac{DM} indirectly, as we will now see, by searching different kind of \ac{SM} particles. Anyway, all these strategies have one goal in commun: try to reduce the background, since the signal searched for is usually quite low while the uncertainties associated to the background in astrophysics is usually quite high.
+
+\subsubsection*{Through $\gamma$-rays detection}
+The golden channel for such searches are through the production of $\gamma$-rays by \ac{DM} annihilation $\chi \chi \rightarrow \gamma + X$ or decay $\chi \rightarrow \gamma + X$, mainly because the energy scale of the \ac{WIMP}s implies that most of the annihilation and decay radiation will be emitted in this range of energies, and because $\gamma$-rays are usually not deflecting when traveling to the observer (this means that the exact source of this kind of radiation can be easily and precisely pin-pointed). However, they do have one drawback as well: the Earth's atmosphere is usually opaque to this kind of radiation at this level of energy. This means that most of experiments searching for them simply cannot be performed from the ground and have to be sent to space. 
+
+One of the most famous detectors of this category is the so-called \ac{LAT}, a pair production detector launched in June 2008 and mostly sensitive to $\gamma$-rays between 20 MeV and 300 GeV \cite{LATExperiment}. This experiment has managed to exclude a large portion of the phase space, as seen in Figure~\ref{figure:LATExclusion}. The GAMMA-400 experiment, whose launch is scheduled in 2020, will pick up the work of \ac{LAT}, but studying a similar range but with a much improved angular and energy resolutions \cite{GAMMA400}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=6cm]{figs/LATExclusion.png}
+\caption{Upper limits on the \ac{DM} annihilation cross section considering $b \bar b$ (on the state) and a $\mu^+ \mu^-$ (on the right) final states as a function of the \ac{WIMP} mass, for different clusters studied \cite{LATExperiment}.}
+\label{figure:LATExclusion}
+\end{center}
+\end{figure}
+
+It is much harder for \ac{DM} to produce high energy $\gamma$-rays and therefore, the flux of such particles decreases quite quickly with energy, making it harder to study since telescopes then need a much larger effective area to pick up the same quantity of signal, and have therefore to be put on the ground. Such telescope are called \ac{IACT} and have to take into account the atmospheric perturbation to work in an optimal way, but this kind of telescope is usually sensitive to a range of energies going from $\sim 10$ GeV up to $\sim 100$ TeV, but can usually only study a small degrees of the sky, forcing these experiments to choose carefully the objects to be studied. The \ac{CTA} is a brand new telescope of this kind whose construction is supposed to start this year, that should improve greatly the sensitivity of high masses indirect \ac{DM} searches.
+
+
+\subsubsection*{Through neutrinos detection}
+\subsubsection*{Through sosmic rays detection}
 
 \subsection{Collider production}
 \section{Production at the LHC} \label{section:ourChannel}
@@ -481,7 +516,7 @@ The \textbf{ATLAS collaboration} also...
 \subsection{Electromagnetic calorimeter}
 \subsection{Hadronic calorimeter}
 \subsection{Muon system}
-\subsection{Trigger}DirectSearches
+\subsection{Trigger}
 \subsection{Data acquisition}
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
@@ -545,12 +580,13 @@ Phys. Rev. Lett. 13, pp. 508-509, 1964}
 \bibitem{HiggsDiscovery1} 
 \href{https://arxiv.org/abs/1207.7235}{S. Chatrchyan et al.,
 "Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC",
-Phys. Lett. B716, pp. 30-61, 2012}
+Phys. Lett. B716, pp. 30-61, 2012 [arXiv: 1207.7235]
+}
 
 \bibitem{HiggsDiscovery2} 
 \href{https://arxiv.org/abs/1207.7214}{G. Aad et al.,
 "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC", 
-Phys. Lett. B716, pp. 1-29, 2012}
+Phys. Lett. B716, pp. 1-29, 2012 [arXiv: 1207.7214]}
 
 \bibitem{FirstEvidence}
 \href{https://ui.adsabs.harvard.edu/abs/1980ApJ...238..471R/abstract}{V.C. Rubin, W.K. Ford and N. Thonnard,
@@ -565,22 +601,22 @@ Monthly Notices of the Royal Astronomical Society, vol. 249, issue 3, ISSN 0035-
 \bibitem{BulletCluster}
 \href{https://arxiv.org/abs/1605.04307}{A. Robertson, R. Massey and V. EkCMBTemperaturee,
 "What does the Bullet Cluster tell us about self-interacting dark matter?",
-Monthly Notices of the Royal Astronomical Society, vol. 465, issue 1, 2017}
+Monthly Notices of the Royal Astronomical Society, vol. 465, issue 1, 2017 [arXiv: 1605.04307]}
 
 \bibitem{CMBAnisotropies} 
 \href{https://arxiv.org/abs/1804.01092}{J.B. Muñoz, C. Dvorkin and A. Loeb,
 "21-cm Fluctuations from Charged Dark Matter",
-Phys. Rev. Lett. 121, 121301 (2018)}
+Phys. Rev. Lett. 121, 121301 (2018) [arXiv: 1804.01092]}
 
 \bibitem{Repartition}
 \href{https://arxiv.org/abs/1201.3939}{A. Natarajan,
 "A closer look at CMB constraints on WIMP dark matter",
-Phys. Rev. D85, 2012}
+Phys. Rev. D85, 2012 [arXiv:1201.3939 ]}
 
 \bibitem{MFVYukawa}
 \href{https://arxiv.org/abs/hep-ph/0207036}{G. D'Ambrosio G.F. Giudice, G. Isidori and A. Strumia,
 "Minimal Flavour Violation: an effective field theory approach",
-Nucl.Phys. 645, pp 155-187, 2002}
+Nucl.Phys. 645, pp 155-187, 2002 [arXiv:0207.036 ]}
 
 %\bibitem{YukawaMeasurement}
 %\href{https://arxiv.org/abs/1907.01590}{CMS Collaboration,
@@ -636,7 +672,7 @@ ATLAS-CONF-2016-076, 2016}
 \bibitem{PreviousDoubleTopBottomAllLep13ATLAS}
 \href{https://arxiv.org/abs/1710.11412}{ATLAS Collaboration,
 "Search for dark matter produced in association with bottom or top quarks in $\sqrt{s} = 13$ TeV pp collisions with the ATLAS detector",
-Eur. Phys. J. C 78 (2018) 18}
+Eur. Phys. J. C 78 (2018) 18 [arXiv: 1710.11412]}
 
 \bibitem{PreviousDoubleTopBottomAllLep13CMS}
 \href{http://inspirehep.net/record/1603635}{CMS Collaboration,
@@ -646,12 +682,12 @@ Eur. Phys. J. C (2017) 77: 845}
 \bibitem{PreviousDoubleTopAllLep13CMS}
 \href{https://arxiv.org/abs/1807.06522}{CMS Collaboration,
 "Search for dark matter particles produced in association with a top quark pair at $\sqrt{s} = 13$ TeV",
-Phys. Rev. Lett. 122, 011803 (2019)}
+Phys. Rev. Lett. 122, 011803 (2019) [arXiv: 1807.06522]}
 
 \bibitem{PreviousSingleDoubleTopAllLep13CMS}
 \href{https://arxiv.org/abs/1901.01553}{CMS Collaboration,
 "Search for dark matter produced in association with a single top quark or a top quark pair in proton-proton collisions at $\sqrt{s} = 13$ TeV",
-JHEP, vol. 03 141, 2019}
+JHEP, vol. 03 141, 2019 [arXiv: 1901.01553]}
 
 \bibitem{Zwicky} 
 \href{http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1933AcHPh...6..110Z&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf}{
@@ -685,7 +721,7 @@ Astrophysical Journal, 2009
 
 \bibitem{PlanckTemperature}
 \href{https://arxiv.org/abs/1807.06205}{Planck Collaboration, 
-"Planck 2018 results. I. Overview and the cosmological legacy of Planck", 2018
+"Planck 2018 results. I. Overview and the cosmological legacy of Planck", 2018 [arXiv: 1807.06205]
 }
 
 
@@ -697,7 +733,7 @@ Astrophysical Journal, 2009
 
 \bibitem{Planck}
 \href{https://arxiv.org/abs/1807.06209}{Planck Collaboration, 
-"Planck 2018 results. VI. Cosmological parameters", 2018
+"Planck 2018 results. VI. Cosmological parameters", 2018 [arXiv: 1807.06209]
 }
 
 \bibitem{Constants}
@@ -715,13 +751,13 @@ Astrophysical Journal Letters 648, 2006
 \bibitem{FreezeOut}
 \href{https://arxiv.org/pdf/1712.09919.pdf}{K.R. Dienes, J. Fennick, J. Kumar, B. Thomas
 "Dynamical Dark Matter from Thermal Freeze-Out",
-Phys. Rev. D 97, 063522 (2018)
+Phys. Rev. D 97, 063522 (2018) [arXiv: 1712.09919]
 }
 
 \bibitem{ColdWarmDM}
 \href{https://arxiv.org/pdf/1210.0544.pdf}{C.S. Frenk, S.D.M. White,
 "Dark matter and cosmic structure",
-Annalen der Physik, p. 22 , 2012
+Annalen der Physik, p. 22 , 2012 [arXiv: 1210.0544]
 }
 
 \bibitem{FreezeOut2}
@@ -771,9 +807,9 @@ Phys. Rev. Lett. 38, 1440, 1977
 }
 
 \bibitem{AxionSearches}
-\href{https://arxiv.org/pdf/1602.00039.pdf}{P.W. Graham et all.,
+\href{https://arxiv.org/abs/1602.00039}{P.W. Graham et all.,
 "Experimental Searches for the Axion and Axion-like Particles",
-Annual Review if Nuclear and Particle Science 65, 2015
+Annual Review if Nuclear and Particle Science 65, 2015 [arXiv: 1602.00039]
 }
 
 \bibitem{CASTLimit}
@@ -785,19 +821,37 @@ Nature Physics 13, pp. 584-590 (2017)
 \bibitem{DirectSearches}
 \href{https://arxiv.org/abs/1903.03026}{M. Schumann
 "Direct Detection of WIMP Dark Matter: Concepts and Status",
-J. Phys. G46 (2019) no.10, 103003
+J. Phys. G46 (2019) no.10, 103003 [arXiv: 1903.03026]
+}
+
+\bibitem{AnnualModulation}
+\href{https://arxiv.org/abs/1209.3339}{K. Freese, M. Lisanti, C. Savage,
+"Annual Modulation of Dark Matter: A Review",
+[arXiv: 1209.3339v3]
 }
 
 \bibitem{IndirectSearches}
 \href{https://arxiv.org/pdf/1604.00014}{J.M. Gaskins,
 "A review of indirect searches for particle dark matter",
-Contemporary Physics, 2016
+Contemporary Physics, 2016 [arXiv: 1604.00014]
 }
 
-\bibitem{JFactor}
-\href{https://arxiv.org/abs/1604.05599}{N.W. Evans et all.,
-"Simple J-Factors and D-Factors for Indirect Dark Matter Detection",
-Phys Rev D, 2016
+\bibitem{FluxIndirect}
+\href{http://inspirehep.net/record/1466249/files/1589812_427-436.pdf}{F.S. Queiroz,
+"Dark Matter Overview: Collider, Direct and Indirect Detection Searches",
+Max-Planck Institute of Physics
+}
+
+\bibitem{LATExperiment}
+\href{https://arxiv.org/pdf/1106.3416.pdf}{LAT collaboration,
+"Constraints on Dark Matter Annihilation in Clusters of Galaxies with the Fermi Large Area Telescope",
+JCAP 05(2010)025 [arXiv: 1002.2239]
+}
+
+\bibitem{GAMMA400}
+\href{https://arxiv.org/abs/1307.2345}{A.A. Moiseev et all.,
+"Dark Matter Search Perspectives with GAMMA-400",
+2013 [arXiv: 1307.2345]
 }
 
 \end{thebibliography}
