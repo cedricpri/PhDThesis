@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt, twoside, openright]{book}
+\documentclass[a4paper, 10pt, twoside, openright]{report}
 \usepackage[top=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -123,9 +123,11 @@
 \acro{BSM}[BSM]{Beyond the Standard Model}
 \acro{MACHO}[MACHO]{Massive Compact Halo Objects}
 \acro{CL}[CL]{Confidence Level}
+\acro{QCD}[QCD]{Quantum ChromoDynamics}
 \acro{ADMX}[ADMX]{Axion Dark Matter Experiment}
 \acro{CAST}[CAST]{CERN Axion Solar Telescope}
 \acro{IAXO}[IAXO]{International Axion Observatory}
+\acro{UED}[UED]{Universal Extra Dimensions}
 
 \end{acronym}
 \newpage
@@ -160,7 +162,7 @@ In the context of this work, \ac{DM} is searched for in association with one or 
 
 However, this also means that its phenomenology is mostly driven by its large mass and that it decays before hadronization can occur, usually into a W boson and and a bottom quark ($\sim$96\% branching ratio \cite{PDG}). The final state of the process we are interested in is then be made of some b jets, leptons and/or quarks and is be categorized depending on this number of b jets and on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly since this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}. Additionally, leptons are by reconstruction much cleaner than jets. This means that their identification and momentum calculation is easier to perform, and that the uncertainties associated to these measurements will be smaller.
 
-The LHC has now been running for 10 years, and several similar searches have already been carried out and published in the past by the CMS and ATLAS collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the CMS (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and ATLAS collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. At 13 TeV, the ATLAS collaboration published on one hand several studies, considering different final states \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the CMS collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the single top and $t \bar t$ analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis that was performed while considering a larger dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
+The LHC has now been running for 10 years, and several similar searches have already been carried out and published in the past by the CMS and ATLAS collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the CMS (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and ATLAS collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. At 13 TeV, the ATLAS collaboration published on one hand several studies, considering different final states \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the CMS collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis that was performed while considering a larger dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
 After a detailed introduction about \ac{DM} in general, the experimental device will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and ~\ref{chapter:Selection}.
 
@@ -197,7 +199,7 @@ Mathematically, the virial theorem can be written in Equation~\ref{equation:Viri
 2 \langle T \rangle + \langle V \rangle = 0 \text{, where}
 \begin{dcases}
 T = \frac{1}{2} \sum_i M_i v_i^2 = \frac{1}{2} M \langle v^2 \rangle\\
-V = -4 \pi G \int_0^R M \rho r dr \propto \frac{G M^2}{R}
+V = -4 \pi G \int_0^R M \rho r \text{ } dr \propto \frac{G M^2}{R}
 \end{dcases}
 \end{equation}
 
@@ -301,7 +303,14 @@ All the previous observations allow us to list some of the most important proper
 \item We will also only consider \textbf{cold} dark matter, since the widely accepted $\Lambda CDM$ cosmological model is actually based on this assumption. By cold, we do not refer to the temperature of these particles but actually to their size, and therefore to the velocity by which they can travel in the Universe. Large scale structures of the Universe such as we can observe them today cannot actually not be explained if \ac{DM} is made of hot/relativistic particles, as represented in Figure~\ref{figure:ColdWarmDM}.
 \item It is interesting to report as well that \ac{DM} particles are expected to be found near the electroweak symmetry breaking scale, between \textbf{10 GeV and 1 TeV}. This is a consequence of the expected production mechanism of such particles, the so-called thermal freeze-out. 
 
-This principle tells us that at some point in the history, \ac{DM} was in thermal equilibrium with other primordial standard particles, meaning that its production and annihilation rates were equal. However, because of the expansion of the Universe, at some point \ac{DM} particles were simply too far apart from each other and these reactions maintaining this equilibrium became not efficient enough to maintain this equilibrium. At this stage, the abundance of \ac{DM} became fixed: this is the freeze-out, as represented in Figure~\ref{figure:FreezeOut}.
+This principle tells us that at some point in the history, \ac{DM} was in thermal equilibrium with other primordial \ac{SM} particles, meaning that its production and annihilation rates were equal, as shown in Equation~\ref{equation:equilibrium}.
+
+\begin{equation}
+\label{equation:equilibrium}
+\chi \bar \chi \leftrightarrow e^+ e^-, \mu^+ \mu^-, q \bar q, W^+ W^-, ZZ
+\end{equation}
+
+However, because of the expansion of the Universe, at some point \ac{DM} particles were simply too far apart from each other and these reactions maintaining this equilibrium became not efficient enough to maintain this equilibrium. At this stage, the abundance of \ac{DM} became fixed: this is the freeze-out, as represented in Figure~\ref{figure:FreezeOut}.
 
 This principle is interesting because, as a rule of thumb, we can say that if a particle interacts heavily, it will stay longer in equilibrium and its freeze-out abundance will be smaller, so there is a mathematical relation between the strength of the \ac{SM}/\ac{DM} interaction $g$, the mass of the \ac{DM} particle $m_\chi$ and its actual abundance $\Omega_\chi$ that can be measured, as expressed in Equation ~\ref{equation:FreezeOut} \cite{FreezeOut}.
 \begin{equation}
@@ -358,7 +367,7 @@ Several different experiments did try to search for such \ac{DM} anyway, and man
 
 Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expect to be cold, i.e. non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today. We can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
 
-\item \textbf{Axions} could also explain the particle nature of \ac{DM}, since its existence could explain 100\% of the \ac{DM} in the Universe, unlike the other candidates presented so far. Axions are hypothetical stable neutral particles, with masses of the order of the meV, introduced as a consequence of the solution of the CP violation issue of QCD. This issue is the following: in the usual $\Theta$ term of the QCD Lagrangian shown in Equation~\ref{equation:Lag} \cite{QCDLag} should be responsible of breaking the CP symmetry, but this effect has never been observed so far. This is the so-called the strong CP problem. Two ways to explain that we never observed this phenomena exist: the first is to assume that one of the quarks of the \ac{SM} is massless but does not match the current observations, and the second is to assume that the parameter $\Theta$, the QCD vacuum angle, is small enough, so that this term becomes negligible. However, by definition, the $\Theta$ angle should be between 0 and $2\pi$, so there is no physical reason for this parameter to be small, unless some new physics, as the one developed in 1977 by Peccei and Quinn \cite{Peccei} by relaxing $\Theta$ from a parameter to  a dynamic variable and absorbing it through the introduction of a new pseudoscalar particle called the axion.
+\item \textbf{Axions} could also explain the particle nature of \ac{DM}, since its existence could explain 100\% of the \ac{DM} in the Universe, unlike the other candidates presented so far. Axions are hypothetical stable neutral particles, with masses of the order of the meV, introduced as a consequence of the solution of the CP violation issue of \ac{QCD}. This issue is the following: in the usual $\Theta$ term of the \ac{QCD} Lagrangian shown in Equation~\ref{equation:Lag} \cite{QCDLag} should be responsible of breaking the CP symmetry, but this effect has never been observed so far. This is the so-called the strong CP problem. Two ways to explain that we never observed this phenomena exist: the first is to assume that one of the quarks of the \ac{SM} is massless but does not match the current observations, and the second is to assume that the parameter $\Theta$, the \ac{QCD} vacuum angle, is small enough, so that this term becomes negligible. However, by definition, the $\Theta$ angle should be between 0 and $2\pi$, so there is no physical reason for this parameter to be small, unless some new physics, as the one developed in 1977 by Peccei and Quinn \cite{Peccei} by relaxing $\Theta$ from a parameter to  a dynamic variable and absorbing it through the introduction of a new pseudoscalar particle called the axion.
 
 \begin{equation}
 \label{equation:Lag}
@@ -372,7 +381,7 @@ By definition, it is possible to show that axions satisfy two of the previous cr
 \Omega_a \simeq \left ( \frac{6 \mu \text{eV}}{m_a} \right )^{7/6}
 \end{equation}
 
-Several axions searches experiments have therefore been set up, such as the \ac{ADMX}, a resonant microwave cavity installed at the University of Washington, \ac{CAST}, a CERN experiment observing the Sun which came online in 2002 and which managed in 2014 to turned up definitely the existence of solar axions \cite{CASTLimit}, or \ac{IAXO}, whose aim would be to search for axions with a much better signal to ratio noise than \ac{CAST}. All the results obtained by these experiments along with their future projections are represented in Figure~\ref{figure:AxionSummary}.
+Several axions searches experiments have therefore been set up, such as the \ac{ADMX}, a resonant microwave cavity installed at the University of Washington, \ac{CAST}, a CERN experiment observing the Sun which came online in 2002 and which managed in 2014 to turned up definitely the existence of solar axions \cite{CASTLimit}, or the \ac{IAXO}, whose aim would be to search for axions with a much better signal to ratio noise than \ac{CAST}. All the results obtained by these experiments along with their future projections are represented in Figure~\ref{figure:AxionSummary}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -382,20 +391,88 @@ Several axions searches experiments have therefore been set up, such as the \ac{
 \end{center}
 \end{figure}
 
-\item The actual \ac{DM} candidate that will be mostly considered throughout this work are the so-called \textbf{\acf{WIMP}}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle". Several strategies can be used to detect such particles, as we will now see in the Section~\ref{section:DMSearches}.
+\item The actual \ac{DM} candidate that will be mostly considered throughout this work are the so-called \textbf{\acf{WIMP}}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle". Several strategies can be used to detect such particles, as we will now see in the Section~\ref{section:DMSearches}. This kind of particle basically arises in various \ac{BSM} theories, such as the lightest supersymmetric particle in SUSY. According to this theory, each \ac{SM} particle should have a superpartner whose quantum numbers would be identical except for their spins, which would differ by one half. All of these superpartners would then be new and undiscovered particles, giving us a perfect \ac{DM} candidate, the neutralino $\chi$.
+
+The \ac{WIMP} are also interesting in the sense that introducing them in the terms of this supersymmetric theory would not only give us a \ac{DM} candidate, but also solve the hierarchy problem, the apparent large discrepancy between multiple aspects of the weak and gravitational forces ($10^{24}$ less times stronger).
 \end{itemize}
 
 \section{Dark matter searches} \label{section:DMSearches}
 
-Seevral different ways can be used in order to try and detect new \ac{DM} particles, which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will be the focus of this work. Let's now discuss about these different detection strategies.
+As previously stated, several cosmological evidences allow us to introduce the concept of dark matter, but its properties such as its mass, coupling and interaction cross-section are difficult to study in this context. Several different ways can then be used in order to try and detect \ac{DM} particles in order to study them, strategies which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will be the focus of this work. Let's now discuss about these different detection strategies.
 
 \subsection{Direct searches}
+
+From cosmological observations, we know that we live in a halo of dark matter. In this case, \ac{WIMP}s should cross the Earth every day and, even if they interact only weakly, we should be able to directly detect them through their interaction with ordinary baryonic matter, for example because of their scattering with the nuclei of these particles. Indeed, the transfer of momentum between these two particles in this case might be detectable with the correct experimental device, typically placed deep underground to have the lowest possible background, which is the main source of perturbations of such experiments. To study this particular category of searches, let's first of all introduce the rate of expected WIMP scattering off a target nucleus of mass $m_N$ with Equation~\ref{equation:WIMPRate} \cite{DirectSearches}.
+
+\begin{equation}
+\label{equation:WIMPRate}
+\frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv
+\end{equation}
+
 \subsection{Indirect searches}
+
+The indirect detection of \ac{DM} particles consists basically in searching in space for \ac{SM} products coming from the annihilation of two \ac{DM} particles or from its eventual direct decay. In this case, this interaction can be probed by both observatories placed either on the ground or in space directly. Many extensions to the \ac{SM}, such as SUSY or \ac{UED} do provide \ac{DM} candidates (the lightest supersymmetric particle and the lightest Kaluza-Klein state, respectively) expected to interact with each other, resulting in the immediate production of \ac{SM} (un)stable particles that we could detect.
+
+Because of the freeze-out scenario explained in Section~\ref{section:DMProperties}, we can find an expression relating the actual abundance of \ac{DM} $\Omega_\chi$ with its through Equation~\ref{eq:Annihilation} \cite{IndirectSearches}, where the quantity $\langle \sigma_A v \rangle$ corresponds to the \ac{DM} annihilation cross section.
+
+\begin{equation}
+\label{eq:Annihilation}
+\Omega_\chi h² \sim \frac{3 \cdot 10^{-27} cm^3 s^{-1}}{\langle \sigma_A v \rangle}
+\end{equation}
+
+This equation implies that, since we do not the current abundance of \ac{DM} in the Universe, the total annihilation cross section of \ac{DM} should be equal to $\sim 3 \cdot 10^{-26} cm^3 s^{-1}$, the typical value given by \ac{WIMP}s, as discussed previously. The experiments trying to indirectly detect \ac{DM} therefore mostly focus on \ac{WIMP} searches for this reason. Sterile neutrinos can also be searched indirectly, since they are expected to decay into active neutrinos, producing a photon at exactly half the sterile neutrino mass, which could be detected as well. Several strategies can be used in order to detect \ac{DM} indirectly:
+
+\begin{itemize}
+\item The golden channel for such searches are through the production of \textbf{$\gamma$-rays}, mainly because the energy scale of the \ac{WIMP}s implies that most of the annihilation and decay radiation will be emitted in this range of energies, and because $\gamma$-rays are usually not deflecting when traveling to the observer. The flux of such $\gamma$-rays received within a solid angle $\Delta \Omega$ depends on two factors, as described in Equation~\ref{eq:Flux}: the first one depending on the physics itself (such as the \ac{DM} properties), while the second one, also called J-factor, depends only on the distribution of \ac{DM} within the system considered, where $l$ is the line of sight considered \cite{JFactor}.
+
+\begin{equation}
+\label{eq:Flux}
+\begin{dcases}
+\frac{d \phi_\gamma}{dE_\gamma} = \phi^{PP}(E) \cdot J(\Delta \Omega) \\
+J = \iint \rho_{DM}^2(l,\Omega) \text{ } dl \text{ } d\Omega
+\end{dcases}
+\end{equation}
+
+This J-factor is then actually a measurement of the quality of a astronomical object for an indirect measurement, since the higher the flux received, the better the measurement will be in general (even though this is not the only factor which matters, since for example the galactic center has a higher J-factor than the best dwarf galaxy observable, but also has a lot of backgrounds affecting the measurement).
+
+As we just saw, $\gamma$-rays are perfect candidates for the indirect detection of \ac{DM} but they do have one drawback as well: the Earth's atmosphere is usually opaque to this kind of radiation. This means that most of experiments searching for them have to be sent to space. QUOTE EXAMPLES
+
+\item OTHER CHANNELS
+\end{itemize}
+
 \subsection{Collider production}
 \section{Production at the LHC} \label{section:ourChannel}
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
 \subsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
 \section{Previous results} \label{section:PreviousResults}
+
+This analysis being performed at a center of mass energy $\sqrt{s} = 13$ TeV, only the results relevant to this particular energy and previously obtained by the CMS and ATLAS collaborations of CERN will be quoted here. 
+
+The \textbf{CMS collaboration} published in 2018 a similar analysis, but using only the $35.9$ fb$^{-1}$ of data collected d quring the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/CMSttbarExclusion.png}
+\caption{95\% \ac{CL} exclusion plots on the signal strength computed as a function of the mediator and \ac{DM} massed obtained by CMS considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite{PreviousDoubleTopAllLep13CMS}.}
+\label{figure:CMSttbarExclusion}
+\end{center}
+\end{figure}
+
+Last year, a combination of the $t/\bar t$+DM and $t \bar t$+DM analyses has also been published \cite{PreviousSingleDoubleTopAllLep13CMS}, combining this time only the hadronic and semileptonic channels of both analyses. The limits obtained in this case are represented in Figure~\ref{figure:Combination2019}, where the limits obtained by each analysis on their own along with the results of the combination, leading to a factor 2 improvement of the results, have been represented. 
+
+This combination managed to exclude the production of scalar mediators up to 290 GeV and pseudoscalar mediators up to 300 GeV, at the 95\% \ac{CL}. This combined analysis lead to the most stringent exclusion limits of the LHC on the production of \ac{DM} through these categories of spin-0 mediator.
+
+SINGLE TOP PUBLICATION?
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/Combination2019.png}
+\caption{Expected and observed 95\% \ac{CL} limits on the \ac{DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite{PreviousSingleDoubleTopAllLep13CMS}.}
+\label{figure:Combination2019}
+\end{center}
+\end{figure}
+
+The \textbf{ATLAS collaboration} also...
 
 \chapter{The experimental device} \label{chapter:Device}
 \section{The LHC accelerator}
@@ -404,7 +481,7 @@ Seevral different ways can be used in order to try and detect new \ac{DM} partic
 \subsection{Electromagnetic calorimeter}
 \subsection{Hadronic calorimeter}
 \subsection{Muon system}
-\subsection{Trigger}
+\subsection{Trigger}DirectSearches
 \subsection{Data acquisition}
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
@@ -583,7 +660,7 @@ F. Zwicky,
 Helvetica Physica Acta , vol. 6, pp. 110-127, 1933}
 
 \bibitem{ZwickyWrong}
-\href{https://arxiv.org/pdf/astro-ph/9904251.pdf}{S. Van den Bergh,
+\href{https://arxiv.org/pdf/astro-ph/9904251.pdf}{S. Van den Bergh,Phys Rev D
 "The early history of dark matter",
 Dominion Astrophysical Observatory, 1999
 }
@@ -703,6 +780,24 @@ Annual Review if Nuclear and Particle Science 65, 2015
 \href{https://www.nature.com/articles/nphys4109}{CAST collaboration,
 "New CAST limit on the axion-photon interaction",
 Nature Physics 13, pp. 584-590 (2017)
+}
+
+\bibitem{DirectSearches}
+\href{https://arxiv.org/abs/1903.03026}{M. Schumann
+"Direct Detection of WIMP Dark Matter: Concepts and Status",
+J. Phys. G46 (2019) no.10, 103003
+}
+
+\bibitem{IndirectSearches}
+\href{https://arxiv.org/pdf/1604.00014}{J.M. Gaskins,
+"A review of indirect searches for particle dark matter",
+Contemporary Physics, 2016
+}
+
+\bibitem{JFactor}
+\href{https://arxiv.org/abs/1604.05599}{N.W. Evans et all.,
+"Simple J-Factors and D-Factors for Indirect Dark Matter Detection",
+Phys Rev D, 2016
 }
 
 \end{thebibliography}
