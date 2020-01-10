@@ -1,4 +1,4 @@
-\documentclass[a4paper, 10pt, twoside, openright]{report}
+\documentclass[a4paper, 10pt, twoside, openright]{book}
 \usepackage[top=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{booktabs}
@@ -122,6 +122,10 @@
 \acro{PF}[PF]{Particle Flow}
 \acro{BSM}[BSM]{Beyond the Standard Model}
 \acro{MACHO}[MACHO]{Massive Compact Halo Objects}
+\acro{CL}[CL]{Confidence Level}
+\acro{ADMX}[ADMX]{Axion Dark Matter Experiment}
+\acro{CAST}[CAST]{CERN Axion Solar Telescope}
+\acro{IAXO}[IAXO]{International Axion Observatory}
 
 \end{acronym}
 \newpage
@@ -333,13 +337,61 @@ All these properties narrow quite a lot the number of possible \ac{DM} candidate
 Several different categories of particles could pretend to be good candidates for dark matter. However, only the most interesting ones will be quoted here, since an extensive list of all the different possible candidates is out of the scope of this work.
 
 \begin{itemize}
-\item The first \ac{DM} candidate are the so-called \textbf{\ac{MACHO}}. These objects are massive astronomical non-luminous bodies (such as black holes) made of baryonic matter that could be responsible of the gravitational lensing observed and that could explain the apparent missing mass in the Universe. However, as we saw in Section~\ref{section:DMProperties}, \ac{DM} is not expected to be made of such ordinary matter, basically because observational data of the \ac{CMB} and the deduced baryonic density of energy in the Universe is able to rule out this possibility.
-\item Axions
-\item Sterile neutrinos
-\item Last but not least, WIMP. Hierarchy problem solved.
+\item The first obvious \ac{DM} candidate are the so-called \textbf{\ac{MACHO}}. These objects are massive astronomical non-luminous bodies (such as black holes) made of baryonic matter and very hard to detect, that could be responsible of the gravitational lensing observed and that could explain the apparent missing mass in the Universe. However, as we saw in Section~\ref{section:DMProperties}, \ac{DM} is not expected to be made of such ordinary matter, mainly because observational data of the \ac{CMB} and the deduced baryonic density of energy in the Universe is able to rule out this possibility.
+
+Several different experiments did try to search for such \ac{DM} anyway, and managed to constrain the properties of this kind of objects. The main way to search for such massive objects is through their gravitational lensing effect (actually, we talk about microlensing in this case since this effect is tiny) since, according to the general relativity, they should bend the light of luminous objects, such as stars, located behind them, and this bending actually depends on the mass of the eventual \ac{MACHO}. Experiments like the \ac{MACHO} project \cite{MACHOProject} and EROS \cite{EROS} observed in this context $\Theta (10^7)$ stars for several years, looking for microlensing events in order to constrain this particular \ac{DM} model. Results published in 2000 from the MACHO project, after studying almost 12 million stars actually observed between 13 and 17 such events, way lower than expected if \ac{DM} was only made out of \ac{MACHO}s. The collaboration actually managed to exclude at the 95\% \ac{CL} the possibility of the dark halo to be entirely made of such baryonic particles \cite{MACHOProject}. On the other hand, the EROS collaboration only observed 1 microlensing after observing more than 30 millions of bright stars during 6.7 years, while $\sim39$ events were expected \cite{EROS}. Both results have also been combined in order to obtain the exclusion plot represented in Figure~\ref{figure:ExclusionMACHO}. From this study, \ac{MACHO} objects with low masses ($10^{-7}M_\odot < m < 10^{-3}M_\odot$) make up less than 25\% of the dark matter halo for most models considered at the 95\% \ac{CL} \cite{ExclusionMACHO}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=6cm, height=8cm]{figs/MACHOExclusion.png}
+\caption{Halo fraction upper limit at the 95\% \ac{CL} compared to the mass of the lensing object for different \ac{MACHO} models considered by the EROS (on the top) and the MACHO (on the bottom) collaborations \cite{ExclusionMACHO}.}
+\label{figure:ExclusionMACHO}
+\end{center}
+\end{figure}
+
+\item \textbf{\ac{SM} neutrinos} have been considered as good \ac{DM} candidates for a long time as well. However, two physical reasons can explain why we do not really believe in this hypothesis any more. First of all, their relative abundance does not match the expected one for \ac{DM} from the freeze-out mechanism explained in Section~\ref{section:DMProperties}. Indeed, their freeze-out abundance can be computed quite easily from Equation~\ref{equation:neutrinoRelic} \cite{WIMPBook}, where the sum of the masses of the three neutrino flavors has been calculated in 2017 to be lower than 0.17 eV at the 95\% \ac{CL} from cosmological studies \cite{NeutrinoMass}, giving us an abundance much lower than the measured one for \ac{DM} from the studies of the \ac{CMB}, for example. 
+
+\begin{equation}
+\label{equation:neutrinoRelic}
+\Omega_\nu h^2 = \sum_{i=1}^3 \frac{m_{\nu_i}}{93 eV}
+\end{equation}
+
+Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expect to be cold, i.e. non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today. We can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
+
+\item \textbf{Axions} could also explain the particle nature of \ac{DM}, since its existence could explain 100\% of the \ac{DM} in the Universe, unlike the other candidates presented so far. Axions are hypothetical stable neutral particles, with masses of the order of the meV, introduced as a consequence of the solution of the CP violation issue of QCD. This issue is the following: in the usual $\Theta$ term of the QCD Lagrangian shown in Equation~\ref{equation:Lag} \cite{QCDLag} should be responsible of breaking the CP symmetry, but this effect has never been observed so far. This is the so-called the strong CP problem. Two ways to explain that we never observed this phenomena exist: the first is to assume that one of the quarks of the \ac{SM} is massless but does not match the current observations, and the second is to assume that the parameter $\Theta$, the QCD vacuum angle, is small enough, so that this term becomes negligible. However, by definition, the $\Theta$ angle should be between 0 and $2\pi$, so there is no physical reason for this parameter to be small, unless some new physics, as the one developed in 1977 by Peccei and Quinn \cite{Peccei} by relaxing $\Theta$ from a parameter to  a dynamic variable and absorbing it through the introduction of a new pseudoscalar particle called the axion.
+
+\begin{equation}
+\label{equation:Lag}
+\mathcal{L}_\Theta = \frac{\Theta}{32 \pi^2} \epsilon_{\mu \nu \rho \sigma} G_a^{\mu \mu} G_a^{\rho \sigma}
+\end{equation}
+
+By definition, it is possible to show that axions satisfy two of the previous criteria for a good \ac{DM} candidate, since they are non-relativistic and their abundance might be enough to account for the dark matter energy density observed, since their actual abundance can be obtained by Equation~\ref{equation:AxionDensity} \cite{AxionSearches}, from which we could conclude that an axion having a mass of $\sim$20 $\mu$eV could account for the actual dark matter density of the Universe, as observed today. 
+
+\begin{equation}
+\label{equation:AxionDensity}
+\Omega_a \simeq \left ( \frac{6 \mu \text{eV}}{m_a} \right )^{7/6}
+\end{equation}
+
+Several axions searches experiments have therefore been set up, such as the \ac{ADMX}, a resonant microwave cavity installed at the University of Washington, \ac{CAST}, a CERN experiment observing the Sun which came online in 2002 and which managed in 2014 to turned up definitely the existence of solar axions \cite{CASTLimit}, or \ac{IAXO}, whose aim would be to search for axions with a much better signal to ratio noise than \ac{CAST}. All the results obtained by these experiments along with their future projections are represented in Figure~\ref{figure:AxionSummary}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/AxionSummary.png}
+\caption{Axion exclusion plot summary and projected coverage of actual experiments \cite{AxionSearches}.}
+\label{figure:AxionSummary}
+\end{center}
+\end{figure}
+
+\item The actual \ac{DM} candidate that will be mostly considered throughout this work are the so-called \textbf{\acf{WIMP}}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle". Several strategies can be used to detect such particles, as we will now see in the Section~\ref{section:DMSearches}.
 \end{itemize}
 
 \section{Dark matter searches} \label{section:DMSearches}
+
+Seevral different ways can be used in order to try and detect new \ac{DM} particles, which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will be the focus of this work. Let's now discuss about these different detection strategies.
+
+\subsection{Direct searches}
+\subsection{Indirect searches}
+\subsection{Collider production}
 \section{Production at the LHC} \label{section:ourChannel}
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
 \subsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
@@ -598,6 +650,60 @@ Annalen der Physik, p. 22 , 2012
 \bibitem{FreezeOut2}
 \href{http://inspirehep.net/record/1683379/files/fulltext.pdf}{R. Kirk,
 "Dark matter genesis"}
+
+\bibitem{MACHOProject}
+\href{https://arxiv.org/pdf/astro-ph/0001272}{C. Alcock et all.,
+"The MACHO Project: Microlensing Results from 5.7 Years of LMC Observations",
+	Astrophys.J. 542 (2000) 281-307
+}
+
+\bibitem{EROS}
+\href{https://www.aanda.org/articles/aa/pdf/2007/26/aa6017-06.pdf}{P. Tisserand et all.,
+"Limits on the Macho content of the Galactic Halo from the EROS-2 Survey of the Magellanic Clouds",
+A \& A 469, pp. 387-404 (2007)
+}
+
+\bibitem{ExclusionMACHO}
+\href{https://arxiv.org/abs/astro-ph/9803082}{EROS and MACHO collaborations,
+"EROS and MACHO Combined Limits on Planetary Mass Dark Matter in the Galactic Halo",
+1998
+}
+
+\bibitem{WIMPBook}
+\href{http://inspirehep.net/record/1510610}{E. Morgante,
+"Aspects of WIMP Dark Matter Searches at Colliders and Other Probes",
+Springer theses, 2016
+}
+
+\bibitem{NeutrinoMass}
+\href{https://www.aanda.org/articles/aa/pdf/2017/10/aa30927-17.pdf}{F. Couchot et all.,
+"Cosmological constraints on the neutrino mass including systematic uncertainties",
+A \& A 606, A104 (2017)
+}
+
+\bibitem{QCDLag}
+\href{https://www.osti.gov/servlets/purl/6260191}{D. Wu,
+"A Brief Introduction to the Strong CP Problem",
+Superconducting Super Collider Laboratory, 1991
+}
+
+\bibitem{Peccei}
+\href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.38.1440}{R.D. Peccei, H.R. Quinn,
+"CP Conservation in the Presence of Pseudoparticles",
+Phys. Rev. Lett. 38, 1440, 1977
+}
+
+\bibitem{AxionSearches}
+\href{https://arxiv.org/pdf/1602.00039.pdf}{P.W. Graham et all.,
+"Experimental Searches for the Axion and Axion-like Particles",
+Annual Review if Nuclear and Particle Science 65, 2015
+}
+
+\bibitem{CASTLimit}
+\href{https://www.nature.com/articles/nphys4109}{CAST collaboration,
+"New CAST limit on the axion-photon interaction",
+Nature Physics 13, pp. 584-590 (2017)
+}
 
 \end{thebibliography}
 
