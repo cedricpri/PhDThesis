@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.11)  11 JAN 2020 16:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.11)  11 JAN 2020 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -631,36 +631,36 @@ although it is yet undefined on input line 7.
  [6]
 Chapter 1.
 Package acronym Info: Label `acro:SM' newly defined as it shall be overridden
-although it is yet undefined on input line 156.
+although it is yet undefined on input line 158.
 Package acronym Info: Label `acro:CMS' newly defined as it shall be overridden
-although it is yet undefined on input line 156.
+although it is yet undefined on input line 158.
 Package acronym Info: Label `acro:ATLAS' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 156.
+although it is yet undefined on input line 158.
 Package acronym Info: Label `acro:CERN' newly defined as it shall be overridden
 
-although it is yet undefined on input line 156.
+although it is yet undefined on input line 158.
 Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 160.
+although it is yet undefined on input line 162.
 Package acronym Info: Label `acro:WIMP' newly defined as it shall be overridden
 
-although it is yet undefined on input line 164.
+although it is yet undefined on input line 166.
 Package acronym Info: Label `acro:LHC' newly defined as it shall be overridden
-although it is yet undefined on input line 164.
+although it is yet undefined on input line 166.
 Package acronym Info: Label `acro:BSM' newly defined as it shall be overridden
-although it is yet undefined on input line 164.
+although it is yet undefined on input line 166.
 [1
 
 ]
 Package acronym Info: Label `acro:MFV' newly defined as it shall be overridden
-although it is yet undefined on input line 168.
+although it is yet undefined on input line 170.
  [2]
 Package acronym Info: Label `acro:PF' newly defined as it shall be overridden
-although it is yet undefined on input line 176.
-Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
 although it is yet undefined on input line 178.
+Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
+although it is yet undefined on input line 180.
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--182
+Underfull \hbox (badness 10000) in paragraph at lines 182--184
 
  []
 
@@ -671,229 +671,273 @@ Chapter 2.
 ]
 
 LaTeX Warning: Reference `figure:RotationCurves' on page 5 undefined on input l
-ine 237.
+ine 239.
 
 [5]
 
 LaTeX Warning: Reference `figure:PlanckTemperature' on page 6 undefined on inpu
-t line 252.
+t line 254.
 
 
 LaTeX Warning: Reference `figure:CMBSpectrum' on page 6 undefined on input line
- 277.
+ 279.
 
 [6]
 
 LaTeX Warning: Reference `figure:BulletCluster' on page 7 undefined on input li
-ne 303.
+ne 305.
 
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 309.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 311.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 309.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 311.
 
 
 LaTeX Warning: Reference `figure:ColdWarmDM' on page 7 undefined on input line 
-312.
+314.
 
 [7]
 
 LaTeX Warning: Reference `figure:FreezeOut' on page 8 undefined on input line 3
-22.
+24.
 
 [8]
 Package acronym Info: Label `acro:MACHO' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 360.
+although it is yet undefined on input line 362.
 Package acronym Info: Label `acro:CL' newly defined as it shall be overridden
-although it is yet undefined on input line 363.
+although it is yet undefined on input line 365.
 
 
 LaTeX Warning: Reference `figure:ExclusionMACHO' on page 9 undefined on input l
-ine 363.
+ine 365.
 
-<figs/NeutrinoXS.png, id=607, 1083.04625pt x 740.7675pt>
+<figs/NeutrinoXS.png, id=609, 1083.04625pt x 740.7675pt>
 File: figs/NeutrinoXS.png Graphic file (type png)
 <use figs/NeutrinoXS.png>
-Package pdftex.def Info: figs/NeutrinoXS.png  used on input line 381.
+Package pdftex.def Info: figs/NeutrinoXS.png  used on input line 383.
 (pdftex.def)             Requested size: 341.42578pt x 227.61227pt.
 [9] [10 <./figs/NeutrinoXS.png>]
-<figs/DMDetection.png, id=662, 617.30624pt x 417.56pt>
+<figs/DMDetection.png, id=664, 617.30624pt x 417.56pt>
 File: figs/DMDetection.png Graphic file (type png)
 <use figs/DMDetection.png>
-Package pdftex.def Info: figs/DMDetection.png  used on input line 418.
+Package pdftex.def Info: figs/DMDetection.png  used on input line 420.
 (pdftex.def)             Requested size: 227.61792pt x 170.71646pt.
  [11 <./figs/DMDetection.png>]
 Package acronym Info: Label `acro:QCD' newly defined as it shall be overridden
-although it is yet undefined on input line 427.
+although it is yet undefined on input line 429.
 Package acronym Info: Label `acro:ADMX' newly defined as it shall be overridden
 
-although it is yet undefined on input line 441.
+although it is yet undefined on input line 443.
 Package acronym Info: Label `acro:CAST' newly defined as it shall be overridden
 
-although it is yet undefined on input line 441.
+although it is yet undefined on input line 443.
 Package acronym Info: Label `acro:IAXO' newly defined as it shall be overridden
 
-although it is yet undefined on input line 441.
+although it is yet undefined on input line 443.
 
 
 LaTeX Warning: Reference `figure:AxionSummary' on page 12 undefined on input li
-ne 441.
+ne 443.
 
 [12] [13]
+<figs/DirectFalling.png, id=750, 867.24pt x 577.15625pt>
+File: figs/DirectFalling.png Graphic file (type png)
+<use figs/DirectFalling.png>
+Package pdftex.def Info: figs/DirectFalling.png  used on input line 485.
+(pdftex.def)             Requested size: 284.52274pt x 199.17195pt.
+Package acronym Info: Label `acro:SI' newly defined as it shall be overridden
+although it is yet undefined on input line 486.
+
 
 LaTeX Warning: Reference `fig:AnnualModulation' on page 14 undefined on input l
-ine 478.
+ine 498.
 
+[14 <./figs/DirectFalling.png>]
+Package acronym Info: Label `acro:SD' newly defined as it shall be overridden
+although it is yet undefined on input line 517.
+
+
+LaTeX Warning: Reference `fig:ImpactLimit' on page 15 undefined on input line 5
+24.
+
+<figs/ImpactLimits.png, id=789, 1194.4625pt x 645.41125pt>
+File: figs/ImpactLimits.png Graphic file (type png)
+<use figs/ImpactLimits.png>
+Package pdftex.def Info: figs/ImpactLimits.png  used on input line 528.
+(pdftex.def)             Requested size: 398.32938pt x 199.16939pt.
+[15 <./figs/ImpactLimits.png>]
+<figs/DirectWays.png, id=805, 1088.065pt x 760.8425pt>
+File: figs/DirectWays.png Graphic file (type png)
+<use figs/DirectWays.png>
+Package pdftex.def Info: figs/DirectWays.png  used on input line 538.
+(pdftex.def)             Requested size: 341.4307pt x 227.61598pt.
+<figs/DAMA.png, id=814, 1496.59125pt x 480.79625pt>
+File: figs/DAMA.png Graphic file (type png)
+<use figs/DAMA.png>
+Package pdftex.def Info: figs/DAMA.png  used on input line 548.
+(pdftex.def)             Requested size: 398.33034pt x 142.2665pt.
+<figs/DirectLimits.png, id=817, 1517.67pt x 641.39626pt>
+File: figs/DirectLimits.png Graphic file (type png)
+<use figs/DirectLimits.png>
+Package pdftex.def Info: figs/DirectLimits.png  used on input line 556.
+(pdftex.def)             Requested size: 398.33646pt x 170.713pt.
 Package acronym Info: Label `acro:UED' newly defined as it shall be overridden
-although it is yet undefined on input line 490.
+although it is yet undefined on input line 564.
+ [16 <./figs/DirectWays.png> <./figs/DAMA.png>]
 Package acronym Info: Label `acro:NFW' newly defined as it shall be overridden
-although it is yet undefined on input line 492.
-[14]
+although it is yet undefined on input line 566.
+
+[17 <./figs/DirectLimits.png>]
 Package acronym Info: Label `acro:LAT' newly defined as it shall be overridden
-although it is yet undefined on input line 513.
+although it is yet undefined on input line 587.
 
 
-LaTeX Warning: Reference `figure:LATExclusion' on page 15 undefined on input li
-ne 513.
+LaTeX Warning: Reference `figure:LATExclusion' on page 18 undefined on input li
+ne 587.
 
 Package acronym Info: Label `acro:IACT' newly defined as it shall be overridden
 
-although it is yet undefined on input line 523.
+although it is yet undefined on input line 597.
 Package acronym Info: Label `acro:CTA' newly defined as it shall be overridden
-although it is yet undefined on input line 523.
-[15]
-<figs/BkgNeutrino.png, id=804, 626.34pt x 401.5pt>
+although it is yet undefined on input line 597.
+[18]
+<figs/BkgNeutrino.png, id=892, 626.34pt x 401.5pt>
 File: figs/BkgNeutrino.png Graphic file (type png)
 <use figs/BkgNeutrino.png>
-Package pdftex.def Info: figs/BkgNeutrino.png  used on input line 534.
+Package pdftex.def Info: figs/BkgNeutrino.png  used on input line 608.
 (pdftex.def)             Requested size: 341.43932pt x 227.62596pt.
- [16 <./figs/BkgNeutrino.png>]
 Package acronym Info: Label `acro:AMS' newly defined as it shall be overridden
-although it is yet undefined on input line 544.
-<figs/AMSData.png, id=820, 1150.2975pt x 841.1425pt>
+although it is yet undefined on input line 618.
+ [19 <./figs/BkgNeutrino.png>]
+<figs/AMSData.png, id=907, 1150.2975pt x 841.1425pt>
 File: figs/AMSData.png Graphic file (type png)
 <use figs/AMSData.png>
-Package pdftex.def Info: figs/AMSData.png  used on input line 548.
+Package pdftex.def Info: figs/AMSData.png  used on input line 622.
 (pdftex.def)             Requested size: 312.97156pt x 227.62491pt.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 559.
+(hyperref)                removing `math shift' on input line 633.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 559.
+(hyperref)                removing `math shift' on input line 633.
 
-[17 <./figs/AMSData.png>]
-<figs/Atlasttbar13fb.png, id=838, 1800.7275pt x 630.355pt>
+[20 <./figs/AMSData.png>]
+<figs/Atlasttbar13fb.png, id=924, 1800.7275pt x 630.355pt>
 File: figs/Atlasttbar13fb.png Graphic file (type png)
 <use figs/Atlasttbar13fb.png>
-Package pdftex.def Info: figs/Atlasttbar13fb.png  used on input line 568.
+Package pdftex.def Info: figs/Atlasttbar13fb.png  used on input line 642.
 (pdftex.def)             Requested size: 398.33194pt x 170.71751pt.
-<figs/Atlas36a.png, id=844, 989.6975pt x 721.69624pt>
+<figs/Atlas36a.png, id=930, 989.6975pt x 721.69624pt>
 File: figs/Atlas36a.png Graphic file (type png)
 <use figs/Atlas36a.png>
-Package pdftex.def Info: figs/Atlas36a.png  used on input line 579.
+Package pdftex.def Info: figs/Atlas36a.png  used on input line 653.
 (pdftex.def)             Requested size: 199.15921pt x 170.71086pt.
 
-Overfull \hbox (17.06435pt too wide) in paragraph at lines 579--580
+Overfull \hbox (17.06435pt too wide) in paragraph at lines 653--654
 [][] 
  []
 
-<figs/Atlas36b.png, id=845, 985.6825pt x 708.6475pt>
+<figs/Atlas36b.png, id=931, 985.6825pt x 708.6475pt>
 File: figs/Atlas36b.png Graphic file (type png)
 <use figs/Atlas36b.png>
-Package pdftex.def Info: figs/Atlas36b.png  used on input line 582.
+Package pdftex.def Info: figs/Atlas36b.png  used on input line 656.
 (pdftex.def)             Requested size: 199.16344pt x 167.29991pt.
 
-Overfull \hbox (17.06857pt too wide) in paragraph at lines 582--583
+Overfull \hbox (17.06857pt too wide) in paragraph at lines 656--657
 [][] 
  []
 
 
-LaTeX Warning: Reference `figure:CMSttbarExclusion' on page 18 undefined on inp
-ut line 588.
+LaTeX Warning: Reference `figure:CMSttbarExclusion' on page 21 undefined on inp
+ut line 662.
 
-[18 <./figs/Atlasttbar13fb.png>]
 
-LaTeX Warning: Reference `figure:Combination2019' on page 19 undefined on input
- line 598.
+LaTeX Warning: Reference `figure:Combination2019' on page 21 undefined on input
+ line 672.
 
-[19 <./figs/Atlas36a.png> <./figs/Atlas36b.png>]
+[21 <./figs/Atlasttbar13fb.png> <./figs/Atlas36a.png> <./figs/Atlas36b.png>]
+[22]
 Chapter 3.
-[20
+[23
 
 ]
 Chapter 4.
-[21
+[24
 
 ]
 Chapter 5.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 633.
+(hyperref)                removing `math shift' on input line 707.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 633.
+(hyperref)                removing `math shift' on input line 707.
 
-[22
+[25
 
 ]
 Chapter 6.
-[23
+[26
 
 ]
 Chapter 7.
-[24
+[27
 
 ]
 Chapter 8.
-[25
+[28
 
-] [26
+] [29
 
 
 ] (./thesis_prieels.lof)
 \tf@lof=\write6
 \openout6 = `thesis_prieels.lof'.
 
- [27
+ [30
 
 ] (./thesis_prieels.lot)
 \tf@lot=\write7
 \openout7 = `thesis_prieels.lot'.
 
- [28
+ [31
 
-] [29
+] [32
 
-] [30]
-[31]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1011.
- [32]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1011.
+] [33]
+Underfull \hbox (badness 1577) in paragraph at lines 1045--1046
+[][][]\OT1/cmr/m/n/10 S.C. Mar-tin et all., "The RAVE sur-vey: con-strain-ing t
+he lo-cal Galac-tic es-cape speed",
+ []
+
+[34]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1103.
+ [35]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1103.
  (./thesis_prieels.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1011.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1011.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1103.
 
 Package rerunfilecheck Info: File `thesis_prieels.out' has not changed.
-(rerunfilecheck)             Checksum: B51B34276E085EB6545082EA7D33D01A;3803.
+(rerunfilecheck)             Checksum: 26E6401502A536D66B3978BB8768C329;3803.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1011.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1103.
  ) 
 Here is how much of TeX's memory you used:
- 10645 strings out of 494880
- 158230 string characters out of 6179601
- 273812 words of memory out of 5000000
- 13565 multiletter control sequences out of 15000+600000
+ 10720 strings out of 494880
+ 159390 string characters out of 6179601
+ 276180 words of memory out of 5000000
+ 13618 multiletter control sequences out of 15000+600000
  13168 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,14n,43p,1698b,502s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -912,10 +956,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on thesis_prieels.pdf (39 pages, 986508 bytes).
+Output written on thesis_prieels.pdf (42 pages, 1737619 bytes).
 PDF statistics:
- 1181 PDF objects out of 1200 (max. 8388607)
- 1083 compressed objects within 11 object streams
- 229 named destinations out of 1000 (max. 500000)
- 489 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1300 PDF objects out of 1440 (max. 8388607)
+ 1175 compressed objects within 12 object streams
+ 246 named destinations out of 1000 (max. 500000)
+ 514 words of extra memory for PDF output out of 10000 (max. 10000000)
 

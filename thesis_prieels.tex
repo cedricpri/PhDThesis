@@ -124,6 +124,8 @@
 \acro{PF}[PF]{Particle Flow}
 \acro{BSM}[BSM]{Beyond the Standard Model}
 \acro{MACHO}[MACHO]{Massive Compact Halo Objects}
+\acro{SI}[SI]{Spin Independant}
+\acro{SD}[SD]{Spin Dependant}
 \acro{CL}[CL]{Confidence Level}
 \acro{QCD}[QCD]{Quantum ChromoDynamics}
 \acro{ADMX}[ADMX]{Axion Dark Matter Experiment}
@@ -468,14 +470,32 @@ As previously stated, several cosmological evidences allow us to introduce the c
 
 \subsection{Direct searches} \label{subsection:DirectSearches}
 
-From cosmological observations, we know that we live in a halo of dark matter. In this case, \ac{WIMP}s should cross the Earth every day and, even if they interact only weakly, we should be able to directly detect them through their interaction with ordinary baryonic matter, for example because of their scattering with the nuclei of these particles. Indeed, the transfer of momentum between these two particles in this case might be detectable with the correct experimental device, typically placed deep underground to have the lowest possible background, which is the main source of perturbations of such experiments. To study this particular category of searches, let's first of all introduce the rate of expected WIMP scattering off a target nucleus of mass $m_N$ with Equation~\ref{equation:WIMPRate} \cite{DirectSearches}.
+From cosmological observations, we know that we live in a halo of dark matter. In this case, \ac{WIMP}s should cross the Earth every day and, even if they interact only weakly, we should be able to directly detect them through their interaction with ordinary baryonic matter, for example because of their scattering with the nuclei of these particles. Indeed, the transfer of momentum between these two particles in this case might be detectable with the correct experimental device, typically placed deep underground to have the lowest possible background, which is the main source of perturbations of such experiments. 
+
+To study this particular category of searches, let's first of all introduce the rate of expected WIMP scattering off a target nucleus of mass $m_N$ with Equation~\ref{equation:WIMPRate}, rate which end up being described by a simple steeply
+falling exponential function as shown on Figure~\ref{fig:DirectFalling} \cite{DirectSearches}, where $E_{nr}$ is the nuclear recoil energy measured, $m_\chi$ is the \ac{WIMP} mass, $\sigma$ its cross section, $\rho_0 = 0.3$ GeV cm$^{-3}$ is the local dark matter density and $f(v)$ the normalized WIMP velocity distribution.
 
 \begin{equation}
 \label{equation:WIMPRate}
-\frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv
+\frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv \propto exp \left (- \frac{E_{nr}}{E_0} \frac{4 m_\chi m_N}{(m_\chi + m_N)^2} \right )
 \end{equation}
 
-An important parameters that all the direct and indirect detection experiments need to take into account is the annual modulation of the observed count rate, due to the movement of the Earth around the Sun, as shown in Figure~\ref{fig:AnnualModulation} \cite{AnnualModulation}. From our perspective, it seems indeed that the velocity of the speed of WIMP particles arriving is changing depending on the month of the year, since the Earth is sometimes moving in the direction of the WIMP source, and is sometimes moving away: the maximal velocity is reached around June. This is extremely important to take into account this effect since, as we saw on Equation~\ref{eq:Annihilation}, the count rate of incoming particles actually depends on this velocity, and this modulation then introduces a sinusoidal modulation that we need to take into account. This effect is also important because an experiment performed during a long period of time can actually help us finding an eventual hint of \ac{DM} particles, since our signal is expect to follow this sinusoidal deviation while the background is expected to be constant.
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm, height=7cm]{figs/DirectFalling.png}
+\caption{ Nuclear recoil spectra induced in different materials for a given \ac{DM} \ac{WIMP} of 100 GeV, assuming a WIMP-nucleon \ac{SI} cross section \cite{DirectSearches}.}
+\label{fig:DirectFalling}
+\end{center}
+\end{figure}
+
+From this relation, the Equation~\ref{eq:Number} can be easily derived, representing this time the number of expected \ac{DM} events in an experiment running during a time $T$, where $\epsilon(E_{nr})$ is the efficiency of the detector for a given recoil energy.
+
+\begin{equation}
+\label{eq:Number}
+N = T \int_{E_{\text{min}}}^{E_{\text{max}}} \epsilon(E_{nr}) \frac{dR}{dE_{nr}} \text{ } dE_{nr}
+\end{equation}
+
+The maximal velocity $V_{\text{esc}}$ used as superior bound of the integral in \ref{equation:WIMPRate} has actually been measured to be in the range $[498-608]$ km/s at the 90\% \ac{CL} \cite{EscapeVelocity}, since any particle having a velocity higher than this would not be bound any more to the gravitational potential of a galaxy. This has an important consequence: all the direct and indirect detection experiments actually need to take into account is the annual modulation of the observed count rate, due to the movement of the Earth around the Sun, as shown in Figure~\ref{fig:AnnualModulation} \cite{AnnualModulation}, since this velocity is not negligeable compared to the escape velocity $V_{\text{esc}}$. 
 
 %\begin{figure}[htbp]
 %\begin{center}
@@ -484,6 +504,60 @@ An important parameters that all the direct and indirect detection experiments n
 %\label{figure:AxionSummary}
 %\end{center}
 %\end{figure}
+
+From our perspective, it seems indeed that the velocity of the speed of WIMP particles arriving is changing depending on the month of the year, since the Earth is sometimes moving in the direction of the WIMP source, and is sometimes moving away: the maximal velocity is reached around June. This is extremely important to take into account this effect since, as we saw on the previous equations such as Equation~\ref{eq:Annihilation}, the count rate of incoming particles $S(t)$ actually depends on this velocity, and this modulation then introduces a periodical modulation that we need to take into account, as shown in Equation~\ref{eq:Modulation}, where the periodical part usually introduces a $\sim5$\% deviation \cite{DirectSearches}.
+
+\begin{equation}
+\label{eq:Modulation}
+S(t) = B + S_0 + S_m cos(\omega (t-t_0))
+\end{equation}
+
+This effect is also important because an experiment performed during a long period of time can actually help us finding an eventual hint of \ac{DM} particles, since our signal is expect to follow this sinusoidal deviation while the background is expected to be constant. Moreover, this WIMP wind is expected to come from a particular region of the sky while the backgrounds are expected to be distributed uniformly, so this gives a way to isolate the signal.
+
+Finally, it is also important to note that two different kinds of direct searches can be defined, depending on the category of the scattering between the \ac{DM} and the nucleus: the \acf{SI} (proceeding through the scalar term) and \acf{SD} (proceeding through the axial term of the Lagragian) searches, since the interaction cross section $\sigma$ of Equation~\ref{equation:WIMPRate} is expected to be different for \ac{DM} particles having a spin 0 or not, as shown in Equation~\ref{eq:SISD}, where $F$ is a factor accounting for the dependence of the scattering on the energy. This means that results obtained either hypothesis can usually not be compared with each other.
+
+\begin{equation}
+\label{eq:SISD}
+\frac{d\sigma}{dE_{nr}} \propto \sigma_{SI} F_{SI}^2(E_{nr}) + \sigma_{SD} F_{SD}^2(E_{nr})
+\end{equation}
+
+As previously stated, many experiments are dedicated to the direct search of \ac{DM} particles, but in order to be isolate an evantual \ac{DM} signal, an environment with an ultra-low background is usually required, which can usually be reduced either by placing the detector underground (to reduce the contamination due to the cosmic rays), by increasing the statistics or by choosing carefully the active material of the detector (to reduce the internal background coming from the detector itself). The impact these kind of parameters have on the final limits can be seen in Figure~\ref{fig:ImpactLimit}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=7cm]{figs/ImpactLimits.png}
+\caption{Impact of different experimental parameters on the final limits depending on the cross section and \ac{WIMP} mass (on the lft) or sensitivity and exposure (on the right), wth respect to the expecd limits (black curve) \cite{DirectWays}.}
+\label{figure:ImpactLimit}
+\end{center}
+\end{figure}
+
+These detectors try to detect the scattering of an unknown exotic particle with an ordinary nucleus, which typically can give rise to different categories of signals. Some detectors try for example to detect the direct ionisation of the target atom, while others focus on the emission of light coming from the desexcitation of the scattered nucleus, and some even search for the heat produced by these collisions under the form of phonons in a crystal. All these different search strategies have been summarized schemtically in Figure~\ref{figure:DirectWays}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/DirectWays.png}
+\caption{Schematic representation of the three main strategies to detect directly the recoil between \ac{DM} particles and an ordinary nucleus \cite{DirectWays}.}
+\label{figure:DirectWays}
+\end{center}
+\end{figure}
+
+As of today, no direct experiment has been able to detect serious hints for the existence of \ac{DM}, and they have only been able to set limit on the scattering cross section depending on the models parameters, as seen on Figure~\ref{fig:DirectLimits} for multiple experiments at once. However, the DAMA experiment at the LNGS underground laboratory did find an interesting result by showing the hints of an annual modulation signal compatible to the expected one due to the WIMP wind, in the 2-6 keV energy range, as seen on Figure~\ref{fig:DAMA} \cite{DAMA}. Further investigations about this modulation are still ongoing today, since no systematic effect able to account for the observed modulation amplitude and to simultaneously satisfy all the requirements of the signature has been found so far.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=5cm]{figs/DAMA.png}
+\caption{Observed and expected annual modulation in single hits events in the 2-6 keV energy range by the DAMA experiment \cite{DAMA}.}
+\label{fig:DAMA}
+\end{center}
+\end{figure}
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/DirectLimits.png}
+\caption{Exclusion limits obtained by various direct detection experiments considering a \ac{SI} interaction cross section for low \ac{WIMP} (on the left) or high \ac{WIMP} masses (on the right) \cite{DirectWays}.}
+\label{fig:DirectLimits}
+\end{center}
+\end{figure}
 
 \subsection{Indirect searches}
 
@@ -525,7 +599,7 @@ It is much harder for \ac{DM} to produce high energy $\gamma$-rays and therefore
 \subsubsection*{Through neutrinos detection}
 Interacting only weakly, neutrinos are another reliable source of data in the Universe since they are not supposed to be altered when traveling large distances, even though detecting neutrinos is usually much harder than detecting $\gamma$-rays and usually involves huge thanks of water in which neutrinos can produce a Cherenkov effect that will eventually be detected.
 
-The most famous detector of this kind, the IceCube neutrino observatory, actually uses the ice of the South Pole instead of water to detect these particles with photodetectors, mainly because of the low interaction cross section of the neutrinos which then require the installation of a huge volume of material to increase the probability of interaction. Super-Kamiokande (Super-K), in Japan, is another large Cherenkov experiment dedicated to the detection of cosmic neutrinos.
+The most famous detector of this kind, the IceCube neutrino observatory, actually uses the ice of the South Pole instead of water to detect these particles with photodetectors, mainly because of the low interaction cross section of the neutrinos which then require the installation of a huge volume of material to increase the probability of interaction. Super-Kamiokande (Super-K), in Japan, is another large Cherenkov experiment dedicated to the detection of cosmic neutrinos. Both detectors are also largely involved as direct searches experiments, such they are also sensitive to the eventual recoil between \ac{DM} and ordinary matter nuclei.
 
 The problem with this kind of experiment is the difficulty of detection of neutrinos, along with the background levels from atmospheric neutrinos, as represented in Figure~\ref{fig:BkgNeutrino}, typically several order of magnitude larger than the signal. Several strategies therefore need to be put in place in order to reduce the background level in such experiments, such as the study of the directionnality of the source and an appropriate choice of angle of observation, since most of the contamination is coming from tau neutrinos, themselves originating from muon neutrinos oscillation, strongly suppressed at the zenith.
 
@@ -964,10 +1038,28 @@ Nature Physics 13, pp. 584-590 (2017)
 J. Phys. G46 (2019) no.10, 103003 [arXiv: 1903.03026]
 }
 
+\bibitem{EscapeVelocity}
+\href{https://arxiv.org/abs/astro-ph/0611671}{S.C. Martin et all.,
+"The RAVE survey: constraining the local Galactic escape speed",
+Mon.Not.Roy.Astron.Soc.379:755-772, 2007
+}
+
 \bibitem{AnnualModulation}
 \href{https://arxiv.org/abs/1209.3339}{K. Freese, M. Lisanti, C. Savage,
 "Annual Modulation of Dark Matter: A Review",
 [arXiv: 1209.3339v3]
+}
+
+\bibitem{DirectWays}
+\href{https://arxiv.org/abs/1509.08767}{T.M. Undagoitia and L. Rauch,
+"Dark matter direct-detection experiments",
+J. Phys. G43 (2016) no.1, 013001 [arXiv: 1509.08767]
+}
+
+\bibitem{DAMA}
+\href{https://arxiv.org/abs/0804.2741}{R. Bernabei et all.,
+"First results from DAMA/LIBRA and the combined results with DAMA/NaI",
+Eur.Phys.J.C56:333-355, 2008 [arXiv: 0804.2741]
 }
 
 \bibitem{IndirectSearches}

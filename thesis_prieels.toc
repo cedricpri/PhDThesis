@@ -10,49 +10,49 @@
 \contentsline {section}{\numberline {2.3}Dark matter candidates}{8}{section.2.3}
 \contentsline {section}{\numberline {2.4}Dark matter searches}{13}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Direct searches}{13}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}Indirect searches}{14}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Collider production}{18}{subsection.2.4.3}
-\contentsline {section}{\numberline {2.5}Production at the LHC}{18}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}The single top production channel}{18}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}The $t \mathaccentV {bar}016t$ production channel}{18}{subsection.2.5.2}
-\contentsline {section}{\numberline {2.6}Previous relevant results}{18}{section.2.6}
-\contentsline {chapter}{\numberline {3}The experimental device}{20}{chapter.3}
-\contentsline {section}{\numberline {3.1}The LHC accelerator}{20}{section.3.1}
-\contentsline {section}{\numberline {3.2}The CMS detector}{20}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Tracker}{20}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Electromagnetic calorimeter}{20}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Hadronic calorimeter}{20}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Muon system}{20}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Trigger}{20}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Data acquisition}{20}{subsection.3.2.6}
-\contentsline {chapter}{\numberline {4}Objects reconstruction}{21}{chapter.4}
-\contentsline {section}{\numberline {4.1}Particle Flow algorithm}{21}{section.4.1}
-\contentsline {section}{\numberline {4.2}Leptons reconstruction}{21}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Electrons}{21}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Muons}{21}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Jets reconstruction}{21}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}B-tagging}{21}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Missing transverse energy}{21}{section.4.4}
-\contentsline {chapter}{\numberline {5}Data, signals and backgrounds}{22}{chapter.5}
-\contentsline {section}{\numberline {5.1}Data samples}{22}{section.5.1}
-\contentsline {section}{\numberline {5.2}Signal samples}{22}{section.5.2}
-\contentsline {section}{\numberline {5.3}Background prediction}{22}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}The main background: $t \mathaccentV {bar}016t$}{22}{subsection.5.3.1}
-\contentsline {subsubsection}{$t \mathaccentV {bar}016t$ reconstruction}{22}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Drell-Yan estimation}{22}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Non prompt contamination}{22}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Smaller backgrounds}{22}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Weights and corrections applied}{22}{subsection.5.3.5}
-\contentsline {chapter}{\numberline {6}Event selection}{23}{chapter.6}
-\contentsline {section}{\numberline {6.1}Signal regions}{23}{section.6.1}
-\contentsline {section}{\numberline {6.2}Control regions}{23}{section.6.2}
-\contentsline {section}{\numberline {6.3}Background-signal discrimination}{23}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Discriminating variables}{23}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Neural network}{23}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Results and interpretations}{24}{chapter.7}
-\contentsline {section}{\numberline {7.1}Systematics and uncertainties}{24}{section.7.1}
-\contentsline {section}{\numberline {7.2}Results}{24}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusions}{25}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future prospects}{25}{section.8.1}
-\contentsline {chapter}{Appendices}{26}{section*.36}
-\contentsline {chapter}{Bibliography}{28}{chapter*.38}
+\contentsline {subsection}{\numberline {2.4.2}Indirect searches}{17}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Collider production}{20}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Production at the LHC}{20}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}The single top production channel}{20}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}The $t \mathaccentV {bar}016t$ production channel}{20}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}Previous relevant results}{20}{section.2.6}
+\contentsline {chapter}{\numberline {3}The experimental device}{23}{chapter.3}
+\contentsline {section}{\numberline {3.1}The LHC accelerator}{23}{section.3.1}
+\contentsline {section}{\numberline {3.2}The CMS detector}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Tracker}{23}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Electromagnetic calorimeter}{23}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Hadronic calorimeter}{23}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Muon system}{23}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Trigger}{23}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}Data acquisition}{23}{subsection.3.2.6}
+\contentsline {chapter}{\numberline {4}Objects reconstruction}{24}{chapter.4}
+\contentsline {section}{\numberline {4.1}Particle Flow algorithm}{24}{section.4.1}
+\contentsline {section}{\numberline {4.2}Leptons reconstruction}{24}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Electrons}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Muons}{24}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Jets reconstruction}{24}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}B-tagging}{24}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Missing transverse energy}{24}{section.4.4}
+\contentsline {chapter}{\numberline {5}Data, signals and backgrounds}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Data samples}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Signal samples}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}Background prediction}{25}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}The main background: $t \mathaccentV {bar}016t$}{25}{subsection.5.3.1}
+\contentsline {subsubsection}{$t \mathaccentV {bar}016t$ reconstruction}{25}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Drell-Yan estimation}{25}{subsection.5.3.2}
+\contentsline {subsection}{\numberline {5.3.3}Non prompt contamination}{25}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Smaller backgrounds}{25}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Weights and corrections applied}{25}{subsection.5.3.5}
+\contentsline {chapter}{\numberline {6}Event selection}{26}{chapter.6}
+\contentsline {section}{\numberline {6.1}Signal regions}{26}{section.6.1}
+\contentsline {section}{\numberline {6.2}Control regions}{26}{section.6.2}
+\contentsline {section}{\numberline {6.3}Background-signal discrimination}{26}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Discriminating variables}{26}{subsection.6.3.1}
+\contentsline {subsection}{\numberline {6.3.2}Neural network}{26}{subsection.6.3.2}
+\contentsline {chapter}{\numberline {7}Results and interpretations}{27}{chapter.7}
+\contentsline {section}{\numberline {7.1}Systematics and uncertainties}{27}{section.7.1}
+\contentsline {section}{\numberline {7.2}Results}{27}{section.7.2}
+\contentsline {chapter}{\numberline {8}Conclusions}{28}{chapter.8}
+\contentsline {section}{\numberline {8.1}Future prospects}{28}{section.8.1}
+\contentsline {chapter}{Appendices}{29}{section*.43}
+\contentsline {chapter}{Bibliography}{31}{chapter*.45}
