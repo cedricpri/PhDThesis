@@ -1,56 +1,59 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [0][-]{chapter.2}{The Dark Matter case}{}% 2
-\BOOKMARK [1][-]{section.2.1}{At the origins of dark matter}{chapter.2}% 3
-\BOOKMARK [2][-]{subsection.2.1.1}{Zwicky and the virial theorem}{section.2.1}% 4
-\BOOKMARK [2][-]{subsection.2.1.2}{Spiral galaxies rotation curves}{section.2.1}% 5
-\BOOKMARK [2][-]{subsection.2.1.3}{Cosmic Microwave Background \(CMB\) anisotropies}{section.2.1}% 6
-\BOOKMARK [2][-]{subsection.2.1.4}{Gravitational lensing}{section.2.1}% 7
-\BOOKMARK [1][-]{section.2.2}{Dark matter properties}{chapter.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Dark matter candidates}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.4}{Dark matter searches}{chapter.2}% 10
-\BOOKMARK [2][-]{subsection.2.4.1}{Direct searches}{section.2.4}% 11
-\BOOKMARK [2][-]{subsection.2.4.2}{Indirect searches}{section.2.4}% 12
-\BOOKMARK [2][-]{subsection.2.4.3}{Collider production}{section.2.4}% 13
-\BOOKMARK [1][-]{section.2.5}{Production at the LHC}{chapter.2}% 14
-\BOOKMARK [2][-]{subsection.2.5.1}{The single top production channel}{section.2.5}% 15
-\BOOKMARK [2][-]{subsection.2.5.2}{The t \040production channel}{section.2.5}% 16
-\BOOKMARK [1][-]{section.2.6}{Previous relevant results}{chapter.2}% 17
-\BOOKMARK [0][-]{chapter.3}{The experimental device}{}% 18
-\BOOKMARK [1][-]{section.3.1}{The LHC accelerator}{chapter.3}% 19
-\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 20
-\BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 21
-\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic calorimeter}{section.3.2}% 22
-\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic calorimeter}{section.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.2.4}{Muon system}{section.3.2}% 24
-\BOOKMARK [2][-]{subsection.3.2.5}{Trigger}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.6}{Data acquisition}{section.3.2}% 26
-\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 27
-\BOOKMARK [1][-]{section.4.1}{Particle Flow algorithm}{chapter.4}% 28
-\BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 29
-\BOOKMARK [2][-]{subsection.4.2.1}{Electrons}{section.4.2}% 30
-\BOOKMARK [2][-]{subsection.4.2.2}{Muons}{section.4.2}% 31
-\BOOKMARK [1][-]{section.4.3}{Jets reconstruction}{chapter.4}% 32
-\BOOKMARK [2][-]{subsection.4.3.1}{B-tagging}{section.4.3}% 33
-\BOOKMARK [1][-]{section.4.4}{Missing transverse energy}{chapter.4}% 34
-\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 35
-\BOOKMARK [1][-]{section.5.1}{Data samples}{chapter.5}% 36
-\BOOKMARK [1][-]{section.5.2}{Signal samples}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.3}{Background prediction}{chapter.5}% 38
-\BOOKMARK [2][-]{subsection.5.3.1}{The main background: t }{section.5.3}% 39
-\BOOKMARK [2][-]{subsection.5.3.2}{Drell-Yan estimation}{section.5.3}% 40
-\BOOKMARK [2][-]{subsection.5.3.3}{Non prompt contamination}{section.5.3}% 41
-\BOOKMARK [2][-]{subsection.5.3.4}{Smaller backgrounds}{section.5.3}% 42
-\BOOKMARK [2][-]{subsection.5.3.5}{Weights and corrections applied}{section.5.3}% 43
-\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 44
-\BOOKMARK [1][-]{section.6.1}{Signal regions}{chapter.6}% 45
-\BOOKMARK [1][-]{section.6.2}{Control regions}{chapter.6}% 46
-\BOOKMARK [1][-]{section.6.3}{Background-signal discrimination}{chapter.6}% 47
-\BOOKMARK [2][-]{subsection.6.3.1}{Discriminating variables}{section.6.3}% 48
-\BOOKMARK [2][-]{subsection.6.3.2}{Neural network}{section.6.3}% 49
-\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 50
-\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 51
-\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 52
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 53
-\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 54
-\BOOKMARK [0][-]{section*.43}{Appendices}{}% 55
-\BOOKMARK [0][-]{chapter*.45}{Bibliography}{}% 56
+\BOOKMARK [1][-]{section.2.1}{The Standard Model \(SM\)}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{At the origins of dark matter}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Zwicky and the virial theorem}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Spiral galaxies rotation curves}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.3}{Cosmic Microwave Background \(CMB\) anisotropies}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.4}{Gravitational lensing}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Dark matter properties}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Dark matter candidates}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Dark matter searches}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{Direct searches}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Indirect searches}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.3}{Collider production}{section.2.5}% 14
+\BOOKMARK [1][-]{section.2.6}{DM production at the LHC}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.6.1}{The single top production channel}{section.2.6}% 16
+\BOOKMARK [2][-]{subsection.2.6.2}{The t \040production channel}{section.2.6}% 17
+\BOOKMARK [2][-]{subsection.2.6.3}{The dilepton final state}{section.2.6}% 18
+\BOOKMARK [1][-]{section.2.7}{Previous relevant results}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter.3}{The experimental device}{}% 20
+\BOOKMARK [1][-]{section.3.1}{The LHC accelerator}{chapter.3}% 21
+\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 22
+\BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic calorimeter}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic calorimeter}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.4}{Muon system}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.5}{Trigger}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.6}{Data acquisition}{section.3.2}% 28
+\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 29
+\BOOKMARK [1][-]{section.4.1}{Particle Flow algorithm}{chapter.4}% 30
+\BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 31
+\BOOKMARK [2][-]{subsection.4.2.1}{Electrons}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.2}{Muons}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{Jets reconstruction}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.3.1}{B-tagging}{section.4.3}% 35
+\BOOKMARK [1][-]{section.4.4}{Missing transverse energy}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.5}{Top reconstruction}{chapter.4}% 37
+\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 38
+\BOOKMARK [1][-]{section.5.1}{Data samples}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.2}{Signal samples}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.3}{Background prediction}{chapter.5}% 41
+\BOOKMARK [2][-]{subsection.5.3.1}{The main background: t }{section.5.3}% 42
+\BOOKMARK [2][-]{subsection.5.3.2}{Drell-Yan estimation}{section.5.3}% 43
+\BOOKMARK [2][-]{subsection.5.3.3}{Non prompt contamination}{section.5.3}% 44
+\BOOKMARK [2][-]{subsection.5.3.4}{Smaller backgrounds}{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.5}{Weights and corrections applied}{section.5.3}% 46
+\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 47
+\BOOKMARK [1][-]{section.6.1}{Signal regions}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{Control regions}{chapter.6}% 49
+\BOOKMARK [1][-]{section.6.3}{Background-signal discrimination}{chapter.6}% 50
+\BOOKMARK [2][-]{subsection.6.3.1}{Discriminating variables}{section.6.3}% 51
+\BOOKMARK [2][-]{subsection.6.3.2}{Neural network}{section.6.3}% 52
+\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 53
+\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 54
+\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 55
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 56
+\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 57
+\BOOKMARK [0][-]{section*.55}{Appendices}{}% 58
+\BOOKMARK [0][-]{chapter*.57}{Bibliography}{}% 59

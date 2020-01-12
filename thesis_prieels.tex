@@ -1,6 +1,16 @@
-%\documentclass[a4paper, 10pt, twoside, openright]{report}
-\documentclass[a4paper, 10pt]{report}
-\usepackage[top=2cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\documentclass[a4paper, 10pt, openright]{report}
+%\documentclass[a4paper, 10pt]{report}
+\usepackage[
+   a4paper,
+   twoside,
+   bindingoffset=1.2cm,
+   inner=2cm,
+   outer=2.5cm,
+   top=3cm,
+   bottom=3cm,
+   headsep=1.2cm
+]{geometry}
+
 \usepackage{graphicx}
 \usepackage{booktabs}
 \usepackage{url}
@@ -69,7 +79,7 @@
 	
 	%English title
 	\noindent\rule{15cm}{0.4pt}\par 
-	{\huge\bfseries Search for dark matter production in association with top quarks in the dilepton final state at $\sqrt{s} = $ 13 TeV\par}
+	{\huge\bfseries Search for dark matter production in association with top quarks in the dilepton final state at $\sqrt{s} = $ 13 TeV\par \vspace{10pt}}
 	\noindent\rule{15cm}{0.4pt}\par 
 	
 	{\vspace{20pt} \Large A thesis submitted in fulfillment of the requirements for the \par \LARGE \textbf{Degree of Doctor of Philosophy} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
@@ -78,20 +88,21 @@
 	{\Large Written by \\ \textbf{Cédric Prieëls}\par}
 	\vspace{1.0cm}
 	{\Large Under the supervision of \\ \textbf{Jónatan Piedra Gómez} \\
+	\vspace{-10pt}
 	\textbf{Pablo Martínez Ruiz del Árbol}\\}
 	\vspace{2cm}
-	{\Large June 2020}
+	{\Large Santander, June 2020}
 	\vfill
 
 \end{titlepage}
 
 %Empty page
 
-%\clearpage
-%\thispagestyle{empty}
-%\phantom{a}
-%\vfill
-%\newpage
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
 
 %Abstract and keywords
 
@@ -137,6 +148,11 @@
 \acro{IACT}[IACT]{Imaging Atmospheric Cherenkov Telescopes}
 \acro{CTA}[CTA]{Cherenkov Telescope Array}
 \acro{AMS}[AMS]{Alpha Magnetic Spectrometer}
+\acro{EFT}[EFT]{Effective Field Theory}
+\acro{ISR}[ISR]{Initial State Radiation}
+\acro{DMWG}[DMWG]{Dark Matter Working Group}
+\acro{MET}[MET]{Missing Transverse Energy}
+\acro{VBF}[VBF]{Vector Boson Fusion}
 
 \end{acronym}
 \newpage
@@ -192,9 +208,11 @@ Finally, a statistical interpretation of our data will be performed and differen
 
 \chapter{The Dark Matter case}
 
-In this chapter the case for \acf{DM} will first of all be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} briefly introduced previously will be presented in Section~\ref{section:DMCandidates}. The main ways we have to search for this new physics will then be shown in Section~\ref{section:DMSearches}. 
+In this chapter, some general explanations about \acf{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \acf{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} briefly introduced previously will be presented in Section~\ref{section:DMCandidates}. 
 
-Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion plots published over the course of the previous years by the ATLAS and CMS collaborations will be shown in Section~\ref{section:PreviousResults}.
+The main ways we have to search for this new exotic physics will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion plots published over the course of the previous years by the ATLAS and CMS collaborations will be shown in Section~\ref{section:PreviousResults}.
+
+\section{The \acf{SM}} \label{section:SM}
 
 \section{At the origins of dark matter} \label{section:DMOrigins}
 
@@ -466,7 +484,15 @@ The \ac{WIMP} are also interesting in the sense that introducing them in the ter
 
 \section{Dark matter searches} \label{section:DMSearches}
 
-As previously stated, several cosmological evidences allow us to introduce the concept of dark matter, but its properties such as its mass, coupling and interaction cross-section are difficult to study in this context. Several different ways can then be used in order to try and detect \ac{DM} particles in order to study them, strategies which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will be the focus of this work. Let's now discuss about these different detection strategies.
+As previously stated, several cosmological evidences allow us to introduce the concept of dark matter, but its properties such as its mass, coupling and interaction cross-section are difficult to study in this context. Several different ways can then be used in order to try and detect \ac{DM} particles in order to study them, as represented in Figure~\ref{fig:ThreeWays}, strategies which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation on the interaction between the dark and baryonic sector, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will actually be the main focus of this work. A discussion about these different detection strategies along wit the main results obtained by different experiments in each case will now be presented.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5.5cm, height=5cm]{figs/ThreeWays.png}
+\caption{Schematic view of the three main \ac{DM} detection strategies: direct, indirect and collider production searches \cite{ColliderSearches}.}
+\label{fig:ThreeWays}
+\end{center}
+\end{figure}
 
 \subsection{Direct searches} \label{subsection:DirectSearches}
 
@@ -619,7 +645,7 @@ Among the most famous detectors of this kind, we can quote PAMELA, a spatial tel
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=11cm, height=8cm]{figs/AMSData.png}
+\includegraphics[width=10cm, height=7cm]{figs/AMSData.png}
 \caption{Limits of the decay width of the interaction with respect to the \ac{DM} mass obtained by both IceCube and \ac{AMS} \cite{AMSData}.}
 \label{fig:AMSData}
 \end{center}
@@ -628,24 +654,172 @@ Among the most famous detectors of this kind, we can quote PAMELA, a spatial tel
 %In summary, indirect searches are extremely important searches towards an eventual detection of \ac{DM} particles. In this case, the annihilation and the decay of the \ac{DM} can be studied, while several decay modes are possible and several strategies can be employed. The most effective search strategy is through the study of $\gamma$-rays, even though this has the 
 
 \subsection{Collider production}
-\section{Production at the LHC} \label{section:ourChannel}
+
+In this particular kind of searches, we are particularly interested in the eventual direct production of \ac{DM} candidates following the collision between two highly energetic \ac{SM} particles, a perfectly viable scenario if we keep assuming that \ac{DM} should at least interact weakly with ordinary matter if we want to be able to produce or detect it in a laboratory.
+
+In this case, different models for the interaction between \ac{SM} and \ac{DM} can be considered, each with a different level of complexity and different possible applications:
+
+\begin{itemize}
+\item The \ac{EFT} approach is usually considered to be the easiest and most simplified one, even though it can still give us plenty of information about this kind of interactions. It relies on a strong assumption, assuming that the energy scale of the new exotic physics is much larger than the actual energy accessible with our experiment, since the momentum transfer of this interaction needs to be much smaller than the mediator mass for this simplified approach to be valid.
+
+According to this approach, represented in Figure~\ref{fig:EFT}, the interaction can be described using simplified operators (the most simple ones being either scalar $\bar \chi \chi \bar q q$, pseudoscalar $\bar \chi \gamma^5 \chi \bar q \gamma^5 q$, vector $\bar \chi \gamma^{\mu} \chi \bar q \gamma_\mu q$ or axial-vector $\bar \chi \gamma^\mu \gamma^5 \chi \bar q \gamma_\mu \gamma^5 q$) since, according to the assumption made, its mediator can usually be integrated out \cite{ColliderSearches}. 
+
+Despite of this strong assumption, this approach is actually quite useful anyway in the sense that it is able to provide us bounds on the new physics scale $\Lambda$, which can be related to the diferent couplings of the interaction as in Equation~\ref{eq:EnergyScale}, where $g_q$ and $g_\chi$ are the coupling between the mediator and the \ac{SM} or \ac{DM} particle, and $m_{\text{med}}$ is the mass of the mediator. 
+
+\begin{equation}
+\label{eq:EnergyScale}
+\frac{1}{\Lambda^2} = \frac{g_q g_\chi}{m_{\text{med}}}
+\end{equation}
+
+additionally, direct searches experiments typically also introduce this kind of assumptions to extract constraints from their measurements, making it straightforward to compare the results obtained in both approaches. However, the transfer of momentum in the direct searches experiments is usally of the order of a few keV as seen in Equation~\ref{eq:MomentumTransfer}, while in collider experiments such as the \ac{LHC} this is of the order of $\Theta$(GeV-TeV).
+
+\begin{equation}
+\label{eq:MomentumTransfer}
+E = \frac{m_\chi v_\chi^2}{2} \simeq 100 \text{ GeV} \cdot 10^{-6} \simeq 50 \text{ keV}
+\end{equation}
+
+This means that, especially due to the increasing center of mass energy given by the \ac{LHC} over the last few years, the basic \ac{EFT} assumption is usually not respected and gives information about an out of reach phase space region anyway, making its usefulness quite relative in most cases. This is why more complex models need to be developped as well, such as the simplified models now introduced.
+
+\item The simplified models attempt to solve the issue related to the approximation made by the \ac{EFT} approach, by increasing the level of details regarding the interaction between the dark and baryonic sectors. This is usually done by explicitely taking into account the mediator of the interaction, which can be considered of two different types in the context of this work: either scalar $\phi$ or pseudoscalar $a$ (both having a spin 0), described by the Lagragians in Equation~\ref{eq:MedLag}, considering the \ac{DM} candidate to be a Dirac fermion coupling to the \ac{SM} through the mediator considered and under the assumption of \acf{MFV}. In this equation, the sum runs over the three \ac{SM} families and the parameters $y_i^f = \sqrt{2} \frac{m_i^f}{v}$ are the Yukawa couplings, much larger for the top quarks because of their mass, which will allow us to simplify the following equations \cite{SimplifiedModels}.
+
+\begin{equation}
+\label{eq:MedLag}
+\begin{dcases}
+\mathcal{L}_{\text{fermion}, \phi} \propto - g_\chi \phi \bar \chi \chi - \frac{\phi}{\sqrt{2}} \sum_i \left (g_u y_i^u \bar u_i u_i + g_d y_i^d \bar d_i d_i + g_l y_i^l \bar l_i l_i \right ) \\
+\mathcal{L}_{\text{fermion}, a} \propto - i g_\chi a \bar \chi \gamma^5 \chi - \frac{i a}{\sqrt{2}} \sum_i \left (g_u y_i^u \bar u_i \gamma^5 u_i + g_d y_i^d \bar d_i \gamma^5 d_i + g_l y_i^l \bar l_i \gamma^5 l_i \right )
+\end{dcases}
+\end{equation}
+
+An important parameter in this case is the decay width of this mediator $\Gamma_{\text{med}}$, given by Equation~\ref{eq:WidthMed} for either a scalar mediator $\phi$ or Equation~\ref{eq:WidthMedPseudo} for a pseudoscalar mediator $a$, where the first term corresponds to the mediator decay to \ac{SM} particles, the second to its decay to \ac{DM} particles and the last term its possible decay to gluons. 
+
+\begin{equation}
+\label{eq:WidthMed}
+\begin{dcases}
+\Gamma_{\phi} = \sum_f N_C \frac{y_f^2 g_\nu^2 m_\phi}{16 \pi} \left (1- \frac{4 m_f^2}{m_\phi^2} \right )^{3/2} + \frac{g_\chi^2 m_\phi}{8 \pi} \left (1- \frac{4 m_f^2}{m_\phi^2} \right )^{3/2} + \frac{\alpha_S^2 g_\nu^2 m_\phi^3}{32 \pi^3 \nu^2} \left \lvert f_\phi \left (\frac{4m_t^2}{m_\phi^2} \right ) \right \rvert^2 \\
+f_\phi(\tau) = \tau \left (1 + (1 - \tau) \text{ arctan}^2 \left ( \frac{1}{\sqrt{\tau -1}} \right ) \right )
+\end{dcases}
+\end{equation}
+
+\begin{equation}
+\label{eq:WidthMedPseudo}
+\begin{dcases}
+\Gamma_{a} = \sum_f N_C \frac{y_f^2 g_\nu^2 m_a}{16 \pi} \left (1- \frac{4 m_f^2}{m_a^2} \right )^{1/2} + \frac{g_\chi^2 m_a}{8 \pi} \left (1- \frac{4 m_f^2}{m_a^2} \right )^{1/2} + \frac{\alpha_S^2 g_\nu^2 m_a^3}{32 \pi^3 \nu^2} \left \lvert f_a \left (\frac{4m_t^2}{m_a^2} \right ) \right \rvert^2 \\
+f_a(\tau)= \tau \text{ arctan}^2 \left (\frac{1}{\sqrt{\tau -1}} \right )
+\end{dcases}
+\end{equation}
+
+In the case of the simplified models, the minimal set of parameters describing the interaction is therefore $\{m_\chi, \text{ } m_{\text{med}}, \text{ } g_\chi, \text{ } g_q \}$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5.5cm, height=4cm]{figs/EFT.png}
+\caption{Schematic representation of a typical \ac{EFT} modelization of an \ac{LHC} event with an \ac{ISR} object used to trigger the event \cite{ColliderSearches}.}
+\label{fig:EFT}
+\end{center}
+\end{figure}
+
+\end{itemize}
+
+An additional categorization of the \ac{DM} production models can be done, by separating the so-called s-channel and t-channel models, as shown in Figure~\ref{fig:STChannels}. In the first case, the most commun one in collider searches, the mediator between the \ac{SM} and \ac{DM} is assumed to be a boson, and usually decays directly into a pair of \ac{DM} particles. On the other hand, in the t-channel models, the mediator couples to one quark and one \ac{DM} particle, with a colourd exchange particle required. These models are relatively new and few dark matter searches have been performed using them so far.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=9cm, height=4cm]{figs/STChannels.png}
+\caption{Schematic representation of a typical collider \ac{DM} production through s-channel and t-channel processes \cite{STChannels}.}
+\label{fig:STChannels}
+\end{center}
+\end{figure}
+
+In this work, simplified models with either scalar or pseudoscalar mediators will always be considered because of their relative simplicity and the lack of strong assumptions behind them. We will now study in particular the production and the search for \ac{DM} within the LHC.
+
+\section{\ac{DM} production at the \ac{LHC}} \label{section:ourChannel}
+
+The \acf{LHC}, colliding protons at a center of mass energy of 13 TeV, is actually a perfect machine to study such processes, because of the expected range of masses (100 GeV to 1 TeV) for the best \ac{DM} candidates, as discussed in Section~\ref{section:DMProperties}. However, since because of the weak interactions of such particles, they are not expected to interact at all with the detector, which will then basically search for missing transverse energy along with a \ac{SM} particle triggering the event.
+
+Several major categories of \ac{DM} searches exist at the \ac{LHC}, performed mainly by the \ac{CMS} and \ac{ATLAS} collaborations, depending on the strategy applied for such searches:
+
+\begin{itemize}
+\item First of all are the so-called \textbf{mono-X searches}, where X stands for a detectable \ac{SM} particle used to trigger the event while the \ac{DM} mediator usually decays into a pair of particles escaping the detector, leaving behind some \ac{MET}, a key variable to all these searches, as shown in Figure~\ref{fig:MonoX}. Depending on the nature of the X particle, several searches can be performed: we can for example mention the mono-$\gamma$ \cite{MonoGammaAtlas, MonoGammaCMS} or mono-jet \cite{MonoJetCMS, MonoJetCMS2} 13 TeV searches performed by the \ac{ATLAS} and \ac{CMS} collaborations.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4.5cm, height=4cm]{figs/MonoX.png}
+\caption{Schematic representation of a typical mono-X event, with an\ac{ISR} jet in this case going back-to-back with some \ac{MET} \cite{ColliderSearches}.}
+\label{fig:MonoX}
+\end{center}
+\end{figure}
+
+Additionally, if the \ac{DM} mass is high enough, a coupling to the Higgs boson is also possible, or an eventual decay of the Higgs itself to a couple of \ac{DM} particles $H \rightarrow \chi \bar \chi$ is kinematically not impossible. This channel, known as the mono-Higgs searches is sensitive to all the decays of the Higgs, even though the searches excluding most of the phase spaces are performed using the $H \rightarrow b \bar b$ and $H \rightarrow \gamma \gamma$ decay because of their branching ratios \cite{MonoHiggsAtlas, MonoHiggsCMS}. 
+
+\item Then. we can find the searches for \ac{DM} production in \textbf{association with heavy quark(s)}. This particular search for \ac{DM} produced in association with one or two quark pairs can be typically quoted within this category and will be detailed in the next section, but other analyses such as the one probing the $b \bar b$ + DM to its different final states depending on the decay of the bottom quark also belongs to this group, at 8 or 13 TeV \cite{PreviousDoubleTopAllLep8ATLAS, PreviousDoubleTopBottomAllLep13ATLAS}. 
+
+These searches have to combine the discriminant power of several variables to separate the signal from the backgrounds, since the \ac{MET} distribution on its own is usually not enough, but they present the advantage of being favoured by the higher Yukawa coupling to more massive particles implied by the \ac{MFV} assumption.
+\item \textbf{Dijet searches} are also an important part of the work being performed using the \ac{LHC} data, and actually provide the best exclusion limits for most the spin-1 mediated models considered (up to a few TeV for typical coupling choices) \cite{DijetAtlas, DijetCMS}. In this case, the sensitivity is obtained by searching for either narrow or large resonances on the exponentially falling QCD background, while the other searches were mostly dedicated in searching for bumps in the \ac{MET} spectrum.
+\item \textbf{Supersymmetric searches} can also be performed to search for \ac{DM}, SUSY which would solve the hierarchy problem while giving us perfect \ac{DM} candidates such as the neutralino $\chi$, the lightest stable supersymmetric particle, obtained in many of the MSSM theories, having an hypothetic mass below the TeV scale \cite{SUSYDM}.
+\item The \textbf{Higgs portal} to the dark sector is another interesting strategy. In some specific cases, when considering spin-0 mediated interactions between the dark and baryonic sectors, the Higgs could be considered as the mediator of the interaction as well, which only require a minimal modification of the \ac{SM} lagragian. It is then necessary to study the different Higgs production modes, such as the gluomn fusion and \ac{VBF} mechanisms, to search for an eventual invisible decay of the Higgs into a couple of \ac{DM} particles, assuming that its mass is lower than $\sim 62.5$ GeV, $m_H/2$ \cite{InvisibleHiggs}.
+\item Finally, and this is quite new, \textbf{long-lived searches} can also be performed. These are interested because they can extend the current searches performed to also consider the eventual creation of long-lived particles wich would decay a few centimeters further than the primary vertex of the proton-proton collision \cite{LLSearches}. Typical \ac{SM} signatures do not usually include such events, making this channel relatively background-free, even though the reconstruction of the different objects is much harder in this case.
+\end{itemize}
+
+All the results obtained the different searches performed by the \ac{CMS} collaboration using the full 2016 dataset can be summarized in Figure~\ref{fig:SummarySpin0} for spin-0 mediators and in Figure~\ref{fig:SummarySpin1} when considering spin-1 mediators. These results have also been compared to the results obtained by several direct detection experiments in Figure~\ref{fig:DDComparison}, considering both the \acf{SD} and \acf{SI} cases, as explained in Section~\ref{subsection:DirectSearches}.
+
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/SummaryScalar.png}
+\end{minipage}\qquad
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/SummaryPseudoScalar.png}
+\end{minipage}
+\caption{Observed and expected 95\% exclusion limits obtained by different searches of the \ac{CMS} collaboration as a function the spin-0 mediator, considering a scalar (on the left) and pseudoscalar (on the right) interaction.}
+\label{fig:SummarySpin0}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.45\textwidth}
+\includegraphics[width=8cm, height=5cm]{figs/SummaryAxialVector.png}
+\end{minipage}\qquad
+\begin{minipage}[b]{.45\textwidth}
+\includegraphics[width=8cm, height=5cm]{figs/SummaryVector.png}
+\end{minipage}
+\caption{Observed and expected 95\% exclusion limits obtained by different searches of the \ac{CMS} collaboration as a function the spin-1 mediator, considering an axial-vector (on the left) and axial (on the right) interaction.}
+\label{fig:SummarySpin1}
+\end{figure*}
+
+\begin{figure*}
+\centering
+\begin{minipage}[b]{.45\textwidth}
+\includegraphics[width=8cm, height=5cm]{figs/SDDD.png}
+\end{minipage}\qquad
+\begin{minipage}[b]{.45\textwidth}
+\includegraphics[width=8cm, height=5cm]{figs/SIDD.png}
+\end{minipage}
+\caption{\ac{CMS} 90\% exclusion limits compared to the most famous direct detection experiments for the \ac{SD} (on the left) and \ac{SI} (on the right) scenarios, obtained using similar couplings.}
+\label{fig:DDComparison}
+\end{figure*}
+
+This particular analysis and our signal of interest, the search for \ac{DM} production in addition with a single or a pair of top quarks falls into the second category and will now be detailed. It is already important to note that this analysis has been performed considering the \ac{DM} candiate to be a Dirac fermion with all the couplings equal and set to 1, as recommended by the \ac{DMWG} \cite{DMWG}.
+
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
 \subsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
+All masses considered
+
+\subsection{The dilepton final state} \label{subsection:diLeptonFS}
 \section{Previous relevant results} \label{section:PreviousResults}
 
-This analysis being performed at a center of mass energy $\sqrt{s} = 13$ TeV, only the most relevant results to this particular energy and previously obtained by both the CMS and ATLAS collaborations of CERN will be quoted here. 
+This analysis being performed at a center of mass energy $\sqrt{s} = 13$ TeV, only the most relevant results to this particular energy and previously obtained by both the \ac{CMS} and \ac{ATLAS} collaborations of \ac{CERN} will be quoted here. 
 
-First of all, the \textbf{ATLAS collaboration} published interesting results at this center of mass energy, considering an integrated luminosity of 13.3 fb${-1}$, and obtained the corresponding exclusion limits at the 95\% \ac{CL}, considering the $t \bar t$+DM model and both scalar and pseudoscalar spin-0 mediators for the interaction, as shown in Figure~\ref{fig:ATLAS13}. In this case, and for the couplings considered, an exclusion up to $\sim 375$ GeV has been achieved.
+First of all, the \textbf{\ac{ATLAS} collaboration} published interesting results at this center of mass energy, considering an integrated luminosity of 13.3 fb${-1}$, and obtained the corresponding exclusion limits at the 95\% \ac{CL}, considering the $t \bar t$+DM model and both scalar and pseudoscalar spin-0 mediators for the interaction, as shown in Figure~\ref{fig:ATLAS13}. In this case, and for the couplings considered, an exclusion up to $\sim 375$ GeV has been achieved.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=14cm, height=6cm]{figs/Atlasttbar13fb.png}
-\caption{Limits on the mass on the \ac{DM} and mediator masses obtained by ATLAS using 13.3 fb${-1}$ of 13 TeV data, considering both scalar (on the left) and pseudoscalar (on the right) mediators \cite{PreviousDoubleTopNoLep13ATLAS}.}
+\caption{Limits on the mass on the \ac{DM} and mediator masses obtained by \ac{ATLAS} using 13.3 fb${-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite{PreviousDoubleTopNoLep13ATLAS}.}
 \label{fig:ATLAS13}
 \end{center}
 \end{figure}
 
-Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been obtained by the ATLAS collaboration, as shown in Figure~\ref{fig:atlas36}. In this case, and for lower coupling values, an exclusion up to around 100 GeV has been obtained considering scalar and pseudoscalar mediators.
+Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been obtained by the \ac{ATLAS} collaboration, as shown in Figure~\ref{fig:atlas36}. In this case, and for lower coupling values, an exclusion up to around 100 GeV has been obtained considering scalar and pseudoscalar mediators.
 
 \begin{figure*}
 \centering
@@ -655,11 +829,11 @@ Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been
 \begin{minipage}[b]{.4\textwidth}
 \includegraphics[width=7cm, height=5.88cm]{figs/Atlas36b.png}
 \end{minipage}
-\caption{Exclusion limits at the 95\% \ac{CL} obtained by ATLAS considering both scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{PreviousDoubleTopBottomAllLep13ATLAS}}\label{fig:atlas36}
+\caption{Exclusion limits at the 95\% \ac{CL} obtained by ATLAS considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{PreviousDoubleTopBottomAllLep13ATLAS}}\label{fig:atlas36}
 \end{figure*}
 
 
-The \textbf{CMS collaboration} published in 2018 a similar analysis, but using only the $35.9$ fb$^{-1}$ of data collected d quring the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
+The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, but using only the $35.9$ fb$^{-1}$ of data collected during the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
 
 %\begin{figure}[htbp]
 %\begin{center}
@@ -671,7 +845,7 @@ The \textbf{CMS collaboration} published in 2018 a similar analysis, but using o
 
 Last year, a combination of the $t/\bar t$+DM and $t \bar t$+DM analyses has also been published \cite{PreviousSingleDoubleTopAllLep13CMS}, combining this time only the hadronic and semileptonic channels of both analyses. The limits obtained in this case are represented in Figure~\ref{figure:Combination2019}, where the limits obtained by each analysis on their own along with the results of the combination, leading to a factor 2 improvement of the results, have been represented. 
 
-This combination managed to exclude the production of scalar mediators up to 290 GeV and pseudoscalar mediators up to 300 GeV, at the 95\% \ac{CL} for the couplings considered. This combined analysis actually lead to the most stringent exclusion limits of the LHC on the production of \ac{DM} through these categories of spin-0 mediators.
+This combination managed to exclude the production of scalar mediators up to 290 GeV and pseudoscalar mediators up to 300 GeV, at the 95\% \ac{CL} for the couplings considered. This combined analysis actually lead to the most stringent exclusion limits of the \ac{LHC} on the production of \ac{DM} through these categories of spin-0 mediators.
 
 %\begin{figure}[htbp]
 %\begin{center}
@@ -699,13 +873,13 @@ This combination managed to exclude the production of scalar mediators up to 290
 \section{Jets reconstruction}
 \subsection{B-tagging}
 \section{Missing transverse energy}
+\section{Top reconstruction}
 
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 \section{Data samples}
 \section{Signal samples}
 \section{Background prediction}
 \subsection{The main background: $t \bar t$}
-\subsubsection{$t \bar t$ reconstruction}
 \subsection{Drell-Yan estimation}
 \subsection{Non prompt contamination}
 \subsection{Smaller backgrounds}
@@ -726,7 +900,7 @@ This combination managed to exclude the production of scalar mediators up to 290
 \section{Future prospects}
 
 \begin{appendices}
-  
+
 \end{appendices}
 
 %List of figures
@@ -1032,8 +1206,14 @@ Annual Review if Nuclear and Particle Science 65, 2015 [arXiv: 1602.00039]
 Nature Physics 13, pp. 584-590 (2017)
 }
 
+\bibitem{ColliderSearches}
+\href{https://arxiv.org/abs/1712.01391}{B. Penning,
+"The Pursuit of Dark Matter at Colliders - An Overview",
+2017 [arXiv: 1712.01391]
+}
+
 \bibitem{DirectSearches}
-\href{https://arxiv.org/abs/1903.03026}{M. Schumann
+\href{https://arxiv.org/abs/1903.03026}{M. Schumann,
 "Direct Detection of WIMP Dark Matter: Concepts and Status",
 J. Phys. G46 (2019) no.10, 103003 [arXiv: 1903.03026]
 }
@@ -1096,6 +1276,90 @@ JCAP 1004:017, 2010 [arXiv: 0912.3521]
 \href{https://arxiv.org/abs/1510.04032}{B. Lu and H. Zong,
 "Limits on the Dark Matter from AMS-02 antiproton and positron fraction data",
 Phys. Rev. D 93, 103517 (2016) [arXiv: 1510.04032]
+}
+
+\bibitem{SimplifiedModels}
+\href{https://arxiv.org/abs/1506.03116}{J. Abdallah et all.,
+"Simplified Models for Dark Matter Searches at the LHC",
+Phys. Dark Univ. 9-10 (2015) 8-23 [arXiv: 1506.03116]
+}
+
+\bibitem{STChannels}
+\href{https://arxiv.org/abs/1308.0592}{H. An, L. Wang, H. Zhang,
+"Dark matter with t-channel mediator: a simple step beyond contact interaction",
+Phys. Rev. D 89, 115014 (2014) [arXiv: 1308.0592]
+}
+
+\bibitem{MonoGammaAtlas}
+\href{https://arxiv.org/abs/1711.03301}{ATLAS Collaboration,
+"Search for dark matter and other new phenomena in events with an energetic jet and large missing transverse momentum using the ATLAS detector",
+JHEP 01 (2018) 126 [arXiv: 1711.03301]
+}
+
+\bibitem{MonoGammaCMS}
+\href{https://arxiv.org/abs/1706.03794}{CMS Collaboration,
+"Search for new physics in the monophoton final state in proton-proton collisions at $\sqrt{s} = 13$ TeV",
+J. High Energy Phys. 10 (2017) 073 [arXiv: 1706.03794]
+}
+
+\bibitem{MonoJetCMS}
+\href{https://arxiv.org/abs/1703.01651}{CMS Collaboration,
+"Search for dark matter produced with an energetic jet or a hadronically decaying W or Z boson at $\sqrt{s} = 13$ TeV",
+JHEP 07 (2017) 014 [arXiv: 1703.01651]
+}
+
+\bibitem{MonoJetCMS2}
+\href{https://arxiv.org/abs/1712.02345}{CMS Collaboration,
+"Search for new physics in final states with an energetic jet or a hadronically decaying W or Z boson and transverse momentum imbalance at $\sqrt{s} = 13$ TeV",
+Phys. Rev. D 97, 092005 (2018) [arXiv: 1712.02345]
+}
+
+\bibitem{MonoHiggsAtlas}
+\href{https://arxiv.org/abs/1706.03948}{ATLAS Collaboration,
+"Search for dark matter in association with a Higgs boson decaying to two photons at $\sqrt{s} = 13$ TeV with the ATLAS detector",
+Phys. Rev. D 96 (2017) 112004 [arXiv: 1706.03948]
+}
+
+\bibitem{MonoHiggsCMS}
+\href{https://arxiv.org/abs/1703.05236}{CMS Collaboration,
+"Search for associated production of dark matter with a Higgs boson decaying to $b \bar b$ or $\gamma \gamma$ at $\sqrt{s} = 13$ TeV",
+JHEP 10 (2017) 180 [arXiv: 1703.05236]
+}
+
+\bibitem{DijetAtlas}
+\href{https://arxiv.org/abs/1703.09127}{Atlas Collaboration,
+"Search for new phenomena in dijet events using 37 fb$^{?1}$ of pp collision data collected at $\sqrt{s} = 13$ TeV with the ATLAS detector",
+Phys. Rev. D 96, 052004 (2017) [arXiv: 1703.09127]
+}
+
+\bibitem{DijetCMS}
+\href{https://arxiv.org/abs/1806.00843}{CMS Collaboration,
+"Search for narrow and broad dijet resonances in proton-proton collisions at $\sqrt{s} = 13$ TeV and constraints on dark matter mediators and other new particles",
+JHEP 08 (2018) 130 [arXiv: 1806.00843]
+}
+
+\bibitem{SUSYDM}
+\href{https://arxiv.org/abs/1701.05259}{C. Munoz,
+"Models of Supersymmetry for Dark Matter",
+FTUAM 17/2, IFT-UAM/CSIC-17-005, 2017 [arXiv: 1701.05259]
+}
+
+\bibitem{InvisibleHiggs}
+\href{https://arxiv.org/abs/1610.09218}{CMS Collaboration,
+"Searches for invisible decays of the Higgs boson in pp collisions at $sqrt{s} =$ 7, 8, and 13 TeV",
+JHEP 02 (2017) 135 [arXiv: 1610.09218]
+}
+
+\bibitem{LLSearches}
+\href{https://arxiv.org/abs/1903.04497?}{J. Alimena et all.,
+"Searching for long-lived particles beyond the Standard Model at the Large Hadron Collider",
+2019 [arXiv: 1903.04497]
+}
+
+\bibitem{DMWG}
+\href{https://arxiv.org/abs/1703.05703}{A. Albert et all.,
+"Recommendations of the LHC Dark Matter Working Group: Comparing LHC searches for heavy mediators of dark matter production in visible and invisible decay channels",
+2017 [arXiv: 1703.05703]
 }
 
 \end{thebibliography}
