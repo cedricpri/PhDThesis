@@ -1,60 +1,60 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
-\contentsline {chapter}{\numberline {2}The Dark Matter case}{5}{chapter.2}
-\contentsline {section}{\numberline {2.1}The \acf {SM}}{5}{section.2.1}
-\contentsline {section}{\numberline {2.2}At the origins of dark matter}{5}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Zwicky and the virial theorem}{6}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Spiral galaxies rotation curves}{6}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}\acf {CMB} anisotropies}{7}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Gravitational lensing}{8}{subsection.2.2.4}
-\contentsline {section}{\numberline {2.3}Dark matter properties}{9}{section.2.3}
-\contentsline {section}{\numberline {2.4}Dark matter candidates}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}Dark matter searches}{15}{section.2.5}
-\contentsline {subsection}{\numberline {2.5.1}Direct searches}{16}{subsection.2.5.1}
-\contentsline {subsection}{\numberline {2.5.2}Indirect searches}{20}{subsection.2.5.2}
-\contentsline {subsection}{\numberline {2.5.3}Collider production}{23}{subsection.2.5.3}
-\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{26}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{29}{subsection.2.6.1}
-\contentsline {subsection}{\numberline {2.6.2}The $t \mathaccentV {bar}016t$ production channel}{29}{subsection.2.6.2}
-\contentsline {subsection}{\numberline {2.6.3}The dilepton final state}{29}{subsection.2.6.3}
-\contentsline {section}{\numberline {2.7}Previous relevant results}{29}{section.2.7}
-\contentsline {chapter}{\numberline {3}The experimental device}{33}{chapter.3}
-\contentsline {section}{\numberline {3.1}The LHC accelerator}{33}{section.3.1}
-\contentsline {section}{\numberline {3.2}The CMS detector}{33}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Tracker}{33}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Electromagnetic calorimeter}{33}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Hadronic calorimeter}{33}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Muon system}{33}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Trigger}{33}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}Data acquisition}{33}{subsection.3.2.6}
-\contentsline {chapter}{\numberline {4}Objects reconstruction}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}Particle Flow algorithm}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}Leptons reconstruction}{35}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Electrons}{35}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Muons}{35}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Jets reconstruction}{35}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}B-tagging}{35}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Missing transverse energy}{35}{section.4.4}
-\contentsline {section}{\numberline {4.5}Top reconstruction}{35}{section.4.5}
-\contentsline {chapter}{\numberline {5}Data, signals and backgrounds}{37}{chapter.5}
-\contentsline {section}{\numberline {5.1}Data samples}{37}{section.5.1}
-\contentsline {section}{\numberline {5.2}Signal samples}{37}{section.5.2}
-\contentsline {section}{\numberline {5.3}Background prediction}{37}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}The main background: $t \mathaccentV {bar}016t$}{37}{subsection.5.3.1}
-\contentsline {subsection}{\numberline {5.3.2}Drell-Yan estimation}{37}{subsection.5.3.2}
-\contentsline {subsection}{\numberline {5.3.3}Non prompt contamination}{37}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Smaller backgrounds}{37}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Weights and corrections applied}{37}{subsection.5.3.5}
-\contentsline {chapter}{\numberline {6}Event selection}{39}{chapter.6}
-\contentsline {section}{\numberline {6.1}Signal regions}{39}{section.6.1}
-\contentsline {section}{\numberline {6.2}Control regions}{39}{section.6.2}
-\contentsline {section}{\numberline {6.3}Background-signal discrimination}{39}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Discriminating variables}{39}{subsection.6.3.1}
-\contentsline {subsection}{\numberline {6.3.2}Neural network}{39}{subsection.6.3.2}
-\contentsline {chapter}{\numberline {7}Results and interpretations}{41}{chapter.7}
-\contentsline {section}{\numberline {7.1}Systematics and uncertainties}{41}{section.7.1}
-\contentsline {section}{\numberline {7.2}Results}{41}{section.7.2}
-\contentsline {chapter}{\numberline {8}Conclusions}{43}{chapter.8}
-\contentsline {section}{\numberline {8.1}Future prospects}{43}{section.8.1}
-\contentsline {chapter}{Appendices}{45}{section*.55}
-\contentsline {chapter}{Bibliography}{49}{chapter*.57}
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
+\contentsline {chapter}{\numberline {2}The Dark Matter case}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}The \acf {SM}}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}At the origins of dark matter}{5}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Zwicky and the virial theorem}{6}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Spiral galaxies rotation curves}{6}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}\acf {CMB} anisotropies}{7}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Gravitational lensing}{9}{subsection.2.2.4}% 
+\contentsline {section}{\numberline {2.3}Dark matter properties}{10}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Dark matter candidates}{12}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Dark matter searches}{18}{section.2.5}% 
+\contentsline {subsection}{\numberline {2.5.1}Direct searches}{19}{subsection.2.5.1}% 
+\contentsline {subsection}{\numberline {2.5.2}Indirect searches}{23}{subsection.2.5.2}% 
+\contentsline {subsection}{\numberline {2.5.3}Collider production}{27}{subsection.2.5.3}% 
+\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{30}{section.2.6}% 
+\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{33}{subsection.2.6.1}% 
+\contentsline {subsection}{\numberline {2.6.2}The $t \mathaccentV {bar}016t$ production channel}{33}{subsection.2.6.2}% 
+\contentsline {subsection}{\numberline {2.6.3}The dilepton final state}{33}{subsection.2.6.3}% 
+\contentsline {section}{\numberline {2.7}Previous relevant results}{33}{section.2.7}% 
+\contentsline {chapter}{\numberline {3}The experimental device}{37}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}The LHC accelerator}{37}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}The CMS detector}{37}{section.3.2}% 
+\contentsline {subsection}{\numberline {3.2.1}Tracker}{37}{subsection.3.2.1}% 
+\contentsline {subsection}{\numberline {3.2.2}Electromagnetic calorimeter}{37}{subsection.3.2.2}% 
+\contentsline {subsection}{\numberline {3.2.3}Hadronic calorimeter}{37}{subsection.3.2.3}% 
+\contentsline {subsection}{\numberline {3.2.4}Muon system}{37}{subsection.3.2.4}% 
+\contentsline {subsection}{\numberline {3.2.5}Trigger}{37}{subsection.3.2.5}% 
+\contentsline {subsection}{\numberline {3.2.6}Data acquisition}{37}{subsection.3.2.6}% 
+\contentsline {chapter}{\numberline {4}Objects reconstruction}{39}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Particle Flow algorithm}{39}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Leptons reconstruction}{39}{section.4.2}% 
+\contentsline {subsection}{\numberline {4.2.1}Electrons}{39}{subsection.4.2.1}% 
+\contentsline {subsection}{\numberline {4.2.2}Muons}{39}{subsection.4.2.2}% 
+\contentsline {section}{\numberline {4.3}Jets reconstruction}{39}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}B-tagging}{39}{subsection.4.3.1}% 
+\contentsline {section}{\numberline {4.4}Missing transverse energy}{39}{section.4.4}% 
+\contentsline {section}{\numberline {4.5}Top reconstruction}{39}{section.4.5}% 
+\contentsline {chapter}{\numberline {5}Data, signals and backgrounds}{41}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Data samples}{41}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Signal samples}{41}{section.5.2}% 
+\contentsline {section}{\numberline {5.3}Background prediction}{41}{section.5.3}% 
+\contentsline {subsection}{\numberline {5.3.1}The main background: $t \mathaccentV {bar}016t$}{41}{subsection.5.3.1}% 
+\contentsline {subsection}{\numberline {5.3.2}Drell-Yan estimation}{41}{subsection.5.3.2}% 
+\contentsline {subsection}{\numberline {5.3.3}Non prompt contamination}{41}{subsection.5.3.3}% 
+\contentsline {subsection}{\numberline {5.3.4}Smaller backgrounds}{41}{subsection.5.3.4}% 
+\contentsline {subsection}{\numberline {5.3.5}Weights and corrections applied}{41}{subsection.5.3.5}% 
+\contentsline {chapter}{\numberline {6}Event selection}{43}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Signal regions}{43}{section.6.1}% 
+\contentsline {section}{\numberline {6.2}Control regions}{43}{section.6.2}% 
+\contentsline {section}{\numberline {6.3}Background-signal discrimination}{43}{section.6.3}% 
+\contentsline {subsection}{\numberline {6.3.1}Discriminating variables}{43}{subsection.6.3.1}% 
+\contentsline {subsection}{\numberline {6.3.2}Neural network}{43}{subsection.6.3.2}% 
+\contentsline {chapter}{\numberline {7}Results and interpretations}{45}{chapter.7}% 
+\contentsline {section}{\numberline {7.1}Systematics and uncertainties}{45}{section.7.1}% 
+\contentsline {section}{\numberline {7.2}Results}{45}{section.7.2}% 
+\contentsline {chapter}{\numberline {8}Conclusions}{47}{chapter.8}% 
+\contentsline {section}{\numberline {8.1}Future prospects}{47}{section.8.1}% 
+\contentsline {chapter}{Appendices}{49}{section*.65}% 
+\contentsline {chapter}{Bibliography}{55}{chapter*.67}% 
