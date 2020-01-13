@@ -42,6 +42,7 @@
 \usepackage{emptypage}
 \usepackage{fancyhdr}
 \usepackage{subfigure}
+\usepackage{float}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -84,13 +85,13 @@
 	
 	{\vspace{20pt} \Large A thesis submitted in fulfillment of the requirements for the \par \LARGE \textbf{Degree of Doctor of Philosophy} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
 	
-	\vspace{1.2cm}
-	{\Large Written by \\ \textbf{C?dric Prie?ls}\par}
-	\vspace{1.0cm}
-	{\Large Under the supervision of \\ \textbf{J?natan Piedra G?mez} \\
+	\vspace{0.8cm}
+	{\Large Written by \\ \textbf{C\'{e}dric Prie\"{e}ls}\par}
+	\vspace{0.5cm}
+	{\Large Under the supervision of \\ \textbf{J\'{o}natan Piedra G\'{o}mez} \\
 	\vspace{-10pt}
-	\textbf{Pablo Mart?nez Ruiz del ?rbol}\\}
-	\vspace{2cm}
+	\textbf{Pablo Mart\'{i}nez Ruiz del \'{A}rbol}\\}
+	\vspace{1.4cm}
 	{\Large Santander, June 2020}
 	\vfill
 
@@ -128,6 +129,7 @@
 \acro{CMS}[CMS]{Compact Muon Solenoid}
 \acro{ATLAS}[ATLAS]{A Toroidal LHC ApparatuS}
 \acro{CERN}[CERN]{European Council for Nuclear Research}
+\acro{QFT}[QFT]{Quantum Field Theory}
 \acro{CMB}[CMB]{Cosmic Microwave Background}
 \acro{ML}[ML]{Machine Learning}
 \acro{MFV}[MFV]{Minimal Flavour Violation}
@@ -153,6 +155,7 @@
 \acro{DMWG}[DMWG]{Dark Matter Working Group}
 \acro{MET}[MET]{Missing Transverse Energy}
 \acro{VBF}[VBF]{Vector Boson Fusion}
+\acro{BR}[BR]{Branching Ratio}
 
 \end{acronym}
 \newpage
@@ -171,31 +174,29 @@
 
 \chapter{Introduction}
 
-The \ac{SM} of particle physics is nowadays the most accepted mathematical model used to describe the elementary particles and three of the four fundamental forces of nature (electromagnetic, weak and strong interactions). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself in 2012 \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} and \ac{ATLAS} experiments of the \ac{CERN}. 
+The \ac{SM} of particle physics introduced in Section~\ref{section:SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the four fundamental forces of nature (electromagnetic, weak and strong interactions). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} and \ac{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
 
 However, as accurate as it seems to be, this theory is known to have several shortcomings which require further investigation. Eventual exotic particles which do not fit in the current model could be the sign of new physics and have therefore been extensively searched for over the course of the last decades in order to enhance our understanding of the Universe and all its constituents.
 
-In this context, the first serious \ac{DM} hypothesis was introduced in the 1970s because of gravitational anomalies observed by several astrophysicists, as a way to explain the apparent non-luminous missing mass in the Universe \cite{FirstEvidence}. Indeed, the visible mass in most galaxies appears to be way too low to explain several astrophysical processes, such as the rotation curves of the galaxies \cite{RotationCurves}, which seems to be incompatible with the well established laws of gravitation. Some additional measurements of the gravitational lensing (in the Bullet Cluster, for example \cite{BulletCluster}) and the anisotropies observed in the \ac{CMB} \cite{CMBAnisotropies} can be quoted among other evidences for the existence of \ac{DM}, as explained in details in Section~\ref{section:DMOrigins}.
+In this context, the first serious \ac{DM} hypothesis was introduced in the 1970s because of gravitational anomalies observed by several astrophysicists, as a way to explain the apparent non-luminous missing mass in the Universe \cite{FirstEvidence}. Indeed, the visible mass in most galaxies appears to be way too low to explain several astrophysical processes, such as the rotation curves of the galaxies \cite{RotationCurves}, which seems to be incompatible with the well established laws of gravitation. Some additional measurements of the gravitational lensing (in the Bullet Cluster, for example \cite{BulletCluster}) and the anisotropies observed in the \ac{CMB} \cite{CMBAnisotropies} are other evidences for the existence of \ac{DM}, as explained in Section~\ref{section:DMOrigins}.
 
-As far as we currently know from cosmological measurements, ordinary baryonic matter only constitutes around 5\% of the Universe, while  \ac{DM} represents around 26\% of the energy density of the Universe (the rest is being considered as dark energy) \cite{Repartition}. Understanding the nature and properties of this new kind of exotic matter is therefore crucial to try and understand the physics in the Universe. 
+As far as we currently know from cosmological measurements, ordinary baryonic matter only constitutes around 5\% of the Universe, while  \ac{DM} represents around 26\% of the energy density of the Universe (the rest is being considered as dark energy) \cite{Repartition}. Understanding the nature and properties of this new kind of exotic matter is therefore crucial to try and understand the physics in the Universe, with many large experiments around the world currently involved in such searches. 
 
-Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effects. While its mass, spin, nature and basic properties are still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of \ac{BSM} physics. 
+Nowadays, the existence of \ac{DM} is well established in the physics community, even though it has never been observed directly, since our only evidences so far for its existence come from its large-scale gravitational effects. While its mass, spin, nature and basic properties are still unknown and extensively studied, one of the best \ac{DM} candidate is the so-called \ac{WIMP}, predicted to interact both gravitationnaly and weakly with \ac{SM} particles. This would allow direct and indirect direction of such candidates, used as the driving process of many of experiments over the last decades, trying to find the hint of a possible interaction between standard baryonic particles and eventual \ac{DM} particles, or even between several \ac{DM} particles themselves. Dark matter production through the use of a particle accelerator colliding \ac{SM} particles together, such as the \ac{LHC}, is also a possibility, and will be consider as the main channel towards the eventual detection of this exotic matter throughout this work. The production through colliders is actually able to provide constraints on low dark matter masses as well, in a region where both the direct and indirect searches are less efficient, which makes the \ac{LHC} a perfect tool to study this kind of \ac{BSM} physics. These searches will be summarized in Section~\ref{section:DMSearches}.
 
-However, observing \ac{DM} is still extremely difficult, mainly because it barely interacts with ordinary baryonic matter, except through gravity (we have to assume that it does interact with \ac{SM} at least weakly for the sake of this work though, as we would not be able to discover it as an individual particle if it were not the case). This means that nowadays, all the experiments searching for \ac{DM} have only been able to put constraints on the \ac{DM} particle mass and on the interaction cross sections between the dark and standard sectors. Actually, even if the collisions between protons produced by the LHC do have an sufficient amount of energy to produce this kind of particles, we would not expect them to interact with our detector, meaning that a direct detection is out of our hands for now. The eventual presence of such matter has to be inferred from the study of the interaction between \ac{SM} particles and \ac{CMS} itself, since a typical \ac{DM}-like event consists of at least one energetic \ac{SM} particle produced in association with a large imbalance in the transverse momentum due to the presence of an eventual \ac{DM} candidate that was able to escape our detection. %This kind of collider searches can be grouped under the name of \textit{mono-X} searches, where the \textit{X} stands for any kind of \ac{SM} particle (a jet, a lepton or a photon for example). 
+However, observing \ac{DM} is still extremely difficult, mainly because it barely interacts with ordinary baryonic matter, except through gravity (we have to assume that it does interact with \ac{SM} at least weakly for the sake of this work though, as we would not be able to discover it as an individual particle if it were not the case). This means that nowadays, all the experiments searching for \ac{DM} have only been able to put constraints on the \ac{DM} particle mass and on the interaction cross sections between the dark and standard sectors. Actually, even if the collisions between protons produced by the LHC do have a sufficient amount of energy to produce this kind of particles, we would not expect them to interact with our detector, making their detection even harder. The eventual presence of such matter has to be inferred from the study of the interaction between \ac{SM} particles and \ac{CMS} itself, since a typical \ac{DM}-like event consists of at least one energetic \ac{SM} particle produced in association with a large imbalance in the transverse momentum due to the presence of an eventual \ac{DM} candidate that was able to escape our detection. %This kind of collider searches can be grouped under the name of \textit{mono-X} searches, where the \textit{X} stands for any kind of \ac{SM} particle (a jet, a lepton or a photon for example). 
 
-In the context of this work, \ac{DM} is searched for in association with one or two top quarks which play the role of the \ac{SM} particle allowing us to trigger the event. This is indeed a perfect channel for this kind of searches if we assume that the interaction between the dark and standard sectors respect the principle of \ac{MFV}, which can be consistently defined independently of the structure of the new physics model \cite{MFVYukawa}. In this case, this interaction should follow the same Higgs-like Yukawa coupling structure as the usual \ac{SM} baryonic particles. This is an important consequence, since it will be shown in Section~\ref{section:DMProperties} that this coupling is actually stronger with more massive particles: the heavier the \ac{SM} particle considered is, the easier it is for this particle to couple with the dark sector. This makes the top quark, the most massive of all the fundamental particles observed by far, is therefore an excellent object to study in this context.
+In the context of this work, \ac{DM} is searched for in association with one or two top quarks which play the role of the \ac{SM} particle allowing us to trigger the event. This is indeed a perfect channel for this kind of searches if we assume that the interaction between the dark and standard sectors respect the principle of \ac{MFV}, which can be consistently defined independently of the structure of the new physics model \cite{MFVYukawa}. In this case, this interaction should follow the same Higgs-like Yukawa coupling structure as the usual \ac{SM} baryonic particles, which actually depend on the mass: the heavier the \ac{SM} particle considered is, the easier it is for it to couple with the dark sector. This makes the top quark, the most massive of all the fundamental particles observed by far, an excellent object to study in this context.
 
-However, this also means that its phenomenology is mostly driven by its large mass and that it decays before hadronization can occur, usually into a W boson and and a bottom quark ($\sim$96\% branching ratio \cite{PDG}). The final state of the process we are interested in is then be made of some b jets, leptons and/or quarks and is be categorized depending on this number of b jets and on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly since this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}. Additionally, leptons are by reconstruction much cleaner than jets. This means that their identification and momentum calculation is easier to perform, and that the uncertainties associated to these measurements will be smaller.
+However, this also means that the phenomenology of this quark is mostly driven by its large mass and that it decays before hadronization can occur, usually into a W boson and and a bottom quark. The final state of the process we are interested in is then be made of some b jets, leptons and/or quarks and is categorized depending on this number of b-tagged jets and on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly since this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}. Additionally, leptons are by reconstruction much cleaner than jets: their identification and momentum calculation is easier to perform, and the uncertainties associated to these measurements will be smaller.
 
-The LHC has now been running for 10 years, and several similar searches have already been carried out and published in the past by the CMS and ATLAS collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the CMS (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and ATLAS collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. At 13 TeV, the ATLAS collaboration published on one hand several studies, considering different final states and different luminosities (13.3 fb$^{-1}$ and 36.1 fb$^{-1}$) \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. 
+The \ac{LHC} has now been running for 10 years, and several similar searches have already been carried out and published in the past by the \ac{CMS} and \ac{ATLAS} collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the \ac{CMS} (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and \ac{ATLAS} collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. Then, at 13 TeV, the \ac{ATLAS} collaboration published on one hand several studies, considering different final states and different luminosities (13.3 fb$^{-1}$ and 36.1 fb$^{-1}$) \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the \ac{CMS} collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis while considering the full Run II dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
-On the other hand, the CMS collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis that was performed while considering a larger dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
+After a general introduction about \ac{DM} in general in Chapter~\ref{chapter:Case}, the experimental device will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
 
-After a general introduction about \ac{DM} in general, the experimental device will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
+Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to perform this task. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in Section~\ref{section:Discrimination}.
 
-Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in Section~\ref{section:Discrimination}.
-
-Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in the Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional future prospects will then finally be presented in Chapter~\ref{chapter:Conclusion}.
+Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional future prospects will then finally be presented in Chapter~\ref{chapter:Conclusion}.
 \\
 
 %Empty page
@@ -206,13 +207,36 @@ Finally, a statistical interpretation of our data will be performed and differen
 %\vfill
 %\newpage
 
-\chapter{The Dark Matter case}
+\chapter{The Dark Matter case}\label{chapter:Case}
 
 In this chapter, some general explanations about \acf{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \acf{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} briefly introduced previously will be presented in Section~\ref{section:DMCandidates}. 
 
 The main ways we have to search for this new exotic physics will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion plots published over the course of the previous years by the ATLAS and CMS collaborations will be shown in Section~\ref{section:PreviousResults}.
 
 \section{The \acf{SM}} \label{section:SM}
+
+The \acf{SM} of particle physics is a relativistic \ac{QFT} theory which is able to summarize our current understanding of all the particles surrounding us and to describe three out of the four main interactions between these particles (mainly the weak, strong and electromagnetic forces). 
+
+If the neutrinos are considered to be normal Dirac fermions (and the question wether or not they could actually be Majorana particles is still well under discussion \cite{Majorana}), then the \ac{SM} contains 26 free parameters, mainly the masses of the 12 predicted fermions, as shown in Figure~\ref{figure:SMFermions} along with the couplings describing the strengths of the three interactions, two parameters describings the Higgs potential, eight mixing angles and, maybe, the phase of the eventual strong CP violation that we will mention in Section~\ref{section:DMCandidates}. This is a quite high number of free parameters, and the value of most of them has now been derived experimentally, to match the observations made over the last decades.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=6cm]{figs/SMFermions.png}
+\caption{Representation of the 12 fermions of the \ac{SM} \cite{SMFermions}.}
+\label{figure:SMFermions}
+\end{center}
+\end{figure}
+
+The \ac{SM} Lagrangian density in a differential volume element $\mathcal{L}$, accounting for the kinetic and potential energy of a system, takes the (very) simplified form given by Equation~\ref{eq:SMLag}, where the $F_{\mu \nu}$ is the field strength tensor accounting for the different interactions, $\psi$ is the interacting field describing quarks and letpons and $\phi$ is the Brount-Englert-Higgs field while $y_{ij}$ are the Yuwaka couplings to this field, which depend on the mass of the particle considered and which will be described later on.
+
+\begin{equation}
+\mathcal{L} = - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i \bar{\psi} \cancel{D} \psi + \bar{\psi}_i y_{ij} \psi_j \phi + |D_\mu \phi|^2 - V(\phi)
+\label{eq:SMLag}
+\end{equation}
+
+A complete description of this model is unfortunately out of the scope of this work but it is important to note that the \ac{SM}, altough mostly experimental, is still working extremely well today. Indeed, it managed to make a lot of predicitions over the years, which is the best you can obtain from a mathematical model, and most of its predictions revealed themselves to be true (we can quote for example that it successfully predicted the existence of the gluons, the top quarks, along with the W, Z and Higgs bosons \cite{SMPredictions}).
+
+However, even though it now appears to be complete since all its predictions have been discovered, we know that the \ac{SM} is not the final theory of particle physics since it is not able to explain all the observations which have been made. There are still today some open questions and many \acf{BSM} theories trying to explain such observations which do not fit inside the \ac{SM}, such as an eventual inclusion of the gravitational field within the \ac{SM}. We can quote for example as successfull \ac{BSM} theories the possible existence of the supersymmetry SUSY, telling us that each particle should have a superpartner whose spin differs by 1/2 or the possible existence of \acf{DM} particles, which will be the main subject of the discussion of the following sections.
 
 \section{At the origins of dark matter} \label{section:DMOrigins}
 
@@ -363,7 +387,7 @@ In any case, \ac{DM} is not expected to have a mass lower than 300 eV since at t
 \end{center}
 \end{figure}
 
-%\begin{figure}[htbp]
+\begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=10cm, height=6cm]{figs/FreezeOut.png}
 \caption{Schematic representation of the freeze-out process, representing the abundance of a 500 GeV \ac{DM} as $Y_\chi$ with respect to the time and the impact of increasing cross-section values on this freeze-out abundance \cite{FreezeOut2}.}
@@ -525,7 +549,7 @@ The maximal velocity $V_{\text{esc}}$ used as superior bound of the integral in 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=12cm, height=8cm]{figs/AnnualModulation.png}
+\includegraphics[width=8cm, height=6cm]{figs/AnnualModulation.png}
 \caption{Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite{AnnualModulation}.}
 \label{figure:AxionSummary}
 \end{center}
@@ -720,7 +744,7 @@ In the case of the simplified models, the minimal set of parameters describing t
 
 \end{itemize}
 
-An additional categorization of the \ac{DM} production models can be done, by separating the so-called s-channel and t-channel models, as shown in Figure~\ref{fig:STChannels}. In the first case, the most commun one in collider searches, the mediator between the \ac{SM} and \ac{DM} is assumed to be a boson, and usually decays directly into a pair of \ac{DM} particles. On the other hand, in the t-channel models, the mediator couples to one quark and one \ac{DM} particle, with a colourd exchange particle required. These models are relatively new and few dark matter searches have been performed using them so far.
+An additional categorization of the \ac{DM} production models can be done, by separating the so-called s-channel and t-channel models, as shown in Figure~\ref{fig:STChannels}. In the first case, the most commun one in collider searches, the mediator between the \ac{SM} and \ac{DM} is assumed to be a boson, and usually decays directly into a pair of \ac{DM} particles. On the other hand, in the t-channel models, the mediator couples to one quark and one \ac{DM} particle, with a colourd exchange particle required
 
 \begin{figure}[htbp]
 \begin{center}
@@ -801,10 +825,46 @@ All the results obtained the different searches performed by the \ac{CMS} collab
 This particular analysis and our signal of interest, the search for \ac{DM} production in addition with a single or a pair of top quarks falls into the second category and will now be detailed. It is already important to note that this analysis has been performed considering the \ac{DM} candiate to be a Dirac fermion with all the couplings equal and set to 1, as recommended by the \ac{DMWG} \cite{DMWG}.
 
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
+
+The first kind of signal considered in this analysis is the production of \ac{DM} in association with a single top quark, known as $t/\bar t$+DM analysis. This process is expected to be mediated by a spin-0 mediator, either scalar or pseudoscalar, and is associated with a light quark and a W boson (the so-called mono-top analysis is dealing with the case where a single top is created without any additional particle). Three different feynman diagrams can be associated to this particular analysis depending on the model considered, as shown in Figure~\ref{fig:singleTopFeynman}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.3\textwidth}
+\includegraphics[width=4.8cm, height=3.5cm]{figs/tDMa.png}
+\end{minipage}\qquad
+\begin{minipage}[b]{.3\textwidth}
+\includegraphics[width=4.8cm, height=3.5cm]{figs/tDMb.png}
+\end{minipage}
+\begin{minipage}[b]{.28\textwidth}
+\includegraphics[width=4.8cm, height=3.5cm]{figs/tDMc.png}
+\end{minipage}
+\caption{Feynman diagrams involving the production of \ac{DM} with a single top quark with its associated t-channel W boson (on the left), or tW (on the center and on the right) production.}
+\label{fig:singleTopFeynman}
+\end{figure}
+
+As discussed previously, the top quark will be dynamically favored due to its high and therefore high Yukawa coupling, but however this has a negative effect as well, since the lifetime of this quark is extremely low, of the order of $10^{-15}$s \cite{PDG}. This means that this particle usually decays before being hable to form hadron and before reaching the \ac{CMS} detector, so we can only detect the products of its decay, no the top quark itself. In almost 100\% of the cases, the top actually decays into a bottom quark and a W boson, which decays itself before being detected into quarks and/or leptons. Event hough this will de detailed in Chapter~\ref{chapter:Selection}, we can already conclude that the typical final state of such signature is therefore made out of \ac{MET} coming from the \ac{DM}, one b-tagged jet along with one or two W bosons, seen as a combinaison of jets and leptons, depending on the channel considered.
+
 \subsection{The $t \bar t$ production channel} \label{subsection:ttChannel}
-All masses considered
+
+The $t \bar t$+DM analysis is really similar, except that in this case, we have two tops in the final state, as represented in Figure~\ref{fig:ttDMFeynman}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=4.5cm, height=3.5cm]{figs/ttDM.png}
+\caption{Schematic representation of a typical $t \bar t$+DM event.}
+\label{fig:ttDMFeynman}
+\end{center}
+\end{figure}
+
+The final state expected by such an event is therefore made of two b-tagged jets, along with two W bosons and some \ac{MET} coming from the pair of \ac{DM} particles as well.
 
 \subsection{The dilepton final state} \label{subsection:diLeptonFS}
+
+As previously explained, most of the models considered will produce exactly two W bosons, which are not stable long enough and therefore decay before reaching the detector, meaning that we cannot directly detect such bosons. However, we can detect the results of the decays of these W, since they can decay either to hadrons ($67.6 \pm 0.27 \%$ branching ratio) or two a lepton and a neutrino, giving us an additional constribution of \ac{MET} ($10.8 \pm 0.09 \%$) \cite{PDG}.
+
+This means that this kind of analyses featuring two W bosons in the final state can focus on different channels: either completely hadronic (if both the W decay into quarks), semi-leptonic or dileptonic (when both the W decay into two neutrinos and two leptons of opposite charge). Given the \ac{BR} of the W decay, it is easy to see that the dileptonic channel, which will be the focus of this work, is clearly not favored statistically. However, it is interesting anyway to study this kind of decay because this channel typically features less backgrounds than other channels, resulting in a better signal isolation, and since because leptons can usually be reconstructed in a better way than jets (cf. Chapter~\ref{chapter:Reco}), resulting in lower uncertainties and in improved limits.
+
 \section{Previous relevant results} \label{section:PreviousResults}
 
 This analysis being performed at a center of mass energy $\sqrt{s} = 13$ TeV, only the most relevant results to this particular energy and previously obtained by both the \ac{CMS} and \ac{ATLAS} collaborations of \ac{CERN} will be quoted here. 
@@ -825,23 +885,23 @@ Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been
 \centering
 \begin{minipage}[b]{.4\textwidth}
 \includegraphics[width=7cm, height=6cm]{figs/Atlas36a.png}
-\end{minipage}\qquad
-\begin{minipage}[b]{.4\textwidth}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5.88cm]{figs/Atlas36b.png}
-\end{minipage}
+\end{minipage}\hfill
 \caption{Exclusion limits at the 95\% \ac{CL} obtained by ATLAS considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{PreviousDoubleTopBottomAllLep13ATLAS}}\label{fig:atlas36}
 \end{figure*}
 
 
 The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, but using only the $35.9$ fb$^{-1}$ of data collected during the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
 
-%\begin{figure}[htbp]
-%\begin{center}
-%\includegraphics[width=14cm, height=6cm]{figs/CMSttbarExclusion.png}
-%\caption{95\% \ac{CL} exclusion plots on the signal strength computed as a function of the mediator and \ac{DM} massed obtained by CMS considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite{PreviousDoubleTopAllLep13CMS}.}
-%\label{figure:CMSttbarExclusion}
-%\end{center}
-%\end{figure}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/CMSttbarExclusion.png}
+\caption{95\% \ac{CL} exclusion plots on the signal strength computed as a function of the mediator and \ac{DM} massed obtained by CMS considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite{PreviousDoubleTopAllLep13CMS}.}
+\label{figure:CMSttbarExclusion}
+\end{center}
+\end{figure}
 
 Last year, a combination of the $t/\bar t$+DM and $t \bar t$+DM analyses has also been published \cite{PreviousSingleDoubleTopAllLep13CMS}, combining this time only the hadronic and semileptonic channels of both analyses. The limits obtained in this case are represented in Figure~\ref{figure:Combination2019}, where the limits obtained by each analysis on their own along with the results of the combination, leading to a factor 2 improvement of the results, have been represented. 
 
@@ -969,11 +1029,6 @@ Nucl.Phys. 645, pp 155-187, 2002 [arXiv:0207.036 ]}
 %"Measurement of the top quark Yukawa coupling from $t \bar t$ kinematic distributions in the lepton+jets final state in proton-proton collisions at $\sqrt{s}= 13$ TeV",
 %Phys. Rev. D 100, 072007 (2019)}
 
-\bibitem{PDG}
-\href{http://pdg.lbl.gov/}{M. Tanabashi et al.,
-Particle Data Group,
-Phys. Rev. D98, 030001 (2018)}
-
 %\bibitem{PreviousSingleTopAllLep2CDF}
 %\href{https://arxiv.org/abs/1202.5653}{CDF Collaboration,
 %"Search for a dark matter candidate produced in association with a single top quark in pp collisions at $\sqrt{s} = 1.96$ TeV",
@@ -1034,6 +1089,24 @@ Phys. Rev. Lett. 122, 011803 (2019) [arXiv: 1807.06522]}
 \href{https://arxiv.org/abs/1901.01553}{CMS Collaboration,
 "Search for dark matter produced in association with a single top quark or a top quark pair in proton-proton collisions at $\sqrt{s} = 13$ TeV",
 JHEP, vol. 03 141, 2019 [arXiv: 1901.01553]}
+
+\bibitem{SMFermions}
+\href{https://link.springer.com/chapter/10.1007/978-3-030-24370-8_2#citeas}{S. Manzoni, 
+"The Standard Model and the Higgs Boson",
+Physics with Photons Using the ATLAS Run 2 Data, Springer Theses, 2019
+}
+
+\bibitem{Majorana}
+\href{https://arxiv.org/abs/1808.10518}{A.B. Balantekin, A. Gouvea and B.Kayser,
+"Addressing the Majorana vs. Dirac Question with Neutrino Decays",
+FERMILAB-PUB-18-418-T, NUHEP-TH/18-09 [arXiv: 1808.10518]
+}
+
+\bibitem{SMPredictions}
+\href{https://arxiv.org/abs/1808.10518}{J. Woithe, G.J. Wiener and F. Van der Vecken,
+"Let's have a coffee with the Standard Model of particle physics!",
+Physics education 52, number 3, 2017
+}
 
 \bibitem{Zwicky} 
 \href{http://articles.adsabs.harvard.edu/cgi-bin/nph-iarticle_query?1933AcHPh...6..110Z&amp;data_type=PDF_HIGH&amp;whole_paper=YES&amp;type=PRINTER&amp;filetype=.pdf}{
@@ -1361,6 +1434,12 @@ JHEP 02 (2017) 135 [arXiv: 1610.09218]
 "Recommendations of the LHC Dark Matter Working Group: Comparing LHC searches for heavy mediators of dark matter production in visible and invisible decay channels",
 2017 [arXiv: 1703.05703]
 }
+
+\bibitem{PDG}
+\href{http://pdg.lbl.gov/}{M. Tanabashi et al.,
+Particle Data Group,
+Phys. Rev. D98, 030001 (2018)}
+
 
 \end{thebibliography}
 
