@@ -8,13 +8,13 @@
 \contentsline {subsection}{\numberline {2.2.3}\acf {CMB} anisotropies}{8}{subsection.2.2.3}% 
 \contentsline {subsection}{\numberline {2.2.4}Gravitational lensing}{11}{subsection.2.2.4}% 
 \contentsline {section}{\numberline {2.3}Dark matter properties}{12}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Dark matter candidates}{13}{section.2.4}% 
+\contentsline {section}{\numberline {2.4}Dark matter candidates}{14}{section.2.4}% 
 \contentsline {section}{\numberline {2.5}Dark matter searches}{20}{section.2.5}% 
 \contentsline {subsection}{\numberline {2.5.1}Direct searches}{20}{subsection.2.5.1}% 
 \contentsline {subsection}{\numberline {2.5.2}Indirect searches}{25}{subsection.2.5.2}% 
 \contentsline {subsection}{\numberline {2.5.3}Collider production}{28}{subsection.2.5.3}% 
-\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{32}{section.2.6}% 
-\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{35}{subsection.2.6.1}% 
+\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{31}{section.2.6}% 
+\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{34}{subsection.2.6.1}% 
 \contentsline {subsection}{\numberline {2.6.2}The $t \mathaccentV {bar}016t$ production channel}{35}{subsection.2.6.2}% 
 \contentsline {subsection}{\numberline {2.6.3}The dilepton final state}{36}{subsection.2.6.3}% 
 \contentsline {section}{\numberline {2.7}Previous relevant results}{36}{section.2.7}% 
@@ -56,5 +56,5 @@
 \contentsline {section}{\numberline {7.2}Results}{47}{section.7.2}% 
 \contentsline {chapter}{\numberline {8}Conclusions}{49}{chapter.8}% 
 \contentsline {section}{\numberline {8.1}Future prospects}{49}{section.8.1}% 
-\contentsline {chapter}{Appendices}{51}{section*.72}% 
-\contentsline {chapter}{Bibliography}{57}{chapter*.74}% 
+\contentsline {chapter}{Appendices}{51}{section*.74}% 
+\contentsline {chapter}{Bibliography}{57}{chapter*.76}% 

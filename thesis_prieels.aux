@@ -28,17 +28,19 @@
 \newacro{CMB}[\AC@hyperlink{CMB}{CMB}]{Cosmic Microwave Background}
 \newacro{ML}[\AC@hyperlink{ML}{ML}]{Machine Learning}
 \newacro{MFV}[\AC@hyperlink{MFV}{MFV}]{Minimal Flavour Violation}
-\newacro{WIMP}[\AC@hyperlink{WIMP}{WIMP}]{Weakly Interactive Massive Particles}
+\newacro{WIMP}[\AC@hyperlink{WIMP}{WIMP}]{Weakly Interactive Massive Particle}
 \newacro{PF}[\AC@hyperlink{PF}{PF}]{Particle Flow}
 \newacro{BSM}[\AC@hyperlink{BSM}{BSM}]{Beyond the Standard Model}
-\newacro{MACHO}[\AC@hyperlink{MACHO}{MACHO}]{Massive Compact Halo Objects}
-\newacro{SI}[\AC@hyperlink{SI}{SI}]{Spin Independant}
-\newacro{SD}[\AC@hyperlink{SD}{SD}]{Spin Dependant}
+\newacro{MACHO}[\AC@hyperlink{MACHO}{MACHO}]{Massive Compact Halo Object}
+\newacro{MSSM}[\AC@hyperlink{MSSM}{MSSM}]{Minimal Supersymmetric Standard Model}
+\newacro{SI}[\AC@hyperlink{SI}{SI}]{Spin Independent}
+\newacro{SD}[\AC@hyperlink{SD}{SD}]{Spin Dependent}
 \newacro{CL}[\AC@hyperlink{CL}{CL}]{Confidence Level}
 \newacro{QCD}[\AC@hyperlink{QCD}{QCD}]{Quantum ChromoDynamics}
 \newacro{ADMX}[\AC@hyperlink{ADMX}{ADMX}]{Axion Dark Matter Experiment}
 \newacro{CAST}[\AC@hyperlink{CAST}{CAST}]{CERN Axion Solar Telescope}
 \newacro{IAXO}[\AC@hyperlink{IAXO}{IAXO}]{International Axion Observatory}
+\newacro{LNGS}[\AC@hyperlink{LNGS}{LNGS}]{Laboratori Nazionali del Gran Sasso}
 \newacro{UED}[\AC@hyperlink{UED}{UED}]{Universal Extra Dimensions}
 \newacro{NFW}[\AC@hyperlink{NFW}{NFW}]{Navarro-Frenk-White}
 \newacro{LAT}[\AC@hyperlink{LAT}{LAT}]{Fermi Large Telescope}
@@ -152,8 +154,6 @@
 \acronymused{ML}
 \acronymused{DM}
 \citation{Majorana}
-\citation{SMFermions}
-\citation{SMFermions}
 \@writefile{toc}{\contentsline {chapter}{\numberline {2}The Dark Matter case}{5}{chapter.2}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -165,6 +165,8 @@
 \acronymused{WIMP}
 \acronymused{LHC}
 \acronymused{DM}
+\acronymused{ATLAS}
+\acronymused{CMS}
 \acronymused{SM}
 \@writefile{toc}{\contentsline {section}{\numberline {2.1}The \acf {SM}}{5}{section.2.1}\protected@file@percent }
 \newlabel{section:SM}{{2.1}{5}{The \acf {SM}}{section.2.1}{}}
@@ -173,6 +175,8 @@
 \newlabel{acro:QFT}{{2.1}{5}{The \acf {SM}}{section*.18}{}}
 \acronymused{QFT}
 \acronymused{SM}
+\citation{SMFermions}
+\citation{SMFermions}
 \citation{SMPredictions}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.1}{\ignorespaces Representation of the 12 fermions of the \ac {SM} \cite  {SMFermions}.\relax }}{6}{figure.caption.19}\protected@file@percent }
 \acronymused{SM}
@@ -184,7 +188,6 @@
 \acronymused{SM}
 \acronymused{BSM}
 \acronymused{SM}
-\acronymused{SM}
 \acronymused{BSM}
 \acronymused{DM}
 \citation{Zwicky}
@@ -195,6 +198,7 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.1}Zwicky and the virial theorem}{7}{subsection.2.2.1}\protected@file@percent }
 \newlabel{equation:Virial}{{2.2}{7}{Zwicky and the virial theorem}{equation.2.2.2}{}}
 \newlabel{equation:ClusterMass}{{2.3}{7}{Zwicky and the virial theorem}{equation.2.2.3}{}}
+\acronymused{DM}
 \citation{RotationCurves}
 \citation{VeraRubin}
 \citation{RotationCurves}
@@ -203,6 +207,7 @@
 \citation{CMBTemperature}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.2}Spiral galaxies rotation curves}{8}{subsection.2.2.2}\protected@file@percent }
 \newlabel{equation:RotationVelocity}{{2.4}{8}{Spiral galaxies rotation curves}{equation.2.2.4}{}}
+\acronymused{DM}
 \acronymused{CMB}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.3}\acf {CMB} anisotropies}{8}{subsection.2.2.3}\protected@file@percent }
 \newlabel{subsection:CMB}{{2.2.3}{8}{\acf {CMB} anisotropies}{subsection.2.2.3}{}}
@@ -210,28 +215,36 @@
 \citation{PlanckTemperature}
 \citation{PlanckTemperature}
 \citation{PowerSpectrum}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Expected and observed rotation curves of the galaxy NGC 6503 \cite  {RotationCurves}. The black dots correspond to the data and the \textit  {luminous} line corresponds to the expected rotation curve.\relax }}{9}{figure.caption.20}\protected@file@percent }
-\newlabel{figure:RotationCurves}{{2.2}{9}{Expected and observed rotation curves of the galaxy NGC 6503 \cite {RotationCurves}. The black dots correspond to the data and the \textit {luminous} line corresponds to the expected rotation curve.\relax }{figure.caption.20}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.2}{\ignorespaces Expected and observed rotation curves of the galaxy NGC 6503 \cite  {RotationCurves}. The black dots correspond to the data and the \textit  {luminous} line corresponds to the expected rotation curve decreasing as $r^{-1/2}$, as expected from Newtonian dynamics.\relax }}{9}{figure.caption.20}\protected@file@percent }
+\newlabel{figure:RotationCurves}{{2.2}{9}{Expected and observed rotation curves of the galaxy NGC 6503 \cite {RotationCurves}. The black dots correspond to the data and the \textit {luminous} line corresponds to the expected rotation curve decreasing as $r^{-1/2}$, as expected from Newtonian dynamics.\relax }{figure.caption.20}{}}
 \acronymused{CMB}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Anisotropies in the temperature of the \ac {CMB}, as observed by the Planck satellite in 2018 \cite  {PlanckTemperature}.\relax }}{9}{figure.caption.21}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.3}{\ignorespaces Anisotropies at the $10^{-5}$ level in the temperature of the \ac {CMB}, as observed by the Planck satellite in 2018 \cite  {PlanckTemperature}.\relax }}{9}{figure.caption.21}\protected@file@percent }
 \acronymused{CMB}
-\newlabel{figure:PlanckTemperature}{{2.3}{9}{Anisotropies in the temperature of the \ac {CMB}, as observed by the Planck satellite in 2018 \cite {PlanckTemperature}.\relax }{figure.caption.21}{}}
+\newlabel{figure:PlanckTemperature}{{2.3}{9}{Anisotropies at the $10^{-5}$ level in the temperature of the \ac {CMB}, as observed by the Planck satellite in 2018 \cite {PlanckTemperature}.\relax }{figure.caption.21}{}}
 \citation{Planck}
 \citation{Constants}
+\citation{Planck}
+\citation{Planck}
 \newlabel{equation:SphericalHarmonics}{{2.5}{10}{\acf {CMB} anisotropies}{equation.2.2.5}{}}
 \acronymused{CMB}
 \acronymused{CMB}
-\newlabel{equation:PowerSpectrum}{{2.6}{10}{\acf {CMB} anisotropies}{equation.2.2.6}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Power spectrum of the \ac {CMB} obtained by Planck, representing the fluctuations of the temperature of this radiation with respect to the angular angle of observation.\relax }}{10}{figure.caption.22}\protected@file@percent }
 \acronymused{CMB}
-\newlabel{figure:CMBSpectrum}{{2.4}{10}{Power spectrum of the \ac {CMB} obtained by Planck, representing the fluctuations of the temperature of this radiation with respect to the angular angle of observation.\relax }{figure.caption.22}{}}
+\newlabel{equation:PowerSpectrum}{{2.6}{10}{\acf {CMB} anisotropies}{equation.2.2.6}{}}
+\acronymused{DM}
+\acronymused{DM}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.4}{\ignorespaces Power spectrum of the \ac {CMB} obtained by Planck, representing the fluctuations of the temperature of the radiation with respect to the angular angle of observation \cite  {Planck}.\relax }}{10}{figure.caption.22}\protected@file@percent }
+\acronymused{CMB}
+\newlabel{figure:CMBSpectrum}{{2.4}{10}{Power spectrum of the \ac {CMB} obtained by Planck, representing the fluctuations of the temperature of the radiation with respect to the angular angle of observation \cite {Planck}.\relax }{figure.caption.22}{}}
 \citation{BulletClusterSigma}
 \citation{BulletClusterSigma}
 \citation{BulletClusterSigma}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2.4}Gravitational lensing}{11}{subsection.2.2.4}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Mass distributions obtained by the Magellan in the visible (on the left) and Chandra on the X-rays spectrum (on the right) telescopes of the Bullet Cluser, yet another clear evidence for the existence of \ac {DM} \cite  {BulletClusterSigma}.\relax }}{11}{figure.caption.23}\protected@file@percent }
 \acronymused{DM}
-\newlabel{figure:BulletCluster}{{2.5}{11}{Mass distributions obtained by the Magellan in the visible (on the left) and Chandra on the X-rays spectrum (on the right) telescopes of the Bullet Cluser, yet another clear evidence for the existence of \ac {DM} \cite {BulletClusterSigma}.\relax }{figure.caption.23}{}}
+\acronymused{DM}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.5}{\ignorespaces Mass distributions obtained by the Magellan in the visible (on the left) and Chandra on the X-rays spectrum (on the right) telescopes of the Bullet Cluser. Being shifted compared to each other, this is yet another clear evidence for the existence of \ac {DM} \cite  {BulletClusterSigma}.\relax }}{11}{figure.caption.23}\protected@file@percent }
+\acronymused{DM}
+\newlabel{figure:BulletCluster}{{2.5}{11}{Mass distributions obtained by the Magellan in the visible (on the left) and Chandra on the X-rays spectrum (on the right) telescopes of the Bullet Cluser. Being shifted compared to each other, this is yet another clear evidence for the existence of \ac {DM} \cite {BulletClusterSigma}.\relax }{figure.caption.23}{}}
+\acronymused{DM}
 \citation{FreezeOut}
 \@writefile{toc}{\contentsline {section}{\numberline {2.3}Dark matter properties}{12}{section.2.3}\protected@file@percent }
 \newlabel{section:DMProperties}{{2.3}{12}{Dark matter properties}{section.2.3}{}}
@@ -244,19 +257,23 @@
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
+\acronymused{DM}
 \acronymused{SM}
 \newlabel{equation:equilibrium}{{2.7}{12}{Dark matter properties}{equation.2.3.7}{}}
-\acronymused{DM}
 \acronymused{DM}
 \citation{keVSterile}
 \citation{ColdWarmDM}
 \citation{ColdWarmDM}
 \citation{FreezeOut2}
 \citation{FreezeOut2}
+\acronymused{DM}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{DM}
 \newlabel{equation:FreezeOut}{{2.8}{13}{Dark matter properties}{equation.2.3.8}{}}
+\acronymused{DM}
+\acronymused{CMS}
+\acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
@@ -265,21 +282,17 @@
 \acronymused{DM}
 \newlabel{figure:ColdWarmDM}{{2.6}{13}{Computer simulations for cold (on the left) and warm (on the right) \ac {DM} scenarios and their impact on a galactic halo at 0 redshift \cite {ColdWarmDM}.\relax }{figure.caption.24}{}}
 \acronymused{DM}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Dark matter candidates}{13}{section.2.4}\protected@file@percent }
-\newlabel{section:DMCandidates}{{2.4}{13}{Dark matter candidates}{section.2.4}{}}
+\citation{MACHOProject}
+\citation{EROS}
+\citation{ExclusionMACHO}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Schematic representation of the freeze-out process, representing the abundance of a 500 GeV \ac {DM} as $Y_\chi $ with respect to the time and the impact of increasing cross-section annihilation values on this freeze-out abundance \cite  {FreezeOut2}.\relax }}{14}{figure.caption.25}\protected@file@percent }
+\acronymused{DM}
+\newlabel{figure:FreezeOut}{{2.7}{14}{Schematic representation of the freeze-out process, representing the abundance of a 500 GeV \ac {DM} as $Y_\chi $ with respect to the time and the impact of increasing cross-section annihilation values on this freeze-out abundance \cite {FreezeOut2}.\relax }{figure.caption.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Dark matter candidates}{14}{section.2.4}\protected@file@percent }
+\newlabel{section:DMCandidates}{{2.4}{14}{Dark matter candidates}{section.2.4}{}}
 \acronymused{SM}
 \acronymused{BSM}
 \acronymused{DM}
-\citation{MACHOProject}
-\citation{EROS}
-\citation{MACHOProject}
-\citation{EROS}
-\citation{ExclusionMACHO}
-\citation{ExclusionMACHO}
-\citation{ExclusionMACHO}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.7}{\ignorespaces Schematic representation of the freeze-out process, representing the abundance of a 500 GeV \ac {DM} as $Y_\chi $ with respect to the time and the impact of increasing cross-section values on this freeze-out abundance \cite  {FreezeOut2}.\relax }}{14}{figure.caption.25}\protected@file@percent }
-\acronymused{DM}
-\newlabel{figure:FreezeOut}{{2.7}{14}{Schematic representation of the freeze-out process, representing the abundance of a 500 GeV \ac {DM} as $Y_\chi $ with respect to the time and the impact of increasing cross-section values on this freeze-out abundance \cite {FreezeOut2}.\relax }{figure.caption.25}{}}
 \AC@undonewlabel{acro:MACHO}
 \newlabel{acro:MACHO}{{2.4}{14}{}{section*.26}{}}
 \acronymused{MACHO}
@@ -293,15 +306,14 @@
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{MACHO}
+\citation{ExclusionMACHO}
+\citation{ExclusionMACHO}
+\citation{NeutrinoMass}
 \AC@undonewlabel{acro:CL}
-\newlabel{acro:CL}{{2.4}{14}{}{section*.27}{}}
+\newlabel{acro:CL}{{2.4}{15}{}{section*.27}{}}
 \acronymused{CL}
 \acronymused{MACHO}
 \acronymused{CL}
-\citation{NeutrinoMass}
-\citation{PDGNeutrino}
-\citation{PDGNeutrino}
-\citation{GammaXS}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.8}{\ignorespaces Halo fraction upper limit at the 95\% \ac {CL} compared to the mass of the lensing object for different \ac {MACHO} models considered by the EROS (on the top) and the MACHO (on the bottom) collaborations \cite  {ExclusionMACHO}.\relax }}{15}{figure.caption.28}\protected@file@percent }
 \acronymused{CL}
 \acronymused{MACHO}
@@ -312,17 +324,18 @@
 \acronymused{DM}
 \acronymused{CL}
 \acronymused{SM}
-\acronymused{SM}
+\citation{PDGNeutrino}
+\citation{PDGNeutrino}
+\citation{GammaXS}
 \citation{WIMPBook}
 \citation{NeutrinoMass}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Neutrino cross section from the charged current as measured by different experiments over a large range of energies, for both neutrinos $\nu $ and antineutrinos $\mathaccentV {bar}016\nu $ \cite  {PDGNeutrino}.\relax }}{16}{figure.caption.29}\protected@file@percent }
-\newlabel{fig:NeutrinoXS}{{2.9}{16}{Neutrino cross section from the charged current as measured by different experiments over a large range of energies, for both neutrinos $\nu $ and antineutrinos $\bar \nu $ \cite {PDGNeutrino}.\relax }{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.9}{\ignorespaces Neutrino cross section of interaction from the charged current as measured by different experiments over a large range of energies, for both neutrinos $\nu $ and antineutrinos $\mathaccentV {bar}016\nu $ \cite  {PDGNeutrino}.\relax }}{16}{figure.caption.29}\protected@file@percent }
+\newlabel{fig:NeutrinoXS}{{2.9}{16}{Neutrino cross section of interaction from the charged current as measured by different experiments over a large range of energies, for both neutrinos $\nu $ and antineutrinos $\bar \nu $ \cite {PDGNeutrino}.\relax }{figure.caption.29}{}}
+\acronymused{SM}
 \acronymused{SM}
 \acronymused{BSM}
 \acronymused{DM}
 \newlabel{eq:Neutrinos}{{2.9}{16}{}{equation.2.4.9}{}}
-\acronymused{DM}
-\acronymused{DM}
 \acronymused{DM}
 \citation{keVSterile}
 \citation{DMDetection1}
@@ -332,7 +345,8 @@
 \citation{NoDetection}
 \citation{Nope}
 \citation{QCDLag}
-\citation{Peccei}
+\acronymused{DM}
+\acronymused{DM}
 \acronymused{DM}
 \acronymused{CMB}
 \newlabel{equation:neutrinoRelic}{{2.10}{17}{}{equation.2.4.10}{}}
@@ -348,52 +362,60 @@
 \acronymused{DM}
 \acronymused{CL}
 \acronymused{DM}
-\acronymused{DM}
-\acronymused{DM}
-\AC@undonewlabel{acro:QCD}
-\newlabel{acro:QCD}{{2.4}{17}{}{section*.31}{}}
-\acronymused{QCD}
+\citation{Peccei}
 \citation{AxionSearches}
-\citation{CASTLimit}
 \@writefile{lof}{\contentsline {figure}{\numberline {2.10}{\ignorespaces 3.57 keV emission line detected with a $4.5 \sigma $ \ac {CL} by the XMM-Newton telescope in 2014, which could be a hint of the presence of \ac {DM} \cite  {DMDetection1}.\relax }}{18}{figure.caption.30}\protected@file@percent }
 \acronymused{CL}
 \acronymused{DM}
 \newlabel{fig:DMDetection}{{2.10}{18}{3.57 keV emission line detected with a $4.5 \sigma $ \ac {CL} by the XMM-Newton telescope in 2014, which could be a hint of the presence of \ac {DM} \cite {DMDetection1}.\relax }{figure.caption.30}{}}
+\acronymused{DM}
+\acronymused{DM}
+\AC@undonewlabel{acro:QCD}
+\newlabel{acro:QCD}{{2.4}{18}{}{section*.31}{}}
+\acronymused{QCD}
 \acronymused{QCD}
 \acronymused{SM}
 \acronymused{QCD}
 \newlabel{equation:Lag}{{2.11}{18}{}{equation.2.4.11}{}}
 \acronymused{DM}
-\newlabel{equation:AxionDensity}{{2.12}{18}{}{equation.2.4.12}{}}
-\AC@undonewlabel{acro:ADMX}
-\newlabel{acro:ADMX}{{2.4}{18}{}{section*.32}{}}
-\acronymused{ADMX}
-\AC@undonewlabel{acro:CAST}
-\newlabel{acro:CAST}{{2.4}{18}{}{section*.33}{}}
-\acronymused{CAST}
-\AC@undonewlabel{acro:IAXO}
-\newlabel{acro:IAXO}{{2.4}{18}{}{section*.34}{}}
-\acronymused{IAXO}
+\citation{CASTLimit}
 \citation{AxionSearches}
 \citation{AxionSearches}
 \citation{IndirectSearches}
+\acronymused{DM}
+\newlabel{equation:AxionDensity}{{2.12}{19}{}{equation.2.4.12}{}}
+\AC@undonewlabel{acro:ADMX}
+\newlabel{acro:ADMX}{{2.4}{19}{}{section*.32}{}}
+\acronymused{ADMX}
+\AC@undonewlabel{acro:CAST}
+\newlabel{acro:CAST}{{2.4}{19}{}{section*.33}{}}
 \acronymused{CAST}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Axion exclusion plot summary and projected coverage of actual experiments \cite  {AxionSearches}.\relax }}{19}{figure.caption.35}\protected@file@percent }
-\newlabel{figure:AxionSummary}{{2.11}{19}{Axion exclusion plot summary and projected coverage of actual experiments \cite {AxionSearches}.\relax }{figure.caption.35}{}}
+\AC@undonewlabel{acro:IAXO}
+\newlabel{acro:IAXO}{{2.4}{19}{}{section*.34}{}}
+\acronymused{IAXO}
+\acronymused{CAST}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.11}{\ignorespaces Axions exclusion plot summary and projected coverage of axion searches experiments, such as \ac {ADMX}, \ac {CAST} and \ac {IAXO} \cite  {AxionSearches}.\relax }}{19}{figure.caption.35}\protected@file@percent }
+\acronymused{ADMX}
+\acronymused{CAST}
+\acronymused{IAXO}
+\newlabel{figure:AxionSummary}{{2.11}{19}{Axions exclusion plot summary and projected coverage of axion searches experiments, such as \ac {ADMX}, \ac {CAST} and \ac {IAXO} \cite {AxionSearches}.\relax }{figure.caption.35}{}}
 \acronymused{WIMP}
 \acronymused{DM}
 \acronymused{WIMP}
 \acronymused{DM}
 \acronymused{DM}
-\newlabel{eq:Annihilation}{{2.13}{19}{}{equation.2.4.13}{}}
+\citation{ColliderSearches}
+\citation{ColliderSearches}
+\newlabel{eq:Annihilation}{{2.13}{20}{}{equation.2.4.13}{}}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{WIMP}
 \acronymused{BSM}
 \acronymused{SM}
-\citation{ColliderSearches}
-\citation{ColliderSearches}
 \acronymused{DM}
+\AC@undonewlabel{acro:MSSM}
+\newlabel{acro:MSSM}{{2.4}{20}{}{section*.36}{}}
+\acronymused{MSSM}
 \acronymused{WIMP}
 \acronymused{DM}
 \@writefile{toc}{\contentsline {section}{\numberline {2.5}Dark matter searches}{20}{section.2.5}\protected@file@percent }
@@ -401,83 +423,91 @@
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Schematic view of the three main \ac {DM} detection strategies: direct, indirect and collider production searches \cite  {ColliderSearches}.\relax }}{20}{figure.caption.36}\protected@file@percent }
-\acronymused{DM}
-\newlabel{fig:ThreeWays}{{2.12}{20}{Schematic view of the three main \ac {DM} detection strategies: direct, indirect and collider production searches \cite {ColliderSearches}.\relax }{figure.caption.36}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.1}Direct searches}{20}{subsection.2.5.1}\protected@file@percent }
 \newlabel{subsection:DirectSearches}{{2.5.1}{20}{Direct searches}{subsection.2.5.1}{}}
 \acronymused{WIMP}
 \citation{DirectSearches}
 \citation{DirectSearches}
 \citation{DirectSearches}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.12}{\ignorespaces Schematic view of the three main \ac {DM} detection strategies: direct, indirect and collider production searches \cite  {ColliderSearches}.\relax }}{21}{figure.caption.37}\protected@file@percent }
+\acronymused{DM}
+\newlabel{fig:ThreeWays}{{2.12}{21}{Schematic view of the three main \ac {DM} detection strategies: direct, indirect and collider production searches \cite {ColliderSearches}.\relax }{figure.caption.37}{}}
+\acronymused{WIMP}
+\acronymused{WIMP}
+\newlabel{equation:WIMPRate}{{2.14}{21}{Direct searches}{equation.2.5.14}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces  Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite  {DirectSearches}.\relax }}{21}{figure.caption.38}\protected@file@percent }
+\acronymused{DM}
+\acronymused{WIMP}
+\AC@undonewlabel{acro:SI}
+\newlabel{acro:SI}{{2.13}{21}{Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite {DirectSearches}.\relax }{section*.39}{}}
+\acronymused{SI}
+\newlabel{fig:DirectFalling}{{2.13}{21}{Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite {DirectSearches}.\relax }{figure.caption.38}{}}
 \citation{EscapeVelocity}
 \citation{AnnualModulation}
 \citation{AnnualModulation}
 \citation{AnnualModulation}
 \citation{DirectSearches}
-\acronymused{WIMP}
-\newlabel{equation:WIMPRate}{{2.14}{21}{Direct searches}{equation.2.5.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.13}{\ignorespaces  Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite  {DirectSearches}.\relax }}{21}{figure.caption.37}\protected@file@percent }
 \acronymused{DM}
-\acronymused{WIMP}
-\AC@undonewlabel{acro:SI}
-\newlabel{acro:SI}{{2.13}{21}{Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite {DirectSearches}.\relax }{section*.38}{}}
-\acronymused{SI}
-\newlabel{fig:DirectFalling}{{2.13}{21}{Nuclear recoil spectra induced in different materials for a given \ac {DM} \ac {WIMP} of 100 GeV, assuming a WIMP-nucleon \ac {SI} cross section \cite {DirectSearches}.\relax }{figure.caption.37}{}}
-\acronymused{DM}
-\newlabel{eq:Number}{{2.15}{21}{Direct searches}{equation.2.5.15}{}}
+\newlabel{eq:Number}{{2.15}{22}{Direct searches}{equation.2.5.15}{}}
 \acronymused{CL}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite  {AnnualModulation}.\relax }}{22}{figure.caption.39}\protected@file@percent }
-\newlabel{figure:AxionSummary}{{2.14}{22}{Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite {AnnualModulation}.\relax }{figure.caption.39}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.14}{\ignorespaces Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite  {AnnualModulation}.\relax }}{22}{figure.caption.40}\protected@file@percent }
+\newlabel{fig:AnnualModulation}{{2.14}{22}{Schematic representation of the annual modulation of the WIMP wind introduced by the motion of rotation of the Earth around the Sun \cite {AnnualModulation}.\relax }{figure.caption.40}{}}
+\acronymused{WIMP}
+\acronymused{WIMP}
 \newlabel{eq:Modulation}{{2.16}{22}{Direct searches}{equation.2.5.16}{}}
 \acronymused{DM}
+\citation{DirectWays}
+\citation{DirectWays}
+\acronymused{WIMP}
 \acronymused{DM}
 \acronymused{SI}
 \AC@undonewlabel{acro:SD}
-\newlabel{acro:SD}{{2.5.1}{22}{Direct searches}{section*.40}{}}
+\newlabel{acro:SD}{{2.5.1}{23}{Direct searches}{section*.41}{}}
 \acronymused{SD}
 \acronymused{DM}
-\newlabel{eq:SISD}{{2.17}{22}{Direct searches}{equation.2.5.17}{}}
-\citation{DirectWays}
-\citation{DirectWays}
-\citation{DirectWays}
-\citation{DirectWays}
-\citation{DAMA}
-\citation{DAMA}
-\citation{DAMA}
-\citation{DirectWays}
-\citation{DirectWays}
+\newlabel{eq:SISD}{{2.17}{23}{Direct searches}{equation.2.5.17}{}}
 \acronymused{DM}
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Impact of different experimental parameters on the final limits depending on the cross section and \ac {WIMP} mass (on the lft) or sensitivity and exposure (on the right), wth respect to the expecd limits (black curve) \cite  {DirectWays}.\relax }}{23}{figure.caption.41}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.15}{\ignorespaces Impact of different experimental parameters on the final limits depending on the cross section and \ac {WIMP} mass (on the left) or sensitivity and exposure (on the right), with respect to the expected limits (black curve) \cite  {DirectWays}.\relax }}{23}{figure.caption.42}\protected@file@percent }
 \acronymused{WIMP}
-\newlabel{figure:ImpactLimit}{{2.15}{23}{Impact of different experimental parameters on the final limits depending on the cross section and \ac {WIMP} mass (on the lft) or sensitivity and exposure (on the right), wth respect to the expecd limits (black curve) \cite {DirectWays}.\relax }{figure.caption.41}{}}
+\newlabel{fig:ImpactLimit}{{2.15}{23}{Impact of different experimental parameters on the final limits depending on the cross section and \ac {WIMP} mass (on the left) or sensitivity and exposure (on the right), with respect to the expected limits (black curve) \cite {DirectWays}.\relax }{figure.caption.42}{}}
+\citation{DirectWays}
+\citation{DirectWays}
+\citation{DirectWays}
+\citation{DirectWays}
+\citation{DAMA}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Schematic representation of the three main strategies to detect directly the interaction between \ac {DM} particles and an ordinary nucleus \cite  {DirectWays}.\relax }}{24}{figure.caption.43}\protected@file@percent }
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.16}{\ignorespaces Schematic representation of the three main strategies to detect directly the recoil between \ac {DM} particles and an ordinary nucleus \cite  {DirectWays}.\relax }}{24}{figure.caption.42}\protected@file@percent }
+\newlabel{figure:DirectWays}{{2.16}{24}{Schematic representation of the three main strategies to detect directly the interaction between \ac {DM} particles and an ordinary nucleus \cite {DirectWays}.\relax }{figure.caption.43}{}}
 \acronymused{DM}
-\newlabel{figure:DirectWays}{{2.16}{24}{Schematic representation of the three main strategies to detect directly the recoil between \ac {DM} particles and an ordinary nucleus \cite {DirectWays}.\relax }{figure.caption.42}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Observed and expected annual modulation in single hits events in the 2-6 keV energy range by the DAMA experiment \cite  {DAMA}.\relax }}{24}{figure.caption.43}\protected@file@percent }
-\newlabel{fig:DAMA}{{2.17}{24}{Observed and expected annual modulation in single hits events in the 2-6 keV energy range by the DAMA experiment \cite {DAMA}.\relax }{figure.caption.43}{}}
-\citation{FluxIndirect}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Exclusion limits obtained by various direct detection experiments considering a \ac {SI} interaction cross section for low \ac {WIMP} (on the left) or high \ac {WIMP} masses (on the right) \cite  {DirectWays}.\relax }}{25}{figure.caption.44}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.17}{\ignorespaces Exclusion limits obtained by various direct detection experiments considering a \ac {SI} interaction cross section for low \ac {WIMP} (on the left) or high \ac {WIMP} masses (on the right) \cite  {DirectWays}.\relax }}{24}{figure.caption.44}\protected@file@percent }
 \acronymused{SI}
 \acronymused{WIMP}
 \acronymused{WIMP}
-\newlabel{fig:DirectLimits}{{2.18}{25}{Exclusion limits obtained by various direct detection experiments considering a \ac {SI} interaction cross section for low \ac {WIMP} (on the left) or high \ac {WIMP} masses (on the right) \cite {DirectWays}.\relax }{figure.caption.44}{}}
+\newlabel{fig:DirectLimits}{{2.17}{24}{Exclusion limits obtained by various direct detection experiments considering a \ac {SI} interaction cross section for low \ac {WIMP} (on the left) or high \ac {WIMP} masses (on the right) \cite {DirectWays}.\relax }{figure.caption.44}{}}
+\AC@undonewlabel{acro:LNGS}
+\newlabel{acro:LNGS}{{2.5.1}{24}{Direct searches}{section*.45}{}}
+\acronymused{LNGS}
+\acronymused{WIMP}
+\citation{DAMA}
+\citation{DAMA}
+\citation{FluxIndirect}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.18}{\ignorespaces Observed and expected annual modulation in single hits events in the 2-6 keV energy range by the DAMA experiment \cite  {DAMA}.\relax }}{25}{figure.caption.46}\protected@file@percent }
+\newlabel{fig:DAMA}{{2.18}{25}{Observed and expected annual modulation in single hits events in the 2-6 keV energy range by the DAMA experiment \cite {DAMA}.\relax }{figure.caption.46}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.2}Indirect searches}{25}{subsection.2.5.2}\protected@file@percent }
 \acronymused{DM}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{SM}
 \AC@undonewlabel{acro:UED}
-\newlabel{acro:UED}{{2.5.2}{25}{Indirect searches}{section*.45}{}}
+\newlabel{acro:UED}{{2.5.2}{25}{Indirect searches}{section*.47}{}}
 \acronymused{UED}
 \acronymused{DM}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{DM}
 \AC@undonewlabel{acro:NFW}
-\newlabel{acro:NFW}{{2.5.2}{25}{Indirect searches}{section*.46}{}}
+\newlabel{acro:NFW}{{2.5.2}{25}{Indirect searches}{section*.48}{}}
 \acronymused{NFW}
 \acronymused{DM}
 \newlabel{eq:NFW}{{2.18}{25}{Indirect searches}{equation.2.5.18}{}}
@@ -496,19 +526,19 @@
 \acronymused{DM}
 \acronymused{WIMP}
 \AC@undonewlabel{acro:LAT}
-\newlabel{acro:LAT}{{2.5.2}{26}{}{section*.47}{}}
+\newlabel{acro:LAT}{{2.5.2}{26}{}{section*.49}{}}
 \acronymused{LAT}
 \acronymused{LAT}
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Upper limits on the \ac {DM} annihilation cross section considering $b \mathaccentV {bar}016b$ (on the state) and a $\mu ^+ \mu ^-$ (on the right) final states as a function of the \ac {WIMP} mass, for different clusters studied \cite  {LATExperiment}.\relax }}{27}{figure.caption.48}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.19}{\ignorespaces Upper limits on the \ac {DM} annihilation cross section considering $b \mathaccentV {bar}016b$ (on the left) and $\mu ^+ \mu ^-$ (on the right) final states as a function of the \ac {WIMP} mass, for different clusters studied \cite  {LATExperiment}.\relax }}{27}{figure.caption.50}\protected@file@percent }
 \acronymused{DM}
 \acronymused{WIMP}
-\newlabel{figure:LATExclusion}{{2.19}{27}{Upper limits on the \ac {DM} annihilation cross section considering $b \bar b$ (on the state) and a $\mu ^+ \mu ^-$ (on the right) final states as a function of the \ac {WIMP} mass, for different clusters studied \cite {LATExperiment}.\relax }{figure.caption.48}{}}
+\newlabel{figure:LATExclusion}{{2.19}{27}{Upper limits on the \ac {DM} annihilation cross section considering $b \bar b$ (on the left) and $\mu ^+ \mu ^-$ (on the right) final states as a function of the \ac {WIMP} mass, for different clusters studied \cite {LATExperiment}.\relax }{figure.caption.50}{}}
 \AC@undonewlabel{acro:IACT}
-\newlabel{acro:IACT}{{2.5.2}{27}{}{section*.49}{}}
+\newlabel{acro:IACT}{{2.5.2}{27}{}{section*.51}{}}
 \acronymused{IACT}
 \AC@undonewlabel{acro:CTA}
-\newlabel{acro:CTA}{{2.5.2}{27}{}{section*.50}{}}
+\newlabel{acro:CTA}{{2.5.2}{27}{}{section*.52}{}}
 \acronymused{CTA}
 \acronymused{DM}
 \acronymused{DM}
@@ -516,26 +546,27 @@
 \citation{BkgNeutrino}
 \citation{AMSData}
 \citation{AMSData}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Neutrino spectra for a scalar \ac {DM} candidate of 1 TeV for different indirect detection experiments and the corresponding background level expected \cite  {BkgNeutrino}.\relax }}{28}{figure.caption.51}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.20}{\ignorespaces Neutrino spectra for a scalar \ac {DM} candidate of 1 TeV for different indirect detection experiments and the corresponding background level expected \cite  {BkgNeutrino}.\relax }}{28}{figure.caption.53}\protected@file@percent }
 \acronymused{DM}
-\newlabel{fig:BkgNeutrino}{{2.20}{28}{Neutrino spectra for a scalar \ac {DM} candidate of 1 TeV for different indirect detection experiments and the corresponding background level expected \cite {BkgNeutrino}.\relax }{figure.caption.51}{}}
+\newlabel{fig:BkgNeutrino}{{2.20}{28}{Neutrino spectra for a scalar \ac {DM} candidate of 1 TeV for different indirect detection experiments and the corresponding background level expected \cite {BkgNeutrino}.\relax }{figure.caption.53}{}}
 \acronymused{CERN}
 \AC@undonewlabel{acro:AMS}
-\newlabel{acro:AMS}{{2.5.2}{28}{}{section*.52}{}}
+\newlabel{acro:AMS}{{2.5.2}{28}{}{section*.54}{}}
 \acronymused{AMS}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.5.3}Collider production}{28}{subsection.2.5.3}\protected@file@percent }
+\newlabel{subsection:ColliderProduction}{{2.5.3}{28}{Collider production}{subsection.2.5.3}{}}
 \acronymused{DM}
 \acronymused{SM}
+\acronymused{DM}
 \citation{ColliderSearches}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.21}{\ignorespaces Limits of the decay width of the interaction with respect to the \ac {DM} mass obtained by both IceCube and \ac {AMS} \cite  {AMSData}.\relax }}{29}{figure.caption.53}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.21}{\ignorespaces Limits of the decay width of the interaction with respect to the \ac {DM} mass obtained by both IceCube and \ac {AMS} \cite  {AMSData}.\relax }}{29}{figure.caption.55}\protected@file@percent }
 \acronymused{DM}
 \acronymused{AMS}
-\newlabel{fig:AMSData}{{2.21}{29}{Limits of the decay width of the interaction with respect to the \ac {DM} mass obtained by both IceCube and \ac {AMS} \cite {AMSData}.\relax }{figure.caption.53}{}}
-\acronymused{DM}
+\newlabel{fig:AMSData}{{2.21}{29}{Limits of the decay width of the interaction with respect to the \ac {DM} mass obtained by both IceCube and \ac {AMS} \cite {AMSData}.\relax }{figure.caption.55}{}}
 \acronymused{SM}
 \acronymused{DM}
 \AC@undonewlabel{acro:EFT}
-\newlabel{acro:EFT}{{2.5.3}{29}{Collider production}{section*.54}{}}
+\newlabel{acro:EFT}{{2.5.3}{29}{Collider production}{section*.56}{}}
 \acronymused{EFT}
 \acronymused{SM}
 \acronymused{DM}
@@ -554,26 +585,33 @@
 \acronymused{SM}
 \acronymused{DM}
 \newlabel{eq:WidthMed}{{2.23}{30}{Collider production}{equation.2.5.23}{}}
+\newlabel{eq:WidthMedPseudo}{{2.24}{30}{Collider production}{equation.2.5.24}{}}
 \citation{ColliderSearches}
 \citation{ColliderSearches}
 \citation{STChannels}
 \citation{STChannels}
-\newlabel{eq:WidthMedPseudo}{{2.24}{31}{Collider production}{equation.2.5.24}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.22}{\ignorespaces Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite  {ColliderSearches}.\relax }}{31}{figure.caption.55}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.22}{\ignorespaces Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite  {ColliderSearches}.\relax }}{31}{figure.caption.57}\protected@file@percent }
 \acronymused{EFT}
 \acronymused{LHC}
 \AC@undonewlabel{acro:ISR}
-\newlabel{acro:ISR}{{2.22}{31}{Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite {ColliderSearches}.\relax }{section*.56}{}}
+\newlabel{acro:ISR}{{2.22}{31}{Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite {ColliderSearches}.\relax }{section*.58}{}}
 \acronymused{ISR}
-\newlabel{fig:EFT}{{2.22}{31}{Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite {ColliderSearches}.\relax }{figure.caption.55}{}}
+\newlabel{fig:EFT}{{2.22}{31}{Schematic representation of a typical \ac {EFT} modelization of an \ac {LHC} event with an \ac {ISR} object used to trigger the event \cite {ColliderSearches}.\relax }{figure.caption.57}{}}
 \acronymused{DM}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.23}{\ignorespaces Schematic representation of a typical collider \ac {DM} production through s-channel and t-channel processes \cite  {STChannels}.\relax }}{31}{figure.caption.57}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.23}{\ignorespaces Schematic representation of a typical collider \ac {DM} production through s-channel and t-channel processes \cite  {STChannels}.\relax }}{31}{figure.caption.59}\protected@file@percent }
 \acronymused{DM}
-\newlabel{fig:STChannels}{{2.23}{31}{Schematic representation of a typical collider \ac {DM} production through s-channel and t-channel processes \cite {STChannels}.\relax }{figure.caption.57}{}}
+\newlabel{fig:STChannels}{{2.23}{31}{Schematic representation of a typical collider \ac {DM} production through s-channel and t-channel processes \cite {STChannels}.\relax }{figure.caption.59}{}}
+\acronymused{DM}
+\acronymused{LHC}
+\acronymused{DM}
+\acronymused{LHC}
+\@writefile{toc}{\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{31}{section.2.6}\protected@file@percent }
+\newlabel{section:ourChannel}{{2.6}{31}{\ac {DM} production at the \ac {LHC}}{section.2.6}{}}
+\acronymused{LHC}
 \acronymused{DM}
 \citation{MonoGammaAtlas}
 \citation{MonoGammaCMS}
@@ -585,12 +623,8 @@
 \citation{MonoHiggsCMS}
 \citation{PreviousDoubleTopAllLep8ATLAS}
 \citation{PreviousDoubleTopBottomAllLep13ATLAS}
-\acronymused{DM}
-\acronymused{LHC}
-\@writefile{toc}{\contentsline {section}{\numberline {2.6}\ac {DM} production at the \ac {LHC}}{32}{section.2.6}\protected@file@percent }
-\newlabel{section:ourChannel}{{2.6}{32}{\ac {DM} production at the \ac {LHC}}{section.2.6}{}}
-\acronymused{LHC}
-\acronymused{DM}
+\citation{DijetAtlas}
+\citation{DijetCMS}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{LHC}
@@ -599,70 +633,71 @@
 \acronymused{SM}
 \acronymused{DM}
 \AC@undonewlabel{acro:MET}
-\newlabel{acro:MET}{{2.6}{32}{\ac {DM} production at the \ac {LHC}}{section*.58}{}}
+\newlabel{acro:MET}{{2.6}{32}{\ac {DM} production at the \ac {LHC}}{section*.60}{}}
 \acronymused{MET}
 \acronymused{ATLAS}
 \acronymused{CMS}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.24}{\ignorespaces Schematic representation of a typical mono-X event, with an\ac {ISR} jet in this case going back-to-back with some \ac {MET} \cite  {ColliderSearches}.\relax }}{32}{figure.caption.59}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.24}{\ignorespaces Schematic representation of a typical mono-X event, with an \ac {ISR} jet in this case going back-to-back with some \ac {MET} \cite  {ColliderSearches}.\relax }}{32}{figure.caption.61}\protected@file@percent }
 \acronymused{ISR}
 \acronymused{MET}
-\newlabel{fig:MonoX}{{2.24}{32}{Schematic representation of a typical mono-X event, with an\ac {ISR} jet in this case going back-to-back with some \ac {MET} \cite {ColliderSearches}.\relax }{figure.caption.59}{}}
+\newlabel{fig:MonoX}{{2.24}{32}{Schematic representation of a typical mono-X event, with an \ac {ISR} jet in this case going back-to-back with some \ac {MET} \cite {ColliderSearches}.\relax }{figure.caption.61}{}}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{DM}
 \acronymused{MET}
-\citation{DijetAtlas}
-\citation{DijetCMS}
+\acronymused{MFV}
+\acronymused{LHC}
 \citation{SUSYDM}
 \citation{InvisibleHiggs}
 \citation{LLSearches}
-\citation{DMWG}
-\acronymused{MFV}
-\acronymused{LHC}
 \acronymused{MET}
 \acronymused{DM}
 \acronymused{DM}
+\acronymused{MSSM}
 \acronymused{SM}
 \AC@undonewlabel{acro:VBF}
-\newlabel{acro:VBF}{{2.6}{33}{\ac {DM} production at the \ac {LHC}}{section*.60}{}}
+\newlabel{acro:VBF}{{2.6}{33}{\ac {DM} production at the \ac {LHC}}{section*.62}{}}
 \acronymused{VBF}
 \acronymused{DM}
 \acronymused{SM}
 \acronymused{CMS}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.25}{\ignorespaces Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-0 scalar (on the left) or pseudoscalar (on the right) mediator.\relax }}{33}{figure.caption.63}\protected@file@percent }
+\acronymused{CMS}
+\newlabel{fig:SummarySpin0}{{2.25}{33}{Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-0 scalar (on the left) or pseudoscalar (on the right) mediator.\relax }{figure.caption.63}{}}
 \acronymused{SD}
 \acronymused{SI}
+\citation{DMWG}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.26}{\ignorespaces Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-1 mediator, considering an axial-vector (on the left) and axial (on the right) interaction.\relax }}{34}{figure.caption.64}\protected@file@percent }
+\acronymused{CMS}
+\newlabel{fig:SummarySpin1}{{2.26}{34}{Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-1 mediator, considering an axial-vector (on the left) and axial (on the right) interaction.\relax }{figure.caption.64}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.27}{\ignorespaces \ac {CMS} 90\% exclusion limits compared to the most famous direct detection experiments for the \ac {SD} (on the left) and \ac {SI} (on the right) scenarios, obtained using similar couplings.\relax }}{34}{figure.caption.65}\protected@file@percent }
+\acronymused{CMS}
+\acronymused{SD}
+\acronymused{SI}
+\newlabel{fig:DDComparison}{{2.27}{34}{\ac {CMS} 90\% exclusion limits compared to the most famous direct detection experiments for the \ac {SD} (on the left) and \ac {SI} (on the right) scenarios, obtained using similar couplings.\relax }{figure.caption.65}{}}
 \acronymused{DM}
 \acronymused{DM}
 \AC@undonewlabel{acro:DMWG}
-\newlabel{acro:DMWG}{{2.6}{33}{\ac {DM} production at the \ac {LHC}}{section*.64}{}}
+\newlabel{acro:DMWG}{{2.6}{34}{\ac {DM} production at the \ac {LHC}}{section*.66}{}}
 \acronymused{DMWG}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.25}{\ignorespaces Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-0 mediator, considering a scalar (on the left) and pseudoscalar (on the right) interaction.\relax }}{34}{figure.caption.61}\protected@file@percent }
-\acronymused{CMS}
-\newlabel{fig:SummarySpin0}{{2.25}{34}{Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-0 mediator, considering a scalar (on the left) and pseudoscalar (on the right) interaction.\relax }{figure.caption.61}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.26}{\ignorespaces Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-1 mediator, considering an axial-vector (on the left) and axial (on the right) interaction.\relax }}{34}{figure.caption.62}\protected@file@percent }
-\acronymused{CMS}
-\newlabel{fig:SummarySpin1}{{2.26}{34}{Observed and expected 95\% exclusion limits obtained by different searches of the \ac {CMS} collaboration as a function the spin-1 mediator, considering an axial-vector (on the left) and axial (on the right) interaction.\relax }{figure.caption.62}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.27}{\ignorespaces \ac {CMS} 90\% exclusion limits compared to the most famous direct detection experiments for the \ac {SD} (on the left) and \ac {SI} (on the right) scenarios, obtained using similar couplings.\relax }}{34}{figure.caption.63}\protected@file@percent }
-\acronymused{CMS}
-\acronymused{SD}
-\acronymused{SI}
-\newlabel{fig:DDComparison}{{2.27}{34}{\ac {CMS} 90\% exclusion limits compared to the most famous direct detection experiments for the \ac {SD} (on the left) and \ac {SI} (on the right) scenarios, obtained using similar couplings.\relax }{figure.caption.63}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{34}{subsection.2.6.1}\protected@file@percent }
+\newlabel{subsection:singleTopChannel}{{2.6.1}{34}{The single top production channel}{subsection.2.6.1}{}}
+\acronymused{DM}
 \citation{PDG}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.6.1}The single top production channel}{35}{subsection.2.6.1}\protected@file@percent }
-\newlabel{subsection:singleTopChannel}{{2.6.1}{35}{The single top production channel}{subsection.2.6.1}{}}
+\citation{PDG}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.28}{\ignorespaces Feynman diagrams involving the production of \ac {DM} with a single top quark with its associated t-channel W boson (on the left), or tW (on the center and on the right) production.\relax }}{35}{figure.caption.67}\protected@file@percent }
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.28}{\ignorespaces Feynman diagrams involving the production of \ac {DM} with a single top quark with its associated t-channel W boson (on the left), or tW (on the center and on the right) production.\relax }}{35}{figure.caption.65}\protected@file@percent }
-\acronymused{DM}
-\newlabel{fig:singleTopFeynman}{{2.28}{35}{Feynman diagrams involving the production of \ac {DM} with a single top quark with its associated t-channel W boson (on the left), or tW (on the center and on the right) production.\relax }{figure.caption.65}{}}
+\newlabel{fig:singleTopFeynman}{{2.28}{35}{Feynman diagrams involving the production of \ac {DM} with a single top quark with its associated t-channel W boson (on the left), or tW (on the center and on the right) production.\relax }{figure.caption.67}{}}
 \acronymused{CMS}
 \acronymused{MET}
 \acronymused{DM}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.2}The $t \mathaccentV {bar}016t$ production channel}{35}{subsection.2.6.2}\protected@file@percent }
 \newlabel{subsection:ttChannel}{{2.6.2}{35}{The $t \bar t$ production channel}{subsection.2.6.2}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.29}{\ignorespaces Schematic representation of a typical $t \mathaccentV {bar}016t$+DM event.\relax }}{35}{figure.caption.66}\protected@file@percent }
-\newlabel{fig:ttDMFeynman}{{2.29}{35}{Schematic representation of a typical $t \bar t$+DM event.\relax }{figure.caption.66}{}}
-\citation{PDG}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.29}{\ignorespaces Schematic representation of a typical $t \mathaccentV {bar}016t$+DM event.\relax }}{35}{figure.caption.68}\protected@file@percent }
+\newlabel{fig:ttDMFeynman}{{2.29}{35}{Schematic representation of a typical $t \bar t$+DM event.\relax }{figure.caption.68}{}}
+\acronymused{MET}
+\acronymused{DM}
 \citation{PreviousDoubleTopNoLep13ATLAS}
 \citation{PreviousDoubleTopNoLep13ATLAS}
 \citation{PreviousDoubleTopBottomAllLep13ATLAS}
@@ -671,13 +706,11 @@
 \citation{PreviousDoubleTopAllLep13CMS}
 \citation{PreviousDoubleTopAllLep13CMS}
 \citation{PreviousSingleDoubleTopAllLep13CMS}
-\acronymused{MET}
-\acronymused{DM}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.6.3}The dilepton final state}{36}{subsection.2.6.3}\protected@file@percent }
 \newlabel{subsection:diLeptonFS}{{2.6.3}{36}{The dilepton final state}{subsection.2.6.3}{}}
 \acronymused{MET}
 \AC@undonewlabel{acro:BR}
-\newlabel{acro:BR}{{2.6.3}{36}{The dilepton final state}{section*.67}{}}
+\newlabel{acro:BR}{{2.6.3}{36}{The dilepton final state}{section*.69}{}}
 \acronymused{BR}
 \@writefile{toc}{\contentsline {section}{\numberline {2.7}Previous relevant results}{36}{section.2.7}\protected@file@percent }
 \newlabel{section:PreviousResults}{{2.7}{36}{Previous relevant results}{section.2.7}{}}
@@ -686,29 +719,30 @@
 \acronymused{CERN}
 \acronymused{ATLAS}
 \acronymused{CL}
-\acronymused{ATLAS}
 \acronymused{CMS}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.30}{\ignorespaces Limits on the mass on the \ac {DM} and mediator masses obtained by \ac {ATLAS} using 13.3 fb${-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite  {PreviousDoubleTopNoLep13ATLAS}.\relax }}{37}{figure.caption.68}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.30}{\ignorespaces Limits on the mass on the \ac {DM} and mediator masses obtained by \ac {ATLAS} using 13.3 fb$^{-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite  {PreviousDoubleTopNoLep13ATLAS}.\relax }}{37}{figure.caption.70}\protected@file@percent }
 \acronymused{DM}
 \acronymused{ATLAS}
-\newlabel{fig:ATLAS13}{{2.30}{37}{Limits on the mass on the \ac {DM} and mediator masses obtained by \ac {ATLAS} using 13.3 fb${-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite {PreviousDoubleTopNoLep13ATLAS}.\relax }{figure.caption.68}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.31}{\ignorespaces Exclusion limits at the 95\% \ac {CL} obtained by ATLAS considering scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac {DM} mass of 1 GeV \cite  {PreviousDoubleTopBottomAllLep13ATLAS}\relax }}{37}{figure.caption.69}\protected@file@percent }
+\newlabel{fig:ATLAS13}{{2.30}{37}{Limits on the mass on the \ac {DM} and mediator masses obtained by \ac {ATLAS} using 13.3 fb$^{-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite {PreviousDoubleTopNoLep13ATLAS}.\relax }{figure.caption.70}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.31}{\ignorespaces Exclusion limits at the 95\% \ac {CL} obtained by \ac {ATLAS} considering scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac {DM} mass of 1 GeV \cite  {PreviousDoubleTopBottomAllLep13ATLAS}\relax }}{37}{figure.caption.71}\protected@file@percent }
+\acronymused{CL}
+\acronymused{ATLAS}
+\acronymused{DM}
+\newlabel{fig:atlas36}{{2.31}{37}{Exclusion limits at the 95\% \ac {CL} obtained by \ac {ATLAS} considering scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac {DM} mass of 1 GeV \cite {PreviousDoubleTopBottomAllLep13ATLAS}\relax }{figure.caption.71}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2.32}{\ignorespaces 95\% \ac {CL} exclusion plots on the signal strength computed as a function of the mediator and \ac {DM} masses obtained by \ac {CMS} considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite  {PreviousDoubleTopAllLep13CMS}.\relax }}{37}{figure.caption.72}\protected@file@percent }
 \acronymused{CL}
 \acronymused{DM}
-\newlabel{fig:atlas36}{{2.31}{37}{Exclusion limits at the 95\% \ac {CL} obtained by ATLAS considering scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac {DM} mass of 1 GeV \cite {PreviousDoubleTopBottomAllLep13ATLAS}\relax }{figure.caption.69}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.32}{\ignorespaces 95\% \ac {CL} exclusion plots on the signal strength computed as a function of the mediator and \ac {DM} massed obtained by CMS considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite  {PreviousDoubleTopAllLep13CMS}.\relax }}{37}{figure.caption.70}\protected@file@percent }
-\acronymused{CL}
-\acronymused{DM}
-\newlabel{figure:CMSttbarExclusion}{{2.32}{37}{95\% \ac {CL} exclusion plots on the signal strength computed as a function of the mediator and \ac {DM} massed obtained by CMS considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite {PreviousDoubleTopAllLep13CMS}.\relax }{figure.caption.70}{}}
+\acronymused{CMS}
+\newlabel{figure:CMSttbarExclusion}{{2.32}{37}{95\% \ac {CL} exclusion plots on the signal strength computed as a function of the mediator and \ac {DM} masses obtained by \ac {CMS} considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite {PreviousDoubleTopAllLep13CMS}.\relax }{figure.caption.72}{}}
 \citation{PreviousSingleDoubleTopAllLep13CMS}
 \citation{PreviousSingleDoubleTopAllLep13CMS}
 \acronymused{CL}
 \acronymused{LHC}
 \acronymused{DM}
-\@writefile{lof}{\contentsline {figure}{\numberline {2.33}{\ignorespaces Expected and observed 95\% \ac {CL} limits on the \ac {DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite  {PreviousSingleDoubleTopAllLep13CMS}.\relax }}{38}{figure.caption.71}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2.33}{\ignorespaces Expected and observed 95\% \ac {CL} limits on the \ac {DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite  {PreviousSingleDoubleTopAllLep13CMS}.\relax }}{38}{figure.caption.73}\protected@file@percent }
 \acronymused{CL}
 \acronymused{DM}
-\newlabel{figure:Combination2019}{{2.33}{38}{Expected and observed 95\% \ac {CL} limits on the \ac {DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite {PreviousSingleDoubleTopAllLep13CMS}.\relax }{figure.caption.71}{}}
+\newlabel{figure:Combination2019}{{2.33}{38}{Expected and observed 95\% \ac {CL} limits on the \ac {DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite {PreviousSingleDoubleTopAllLep13CMS}.\relax }{figure.caption.73}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}The experimental device}{39}{chapter.3}\protected@file@percent }
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -766,10 +800,11 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chapter:Conclusion}{{8}{49}{Conclusions}{chapter.8}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {8.1}Future prospects}{49}{section.8.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Appendices}{51}{section*.72}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Appendices}{51}{section*.74}\protected@file@percent }
 \citation{SMFermions}
 \citation{RotationCurves}
 \citation{PlanckTemperature}
+\citation{Planck}
 \citation{BulletClusterSigma}
 \citation{ColdWarmDM}
 \citation{FreezeOut2}
@@ -778,7 +813,6 @@
 \citation{DMDetection1}
 \citation{AxionSearches}
 \citation{ColliderSearches}
-\citation{DirectSearches}
 \acronymused{SM}
 \acronymused{CMB}
 \acronymused{CMB}
@@ -789,18 +823,22 @@
 \acronymused{MACHO}
 \acronymused{CL}
 \acronymused{DM}
-\acronymused{DM}
+\acronymused{ADMX}
+\acronymused{CAST}
+\acronymused{IAXO}
+\citation{DirectSearches}
 \citation{AnnualModulation}
 \citation{DirectWays}
 \citation{DirectWays}
-\citation{DAMA}
 \citation{DirectWays}
+\citation{DAMA}
 \citation{LATExperiment}
 \citation{BkgNeutrino}
 \citation{AMSData}
 \citation{ColliderSearches}
 \citation{STChannels}
 \citation{ColliderSearches}
+\acronymused{DM}
 \acronymused{DM}
 \acronymused{WIMP}
 \acronymused{SI}
@@ -821,11 +859,11 @@
 \acronymused{ISR}
 \acronymused{MET}
 \acronymused{CMS}
-\acronymused{CMS}
 \citation{PreviousDoubleTopNoLep13ATLAS}
 \citation{PreviousDoubleTopBottomAllLep13ATLAS}
 \citation{PreviousDoubleTopAllLep13CMS}
 \citation{PreviousSingleDoubleTopAllLep13CMS}
+\acronymused{CMS}
 \acronymused{CMS}
 \acronymused{SD}
 \acronymused{SI}
@@ -833,12 +871,14 @@
 \acronymused{DM}
 \acronymused{ATLAS}
 \acronymused{CL}
+\acronymused{ATLAS}
 \acronymused{DM}
 \acronymused{CL}
 \acronymused{DM}
+\acronymused{CMS}
 \acronymused{CL}
 \acronymused{DM}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{57}{chapter*.74}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{57}{chapter*.76}\protected@file@percent }
 \bibcite{HiggsPostulate1}{1}
 \bibcite{HiggsPostulate2}{2}
 \bibcite{HiggsDiscovery1}{3}
