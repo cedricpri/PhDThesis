@@ -43,6 +43,7 @@
 \usepackage{fancyhdr}
 \usepackage{subfigure}
 \usepackage{float}
+\usepackage{xcolor}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -158,6 +159,11 @@
 \acro{MET}[MET]{Missing Transverse Energy}
 \acro{VBF}[VBF]{Vector Boson Fusion}
 \acro{BR}[BR]{Branching Ratio}
+\acro{LEP}[LEP]{Large Electron Positron collider}
+\acro{ALICE}[ALICE]{A Large Ion Collider Experiment}
+\acro{PS}[PS]{Proton Synchrotron}
+\acro{SPS}[SPS]{Super Proton Synchrotron}
+\acro{PU}[PU]{Pile Up}
 
 \end{acronym}
 \newpage
@@ -194,7 +200,7 @@ However, this also means that the phenomenology of this quark is mostly driven b
 
 The \ac{LHC} has now been running for 10 years, and several similar searches have already been carried out and published in the past by the \ac{CMS} and \ac{ATLAS} collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the \ac{CMS} (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and \ac{ATLAS} collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. Then, at 13 TeV, the \ac{ATLAS} collaboration published on one hand several studies, considering different final states and different luminosities (13.3 fb$^{-1}$ and 36.1 fb$^{-1}$) \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the \ac{CMS} collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis while considering the full Run II dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
-After a general introduction about \ac{DM} in general in Chapter~\ref{chapter:Case}, the experimental device will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
+After a general introduction about \ac{DM} in general in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \ac{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
 
 Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to perform this task. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in Section~\ref{section:Discrimination}.
 
@@ -936,9 +942,95 @@ This combination managed to exclude the production of scalar mediators up to 290
 \end{center}
 \end{figure}
 
-\chapter{The experimental device} \label{chapter:Device}
-\section{The LHC accelerator}
-\section{The CMS detector}
+\chapter{The experimental setup} \label{chapter:Device}
+
+The data analyzed throughout this work is the results of the proton-proton collisions at a center of mass energy of 13 TeV and provided by the \acf{LHC}. Is is therefore extremely important to describe this particle accelerator and to details its main characteristics in order to understand better the origin of our data, as will be done in Section~\ref{section:LHC}. This kind of collisions at high energy typically produces hundreds of new particles that we then need to identify, and whose exact properties need to be measured. This is done by using the \acf{CMS} detector, an incredibly sophisticated experiment which is the result of the work of thousands of scientists and made of several different layers, which will be described in Section~\ref{section:CMS} of this chapter.
+
+\section{The \ac{LHC} accelerator} \label{section:LHC}
+
+The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and heavy lead ions. Planned since the end of the 20th century, this accelerator, a 27 kilometers ring now located at \ac{CERN}, at the border between Switzerland and France and put 100 meters underground to remove part of the contamination due to the cosmic rays, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was to first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never directly observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then an incredible achievement of the accelerator, after only two years of operation.
+
+Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass or its spin, many groups of scientists are now involved in different kind of \ac{BSM} physics, since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allow us to reach a level of energy never reached before, and would therefore potentially allow us to probe new parts of the phase space. These kind of searches of course include the search for eventual \ac{DM} production as the one performed in this work. Let's now start with a general description of the general design of this particle accelerator before describing its performances in particular.
+
+\subsection{The \ac{LHC} in a nutshell}
+
+The \ac{LHC} is an underground particle accelerator, build underground, in the same 27 kilometers tunnel were the \ac{LEP} was previously used. This accelerator is accelerating two beams of billions protons or lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing to curve the beam to maintain its trajectory circular and to focus it, to avoid its dispersion because of the repulsion of the protons of the beams. A dedicated section of the accelerator is then made out of 16 radio-frequency cavities, synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the acceleration of such particles.
+
+Once the nominal center of mass energy $\sqrt{s} = 13$ TeV reached (this concept will be described in Subsection~\ref{subsection:CMEnergy}), the protons are then smashed together in 4 different places on the \ac{LHC}, where the 4 detector (\ac{ATLAS}, \ac{CMS}, \ac{ALICE} and LHCb have been placed in order to study the collisions. Both \ac{ATLAS} and \ac{CMS} are general detectors, able to study exotic processes such as the production of \ac{DM} and to make precision measurements on \ac{SM} physics as well (the decision to build two separate detectors was made in order to introduce some redundancy and to check the results). \ac{ALICE}, on the other hand, is mostly dedicated to the study of heavy ions collisions that happen $\sim 10$\% of the time in order to study in particular a specific state of matter, called the quark-gluon plasma \cite{ALICE}. Finally, LHCb has been designed to study in particular the CP violation phenomena, which could be the sign of some new physics \cite{LHCb}.
+
+It is important to note at this point that the \ac{LHC} is not a standalone accelerator, in the sense that protons enter the \ac{LHC} with a velocity close to the speed of light already. In order to reach such input energies ($\sim 450$ GeV), previous smaller accelerators of \ac{CERN} are still used today: first of all, the protons, extracted from a bottle of hydrogen are injected into the LINAC 2, a linear accelerator, before being transferred to the \ac{PS}, the \ac{SPS} and finally the \ac{LHC} itself (all this chain of acceleration can be found in Figure~\ref{fig:Chain}).
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/LHCChain.png}
+\caption{LHC injection chain and experiments performed at \ac{CERN} \cite{AWAKE}.}
+\label{fig:Chain}
+\end{center}
+\end{figure}
+
+The beam, injected from the \ac{SPS} into the \ac{LHC} into two counter-rotating beams, is separated in a series of 2808 bunches of protons, nominally separated by 25ns (giving raise to a collision rate of 40 MHz), so that the experiments have the time to record the collision and clean the detectors so that they are ready for the next bunch crossing, coming just a few nano seconds later. Each time one bunch crossing happens, around 25 collisions of protons happen at time: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
+
+\subsection{\ac{LHC} key parameters}
+
+\subsubsection{Center of mass energy} \label{subsection:CMEnergy}
+
+The center of mass energy is defined as a Lorentz invariant quantity resulting of the collisions of two protons ($E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle in Equation~\ref{eq:CMEnergy}. It is a key variable of the \ac{LHC} since the phase space of particles that can be explored directly depend on this value.
+
+\begin{equation}
+\label{eq:CMEnergy}
+\sqrt{s} = \sqrt{(m_1)^2 + (m_2)^2 + 2 \left (E_1 E_2-2 |\overrightarrow{p_1}| \text{ } |\overrightarrow{p_2}| \text{ cos}(\theta) \right )} = 13 \text{ TeV}
+\end{equation}
+
+The LHC started its operation in 2008 running at an energy of 8 TeV and kept this level of energy during the full Run I of operation. In 2015, for the Run II of data taking, the energy was increased until reaching 13 TeV (2 times 6.5 TeV for each beam) and an expected value of 14 TeV, the nominal energy for which the \ac{LHC} was originally built, is expected to be reached in the near future.
+
+\subsubsection{Luminosity} \label{subsection:Lumi}
+
+The luminosity is an another extremely important variable for the operation of the \ac{LHC} since, as a rule of thumb, it gives an indication on the number of collisions per second given by the accelerator, and this value is extremely important in order to collect as much data as possible, in order to be able to isolate processes which an extremely low probability of apparition when colliding two protons (low production cross section).
+
+Mathematically, we can first of all define in Equation~\ref{eq:Rate} the rate $R$ of production (in number of events per second) of any given process using its cross section $\sigma$, equivalent to its production probability, and the instantaneous luminosity $\mathcal{L}$. From this rate can be extracted easily the number of expected interactions $N$ in a certain amount of time $T$ as well. 
+
+\begin{equation}
+\label{eq:Rate}
+\begin{dcases}
+R = \mathcal{L} \cdot \sigma \\
+N = \sigma \int_0^T \mathcal{L}(t) dt = \sigma L
+\end{dcases}
+\end{equation}
+
+This instantaneous luminosity we just introduced $\mathcal{L}$ can be defined using Equation~\ref{eq:Luminosity}, assuming that the beams have a Gaussian profile, while the integrated luminosity $L$ can be defined by simply integrating the instantaneous luminosity over time $L = \int \mathcal{L}dt$ \cite{Thomson}.
+
+\begin{equation}
+\label{eq:Luminosity}
+\mathcal{L} = \frac{\gamma k_B N_p^2}{4 \pi \epsilon_n \beta^*}F
+\end{equation}
+
+In this last equation, the following properties of the accelerator have been introduced:
+\begin{itemize}
+\item $\gamma$ is the usual relativistic Lorentz factor (for the \ac{LHC}, when protons go at their maximum velocity of 99.9999991\% of the speed of light, $\gamma = 7460$)
+\item $f$ is the frequency of revolution
+\item $k_B$ is the number of proton bunches per beam
+\item $N_p$ is the number of protons per bunch
+\item $\epsilon_n$ is the normalized emittance, describing how much space the beam occupies in the phase space
+\item $\beta^*$ is the betatron function at the interaction point
+\item $F$ is the form factor accounting for the fact that the collisions do not happen exactly head-on
+\end{itemize}
+
+As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting, in order to produce even processes which have a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam and even to try and reduce the beam crossing angle at the interaction point.
+
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. \color{red} The final datasets available that will be analyzed in this work have an integrated luminosity of 35.9 fb$^{-1}$ (2016), 41.5 fb$^{-1}$ and 58.5 fb$^{-1}$ (2018), resulting in a total dataset of 138 fb$^{-1}$ for the Run II of operation. \color{black} This typically means that we expect to produce around 138 events of any process whose cross section of production would be equal to 1 fb.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/CumuLumi.pdf}
+\caption{Integrated luminosity recorded by \ac{CMS} over its different years of operation so far.}
+\label{fig:Lumi}
+\end{center}
+\end{figure}
+
+
+\subsubsection{Pile Up} \label{subsection:PU}
+
+\section{The \ac{CMS} detector} \label{section:CMS}
 \subsection{Tracker}
 \subsection{Electromagnetic calorimeter}
 \subsection{Hadronic calorimeter}
@@ -1461,6 +1553,28 @@ JHEP 02 (2017) 135 [arXiv: 1610.09218]
 Particle Data Group,
 Phys. Rev. D98, 030001 (2018)}
 
+\bibitem{ALICE}
+\href{https://arxiv.org/abs/hep-ph/0509259}{R. Schicker,
+"The ALICE detector at LHC",
+2005
+}
+
+\bibitem{LHCb}
+\href{https://arxiv.org/abs/1412.6352}{LHCb Collaboration,
+"LHCb Detector Performance",
+Int. J. Mod. Phys. A 30, 1530022 (2015) [arXiv: 1412.6352]
+}
+
+\bibitem{AWAKE}
+\href{https://arxiv.org/abs/1705.10573}{E. Gschwendtner,
+"AWAKE, A Particle-driven Plasma Wakefield Acceleration Experiment",
+CERN Yellow Report CERN 2016-001, pp.271-288 [arXiv: 1705.10573]
+}
+
+\bibitem{Thomson}
+M. Thomson,
+"Modern Particle Physics",
+Cambridge University Press, 2013
 
 \end{thebibliography}
 
