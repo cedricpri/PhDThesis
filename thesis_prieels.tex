@@ -44,6 +44,7 @@
 \usepackage{subfigure}
 \usepackage{float}
 \usepackage{xcolor}
+\usepackage{multicol}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -100,7 +101,7 @@
 
 %Empty page
 
-\clearpage
+%\clearpage
 \thispagestyle{empty}
 \phantom{a}
 \vfill
@@ -121,6 +122,7 @@
 \newpage
 %
 \chapter*{\huge{Acronyms used}}
+\begin{multicols}{2}
 \begin{acronym}
 
 %List all the acronyms used
@@ -173,14 +175,24 @@
 \acro{TIB/TBD}[TIB/TBD]{Tracker Inner Barrel and Disks}
 \acro{TOB}[TOB]{Tracker Outer Barrel}
 \acro{TEC}[TEC]{Tracker EndCap} 
+\acro{HO}[HO]{Hadron Outer}
 
 \end{acronym}
+\end{multicols}
 \newpage
 
 %Table of contents
 \tableofcontents
 
 \thispagestyle{empty}
+\newpage
+
+%Empty page
+
+\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
 \newpage
 
 %Here it starts!
@@ -1111,18 +1123,84 @@ In particular, the tracker is made out of two distinct parts: the smaller and in
 \item The \textbf{silicon strip detector} on the other hand is composed of three different sub-systems, as seen in Figure~\ref{fig:CMSTracker} and covers a total area of $\sim 200$ m$^2$. First of all, the \ac{TIB/TBD} add an additional 4 barrel layers and 3 endcap disks to the tracker system up to a distance $r$ of 55 cm to the \ac{PV} of the interaction, using silicon micro-strip sensors parallel in the barrel and perpendicular beam axis in both endcaps. Then, the \ac{TOB} then surrounds this first layer. Having an outer radius of 166 cm and going up to 118 cm along the z-axis, it adds 6 layers to the inner tracking system. Finally, the \acp{TEC} are made out of 9 disks and complete the measurement of particles emitted along the z-axis and having a high pseudorapidity $\eta$.
 \end{itemize}
 
-The \ac{CMS} tracker is extremely performant. We can see in Figure~\ref{fig:TrackerEff} that muons are indeed reconstructed with an efficiency higher than 99\% for most of the pseudorapidity spectrum, even though we can observe that this efficiency drops at high $\eta$ values, mainly because of the reduced coverage provided by the pixel forward disks. The interactions between the hadrons and the tracking system is also a bit higher, which result in a lower reconstruction efficiency for such particles.
+The \ac{CMS} tracker is extremely performing: we can see in Figure~\ref{fig:TrackerEff} that muons are indeed reconstructed with an efficiency higher than 99\% for most of the pseudorapidity spectrum, even though we can observe that this efficiency drops at high $\eta$ values, mainly because of the reduced coverage provided by the pixel forward disks. The interactions between the hadrons and the tracking system is also a bit higher, which result in a lower reconstruction efficiency for such particles.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm, height=5.5cm]{figs/TrackerEff.png}
-\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) for different pseudorapidities and particle momentum (1, 10 and 100 GeV). \cite{CMSDescription}.}
+\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) for different pseudorapidities and particle momentum (1, 10 and 100 GeV) \cite{CMSDescription}.}
 \label{fig:TrackerEff}
 \end{center}
 \end{figure}
 
 \subsection{\acf{ECAL}} \label{subsection:ECAL}
+
+The \acf{ECAL} of CMS is an homogeneous detector surrounding the tracker that gives information about the energy of electrons and photons, both being able to interact electromagnetically with its crystals. The \ac{ECAL} can also be divided into several sections: first of all, at pseudorapidites $|\eta| < 1.479$ is found the barrel part of the \ac{ECAL} (EB), made out of 61 200 lead tungstate (PbWO$_4$) crystals, located at a radius of 1.29 meters of the beam pipe. Then, two endcaps, each endcap made out of 7 324 of those crystals complete the coverage of the detector up to $|\eta| < 3$, as shown in Figure~\ref{fig:CMSECAL}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=9cm, height=6cm]{figs/CMSEcal.png}
+\caption{Schematic representation of the \ac{CMS} \ac{ECAL} \cite{CMSDescription}.}
+\label{fig:CMSECAL}
+\end{center}
+\end{figure}
+
+Its principle is simple and based on electromagnetic showers: when a particle such as an electron or a photon enters the \ac{ECAL}, they will start to interact in different ways: photons will mainly produce pairs of electrons and anti-electrons, while the electrons themselves tend to emit additional photons by bremsstrahlung effect. This results in a chain reaction during which the incident particle will give most of its energy to the detector itself, energy which can therefore be measured using photodetectors and photomultipliers. This effect is known as an electromagnetic shower, is represented in Figure~\ref{fig:EMShowers} and is usually characterized using the so-called radiation length $X_0$, the mean distance over which a high-energy electron loses all but 1/e of its energy, then determining the total length of interaction of a particle in the \ac{ECAL}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=7cm, height=6cm]{figs/EMShowers.png}
+\caption{Schematic representation of a typical electromagnetic shower and the radiation length $X_0$ concept \cite{CMSDescription}.}
+\label{fig:EMShowers}
+\end{center}
+\end{figure}
+
+The high density, short radiation length and low scintillationd decay time (smaller than the bunch spacing of 25 ns) of the PbWO$_4$ crystals therefore makes them perfect candidates towards a compact \ac{ECAL} in \ac{CMS}. These crystals do have some drawbacks as well: their relative fragility when it comes to radiation, and the dependence on the temperature of their response. Indeed, a cooling system had to be built in order to keep the huge detector under temperature variations lower than 0.1$^\circ$.
+
+These crystals, which had to be grown individually in laboratories, measure 2.2x2.2x23 cm in the barrel, and 3x3x22 cm in the endcaps, and have therefore a length corresponding to around 26 radiation lengths. Since the light output of such crystals is quite low (only around 4.5 photoelectrons per MeV of energy), they have to be connected to both avalanche photodiodes and vacuum phototriodes in order to multiply the signal measured. Finally, these crystals have been mounted used a specific installation, slightly tilted with respect to both $\phi$ and $\eta$ in order to remove any possible gap between two adjacent crystals.
+
+The typical energy resolution of the \ac{ECAL} installed at \ac{CMS} is given by Equation~\ref{eq:CMSEcal} \cite{CMSDescription}, accounting for several different effects, such as the stochastic nature of the observe scintillation, the electronics and \ac{PU} noise and the calibration and detector non-uniformity uncertainty.
+
+\begin{equation}
+\label{eq:CMSEcal}
+\frac{\sigma_E}{E} = \sqrt{\left ( \frac{2.8 \%}{\sqrt{E}} \right)^2 + \left ( \frac{0.12 \%}{E} \right )^2 + (0.30 \%)^2} \sim \frac{3-10\%}{\sqrt{E/\text{GeV}}}
+\end{equation}
+
+Finally, a preshower layer has been set up just before the \ac{ECAL} in order to reduce the possible mis-identification of events in which highly boosted pions could decay into two photons $\pi^0 \rightarrow \gamma \gamma$ as individual photos. This detector has been installed in the fiducial region ($1.653 < |\eta| < 2.6$) of the endcaps and is made of lead, initiatiing the shower process, followed by two layers of silicon strips.
+
 \subsection{\acf{HCAL}}\label{subsection:HCAL}
+
+We know that charged hadrons do lose energy in a continuous when they traverse matter due to the ionization process and that all the hadrons strongly interact with the nuclei of any given medium, and these principles are actually used in order to measure the energy of the hadrons produced by the \ac{LHC} collisions using the \acf{HCAL} sub-system of \ac{CMS}. 
+
+In this case as well, hadronic showers due to a chain reaction are also expected since the primary hadronic interaction will produce several additional hadrons, themselves interact even more with the medium while losing energy. This shower is characterized by the $\lambda$ parameter, the nuclear interaction length, defined as the mean distance between two interactions of relativistic hadrons. Typically, the nuclear interaction length $\lambda$ is much larger than the radiation length $X_0$, meaning that the \ac{HCAL} has to be much larger than the \ac{ECAL}. 
+
+A typical \ac{HCAL} setup consists in alternating thick and high-density layers of absorber material, in which the showers can develop, and thin layers of active materials used for the actual detection by sampling the energy deposition. This measurement is usually much less precise than the measurement provided by the \ac{ECAL}, mostly since $\pi^0$ decaying into photons can appear in these showers, leading to an electromagnetic component of the shower that cannot be measured, and because around 30\% of the incident energy is usually lost due to nuclear excitation and break-up effects \cite{Thomson}. In this case, the energy resolution can therefore be expressed using Equation~\ref{eq:HCALRes}.
+
+\begin{equation}
+\label{eq:HCALRes}
+\frac{\sigma_E}{E} > \frac{50\%}{\sqrt{E/\text{GeV}}}
+\end{equation}
+
+In \ac{CMS}, the \ac{HCAL}, represented in Figure~\ref{fig:CMSHCAL}, is also divided into a barrel (HB), radially constraint between radii values of 1.77 (outer radius of the \ac{ECAL} and 2.95 meters (inner radius of the solenoid), and two symmetrical forward regions (HF) extending the pseudorapidities coverage from $|\eta| = 3$ to $|\eta| = 5.2$, located at a distance of 11.2 meters to the \ac{PV}. A final part composing the \ac{HCAL} is the so-called \ac{HO}, which has to be put outside of the solenoid in order to increase the active material of the \ac{HCAL} and therefore the effective nuclear radiation length $\lambda$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=11cm, height=8cm]{figs/CMSHCAL.png}
+\caption{Schematic representation of the \ac{HCAL} detector in \ac{CMS} \cite{CMSDescription}.}
+\label{fig:CMSHCAL}
+\end{center}
+\end{figure}
+
+The \ac{HCAL} barrel used 36 identical azimuthal wedges as absorber, placed along the beam axis in such a way that the eventual cracks between them is smaller than 2 mm. The total absorber thickness at a $90\circ$ incidence angle is equal to only $5.8 \lambda$, which is why the \ac{HO} had to be put in order to increase this value to make sure to slow down even the most energetic hadrons. The active medium of the HB is made out of 70 000 tiles able to collect the scintillation light, using the wavelength shifting fibre concept to measure the energy of the hadrons. The barrel covers $|\eta|$ regions up to 1.3, while the coverage up to $|\eta| < 3.0$ is given by two endcaps on each side of the detector, placed in such a way to minimize the eventual cracks between the HB and the two HE. Finally, the \ac{HO}, built in order to ensure adequate sampling depth at low pseudorapidities values, actually use the solenoid itself as additional absorber material, since it is placed a bit outside of this coil. Its shape is constrainted by the muon system and the mean fraction of recovered energy from the \ac{HO} has been estimated to be equal to 0.38\% for 10 GeV pions and up to 4.3\% for 300 GeV pions, as shown in Figure~\ref{HOImpact}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=11cm, height=4cm]{figs/HOImpact.png}
+\caption{Distribution of the measured energy scaled to the incident energy for pions with incident energies of 200 GeV at $\eta = 0$ (on the left) and 225 GeV at $\eta = 0.5$ (on the right), with and without the inclusion of the \ac{HO} in the \ac{HCAL} system \cite{CMSDescription}.}
+\label{fig:HOImpact}
+\end{center}
+\end{figure}
+
 \subsection{Solenoid} \label{subsection:Solenoid}
 \subsection{Muon system} \label{subsection:Muon}
 \subsection{Trigger} \label{subsection:Trigger}
