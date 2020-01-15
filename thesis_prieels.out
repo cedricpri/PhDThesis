@@ -23,39 +23,40 @@
 \BOOKMARK [2][-]{subsection.3.1.2}{LHC key parameters}{section.3.1}% 23
 \BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic calorimeter}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic calorimeter}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.4}{Muon system}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.5}{Trigger}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.6}{Data acquisition}{section.3.2}% 30
-\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 31
-\BOOKMARK [1][-]{section.4.1}{Particle Flow algorithm}{chapter.4}% 32
-\BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 33
-\BOOKMARK [2][-]{subsection.4.2.1}{Electrons}{section.4.2}% 34
-\BOOKMARK [2][-]{subsection.4.2.2}{Muons}{section.4.2}% 35
-\BOOKMARK [1][-]{section.4.3}{Jets reconstruction}{chapter.4}% 36
-\BOOKMARK [2][-]{subsection.4.3.1}{B-tagging}{section.4.3}% 37
-\BOOKMARK [1][-]{section.4.4}{Missing transverse energy}{chapter.4}% 38
-\BOOKMARK [1][-]{section.4.5}{Top reconstruction}{chapter.4}% 39
-\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 40
-\BOOKMARK [1][-]{section.5.1}{Data samples}{chapter.5}% 41
-\BOOKMARK [1][-]{section.5.2}{Signal samples}{chapter.5}% 42
-\BOOKMARK [1][-]{section.5.3}{Background prediction}{chapter.5}% 43
-\BOOKMARK [2][-]{subsection.5.3.1}{The main background: t }{section.5.3}% 44
-\BOOKMARK [2][-]{subsection.5.3.2}{Drell-Yan estimation}{section.5.3}% 45
-\BOOKMARK [2][-]{subsection.5.3.3}{Non prompt contamination}{section.5.3}% 46
-\BOOKMARK [2][-]{subsection.5.3.4}{Smaller backgrounds}{section.5.3}% 47
-\BOOKMARK [2][-]{subsection.5.3.5}{Weights and corrections applied}{section.5.3}% 48
-\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 49
-\BOOKMARK [1][-]{section.6.1}{Signal regions}{chapter.6}% 50
-\BOOKMARK [1][-]{section.6.2}{Control regions}{chapter.6}% 51
-\BOOKMARK [1][-]{section.6.3}{Background-signal discrimination}{chapter.6}% 52
-\BOOKMARK [2][-]{subsection.6.3.1}{Discriminating variables}{section.6.3}% 53
-\BOOKMARK [2][-]{subsection.6.3.2}{Neural network}{section.6.3}% 54
-\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 55
-\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 56
-\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 57
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 58
-\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 59
-\BOOKMARK [0][-]{section*.81}{Appendices}{}% 60
-\BOOKMARK [0][-]{chapter*.83}{Bibliography}{}% 61
+\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic Calorimeter \(ECAL\)}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic Calorimeter \(HCAL\)}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.4}{Solenoid}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.5}{Muon system}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.6}{Trigger}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.7}{Data acquisition}{section.3.2}% 31
+\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Particle Flow algorithm}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.2.1}{Electrons}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.2}{Muons}{section.4.2}% 36
+\BOOKMARK [1][-]{section.4.3}{Jets reconstruction}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.3.1}{B-tagging}{section.4.3}% 38
+\BOOKMARK [1][-]{section.4.4}{Missing transverse energy}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.5}{Top reconstruction}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 41
+\BOOKMARK [1][-]{section.5.1}{Data samples}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{Signal samples}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.3}{Background prediction}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.3.1}{The main background: t }{section.5.3}% 45
+\BOOKMARK [2][-]{subsection.5.3.2}{Drell-Yan estimation}{section.5.3}% 46
+\BOOKMARK [2][-]{subsection.5.3.3}{Non prompt contamination}{section.5.3}% 47
+\BOOKMARK [2][-]{subsection.5.3.4}{Smaller backgrounds}{section.5.3}% 48
+\BOOKMARK [2][-]{subsection.5.3.5}{Weights and corrections applied}{section.5.3}% 49
+\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 50
+\BOOKMARK [1][-]{section.6.1}{Signal regions}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.2}{Control regions}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.3}{Background-signal discrimination}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.3.1}{Discriminating variables}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.2}{Neural network}{section.6.3}% 55
+\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 56
+\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 57
+\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 58
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 59
+\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 60
+\BOOKMARK [0][-]{section*.95}{Appendices}{}% 61
+\BOOKMARK [0][-]{chapter*.97}{Bibliography}{}% 62

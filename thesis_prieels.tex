@@ -164,6 +164,15 @@
 \acro{PS}[PS]{Proton Synchrotron}
 \acro{SPS}[SPS]{Super Proton Synchrotron}
 \acro{PU}[PU]{Pile Up}
+\acro{PV}[PV]{Primary Vertex}
+\acro{ECAL}[ECAL]{Electromagnetic Calorimeter}
+\acro{HCAL}[HCAL]{Hadronic Calorimeter}
+\acro{DT}[DT]{Drift tube}
+\acro{CSC}[CSC]{Cathode Strip Chamber}
+\acro{RPC}[RPC]{Resistive Plate Chamber}
+\acro{TIB/TBD}[TIB/TBD]{Tracker Inner Barrel and Disks}
+\acro{TOB}[TOB]{Tracker Outer Barrel}
+\acro{TEC}[TEC]{Tracker EndCap} 
 
 \end{acronym}
 \newpage
@@ -545,7 +554,7 @@ falling exponential function as shown in Figure~\ref{fig:DirectFalling} \cite{Di
 
 \begin{equation}
 \label{equation:WIMPRate}
-\frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv \propto exp \left (- \frac{E_{nr}}{E_0} \frac{4 m_\chi m_N}{(m_\chi + m_N)^2} \right )
+\frac{dR}{dE_{nr}} = \frac{\rho_0 M}{m_N m_\chi} \int_{v_{\text{min}}}^{v_{\text{esc}}} v f(v) \frac{d \sigma}{dE_{nr}}dv \propto \text{exp} \left (- \frac{E_{nr}}{E_0} \frac{4 m_\chi m_N}{(m_\chi + m_N)^2} \right )
 \end{equation}
 
 \begin{figure}[htbp]
@@ -919,7 +928,6 @@ Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been
 \caption{Exclusion limits at the 95\% \ac{CL} obtained by \ac{ATLAS} considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{PreviousDoubleTopBottomAllLep13ATLAS}}\label{fig:atlas36}
 \end{figure}
 
-
 The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, but using only the $35.9$ fb$^{-1}$ of data collected during the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
 
 \begin{figure}[htbp]
@@ -968,7 +976,9 @@ It is important to note at this point that the \ac{LHC} is not a standalone acce
 \end{center}
 \end{figure}
 
-The beam, injected from the \ac{SPS} into the \ac{LHC} into two counter-rotating beams, is separated in a series of 2808 bunches of protons, nominally separated by 25ns (giving raise to a collision rate of 40 MHz), so that the experiments have the time to record the collision and clean the detectors so that they are ready for the next bunch crossing, coming just a few nano seconds later. Each time one bunch crossing happens, around 25 collisions of protons happen at time: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
+The beam, injected from the \ac{SPS} into the \ac{LHC} into two counter-rotating beams, is separated in a series of 2808 bunches of protons, nominally separated by 25ns (giving a collision rate of 40 MHz), so that the experiments have the time to record the collision and clean the detectors to prepare it for the next bunch crossing, coming just a few nanoseconds later. Each time one bunch crossing happens, around 35 collisions of protons happen at time: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
+
+As previously stated, the statistics in important for many analyses, meaning that the \ac{LHC} would ideally need to run 24 hours a day, 365 days per year in order to maxime the data taking. However, this is not possible, as setting up a beam takes time and we cannot keep it running at maximal energy forever in the machine, so in ideal conditions around 20 hours of data taking a day are expected. The \ac{LHC} is then running around 9 months per year, since it is usually stopped during the winter for maintenance operations, and the data taking periods are defined into Runs of a few years, after which the accelerator is usually stopped for a longer period of time, in order to also perform upgrade operations of the machine. The data analyzed in this work corresponds to the Run II of operation, while the Run III is expected to start in the Spring of 2021.
 
 \subsection{\ac{LHC} key parameters}
 
@@ -993,7 +1003,7 @@ Mathematically, we can first of all define in Equation~\ref{eq:Rate} the rate $R
 \label{eq:Rate}
 \begin{dcases}
 R = \mathcal{L} \cdot \sigma \\
-N = \sigma \int_0^T \mathcal{L}(t) dt = \sigma L
+N(T) = \sigma \int_0^T \mathcal{L}(t) dt = \sigma L
 \end{dcases}
 \end{equation}
 
@@ -1001,23 +1011,23 @@ This instantaneous luminosity we just introduced $\mathcal{L}$ can be defined us
 
 \begin{equation}
 \label{eq:Luminosity}
-\mathcal{L} = \frac{\gamma k_B N_p^2}{4 \pi \epsilon_n \beta^*}F
+\mathcal{L} = \frac{\gamma f_{\text{rev}} k_B N_p^2}{4 \pi \epsilon_n \beta^*}R \text{ where } R = \frac{1}{\sqrt{1+\frac{\theta_C \sigma_z}{2 \sigma}}}
 \end{equation}
 
-In this last equation, the following properties of the accelerator have been introduced:
+In this last equation, the following properties of the accelerator have been introduced, giving the \ac{LHC} a nominal instantaneous luminosity $\mathcal{L} = 1 \cdot 10^{34}$ cm$^{-2}$ s$^{-1}$:
 \begin{itemize}
 \item $\gamma$ is the usual relativistic Lorentz factor (for the \ac{LHC}, when protons go at their maximum velocity of 99.9999991\% of the speed of light, $\gamma = 7460$)
-\item $f$ is the frequency of revolution
-\item $k_B$ is the number of proton bunches per beam
-\item $N_p$ is the number of protons per bunch
-\item $\epsilon_n$ is the normalized emittance, describing how much space the beam occupies in the phase space
-\item $\beta^*$ is the betatron function at the interaction point
-\item $F$ is the form factor accounting for the fact that the collisions do not happen exactly head-on
+\item $f_{\text{rev}}$ is the frequency of revolution (11.2 kHz)
+\item $k_B$ is the number of proton bunches per beam (2808 for a 25 ns bunch spacing)
+\item $N_p$ is the number of protons per bunch ($1.15 \cdot 10^{11}$ protons)
+\item $\epsilon_n$ is the transverse normalized emittance (3.75 $\mu$m)
+\item $\beta^*$ is the betatron function at the interaction point (0.55 m)
+\item $R$ is the geometrical factor accounting for the fact that the collisions do not happen exactly head-on, therefore reducing the effective luminosity, expressed from the full crossing angle between colliding beam $\theta_C$ (285 $\mu$rad), and $\sigma$, $\sigma_z$ are the transverse and longitudinal r.m.s. sizes (respectively 16.7 $\mu$m and 7.55 cm).
 \end{itemize}
 
-As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting, in order to produce even processes which have a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam and even to try and reduce the beam crossing angle at the interaction point.
+As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting, in order to produce even processes which have a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam and even to try and reduce the beam crossing angle at the interaction point. New crab cavities will probably also be installed during the next long shutdown of the \ac{LHC} in order to increase the value of the geometrical factor $R$ in order to increase the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
 
-The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. \color{red} The final datasets available that will be analyzed in this work have an integrated luminosity of 35.9 fb$^{-1}$ (2016), 41.5 fb$^{-1}$ and 58.5 fb$^{-1}$ (2018), resulting in a total dataset of 138 fb$^{-1}$ for the Run II of operation. \color{black} This typically means that we expect to produce around 138 events of any process whose cross section of production would be equal to 1 fb.
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available that will be analyzed in this work have an integrated luminosity of 35.9 fb$^{-1}$ (2016), 41.5 fb$^{-1}$ and 59.7 fb$^{-1}$ (2018), resulting in a total dataset of 137 fb$^{-1}$ for the Run II of operation. This typically means that we expect to produce around 138 events of any process whose cross section of production would be equal to 1 fb.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1027,16 +1037,96 @@ The total integrated luminosity taken by the \ac{LHC} during its different years
 \end{center}
 \end{figure}
 
+\subsubsection{\acf{PU}} \label{subsection:PU}
 
-\subsubsection{Pile Up} \label{subsection:PU}
+The last key parameter of the \ac{LHC} discussed here is the \acf{PU}. Usually, because of the high density of protons within the beams, a bunch crossing in a experiment produces around 35 collisions protons collisions, as seen in Figure~\ref{fig:PU}, of which only the most interesting one will be kept, defining the \ac{PV}, while the other vertices are usually referred to as the \ac{PU}. The tracker of \ac{CMS}, which will be introduced in the next section, therefore needs to be able to reconstruct all these events in order to define the \ac{PV} of the interaction. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8cm]{figs/PUSUmmary.png}
+\caption{Mean \ac{PU} distribution over the different years of operation of the \ac{LHC}.}
+\label{fig:PU}
+\end{center}
+\end{figure}
 
 \section{The \ac{CMS} detector} \label{section:CMS}
-\subsection{Tracker}
-\subsection{Electromagnetic calorimeter}
-\subsection{Hadronic calorimeter}
-\subsection{Muon system}
-\subsection{Trigger}
-\subsection{Data acquisition}
+
+The \acf{CMS} is one of the two general purpose detectors installed at the access point 5 of the \ac{LHC}, whose main purpose was to discover the Higgs boson, make precision measurement of most of the \ac{SM} processes and to try and discover \ac{BSM} physics, such as the possible existence of \ac{DM}. It has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe, point of origin of all the collisions provided by the \ac{LHC}, and is therefore made of three main sections: the cylindrical barrel at the center, and the two endcaps, one on each side of the detector.
+
+As we can see in Figure~\ref{fig:CMS}, \ac{CMS}, which weights 14.000 tons and has a diameter of 15 meters and a length of 28.7 meters, is made out of different layers, corresponding to different sub-detectors, each able to provide different kind of information about the hundreds of particles created by the collision \cite{CMSDescription}. These sub-detectors will be described in details in the following sections, but they have all been designed in order to make the reconstructions of the different events as efficient, fast and precise as possible and need to be quite cheap but still extremely resistant to the radiation produced.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=8.5cm]{figs/CMS.png}
+\caption{Schematic representation of the \ac{CMS} detector, along with all its sub-detectors and main characteristics.}
+\label{fig:CMS}
+\end{center}
+\end{figure}
+
+The inner part of the \ac{CMS} detector is the so-called tracker, a device made out of silicon pixels and strips, described in Section~\ref{subsection:Tracker} and responsible for the precise reconstruction of all the charged particles coming from the different interaction vertices. A bit further, we can find the \acf{ECAL}, made out of thousands of crystals and described in Section~\ref{subsection:ECAL}, and used to precisely measure the energy of particles able to interact electromagnetically by producing an electromagnetic shower that can be detected. Then comes the \acf{HCAL}, described in Section~\ref{subsection:HCAL} and whose main purpose is to identify and measure the main properties of the hadrons produced in the collision.
+
+The \ac{CMS} name partly comes from its central piece, a huge superconducting solenoid described in Section~\ref{subsection:Solenoid} and able to produce a 3.8 T magnetic field in the detector, with a magnetic flux density increased even more by the addition of the steel return yoke layers (red parts in Figure~\ref{fig:CMS}). This magnetic field is essential in the sense that it is able to deflect the charged particles which have been produced via the Lorentz interaction, therefore giving us an additional way to measure their charge and energy from the measurement of the curvature of the induced binding.
+
+Finally, on the outside of the detector can be found the complete muon systems and particularly performing in \ac{CMS}. This sub-detector is currently made out of three main subsystems (\acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
+
+Before starting with the description of all these sub-detectors, it is important to detail the coordinate system typically used within the \ac{CMS} collaboration. As a convention, is has been decided to use a right-handed Cartesian coordinate system with the origin defined as the \acf{PV}, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=6cm]{figs/CMSAxis.png}
+\caption{Schematic representation of the \ac{CMS} coordinate system used by convention.}
+\label{fig:CMSAxis}
+\end{center}
+\end{figure}
+
+The $\theta$ and $\phi$ angles are then defined as the angles between the z and y axes and the x and y axes, respectively, and the pseudorapidity $\eta$, a Lorentz invariant quantity under longitudinal boosts quite often used in the different analyses, in defined using Equation~\ref{eq:Pseudorapidity}.
+
+\begin{equation}
+\label{eq:Pseudorapidity}
+\eta = - \text{log} \left (\text{tan} \left (\frac{\theta}{2} \right ) \right )
+\end{equation}
+
+\subsection{Tracker} \label{subsection:Tracker}
+
+The tracker is the inner-part of the \ac{CMS} detector, is 5.4 meters long and has a diameter of 2.5 meters. Its main purpose is the reconstruction of the trajectories of charged particles issued from the primary and secondary interaction vertices in a quick and precise way, in order to identify them and measure their individual momentum. 
+
+Many challenges were faced when designing such detector, mainly because of the hard conditions provided by the \ac{LHC}. First of all, at its nominal instantaneous luminosity, an average of 1000 particles are created after each bunch crossing, every 25 ns. The tracking system then needs to read all its channels extremely fast in order to be ready for the next bunch crossing. However, this fast electronics then needs some cooling to work optimally, which would in return increase the size of the tracker and therefore increase the interactions between the detector and the particles created (by multiple scattering, bremsstrahlung, photon conversion and nuclear interactions), which is something we definitely want to avoid, so a compromise has to be found. Finally, the tracker needs to be resistant to the extreme radiation environment for its expected lifetime of at least 10 years.
+
+This device is then made out of silicon pixels and strips, mainly because of the granularity, reading velocity and radiation hardness offered by such material. It has been set up on several different layers disposed in such a way to make the detector as hermetic as possible, as shown in Figure~\ref{fig:CMSTracker}. A charged particle crossing the tracker will then leave a hit each times it crosses one of the silicon sensor, from which the track of the particle can be reconstructed using performing algorithms.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=6cm]{figs/CMSTracker.png}
+\caption{Schematic representation of the \ac{CMS} tracker, for different pseudorapidity values and along the z-axis \cite{CMSTracker}.}
+\label{fig:CMSTracker}
+\end{center}
+\end{figure}
+
+The presence of the magnetic field due to the solenoid can then help us estimate the momentum of the particle, since the Lorentz force $\overrightarrow{v} \times \overrightarrow{B}$ applied on such particle will introduce a deviation directly proportional to its momentum. The radius of curvature of particles with a high momentum ($> 100$ GeV) is really large, but the density of pixels and the algorithm can still manage to estimate the momentum of such particles, even though the uncertainty associated will then be greater.
+
+In particular, the tracker is made out of two distinct parts: the smaller and inner pixel detector and the larger silicon strip detector:
+
+\begin{itemize}
+\item The \textbf{pixel detector} is made out of three barrel pixel layers and two endcap disks for hermeticity (located at $r=4.4, 7.3$ and 10.2 cm of the \ac{PV}), one on each side. In total, more than 60 millions pixels make up this detector, covering an area corresponding to $\sim 1$ m$^2$.
+\item The \textbf{silicon strip detector} on the other hand is composed of three different sub-systems, as seen in Figure~\ref{fig:CMSTracker} and covers a total area of $\sim 200$ m$^2$. First of all, the \ac{TIB/TBD} add an additional 4 barrel layers and 3 endcap disks to the tracker system up to a distance $r$ of 55 cm to the \ac{PV} of the interaction, using silicon micro-strip sensors parallel in the barrel and perpendicular beam axis in both endcaps. Then, the \ac{TOB} then surrounds this first layer. Having an outer radius of 166 cm and going up to 118 cm along the z-axis, it adds 6 layers to the inner tracking system. Finally, the \acp{TEC} are made out of 9 disks and complete the measurement of particles emitted along the z-axis and having a high pseudorapidity $\eta$.
+\end{itemize}
+
+The \ac{CMS} tracker is extremely performant. We can see in Figure~\ref{fig:TrackerEff} that muons are indeed reconstructed with an efficiency higher than 99\% for most of the pseudorapidity spectrum, even though we can observe that this efficiency drops at high $\eta$ values, mainly because of the reduced coverage provided by the pixel forward disks. The interactions between the hadrons and the tracking system is also a bit higher, which result in a lower reconstruction efficiency for such particles.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=5.5cm]{figs/TrackerEff.png}
+\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) for different pseudorapidities and particle momentum (1, 10 and 100 GeV). \cite{CMSDescription}.}
+\label{fig:TrackerEff}
+\end{center}
+\end{figure}
+
+\subsection{\acf{ECAL}} \label{subsection:ECAL}
+\subsection{\acf{HCAL}}\label{subsection:HCAL}
+\subsection{Solenoid} \label{subsection:Solenoid}
+\subsection{Muon system} \label{subsection:Muon}
+\subsection{Trigger} \label{subsection:Trigger}
+\subsection{Data acquisition} \label{subsection:DAQ}
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
 \section{Particle Flow algorithm}
@@ -1575,6 +1665,24 @@ CERN Yellow Report CERN 2016-001, pp.271-288 [arXiv: 1705.10573]
 M. Thomson,
 "Modern Particle Physics",
 Cambridge University Press, 2013
+
+\bibitem{HLLHC}
+\href{https://arxiv.org/abs/1705.08830}{G. Apollinari et all.,
+"High Luminosity Large Hadron Collider HL-LHC",
+CERN Yellow Report CERN-2015-005, pp.1-19 [arXiv: 1705.08830]
+}
+
+\bibitem{CMSDescription}
+\href{https://iopscience.iop.org/article/10.1088/1748-0221/3/08/S08004/pdf}{CMS Collaboration,
+"The CMS experiment at the CERN LHC",
+JINST 3 (2008) S08004
+}
+
+\bibitem{CMSTracker}
+\href{https://arxiv.org/abs/1807.03289}{CMS Collaboration,
+"Precision measurement of the structure of the CMS inner tracking system using nuclear interactions",
+JINST 13 (2018) P10034 [arXiv: 1807.03289]
+}
 
 \end{thebibliography}
 
