@@ -1191,18 +1191,89 @@ In \ac{CMS}, the \ac{HCAL}, represented in Figure~\ref{fig:CMSHCAL}, is also div
 \end{center}
 \end{figure}
 
-The \ac{HCAL} barrel used 36 identical azimuthal wedges as absorber, placed along the beam axis in such a way that the eventual cracks between them is smaller than 2 mm. The total absorber thickness at a $90\circ$ incidence angle is equal to only $5.8 \lambda$, which is why the \ac{HO} had to be put in order to increase this value to make sure to slow down even the most energetic hadrons. The active medium of the HB is made out of 70 000 tiles able to collect the scintillation light, using the wavelength shifting fibre concept to measure the energy of the hadrons. The barrel covers $|\eta|$ regions up to 1.3, while the coverage up to $|\eta| < 3.0$ is given by two endcaps on each side of the detector, placed in such a way to minimize the eventual cracks between the HB and the two HE. Finally, the \ac{HO}, built in order to ensure adequate sampling depth at low pseudorapidities values, actually use the solenoid itself as additional absorber material, since it is placed a bit outside of this coil. Its shape is constrainted by the muon system and the mean fraction of recovered energy from the \ac{HO} has been estimated to be equal to 0.38\% for 10 GeV pions and up to 4.3\% for 300 GeV pions, as shown in Figure~\ref{HOImpact}.
+The \ac{HCAL} barrel used 36 identical azimuthal wedges as absorber, placed along the beam axis in such a way that the eventual cracks between them is smaller than 2 mm. The total absorber thickness at a $90\circ$ incidence angle is equal to only $5.8 \lambda$, which is why the \ac{HO} had to be put in order to increase this value to make sure to slow down even the most energetic hadrons. The active medium of the HB is made out of 70 000 tiles able to collect the scintillation light, using the wavelength shifting fibre concept to measure the energy of the hadrons. The barrel covers $|\eta|$ regions up to 1.3, while the coverage up to $|\eta| < 3.0$ is given by two endcaps on each side of the detector, placed in such a way to minimize the eventual cracks between the HB and the two HE. Finally, the \ac{HO}, built in order to ensure adequate sampling depth at low pseudorapidities values, actually use the solenoid itself as additional absorber material, since it is placed a bit outside of this coil. Its shape is constrainted by the muon system and the mean fraction of recovered energy from the \ac{HO} has been estimated to be equal to 0.38\% for 10 GeV pions and up to 4.3\% for 300 GeV pions, as shown in Figure~\ref{fig:HOImpact}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=11cm, height=4cm]{figs/HOImpact.png}
+\includegraphics[width=13cm, height=4.5cm]{figs/HOImpact.png}
 \caption{Distribution of the measured energy scaled to the incident energy for pions with incident energies of 200 GeV at $\eta = 0$ (on the left) and 225 GeV at $\eta = 0.5$ (on the right), with and without the inclusion of the \ac{HO} in the \ac{HCAL} system \cite{CMSDescription}.}
 \label{fig:HOImpact}
 \end{center}
 \end{figure}
 
 \subsection{Solenoid} \label{subsection:Solenoid}
+
+The central piece of \ac{CMS} is its extremely large (12.5 meters of length and 6 meters of diameter) and heavy (220 tons) superconducting solenoid able to produce a 3.8 T magnetic field, storing when active a huge energy of 2.6 GJ. It is the largest magnet of its type ever constructed, therefore allowing allows the tracker, \ac{ECAL} and \ac{HCAL} calorimeters to be placed inside the coil, resulting in a detector that is, overall, quite compact, compared to detectors of similar weight.
+
+The hoop strain $\epsilon = 130$ MPa applied throughout this solenoid is quite large compared to the strain applied on other previous detectors, and this had to be taken into account during the conception of this magnet. It has then be designed in such a way that a large fraction of the \ac{CMS} coil has a structural function, dividing the strain between the layers of the magnet and the support of the coil itself ($\sim 30$\%). At the end, the conductor of this solenoid, made from a Rutherford-type cable combined with aluminium, is mechanically reinforced with an aluminium alloy.
+
+The coil of the magnet is then completed with a huge yoke return, as seen in Figure~\ref{fig:CMSMagnet} system made out of 6 endcap disks and 5 barrel wheels, weighting in total more than 12 000 tons and therefore accounting for most of the weight of \ac{CMS}. This system is composed of many steel blocks up to 620 mm thick combined, and actually also serves as the absorber plates of the muon detection system that will be described in the next section. A precise alignement system is then needed in order to hermetically close the detector and to make sure that the magnet is working efficiently each time the detector needs to be opened, usually once a year and during the long shutdowns. 
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=6cm]{figs/CMSMagnet.jpg}
+\caption{Picture of the solenoid system of \ac{CMS} being setup in the assembly hall.}
+\label{fig:CMSMagnet}
+\end{center}
+\end{figure}
+
+Finally, a two pumping stations system has been put in place in order to setup a vacuum as strong as possible inside the 40 m$^3$ volume of the coil cryostat, and a helium refrigeration plant has been installed near the site of the detector, able to cool down the solenoid up to 4.5 K, giving a 2 K margin with respect to the critical field of the superconducting coil. All these systems were extensively tested on the surface during the summer 2006, before lowering down the complete solenoid in the experimental cavern where it now stands.
+
 \subsection{Muon system} \label{subsection:Muon}
+
+The muon detection in a detector is extremely useful, since many interesting processes are expected to produce such particles. Their detection and the correct measurement of their main properties such as their position and momentum is therefore crucial is most of the analyses performed. Detecting muons is at the end quite easy, as we will see, and the data extracted from them is usually more reliable than the one obtained from electrons since muons are less likely to be affected by the inner parts of the detector, such as the tracker, because of their low interaction cross section with usual matter.
+
+The muon system of \ac{CMS} is actually made out of three different gaseous sub-subsystems combined in order to perform a reconstruction as precise as possible of such particles over the the entire kinematic range of the \ac{LHC}. These different muon chambers systems do share some characteristics: they mostly have to be cylindrical, because of the geometrical shape of the inner systems of \ac{CMS}, reliable and cheap, since they cover a total area of more than 25 000 m$^2$.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm, height=7cm]{figs/CMSMuons.png}
+\caption{Geometrical repartition along the z-axis of the different muons chambers in \ac{CMS} \cite{CMSMuons}.}
+\label{fig:CMSMuons}
+\end{center}
+\end{figure}
+
+Let's now describe in details each category of muon chambers used in the different pseudorapidities areas, as shown in Figure~\ref{fig:CMSMuons}, in order to form as muon system as hermetic as possible.
+
+\begin{itemize}
+\item First of all, in the barrel region, where the flux of muons is low and where the magnetic field is mostly uniform and low, the \textbf{\acfp{DT}} have been installed. This system covers the $|\eta| < 1.2$ area and has been divided into 4 different layers, each containing a number of stations optimized in order to provide a full coverage of the $\theta$ angles, a good efficiency for the muon hits reconstruction into a single track and to reject as well eventual background hits. This distribution of the \acp{DT} is represented in Figure~\ref{fig:CMSDT}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm, height=9cm]{figs/CMSDT.png}
+\caption{Lateral geometrical repartition of the different \ac{DT} chambers in one of the 5 wheels of \ac{CMS} \cite{CMSDescription}.}
+\label{fig:CMSDT}
+\end{center}
+\end{figure}
+
+The \ac{DT} system is made out of 172 000 sensitive wires able to collect the residuals charges left by the ionization tracks of muons through the 250 chambers installed. The system has been setup in such a way that the maximal drift of any charge is lower than 21 mm, corresponding to a drift time of 380 ns in the gaseous chambers made out of 85\% of Ar and 15\% of CO$_2$, a value small enough to produce negligible occupancy in the different wires, to avoid the need of multi-hits electronics. Redundancy of the \acp{DT} provided by the installation of multiple layers is extremely important, mainly to reduce the backgrounds coming from eventual neutrons or photons, whose rate is actually much larger than the one obtained from prompt muons.
+
+\item In the two endcap regions, where the muon rates and the background levels are much larger and where the magnetic field is large and non-uniform, a different system had to be installed. First of all, the \textbf{\acfp{CSC}}, multiwire proportional chambers providing a fast response while being resistant to the radiation, are able to identify muons in a $0.9 < |\eta| < 2.4$ region (in the $0.9 < |\eta| < 1.2$ region, muons cross both \acp{DT} and \acp{CSC} while in the $1.2 < |\eta| < 2.4$ area, muons cross between 3 and 4 \acp{CSC} only). 
+
+This sub-system is made out of 540 different chambers in total, all perpendicular to the beam pipe. The sensitive plates of this sub-system are made out of 2 million wires, cover about 5000 m$^2$ and the total gas volume included in such chambers is equal t0 about 50 m$^3$.
+
+\item Finally, some \textbf{\acfp{RPC}} have been added both to the barrel and to the endcap regions, in order to cope with the uncertainty associated with the eventual background rates with the (in)ability of the previous muon
+system to identify unequivocally the correct bunch crossing when the \ac{LHC} is running at full luminosity. Indeed, the time resolution of the \acp{DT} of 380 ns is way larger than the bunch spacing in the \ac{LHC}, while a \ac{RPC} is capable
+of tagging the time of an ionizing event in less than 25 ns.
+
+The \acp{RPC} are double-gap chambers operated in avalanche mode to ensure good operation at high rates and they are able to produce a fast response with good time resolution, even though its position resolution is worse than the one obtained with \acp{DT} or \acp{CSC}. The \acp{RPC} are also useful in the sense that they can help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber. 
+\end{itemize}
+
+Another advantage of the muon system such as the one built in \ac{CMS} is that it can also directly be used by the trigger system, which will be described in Section~\ref{subsection:Trigger}, in addition of being able to detect, identify and measure several properties of muons crossing it.
+
+The muon reconstruction efficiency obtained by the muon system strongly depends on the pseudorapidity value of the muon considered, along with its transverse momentum, as shown in Figure~\ref{fig:MuonRecoEff}. In this figure, we can also see that two different kinds of muons can be defined: the \textit{standalone} muons, defined using only the data coming the muon system, and the \textit{global} muons, defined using both the information coming from the muon system and the tracker. Cross-checks between the different systems of \ac{CMS} can therefore be performed, as we will describe in Chapter~\ref{chapter:Reco}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=12cm, height=6cm]{figs/muonRecoEff.png}
+\caption{Muon reconstruction efficiency with different $p_T$ and $\eta$ values, considering only the muon system (on the left), and the combined information from the muon system and the tracker (on the right) \cite{CMSDescription}.}
+\label{fig:MuonRecoEff}
+\end{center}
+\end{figure}
+
+Alignment system
+GEMs
+
 \subsection{Trigger} \label{subsection:Trigger}
 \subsection{Data acquisition} \label{subsection:DAQ}
 
@@ -1761,6 +1832,11 @@ JINST 3 (2008) S08004
 "Precision measurement of the structure of the CMS inner tracking system using nuclear interactions",
 JINST 13 (2018) P10034 [arXiv: 1807.03289]
 }
+
+\bibitem{CMSMuons}
+\href{https://arxiv.org/abs/1209.2646}{M.S. Kim,
+"CMS reconstruction improvement for the muon tracking by the RPC chambers",
+2013 JINST 8 T03001 [arXiv: 1209.2646]}
 
 \end{thebibliography}
 
