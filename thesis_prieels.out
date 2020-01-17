@@ -27,8 +27,8 @@
 \BOOKMARK [2][-]{subsection.3.2.3}{Hadronic Calorimeter \(HCAL\)}{section.3.2}% 27
 \BOOKMARK [2][-]{subsection.3.2.4}{Solenoid}{section.3.2}% 28
 \BOOKMARK [2][-]{subsection.3.2.5}{Muon system}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.6}{Trigger}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.7}{Data acquisition}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.6}{Trigger system}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.7}{Data acquisition system}{section.3.2}% 31
 \BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 32
 \BOOKMARK [1][-]{section.4.1}{Particle Flow algorithm}{chapter.4}% 33
 \BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 34
@@ -58,5 +58,5 @@
 \BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 58
 \BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 59
 \BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 60
-\BOOKMARK [0][-]{section*.104}{Appendices}{}% 61
-\BOOKMARK [0][-]{chapter*.106}{Bibliography}{}% 62
+\BOOKMARK [0][-]{section*.112}{Appendices}{}% 61
+\BOOKMARK [0][-]{chapter*.114}{Bibliography}{}% 62

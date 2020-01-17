@@ -176,6 +176,11 @@
 \acro{TOB}[TOB]{Tracker Outer Barrel}
 \acro{TEC}[TEC]{Tracker EndCap} 
 \acro{HO}[HO]{Hadron Outer}
+\acro{LS}[LS]{Long Shutdown}
+\acro{GEM}[GEM]{Gas Electron Multiplier}
+\acro{L1}[L1]{Level-1 Trigger}
+\acro{HLT}[HLT]{High-Level Trigger}
+\acro{DAQ}[DAQ]{Data Acquisition System}
 
 \end{acronym}
 \end{multicols}
@@ -1259,23 +1264,61 @@ of tagging the time of an ionizing event in less than 25 ns.
 The \acp{RPC} are double-gap chambers operated in avalanche mode to ensure good operation at high rates and they are able to produce a fast response with good time resolution, even though its position resolution is worse than the one obtained with \acp{DT} or \acp{CSC}. The \acp{RPC} are also useful in the sense that they can help to resolve ambiguities in attempting to make tracks from multiple hits in a chamber. 
 \end{itemize}
 
-Another advantage of the muon system such as the one built in \ac{CMS} is that it can also directly be used by the trigger system, which will be described in Section~\ref{subsection:Trigger}, in addition of being able to detect, identify and measure several properties of muons crossing it.
+Another advantage of the muon system such as the one built in \ac{CMS} is that it can also directly be used by the trigger system, which will be described in Section~\ref{subsection:Trigger}, independently of the rest of the detector and in addition of being able to detect, identify and measure several properties of muons crossing it.
 
 The muon reconstruction efficiency obtained by the muon system strongly depends on the pseudorapidity value of the muon considered, along with its transverse momentum, as shown in Figure~\ref{fig:MuonRecoEff}. In this figure, we can also see that two different kinds of muons can be defined: the \textit{standalone} muons, defined using only the data coming the muon system, and the \textit{global} muons, defined using both the information coming from the muon system and the tracker. Cross-checks between the different systems of \ac{CMS} can therefore be performed, as we will describe in Chapter~\ref{chapter:Reco}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=12cm, height=6cm]{figs/muonRecoEff.png}
+\includegraphics[width=12cm, height=5cm]{figs/muonRecoEff.png}
 \caption{Muon reconstruction efficiency with different $p_T$ and $\eta$ values, considering only the muon system (on the left), and the combined information from the muon system and the tracker (on the right) \cite{CMSDescription}.}
 \label{fig:MuonRecoEff}
 \end{center}
 \end{figure}
 
-Alignment system
-GEMs
+Taking advantage of the \acf{LS} 2, a new muon system in \ac{CMS} is currently being installed in the experimental cavern: the so-called \acfp{GEM}, placed in the endcaps, where the radiation and event rates and the highest. This new sub-detector will provide additional redundancy and measurement points to the current system, therefore allowing a better muon track identification and reconstruction, and a wider coverage in the very forward region. The first 144 chambers, filled with a mixture of Ar and CO$_2$ and where the primary ionization due to incident muon is expected to happen, are currently being installed in the first disk of both endcaps (cf. Figure~\ref{fig:CMSGEM}, while the rest will be setup during the next long shutdown, expected in 2024, before the phase II of operation of the \ac{LHC}.
 
-\subsection{Trigger} \label{subsection:Trigger}
-\subsection{Data acquisition} \label{subsection:DAQ}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm, height=6cm]{figs/CMSGEM.png}
+\caption{Location of the new \ac{GEM} muon sub-system currently being installed in the very-forward region of \ac{CMS} \cite{CMSDescription}.}
+\label{fig:CMSGEM}
+\end{center}
+\end{figure}
+
+\subsection{Trigger system} \label{subsection:Trigger}
+
+The \ac{CMS} experiment is facing a data acquisition problem, since the huge collision rate delivered by the \ac{LHC} (one bunch crossing each 25 ns, leading to an impressive rate of collisions of 40 MHz) is much larger than the data acquisition rate currently achievable by nowaday's electronics (around 1 kHz only, more or less equivalent to 1 Gb of data per second). It is therefore impossible to store and process all the collisions provided by the \ac{LHC} ; instead, a selection needs to be made in order to select and record only the most interesting events.
+
+A system, called the trigger system, has therefore been put in place in order to select 1 kHz of interesting events out the 40 MHz extremely quickly. This system is based on two different levels: first of all, the \ac{L1}, a hardware set of electronics selecting around 100 kHz of data, followed by the \ac{HLT}, a software layer improving the selection even more. Let's now give a bit more details about these two levels of trigger:
+
+\begin{itemize}
+\item In order to maximize its efficiency, the \acf{L1} is implemented in different sub-systems of the detector (on the calorimeters and muons system) and in the service cavern, just next to the detector, so that the electric signals do not have to travel large distances, therefore saving a few nanoseconds of decision time. This trigger, whose architecture is represented in Fugure~\ref{fig:L1Trigg} gets new data each 25 ns, and today's electronics is not fast enough in order to deal with such a massive input of data, so an ingenious systems of buffers had to be put in place in order to put in line several events before analyzing all of them at once, using only basic segmented data provided by the detector.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=9cm, height=6cm]{figs/L1Trigg.png}
+\caption{Architecture of \acf{L1} of \ac{CMS} \cite{CMSDescription}.}
+\label{fig:L1Trigg}
+\end{center}
+\end{figure}
+
+\item On the other hand, the \acf{HLT} does get access to the complete read-out data of the detector, since the rate has already been strongly reduced by the \ac{L1} Trigger, allowing it to perform complete calculations such as the ones that will be later performed by the different teams offline. Since this is a software based layer, it runs on a farm of computers and is in constant evolution, getting improvements each day in order to select and reconstruct in a better way and more efficiently interesting data from the collisions.
+\end{itemize}
+
+The \ac{HLT} trigger is divided in several so-called \textit{trigger paths}, especially developed in order to select a target object or physics process, usually with some $p_T$ requirement in order to reduce the statistics collected by any given trigger, so that no to go past the bandwidth limit of 1 kHz. These triggers paths can then for example require the presence of one or two leptons, a jet whose $p_T$ is higher to a certain threshold or the presence of \acf{MET} in the event. If the selection implied by a trigger is too large, then it needs to be \textit{prescaled}, meaning that its statistics is artificially reduced by forcing it to select one event every N, so that it does not use too much bandwidth: this is typically the case for trigger paths with low $p_T$ requirements.
+
+\subsection{Data acquisition system} \label{subsection:DAQ}
+
+The CMS trigger system, along with its \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed in order to collect and analyze the data information at the nominal collision rate of 40 MHz.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=9cm, height=5cm]{figs/CMSDAQ.png}
+\caption{Architecture of \ac{CMS} \acf{DAQ} system \cite{CMSDescription}.}
+\label{fig:CMSDAQ}
+\end{center}
+\end{figure}
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
 \section{Particle Flow algorithm}
