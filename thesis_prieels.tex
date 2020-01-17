@@ -65,6 +65,7 @@
 
 \renewcommand{\listfigurename}{List of figures} 
 \renewcommand{\listtablename}{List of tables}
+\renewcommand{\floatpagefraction}{.8}%
 
 %Titlepage
 \doublespacing
@@ -181,6 +182,8 @@
 \acro{L1}[L1]{Level-1 Trigger}
 \acro{HLT}[HLT]{High-Level Trigger}
 \acro{DAQ}[DAQ]{Data Acquisition System}
+\acro{DQM}[DQM]{Data Quality Monitoring}
+\acro{DCS}[DCS]{Detector Control System}
 
 \end{acronym}
 \end{multicols}
@@ -969,21 +972,25 @@ This combination managed to exclude the production of scalar mediators up to 290
 
 \chapter{The experimental setup} \label{chapter:Device}
 
-The data analyzed throughout this work is the results of the proton-proton collisions at a center of mass energy of 13 TeV and provided by the \acf{LHC}. Is is therefore extremely important to describe this particle accelerator and to details its main characteristics in order to understand better the origin of our data, as will be done in Section~\ref{section:LHC}. This kind of collisions at high energy typically produces hundreds of new particles that we then need to identify, and whose exact properties need to be measured. This is done by using the \acf{CMS} detector, an incredibly sophisticated experiment which is the result of the work of thousands of scientists and made of several different layers, which will be described in Section~\ref{section:CMS} of this chapter.
+The data analyzed throughout this work is the result of the proton-proton collisions at a center of mass energy of 13 TeV provided by the \acf{LHC}. Is is therefore extremely important to describe this particle accelerator and to detail its main characteristics in order to understand better the origin of our data, as will be done in Section~\ref{section:LHC}. 
+
+This kind of collisions at high energy typically produces hundreds or even thousands of new particles that we then need to identify, and whose exact properties, such as their momentum or their electric charge, need to be measured. This is done by using the \acf{CMS} detector, an incredibly sophisticated detector, result of the work of thousands of scientists and made of several different layers, which will be described in Section~\ref{section:CMS} of this chapter.
 
 \section{The \ac{LHC} accelerator} \label{section:LHC}
 
-The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and heavy lead ions. Planned since the end of the 20th century, this accelerator, a 27 kilometers ring now located at \ac{CERN}, at the border between Switzerland and France and put 100 meters underground to remove part of the contamination due to the cosmic rays, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was to first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never directly observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then an incredible achievement of the accelerator, after only two years of operation.
+The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and heavy lead ions up to a velocity close to the speed of light. Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground to remove part of the contamination due to the cosmic rays and located at \ac{CERN}, at the border between Switzerland and France and, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then an incredible achievement of the accelerator, after only two years of operation.
 
-Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass or its spin, many groups of scientists are now involved in different kind of \ac{BSM} physics, since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allow us to reach a level of energy never reached before, and would therefore potentially allow us to probe new parts of the phase space. These kind of searches of course include the search for eventual \ac{DM} production as the one performed in this work. Let's now start with a general description of the general design of this particle accelerator before describing its performances in particular.
+Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass or its spin, many groups of scientists are now involved in different kind of \ac{BSM} physics since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allow us to reach a level of energy never reached before, and would therefore potentially allow us to probe new parts of the phase space, searching for eventual hints of new physics. These kind of searches of course include the search for eventual \ac{DM} production as the one performed in this work. 
 
-\subsection{The \ac{LHC} in a nutshell}
+Let's now start with a global description of the general design of this particle accelerator in Section~\ref{section:LHCNut} before describing in more details the key parameters allowing us to evaluate its actual performances in Section~\ref{section:LHCParams}.
 
-The \ac{LHC} is an underground particle accelerator, build underground, in the same 27 kilometers tunnel were the \ac{LEP} was previously used. This accelerator is accelerating two beams of billions protons or lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing to curve the beam to maintain its trajectory circular and to focus it, to avoid its dispersion because of the repulsion of the protons of the beams. A dedicated section of the accelerator is then made out of 16 radio-frequency cavities, synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the acceleration of such particles.
+\subsection{The \ac{LHC} in a nutshell}\label{section:LHCNut}
 
-Once the nominal center of mass energy $\sqrt{s} = 13$ TeV reached (this concept will be described in Subsection~\ref{subsection:CMEnergy}), the protons are then smashed together in 4 different places on the \ac{LHC}, where the 4 detector (\ac{ATLAS}, \ac{CMS}, \ac{ALICE} and LHCb have been placed in order to study the collisions. Both \ac{ATLAS} and \ac{CMS} are general detectors, able to study exotic processes such as the production of \ac{DM} and to make precision measurements on \ac{SM} physics as well (the decision to build two separate detectors was made in order to introduce some redundancy and to check the results). \ac{ALICE}, on the other hand, is mostly dedicated to the study of heavy ions collisions that happen $\sim 10$\% of the time in order to study in particular a specific state of matter, called the quark-gluon plasma \cite{ALICE}. Finally, LHCb has been designed to study in particular the CP violation phenomena, which could be the sign of some new physics \cite{LHCb}.
+The \ac{LHC} is an underground particle accelerator built in the same 27 kilometers tunnel where the \ac{LEP} was previously used. This machine is accelerating two beams made out of billions of protons or lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing respectively to curve the beam to maintain a nominal circular trajectory and to focus it, by compensating its natural dispersion due to the repulsion of the protons making up these beams. A dedicated small section of the accelerator is then made out of 16 radio-frequency cavities synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the actual acceleration of such particles.
 
-It is important to note at this point that the \ac{LHC} is not a standalone accelerator, in the sense that protons enter the \ac{LHC} with a velocity close to the speed of light already. In order to reach such input energies ($\sim 450$ GeV), previous smaller accelerators of \ac{CERN} are still used today: first of all, the protons, extracted from a bottle of hydrogen are injected into the LINAC 2, a linear accelerator, before being transferred to the \ac{PS}, the \ac{SPS} and finally the \ac{LHC} itself (all this chain of acceleration can be found in Figure~\ref{fig:Chain}).
+Once the nominal center of mass energy $\sqrt{s} = 13$ TeV reached (this concept will be described in Subsection~\ref{subsection:CMEnergy}), the protons are then smashed together in four different places on the \ac{LHC}, where the four detectors (\ac{ATLAS}, \ac{CMS}, \ac{ALICE} and LHCb) have been placed in order to study the collisions. Both \ac{ATLAS} and \ac{CMS} are general detectors, able to study exotic processes such as the production of \ac{DM} and to make precision measurements on \ac{SM} physics as well (the decision to build two separate detectors was made in order to introduce some redundancy and to check the results). \ac{ALICE} on the other hand, is mostly dedicated to the study of heavy ions collisions that happen $\sim 10$\% of the time in order to study in particular a specific state of matter, called the quark-gluon plasma \cite{ALICE}. Finally, LHCb has been designed to study in particular the CP violation phenomena, which could be the sign of some new physics \cite{LHCb}.
+
+It is important to note at this point that the \ac{LHC} is not a standalone accelerator in the sense that protons enter the \ac{LHC} with a velocity already close to the speed of light. In order to reach such input energies ($\sim 450$ GeV), previous smaller accelerators of \ac{CERN} are still used today: first of all, the protons, extracted from a bottle of ordinary hydrogen, are injected into the LINAC 2, a linear accelerator, before being transferred to the \ac{PS}, the \ac{SPS} and finally the \ac{LHC} itself (all this chain of acceleration can be found in Figure~\ref{fig:Chain}).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -993,15 +1000,15 @@ It is important to note at this point that the \ac{LHC} is not a standalone acce
 \end{center}
 \end{figure}
 
-The beam, injected from the \ac{SPS} into the \ac{LHC} into two counter-rotating beams, is separated in a series of 2808 bunches of protons, nominally separated by 25ns (giving a collision rate of 40 MHz), so that the experiments have the time to record the collision and clean the detectors to prepare it for the next bunch crossing, coming just a few nanoseconds later. Each time one bunch crossing happens, around 35 collisions of protons happen at time: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
+During this phase of acceleration, the beam is separated in a series of 2808 bunches of protons nominally separated by 25ns (giving a collision rate of 40 MHz), so that the experiments have the time to record the collision, clean the detectors and get ready for the next bunch crossing, coming just a few nanoseconds later. Each time one bunch crossing happens, around 35 collisions of protons happen at once: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
 
-As previously stated, the statistics in important for many analyses, meaning that the \ac{LHC} would ideally need to run 24 hours a day, 365 days per year in order to maxime the data taking. However, this is not possible, as setting up a beam takes time and we cannot keep it running at maximal energy forever in the machine, so in ideal conditions around 20 hours of data taking a day are expected. The \ac{LHC} is then running around 9 months per year, since it is usually stopped during the winter for maintenance operations, and the data taking periods are defined into Runs of a few years, after which the accelerator is usually stopped for a longer period of time, in order to also perform upgrade operations of the machine. The data analyzed in this work corresponds to the Run II of operation, while the Run III is expected to start in the Spring of 2021.
+As previously stated, the amount of data collected is a crucial parameter for many analyses, meaning that the \ac{LHC} would ideally need to run 24 hours a day, 365 days per year in order to maximize the data taking. However, this is not possible, as setting up a beam takes time and we cannot keep it running at maximal energy forever in the machine, so in ideal conditions around 20 hours of data taking a day are expected. The \ac{LHC} is then running around 9 months per year, being usually stopped during the winter for maintenance operations, and the data taking periods are defined into Runs of a few years, after which the accelerator is usually stopped for a longer period of time, in order to also perform upgrade operations of the machine. The data analyzed in this work corresponds to the second phase of the Run II of operation, from 2016 to 2018, while the Run III is now expected to start in the Spring of 2021.
 
-\subsection{\ac{LHC} key parameters}
+\subsection{\ac{LHC} key parameters}\label{section:LHCParams}
 
 \subsubsection{Center of mass energy} \label{subsection:CMEnergy}
 
-The center of mass energy is defined as a Lorentz invariant quantity resulting of the collisions of two protons ($E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle in Equation~\ref{eq:CMEnergy}. It is a key variable of the \ac{LHC} since the phase space of particles that can be explored directly depend on this value.
+The center of mass energy is defined as a Lorentz invariant quantity under longitudinal boosts resulting of the collisions of two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle, as developed in Equation~\ref{eq:CMEnergy}. It is a key variable of the \ac{LHC} since the phase space of particles that can be explored directly depend on this value.
 
 \begin{equation}
 \label{eq:CMEnergy}
@@ -1012,7 +1019,7 @@ The LHC started its operation in 2008 running at an energy of 8 TeV and kept thi
 
 \subsubsection{Luminosity} \label{subsection:Lumi}
 
-The luminosity is an another extremely important variable for the operation of the \ac{LHC} since, as a rule of thumb, it gives an indication on the number of collisions per second given by the accelerator, and this value is extremely important in order to collect as much data as possible, in order to be able to isolate processes which an extremely low probability of apparition when colliding two protons (low production cross section).
+The luminosity is an another extremely important variable for the operation of the \ac{LHC} since, as a rule of thumb, it gives an indication on the number of collisions per second given by the accelerator. Increasing this parameter is extremely important in order to collect as much data as possible, in order to be able to isolate processes having a low production cross section and therefore an extremely low probability of apparition when colliding two protons.
 
 Mathematically, we can first of all define in Equation~\ref{eq:Rate} the rate $R$ of production (in number of events per second) of any given process using its cross section $\sigma$, equivalent to its production probability, and the instantaneous luminosity $\mathcal{L}$. From this rate can be extracted easily the number of expected interactions $N$ in a certain amount of time $T$ as well. 
 
@@ -1028,7 +1035,7 @@ This instantaneous luminosity we just introduced $\mathcal{L}$ can be defined us
 
 \begin{equation}
 \label{eq:Luminosity}
-\mathcal{L} = \frac{\gamma f_{\text{rev}} k_B N_p^2}{4 \pi \epsilon_n \beta^*}R \text{ where } R = \frac{1}{\sqrt{1+\frac{\theta_C \sigma_z}{2 \sigma}}}
+\mathcal{L} = \frac{\gamma f_{\text{rev}} k_B N_p^2}{4 \pi \epsilon_n \beta^*}R \text{  where } R = \frac{1}{\sqrt{1+\frac{\theta_C \sigma_z}{2 \sigma}}}
 \end{equation}
 
 In this last equation, the following properties of the accelerator have been introduced, giving the \ac{LHC} a nominal instantaneous luminosity $\mathcal{L} = 1 \cdot 10^{34}$ cm$^{-2}$ s$^{-1}$:
@@ -1039,17 +1046,17 @@ In this last equation, the following properties of the accelerator have been int
 \item $N_p$ is the number of protons per bunch ($1.15 \cdot 10^{11}$ protons)
 \item $\epsilon_n$ is the transverse normalized emittance (3.75 $\mu$m)
 \item $\beta^*$ is the betatron function at the interaction point (0.55 m)
-\item $R$ is the geometrical factor accounting for the fact that the collisions do not happen exactly head-on, therefore reducing the effective luminosity, expressed from the full crossing angle between colliding beam $\theta_C$ (285 $\mu$rad), and $\sigma$, $\sigma_z$ are the transverse and longitudinal r.m.s. sizes (respectively 16.7 $\mu$m and 7.55 cm).
+\item $R$ is the geometrical factor accounting for the fact that the collisions do not happen exactly head-on, therefore reducing the effective luminosity, expressed from the full crossing angle between colliding beam $\theta_C$ (285 $\mu$rad), and $\sigma$, $\sigma_z$, the transverse and longitudinal r.m.s. sizes (respectively 16.7 $\mu$m and 7.55 cm).
 \end{itemize}
 
-As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting, in order to produce even processes which have a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam and even to try and reduce the beam crossing angle at the interaction point. New crab cavities will probably also be installed during the next long shutdown of the \ac{LHC} in order to increase the value of the geometrical factor $R$ in order to increase the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
+As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting in order to produce processes having a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam or the beam crossing angle at the interaction point. New crab cavities will probably be installed during the next \ac{LS} of the \ac{LHC} in order to increase the value of the geometrical factor $R$ and the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
 
-The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available that will be analyzed in this work have an integrated luminosity of 35.9 fb$^{-1}$ (2016), 41.5 fb$^{-1}$ and 59.7 fb$^{-1}$ (2018), resulting in a total dataset of 137 fb$^{-1}$ for the Run II of operation. This typically means that we expect to produce around 138 events of any process whose cross section of production would be equal to 1 fb.
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available that will be analyzed in this work have an integrated luminosity of 35.9 fb$^{-1}$ (2016), 41.5 fb$^{-1}$ and 59.7 fb$^{-1}$ (2018), resulting in a total dataset of 137 fb$^{-1}$ recorded during the Run II of operation. This typically means that we expect to produce around 137 events of any process whose cross section of production would be equal to 1 fb.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm, height=8cm]{figs/CumuLumi.pdf}
-\caption{Integrated luminosity recorded by \ac{CMS} over its different years of operation so far.}
+\caption{Integrated luminosity collected by \ac{CMS} over its different years of operation so far.}
 \label{fig:Lumi}
 \end{center}
 \end{figure}
@@ -1061,16 +1068,16 @@ The last key parameter of the \ac{LHC} discussed here is the \acf{PU}. Usually, 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm, height=8cm]{figs/PUSUmmary.png}
-\caption{Mean \ac{PU} distribution over the different years of operation of the \ac{LHC}.}
+\caption{Mean \ac{PU} distribution and luminosity recorded by \ac{CMS} over the different years of operation of the \ac{LHC}.}
 \label{fig:PU}
 \end{center}
 \end{figure}
 
 \section{The \ac{CMS} detector} \label{section:CMS}
 
-The \acf{CMS} is one of the two general purpose detectors installed at the access point 5 of the \ac{LHC}, whose main purpose was to discover the Higgs boson, make precision measurement of most of the \ac{SM} processes and to try and discover \ac{BSM} physics, such as the possible existence of \ac{DM}. It has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe, point of origin of all the collisions provided by the \ac{LHC}, and is therefore made of three main sections: the cylindrical barrel at the center, and the two endcaps, one on each side of the detector.
+The \acf{CMS} is one of the two general purpose detectors installed at the access point 5 of the \ac{LHC}. Its main purposes were to discover the Higgs boson, make precision measurement of most of the \ac{SM} processes and to try and discover \ac{BSM} physics, such as the possible existence of \ac{DM}. It has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe, the point of origin of all the collisions provided by the \ac{LHC}, and is therefore made of three main sections: the cylindrical barrel at the center, and the two endcaps, one on each side of the detector. \ac{CMS} was lowered into the experimental cavern underground after being built on the surface in 14 different moving pieces, a flexible design allowing to access its inner parts, by opening and closing the detector when needed.
 
-As we can see in Figure~\ref{fig:CMS}, \ac{CMS}, which weights 14.000 tons and has a diameter of 15 meters and a length of 28.7 meters, is made out of different layers, corresponding to different sub-detectors, each able to provide different kind of information about the hundreds of particles created by the collision \cite{CMSDescription}. These sub-detectors will be described in details in the following sections, but they have all been designed in order to make the reconstructions of the different events as efficient, fast and precise as possible and need to be quite cheap but still extremely resistant to the radiation produced.
+As we can see in Figure~\ref{fig:CMS}, \ac{CMS}, which weights 14.000 tons and has a diameter of 15 meters and a length of 28.7 meters, is made out of different layers, corresponding to different sub-detectors, each able to provide different kind of information about the hundreds of particles created by each collision \cite{CMSDescription}. These sub-detectors will be described in details in the following sections, but they have all been designed in order to make the reconstruction of the different events as efficient, fast and precise as possible and need to be quite cheap but still extremely resistant to the radiation produced.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1080,11 +1087,11 @@ As we can see in Figure~\ref{fig:CMS}, \ac{CMS}, which weights 14.000 tons and h
 \end{center}
 \end{figure}
 
-The inner part of the \ac{CMS} detector is the so-called tracker, a device made out of silicon pixels and strips, described in Section~\ref{subsection:Tracker} and responsible for the precise reconstruction of all the charged particles coming from the different interaction vertices. A bit further, we can find the \acf{ECAL}, made out of thousands of crystals and described in Section~\ref{subsection:ECAL}, and used to precisely measure the energy of particles able to interact electromagnetically by producing an electromagnetic shower that can be detected. Then comes the \acf{HCAL}, described in Section~\ref{subsection:HCAL} and whose main purpose is to identify and measure the main properties of the hadrons produced in the collision.
+The inner part of the \ac{CMS} detector is the so-called tracker, a device made out of silicon pixels and strips, described in Section~\ref{subsection:Tracker} and responsible for the precise reconstruction of all the charged particles coming from the different interaction vertices. A bit further, we can find the \acf{ECAL}, made out of thousands of crystals as described in Section~\ref{subsection:ECAL} and used to precisely measure the energy of particles able to interact electromagnetically by producing an electromagnetic shower that can be detected. Then comes the \acf{HCAL}, described in Section~\ref{subsection:HCAL} and whose main purpose is to identify and measure the main properties of the hadrons produced in the collisions by producing hadronic showers.
 
 The \ac{CMS} name partly comes from its central piece, a huge superconducting solenoid described in Section~\ref{subsection:Solenoid} and able to produce a 3.8 T magnetic field in the detector, with a magnetic flux density increased even more by the addition of the steel return yoke layers (red parts in Figure~\ref{fig:CMS}). This magnetic field is essential in the sense that it is able to deflect the charged particles which have been produced via the Lorentz interaction, therefore giving us an additional way to measure their charge and energy from the measurement of the curvature of the induced binding.
 
-Finally, on the outside of the detector can be found the complete muon systems and particularly performing in \ac{CMS}. This sub-detector is currently made out of three main subsystems (\acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
+Finally, on the outside of the detector can be found the complete muon system and particularly performing in \ac{CMS}. This sub-detector is currently made out of three main sub-systems (the \acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
 
 Before starting with the description of all these sub-detectors, it is important to detail the coordinate system typically used within the \ac{CMS} collaboration. As a convention, is has been decided to use a right-handed Cartesian coordinate system with the origin defined as the \acf{PV}, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
 
@@ -1096,7 +1103,7 @@ Before starting with the description of all these sub-detectors, it is important
 \end{center}
 \end{figure}
 
-The $\theta$ and $\phi$ angles are then defined as the angles between the z and y axes and the x and y axes, respectively, and the pseudorapidity $\eta$, a Lorentz invariant quantity under longitudinal boosts quite often used in the different analyses, in defined using Equation~\ref{eq:Pseudorapidity}.
+The $\theta$ and $\phi$ angles are then defined as the angles between the z and y axes and the x and y axes respectively, and the pseudorapidity $\eta$, a Lorentz invariant quantity under longitudinal boosts quite often used in the different analyses, is defined using Equation~\ref{eq:Pseudorapidity}.
 
 \begin{equation}
 \label{eq:Pseudorapidity}
@@ -1107,9 +1114,9 @@ The $\theta$ and $\phi$ angles are then defined as the angles between the z and 
 
 The tracker is the inner-part of the \ac{CMS} detector, is 5.4 meters long and has a diameter of 2.5 meters. Its main purpose is the reconstruction of the trajectories of charged particles issued from the primary and secondary interaction vertices in a quick and precise way, in order to identify them and measure their individual momentum. 
 
-Many challenges were faced when designing such detector, mainly because of the hard conditions provided by the \ac{LHC}. First of all, at its nominal instantaneous luminosity, an average of 1000 particles are created after each bunch crossing, every 25 ns. The tracking system then needs to read all its channels extremely fast in order to be ready for the next bunch crossing. However, this fast electronics then needs some cooling to work optimally, which would in return increase the size of the tracker and therefore increase the interactions between the detector and the particles created (by multiple scattering, bremsstrahlung, photon conversion and nuclear interactions), which is something we definitely want to avoid, so a compromise has to be found. Finally, the tracker needs to be resistant to the extreme radiation environment for its expected lifetime of at least 10 years.
+Many challenges were faced when designing such detector, mainly because of the hard conditions provided by the \ac{LHC}. First of all, at its nominal instantaneous luminosity, an average of 1000 particles are created after each bunch crossing, every 25 ns. The tracking system then needs to read all its channels extremely fast in order to be ready for the next bunch crossing. However, this fast electronics then needs some cooling to work optimally, which would in return increase the size of the tracker and therefore increase the interactions between the detector and the particles created (by multiple scattering, bremsstrahlung, photon conversion and nuclear interactions). This is of course something we definitely want to avoid, so a compromise has to be found between the velocity and size of the tracker. Finally, this device needs to be resistant to the extreme radiation environment for its expected lifetime of at least 10 years.
 
-This device is then made out of silicon pixels and strips, mainly because of the granularity, reading velocity and radiation hardness offered by such material. It has been set up on several different layers disposed in such a way to make the detector as hermetic as possible, as shown in Figure~\ref{fig:CMSTracker}. A charged particle crossing the tracker will then leave a hit each times it crosses one of the silicon sensor, from which the track of the particle can be reconstructed using performing algorithms.
+This device is then made out of silicon pixels and strips mainly because of the granularity, reading velocity and radiation hardness offered by such material. It has been set up on several different layers disposed in such a way to make the detector as hermetic as possible, as shown in Figure~\ref{fig:CMSTracker}. A charged particle crossing the tracker will then leave a hit each times it crosses one of the silicon sensor, from which the track of the particle can be reconstructed using performing reconstruction algorithms that will be detailed in Chapter~\ref{chapter:Reco}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1125,7 +1132,7 @@ In particular, the tracker is made out of two distinct parts: the smaller and in
 
 \begin{itemize}
 \item The \textbf{pixel detector} is made out of three barrel pixel layers and two endcap disks for hermeticity (located at $r=4.4, 7.3$ and 10.2 cm of the \ac{PV}), one on each side. In total, more than 60 millions pixels make up this detector, covering an area corresponding to $\sim 1$ m$^2$.
-\item The \textbf{silicon strip detector} on the other hand is composed of three different sub-systems, as seen in Figure~\ref{fig:CMSTracker} and covers a total area of $\sim 200$ m$^2$. First of all, the \ac{TIB/TBD} add an additional 4 barrel layers and 3 endcap disks to the tracker system up to a distance $r$ of 55 cm to the \ac{PV} of the interaction, using silicon micro-strip sensors parallel in the barrel and perpendicular beam axis in both endcaps. Then, the \ac{TOB} then surrounds this first layer. Having an outer radius of 166 cm and going up to 118 cm along the z-axis, it adds 6 layers to the inner tracking system. Finally, the \acp{TEC} are made out of 9 disks and complete the measurement of particles emitted along the z-axis and having a high pseudorapidity $\eta$.
+\item The \textbf{silicon strip detector} on the other hand is composed of three different sub-systems, as seen in Figure~\ref{fig:CMSTracker} and covers a total area of $\sim 200$ m$^2$. First of all, the \ac{TIB/TBD} adds an additional 4 barrel layers and 3 endcap disks to the tracker system up to a distance $r = 55$ cm to the \ac{PV} of the interaction using silicon micro-strip sensors parallel in the barrel and perpendicular beam axis in both endcaps. Then, the \ac{TOB} surrounds this first layer. Having an outer radius of 166 cm and going up to 118 cm along the z-axis, it adds 6 layers to the inner tracking system. Finally, the \acp{TEC} are made out of 9 disks and complete the measurement of particles emitted along the z-axis and having a high pseudorapidity $\eta$.
 \end{itemize}
 
 The \ac{CMS} tracker is extremely performing: we can see in Figure~\ref{fig:TrackerEff} that muons are indeed reconstructed with an efficiency higher than 99\% for most of the pseudorapidity spectrum, even though we can observe that this efficiency drops at high $\eta$ values, mainly because of the reduced coverage provided by the pixel forward disks. The interactions between the hadrons and the tracking system is also a bit higher, which result in a lower reconstruction efficiency for such particles.
@@ -1133,14 +1140,14 @@ The \ac{CMS} tracker is extremely performing: we can see in Figure~\ref{fig:Trac
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm, height=5.5cm]{figs/TrackerEff.png}
-\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) for different pseudorapidities and particle momentum (1, 10 and 100 GeV) \cite{CMSDescription}.}
+\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) for different pseudorapidities and particle momenta (1, 10 and 100 GeV) \cite{CMSDescription}.}
 \label{fig:TrackerEff}
 \end{center}
 \end{figure}
 
 \subsection{\acf{ECAL}} \label{subsection:ECAL}
 
-The \acf{ECAL} of CMS is an homogeneous detector surrounding the tracker that gives information about the energy of electrons and photons, both being able to interact electromagnetically with its crystals. The \ac{ECAL} can also be divided into several sections: first of all, at pseudorapidites $|\eta| < 1.479$ is found the barrel part of the \ac{ECAL} (EB), made out of 61 200 lead tungstate (PbWO$_4$) crystals, located at a radius of 1.29 meters of the beam pipe. Then, two endcaps, each endcap made out of 7 324 of those crystals complete the coverage of the detector up to $|\eta| < 3$, as shown in Figure~\ref{fig:CMSECAL}.
+The \acf{ECAL} of CMS is an homogeneous detector surrounding the tracker that gives information about the energy of electrons and photons, both being able to interact electromagnetically with its crystals. The \ac{ECAL} can also be divided into several sections: first of all, at pseudorapidites $|\eta| < 1.479$ is found the barrel part of the \ac{ECAL} (EB), made out of 61 200 lead tungstate (PbWO$_4$) crystals, located at a radius of 1.29 meters of the beam pipe. Then, two endcaps, each made out of 7 324 of those crystals, complete the coverage of the detector up to $|\eta| < 3$, as shown in Figure~\ref{fig:CMSECAL}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1150,7 +1157,7 @@ The \acf{ECAL} of CMS is an homogeneous detector surrounding the tracker that gi
 \end{center}
 \end{figure}
 
-Its principle is simple and based on electromagnetic showers: when a particle such as an electron or a photon enters the \ac{ECAL}, they will start to interact in different ways: photons will mainly produce pairs of electrons and anti-electrons, while the electrons themselves tend to emit additional photons by bremsstrahlung effect. This results in a chain reaction during which the incident particle will give most of its energy to the detector itself, energy which can therefore be measured using photodetectors and photomultipliers. This effect is known as an electromagnetic shower, is represented in Figure~\ref{fig:EMShowers} and is usually characterized using the so-called radiation length $X_0$, the mean distance over which a high-energy electron loses all but 1/e of its energy, then determining the total length of interaction of a particle in the \ac{ECAL}. 
+Its principle of action is simple and based on electromagnetic showers: when a particle such as an electron or a photon enters the \ac{ECAL}, it will start to interact in different ways: photons will mainly produce pairs of electrons and anti-electrons, while the electrons themselves tend to emit additional photons by bremsstrahlung effect. This results in a chain reaction during which the incident particle will give most of its energy to the detector itself, energy measurable using photodetectors and photomultipliers. This effect is known as an electromagnetic shower, is represented in Figure~\ref{fig:EMShowers} and is usually characterized using the so-called radiation length $X_0$, the mean distance over which a high-energy electron loses all but 1/e of its energy, then determining the total length of interaction of a particle in the \ac{ECAL}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1160,9 +1167,9 @@ Its principle is simple and based on electromagnetic showers: when a particle su
 \end{center}
 \end{figure}
 
-The high density, short radiation length and low scintillationd decay time (smaller than the bunch spacing of 25 ns) of the PbWO$_4$ crystals therefore makes them perfect candidates towards a compact \ac{ECAL} in \ac{CMS}. These crystals do have some drawbacks as well: their relative fragility when it comes to radiation, and the dependence on the temperature of their response. Indeed, a cooling system had to be built in order to keep the huge detector under temperature variations lower than 0.1$^\circ$.
+The high density, short radiation length and low scintillation decay time (smaller than the bunch spacing of 25 ns) of the PbWO$_4$ crystals therefore makes them perfect candidates towards a compact \ac{ECAL} in \ac{CMS}. These crystals do have some drawbacks as well: their relative fragility when it comes to radiation, and the dependence on the temperature of their response. Indeed, a cooling system had to be built in order to keep the huge detector under temperature variations lower than 0.1$^\circ$ to avoid eventual fluctuations in the response of the crystals.
 
-These crystals, which had to be grown individually in laboratories, measure 2.2x2.2x23 cm in the barrel, and 3x3x22 cm in the endcaps, and have therefore a length corresponding to around 26 radiation lengths. Since the light output of such crystals is quite low (only around 4.5 photoelectrons per MeV of energy), they have to be connected to both avalanche photodiodes and vacuum phototriodes in order to multiply the signal measured. Finally, these crystals have been mounted used a specific installation, slightly tilted with respect to both $\phi$ and $\eta$ in order to remove any possible gap between two adjacent crystals.
+These crystals, which had to be grown individually in laboratories, measure 2.2x2.2x23 cm in the barrel and 3x3x22 cm in the endcaps, and have therefore a length corresponding to around 26 radiation lengths, more than enough to stop even the most energetic particles. Since the light output of such crystals is quite low (only around 4.5 photoelectrons per MeV of energy), they have to be connected to both avalanche photodiodes and vacuum phototriodes in order to multiply the signal measured. Finally, these crystals have been mounted used a specific installation, slightly tilted with respect to both $\phi$ and $\eta$ in order to remove any possible gap between two adjacent crystals.
 
 The typical energy resolution of the \ac{ECAL} installed at \ac{CMS} is given by Equation~\ref{eq:CMSEcal} \cite{CMSDescription}, accounting for several different effects, such as the stochastic nature of the observe scintillation, the electronics and \ac{PU} noise and the calibration and detector non-uniformity uncertainty.
 
@@ -1171,7 +1178,7 @@ The typical energy resolution of the \ac{ECAL} installed at \ac{CMS} is given by
 \frac{\sigma_E}{E} = \sqrt{\left ( \frac{2.8 \%}{\sqrt{E}} \right)^2 + \left ( \frac{0.12 \%}{E} \right )^2 + (0.30 \%)^2} \sim \frac{3-10\%}{\sqrt{E/\text{GeV}}}
 \end{equation}
 
-Finally, a preshower layer has been set up just before the \ac{ECAL} in order to reduce the possible mis-identification of events in which highly boosted pions could decay into two photons $\pi^0 \rightarrow \gamma \gamma$ as individual photos. This detector has been installed in the fiducial region ($1.653 < |\eta| < 2.6$) of the endcaps and is made of lead, initiatiing the shower process, followed by two layers of silicon strips.
+Finally, a preshower layer has been set up just before the \ac{ECAL} in order to reduce the possible mis-identification of events in which highly boosted pions could decay into two photons $\pi^0 \rightarrow \gamma \gamma$ as individual photons. This detector has been installed in the fiducial region ($1.653 < |\eta| < 2.6$) of the endcaps and is made of a lead layer, able to initiate the electromagnetic shower process, followed by two layers of silicon strips.
 
 \subsection{\acf{HCAL}}\label{subsection:HCAL}
 
@@ -1209,6 +1216,13 @@ The \ac{HCAL} barrel used 36 identical azimuthal wedges as absorber, placed alon
 \subsection{Solenoid} \label{subsection:Solenoid}
 
 The central piece of \ac{CMS} is its extremely large (12.5 meters of length and 6 meters of diameter) and heavy (220 tons) superconducting solenoid able to produce a 3.8 T magnetic field, storing when active a huge energy of 2.6 GJ. It is the largest magnet of its type ever constructed, therefore allowing allows the tracker, \ac{ECAL} and \ac{HCAL} calorimeters to be placed inside the coil, resulting in a detector that is, overall, quite compact, compared to detectors of similar weight.
+
+The magnetic field produced by this coil is extremely useful, since it allows us to measure quite precisely the charge and the momentum of the different charged particles interacting with the detector just by measuring the curvature of their track, according to the Lorentz equation ~\ref{eq:Lorentz}.
+
+\begin{equation}
+\label{eq:Lorentz}
+\overrightarrow{F} = q \overrightarrow{E} + q \overrightarrow{v} \times \overrightarrow{B}
+\end{equation}
 
 The hoop strain $\epsilon = 130$ MPa applied throughout this solenoid is quite large compared to the strain applied on other previous detectors, and this had to be taken into account during the conception of this magnet. It has then be designed in such a way that a large fraction of the \ac{CMS} coil has a structural function, dividing the strain between the layers of the magnet and the support of the coil itself ($\sim 30$\%). At the end, the conductor of this solenoid, made from a Rutherford-type cable combined with aluminium, is mechanically reinforced with an aluminium alloy.
 
@@ -1310,15 +1324,18 @@ The \ac{HLT} trigger is divided in several so-called \textit{trigger paths}, esp
 
 \subsection{Data acquisition system} \label{subsection:DAQ}
 
-The CMS trigger system, along with its \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed in order to collect and analyze the data information at the nominal collision rate of 40 MHz.
+The CMS trigger system, along with its \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed in order to collect and analyze the data information at the nominal collision rate of 40 MHz and is feeded directly from the \acf{L1}, meaning that it has to be able to read a flux of data of the order of 100 kHz ($\sim 100$ Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=9cm, height=5cm]{figs/CMSDAQ.png}
+\includegraphics[width=9cm, height=4.5cm]{figs/CMSDAQ.png}
 \caption{Architecture of \ac{CMS} \acf{DAQ} system \cite{CMSDescription}.}
 \label{fig:CMSDAQ}
 \end{center}
 \end{figure}
+
+The \ac{DAQ} is also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
+from online event processing in the \ac{HLT}, the transfer of data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times.
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
 \section{Particle Flow algorithm}
