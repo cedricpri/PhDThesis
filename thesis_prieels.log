@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.17)  19 JAN 2020 11:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.17)  19 JAN 2020 11:38
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1252,7 +1252,7 @@ Package pdftex.def Info: figs/L1Trigg.png  used on input line 1318.
 Package acronym Info: Label `acro:DAQ' newly defined as it shall be overridden
 although it is yet undefined on input line 1331.
  [57 <./figs/L1Trigg.png>]
-<figs/CMSDAQ.png, id=2006, 2380.895pt x 1057.9525pt>
+<figs/CMSDAQ.png, id=2007, 2380.895pt x 1057.9525pt>
 File: figs/CMSDAQ.png Graphic file (type png)
 <use figs/CMSDAQ.png>
 Package pdftex.def Info: figs/CMSDAQ.png  used on input line 1335.
@@ -1323,10 +1323,10 @@ Package rerunfilecheck Info: File `thesis_prieels.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1907.
  ) 
 Here is how much of TeX's memory you used:
- 11928 strings out of 494510
- 174980 string characters out of 6176235
- 323738 words of memory out of 5000000
- 14920 multiletter control sequences out of 15000+600000
+ 11929 strings out of 494510
+ 174998 string characters out of 6176235
+ 323797 words of memory out of 5000000
+ 14921 multiletter control sequences out of 15000+600000
  13168 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  36i,15n,46p,1476b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1346,10 +1346,10 @@ fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/latxfont/line10.pfb>
-Output written on thesis_prieels.pdf (96 pages, 15248269 bytes).
+Output written on thesis_prieels.pdf (96 pages, 15248943 bytes).
 PDF statistics:
- 2690 PDF objects out of 2984 (max. 8388607)
- 2305 compressed objects within 24 object streams
+ 2692 PDF objects out of 2984 (max. 8388607)
+ 2307 compressed objects within 24 object streams
  447 named destinations out of 1000 (max. 500000)
  787 words of extra memory for PDF output out of 10000 (max. 10000000)
 

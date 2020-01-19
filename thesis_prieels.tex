@@ -1306,12 +1306,12 @@ Taking advantage of the \acf{LS} 2, a new muon system in \ac{CMS} is currently b
 
 \subsection{Trigger system} \label{subsection:Trigger}
 
-The \ac{CMS} experiment is facing a data acquisition problem, since the huge collision rate delivered by the \ac{LHC} (one bunch crossing each 25 ns, leading to an impressive rate of collisions of 40 MHz) is much larger than the data acquisition rate currently achievable by nowaday's electronics (around 1 kHz only, more or less equivalent to 1 Gb of data per second). It is therefore impossible to store and process all the collisions provided by the \ac{LHC} ; instead, a selection needs to be made in order to select and record only the most interesting events.
+The \ac{CMS} experiment is facing a data acquisition problem since the collision rate delivered by the \ac{LHC} (one bunch crossing each 25 ns, leading to an impressive rate of collisions of 40 MHz) is much larger than the data acquisition rate currently achievable by nowaday's electronics (around 1 kHz only, more or less equivalent to 1 Gb of data per second). It is therefore impossible to store and process all the collisions provided by the \ac{LHC} ; instead, a selection needs to be made in order to select and record only the most interesting events.
 
-A system, called the trigger system, has therefore been put in place in order to select 1 kHz of interesting events out the 40 MHz extremely quickly. This system is based on two different levels: first of all, the \ac{L1}, a hardware set of electronics selecting around 100 kHz of data, followed by the \ac{HLT}, a software layer improving the selection even more. Let's now give a bit more details about these two levels of trigger:
+A system, called the trigger system, has therefore been put in place in order to select extremely quickly 1 kHz of interesting events out the 40 MHz. This system is based on two different levels: first of all, the \ac{L1}, a hardware set of electronics selecting around 100 kHz of data, followed by the \ac{HLT}, a software layer improving the selection even more. Let's now give a bit more details about these two levels of trigger:
 
 \begin{itemize}
-\item In order to maximize its efficiency, the \acf{L1} is implemented in different sub-systems of the detector (on the calorimeters and muons system) and in the service cavern, just next to the detector, so that the electric signals do not have to travel large distances, therefore saving a few nanoseconds of decision time. This trigger, whose architecture is represented in Fugure~\ref{fig:L1Trigg} gets new data each 25 ns, and today's electronics is not fast enough in order to deal with such a massive input of data, so an ingenious systems of buffers had to be put in place in order to put in line several events before analyzing all of them at once, using only basic segmented data provided by the detector.
+\item In order to maximize its efficiency, the \acf{L1} is implemented in different sub-systems of the detector (on the calorimeters and muons system) and in the service cavern, just next to the detector, so that the electric signals do not have to travel large distances, therefore saving a few nanoseconds of decision time. This trigger, whose architecture is represented in Figure~\ref{fig:L1Trigg} gets new data each 25 ns and today's electronics is not fast enough in order to deal with such a massive input of data, so an ingenious systems of buffers had to be put in place in order to put in line several events before analyzing all of them at once, using only basic segmented data provided by the detector.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1321,14 +1321,14 @@ A system, called the trigger system, has therefore been put in place in order to
 \end{center}
 \end{figure}
 
-\item On the other hand, the \acf{HLT} does get access to the complete read-out data of the detector, since the rate has already been strongly reduced by the \ac{L1} Trigger, allowing it to perform complete calculations such as the ones that will be later performed by the different teams offline. Since this is a software based layer, it runs on a farm of computers and is in constant evolution, getting improvements each day in order to select and reconstruct in a better way and more efficiently interesting data from the collisions.
+\item On the other hand, the \acf{HLT} does get access to the complete read-out data of the detector, since the rate has already been strongly reduced by the \ac{L1} Trigger, allowing it to perform complete calculations such as the ones that will be later performed by the different teams offline. Since this is a software based layer and the decision time is not as critic any more, it runs on a farm of computers on the surface and is in constant evolution, getting improvements each day in order to select and reconstruct in a better way and more efficiently interesting data from the collisions.
 \end{itemize}
 
-The \ac{HLT} trigger is divided in several so-called \textit{trigger paths}, especially developed in order to select a target object or physics process, usually with some $p_T$ requirement in order to reduce the statistics collected by any given trigger, so that no to go past the bandwidth limit of 1 kHz. These triggers paths can then for example require the presence of one or two leptons, a jet whose $p_T$ is higher to a certain threshold or the presence of \acf{MET} in the event. If the selection implied by a trigger is too large, then it needs to be \textit{prescaled}, meaning that its statistics is artificially reduced by forcing it to select one event every N, so that it does not use too much bandwidth: this is typically the case for trigger paths with low $p_T$ requirements.
+The \ac{HLT} trigger is divided in several so-called \textit{trigger paths}, especially developed in order to select a target object or physics process, usually with some $p_T$ requirement in order to reduce the statistics collected by any given trigger, to avoid passing the bandwidth limit of 1 kHz. These triggers paths can then for example require the presence of one or two leptons, a jet whose $p_T$ is higher to a certain threshold or the presence of \acf{MET} in the event. If the selection implied by a trigger is too large, then it needs to be \textit{prescaled}, meaning that its statistics is artificially reduced by forcing it to select one event every N, so that it does not use too much bandwidth: this is typically the case for trigger paths with low $p_T$ requirements, as the ones used for the \textit{fake rate} calculation explain in Section~\ref{subsection:Fakes}.
 
 \subsection{Data acquisition system} \label{subsection:DAQ}
 
-The CMS trigger system, along with its \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed in order to collect and analyze the data information at the nominal collision rate of 40 MHz and is feeded directly from the \acf{L1}, meaning that it has to be able to read a flux of data of the order of 100 kHz ($\sim 100$ Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$.
+Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed in order to collect and analyze the data information at the nominal collision rate of 40 MHz and is feeded directly from the \acf{L1}. This means that it has to be able to read a flux of data of the order of 100 kHz ($\sim 100$ Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1339,7 +1339,7 @@ The CMS trigger system, along with its \acf{DAQ}, whose architecture is represen
 \end{figure}
 
 The \ac{DAQ} is also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
-from online event processing in the \ac{HLT}, the transfer of data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times.
+from online event processing in the \ac{HLT}, the transfer of the data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times. The \ac{DAQ} is therefore an essential part of the detector.
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
 \section{Particle Flow algorithm}
@@ -1357,7 +1357,7 @@ from online event processing in the \ac{HLT}, the transfer of data from local st
 \section{Background prediction}
 \subsection{The main background: $t \bar t$}
 \subsection{Drell-Yan estimation}
-\subsection{Non prompt contamination}
+\subsection{Non prompt contamination} \label{subsection:Fakes}
 \subsection{Smaller backgrounds}
 \subsection{Weights and corrections applied}
 
