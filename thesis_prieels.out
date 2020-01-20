@@ -4,30 +4,29 @@
 \BOOKMARK [1][-]{section.2.2}{Leptons reconstruction}{chapter.2}% 4
 \BOOKMARK [2][-]{subsection.2.2.1}{Muons}{section.2.2}% 5
 \BOOKMARK [2][-]{subsection.2.2.2}{Electrons}{section.2.2}% 6
-\BOOKMARK [2][-]{subsection.2.2.3}{Taus}{section.2.2}% 7
-\BOOKMARK [1][-]{section.2.3}{Jets reconstruction}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.3.1}{B-tagging}{section.2.3}% 9
-\BOOKMARK [1][-]{section.2.4}{Missing transverse energy}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.5}{Top reconstruction}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Data, signals and backgrounds}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Data samples}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.2}{Signal samples}{chapter.3}% 14
-\BOOKMARK [1][-]{section.3.3}{Background prediction}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.3.1}{The main background: t }{section.3.3}% 16
-\BOOKMARK [2][-]{subsection.3.3.2}{Drell-Yan estimation}{section.3.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.3}{Non prompt contamination}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.4}{Smaller backgrounds}{section.3.3}% 19
-\BOOKMARK [2][-]{subsection.3.3.5}{Weights and corrections applied}{section.3.3}% 20
-\BOOKMARK [0][-]{chapter.4}{Event selection}{}% 21
-\BOOKMARK [1][-]{section.4.1}{Signal regions}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.2}{Control regions}{chapter.4}% 23
-\BOOKMARK [1][-]{section.4.3}{Background-signal discrimination}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.3.1}{Discriminating variables}{section.4.3}% 25
-\BOOKMARK [2][-]{subsection.4.3.2}{Neural network}{section.4.3}% 26
-\BOOKMARK [0][-]{chapter.5}{Results and interpretations}{}% 27
-\BOOKMARK [1][-]{section.5.1}{Systematics and uncertainties}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 29
-\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 30
-\BOOKMARK [1][-]{section.6.1}{Future prospects}{chapter.6}% 31
-\BOOKMARK [0][-]{section*.28}{Appendices}{}% 32
-\BOOKMARK [0][-]{chapter*.30}{Bibliography}{}% 33
+\BOOKMARK [1][-]{section.2.3}{Jets reconstruction}{chapter.2}% 7
+\BOOKMARK [2][-]{subsection.2.3.1}{B-tagging}{section.2.3}% 8
+\BOOKMARK [1][-]{section.2.4}{Missing transverse energy}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.5}{Top reconstruction}{chapter.2}% 10
+\BOOKMARK [0][-]{chapter.3}{Data, signals and backgrounds}{}% 11
+\BOOKMARK [1][-]{section.3.1}{Data samples}{chapter.3}% 12
+\BOOKMARK [1][-]{section.3.2}{Signal samples}{chapter.3}% 13
+\BOOKMARK [1][-]{section.3.3}{Background prediction}{chapter.3}% 14
+\BOOKMARK [2][-]{subsection.3.3.1}{The main background: t }{section.3.3}% 15
+\BOOKMARK [2][-]{subsection.3.3.2}{Drell-Yan estimation}{section.3.3}% 16
+\BOOKMARK [2][-]{subsection.3.3.3}{Non prompt contamination}{section.3.3}% 17
+\BOOKMARK [2][-]{subsection.3.3.4}{Smaller backgrounds}{section.3.3}% 18
+\BOOKMARK [2][-]{subsection.3.3.5}{Weights and corrections applied}{section.3.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Event selection}{}% 20
+\BOOKMARK [1][-]{section.4.1}{Signal regions}{chapter.4}% 21
+\BOOKMARK [1][-]{section.4.2}{Control regions}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.3}{Background-signal discrimination}{chapter.4}% 23
+\BOOKMARK [2][-]{subsection.4.3.1}{Discriminating variables}{section.4.3}% 24
+\BOOKMARK [2][-]{subsection.4.3.2}{Neural network}{section.4.3}% 25
+\BOOKMARK [0][-]{chapter.5}{Results and interpretations}{}% 26
+\BOOKMARK [1][-]{section.5.1}{Systematics and uncertainties}{chapter.5}% 27
+\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 28
+\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 29
+\BOOKMARK [1][-]{section.6.1}{Future prospects}{chapter.6}% 30
+\BOOKMARK [0][-]{section*.34}{Appendices}{}% 31
+\BOOKMARK [0][-]{chapter*.36}{Bibliography}{}% 32

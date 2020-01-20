@@ -5,30 +5,29 @@
 \contentsline {section}{\numberline {2.2}Leptons reconstruction}{7}{section.2.2}% 
 \contentsline {subsection}{\numberline {2.2.1}Muons}{7}{subsection.2.2.1}% 
 \contentsline {subsection}{\numberline {2.2.2}Electrons}{9}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Taus}{9}{subsection.2.2.3}% 
-\contentsline {section}{\numberline {2.3}Jets reconstruction}{9}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}B-tagging}{9}{subsection.2.3.1}% 
-\contentsline {section}{\numberline {2.4}Missing transverse energy}{9}{section.2.4}% 
-\contentsline {section}{\numberline {2.5}Top reconstruction}{9}{section.2.5}% 
-\contentsline {chapter}{\numberline {3}Data, signals and backgrounds}{11}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Data samples}{11}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Signal samples}{11}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Background prediction}{11}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}The main background: $t \mathaccentV {bar}016t$}{11}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Drell-Yan estimation}{11}{subsection.3.3.2}% 
-\contentsline {subsection}{\numberline {3.3.3}Non prompt contamination}{11}{subsection.3.3.3}% 
-\contentsline {subsection}{\numberline {3.3.4}Smaller backgrounds}{11}{subsection.3.3.4}% 
-\contentsline {subsection}{\numberline {3.3.5}Weights and corrections applied}{11}{subsection.3.3.5}% 
-\contentsline {chapter}{\numberline {4}Event selection}{13}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Signal regions}{13}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Control regions}{13}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Background-signal discrimination}{13}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}Discriminating variables}{13}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Neural network}{13}{subsection.4.3.2}% 
-\contentsline {chapter}{\numberline {5}Results and interpretations}{15}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Systematics and uncertainties}{15}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Results}{15}{section.5.2}% 
-\contentsline {chapter}{\numberline {6}Conclusions}{17}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Future prospects}{17}{section.6.1}% 
-\contentsline {chapter}{Appendices}{19}{section*.28}% 
-\contentsline {chapter}{Bibliography}{23}{chapter*.30}% 
+\contentsline {section}{\numberline {2.3}Jets reconstruction}{11}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}B-tagging}{11}{subsection.2.3.1}% 
+\contentsline {section}{\numberline {2.4}Missing transverse energy}{11}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Top reconstruction}{11}{section.2.5}% 
+\contentsline {chapter}{\numberline {3}Data, signals and backgrounds}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Data samples}{13}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Signal samples}{13}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Background prediction}{13}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}The main background: $t \mathaccentV {bar}016t$}{13}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Drell-Yan estimation}{13}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Non prompt contamination}{13}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Smaller backgrounds}{13}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.5}Weights and corrections applied}{13}{subsection.3.3.5}% 
+\contentsline {chapter}{\numberline {4}Event selection}{15}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Signal regions}{15}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Control regions}{15}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Background-signal discrimination}{15}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Discriminating variables}{15}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Neural network}{15}{subsection.4.3.2}% 
+\contentsline {chapter}{\numberline {5}Results and interpretations}{17}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Systematics and uncertainties}{17}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Results}{17}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{19}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Future prospects}{19}{section.6.1}% 
+\contentsline {chapter}{Appendices}{21}{section*.34}% 
+\contentsline {chapter}{Bibliography}{25}{chapter*.36}% 

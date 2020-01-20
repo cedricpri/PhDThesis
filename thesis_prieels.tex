@@ -189,6 +189,10 @@
 \acro{DQM}[DQM]{Data Quality Monitoring}
 \acro{DCS}[DCS]{Detector Control System}
 \acro{WP}[WP]{Working Point}
+\acro{SC}[SC]{Super Cluster}
+\acro{KF}[KF]{Kalman Filter}
+\acro{GSF}[GSF]{Gaussian Sum Filter}
+\acro{MVA}[MVA]{Multi-Variate Analysis}
 
 \end{acronym}
 \end{multicols}
@@ -1435,9 +1439,42 @@ Once reconstructed, candidates are required to pass some selection criteria and 
 
 \subsection{Electrons} \label{subsection:Electrons}
 
+Electrons are reconstructed by combining the tracker tracks and the several clusters of energy deposited in the \ac{ECAL} because of the electromagnetic showers appearing due to the interaction between the actual electron and the crystals composing the \ac{ECAL}. It is usually a bit harder though to reconstruct electrons than muons, mainly because they do interact with the tracker and it is therefore needed to model this interaction to understand the exact behaviour of such particles, since this interaction might be responsible for the emission of secondary photons crashing into the \ac{ECAL} but not coming from the \ac{PV}. In fact, it is estimated that in \ac{CMS}, depending on its pseudorapidity, between 33\% and 86\% of the energy of an electron is actually radiated before it reaches the \ac{ECAL} \cite{EleReco}.
 
+The first step for the identification and measurement of the properties of the electrons consist in clustering all the energy deposited in the \ac{ECAL}, and this is not an easy because electrons usually deposit their energy into several different crystals because of the electromagnetic shower effect discussed in Section~\ref{subsection:ECAL}. In order to measure precisely the energy of an electron, all the photons emitted by bremsstrahlung before reaching the \ac{ECAL} (usually, along the $\phi$ axis because of the deviation implied by the solenoid) need to be collected and associated to the correct electron of the event.  
 
-\subsection{Taus} \label{subsection:Taus}
+The actual \ac{PF} reconstruction of electrons is performed in different steps:
+
+\begin{itemize}
+\item A \textbf{clustering algorithm} quite powerful is first of all defining the so-called \acf{SC}. Its goal is to reconstruct the particle showers individually by first of all identifying a seed crystal for the cluster, defined as the crystal collecting the most energy. 
+
+The algorithm then searches for eventual crystals around this seed whose energy detected would be superior to 2$\sigma$ of the electronic noise and matching some quality criteria ($E_{\text{seed}} > 230$ MeV in the barrel, $E_{\text{seed}} > 600$ MeV and $E_{\text{seed}}^T > 150$ MeV in the endcaps). 
+
+The excited contiguous crystals are then grouped into clusters, themselves considered for the final global cluster, the \ac{SC}, if their energy is higher than another given threshold ($E_{\text{cluster}} > 350$ MeV in the barrel, $E_{\text{cluster}}^T > 1$ GeV in the endcaps) \cite{EleReco}. The \ac{SC} energy is then given by the sum of the energies of all its constituent clusters, while its position is calculated as the energy-weighted mean of the positions of the different clusters.
+
+\item Once the \ac{SC} identified, \textbf{electron tracker tracks} are reconstructed, using a procedure a bit different than the usual \ac{KF} reconstruction method for all the tracks of the silicon tracker \cite{KF} because of the large radiative
+losses for electrons in the tracker material. 
+
+This procedure being very time consuming, a good identification of potential electron seeds has to be performed as the method efficiency greatly relies on this first identification. Two different strategies can be used to perform this seeding: first of all, the \ac{ECAL}-based seeding relies on the information obtained for the \ac{SC} energy and position in order to estimate the electron trajectory to find compatible hits in the tracker. This can be done knowing that the electron or positron is moving according to an helix in the magnetic field of the detector. The other way to proceed is the tracker-based seeding, based on tracks reconstructed using the usual algorithm and looking for matches within the possible reconstructed \ac{SC}. Usually, the electron seeds found using the two algorithms are then combined.%, and the overall efficiency of the seeding method is predicted to be higher then 95\% using simulated electrons from Z boson decay \cite{EleReco}.
+
+Once the seeds identified, the identification of tracks itself can begin. First of all, the gathering of compatible of hits from the different seeds is done using the combinatorial \ac{KF} algorithm, and when compatible hits have been found, possible tracks are constructed based on these hits, with a $\chi^2$ penalty applied to eventual track candidates with one missing hit. The compatibility matching between the predicted and found hits is usually chosen to be quite loose in order to maintain a good efficiency even in case of bremsstrahlung emission.
+
+Finally, once the hits are collected, a \ac{GSF} fit is performed to estimate the different track parameters. A mix of Gaussian distributions is used in this case to approximate the loss in each layer, associating a different weight to each distribution.
+
+\item The final step consists in \textbf{merging the \ac{GSF} track and the \ac{ECAL} \acp{SC}} previously built. This step is also designed to preserve the highest efficiency possible while keeping the misidentification probability low, and uses different track-cluster association criteria depending on the seeding used (either cuts on the angles between the \ac{SC} and the and the \ac{GSF} track in the \ac{ECAL}-seeding case, or a complete \ac{MVA} using track observables, electron \ac{PF} cluster observables and relations between the two for the tracker-seeding). Ambiguities concerning eventual single electron seeds which can often lead to several reconstructed tracks are also resolved at this stage.
+\end{itemize}
+
+This complete electron workflow explained here in a simplified way can be summarized in Figure~\ref{fig:EleWorkflow}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=5cm]{figs/EleWorkflow.png}
+\caption{Schematic representation of the full electron reconstruction workflow in \ac{CMS} \cite{EleWorkflow}.}
+\label{fig:EleWorkflow}
+\end{center}
+\end{figure}
+
+%\subsection{Taus} \label{subsection:Taus}
 \section{Jets reconstruction} \label{section:RecoJet}
 \subsection{B-tagging} 
 \section{Missing transverse energy} \label{section:RecoMET}
@@ -2013,6 +2050,21 @@ CMS-PAS-PFT-09-001, 2009}
 \href{http://inspirehep.net/record/1381380}{V. Knunz,
 "Measurement of Quarkonium Polarization to Probe QCD at the LHC",
 Springer theses, 2015}
+
+\bibitem{EleReco}
+\href{https://arxiv.org/abs/1502.02701}{CMS Collaboration,
+"Performance of electron reconstruction and selection with the CMS detector in proton-proton collisions at $\sqrt{s} = 8$ TeV",
+JINST 10 (2015) P06005 [arXiv: 1502.02701]}
+
+\bibitem{KF}
+\href{https://arxiv.org/abs/1405.6569}{CMS Collaboration,
+"Description and performance of track and primary-vertex reconstruction with the CMS tracker",
+JINST 9 (2014) P10009 [arXiv: 1405.6569]}
+
+\bibitem{EleWorkflow}
+\href{https://iopscience.iop.org/article/10.1088/1742-6596/1162/1/012008/pdf}{J. Rembser,
+"CMS Electron and Photon Performance at 13 TeV",
+J. Phys. Conf. Ser. 1162 012008, 2019}
 
 \end{thebibliography}
 
