@@ -1,65 +1,33 @@
 \babel@toc {english}{}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}The \acf {SM}}{5}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}At the origins of dark matter}{6}{section.1.2}% 
-\contentsline {subsection}{\numberline {1.2.1}Zwicky and the virial theorem}{7}{subsection.1.2.1}% 
-\contentsline {subsection}{\numberline {1.2.2}Spiral galaxies rotation curves}{7}{subsection.1.2.2}% 
-\contentsline {subsection}{\numberline {1.2.3}\acf {CMB} anisotropies}{8}{subsection.1.2.3}% 
-\contentsline {subsection}{\numberline {1.2.4}Gravitational lensing}{10}{subsection.1.2.4}% 
-\contentsline {section}{\numberline {1.3}Dark matter properties}{11}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Dark matter candidates}{13}{section.1.4}% 
-\contentsline {section}{\numberline {1.5}Dark matter searches}{20}{section.1.5}% 
-\contentsline {subsection}{\numberline {1.5.1}Direct searches}{21}{subsection.1.5.1}% 
-\contentsline {subsection}{\numberline {1.5.2}Indirect searches}{24}{subsection.1.5.2}% 
-\contentsline {subsection}{\numberline {1.5.3}Collider production}{28}{subsection.1.5.3}% 
-\contentsline {section}{\numberline {1.6}\ac {DM} production at the \ac {LHC}}{31}{section.1.6}% 
-\contentsline {subsection}{\numberline {1.6.1}The single top production channel}{34}{subsection.1.6.1}% 
-\contentsline {subsection}{\numberline {1.6.2}The $t \mathaccentV {bar}016t$ production channel}{35}{subsection.1.6.2}% 
-\contentsline {subsection}{\numberline {1.6.3}The dilepton final state}{35}{subsection.1.6.3}% 
-\contentsline {section}{\numberline {1.7}Previous relevant results}{36}{section.1.7}% 
-\contentsline {chapter}{\numberline {2}The experimental setup}{39}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}The \ac {LHC} accelerator}{39}{section.2.1}% 
-\contentsline {subsection}{\numberline {2.1.1}The \ac {LHC} in a nutshell}{40}{subsection.2.1.1}% 
-\contentsline {subsection}{\numberline {2.1.2}\ac {LHC} key parameters}{41}{subsection.2.1.2}% 
-\contentsline {subsubsection}{Center of mass energy}{41}{subsection.2.1.2}% 
-\contentsline {subsubsection}{Luminosity}{42}{equation.2.1.1}% 
-\contentsline {subsubsection}{\acf {PU}}{43}{figure.caption.83}% 
-\contentsline {section}{\numberline {2.2}The \ac {CMS} detector}{44}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Tracker}{46}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}\acf {ECAL}}{48}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}\acf {HCAL}}{50}{subsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.4}Solenoid}{51}{subsection.2.2.4}% 
-\contentsline {subsection}{\numberline {2.2.5}Muon system}{53}{subsection.2.2.5}% 
-\contentsline {subsection}{\numberline {2.2.6}Trigger system}{57}{subsection.2.2.6}% 
-\contentsline {subsection}{\numberline {2.2.7}Data acquisition system}{58}{subsection.2.2.7}% 
-\contentsline {chapter}{\numberline {3}Objects reconstruction}{59}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}\acf {PF} algorithm}{59}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Leptons reconstruction}{61}{section.3.2}% 
-\contentsline {subsection}{\numberline {3.2.1}Muons}{61}{subsection.3.2.1}% 
-\contentsline {subsection}{\numberline {3.2.2}Electrons}{62}{subsection.3.2.2}% 
-\contentsline {section}{\numberline {3.3}Jets reconstruction}{64}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}B-tagging}{65}{subsection.3.3.1}% 
-\contentsline {section}{\numberline {3.4}Missing transverse energy}{65}{section.3.4}% 
-\contentsline {section}{\numberline {3.5}Top reconstruction}{65}{section.3.5}% 
-\contentsline {chapter}{\numberline {4}Data, signals and backgrounds}{67}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Data samples}{67}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Signal samples}{67}{section.4.2}% 
-\contentsline {section}{\numberline {4.3}Background prediction}{67}{section.4.3}% 
-\contentsline {subsection}{\numberline {4.3.1}The main background: $t \mathaccentV {bar}016t$}{67}{subsection.4.3.1}% 
-\contentsline {subsection}{\numberline {4.3.2}Drell-Yan estimation}{67}{subsection.4.3.2}% 
-\contentsline {subsection}{\numberline {4.3.3}Non prompt contamination}{67}{subsection.4.3.3}% 
-\contentsline {subsection}{\numberline {4.3.4}Smaller backgrounds}{67}{subsection.4.3.4}% 
-\contentsline {subsection}{\numberline {4.3.5}Weights and corrections applied}{67}{subsection.4.3.5}% 
-\contentsline {chapter}{\numberline {5}Event selection}{69}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Signal regions}{69}{section.5.1}% 
-\contentsline {section}{\numberline {5.2}Control regions}{69}{section.5.2}% 
-\contentsline {section}{\numberline {5.3}Background-signal discrimination}{69}{section.5.3}% 
-\contentsline {subsection}{\numberline {5.3.1}Discriminating variables}{69}{subsection.5.3.1}% 
-\contentsline {subsection}{\numberline {5.3.2}Neural network}{69}{subsection.5.3.2}% 
-\contentsline {chapter}{\numberline {6}Results and interpretations}{71}{chapter.6}% 
-\contentsline {section}{\numberline {6.1}Systematics and uncertainties}{71}{section.6.1}% 
-\contentsline {section}{\numberline {6.2}Results}{71}{section.6.2}% 
-\contentsline {chapter}{\numberline {7}Conclusions}{73}{chapter.7}% 
-\contentsline {section}{\numberline {7.1}Future prospects}{73}{section.7.1}% 
-\contentsline {chapter}{Appendices}{75}{section*.124}% 
-\contentsline {chapter}{Bibliography}{81}{chapter*.126}% 
+\contentsline {chapter}{\numberline {2}Objects reconstruction}{5}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}\acf {PF} algorithm}{5}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Leptons reconstruction}{7}{section.2.2}% 
+\contentsline {subsection}{\numberline {2.2.1}Muons}{7}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Electrons}{8}{subsection.2.2.2}% 
+\contentsline {section}{\numberline {2.3}Jets reconstruction}{10}{section.2.3}% 
+\contentsline {subsection}{\numberline {2.3.1}B-tagging}{12}{subsection.2.3.1}% 
+\contentsline {section}{\numberline {2.4}\acf {MET}}{13}{section.2.4}% 
+\contentsline {section}{\numberline {2.5}Top reconstruction}{14}{section.2.5}% 
+\contentsline {chapter}{\numberline {3}Data, signals and backgrounds}{17}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Data samples}{17}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Signal samples}{17}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Background prediction}{17}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}The main background: $t \mathaccentV {bar}016t$}{17}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Drell-Yan estimation}{17}{subsection.3.3.2}% 
+\contentsline {subsection}{\numberline {3.3.3}Non prompt contamination}{17}{subsection.3.3.3}% 
+\contentsline {subsection}{\numberline {3.3.4}Smaller backgrounds}{17}{subsection.3.3.4}% 
+\contentsline {subsection}{\numberline {3.3.5}Weights and corrections applied}{17}{subsection.3.3.5}% 
+\contentsline {chapter}{\numberline {4}Event selection}{19}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Signal regions}{19}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Control regions}{19}{section.4.2}% 
+\contentsline {section}{\numberline {4.3}Background-signal discrimination}{19}{section.4.3}% 
+\contentsline {subsection}{\numberline {4.3.1}Discriminating variables}{19}{subsection.4.3.1}% 
+\contentsline {subsection}{\numberline {4.3.2}Neural network}{19}{subsection.4.3.2}% 
+\contentsline {chapter}{\numberline {5}Results and interpretations}{21}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Systematics and uncertainties}{21}{section.5.1}% 
+\contentsline {section}{\numberline {5.2}Results}{21}{section.5.2}% 
+\contentsline {chapter}{\numberline {6}Conclusions}{23}{chapter.6}% 
+\contentsline {section}{\numberline {6.1}Future prospects}{23}{section.6.1}% 
+\contentsline {chapter}{Appendices}{25}{section*.41}% 
+\contentsline {chapter}{Bibliography}{29}{chapter*.43}% 
