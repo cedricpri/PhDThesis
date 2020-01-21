@@ -1,32 +1,63 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{Objects reconstruction}{}% 2
-\BOOKMARK [1][-]{section.2.1}{Particle Flow \(PF\) algorithm}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{Leptons reconstruction}{chapter.2}% 4
-\BOOKMARK [2][-]{subsection.2.2.1}{Muons}{section.2.2}% 5
-\BOOKMARK [2][-]{subsection.2.2.2}{Electrons}{section.2.2}% 6
-\BOOKMARK [1][-]{section.2.3}{Jets reconstruction}{chapter.2}% 7
-\BOOKMARK [2][-]{subsection.2.3.1}{B-tagging}{section.2.3}% 8
-\BOOKMARK [1][-]{section.2.4}{Missing Transverse Energy \(MET\)}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.5}{Top reconstruction}{chapter.2}% 10
-\BOOKMARK [0][-]{chapter.3}{Data, signals and backgrounds}{}% 11
-\BOOKMARK [1][-]{section.3.1}{Data samples}{chapter.3}% 12
-\BOOKMARK [1][-]{section.3.2}{Signal samples}{chapter.3}% 13
-\BOOKMARK [1][-]{section.3.3}{Background prediction}{chapter.3}% 14
-\BOOKMARK [2][-]{subsection.3.3.1}{The main background: t }{section.3.3}% 15
-\BOOKMARK [2][-]{subsection.3.3.2}{Drell-Yan estimation}{section.3.3}% 16
-\BOOKMARK [2][-]{subsection.3.3.3}{Non prompt contamination}{section.3.3}% 17
-\BOOKMARK [2][-]{subsection.3.3.4}{Smaller backgrounds}{section.3.3}% 18
-\BOOKMARK [2][-]{subsection.3.3.5}{Weights and corrections applied}{section.3.3}% 19
-\BOOKMARK [0][-]{chapter.4}{Event selection}{}% 20
-\BOOKMARK [1][-]{section.4.1}{Signal regions}{chapter.4}% 21
-\BOOKMARK [1][-]{section.4.2}{Control regions}{chapter.4}% 22
-\BOOKMARK [1][-]{section.4.3}{Background-signal discrimination}{chapter.4}% 23
-\BOOKMARK [2][-]{subsection.4.3.1}{Discriminating variables}{section.4.3}% 24
-\BOOKMARK [2][-]{subsection.4.3.2}{Neural network}{section.4.3}% 25
-\BOOKMARK [0][-]{chapter.5}{Results and interpretations}{}% 26
-\BOOKMARK [1][-]{section.5.1}{Systematics and uncertainties}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.2}{Results}{chapter.5}% 28
-\BOOKMARK [0][-]{chapter.6}{Conclusions}{}% 29
-\BOOKMARK [1][-]{section.6.1}{Future prospects}{chapter.6}% 30
-\BOOKMARK [0][-]{section*.41}{Appendices}{}% 31
-\BOOKMARK [0][-]{chapter*.43}{Bibliography}{}% 32
+\BOOKMARK [0][-]{chapter.2}{The Dark Matter case}{}% 2
+\BOOKMARK [1][-]{section.2.1}{The Standard Model \(SM\)}{chapter.2}% 3
+\BOOKMARK [1][-]{section.2.2}{At the origins of dark matter}{chapter.2}% 4
+\BOOKMARK [2][-]{subsection.2.2.1}{Zwicky and the virial theorem}{section.2.2}% 5
+\BOOKMARK [2][-]{subsection.2.2.2}{Spiral galaxies rotation curves}{section.2.2}% 6
+\BOOKMARK [2][-]{subsection.2.2.3}{Cosmic Microwave Background \(CMB\) anisotropies}{section.2.2}% 7
+\BOOKMARK [2][-]{subsection.2.2.4}{Gravitational lensing}{section.2.2}% 8
+\BOOKMARK [1][-]{section.2.3}{Dark matter properties}{chapter.2}% 9
+\BOOKMARK [1][-]{section.2.4}{Dark matter candidates}{chapter.2}% 10
+\BOOKMARK [1][-]{section.2.5}{Dark matter searches}{chapter.2}% 11
+\BOOKMARK [2][-]{subsection.2.5.1}{Direct searches}{section.2.5}% 12
+\BOOKMARK [2][-]{subsection.2.5.2}{Indirect searches}{section.2.5}% 13
+\BOOKMARK [2][-]{subsection.2.5.3}{Collider production}{section.2.5}% 14
+\BOOKMARK [1][-]{section.2.6}{DM production at the LHC}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.6.1}{The single top production channel}{section.2.6}% 16
+\BOOKMARK [2][-]{subsection.2.6.2}{The t \040production channel}{section.2.6}% 17
+\BOOKMARK [2][-]{subsection.2.6.3}{The dilepton final state}{section.2.6}% 18
+\BOOKMARK [1][-]{section.2.7}{Previous relevant results}{chapter.2}% 19
+\BOOKMARK [0][-]{chapter.3}{The experimental setup}{}% 20
+\BOOKMARK [1][-]{section.3.1}{The LHC accelerator}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.1.1}{The LHC in a nutshell}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.2}{LHC key parameters}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic Calorimeter \(ECAL\)}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic Calorimeter \(HCAL\)}{section.3.2}% 27
+\BOOKMARK [2][-]{subsection.3.2.4}{Solenoid}{section.3.2}% 28
+\BOOKMARK [2][-]{subsection.3.2.5}{Muon system}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.6}{Trigger system}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.7}{Data acquisition system}{section.3.2}% 31
+\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 32
+\BOOKMARK [1][-]{section.4.1}{Particle Flow \(PF\) algorithm}{chapter.4}% 33
+\BOOKMARK [1][-]{section.4.2}{Leptons reconstruction}{chapter.4}% 34
+\BOOKMARK [2][-]{subsection.4.2.1}{Muons}{section.4.2}% 35
+\BOOKMARK [2][-]{subsection.4.2.2}{Electrons}{section.4.2}% 36
+\BOOKMARK [1][-]{section.4.3}{Jets reconstruction}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.3.1}{B-tagging}{section.4.3}% 38
+\BOOKMARK [1][-]{section.4.4}{Missing Transverse Energy \(MET\)}{chapter.4}% 39
+\BOOKMARK [1][-]{section.4.5}{Top reconstruction}{chapter.4}% 40
+\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 41
+\BOOKMARK [1][-]{section.5.1}{The Monte Carlo \(MC\) simulation method}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.2}{Data samples}{chapter.5}% 43
+\BOOKMARK [1][-]{section.5.3}{Signal samples}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{Background prediction}{chapter.5}% 45
+\BOOKMARK [2][-]{subsection.5.4.1}{The main background: t }{section.5.4}% 46
+\BOOKMARK [2][-]{subsection.5.4.2}{Drell-Yan estimation}{section.5.4}% 47
+\BOOKMARK [2][-]{subsection.5.4.3}{Non prompt contamination}{section.5.4}% 48
+\BOOKMARK [2][-]{subsection.5.4.4}{Smaller backgrounds}{section.5.4}% 49
+\BOOKMARK [2][-]{subsection.5.4.5}{Weights and corrections applied}{section.5.4}% 50
+\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 51
+\BOOKMARK [1][-]{section.6.1}{Signal regions}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.2}{Control regions}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.3}{Background-signal discrimination}{chapter.6}% 54
+\BOOKMARK [2][-]{subsection.6.3.1}{Discriminating variables}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.2}{Neural network}{section.6.3}% 56
+\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 57
+\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 58
+\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 59
+\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 60
+\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 61
+\BOOKMARK [0][-]{section*.133}{Appendices}{}% 62
+\BOOKMARK [0][-]{chapter*.135}{Bibliography}{}% 63
