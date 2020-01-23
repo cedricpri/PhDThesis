@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.17)  23 JAN 2020 13:32
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2019.10.17)  23 JAN 2020 17:26
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -594,15 +594,15 @@ LaTeX Font Info:    ... okay on input line 66.
 * paper: a4paper
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
-* bindingoffset: 76.82234pt
+* bindingoffset: 71.13188pt
 * modes: twoside 
-* h-part:(L,W,R)=(28.45274pt, 421.1009pt, 71.13188pt)
+* h-part:(L,W,R)=(28.45274pt, 426.79137pt, 71.13188pt)
 * v-part:(T,H,B)=(56.9055pt, 702.78308pt, 85.35826pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=421.1009pt
+* \textwidth=426.79137pt
 * \textheight=702.78308pt
-* \oddsidemargin=33.0051pt
+* \oddsidemargin=27.31464pt
 * \evensidemargin=-1.1381pt
 * \topmargin=-61.5077pt
 * \headheight=12.0pt
@@ -687,26 +687,11 @@ Package gensymb Info: Using \Omega for \ohm on input line 66.
 
 Package gensymb Warning: Not defining \micro.
 
-<figs/image_UC.png, id=140, 400.49625pt x 401.5pt>
+<figs/image_UC.png, id=144, 400.49625pt x 401.5pt>
 File: figs/image_UC.png Graphic file (type png)
 <use figs/image_UC.png>
 Package pdftex.def Info: figs/image_UC.png  used on input line 84.
-(pdftex.def)             Requested size: 63.16255pt x 63.31622pt.
-
-Overfull \hbox (5.69043pt too wide) in paragraph at lines 90--90
- [] 
- []
-
-
-Overfull \hbox (5.69043pt too wide) in paragraph at lines 92--92
- [] 
- []
-
-
-Overfull \hbox (5.69043pt too wide) in paragraph at lines 94--95
- [] 
- []
-
+(pdftex.def)             Requested size: 64.0161pt x 64.17392pt.
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./figs/image_UC.png>]
@@ -728,16 +713,24 @@ l.124 \chapter
 
 ] [5] [6
 
-] [7] [8]
-(./thesis_prieels.toc
-Package acronym Info: Label `acro:PF' newly defined as it shall be overridden
+]
+Underfull \hbox (badness 10000) in paragraph at lines 149--150
+[]\OT1/cmr/m/n/10 Minimal Su-per-sym-met-ric Stan-dard
+ []
+
+[7] [8] (./thesis_prieels.toc
+Package acronym Info: Label `acro:LHC' newly defined as it shall be overridden
 although it is yet undefined on input line 3.
-Package acronym Info: Label `acro:PV' newly defined as it shall be overridden
-although it is yet undefined on input line 4.
-Package acronym Info: Label `acro:MET' newly defined as it shall be overridden
-although it is yet undefined on input line 10.
+Package acronym Info: Label `acro:CMS' newly defined as it shall be overridden
+although it is yet undefined on input line 9.
+Package acronym Info: Label `acro:ECAL' newly defined as it shall be overridden
+
+although it is yet undefined on input line 11.
+Package acronym Info: Label `acro:HCAL' newly defined as it shall be overridden
+
+although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:MC' newly defined as it shall be overridden
-although it is yet undefined on input line 14.
+although it is yet undefined on input line 18.
  [9
 
 ])
@@ -748,245 +741,281 @@ although it is yet undefined on input line 14.
 
 ]
 Chapter 1.
-Package acronym Info: Label `acro:CMS' newly defined as it shall be overridden
-although it is yet undefined on input line 1385.
-Package acronym Info: Label `acro:LHC' newly defined as it shall be overridden
-although it is yet undefined on input line 1391.
+Package acronym Info: Label `acro:CERN' newly defined as it shall be overridden
+
+although it is yet undefined on input line 1027.
+Package acronym Info: Label `acro:BSM' newly defined as it shall be overridden
+although it is yet undefined on input line 1029.
+Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
+although it is yet undefined on input line 1029.
 [1
 
 ]
-Package acronym Info: Label `acro:PU' newly defined as it shall be overridden
-although it is yet undefined on input line 1398.
-Package acronym Info: Label `acro:ECAL' newly defined as it shall be overridden
-
-although it is yet undefined on input line 1402.
-Package acronym Info: Label `acro:HCAL' newly defined as it shall be overridden
-
-although it is yet undefined on input line 1403.
-<figs/CMSIdentify.png, id=355, 1445.4pt x 955.57pt>
-File: figs/CMSIdentify.png Graphic file (type png)
-<use figs/CMSIdentify.png>
-Package pdftex.def Info: figs/CMSIdentify.png  used on input line 1410.
-(pdftex.def)             Requested size: 369.8844pt x 227.62094pt.
- [2]
-<figs/LHCPU.png, id=380, 378.66469pt x 199.49532pt>
-File: figs/LHCPU.png Graphic file (type png)
-<use figs/LHCPU.png>
-Package pdftex.def Info: figs/LHCPU.png  used on input line 1426.
-(pdftex.def)             Requested size: 213.39703pt x 119.50023pt.
- [3 <./figs/CMSIdentify.png> <./figs/LHCPU.png>]
-Package acronym Info: Label `acro:DT' newly defined as it shall be overridden
-although it is yet undefined on input line 1445.
-Package acronym Info: Label `acro:CSC' newly defined as it shall be overridden
-although it is yet undefined on input line 1445.
-Package acronym Info: Label `acro:RPC' newly defined as it shall be overridden
-although it is yet undefined on input line 1445.
-Package acronym Info: Label `acro:KF' newly defined as it shall be overridden
-although it is yet undefined on input line 1445.
- [4]
-<figs/MuonEff.png, id=413, 1891.065pt x 1184.425pt>
-File: figs/MuonEff.png Graphic file (type png)
-<use figs/MuonEff.png>
-Package pdftex.def Info: figs/MuonEff.png  used on input line 1465.
-(pdftex.def)             Requested size: 369.86713pt x 184.93944pt.
-<figs/IsoCone.png, id=418, 1292.83pt x 1182.4175pt>
-File: figs/IsoCone.png Graphic file (type png)
-<use figs/IsoCone.png>
-Package pdftex.def Info: figs/IsoCone.png  used on input line 1475.
-(pdftex.def)             Requested size: 199.1635pt x 199.168pt.
+Package acronym Info: Label `acro:LEP' newly defined as it shall be overridden
+although it is yet undefined on input line 1035.
+Package acronym Info: Label `acro:ATLAS' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 1037.
+Package acronym Info: Label `acro:ALICE' newly defined as it shall be overridde
+n
+although it is yet undefined on input line 1037.
 Package acronym Info: Label `acro:SM' newly defined as it shall be overridden
-although it is yet undefined on input line 1476.
-Package acronym Info: Label `acro:WP' newly defined as it shall be overridden
-although it is yet undefined on input line 1481.
- [5]
-Package acronym Info: Label `acro:SC' newly defined as it shall be overridden
-although it is yet undefined on input line 1492.
-
-
-LaTeX Warning: Reference `subsection:ECAL' on page 6 undefined on input line 14
-92.
-
-[6 <./figs/MuonEff.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1502
+although it is yet undefined on input line 1037.
+Package acronym Info: Label `acro:PS' newly defined as it shall be overridden
+although it is yet undefined on input line 1039.
+Package acronym Info: Label `acro:SPS' newly defined as it shall be overridden
+although it is yet undefined on input line 1039.
+<figs/LHCChain.png, id=386, 1933.2225pt x 1310.8975pt>
+File: figs/LHCChain.png Graphic file (type png)
+<use figs/LHCChain.png>
+Package pdftex.def Info: figs/LHCChain.png  used on input line 1043.
+(pdftex.def)             Requested size: 341.41635pt x 227.61026pt.
+Package acronym Info: Label `acro:PU' newly defined as it shall be overridden
+although it is yet undefined on input line 1049.
+Package acronym Info: Label `acro:LS' newly defined as it shall be overridden
+although it is yet undefined on input line 1051.
+ [2] [3 <./figs/LHCChain.png>] [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1113
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1502.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1113.
 
-Package acronym Info: Label `acro:GSF' newly defined as it shall be overridden
-although it is yet undefined on input line 1509.
- [7 <./figs/IsoCone.png>]
-Package acronym Info: Label `acro:MVA' newly defined as it shall be overridden
-although it is yet undefined on input line 1513.
-<figs/EleWorkflow.png, id=483, 2515.3975pt x 897.3525pt>
-File: figs/EleWorkflow.png Graphic file (type png)
-<use figs/EleWorkflow.png>
-Package pdftex.def Info: figs/EleWorkflow.png  used on input line 1520.
-(pdftex.def)             Requested size: 398.32658pt x 142.25116pt.
-<figs/CMSJets.png, id=490, 1111.15125pt x 410.53375pt>
-File: figs/CMSJets.png Graphic file (type png)
-<use figs/CMSJets.png>
-Package pdftex.def Info: figs/CMSJets.png  used on input line 1535.
-(pdftex.def)             Requested size: 341.43538pt x 128.03464pt.
- [8 <./figs/EleWorkflow.png>] [9 <./figs/CMSJets.png>]
-<figs/PFSimu.png, id=520, 2720.1625pt x 977.6525pt>
-File: figs/PFSimu.png Graphic file (type png)
-<use figs/PFSimu.png>
-Package pdftex.def Info: figs/PFSimu.png  used on input line 1565.
-(pdftex.def)             Requested size: 426.76761pt x 156.48726pt.
-
-Overfull \hbox (5.6667pt too wide) in paragraph at lines 1565--1566
- [] 
+<figs/CumuLumi.pdf, id=456, 578.16pt x 433.62pt>
+File: figs/CumuLumi.pdf Graphic file (type pdf)
+<use figs/CumuLumi.pdf>
+Package pdftex.def Info: figs/CumuLumi.pdf  used on input line 1128.
+(pdftex.def)             Requested size: 341.42903pt x 227.62082pt.
+Package acronym Info: Label `acro:PV' newly defined as it shall be overridden
+although it is yet undefined on input line 1136.
+<figs/PUSUmmary.png, id=468, 578.16pt x 433.62pt>
+File: figs/PUSUmmary.png Graphic file (type png)
+<use figs/PUSUmmary.png>
+Package pdftex.def Info: figs/PUSUmmary.png  used on input line 1140.
+(pdftex.def)             Requested size: 341.42903pt x 227.62082pt.
+ [5]
+Overfull \hbox (1.94548pt too wide) in paragraph at lines 1158--1159
+[]\OT1/cmr/m/n/10 Good charged-particle mo-men-tum res-o-lu-tion and re-con-str
+uc-tion ef-fi-ciency in the in-ner tracker.
  []
 
-<figs/CMSBJets.png, id=528, 903.375pt x 924.18877pt>
-File: figs/CMSBJets.png Graphic file (type png)
-<use figs/CMSBJets.png>
-Package pdftex.def Info: figs/CMSBJets.png  used on input line 1579.
-(pdftex.def)             Requested size: 199.17043pt x 199.16208pt.
-Package acronym Info: Label `acro:CSV' newly defined as it shall be overridden
-although it is yet undefined on input line 1587.
-Package acronym Info: Label `acro:DNN' newly defined as it shall be overridden
-although it is yet undefined on input line 1587.
-[10 <./figs/PFSimu.png>]
-<figs/CMSBTag.png, id=544, 1875.005pt x 1278.7775pt>
-File: figs/CMSBTag.png Graphic file (type png)
-<use figs/CMSBTag.png>
-Package pdftex.def Info: figs/CMSBTag.png  used on input line 1591.
-(pdftex.def)             Requested size: 369.87312pt x 241.83852pt.
- [11 <./figs/CMSBJets.png> <./figs/CMSBTag.png>]
-Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 1609.
-<figs/MET.png, id=563, 1606.0pt x 1369.115pt>
-File: figs/MET.png Graphic file (type png)
-<use figs/MET.png>
-Package pdftex.def Info: figs/MET.png  used on input line 1614.
-(pdftex.def)             Requested size: 199.15665pt x 156.47348pt.
-Package acronym Info: Label `acro:BSM' newly defined as it shall be overridden
-although it is yet undefined on input line 1620.
+[6 <./figs/CumuLumi.pdf>]
+<figs/CMS.png, id=565, 2392.43813pt x 1690.06406pt>
+File: figs/CMS.png Graphic file (type png)
+<use figs/CMS.png>
+Package pdftex.def Info: figs/CMS.png  used on input line 1169.
+(pdftex.def)             Requested size: 426.7872pt x 284.52196pt.
+ [7 <./figs/PUSummary.png>]
+Package acronym Info: Label `acro:DT' newly defined as it shall be overridden
+although it is yet undefined on input line 1179.
+Package acronym Info: Label `acro:CSC' newly defined as it shall be overridden
+although it is yet undefined on input line 1179.
+Package acronym Info: Label `acro:RPC' newly defined as it shall be overridden
+although it is yet undefined on input line 1179.
+<figs/CMSAxis.png, id=591, 260.4129pt x 127.9179pt>
+File: figs/CMSAxis.png Graphic file (type png)
+<use figs/CMSAxis.png>
+Package pdftex.def Info: figs/CMSAxis.png  used on input line 1187.
+(pdftex.def)             Requested size: 341.43742pt x 170.72983pt.
+ [8 <./figs/CMS.png>]
 
-[12 <./figs/MET.png>]
-Package acronym Info: Label `acro:PUPPI' newly defined as it shall be overridde
-n
-although it is yet undefined on input line 1630.
-<figs/METFilters.png, id=593, 2603.7275pt x 1252.68pt>
-File: figs/METFilters.png Graphic file (type png)
-<use figs/METFilters.png>
-Package pdftex.def Info: figs/METFilters.png  used on input line 1637.
-(pdftex.def)             Requested size: 398.32928pt x 176.40617pt.
+LaTeX Warning: Reference `chapter:Reco' on page 9 undefined on input line 1206.
 
 
-LaTeX Warning: Reference `section:diLeptonFS' on page 13 undefined on input lin
-e 1645.
+<figs/CMSTracker.png, id=608, 2812.5075pt x 1341.01pt>
+File: figs/CMSTracker.png Graphic file (type png)
+<use figs/CMSTracker.png>
+Package pdftex.def Info: figs/CMSTracker.png  used on input line 1210.
+(pdftex.def)             Requested size: 398.2974pt x 204.84647pt.
+[9 <./figs/CMSAxis.png>]
+Package acronym Info: Label `acro:TIB/TBD' newly defined as it shall be overrid
+den
+although it is yet undefined on input line 1222.
+Package acronym Info: Label `acro:TOB' newly defined as it shall be overridden
+although it is yet undefined on input line 1222.
+Package acronym Info: Label `acro:TEC' newly defined as it shall be overridden
+although it is yet undefined on input line 1222.
+<figs/TrackerEff.png, id=627, 2828.5675pt x 1377.145pt>
+File: figs/TrackerEff.png Graphic file (type png)
+<use figs/TrackerEff.png>
+Package pdftex.def Info: figs/TrackerEff.png  used on input line 1229.
+(pdftex.def)             Requested size: 341.39883pt x 156.48763pt.
+ [10 <./figs/CMSTracker.png>]
+<figs/CMSEcal.png, id=646, 2160.07pt x 1433.355pt>
+File: figs/CMSEcal.png Graphic file (type png)
+<use figs/CMSEcal.png>
+Package pdftex.def Info: figs/CMSEcal.png  used on input line 1243.
+(pdftex.def)             Requested size: 270.27177pt x 170.70477pt.
+ [11 <./figs/TrackerEff.png> <./figs/CMSEcal.png>]
+<figs/EMShowers.png, id=663, 2045.6425pt x 1658.195pt>
+File: figs/EMShowers.png Graphic file (type png)
+<use figs/EMShowers.png>
+Package pdftex.def Info: figs/EMShowers.png  used on input line 1253.
+(pdftex.def)             Requested size: 199.145pt x 170.7125pt.
+ [12 <./figs/EMShowers.png>]
+Package acronym Info: Label `acro:HO' newly defined as it shall be overridden
+although it is yet undefined on input line 1285.
+<figs/CMSHCAL.png, id=699, 2125.9425pt x 1353.055pt>
+File: figs/CMSHCAL.png Graphic file (type png)
+<use figs/CMSHCAL.png>
+Package pdftex.def Info: figs/CMSHCAL.png  used on input line 1289.
+(pdftex.def)             Requested size: 312.97368pt x 227.62137pt.
+ [13]
+<figs/HOImpact.png, id=719, 2374.8725pt x 622.325pt>
+File: figs/HOImpact.png Graphic file (type png)
+<use figs/HOImpact.png>
+Package pdftex.def Info: figs/HOImpact.png  used on input line 1301.
+(pdftex.def)             Requested size: 426.7701pt x 128.03325pt.
+ [14 <./figs/CMSHCAL.png> <./figs/HOImpact.png>]
+<figs/CMSMagnet.jpg, id=741, 1204.5pt x 926.46124pt>
+File: figs/CMSMagnet.jpg Graphic file (type jpg)
+<use figs/CMSMagnet.jpg>
+Package pdftex.def Info: figs/CMSMagnet.jpg  used on input line 1324.
+(pdftex.def)             Requested size: 227.60759pt x 170.71408pt.
+ [15 <./figs/CMSMagnet.jpg>]
+<figs/CMSMuons.png, id=753, 790.955pt x 574.145pt>
+File: figs/CMSMuons.png Graphic file (type png)
+<use figs/CMSMuons.png>
+Package pdftex.def Info: figs/CMSMuons.png  used on input line 1340.
+(pdftex.def)             Requested size: 341.43161pt x 227.62144pt.
+<figs/CMSDT.png, id=763, 1377.145pt x 1266.7325pt>
+File: figs/CMSDT.png Graphic file (type png)
+<use figs/CMSDT.png>
+Package pdftex.def Info: figs/CMSDT.png  used on input line 1354.
+(pdftex.def)             Requested size: 341.42757pt x 284.5193pt.
+ [16 <./figs/CMSMuons.png>] [17 <./figs/CMSDT.png>]
 
-Package acronym Info: Label `acro:BR' newly defined as it shall be overridden
-although it is yet undefined on input line 1645.
-<figs/SMtt.png, id=605, 1294.8375pt x 1764.5925pt>
-File: figs/SMtt.png Graphic file (type png)
-<use figs/SMtt.png>
-Package pdftex.def Info: figs/SMtt.png  used on input line 1649.
-(pdftex.def)             Requested size: 113.80379pt x 156.49088pt.
-[13 <./figs/METFilters.png>]
-Package acronym Info: Label `acro:BW' newly defined as it shall be overridden
-although it is yet undefined on input line 1683.
- [14pdfTeX warning (ext4): destination with the same identifier (name{equation.
-1.6.3}) has been already used, duplicate ignored
+LaTeX Warning: Reference `subsection:Muons' on page 18 undefined on input line 
+1397.
 
-\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
-                                                  \fi \fi 
-l.1692 \item I
-              f exactly 0 b-jets are observed, the event will not be conside...
- <./figs/SMtt.png>] [15] [16
+<figs/muonRecoEff.png, id=812, 2870.725pt x 1290.8225pt>
+File: figs/muonRecoEff.png Graphic file (type png)
+<use figs/muonRecoEff.png>
+Package pdftex.def Info: figs/muonRecoEff.png  used on input line 1401.
+(pdftex.def)             Requested size: 398.30687pt x 170.70818pt.
+Package acronym Info: Label `acro:GEM' newly defined as it shall be overridden
+although it is yet undefined on input line 1407.
+[18]
+<figs/CMSGEM.png, id=831, 409.53pt x 250.0542pt>
+File: figs/CMSGEM.png Graphic file (type png)
+<use figs/CMSGEM.png>
+Package pdftex.def Info: figs/CMSGEM.png  used on input line 1413.
+(pdftex.def)             Requested size: 341.4533pt x 199.17368pt.
+ [19 <./figs/muonRecoEff.png> <./figs/CMSGEM.png>]
+Package acronym Info: Label `acro:L1' newly defined as it shall be overridden
+although it is yet undefined on input line 1423.
+Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
+although it is yet undefined on input line 1423.
+<figs/L1Trigg.png, id=853, 1919.17pt x 1330.9725pt>
+File: figs/L1Trigg.png Graphic file (type png)
+<use figs/L1Trigg.png>
+Package pdftex.def Info: figs/L1Trigg.png  used on input line 1433.
+(pdftex.def)             Requested size: 256.0605pt x 170.69696pt.
+Package acronym Info: Label `acro:MET' newly defined as it shall be overridden
+although it is yet undefined on input line 1443.
+ [20 <./figs/L1Trigg.png>]
+Package acronym Info: Label `acro:DAQ' newly defined as it shall be overridden
+although it is yet undefined on input line 1447.
+<figs/CMSDAQ.png, id=878, 2380.895pt x 1057.9525pt>
+File: figs/CMSDAQ.png Graphic file (type png)
+<use figs/CMSDAQ.png>
+Package pdftex.def Info: figs/CMSDAQ.png  used on input line 1451.
+(pdftex.def)             Requested size: 256.05022pt x 128.0304pt.
+Package acronym Info: Label `acro:DQM' newly defined as it shall be overridden
+although it is yet undefined on input line 1457.
+Package acronym Info: Label `acro:DCS' newly defined as it shall be overridden
+although it is yet undefined on input line 1458.
+ [21 <./figs/CMSDAQ.png>] [22
 
 ]
 Chapter 2.
 
-LaTeX Warning: Reference `section:ourChannel' on page 17 undefined on input lin
-e 1703.
+LaTeX Warning: Reference `section:ourChannel' on page 23 undefined on input lin
+e 1811.
 
 
-LaTeX Warning: Reference `section:Backgrounds' on page 17 undefined on input li
-ne 1705.
+LaTeX Warning: Reference `section:Backgrounds' on page 23 undefined on input li
+ne 1813.
 
-<figs/MCGen.png, id=668, 1764.5925pt x 1614.03pt>
+<figs/MCGen.png, id=927, 1764.5925pt x 1614.03pt>
 File: figs/MCGen.png Graphic file (type png)
 <use figs/MCGen.png>
-Package pdftex.def Info: figs/MCGen.png  used on input line 1717.
+Package pdftex.def Info: figs/MCGen.png  used on input line 1825.
 (pdftex.def)             Requested size: 199.16776pt x 156.48683pt.
 Package acronym Info: Label `acro:UE' newly defined as it shall be overridden
-although it is yet undefined on input line 1718.
-[17]
+although it is yet undefined on input line 1826.
+[23]
 Package acronym Info: Label `acro:PDF' newly defined as it shall be overridden
-although it is yet undefined on input line 1728.
+although it is yet undefined on input line 1836.
 Package acronym Info: Label `acro:LO' newly defined as it shall be overridden
-although it is yet undefined on input line 1732.
- [18 <./figs/MCGen.png>]
+although it is yet undefined on input line 1840.
+ [24 <./figs/MCGen.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1748.
+(hyperref)                removing `math shift' on input line 1856.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 1748.
+(hyperref)                removing `math shift' on input line 1856.
 
-[19] [20
+[25] [26
 
 ]
 Chapter 3.
-[21] [22
+[27] [28
 
 ]
 Chapter 4.
-[23] [24
+[29] [30
 
 ]
 Chapter 5.
-[25] [26
+[31] [32
 
-] [27
+] [33
 
-] [28] (./thesis_prieels.lof)
+] [34] (./thesis_prieels.lof [35
+
+])
 \tf@lof=\write5
 \openout5 = `thesis_prieels.lof'.
 
- [29
-
-] [30
-
-] (./thesis_prieels.lot)
+ [36] (./thesis_prieels.lot)
 \tf@lot=\write6
 \openout6 = `thesis_prieels.lot'.
 
 
-[31] [32
+[37
 
-] [33] [34] [35] [36] [37] [38]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2400.
- [39]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 2400.
+] [38
+
+] [39] [40] [41] [42] [43] [44]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 2513.
+ [45]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 2513.
  (./thesis_prieels.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2400.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2400.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 2513.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 2513.
 
 Package rerunfilecheck Info: File `thesis_prieels.out' has not changed.
-(rerunfilecheck)             Checksum: F8943692C6A30C12FBBFF979A7ABC410;2281.
+(rerunfilecheck)             Checksum: 58DDCF7C8A1FDF13FE4A63BBA5CE6660;2358.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2400.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 2513.
  ) 
 Here is how much of TeX's memory you used:
- 11593 strings out of 494510
- 168048 string characters out of 6176235
- 312662 words of memory out of 5000000
- 14742 multiletter control sequences out of 15000+600000
+ 11687 strings out of 494510
+ 169603 string characters out of 6176235
+ 315534 words of memory out of 5000000
+ 14814 multiletter control sequences out of 15000+600000
  13168 words of font info for 47 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 36i,20n,46p,1439b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,16n,46p,1439b,568s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/tex
@@ -997,16 +1026,14 @@ nts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/typ
 e1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
 ic/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr
-/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on thesis_prieels.pdf (52 pages, 2729545 bytes).
+/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on thesis_prieels.pdf (58 pages, 8463354 bytes).
 PDF statistics:
- 1277 PDF objects out of 1440 (max. 8388607)
- 1150 compressed objects within 12 object streams
- 325 named destinations out of 1000 (max. 500000)
- 343 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1571 PDF objects out of 1728 (max. 8388607)
+ 1380 compressed objects within 14 object streams
+ 340 named destinations out of 1000 (max. 500000)
+ 381 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,35 +1,39 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Objects reconstruction}{1}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}\acf {PF} algorithm}{1}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}\acf {PV} definition}{3}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Leptons reconstruction}{4}{section.1.3}% 
-\contentsline {subsection}{\numberline {1.3.1}Muons}{4}{subsection.1.3.1}% 
-\contentsline {subsection}{\numberline {1.3.2}Electrons}{6}{subsection.1.3.2}% 
-\contentsline {section}{\numberline {1.4}Jets reconstruction}{8}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}B-tagging}{10}{subsection.1.4.1}% 
-\contentsline {section}{\numberline {1.5}\acf {MET}}{12}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Top reconstruction}{13}{section.1.6}% 
-\contentsline {subsection}{\numberline {1.6.1}Top reconstruction in practice}{14}{subsection.1.6.1}% 
-\contentsline {chapter}{\numberline {2}Data, signals and backgrounds}{17}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}The \acf {MC} simulation method}{17}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Data samples}{19}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Signal samples}{19}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Background prediction}{19}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}The main background: $t \mathaccentV {bar}016t$}{19}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Drell-Yan estimation}{19}{subsection.2.4.2}% 
-\contentsline {subsection}{\numberline {2.4.3}Non prompt contamination}{19}{subsection.2.4.3}% 
-\contentsline {subsection}{\numberline {2.4.4}Smaller backgrounds}{19}{subsection.2.4.4}% 
-\contentsline {subsection}{\numberline {2.4.5}Weights and corrections applied}{19}{subsection.2.4.5}% 
-\contentsline {chapter}{\numberline {3}Event selection}{21}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Signal regions}{21}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Control regions}{21}{section.3.2}% 
-\contentsline {section}{\numberline {3.3}Background-signal discrimination}{21}{section.3.3}% 
-\contentsline {subsection}{\numberline {3.3.1}Discriminating variables}{21}{subsection.3.3.1}% 
-\contentsline {subsection}{\numberline {3.3.2}Neural network}{21}{subsection.3.3.2}% 
-\contentsline {chapter}{\numberline {4}Results and interpretations}{23}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Systematics and uncertainties}{23}{section.4.1}% 
-\contentsline {section}{\numberline {4.2}Results}{23}{section.4.2}% 
-\contentsline {chapter}{\numberline {5}Conclusions}{25}{chapter.5}% 
-\contentsline {section}{\numberline {5.1}Future prospects}{25}{section.5.1}% 
-\contentsline {chapter}{Appendices}{27}{section*.47}% 
-\contentsline {chapter}{Bibliography}{31}{chapter*.49}% 
+\contentsline {chapter}{\numberline {1}The experimental setup}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}The \ac {LHC} accelerator}{1}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}The \ac {LHC} in a nutshell}{2}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}\ac {LHC} key parameters}{3}{subsection.1.1.2}% 
+\contentsline {subsubsection}{Center of mass energy}{3}{subsection.1.1.2}% 
+\contentsline {subsubsection}{Luminosity}{4}{equation.1.1.1}% 
+\contentsline {subsubsection}{\acf {PU}}{5}{figure.caption.24}% 
+\contentsline {section}{\numberline {1.2}The \ac {CMS} detector}{6}{section.1.2}% 
+\contentsline {subsection}{\numberline {1.2.1}Tracker}{9}{subsection.1.2.1}% 
+\contentsline {subsection}{\numberline {1.2.2}\acf {ECAL}}{11}{subsection.1.2.2}% 
+\contentsline {subsection}{\numberline {1.2.3}\acf {HCAL}}{13}{subsection.1.2.3}% 
+\contentsline {subsection}{\numberline {1.2.4}Solenoid}{14}{subsection.1.2.4}% 
+\contentsline {subsection}{\numberline {1.2.5}Muon system}{16}{subsection.1.2.5}% 
+\contentsline {subsection}{\numberline {1.2.6}Trigger system}{19}{subsection.1.2.6}% 
+\contentsline {subsection}{\numberline {1.2.7}Data acquisition system}{21}{subsection.1.2.7}% 
+\contentsline {chapter}{\numberline {2}Data, signals and backgrounds}{23}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}The \acf {MC} simulation method}{23}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Data samples}{25}{section.2.2}% 
+\contentsline {section}{\numberline {2.3}Signal samples}{25}{section.2.3}% 
+\contentsline {section}{\numberline {2.4}Background prediction}{25}{section.2.4}% 
+\contentsline {subsection}{\numberline {2.4.1}The main background: $t \mathaccentV {bar}016t$}{25}{subsection.2.4.1}% 
+\contentsline {subsection}{\numberline {2.4.2}Drell-Yan estimation}{25}{subsection.2.4.2}% 
+\contentsline {subsection}{\numberline {2.4.3}Non prompt contamination}{25}{subsection.2.4.3}% 
+\contentsline {subsection}{\numberline {2.4.4}Smaller backgrounds}{25}{subsection.2.4.4}% 
+\contentsline {subsection}{\numberline {2.4.5}Weights and corrections applied}{25}{subsection.2.4.5}% 
+\contentsline {chapter}{\numberline {3}Event selection}{27}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Signal regions}{27}{section.3.1}% 
+\contentsline {section}{\numberline {3.2}Control regions}{27}{section.3.2}% 
+\contentsline {section}{\numberline {3.3}Background-signal discrimination}{27}{section.3.3}% 
+\contentsline {subsection}{\numberline {3.3.1}Discriminating variables}{27}{subsection.3.3.1}% 
+\contentsline {subsection}{\numberline {3.3.2}Neural network}{27}{subsection.3.3.2}% 
+\contentsline {chapter}{\numberline {4}Results and interpretations}{29}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Systematics and uncertainties}{29}{section.4.1}% 
+\contentsline {section}{\numberline {4.2}Results}{29}{section.4.2}% 
+\contentsline {chapter}{\numberline {5}Conclusions}{31}{chapter.5}% 
+\contentsline {section}{\numberline {5.1}Future prospects}{31}{section.5.1}% 
+\contentsline {chapter}{Appendices}{33}{section*.61}% 
+\contentsline {chapter}{Bibliography}{37}{chapter*.63}% 
