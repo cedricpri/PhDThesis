@@ -47,6 +47,7 @@
 \usepackage{multicol}
 \usepackage{makecell}
 \usepackage{subfiles}
+\usepackage{bm}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -203,6 +204,9 @@
 \acro{PDF}[PDF]{Parton Density Function}
 \acro{LO}[LO]{Leading Order}
 \acro{NLO}[NLO]{Next to Leading Order}
+\acro{MPI}[MPI]{Multiple Parton Interaction}
+\acro{SF}[SF]{Scale Factors}
+\acro{AOD}[AOD]{Analysis Object Data}
 
 \end{acronym}
 \end{multicols}
@@ -262,6 +266,41 @@ Finally, a statistical interpretation of our data will be performed and differen
 \phantom{a}
 \vfill
 \newpage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \chapter{The Dark Matter case}\label{chapter:Case}
 
@@ -986,8 +1025,6 @@ This combination managed to exclude the production of scalar mediators up to 290
 \label{figure:Combination2019}
 \end{center}
 \end{figure}
-\fi
-
 
 
 
@@ -1444,7 +1481,7 @@ The \ac{HLT} trigger is divided in several so-called \textbf{trigger paths}, esp
 
 \subsection{Data acquisition system} \label{subsection:DAQ}
 
-Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed to collect and analyze the data information at the nominal collision rate of 40MHz and is feeded directly from the \acf{L1}. This means that it has to be able to read a flux of data of the order of 100kHz ($\sim 100$Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$, while keeping resources for other tasks.
+Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed to collect and analyze the data information at the nominal collision rate of 40MHz and is feeded directly from the \acf{L1}. This means that it has to be able to read a flux of data of the order of 100kHz ($\sim 100$Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$, while keeping some resources available for other tasks.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1454,7 +1491,7 @@ Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig
 \end{center}
 \end{figure}
 
-The \ac{DAQ} is also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
+The \ac{DAQ} is indeed also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
 from online event processing in the \ac{HLT}, the transfer of the data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times. %The \ac{DAQ} is therefore an essential part of the detector.
 
 
@@ -1486,7 +1523,7 @@ from online event processing in the \ac{HLT}, the transfer of the data from loca
 
 
 
-\iffalse
+
 \chapter{Objects reconstruction} \label{chapter:Reco}
 
 As we just saw, the \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particle with this detector into electronic signals that can be measured and stored. However, this signal collected is made out of raw information coming from different kind of subsystems and an algorithmic strategy then needs to be put in place in order to read all these separate signals and to combine them to extract some useful data, such as the number of particles produced by the collision along with their energy, charge and direction. Producing this kind of data is essential for all the offline analyses which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
@@ -1728,7 +1765,7 @@ The \acf{MET} variable, defined in Equation~\ref{eq:MET} as the negative sum of 
 
 \begin{equation}
 \label{eq:MET}
-\overrightarrow{p}_T^{\text{miss}} = - \sum_j \overrightarrow{p}_{T, j}
+\overrightarrow{p}_T^{\text{miss}} = \cancel{\it{E}}_{T} = - \sum_j \overrightarrow{p}_{T, j}
 \end{equation}
 
 Different algorithms can be used in order to reconstruct this variable, the most famous being \cite{METReco}:
@@ -1806,49 +1843,156 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 \color{red} Section to be updated once the analysis performed and the details about the top reco performed known, and add the results obtained. \color{black}
 \fi
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 
-In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process and mathematically able to simulate what is expected to be seen by the detector, taking into account the effect of the detector on the particles produced. This \ac{MC} production method will be first of all briefly introduced in Section~\ref{section:MC}.
+In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
 
-The different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis and the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signal} and~\ref{section:Backgrounds} respectively.
+Then, the different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signal} and~\ref{section:Backgrounds} respectively.
 
 \section{The \acf{MC} simulation method} \label{section:MC}
 
-The production and simulation of samples is a crucial step since most of the analyses performed at the \ac{LHC} heavily depend on this \ac{MC} generation to define the signal and background samples that can be directly compared with the data collected, in order to try and find eventual discrepancies which could be the hint of the presence of some \ac{BSM} physics.
+As previously explained, the generation of \ac{MC} simulations for the most common \ac{SM} processes is a crucial step of any analysis because they are considered to be the reference to which the data collected is compared in order to try and find some discrepancies, which could the sign of the existence of \ac{BSM} physics. Searches for exotic physics therefore heavily depend on these simulations, which need to be generated with great care and to which a large uncertainty is typically associated since the collision between the partons of two protons and the interaction between the particles produced and the detector itself are extremely complex by nature. 
 
-The basic idea of the \ac{MC} simulation consists in using a random number generator in order to simulate as many events as computationally possible for all the \ac{SM} processes, taking into account the probability density functions of the process being considered. This is performed by specific softwares called \textit{event generators} and, of course, it is important to note that the perfect event generator does not exist, since we usually don't know everything about the \ac{SM} or \ac{BSM} process being generated. 
+The basic idea of the \ac{MC} simulation consists in using a random number generator to simulate the randomness of nature and produce as many events as computationally possible for all the \ac{SM} processes, taking into account the probability density functions of these processes. This is performed by specific softwares called \textbf{event generators} and it is important to note that since we usually don't know everything about the \ac{SM} or \ac{BSM} process being generated, the perfect event generator does not exist.
 
-The structure of a $pp$ collision at the \ac{LHC} as built up by event generators can actually be described by a few main steps that will now be described one by one, as shown in Figure~\ref{fig:MCGen}. The interaction between the particles produced and the detector itself is then usually modeled using standard packages such as GEANT4 \cite{Geant4}, able to completely describe this interaction or DELPHES 3 \cite{DELPHES}, able to provide a fast, yet approximate, simulation of a multipurpose detector.
+To make the generation of such simulations a bit easier, the description of a typical $pp$ collision can usually be divided into several steps that will now be described, as shown with the color code used in Figure~\ref{fig:MCGen}. The typical approximations used to make this kind of simulation possible from the computational point of view will also be briefly introduced at this point.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=7cm, height=5.5cm]{figs/MCGen.png}
-\caption{Structure of a $pp$ collision and different steps of the \ac{MC} simulation by the event generators, such as the parton shower (in green), the \ac{UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite{MCGen}.}
+\caption{Structure of a $pp$ collision and different steps of the \ac{MC} simulation used by the event generators, such as the parton shower (in green), the \ac{UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite{MCGen}.}
 \label{fig:MCGen}
 \end{center}
 \end{figure}
 
 \subsubsection*{Hard scattering}
 
-Many processes of interest and expected to be produced by the \ac{LHC} involve large momentum transfers, such as the production of jets with high transverse momenta or heavy particles. The simulation of such momenta transfers is therefore at the heart of the event generation and is usually referred to as the hard scattering process, the highest momentum transfer process in the event, whose probability distribution can be calculated using perturbation theory and several parameters, such as:
+A typical $pp$ collision at a center of mass energy $\sqrt{s}$ is usually described by an event generator as the interaction between a parton $i$ coming from one proton with a parton $j$ coming from the other, leading to the production of a final state $A$, made out of $n$ different particles. The total cross section of such process can be expressed with Equation~\ref{eq:XSHS} \cite{MCGen2}.
 
+\begin{equation}
+\label{eq:XSHS}
+\sigma_A(s) = \sum_{i, j} \iint dx1 \text{ } dx2 \text{ } f_i(x_1, \mu^2) \text{ } f_j(x_2, \mu^2) \text{ } \hat{\sigma}_{ij \rightarrow A}(\hat{s}, \mu^2)
+\end{equation}
+
+In this equation, several variables have been introduced, such as:
 \begin{itemize}
-\item The \acfp{PDF} $f_i(x, Q^2)$ of both partons involved in the collision, giving the probability of finding in the proton a parton of flavor $i$ (quark or gluon) carrying a fraction $x$ of the proton momentum with $Q$ being the energy scale of the hard interaction \cite{PDF}. Being universal, in the sense that the same \acp{PDF} enter in all the processes involving a given hadron, their main parameters are usually determined experimentally from hard-scattering data \cite{PDFDet}. They are the key ingredient of the QCD parton model.
-\item The hard scattering matrix elements squared $|\mathcal{M}_{pp\rightarrow n}|^2$, usually evaluated considering all the Feynman diagrams of a given process, where $n$ is the number of outgoing particles.
+\item The artificial parameter $\mu^2$ used as the delimitation between short and long range physics.
+\item The \acfp{PDF} $f_i(x, \mu^2)$ of both partons involved in the collision, giving the probability of finding in the proton a parton of flavor $i$ (quark or gluon) carrying a fraction $x$ of the proton momentum.
+\item The integrated parton-level cross section $\hat{\sigma}_{ij \rightarrow A}$ describing the short range physics between the partons, taking into account the phase space and the matrix element obtained considering all the Feynman diagrams of a given process.
+\item The square invariant mass of the two partons $\hat{s} = (p_i + p_j)^2$.
 \end{itemize}
 
-Many algorithms are then able to read such input parameters in order to compute the parton level cross section using different methods. The samples used in this work have actually been produced at different orders and by different hard scattering generators, such as MADGRAPH \cite{MADGRAPH} (at \ac{LO}), POWHEG \cite{POWHEG} and MC@NLO \cite{MCNLO}.
+Many algorithms have been developed in order to select a hard process $ij \rightarrow A$ and determine its kinematics by solving this equation using different methods. The samples used in this work have actually been produced at different orders and by different hard scattering generators, such as MADGRAPH \cite{MADGRAPH} (at LO) and POWHEG \cite{POWHEG} and MC@NLO \cite{MCNLO} (at NLO).
 
-\subsubsection*{Parton shower}
+\subsubsection*{Parton showers}
 
-The parton shower phase is used to describe what happens to the incoming and outgoing partons involved in the actual collision.
+The parton shower phase is then used to describe what happens to the incoming and outgoing partons after the initial collision that has just been described. The hard process induce by definition a large acceleration to the partons involved, which then tend to emit \ac{QCD} radiation under the forms of gluons, just like accelerated electric charges do by emitting photons. However, the gluons emitted do have a color charge and can therefore emit further radiation until reaching such a low energy that they are able to form colourless hadrons, as discussed in Section~\ref{section:RecoJet}. This process typically leads to the creation of the so-called \textbf{parton showers}, approximate higher-order real-emission corrections to the hard scattering, that need to be simulated by the event generators as well since they are an important part of the kinematics of the collision.
+
+The parton showering then consists in simulating these showers for not only the final state particles produced by the hard scattering, but also for the particles in the initial state and for the remnants of the colliding protons, since gluons can actually be emitted by \acf{ISR} and by these remnants themselves.
+
+\subsubsection*{\acf{UE}}
+
+Once the hard scattering and all the possible gluon emissions simulated, the next step consists in considering the so-called \textbf{\acf{UE}} arising from the parton showers just described and from the secondary collisions between partons not involved in the primary hard process, the so-called \acp{MPI}. The \ac{UE} is usually responsible for the production of particles at low transverse momenta $p_T$ that cannot be experimentally distinguished from particles produced from initial or final state radiation but still need to be simulated.
+
+These secondary collisions typically lead to the production of extra hadrons and therefore need to be simulated as well by events generators, usually by distributing the partons of the incoming protons in an area of 1fm$^2$: an increased \ac{UE} will be obtained when the so-called impact parameter, the distance between the parton and the centre of this area, is decreased, making the collision mostly central and almost head-on \cite{UE}. The \ac{UE} is typically well simulated using softwares such as Herwig \cite{Herwig} and PYTHIA \cite{PYTHIA}. The spectrum for the generation of some variables in a top enriched sample can be found in Figure~\ref{fig:ComparisonGen}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=6.2cm, height=7cm]{figs/TopPt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=6.2cm, height=7cm]{figs/TopRapidity.png}
+\end{minipage} \hfill
+\caption{Top $p_T$ (on the left) and rapidity (on the right) distributions obtained using different \ac{MC} generators \cite{ComparisonGenerators}.}
+\label{fig:ComparisonGen}
+\end{figure}
 
 \subsubsection*{Hadronization}
-\subsubsection*{\acf{UE}}
-\subsubsection*{Unstable particle decays}
-\subsubsection*{GEANT}
 
-nanoAOD
+Once all the primary and secondary collisions simulated, it is time for the event generators to simulate the \textbf{hadronization} and binding processes of the different coloured partons emitted into colourless hadrons, as explained in Section~\ref{section:RecoJet}. This hadronization process happen at low energies, when the perturbation theory becomes invalid and the dynamics enter a non-perturbative phase, which leads to the formation of the observed final-state hadrons. Non-perturbative calculations then have to be used by the event generators in order to simulate this effect.
+
+\subsubsection*{Unstable particle decays}
+
+The last step of the \ac{MC} generation consists in finding a model allowing the unstable hadrons created in the hadronization process to decay, and to study these decays. This is extremely important because experimental data clearly shows that a large fraction of the observed final state particles come from the decays of such excited hadronic states.
+
+\subsubsection*{Detector simulation}
+
+Once the event completely simulated using the event generators and the \ac{PU} taken into account by reproducing the hard scattering process several times, another step is required: simulating the interaction between the "perfect" particles previously created and the "imperfect" \ac{CMS} detector. 
+
+This is typically done by the GEANT4 software \cite{Geant4}, able to model different effects, such as:
+
+\begin{itemize}
+\item Modeling of the interaction region
+\item Modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes
+\item Modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation)
+\item Modeling of the detector's electronics response
+\end{itemize}
+
+This modeling accounts for all the cracks and for the disposition of the subsystems inside of the \ac{CMS} detector. This software is for example able to model the interaction of the electrons with the tracker, responsible for the emission of bremsstrahlung photons, as explained in Section~\ref{subsection:Electrons}.
+
+The results of the comparison between the output of two different versions of the GEANT4 software and prototypes of the CMS calorimeter in the test beam facility at \ac{CERN} lead to comparable results, as shown in Figure~\ref{fig:CMSGEANT}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=5cm]{figs/CMSGEANT.png}
+\caption{Proton energy distribution at 3 (on the left) and 6 (on the right) GeV compared for the test beam data (in black) and two different GEANT4 versions \cite{GEANTComp}.}
+\label{fig:CMSGEANT}
+\end{center}
+\end{figure}
+
+However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}. This will be detailed later on.
+
+\section{Files format}
+
+Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the analyses. Different types of analysis are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
+
+\begin{itemize}
+\item Virgin-RAW: used only in low rate runs with heavy ions collisions (10-15Mb/event)
+\item RAW : standard raw data event content (1Mb/event)
+\item RECO: detailed information on reconstructed physics objects (3Mb/event)
+\item \ac{AOD}: physics objects used in analysis (400-500kB/event)
+\end{itemize}
+
+Two additional formats were introduced since the end of the Run I. First of all the MiniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
+
+Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can rely on such files in order to work. 
+
+In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds) that will now be listed in the next sections. 
 
 \section{Data samples} \label{section:Data}
 \section{Signal samples} \label{section:Signal}
@@ -1865,7 +2009,35 @@ nanoAOD
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 \subsubsection*{\acf{MET}}
-\subsubsection*{MT2}
+
+This variable has already been defined in Section~\ref{section:RecoMET}, and corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
+
+This variable is expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds.
+
+\color{red} TALK ABOUT SINGLE TOP? \color{black}
+
+\subsubsection*{Stransverse mass}
+
+The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
+
+In this particular case, two particles contribute to the presence of \acf{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the decay considered \cite{MT2}.
+
+\begin{equation}
+\label{eq:mt2}
+\begin{dcases}
+M_{T2}^2 = \min_{\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}} \bigg (\max \Big (m_T^2(\bm{p_{T_1}}, \bm{\cancel{p}_{T_{1}}}), m_T^2(\bm{p_{T_2}}, \bm{\cancel{p}_{T_{2}}}) \Big ) \bigg ) \\
+m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}_{T}}| \text{ sin}^2 \left (\frac{\alpha}{2} \right ) 
+\end{dcases}
+\end{equation}
+
+This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest value.
+
+In this particular analysis, $M_{T2}(ll)$ is calculated, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
+
+However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
+
+\color{red} TALK ABOUT SINGLE TOP? \color{black}
+
 \subsection{Neural network}
 
 \chapter{Results and interpretations} \label{chapter:FinalResults}
@@ -2468,30 +2640,20 @@ JINST 14 (2019) P07004 [arXiv: 1903.06078}
 "Analytical solution of ttbar dilepton equations",
 Phys.Rev.D73:054015, 2016}
 
-\bibitem{Geant4}
-\href{http://inspirehep.net/record/876352}{V. Lefebure and S. Banerjee,
-"CMS Simulation Software Using Geant4",
-CMS-NOTE-1999-072, 1999}
-
-\bibitem{DELPHES}
-\href{https://arxiv.org/abs/1307.6346}{DELPHES 3 Collaboration,
-"DELPHES 3, A modular framework for fast simulation of a generic collider experiment",
-JHEP 1402 (2014) 057 [arXiv:1307.6346}
-
 \bibitem{MCGen}
 \href{https://arxiv.org/abs/1304.6677}{M.H. Seymour and M. Marx,
 "Monte Carlo Event Generators",
 MCnet-13-05, 2013 [arXiv:1304.6677]}
 
+\bibitem{MCGen2}
+\href{https://arxiv.org/abs/1906.04669}{B. Cabouat, J.R. Gaunt and K. Ostrolenk,
+"A Monte-Carlo Simulation of Double Parton Scattering",
+JHEP11(2019)061 [arXiv: 1906.04669]}
+
 \bibitem{PDF}
 \href{https://arxiv.org/abs/1111.5452}{R. Placakyte,
 "Parton Distribution Functions",
 2011 [arXiv:1111.5452]}
-
-\bibitem{PDFDet}
-\href{https://www.researchgate.net/publication/324012577_Parton_distributions_in_the_LHC_era}{L. Del Debbio,
-"Parton distributions in the LHC era",
-The European Physical Journal Conferences 175(394), 2018}
 
 \bibitem{MADGRAPH}
 \href{https://arxiv.org/abs/1106.0522}{J. Alwall et all.,
@@ -2507,6 +2669,46 @@ Nucl.Phys.Proc.Suppl.205-206:36-41 [arXiv:1007.3893]}
 \href{https://arxiv.org/abs/1010.0819}{S. Frixione et all.,
 "The MC@NLO 4.0 Event Generator",
 CERN-TH/2010-216 [arXiv: 1010.0819]}
+
+\bibitem{UE}
+\href{http://www.scholarpedia.org/article/Parton_shower_Monte_Carlo_event_generators}{B. Webber,
+"Parton shower Monte Carlo event generators",
+Scholarpedia}
+
+\bibitem{Herwig}
+\href{https://arxiv.org/abs/0803.0883}{M. Bahr et all.,
+"Herwig++ Physics and Manual",
+Eur.Phys.J.C58:639-707, 2008 [arXiv: 0803.0883]}
+
+\bibitem{PYTHIA}
+\href{https://arxiv.org/abs/0710.3820}{T. Sjostrand,
+"A Brief Introduction to PYTHIA 8.1"
+Comput.Phys.Commun.178:852-867, 2008 [arXiv: 0710.3820]}
+
+\bibitem{ComparisonGenerators}
+\href{https://arxiv.org/abs/1306.3436}{A. Karneyeu et all.,
+"MCPLOTS: a particle physics resource based on volunteer computing",
+European Physical Journal C 74 (2014) [arXiv: 1306.3436]}
+
+\bibitem{Geant4}
+\href{http://inspirehep.net/record/876352}{V. Lefebure and S. Banerjee,
+"CMS Simulation Software Using Geant4",
+CMS-NOTE-1999-072, 1999}
+
+\bibitem{GEANTComp}
+\href{https://iopscience.iop.org/article/10.1088/1742-6596/898/4/042005/pdf}{S. Banerjee,
+"Validation of Geant4 Physics Models Using Collision Data from the LHC",
+J. Phys.: Conf. Ser. 898 042005}
+
+\bibitem{nanoAOD}
+\href{https://www.researchgate.net/publication/335864848_A_further_reduction_in_CMS_event_data_for_analysis_the_NANOAOD_format}{A. Rizzi, G. Petrucciani and M. Peruzzi,
+"A further reduction in CMS event data for analysis: the NANOAOD format",
+J. Phys.: Conf. Ser. 214 06021}
+
+\bibitem{MT2}
+\href{https://arxiv.org/abs/hep-ph/9906349}{C.G. Lester and D.J. Summers,
+"Measuring masses of semi-invisibly decaying particles pair produced at hadron colliders",
+Phys.Lett.B463:99-103, 1999}
 
 \end{thebibliography}
 
