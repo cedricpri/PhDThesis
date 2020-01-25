@@ -207,6 +207,7 @@
 \acro{MPI}[MPI]{Multiple Parton Interaction}
 \acro{SF}[SF]{Scale Factors}
 \acro{AOD}[AOD]{Analysis Object Data}
+\acro{EDM}[EDM]{Event Data Model}
 
 \end{acronym}
 \end{multicols}
@@ -231,7 +232,6 @@
 \pagenumbering{arabic}
 
 %Introduction
-\iffalse
 \chapter{Introduction}
 
 The \ac{SM} of particle physics introduced in Section~\ref{section:SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the four fundamental forces of nature (electromagnetic, weak and strong interactions). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} and \ac{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -252,12 +252,11 @@ However, this also means that the phenomenology of this quark is mostly driven b
 
 The \ac{LHC} has now been running for 10 years, and several similar searches have already been carried out and published in the past by the \ac{CMS} and \ac{ATLAS} collaborations, at different center of mass energies. First of all, at 8 TeV, several searches for a pair of top quarks were published by the \ac{CMS} (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and \ac{ATLAS} collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. Then, at 13 TeV, the \ac{ATLAS} collaboration published on one hand several studies, considering different final states and different luminosities (13.3 fb$^{-1}$ and 36.1 fb$^{-1}$) \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS}. On the other hand, the \ac{CMS} collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the 2016 data \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis while considering the full Run II dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
-After a general introduction about \ac{DM} in general in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 138$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \acf{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
+After a general introduction about \ac{DM} in general in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in the Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC} itself, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. This data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $\sim 137$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. In particular, a particular care will be given to the explanation of the \acf{PF} algorithm, used to reconstruct the different objects used and that will be defined in the Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout the Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
 
 Distinguishing between the signal we are searching for and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse energy due to the presence of physical neutrinos is even obtained). To isolate the signal and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to perform this task. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in Section~\ref{section:Discrimination}.
 
 Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the cross section production value of \ac{DM} particles in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional future prospects will then finally be presented in Chapter~\ref{chapter:Conclusion}.
-\\
 
 %Empty page
 
@@ -664,7 +663,7 @@ From our perspective, it seems indeed that the velocity of the speed of \ac{WIMP
 
 \begin{equation}
 \label{eq:Modulation}
-N(t) = B + N_0 + N_m cos(\omega (t-t_0))
+N(t) = B + N_0 + N_m \text{cos}(\omega (t-t_0))
 \end{equation}
 
 This effect is also important because an experiment performed during a long period of time can actually help us finding an eventual hint of \ac{DM} particles, since our signal is expect to follow this periodical deviation while the background is expected to be constant. Moreover, this \ac{WIMP} wind is expected to come from a particular region of the sky while the backgrounds are expected to be distributed uniformly, so this gives a clear way to isolate the signal.
@@ -720,11 +719,11 @@ However, the DAMA experiment at the \ac{LNGS} did find an interesting result by 
 
 The indirect detection of \ac{DM} particles consists basically in searching for \ac{SM} products coming from the annihilation of two \ac{DM} particles or from its eventual direct decay, usually under the form of a flux of $\gamma$-rays, neutrinos, cosmic-rays or anti-matter appearing as an excess over the expected background. Indeed, many extensions to the \ac{SM}, such as the supersymmetry SUSY or \ac{UED} do provide solid \ac{DM} candidates (the lightest supersymmetric particle and the lightest Kaluza-Klein state, respectively) expected to interact with each other, resulting in the immediate production of \ac{SM} (un)stable particles that can be detected by telescopes either placed on the ground or directly in space. Another point to make is that indirect searches are also usually affected by the annual fluctuation induced by the movement of the Earth around the Sun, as explained in the previous Section~\ref{subsection:DirectSearches}.
 
-Indirect searches are actually extremely useful since they are sensitive to the \ac{DM} annihilation cross section, mass and the density profile of \ac{DM} halos $\rho(\overrightarrow{r}(s, \Omega))$, usually represented by a \ac{NFW} profile, as shown in Equation~\ref{eq:NFW} \cite{FluxIndirect}, where $r_s = 20$ kpc is the scale radius of the \ac{DM} halo for the Milky Way and $r$ is the distance to the center of the cluster considered, assumed to be spherical in this case.
+Indirect searches are actually extremely useful since they are sensitive to the \ac{DM} annihilation cross section, mass and the density profile of \ac{DM} halos $\rho(\overrightarrow{r}(s, \Omega))$, usually represented by a \ac{NFW} profile, as shown in Equation~\ref{eq:NFW}, where $r_s = 20$ kpc is the scale radius of the \ac{DM} halo for the Milky Way and $r$ is the distance to the center of the cluster considered, assumed to be spherical in this case \cite{FluxIndirect}.
 
 \begin{equation}
 \label{eq:NFW}
-\rho(r) \propto \frac{r_s}{r \cdot \left (1+\frac{r}{r_s})^2 \right )}
+\rho(r) \propto \frac{r_s}{r \cdot \left (1+\big (\frac{r}{r_s} \big)^2 \right )}
 \end{equation} 
 
 The flux coming from the annihilation of two \ac{DM} particles is then expected to be proportional to its annihilation cross section $\sigma v$, the solid angle of observation $\Omega$ and the number of particles emitted by this annihilation $\frac{dN}{dE}$, according to Equation~\ref{eq:FluxIndirect}, where the integration is done over the line of sight $l$ and the solid angle of observation $\Omega$.
@@ -1174,7 +1173,7 @@ The last key parameter of the \ac{LHC} discussed here is the \acf{PU}. Usually, 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=12cm, height=8cm]{figs/PUSUmmary.png}
+\includegraphics[width=12cm, height=8cm]{figs/PUSummary.png}
 \caption{Mean \ac{PU} distribution and luminosity recorded by \ac{CMS} over the different years of operation of the \ac{LHC}.}
 \label{fig:PU}
 \end{center}
@@ -1841,8 +1840,6 @@ Even though the equations and the problem seems quite well defined and solvable,
 The combination leading to the lowest invariant mass for the $t \bar t$ system is then chosen between all the different possibilities for the reconstruction of the system.
 
 \color{red} Section to be updated once the analysis performed and the details about the top reco performed known, and add the results obtained. \color{black}
-\fi
-
 
 
 
@@ -1881,7 +1878,7 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 
 In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
 
-Then, the different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signal} and~\ref{section:Backgrounds} respectively.
+Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
 
 \section{The \acf{MC} simulation method} \label{section:MC}
 
@@ -1977,7 +1974,7 @@ The results of the comparison between the output of two different versions of th
 
 However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}. This will be detailed later on.
 
-\section{Files format}
+\section{Files format} \label{section:Files}
 
 Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the analyses. Different types of analysis are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
 
@@ -1994,18 +1991,225 @@ Because of the increased integrated luminosity collected by \ac{CMS} over the la
 
 In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds) that will now be listed in the next sections. 
 
+\section{Analysis code} \label{section:Code}
+
+The code used for the event generation, simulation and reconstruction is the version 10\_2\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package writen in C++. 
+
+Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This selection will be detailed in Chapter~\ref{chapter:Selection}. This \textit{Latino} framework, written in phyton, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different corrections to the \ac{MC} samples and produce the histograms needed to perform a search such as this one.
+
 \section{Data samples} \label{section:Data}
-\section{Signal samples} \label{section:Signal}
-\section{Background prediction} \label{section:Background}
+
+As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
+
+During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and
+double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Tables~\ref{table:Data2016},~\ref{table:Data2017} and~\ref{table:Data2018}. The luminosity of each dataset has been computed using the Brilcalc tool provided by \ac{CMS} \cite{Brilcalc}.
+
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2016B} & & \\
+/DoubleEG/Run2016B\_ver2-Nano1June2019\_ver2-v1/NANOAOD & 143073268 (99.4Gb) & \multirow{ 5}{*}{5.8}  \\
+/DoubleMuon/Run2016B\_ver2-Nano1June2019\_ver2-v1/NANOAOD & 82535526 (53.2Gb) &   \\
+ /MuonEG/Run2016B\_ver2-Nano1June2019\_ver2-v1/NANOAOD & 32727796 (26.8Gb) & \\
+ /SingleElectron/Run2016B\_ver2-Nano1June2019\_ver2-v1/NANOAOD & 246440440 (167.8Gb) & \\
+ /SingleMuon/Run2016B\_ver2-Nano1June2019\_ver2-v1/NANOAOD & 158145722 (96.4Gb) & \\
+ \hline
+ \textbf{Run 2016C} & & \\
+ /DoubleEG/Run2016C-Nano1June2019-v1/NANOAOD & 47677856 (35.3Gb) & \multirow{ 5}{*}{2.6} \\
+ /DoubleMuon/Run2016C-Nano1June2019-v1/NANOAOD & 27934629 (19.7Gb) & \\
+ /MuonEG/Run2016C-Nano1June2019-v1/NANOAOD & 15405678 (12.8Gb) & \\
+ /SingleElectron/Run2016C-Nano1June2019-v1/NANOAOD & 97259854 (69.3Gb) & \\
+ /SingleMuon/Run2016C-Nano1June2019-v1/NANOAOD & 67441308 (42.4Gb) & \\
+ \hline
+ \textbf{Run 2016D} & & \\
+ /DoubleEG/Run2016D-Nano1June2019-v1/NANOAOD & 53324960 (39.6Gb) & \multirow{ 5}{*}{4.2} \\
+ /DoubleMuon/Run2016D-Nano1June2019-v1/NANOAOD & 33861745 (24.1Gb) & \\
+ /MuonEG/Run2016D-Nano1June2019-v1/NANOAOD & 23482352 (19.4Gb) & \\
+ /SingleElectron/Run2016D-Nano1June2019-v1/NANOAOD & 148167727 (104.4Gb) & \\
+ /SingleMuon/Run2016D-Nano1June2019-v1/NANOAOD & 98017996 (61.3Gb) & \\
+ \hline
+ \textbf{Run 2016E} & & \\
+ /DoubleEG/Run2016E-Nano1June2019-v1/NANOAOD & 49877710 (37.9Gb) & \multirow{ 5}{*}{4.0} \\
+ /DoubleMuon/Run2016E-Nano1June2019-v1/NANOAOD & 28246946 (20.8Gb) & \\
+ /MuonEG/Run2016E-Nano1June2019-v2/NANOAOD & 22519303 (19.0Gb) & \\
+ /SingleElectron/Run2016E-Nano1June2019-v1/NANOAOD & 117321545 (86.5Gb) & \\
+ /SingleMuon/Run2016E-Nano1June2019-v1/NANOAOD & 90984718 (58.7Gb) & \\
+ \hline
+ \textbf{Run 2016F} & & \\
+ /DoubleEG/Run2016F-Nano1June2019-v1/NANOAOD & 34577629 (26.9Gb) & \multirow{ 5}{*}{3.1} \\
+ /DoubleMuon/Run2016F-Nano1June2019-v1/NANOAOD & 20329921 (15.3Gb) & \\
+ /MuonEG/Run2016F-Nano1June2019-v1/NANOAOD & 16002165 (13.6Gb) & \\
+ /SingleElectron/Run2016F-Nano1June2019-v1/NANOAOD & 70593532 (51.4Gb) & \\
+ /SingleMuon/Run2016F-Nano1June2019-v1/NANOAOD & 65489554 (42.4Gb) & \\
+ \hline
+ \textbf{Run 2016G} & & \\
+ /DoubleEG/Run2016G-Nano1June2019-v1/NANOAOD & 78797031 (61.6Gb) & \multirow{ 5}{*}{7.6} \\
+ /DoubleMuon/Run2016G-Nano1June2019-v1/NANOAOD & 45235604 (34.2Gb) & \\
+ /MuonEG/Run2016G-Nano1June2019-v1/NANOAOD & 33854612 (29.0Gb) & \\
+ /SingleElectron/Run2016G-Nano1June2019-v1/NANOAOD & 153363109 (109.2Gb) & \\
+ /SingleMuon/Run2016G-Nano1June2019-v1/NANOAOD & 149912248 (94.6Gb) & \\
+ \hline
+ \textbf{Run 2016H} & & \\
+ /DoubleEG/Run2016H-Nano1June2019-v1/NANOAOD & 85388734 (67.7Gb) & \multirow{ 5}{*}{8.6} \\
+ /DoubleMuon/Run2016H-Nano1June2019-v1/NANOAOD & 48912812 (37.3Gb) & \\
+ /MuonEG/Run2016H-Nano1June2019-v1/NANOAOD & 29236516 (26.0Gb) & \\
+ /SingleElectron/Run2016H-Nano1June2019-v1/NANOAOD & 128854598 (93.8Gb) & \\
+ /SingleMuon/Run2016H-Nano1June2019-v1/NANOAOD & 174035164 (110.2Gb) & \\
+ \hline
+\end{tabular}
+}
+\caption{Datasets collected in 2016 and considered for this analysis.}
+\label{table:Data2016}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2017B} & & \\
+/DoubleEG/Run2017B-Nano1June2019-v1/NANOAOD & 58088760 (46.6Gb) & \multirow{ 5}{*}{4.8} \\
+/DoubleMuon/Run2017B-Nano1June2019-v1/NANOAOD & 14501767 (10.8Gb) & \\
+/SingleElectron/Run2017B-Nano1June2019-v1/NANOAOD & 60537490 (42.2Gb) & \\
+/SingleMuon/Run2017B-Nano1June2019-v1/NANOAOD & 136300266 (86.2Gb) & \\
+/MuonEG/Run2017B-Nano1June2019-v1/NANOAOD & 4453465 (4.1Gb) & \\
+ \hline
+ \textbf{Run 2017C} & & \\
+ /DoubleEG/Run2017C-Nano1June2019-v1/NANOAOD & 65181125 (53.8Gb) & \multirow{ 5}{*}{9.7} \\
+ /DoubleMuon/Run2017C-Nano1June2019-v1/NANOAOD & 49636525 (39.5Gb) & \\
+ /SingleElectron/Run2017C-Nano1June2019-v1/NANOAOD & 136637888 (102.5Gb) & \\
+ /SingleMuon/Run2017C-Nano1June2019-v1/NANOAOD & 165652756 (109.5Gb) & \\
+ /MuonEG/Run2017C-Nano1June2019-v1/NANOAOD & 15595214 (15.0Gb) & \\
+ \hline
+ \textbf{Run 2017D} & & \\
+/DoubleEG/Run2017D-Nano1June2019-v1/NANOAOD & 25911432 (21.6Gb) & \multirow{ 5}{*}{4.2} \\
+/DoubleMuon/Run2017D-Nano1June2019-v1/NANOAOD & 23075733 (18.6Gb) & \\
+/SingleElectron/Run2017D-Nano1June2019-v1/NANOAOD & 51526710 (38.5Gb) & \\
+/SingleMuon/Run2017D-Nano1June2019-v1/NANOAOD & 70361660 (47.2Gb) & \\
+ /MuonEG/Run2017D-Nano1June2019-v1/NANOAOD & 9164365 (8.9Gb) & \\
+ \hline
+ \textbf{Run 2017E} & & \\
+/DoubleEG/Run2017E-Nano1June2019-v1/NANOAOD & 56233597 (49.8Gb) & \multirow{ 5}{*}{9.3} \\
+/DoubleMuon/Run2017E-Nano1June2019-v1/NANOAOD & 51589091 (44.4Gb) & \\
+/SingleElectron/Run2017E-Nano1June2019-v1/NANOAOD & 102121689 (81.3Gb) & \\
+/SingleMuon/Run2017E-Nano1June2019-v1/NANOAOD & 154630534 (111.0Gb) & \\
+/MuonEG/Run2017E-Nano1June2019-v1/NANOAOD & 19043421 (19.2Gb) & \\
+ \hline
+\textbf{Run 2017F} & & \\ 
+/DoubleEG/Run2017F-Nano1June2019-v1/NANOAOD & 74307066 (67.1Gb) & \multirow{ 5}{*}{13.5} \\
+/DoubleMuon/Run2017F-Nano1June2019-v1/NANOAOD & 79756560 (68.0Gb) & \\
+/SingleElectron/Run2017F-Nano1June2019-v1/NANOAOD & 128467223 (105.2Gb) & \\
+/SingleMuon/Run2017F-Nano1June2019-v1/NANOAOD & 242135500 (178.3Gb) \\
+ /MuonEG/Run2017F-Nano1June2019-v1/NANOAOD & 25776363 (26.3Gb) & \\
+ \hline
+\end{tabular}
+}
+\caption{Datasets collected in 2017 and considered for this analysis.}
+\label{table:Data2017}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2018A} & & \\
+ /DoubleMuon/Run2018A-Nano25Oct2019-v1/NANOAOD & 75499908 (62.6Gb) & \multirow{ 4}{*}{13.5} \\
+ /EGamma/Run2018A-Nano25Oct2019-v1/NANOAOD & 327843843 (261.8Gb) & \\
+ /SingleMuon/Run2018A-Nano25Oct2019-v1/NANOAOD & 241608232 (167.7Gb) & \\
+ /MuonEG/Run2018A-Nano25Oct2019-v1/NANOAOD & 32958503 (32.3Gb) & \\
+ \hline
+\textbf{Run 2018B} & & \\
+ /DoubleMuon/Run2018B-Nano25Oct2019-v1/NANOAOD & 35057758 (28.3Gb) & \multirow{ 4}{*}{6.8} \\
+ /EGamma/Run2018B-Nano25Oct2019-v1/NANOAOD & 153822427 (123.1Gb) & \\
+ /SingleMuon/Run2018B-Nano25Oct2019-v1/NANOAOD & 119918017 (82.3Gb) & \\
+ /MuonEG/Run2018B-Nano25Oct2019-v1/NANOAOD & 16211567 (15.8Gb) & \\
+ \hline
+ \textbf{Run 2018C} & & \\
+/DoubleMuon/Run2018C-Nano25Oct2019-v1/NANOAOD & 34565869 (27.6Gb) & \multirow{ 4}{*}{6.6} \\
+/EGamma/Run2018C-Nano25Oct2019-v1/NANOAOD & 147827904 (119.2Gb) & \\
+/SingleMuon/Run2018C-Nano25Oct2019-v1/NANOAOD & 110032072 (75.7Gb) & \\
+/MuonEG/Run2018C-Nano25Oct2019-v1/NANOAOD & 15652198 (15.3Gb) & \\
+ \hline
+ \textbf{Run 2018D} & & \\
+/DoubleMuon/Run2018D-Nano25Oct2019\_ver2-v1/NANOAOD & 168605834 (128.6Gb) & \multirow{ 4}{*}{32.0} \\
+/EGamma/Run2018D-Nano25Oct2019-v1/NANOAOD & 751348648 (583.6Gb) & \\
+/SingleMuon/Run2018D-Nano25Oct2019-v1/NANOAOD & 513867253 (344.5Gb) & \\
+/MuonEG/Run2018D-Nano25Oct2019\_ver2-v1/NANOAOD & 71961587 (68.6Gb) & \\
+ \hline
+\end{tabular}
+}
+\caption{Datasets collected in 2018 and considered for this analysis.}
+\label{table:Data2018}
+\end{center}
+\end{table}
+
+\section{Signal samples} \label{section:Signals}
+
+\color{red} To be completed once the files are actually available \color{black}
+
+\section{Background prediction} \label{section:Backgrounds}
 \subsection{The main background: $t \bar t$}
 \subsection{Drell-Yan estimation}
 \subsection{Non prompt contamination} \label{subsection:Fakes}
 \subsection{Smaller backgrounds}
 \subsection{Weights and corrections applied}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Event selection} \label{chapter:Selection}
-\section{Signal regions}
-\section{Control regions}
+\section{Objects selection}
+\subsection{Triggers selection} \label{section:Triggers}
+\subsection{Electron selection}
+\subsection{Muon \ac{WP}}
+\subsection{Jet \ac{WP}}
+\section{Signal regions} \label{section:SR}
+
+It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
+
+\section{Control regions} \label{section:CR}
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 \subsubsection*{\acf{MET}}
@@ -2709,6 +2913,35 @@ J. Phys.: Conf. Ser. 214 06021}
 \href{https://arxiv.org/abs/hep-ph/9906349}{C.G. Lester and D.J. Summers,
 "Measuring masses of semi-invisibly decaying particles pair produced at hadron colliders",
 Phys.Lett.B463:99-103, 1999}
+
+\bibitem{CMSSW}
+\href{https://arxiv.org/abs/1611.03215}{K. Bloom,
+"CMS software and computing for LHC Run 2",
+ICHEP 2016 [arXiv: 1611.03215]}
+
+\bibitem{ROOT}
+\href{https://arxiv.org/abs/cs/0306034}{W. Tanenbaum,
+"A ROOT/IO Based Software Framework for CMS",
+ECONFC0303241:TUKT010, 2003}
+
+\bibitem{Lumi2016}
+\href{https://cds.cern.ch/record/2257069}{CMS Collaboration,
+"CMS Luminosity Measurements for the 2016 Data Taking Period",
+CMS-PAS-LUM-17-001, 2017}
+
+\bibitem{Lumi2017}
+\href{http://inspirehep.net/record/1677076}{CMS Collaboration,
+"CMS Luminosity Measurements for the 2017 Data Taking Period",
+CMS-PAS-LUM-17-001, 2018}
+
+\bibitem{Lumi2018}
+\href{http://inspirehep.net/record/1736713/}{CMS Collaboration,
+"CMS Luminosity Measurements for the 2018 Data Taking Period",
+CMS-PAS-LUM-17-001, 2019}
+
+\bibitem{Brilcalc}
+\href{https://cms-service-lumi.web.cern.ch/cms-service-lumi/brilwsdoc.html}{CMS Collaboration,
+"BRIL Work Suite"}
 
 \end{thebibliography}
 
