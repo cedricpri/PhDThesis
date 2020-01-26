@@ -3,7 +3,57 @@
 
 \begin{document}
 
-%TT
+%TTbar 1
+\begin{tikzpicture}
+  \begin{feynman}  
+    \vertex (g1) {g};    
+    \vertex [right=of g1] (a);
+    \vertex [above right=of a] (t1);
+    \vertex [above right=of t1] (b1) {b};
+    \vertex [below right=of t1] (W1) {W};
+    \vertex [below right=of a] (c);
+    \vertex [below left=of c] (b);
+    \vertex [left=of b] (g2) {g};
+    \vertex [below right=of b] (t2);
+    \vertex [below right=of t2] (b2) {$\bar b$};
+    \vertex [above right=of t2] (W2) {W};
+ 
+    \diagram* {
+      (g1) -- [gluon] (a) -- [fermion, edge label={t}] (t1),
+      (t1) -- [fermion] (b1),
+      (t1) -- [boson] (W1),
+      (a) -- [anti fermion, edge label={$\bar t$}] (c),
+      (b) -- [fermion, edge label={t}] (c),
+      (t2) -- [fermion, edge label={$\bar t$}] (b) -- [gluon] (g2),
+      (t2) -- [anti fermion] (b2),
+      (t2) -- [boson] (W2),
+    };
+  \end{feynman}
+\end{tikzpicture}
+
+\vspace{50pt}
+
+%TTbar 2
+\begin{tikzpicture}
+  \begin{feynman}   	
+    \vertex [below right=of g1] (a);
+    \vertex [right=of a] (b);
+	\vertex (t1) [above right=of b];
+	\vertex (t2) [below right=of b];  
+ 
+    \diagram* {
+      (g1) -- [gluon, edge label={g}] (a),
+      (g2) -- [gluon, edge label={g}] (a),
+      (a) -- [gluon, edge label={g}] (b),
+	  (b) -- [fermion, edge label={t}] (t1),
+	  (b) -- [anti fermion, edge label={$\bar t$}] (t2)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+
+\vspace{50pt}
+
+%TTbar 3
 \begin{tikzpicture}
   \begin{feynman}  
     \vertex (g1) {g};    

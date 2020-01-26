@@ -49,6 +49,7 @@
 \newacro{AMS}[\AC@hyperlink{AMS}{AMS}]{Alpha Magnetic Spectrometer}
 \newacro{EFT}[\AC@hyperlink{EFT}{EFT}]{Effective Field Theory}
 \newacro{ISR}[\AC@hyperlink{ISR}{ISR}]{Initial State Radiation}
+\newacro{FSR}[\AC@hyperlink{FSR}{FSR}]{Final State Radiation}
 \newacro{DMWG}[\AC@hyperlink{DMWG}{DMWG}]{Dark Matter Working Group}
 \newacro{MET}[\AC@hyperlink{MET}{MET}]{Missing Transverse Energy}
 \newacro{VBF}[\AC@hyperlink{VBF}{VBF}]{Vector Boson Fusion}
@@ -93,6 +94,7 @@
 \newacro{SF}[\AC@hyperlink{SF}{SF}]{Scale Factors}
 \newacro{AOD}[\AC@hyperlink{AOD}{AOD}]{Analysis Object Data}
 \newacro{EDM}[\AC@hyperlink{EDM}{EDM}]{Event Data Model}
+\newacro{DY}[\AC@hyperlink{DY}{DY}]{Drell-Yan}
 \newacro{DAS}[\AC@hyperlink{DAS}{DAS}]{Data Aggregation System}
 \AC@undonewlabel{acro:MC}
 \newlabel{acro:MC}{{}{ix}{\contentsname \@mkboth {\MakeUppercase \contentsname }{\MakeUppercase \contentsname }}{section*.6}{}}
@@ -101,7 +103,7 @@
 \newlabel{acro:WP}{{}{ix}{\contentsname \@mkboth {\MakeUppercase \contentsname }{\MakeUppercase \contentsname }}{section*.7}{}}
 \acronymused{WP}
 \acronymused{WP}
-\@writefile{toc}{\contentsline {chapter}{\numberline {1}Data, signals and backgrounds}{1}{chapter.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {1}Data, signals and backgrounds}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{chapter:Samples}{{1}{1}{Data, signals and backgrounds}{chapter.1}{}}
@@ -123,7 +125,7 @@
 \acronymused{LHC}
 \acronymused{MC}
 \acronymused{MC}
-\@writefile{toc}{\contentsline {section}{\numberline {1.1}The \acf {MC} simulation method}{1}{section.1.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.1}The \acf {MC} simulation method}{1}{section.1.1}}
 \newlabel{section:MC}{{1.1}{1}{The \acf {MC} simulation method}{section.1.1}{}}
 \acronymused{MC}
 \acronymused{SM}
@@ -138,12 +140,10 @@
 \citation{MADGRAPH}
 \citation{POWHEG}
 \citation{MCNLO}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Structure of a $pp$ collision and different steps of the \ac {MC} simulation used by the event generators, such as the parton shower (in green), the \ac {UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite  {MCGen}.\relax }}{2}{figure.caption.12}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.1}{\ignorespaces Structure of a $pp$ collision and different steps of the \ac {MC} simulation used by the event generators, such as the parton shower (in green), the \ac {UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite  {MCGen}.\relax }}{2}{figure.caption.12}}
 \acronymused{MC}
-\AC@undonewlabel{acro:UE}
-\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{acro:UE}{{1.1}{2}{Structure of a $pp$ collision and different steps of the \ac {MC} simulation used by the event generators, such as the parton shower (in green), the \ac {UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite {MCGen}.\relax }{section*.13}{}}
 \acronymused{UE}
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{fig:MCGen}{{1.1}{2}{Structure of a $pp$ collision and different steps of the \ac {MC} simulation used by the event generators, such as the parton shower (in green), the \ac {UE} (in pink), the hadronization (in blue) and the decay of unstable particles (in red) \cite {MCGen}.\relax }{figure.caption.12}{}}
 \newlabel{eq:XSHS}{{1.1}{2}{}{equation.1.1.1}{}}
 \AC@undonewlabel{acro:PDF}
@@ -169,7 +169,7 @@
 \acronymused{UE}
 \acronymused{UE}
 \citation{Geant4}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Top $p_T$ (on the left) and rapidity (on the right) distributions obtained using different \ac {MC} generators \cite  {ComparisonGenerators}.\relax }}{4}{figure.caption.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.2}{\ignorespaces Top $p_T$ (on the left) and rapidity (on the right) distributions obtained using different \ac {MC} generators \cite  {ComparisonGenerators}.\relax }}{4}{figure.caption.18}}
 \acronymused{MC}
 \newlabel{fig:ComparisonGen}{{1.2}{4}{Top $p_T$ (on the left) and rapidity (on the right) distributions obtained using different \ac {MC} generators \cite {ComparisonGenerators}.\relax }{figure.caption.18}{}}
 \acronymused{MC}
@@ -187,14 +187,14 @@
 \AC@undonewlabel{acro:CERN}
 \newlabel{acro:CERN}{{1.1}{5}{}{section*.21}{}}
 \acronymused{CERN}
-\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Proton energy distribution at 3 (on the left) and 6 (on the right) GeV compared for the test beam data (in black) and two different GEANT4 versions \cite  {GEANTComp}.\relax }}{5}{figure.caption.22}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1.3}{\ignorespaces Proton energy distribution at 3 (on the left) and 6 (on the right) GeV compared for the test beam data (in black) and two different GEANT4 versions \cite  {GEANTComp}.\relax }}{5}{figure.caption.22}}
 \newlabel{fig:CMSGEANT}{{1.3}{5}{Proton energy distribution at 3 (on the left) and 6 (on the right) GeV compared for the test beam data (in black) and two different GEANT4 versions \cite {GEANTComp}.\relax }{figure.caption.22}{}}
 \AC@undonewlabel{acro:SF}
 \newlabel{acro:SF}{{1.1}{5}{}{section*.23}{}}
 \acronymused{SF}
 \acronymused{MC}
 \acronymused{MC}
-\@writefile{toc}{\contentsline {section}{\numberline {1.2}Files format}{5}{section.1.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.2}Files format}{5}{section.1.2}}
 \newlabel{section:Files}{{1.2}{5}{Files format}{section.1.2}{}}
 \acronymused{MC}
 \AC@undonewlabel{acro:AOD}
@@ -209,7 +209,7 @@
 \citation{Lumi2018}
 \acronymused{CMS}
 \acronymused{MC}
-\@writefile{toc}{\contentsline {section}{\numberline {1.3}Analysis code}{6}{section.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.3}Analysis code}{6}{section.1.3}}
 \newlabel{section:Code}{{1.3}{6}{Analysis code}{section.1.3}{}}
 \acronymused{CMS}
 \acronymused{CMS}
@@ -217,42 +217,90 @@
 \newlabel{acro:EDM}{{1.3}{6}{Analysis code}{section*.25}{}}
 \acronymused{EDM}
 \acronymused{MC}
-\@writefile{toc}{\contentsline {section}{\numberline {1.4}Data samples}{6}{section.1.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.4}Data samples}{6}{section.1.4}}
 \newlabel{section:Data}{{1.4}{6}{Data samples}{section.1.4}{}}
 \acronymused{LHC}
 \acronymused{CMS}
-\@writefile{toc}{\contentsline {section}{\numberline {1.5}Signal samples}{7}{section.1.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.5}Signal samples}{7}{section.1.5}}
 \newlabel{section:Signals}{{1.5}{7}{Signal samples}{section.1.5}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {1.6}Background prediction}{7}{section.1.6}\protected@file@percent }
-\newlabel{section:Backgrounds}{{1.6}{7}{Background prediction}{section.1.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.1}The main background: $t \mathaccentV {bar}016t$}{7}{subsection.1.6.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.2}Drell-Yan estimation}{7}{subsection.1.6.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.3}Non prompt contamination}{7}{subsection.1.6.3}\protected@file@percent }
-\newlabel{subsection:Fakes}{{1.6.3}{7}{Non prompt contamination}{subsection.1.6.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.4}Smaller backgrounds}{7}{subsection.1.6.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.5}Weights and corrections applied}{7}{subsection.1.6.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {2}Event selection}{9}{chapter.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {1.6}Backgrounds prediction}{7}{section.1.6}}
+\newlabel{section:Backgrounds}{{1.6}{7}{Backgrounds prediction}{section.1.6}{}}
+\acronymused{SM}
+\acronymused{MC}
+\acronymused{SM}
+\AC@undonewlabel{acro:DY}
+\newlabel{acro:DY}{{1.6}{7}{Backgrounds prediction}{section*.26}{}}
+\acronymused{DY}
+\acronymused{MC}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.1}Top production}{7}{subsection.1.6.1}}
+\@writefile{toc}{\contentsline {subsubsection}{The main background: $t \mathaccentV {bar}016t$}{7}{subsection.1.6.1}}
+\newlabel{subsection:ttbar}{{1.6.1}{7}{The main background: $t \bar t$}{subsection.1.6.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.4}{\ignorespaces Production cross section of the most common \ac {SM} processes considering different center of mass energies, such as the 13 TeV of the \ac {LHC}.\relax }}{8}{figure.caption.27}}
+\acronymused{SM}
+\acronymused{LHC}
+\newlabel{fig:ProcessesXS}{{1.4}{8}{Production cross section of the most common \ac {SM} processes considering different center of mass energies, such as the 13 TeV of the \ac {LHC}.\relax }{figure.caption.27}{}}
+\AC@undonewlabel{acro:LO}
+\newlabel{acro:LO}{{1.6.1}{8}{The main background: $t \bar t$}{section*.28}{}}
+\acronymused{LO}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.5}{\ignorespaces Main feynman diagrams for the production of the \ac {SM} $t \mathaccentV {bar}016t$ process.\relax }}{8}{figure.caption.29}}
+\acronymused{SM}
+\newlabel{fig:ttbarProd}{{1.5}{8}{Main feynman diagrams for the production of the \ac {SM} $t \bar t$ process.\relax }{figure.caption.29}{}}
+\AC@undonewlabel{acro:ML}
+\newlabel{acro:ML}{{1.6.1}{8}{The main background: $t \bar t$}{section*.30}{}}
+\acronymused{ML}
+\@writefile{toc}{\contentsline {subsubsection}{Single top}{8}{figure.caption.29}}
+\newlabel{subsection:singleTop}{{1.6.1}{8}{Single top}{figure.caption.29}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.6}{\ignorespaces Feynman diagrams for s-channel production mode of a single top quarks.\relax }}{9}{figure.caption.31}}
+\newlabel{fig:singleTopSChann}{{1.6}{9}{Feynman diagrams for s-channel production mode of a single top quarks.\relax }{figure.caption.31}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.7}{\ignorespaces Feynman diagrams for t-channel (on the left) and tW (on the right) production modes of a single top quarks.\relax }}{9}{figure.caption.32}}
+\newlabel{fig:singleTopOtherChann}{{1.7}{9}{Feynman diagrams for t-channel (on the left) and tW (on the right) production modes of a single top quarks.\relax }{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Top decay}{9}{figure.caption.32}}
+\newlabel{subsection:topDecay}{{1.6.1}{9}{Top decay}{figure.caption.32}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.2}Drell-Yan estimation}{9}{subsection.1.6.2}}
+\newlabel{subsection:DY}{{1.6.2}{9}{Drell-Yan estimation}{subsection.1.6.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.3}Non prompt contamination}{9}{subsection.1.6.3}}
+\newlabel{subsection:Fakes}{{1.6.3}{9}{Non prompt contamination}{subsection.1.6.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.8}{\ignorespaces Feynman diagrams for the leptonic decay of the top (on the left) and antitop (on the right) quarks.\relax }}{9}{figure.caption.33}}
+\newlabel{fig:topDecay}{{1.8}{9}{Feynman diagrams for the leptonic decay of the top (on the left) and antitop (on the right) quarks.\relax }{figure.caption.33}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.9}{\ignorespaces Feynman diagram for the \ac {DY} process involving a virtual $\gamma ^*$ or Z boson.\relax }}{10}{figure.caption.34}}
+\acronymused{DY}
+\newlabel{fig:DY}{{1.9}{10}{Feynman diagram for the \ac {DY} process involving a virtual $\gamma ^*$ or Z boson.\relax }{figure.caption.34}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.10}{\ignorespaces Possible Feynman diagrams for the production of a W/Z boson in association with a jet.\relax }}{10}{figure.caption.35}}
+\newlabel{fig:FakesW}{{1.10}{10}{Possible Feynman diagrams for the production of a W/Z boson in association with a jet.\relax }{figure.caption.35}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.4}$t \mathaccentV {bar}016t + V$}{10}{subsection.1.6.4}}
+\newlabel{subsection:ttV}{{1.6.4}{10}{$t \bar t + V$}{subsection.1.6.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.11}{\ignorespaces Possible Feynman diagrams for the \acf {ISR} $t \mathaccentV {bar}016t$ with a W/Z boson (on the left) and for the production of an \acf {FSR} ttZ (on the center and right).\relax }}{10}{figure.caption.36}}
+\acronymused{ISR}
+\acronymused{FSR}
+\newlabel{fig:ttV}{{1.11}{10}{Possible Feynman diagrams for the \acf {ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \acf {FSR} ttZ (on the center and right).\relax }{figure.caption.36}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.5}Smaller backgrounds}{10}{subsection.1.6.5}}
+\newlabel{subsection:SmallerBkg}{{1.6.5}{10}{Smaller backgrounds}{subsection.1.6.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {1.6.6}Weights and corrections applied}{10}{subsection.1.6.6}}
+\newlabel{subsection:Weights}{{1.6.6}{10}{Weights and corrections applied}{subsection.1.6.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1.12}{\ignorespaces Possible Feynman diagrams for smaller backgrounds of this analysis: WW (on the left), W$\gamma $ and WZ (on the center) and ZZ (on the right).\relax }}{11}{figure.caption.38}}
+\newlabel{fig:DiBosons}{{1.12}{11}{Possible Feynman diagrams for smaller backgrounds of this analysis: WW (on the left), W$\gamma $ and WZ (on the center) and ZZ (on the right).\relax }{figure.caption.38}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {2}Event selection}{13}{chapter.2}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:Selection}{{2}{9}{Event selection}{chapter.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.1}Objects selection}{9}{section.2.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Triggers selection}{9}{subsection.2.1.1}\protected@file@percent }
-\newlabel{section:Triggers}{{2.1.1}{9}{Triggers selection}{subsection.2.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Electron selection}{9}{subsection.2.1.2}\protected@file@percent }
+\newlabel{chapter:Selection}{{2}{13}{Event selection}{chapter.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.1}Objects selection}{13}{section.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.1}Triggers selection}{13}{subsection.2.1.1}}
+\newlabel{section:Triggers}{{2.1.1}{13}{Triggers selection}{subsection.2.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.2}Electron selection}{13}{subsection.2.1.2}}
 \acronymused{WP}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Muon \ac {WP}}{9}{subsection.2.1.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.3}Muon \ac {WP}}{13}{subsection.2.1.3}}
 \acronymused{WP}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Jet \ac {WP}}{9}{subsection.2.1.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {2.2}Signal regions}{9}{section.2.2}\protected@file@percent }
-\newlabel{section:SR}{{2.2}{9}{Signal regions}{section.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1.4}Jet \ac {WP}}{13}{subsection.2.1.4}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.2}Signal regions}{13}{section.2.2}}
+\newlabel{section:SR}{{2.2}{13}{Signal regions}{section.2.2}{}}
 \citation{MT2}
-\@writefile{toc}{\contentsline {section}{\numberline {2.3}Control regions}{10}{section.2.3}\protected@file@percent }
-\newlabel{section:CR}{{2.3}{10}{Control regions}{section.2.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {2.4}Background-signal discrimination}{10}{section.2.4}\protected@file@percent }
-\newlabel{section:Discrimination}{{2.4}{10}{Background-signal discrimination}{section.2.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Discriminating variables}{10}{subsection.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2.3}Control regions}{14}{section.2.3}}
+\newlabel{section:CR}{{2.3}{14}{Control regions}{section.2.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {2.4}Background-signal discrimination}{14}{section.2.4}}
+\newlabel{section:Discrimination}{{2.4}{14}{Background-signal discrimination}{section.2.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.1}Discriminating variables}{14}{subsection.2.4.1}}
 \AC@undonewlabel{acro:MET}
-\newlabel{acro:MET}{{2.4.1}{10}{}{section*.26}{}}
+\newlabel{acro:MET}{{2.4.1}{14}{}{section*.39}{}}
 \acronymused{MET}
 \acronymused{SM}
 \acronymused{DM}
@@ -260,52 +308,62 @@
 \acronymused{MET}
 \acronymused{MET}
 \acronymused{MET}
-\newlabel{eq:mt2}{{2.1}{10}{}{equation.2.4.1}{}}
+\newlabel{eq:mt2}{{2.1}{14}{}{equation.2.4.1}{}}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{MET}
 \acronymused{SM}
 \acronymused{DM}
 \acronymused{MET}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Neural network}{11}{subsection.2.4.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results and interpretations}{13}{chapter.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4.2}Neural network}{15}{subsection.2.4.2}}
+\newlabel{section:NN}{{2.4.2}{15}{Neural network}{subsection.2.4.2}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {3}Results and interpretations}{17}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:FinalResults}{{3}{13}{Results and interpretations}{chapter.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.1}Systematics and uncertainties}{13}{section.3.1}\protected@file@percent }
-\newlabel{section:Systematics}{{3.1}{13}{Systematics and uncertainties}{section.3.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {3.2}Results}{13}{section.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusions}{15}{chapter.4}\protected@file@percent }
+\newlabel{chapter:FinalResults}{{3}{17}{Results and interpretations}{chapter.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.1}Systematics and uncertainties}{17}{section.3.1}}
+\newlabel{section:Systematics}{{3.1}{17}{Systematics and uncertainties}{section.3.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {3.2}Results}{17}{section.3.2}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {4}Conclusions}{19}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{chapter:Conclusion}{{4}{15}{Conclusions}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Future prospects}{15}{section.4.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {chapter}{Appendices}{17}{section*.27}\protected@file@percent }
+\newlabel{chapter:Conclusion}{{4}{19}{Conclusions}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Future prospects}{19}{section.4.1}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{21}{section*.40}}
 \citation{Brilcalc}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Samples used}{19}{Appendix.1.A}\protected@file@percent }
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Samples used}{23}{Appendix.1.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{appendix:samples}{{A}{19}{Samples used}{Appendix.1.A}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Data samples}{19}{section.1.A.1}\protected@file@percent }
+\newlabel{appendix:Samples}{{A}{23}{Samples used}{Appendix.1.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Data samples}{23}{section.1.A.1}}
+\newlabel{appendix:DataSamples}{{A.1}{23}{Data samples}{section.1.A.1}{}}
 \acronymused{CMS}
 \AC@undonewlabel{acro:DAS}
-\newlabel{acro:DAS}{{A.1}{19}{Data samples}{section*.28}{}}
+\newlabel{acro:DAS}{{A.1}{23}{Data samples}{section*.41}{}}
 \acronymused{DAS}
-\@writefile{toc}{\contentsline {section}{\numberline {A.2}Signal samples}{19}{section.1.A.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {A.3}Backgrounds samples}{19}{section.1.A.3}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Datasets collected in 2016 and considered for this analysis.\relax }}{20}{table.caption.29}\protected@file@percent }
-\newlabel{table:Data2016}{{A.1}{20}{Datasets collected in 2016 and considered for this analysis.\relax }{table.caption.29}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Datasets collected in 2017 and considered for this analysis.\relax }}{21}{table.caption.30}\protected@file@percent }
-\newlabel{table:Data2017}{{A.2}{21}{Datasets collected in 2017 and considered for this analysis.\relax }{table.caption.30}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Datasets collected in 2018 and considered for this analysis.\relax }}{22}{table.caption.31}\protected@file@percent }
-\newlabel{table:Data2018}{{A.3}{22}{Datasets collected in 2018 and considered for this analysis.\relax }{table.caption.31}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.2}Signal samples}{23}{section.1.A.2}}
+\newlabel{appendix:SignalSamples}{{A.2}{23}{Signal samples}{section.1.A.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.3}Backgrounds samples}{23}{section.1.A.3}}
+\newlabel{appendix:BkgSamples}{{A.3}{23}{Backgrounds samples}{section.1.A.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.1}{\ignorespaces Datasets collected in 2016 and considered for this analysis.\relax }}{24}{table.caption.42}}
+\newlabel{table:Data2016}{{A.1}{24}{Datasets collected in 2016 and considered for this analysis.\relax }{table.caption.42}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.2}{\ignorespaces Datasets collected in 2017 and considered for this analysis.\relax }}{25}{table.caption.43}}
+\newlabel{table:Data2017}{{A.2}{25}{Datasets collected in 2017 and considered for this analysis.\relax }{table.caption.43}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.3}{\ignorespaces Datasets collected in 2018 and considered for this analysis.\relax }}{26}{table.caption.44}}
+\newlabel{table:Data2018}{{A.3}{26}{Datasets collected in 2018 and considered for this analysis.\relax }{table.caption.44}{}}
 \citation{MCGen}
 \citation{ComparisonGenerators}
 \citation{GEANTComp}
 \acronymused{MC}
 \acronymused{UE}
 \acronymused{MC}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{25}{chapter*.33}\protected@file@percent }
+\acronymused{SM}
+\acronymused{LHC}
+\acronymused{SM}
+\acronymused{DY}
+\acronymused{ISR}
+\acronymused{FSR}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{29}{chapter*.46}}
 \bibcite{HiggsPostulate1}{1}
 \bibcite{HiggsPostulate2}{2}
 \bibcite{HiggsDiscovery1}{3}
