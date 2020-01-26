@@ -1,72 +1,34 @@
-\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
-\BOOKMARK [0][-]{chapter.2}{The Dark Matter case}{}% 2
-\BOOKMARK [1][-]{section.2.1}{The Standard Model \(SM\)}{chapter.2}% 3
-\BOOKMARK [1][-]{section.2.2}{At the origins of dark matter}{chapter.2}% 4
-\BOOKMARK [2][-]{subsection.2.2.1}{Zwicky and the virial theorem}{section.2.2}% 5
-\BOOKMARK [2][-]{subsection.2.2.2}{Spiral galaxies rotation curves}{section.2.2}% 6
-\BOOKMARK [2][-]{subsection.2.2.3}{Cosmic Microwave Background \(CMB\) anisotropies}{section.2.2}% 7
-\BOOKMARK [2][-]{subsection.2.2.4}{Gravitational lensing}{section.2.2}% 8
-\BOOKMARK [1][-]{section.2.3}{Dark matter properties}{chapter.2}% 9
-\BOOKMARK [1][-]{section.2.4}{Dark matter candidates}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.5}{Dark matter searches}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.5.1}{Direct searches}{section.2.5}% 12
-\BOOKMARK [2][-]{subsection.2.5.2}{Indirect searches}{section.2.5}% 13
-\BOOKMARK [2][-]{subsection.2.5.3}{Collider production}{section.2.5}% 14
-\BOOKMARK [1][-]{section.2.6}{DM production at the LHC}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.6.1}{The single top production channel}{section.2.6}% 16
-\BOOKMARK [2][-]{subsection.2.6.2}{The t \040production channel}{section.2.6}% 17
-\BOOKMARK [2][-]{subsection.2.6.3}{The dilepton final state}{section.2.6}% 18
-\BOOKMARK [1][-]{section.2.7}{Previous relevant results}{chapter.2}% 19
-\BOOKMARK [0][-]{chapter.3}{The experimental setup}{}% 20
-\BOOKMARK [1][-]{section.3.1}{The LHC accelerator}{chapter.3}% 21
-\BOOKMARK [2][-]{subsection.3.1.1}{The LHC in a nutshell}{section.3.1}% 22
-\BOOKMARK [2][-]{subsection.3.1.2}{LHC key parameters}{section.3.1}% 23
-\BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 24
-\BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic Calorimeter \(ECAL\)}{section.3.2}% 26
-\BOOKMARK [2][-]{subsection.3.2.3}{Hadronic Calorimeter \(HCAL\)}{section.3.2}% 27
-\BOOKMARK [2][-]{subsection.3.2.4}{Solenoid}{section.3.2}% 28
-\BOOKMARK [2][-]{subsection.3.2.5}{Muon system}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.6}{Trigger system}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.7}{Data acquisition system}{section.3.2}% 31
-\BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 32
-\BOOKMARK [1][-]{section.4.1}{Particle Flow \(PF\) algorithm}{chapter.4}% 33
-\BOOKMARK [1][-]{section.4.2}{Primary Vertex \(PV\) definition}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.3}{Leptons reconstruction}{chapter.4}% 35
-\BOOKMARK [2][-]{subsection.4.3.1}{Muons}{section.4.3}% 36
-\BOOKMARK [2][-]{subsection.4.3.2}{Electrons}{section.4.3}% 37
-\BOOKMARK [1][-]{section.4.4}{Jets reconstruction}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.4.1}{B-tagging}{section.4.4}% 39
-\BOOKMARK [1][-]{section.4.5}{Missing Transverse Energy \(MET\)}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.6}{Top reconstruction}{chapter.4}% 41
-\BOOKMARK [2][-]{subsection.4.6.1}{Top reconstruction in practice}{section.4.6}% 42
-\BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 43
-\BOOKMARK [1][-]{section.5.1}{The Monte Carlo \(MC\) simulation method}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.2}{Files format}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.3}{Analysis code}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.4}{Data samples}{chapter.5}% 47
-\BOOKMARK [1][-]{section.5.5}{Signal samples}{chapter.5}% 48
-\BOOKMARK [1][-]{section.5.6}{Background prediction}{chapter.5}% 49
-\BOOKMARK [2][-]{subsection.5.6.1}{The main background: t }{section.5.6}% 50
-\BOOKMARK [2][-]{subsection.5.6.2}{Drell-Yan estimation}{section.5.6}% 51
-\BOOKMARK [2][-]{subsection.5.6.3}{Non prompt contamination}{section.5.6}% 52
-\BOOKMARK [2][-]{subsection.5.6.4}{Smaller backgrounds}{section.5.6}% 53
-\BOOKMARK [2][-]{subsection.5.6.5}{Weights and corrections applied}{section.5.6}% 54
-\BOOKMARK [0][-]{chapter.6}{Event selection}{}% 55
-\BOOKMARK [1][-]{section.6.1}{Objects selection}{chapter.6}% 56
-\BOOKMARK [2][-]{subsection.6.1.1}{Triggers selection}{section.6.1}% 57
-\BOOKMARK [2][-]{subsection.6.1.2}{Electron selection}{section.6.1}% 58
-\BOOKMARK [2][-]{subsection.6.1.3}{Muon WP}{section.6.1}% 59
-\BOOKMARK [2][-]{subsection.6.1.4}{Jet WP}{section.6.1}% 60
-\BOOKMARK [1][-]{section.6.2}{Signal regions}{chapter.6}% 61
-\BOOKMARK [1][-]{section.6.3}{Control regions}{chapter.6}% 62
-\BOOKMARK [1][-]{section.6.4}{Background-signal discrimination}{chapter.6}% 63
-\BOOKMARK [2][-]{subsection.6.4.1}{Discriminating variables}{section.6.4}% 64
-\BOOKMARK [2][-]{subsection.6.4.2}{Neural network}{section.6.4}% 65
-\BOOKMARK [0][-]{chapter.7}{Results and interpretations}{}% 66
-\BOOKMARK [1][-]{section.7.1}{Systematics and uncertainties}{chapter.7}% 67
-\BOOKMARK [1][-]{section.7.2}{Results}{chapter.7}% 68
-\BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 69
-\BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 70
-\BOOKMARK [0][-]{section*.150}{Appendices}{}% 71
-\BOOKMARK [0][-]{chapter*.152}{Bibliography}{}% 72
+\BOOKMARK [0][-]{chapter.1}{Data, signals and backgrounds}{}% 1
+\BOOKMARK [1][-]{section.1.1}{The Monte Carlo \(MC\) simulation method}{chapter.1}% 2
+\BOOKMARK [1][-]{section.1.2}{Files format}{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.3}{Analysis code}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.4}{Data samples}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.5}{Signal samples}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.6}{Background prediction}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.6.1}{The main background: t }{section.1.6}% 8
+\BOOKMARK [2][-]{subsection.1.6.2}{Drell-Yan estimation}{section.1.6}% 9
+\BOOKMARK [2][-]{subsection.1.6.3}{Non prompt contamination}{section.1.6}% 10
+\BOOKMARK [2][-]{subsection.1.6.4}{Smaller backgrounds}{section.1.6}% 11
+\BOOKMARK [2][-]{subsection.1.6.5}{Weights and corrections applied}{section.1.6}% 12
+\BOOKMARK [0][-]{chapter.2}{Event selection}{}% 13
+\BOOKMARK [1][-]{section.2.1}{Objects selection}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.1.1}{Triggers selection}{section.2.1}% 15
+\BOOKMARK [2][-]{subsection.2.1.2}{Electron selection}{section.2.1}% 16
+\BOOKMARK [2][-]{subsection.2.1.3}{Muon WP}{section.2.1}% 17
+\BOOKMARK [2][-]{subsection.2.1.4}{Jet WP}{section.2.1}% 18
+\BOOKMARK [1][-]{section.2.2}{Signal regions}{chapter.2}% 19
+\BOOKMARK [1][-]{section.2.3}{Control regions}{chapter.2}% 20
+\BOOKMARK [1][-]{section.2.4}{Background-signal discrimination}{chapter.2}% 21
+\BOOKMARK [2][-]{subsection.2.4.1}{Discriminating variables}{section.2.4}% 22
+\BOOKMARK [2][-]{subsection.2.4.2}{Neural network}{section.2.4}% 23
+\BOOKMARK [0][-]{chapter.3}{Results and interpretations}{}% 24
+\BOOKMARK [1][-]{section.3.1}{Systematics and uncertainties}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.2}{Results}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{Conclusions}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Future prospects}{chapter.4}% 28
+\BOOKMARK [0][-]{section*.27}{Appendices}{}% 29
+\BOOKMARK [0][-]{Appendix.1.A}{Samples used}{}% 30
+\BOOKMARK [1][-]{section.1.A.1}{Data samples}{Appendix.1.A}% 31
+\BOOKMARK [1][-]{section.1.A.2}{Signal samples}{Appendix.1.A}% 32
+\BOOKMARK [1][-]{section.1.A.3}{Backgrounds samples}{Appendix.1.A}% 33
+\BOOKMARK [0][-]{chapter*.33}{Bibliography}{}% 34

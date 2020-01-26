@@ -208,6 +208,8 @@
 \acro{SF}[SF]{Scale Factors}
 \acro{AOD}[AOD]{Analysis Object Data}
 \acro{EDM}[EDM]{Event Data Model}
+%Appendix A
+\acro{DAS}[DAS]{Data Aggregation System}
 
 \end{acronym}
 \end{multicols}
@@ -230,7 +232,6 @@
 %Here it starts!
 \setlength{\parskip}{8pt}
 \pagenumbering{arabic}
-
 %Introduction
 \iffalse
 \chapter{Introduction}
@@ -2003,8 +2004,142 @@ Once all the different samples produced centrally up to the nanoAOD stage, anoth
 
 As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and
-double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Tables~\ref{table:Data2016},~\ref{table:Data2017} and~\ref{table:Data2018}. The luminosity of each dataset has been computed using the Brilcalc tool provided by \ac{CMS} \cite{Brilcalc}.
+During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:samples}.
+
+\section{Signal samples} \label{section:Signals}
+
+\color{red} To be completed once the files are actually available \color{black}
+
+\section{Background prediction} \label{section:Backgrounds}
+\subsection{The main background: $t \bar t$}
+\subsection{Drell-Yan estimation}
+\subsection{Non prompt contamination} \label{subsection:Fakes}
+\subsection{Smaller backgrounds}
+\subsection{Weights and corrections applied}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Event selection} \label{chapter:Selection}
+\section{Objects selection}
+\subsection{Triggers selection} \label{section:Triggers}
+\subsection{Electron selection}
+\subsection{Muon \ac{WP}}
+\subsection{Jet \ac{WP}}
+\section{Signal regions} \label{section:SR}
+
+It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
+
+\section{Control regions} \label{section:CR}
+\section{Background-signal discrimination} \label{section:Discrimination}
+\subsection{Discriminating variables}
+\subsubsection*{\acf{MET}}
+
+This variable has already been defined in Section~\ref{section:RecoMET}, and corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
+
+This variable is expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds.
+
+\color{red} TALK ABOUT SINGLE TOP? \color{black}
+
+\subsubsection*{Stransverse mass}
+
+The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
+
+In this particular case, two particles contribute to the presence of \acf{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the decay considered \cite{MT2}.
+
+\begin{equation}
+\label{eq:mt2}
+\begin{dcases}
+M_{T2}^2 = \min_{\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}} \bigg (\max \Big (m_T^2(\bm{p_{T_1}}, \bm{\cancel{p}_{T_{1}}}), m_T^2(\bm{p_{T_2}}, \bm{\cancel{p}_{T_{2}}}) \Big ) \bigg ) \\
+m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}_{T}}| \text{ sin}^2 \left (\frac{\alpha}{2} \right ) 
+\end{dcases}
+\end{equation}
+
+This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest value.
+
+In this particular analysis, $M_{T2}(ll)$ is calculated, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
+
+However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
+
+\color{red} TALK ABOUT SINGLE TOP? \color{black}
+
+\subsection{Neural network}
+
+\chapter{Results and interpretations} \label{chapter:FinalResults}
+\section{Systematics and uncertainties} \label{section:Systematics}
+\section{Results}
+
+\chapter{Conclusions} \label{chapter:Conclusion}
+\section{Future prospects}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{appendices}
+
+\chapter{Samples used} \label{appendix:samples}
+\section{Data samples}
+
+All the data samples considered for this analysis are listed in Tables~\ref{table:Data2016},~\ref{table:Data2017} and~\ref{table:Data2018}. The luminosity of each dataset has been computed using the Brilcalc tool provided by \ac{CMS} \cite{Brilcalc}, while the number of generated events has been obtained using the CERN official \acf{DAS}.
 
 \begin{table}
 \begin{center}
@@ -2156,104 +2291,9 @@ double lepton triggers that will be described in Section~\ref{section:Triggers} 
 \end{center}
 \end{table}
 
-\section{Signal samples} \label{section:Signals}
+\section{Signal samples}
 
-\color{red} To be completed once the files are actually available \color{black}
-
-\section{Background prediction} \label{section:Backgrounds}
-\subsection{The main background: $t \bar t$}
-\subsection{Drell-Yan estimation}
-\subsection{Non prompt contamination} \label{subsection:Fakes}
-\subsection{Smaller backgrounds}
-\subsection{Weights and corrections applied}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Event selection} \label{chapter:Selection}
-\section{Objects selection}
-\subsection{Triggers selection} \label{section:Triggers}
-\subsection{Electron selection}
-\subsection{Muon \ac{WP}}
-\subsection{Jet \ac{WP}}
-\section{Signal regions} \label{section:SR}
-
-It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
-
-\section{Control regions} \label{section:CR}
-\section{Background-signal discrimination} \label{section:Discrimination}
-\subsection{Discriminating variables}
-\subsubsection*{\acf{MET}}
-
-This variable has already been defined in Section~\ref{section:RecoMET}, and corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
-
-This variable is expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds.
-
-\color{red} TALK ABOUT SINGLE TOP? \color{black}
-
-\subsubsection*{Stransverse mass}
-
-The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
-
-In this particular case, two particles contribute to the presence of \acf{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the decay considered \cite{MT2}.
-
-\begin{equation}
-\label{eq:mt2}
-\begin{dcases}
-M_{T2}^2 = \min_{\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}} \bigg (\max \Big (m_T^2(\bm{p_{T_1}}, \bm{\cancel{p}_{T_{1}}}), m_T^2(\bm{p_{T_2}}, \bm{\cancel{p}_{T_{2}}}) \Big ) \bigg ) \\
-m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}_{T}}| \text{ sin}^2 \left (\frac{\alpha}{2} \right ) 
-\end{dcases}
-\end{equation}
-
-This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest value.
-
-In this particular analysis, $M_{T2}(ll)$ is calculated, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
-
-However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
-
-\color{red} TALK ABOUT SINGLE TOP? \color{black}
-
-\subsection{Neural network}
-
-\chapter{Results and interpretations} \label{chapter:FinalResults}
-\section{Systematics and uncertainties} \label{section:Systematics}
-\section{Results}
-
-\chapter{Conclusions} \label{chapter:Conclusion}
-\section{Future prospects}
-
-\begin{appendices}
+\section{Backgrounds samples}
 
 \end{appendices}
 
@@ -2262,6 +2302,38 @@ However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t 
 
 %List of tables
 \listoftables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \addcontentsline{toc}{chapter}{Bibliography}
 
@@ -2940,6 +3012,8 @@ CMS-PAS-LUM-17-001, 2018}
 \href{http://inspirehep.net/record/1736713/}{CMS Collaboration,
 "CMS Luminosity Measurements for the 2018 Data Taking Period",
 CMS-PAS-LUM-17-001, 2019}
+
+%APPENDINX A
 
 \bibitem{Brilcalc}
 \href{https://cms-service-lumi.web.cern.ch/cms-service-lumi/brilwsdoc.html}{CMS Collaboration,
