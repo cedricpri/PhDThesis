@@ -211,6 +211,12 @@
 \acro{AOD}[AOD]{Analysis Object Data}
 \acro{EDM}[EDM]{Event Data Model}
 \acro{DY}[DY]{Drell-Yan}
+\acro{SR}[SR]{Signal Region}
+\acro{CR}[CR]{Control Region}
+\acro{PR}[PR]{Prompt Rate}
+\acro{FR}[FR]{Fake Rate}
+\acro{SS}[SS]{Same Sign}
+\acro{EWK}[EWK]{Electroweak}
 %Appendix A
 \acro{DAS}[DAS]{Data Aggregation System}
 
@@ -2137,39 +2143,41 @@ Listed in Section~\ref{appendix:SignalSamples}.
 
 \section{Backgrounds prediction} \label{section:Backgrounds}
 
-Several different \ac{SM} background processes have been considered for this analysis, all listed in Section~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be quoted, such as:
+Several different \ac{SM} background processes have been considered for this analysis, all listed in Section~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
 
 \begin{itemize}
-\item The major background for the $t \bar t$+DM analysis is the \ac{SM} $t \bar t$, kinematically close to the signal searched for (Section~\ref{subsection:ttbar}). 
-\item On the other hand, the major background for the $t/\bar t$ analysis is the single top production, which has an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}).
-\item Then, mainly because of its huge cross section shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is usually quite important, even in the signal regions (Section~\ref{subsection:DY}). 
-\item The non-prompt background, or fakes, is another important piece of this analysis mainly because of the particular data-driven method used to compute them (Section~\ref{subsection:Fakes}).
-\item Fianlly, the $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) may have a kinematics even closer to our signal than the $t \bar t$ process and is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
+\item The major background for the $t \bar t$+DM analysis, the \ac{SM} $t \bar t$, kinematically really close to the signal searched for (Section~\ref{subsection:ttbar}). 
+\item On the other hand, the major background for the $t/\bar t$+DM analysis is the single top production, which has an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}).
+\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is usually important ton consider. Even though quite reduced in the \acp{SR} because of the cuts applied, a specific \ac{CR} will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}). 
+\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) may have a kinematics even closer to our $t \bar t$+DM signal than the $t \bar t$ process and is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
+\item Finally, the non-prompt background is another important piece of this analysis mainly because of the particular data-driven method used to compute them (Section~\ref{subsection:Fakes}).
 \end{itemize}
 
 \color{red} Add percentage of each background once known \color{black}
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=7cm, height=8cm]{figs/ProcessesXS.png}
+\includegraphics[width=8cm, height=9cm]{figs/ProcessesXS.png}
 \caption{Production cross section of the most common \ac{SM} processes considering different center of mass energies, such as the 13 TeV of the \ac{LHC}.}
 \label{fig:ProcessesXS}
 \end{center}
 \end{figure}
 
-Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg} and the weights and corrections aplied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}.
-
-\color{red} TALK ABOUT SINGLE TOP? \color{black}
+Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production, and the weights and corrections applied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}.
 
 \subsection{Top production}
 
-Dominant in both searches
+Because of the relatively high production cross section of top quarks at 13 TeV, the production of a single or a pair of top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
+
+They also have a kinematics quite close to the one expected for our signal: some additional \ac{MET} is expected because of the production of a pair of \ac{DM} particles, which might lead to a distribution $\phi$ distribution as well, but other than that achieving some discrimination between these processes is quite complex. This process mostly relies on the use of \acf{ML} techniques and will be fully detailed in Section~\ref{section:Discrimination}.
+
+Typically, given the importance of such processes, a specific \ac{CR} to check for the validity of the \ac{CR} of such processes is defined, as explained in Section~\ref{section:CR}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
-This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
+%This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
 
-Different Feynman diagrams contribute to this process at \ac{LO}, as shown in Figure~\ref{fig:ttbarProd}.
+Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} and, due to its importance, dedicated \acp{CR} have been designed in which to check for the data/\ac{MC} agreement.
 
 \begin{figure}[htbp]
 \centering
@@ -2243,12 +2251,9 @@ Different Feynman diagrams contribute to this process at \ac{LO}, as shown in Fi
 \label{fig:ttbarProd}
 \end{figure}
 
-This background is so similar to the signal searched for that some \ac{ML} techniques had to be developed in order to find some discrimination between the two processes.
-
 \subsubsection{Single top} \label{subsection:singleTop}
 
-s-channel in Figure~\ref{fig:singleTopSChann}
-other in Figure~\ref{fig:singleTopOtherChann}
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production mode (Figure~\ref{fig:singleTopOtherChann}).
 
 \begin{figure}[htbp]
 \centering
@@ -2350,6 +2355,8 @@ other in Figure~\ref{fig:singleTopOtherChann}
 
 \subsubsection{Top decay} \label{subsection:topDecay}
 
+As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson can decay itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered of the top/antitop produced is represented in Figure~\ref{fig:TopDecay}.
+
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.34\textwidth}
@@ -2399,12 +2406,12 @@ other in Figure~\ref{fig:singleTopOtherChann}
 }
 \end{minipage} 
 \caption{Feynman diagrams for the leptonic decay of the top (on the left) and antitop (on the right) quarks.}
-\label{fig:topDecay}
+\label{fig:TopDecay}
 \end{figure}
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-Figure~\ref{fig:DY}.
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis but because of the huge cross section of this process, two to three orders of magnitude larger than the production of top, the contribution of this process in the \acp{SR} is still quite important. 
 
 \begin{figure}[htbp]
 \centering
@@ -2433,10 +2440,102 @@ Figure~\ref{fig:DY}.
 \label{fig:DY}
 \end{figure}
 
+This background is also estimated from \ac{MC} as well and is being checked in a specific \ac{CR}.
+
+\subsection{$t \bar t + V$} \label{subsection:ttV}
+
+This background is coming from a usual $t \bar t$ production along with an \ac{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of this background is also taken directly from \ac{MC}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.31\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q'$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (gf) [right=of a];
+    \vertex (b) [below=of a];
+  	\vertex (qi2) [below left=of b] {q};
+  	\vertex (Wf) [below right=of b] {W/Z};
+  	\vertex (c) [right of=a];
+  	\vertex (tf1) [above right=of c] {t};
+  	\vertex (tf2) [below right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a) -- [gluon] (c) -- [fermion] (tf1),
+      (tf2) -- [fermion] (c),
+      (a) -- [anti fermion] (b),
+      (qi2) -- [fermion] (b) -- [boson] (Wf)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi1) {g};    
+    \vertex (a) [below right=of gi1];
+    \vertex (gi2) [below left=of a] {g}; 
+    \vertex (b) [right=of a];
+    \vertex (tf1) [above right=of b] {t};
+  	\vertex (c) [below right=of b];
+  	\vertex (Zf) [above right=of c] {Z};
+  	\vertex (tf2) [below right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (gi1) -- [gluon] (a) -- [gluon] (b),
+      (gi2) -- [gluon] (a),
+      (b) -- [fermion] (tf1),
+      (b) -- [anti fermion] (c) -- [anti fermion] (tf2),
+      (c) -- [boson] (Zf)
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.29\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi1) {g};    
+    \vertex (a) [right=of gi1];
+    \vertex (b) [below=of a];
+    \vertex (c) [below=of b];
+    \vertex (gi2) [left=of c] {g};
+    \vertex (Zf) [right=of b] {Z};
+    \vertex (tf1) [right=of a] {t};
+  	\vertex (tf2) [right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (gi1) -- [gluon] (a) -- [fermion] (tf1),
+      (gi2) -- [gluon] (c) -- [anti fermion] (tf2),
+      (a) -- [anti fermion, edge label={t}] (b) -- [anti fermion, edge label={t}] (c),  
+      (b) -- [boson] (Zf) 
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Possible Feynman diagrams for the \acf{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \acf{FSR} ttZ (on the center and right).}
+\label{fig:ttV}
+\end{figure}
+
+The resulting cross section of such process is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
+
 \subsection{Non prompt contamination} \label{subsection:Fakes}
 
-qcd?
-w+jets and z+jets in Figure~\ref{fig:FakesW}
+Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the \acp{SR}, this background is interesting in the sense that is can be estimated using a data-driven method that will now be described instead of being taken directly from \ac{MC}.
+
+A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
+\begin{itemize}
+\item First of all, a \textbf{prompt lepton} is defined as a real lepton, in the sense that the lepton is originating from the \ac{PV} of a $pp$ collision.
+\item The \textbf{\ac{PR}} is defined as the number of prompt leptons passing the tight selection criteria of the analysis over the number of leptons passing the loose selection criteria. 
+\item On the other hand, by \textbf{fake} or \textbf{non-prompt lepton}, we usually refer to truly \textbf{fake leptons}, such as jets misidentified by the detector as leptons, as shown in Figure~\ref{fig:FakesW}, and real leptons coming from eventual heavy flavor decays.
+\item The \textbf{\ac{FR}} is then defined similarly to the prompt rate but considering this time fake leptons only for the tight-to-loose ratio. This ratio therefore corresponds to the probability for a fake lepton to be considered as a real lepton in the analysis.
+\end{itemize}
 
 \begin{figure}[htbp]
 \centering
@@ -2502,94 +2601,172 @@ w+jets and z+jets in Figure~\ref{fig:FakesW}
 \end{tikzpicture}
 }
 \end{minipage} 
-\caption{Possible Feynman diagrams for the production of a W/Z boson in association with a jet.}
+\caption{Possible Feynman diagrams for the production of a W/Z boson with a jet.}
 \label{fig:FakesW}
 \end{figure}
 
-\subsection{$t \bar t + V$} \label{subsection:ttV}
+This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose datadriven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
 
-Figure~\ref{fig:ttV}
+In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a \ac{SS} \ac{CR} enriched in fakes in order to perform a closure test of the yields and kinematics of this background. All these steps will now be detailed.
+
+\subsubsection*{\acf{FR} computation}
+
+Because of its definition, the \ac{FR} is computed in a prompt lepton-free region, typically in a l1loose \ac{QCD} enriched region, defined with the following cuts:
+\begin{multicols}{2}
+\begin{itemize}
+\item Exactly 1 lepton
+\item $p_{T} > 13 \text{ } (10)$ GeV for $e \text{ }(\mu)$ 
+\item $|\eta| < 2.5 \text{ } (2.4)$ for $e \text{ }(\mu)$ 
+\item mtw1 $< 20$ GeV
+\item PuppiMET $< 20$ GeV
+\item PassJets
+\end{itemize}
+\end{multicols}
+
+All the previous cuts have been designed to define a l1loose \ac{QCD} region as pure as possible by removing most of the W+jets and Z+jets contribution. The PassJets cut is a boolean obtained by looping over all the jets of the event trying to find a jet having an $E_T$ higher than a given threshold in order to control the average $p_T$ of the jet that fakes the lepton (actually, different \ac{FR} have been computed for different $E_T$ thresholds, from 10 to 50 GeV). 
+
+Using this method, the jet that fakes a lepton is actually the one recoiling against ($\Delta R > 1.0$) the jet used for the systematics, as shown in Figure~\ref{fig:FakesJet}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=4cm]{figs/FakesJet.png}
+\caption{Schematic representation of the two jets used for the systematics and for the jet faking a lepton in the tight-to-loose datadriven method.}
+\label{fig:FakesJet}
+\end{center}
+\end{figure}
+
+Events passing the following prescaled triggers are then selected in this region:
+
+\begin{subequations}
+\begin{equation}
+\text{Muon triggers = }
+\begin{dcases}
+\text{HLT\_Mu8\_TrkIsoVVL (if }p_T < 20 \text{ GeV}) \\
+\text{HLT\_Mu17\_TrkIsoVVL (if }p_T \geq 20 \text{ GeV}) 
+\end{dcases}
+\end{equation}
+\vspace{-20pt}
+\begin{equation}
+\text{Electron triggers = }
+\begin{dcases}
+\text{HLT\_Ele8\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T < 25 \text{ GeV}) \\
+\text{HLT\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T \geq 25 \text{ GeV}) 
+\end{dcases}
+\end{equation}
+\end{subequations}
+
+The remaining of the \ac{EWK} processes (W+jets, Z+jets) able to pass the previous cuts of the QCD region, are then simply substracted: this is the so-called \textbf{\ac{EWK} substraction}.
+
+Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the event) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}[b]{.31\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q'$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (gf) [right=of a];
-    \vertex (b) [below=of a];
-  	\vertex (qi2) [below left=of b] {q};
-  	\vertex (Wf) [below right=of b] {W/Z};
-  	\vertex (c) [right of=a];
-  	\vertex (tf1) [above right=of c] {t};
-  	\vertex (tf2) [below right=of c] {$\bar t$};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a) -- [gluon] (c) -- [fermion] (tf1),
-      (tf2) -- [fermion] (c),
-      (a) -- [anti fermion] (b),
-      (qi2) -- [fermion] (b) -- [boson] (Wf)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi1) {g};    
-    \vertex (a) [below right=of gi1];
-    \vertex (gi2) [below left=of a] {g}; 
-    \vertex (b) [right=of a];
-    \vertex (tf1) [above right=of b] {t};
-  	\vertex (c) [below right=of b];
-  	\vertex (Zf) [above right=of c] {Z};
-  	\vertex (tf2) [below right=of c] {$\bar t$};
- 
-    \diagram* {
-      (gi1) -- [gluon] (a) -- [gluon] (b),
-      (gi2) -- [gluon] (a),
-      (b) -- [fermion] (tf1),
-      (b) -- [anti fermion] (c) -- [anti fermion] (tf2)
-      (c) -- [boson] (Zf)
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.29\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi1) {g};    
-    \vertex (a) [right=of gi1];
-    \vertex (b) [below=of a];
-    \vertex (c) [below=of b];
-    \vertex (gi2) [left=of c] {g};
-    \vertex (Zf) [right=of b] {Z};
-    \vertex (tf1) [right=of a] {t};
-  	\vertex (tf2) [right=of c] {$\bar t$};
- 
-    \diagram* {
-      (gi1) -- [gluon] (a) -- [fermion] (tf1),
-      (gi2) -- [gluon] (c) -- [anti fermion] (tf2),
-      (a) -- [anti fermion, edge label={t}] (b) -- [anti fermion, edge label={t}] (c),  
-      (b) -- [boson] (Zf) 
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Possible Feynman diagrams for the \acf{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \acf{FSR} ttZ (on the center and right).}
-\label{fig:ttV}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2016.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2017.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2018.png}
+\end{minipage} \hfill
+\caption{Electron (on the left) and muon (on the right) \ac{FR} obtained in a QCD enriched region for different jet $E_T$ thresholds for 2016 (on the top), 2017 (on the middle) and 2018 (on the bottom) with respect to the $p_T$ of the lepton.}
+\label{fig:FR}
 \end{figure}
+
+\subsubsection*{\acf{PR} computation}
+
+The \ac{PR}, taking into account the real lepton contamination in the \ac{CR} defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore be ignored.
+
+In our case, this rate has been calculated as well using a general tag and probe method in a Z+jets enriched sample. The main objective is to reconstruct $Z \rightarrow ll$ events in this region and to select all the events for which the first lepton can be characterized as tight. Then, we search for the second lepton coming from the decay of Z within all the leptons detected by calculating the reconstructed mass of all the possible leptons combinations and selecting the one which is closer to the expected mass of the Z boson. We can then simply count how many times this second lepton, expected to be tight, has actually been measured as a tight lepton to estimate this \ac{PR}.
+
+The results obtained in this case have been represented in Figure~\ref{fig:PR}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2016.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2017.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2018.png}
+\end{minipage} \hfill
+\caption{Electron (on the left) and muon (on the right) \ac{PR} obtained in a Z+jets enriched region by a general tag and probe method for 2016 (on the top), 2017 (on the middle) and 2018 (on the bottom) with respect to the $p_T$ of the lepton.}
+\label{fig:PR}
+\end{figure}
+
+\subsubsection*{Fake weight calculation}
+
+Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the \acp{SR} of the analysis (usally, a l2loose region). For this, a simple set of equations can be used. We start by defining the following quantities:
+
+\begin{itemize}
+\item $N_{pp}$ events where both leptons are prompt
+\item $N_{fp}$ events where one lepton is prompt and the other is fake
+\item $N_{ff}$ events where both leptons are fake
+\item $N_{tx}$ ($x = 0,1,2$) events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
+\end{itemize}
+
+It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated.
+\begin{equation}
+\label{eq:FR1}
+\begin{dcases}
+&N_l = N_{pp} + N_{fp} + N_{ff} = N_{t2} + N_{t1} + N_{t0} \\
+& N_{t0} = (1-p)^2N_{pp} + (1-p)(1-f)N_{fp}+(1-f)^2N_{ff} \\
+& N_{t1} = 2p(1-p)N_{pp} + \big(f(1-p)+p(1-f)\big)N_{fp}+2f(1-f)^2N_{ff} \\
+& N_{t2} = p^2N_{pp} + pfN_{fp}+f^2N_{ff}
+\end{dcases}
+\end{equation}
+
+These equations can be inverted in order to represent the unknowns with respect to the known variables, as shown in Equation~\ref{eq:FR2}, giving us a way to apply the weights previously calculated to this particular l2loose region.
+
+\begin{equation}
+\label{eq:FR2}
+\begin{pmatrix}
+N_{pp} \\ N_{fp} \\ N_{ff}
+\end{pmatrix} = \frac{f-p}{-(p-f)^3} \cdot 
+\begin{pmatrix}
+f^2 & -f(1-f) & (1-f)^2 \\ -2fp & p(1-f)+f(1-p) & -2(1-p)(1-f) \\ p^2 & -p(1-p) & (1-p)^2
+\end{pmatrix} \cdot 
+\begin{pmatrix}
+N_{t0} \\ N_{t1} \\ N_{t2}
+\end{pmatrix}
+\end{equation} \vfill
+
+\subsubsection*{\acf{SS} control region}
+
+Now that we have a way to estimate the kinematics and yields of the non-prompt background in a different region, a \acf{SS} \ac{CR} enriched in fakes is usually defined in order to check this background. This will be done and detailed in Section~\ref{section:SSCR} of this work.
+
+%\subsubsection*{Limitations}
+%
+%This method is working quite well and allows us to avoid relying on the \ac{MC} for such complex processes, but it does come with some limitations, among which:
+%
+%\begin{itemize}
+%\item 
+%\end{itemize}
 
 \subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Diboson contamination Figure~\ref{fig:DiBosons}.
+Even though quite negligible, some additional backgrounds still need to be considered, such as the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC}. 
 
 \begin{figure}[htbp]
 \centering
@@ -2659,7 +2836,7 @@ Diboson contamination Figure~\ref{fig:DiBosons}.
 \label{fig:DiBosons}
 \end{figure}
 
-\subsection{Weights and corrections applied} \label{subsection:Weights}
+%\subsection{Weights and corrections applied} \label{subsection:Weights}
 
 
 
@@ -2706,6 +2883,7 @@ Diboson contamination Figure~\ref{fig:DiBosons}.
 It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
 
 \section{Control regions} \label{section:CR}
+\subsection{\acf{SS} \ac{CR}} \label{section:SSCR}
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 \subsubsection*{\acf{MET}}
