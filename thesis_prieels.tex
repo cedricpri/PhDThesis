@@ -69,11 +69,11 @@
 
 \renewcommand{\listfigurename}{List of figures} 
 \renewcommand{\listtablename}{List of tables}
-\renewcommand{\floatpagefraction}{.95}%
+%\renewcommand{\floatpagefraction}{.95}%
 
 %Titlepage
 \doublespacing
-\baselineskip=0.8\baselineskip
+\baselineskip=0.7\baselineskip
 \setlength{\parindent}{0pt}	
 
 % Tables spacing
@@ -103,6 +103,41 @@
 	\textbf{Pablo Mart\'{i}nez Ruiz del \'{A}rbol}\\}
 	\vspace{1.4cm}
 	{\Large Santander, June 2020}
+	\vfill
+
+\end{titlepage}
+
+%Empty page
+
+%\clearpage
+\thispagestyle{empty}
+\phantom{a}
+\vfill
+\newpage
+
+\begin{titlepage}
+
+	\centering
+	\includegraphics[width=0.15\textwidth]{figs/image_UC.png}\par
+	{\scshape\LARGE Facultad de Ciencias \\ \vspace{-15pt} Universidad de Cantabria \par}
+	
+	\vspace{0.8cm}
+	
+	%English title
+	\noindent\rule{15cm}{0.4pt}\par 
+	{\huge\bfseries B\'{u}squeda de materia oscura en asociaci\'{o}n con quarks top en el estado final dilept\'{o}nico a $\sqrt{s} = $ 13 TeV\par \vspace{10pt}}
+	\noindent\rule{15cm}{0.4pt}\par 
+	
+	{\vspace{20pt} \Large Memoria para optar al \par \LARGE \textbf{Grado de doctor} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
+	
+	\vspace{0.8cm}
+	{\Large Escrita por \\ \textbf{C\'{e}dric Prie\"{e}ls}\par}
+	\vspace{0.5cm}
+	{\Large Bajo la supervisi\'{o}n de \\ \textbf{J\'{o}natan Piedra G\'{o}mez} \\
+	\vspace{-10pt}
+	\textbf{Pablo Mart\'{i}nez Ruiz del \'{A}rbol}\\}
+	\vspace{1.4cm}
+	{\Large Santander, Junio 2020}
 	\vfill
 
 \end{titlepage}
@@ -1021,7 +1056,7 @@ Three different Feynman diagrams can be associated to this particular analysis d
       (b) -- [fermion, edge label={}] (c),
       (c) -- [scalar, edge label={$\phi$/a}] (d),
       (d) -- [fermion] (d2),
-      (d) -- [anti fermion] (d1)
+      (d) -- [anti fermion] (d1),
       (c) -- [fermion] (tf)
     };
   \end{feynman}
@@ -2006,7 +2041,6 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 
 
 
-
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 
 In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
@@ -2873,11 +2907,128 @@ Even though quite negligible, some additional backgrounds still need to be consi
 
 
 \chapter{Event selection} \label{chapter:Selection}
-\section{Objects selection}
+
+This Chapter will be dedicated to the analysis itself, by defining first of all the different objects actually used in this case, along with the actual selection that has been applied to enhance the quality of such objects in this particular search in Section~\ref{section:Selection}. Then, the different \acfp{SR} defined in which a high purity of signal is expected are defined in Section~\ref{section:SR} while all the different \acfp{CR} defined in order to check the behavior of the \ac{MC} simulation performed for the major backgrounds on this analysis, such as the single top or \ac{SM} $t \bar t$ production, will be introduced in Section~\ref{section:CR}. 
+
+Finally will come a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds in Section~\ref{section:Discrimination}, along with a global description of the \acf{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible.
+
+\section{Objects selection} \label{section:Selection}
+
+We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM signal: the typical signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \acf{MET} coming from the two \ac{DM} particles created along the way. It is therefore extremely important to describe the \acf{WP} chosen and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the possible misidentification rates of such objects.
+
+First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
+
 \subsection{Triggers selection} \label{section:Triggers}
-\subsection{Electron selection}
-\subsection{Muon \ac{WP}}
-\subsection{Jet \ac{WP}}
+
+The triggers, described in Section~\ref{subsection:Trigger}, and particularly the trigger paths chosen are an important part of each analysis since they will describe the kind of data that can be collected and therefore analyzed. The triggers used in this analysis for the years 2016, 2017 and 2018 can be found in Tables~\ref{table:Trigg2016},~\ref{table:Trigg2017} and~\ref{table:Trigg2016} respectively.
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{\ac{HLT} trigger path} \\
+ \hline
+ \multirow{1}{*}{SingleMu} & \multirow{1}{*}{[273158,284044]}  & HLT\_IsoMu24\_v* \\
+& & HLT\_IsoTkMu24\_v* \\
+\hline
+\multirow{1}{*}{SingleEle} & \multirow{1}{*}{[273158,284044]} & HLT\_Ele27\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele25\_eta2p1\_WPTight\_Gsf\_v* \\
+\hline
+DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\multirow{1}{*}{DoubleMu} & \multirow{1}{*}{[273158,281612]} & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_v* \\
+& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_v* \\
+& \multirow{1}{*}{[281613,284044] }& HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_DZ\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & \multirow{1}{*}{[273158,278272]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
+& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
+ & \multirow{1}{*}{[278273,284044]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\end{tabular}
+%}
+\caption{2016 trigger paths considered for this analysis.}
+\label{table:Trigg2016}
+\end{center}
+\end{table}	
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset &Run range & \textbf{\ac{HLT} trigger path} \\
+\hline
+ SingleMu & [297046,306462]  & HLT\_IsoMu27\_v* \\
+\hline
+EGamma & [297046,306462] & HLT\_Ele35\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& [299368,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & [297046,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [297046,299329] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [299368,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+\end{tabular}
+%}
+\caption{2017 trigger paths considered for this analysis.}
+\label{table:Trigg2017}
+\end{center}
+\end{table}	
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{\ac{HLT} trigger path} \\
+\hline
+ SingleMu & [315252,325172] & HLT\_IsoMu24\_v* \\
+ & & HLT\_Mu5\_v* \\
+ & [314859,325175] & HLT\_IsoMu27\_v* \\
+\hline
+EGamma & [315252,325172] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele35\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+DoubleMu & [315252,325172] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
+ &  & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & [315252,325172] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+& & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\end{tabular}
+%}
+\caption{2018 trigger paths considered for this analysis.}
+\label{table:Trigg2018}
+\end{center}
+\end{table}	
+
+Our analysis relying on the dilepton final state, the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths are usually considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting due to this effect.
+
+These triggers have been studied in order to make sure that they are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger. These trigger efficiencies, calculated using a general tag and probe method and found for example for different runs of the 2017 data taking period in Figure~\ref{fig:TriggEffEle} for a DoubleEG trigger, are then used to reweight the simulated samples.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=6cm, height=5.5cm]{figs/TriggEffEle.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=6cm, height=5.5cm]{figs/TriggEffEta.png}
+\end{minipage} \hfill
+\caption{DougleEG trigger efficiencies with respect to the $p_T$ (on the left) and $\eta$ (on the right), computed using a tag and probe method, for the 2017 data taking period.}
+\label{fig:TriggEffEle}
+\end{figure}
+
+
+\subsection{Electron selection} \label{section:EleSel}
+\subsection{Muon selection} \label{section:MuSel}
+\subsection{Jet selection} \label{section:JetSel}
+
 \section{Signal regions} \label{section:SR}
 
 It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
