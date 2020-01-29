@@ -1,39 +1,24 @@
 \babel@toc {english}{}
-\contentsline {chapter}{\numberline {1}Data, signals and backgrounds}{1}{chapter.1}% 
-\contentsline {section}{\numberline {1.1}The \acf {MC} simulation method}{1}{section.1.1}% 
-\contentsline {section}{\numberline {1.2}Files format}{5}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Analysis code}{6}{section.1.3}% 
-\contentsline {section}{\numberline {1.4}Data samples}{6}{section.1.4}% 
-\contentsline {section}{\numberline {1.5}Signal samples}{6}{section.1.5}% 
-\contentsline {section}{\numberline {1.6}Backgrounds prediction}{6}{section.1.6}% 
-\contentsline {subsection}{\numberline {1.6.1}Top production}{7}{subsection.1.6.1}% 
-\contentsline {subsubsection}{The main background: $t \mathaccentV {bar}016t$}{8}{subsection.1.6.1}% 
-\contentsline {subsubsection}{Single top}{8}{figure.caption.33}% 
-\contentsline {subsubsection}{Top decay}{8}{figure.caption.35}% 
-\contentsline {subsection}{\numberline {1.6.2}Drell-Yan estimation}{9}{subsection.1.6.2}% 
-\contentsline {subsection}{\numberline {1.6.3}$t \mathaccentV {bar}016t + V$}{9}{subsection.1.6.3}% 
-\contentsline {subsection}{\numberline {1.6.4}Non prompt contamination}{10}{subsection.1.6.4}% 
-\contentsline {subsection}{\numberline {1.6.5}Smaller backgrounds}{15}{subsection.1.6.5}% 
-\contentsline {chapter}{\numberline {2}Event selection}{17}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Objects selection}{17}{section.2.1}% 
-\contentsline {subsection}{\numberline {2.1.1}Triggers selection}{17}{subsection.2.1.1}% 
-\contentsline {subsection}{\numberline {2.1.2}Electron selection}{20}{subsection.2.1.2}% 
-\contentsline {subsection}{\numberline {2.1.3}Muon selection}{20}{subsection.2.1.3}% 
-\contentsline {subsection}{\numberline {2.1.4}Jet selection}{20}{subsection.2.1.4}% 
-\contentsline {section}{\numberline {2.2}Signal regions}{20}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Control regions}{20}{section.2.3}% 
-\contentsline {subsection}{\numberline {2.3.1}\acf {SS} \ac {CR}}{20}{subsection.2.3.1}% 
-\contentsline {section}{\numberline {2.4}Background-signal discrimination}{20}{section.2.4}% 
-\contentsline {subsection}{\numberline {2.4.1}Discriminating variables}{20}{subsection.2.4.1}% 
-\contentsline {subsection}{\numberline {2.4.2}Neural network}{21}{subsection.2.4.2}% 
-\contentsline {chapter}{\numberline {3}Results and interpretations}{23}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Systematics and uncertainties}{23}{section.3.1}% 
-\contentsline {section}{\numberline {3.2}Results}{23}{section.3.2}% 
-\contentsline {chapter}{\numberline {4}Conclusions}{25}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Future prospects}{25}{section.4.1}% 
-\contentsline {chapter}{Appendices}{27}{section*.55}% 
-\contentsline {chapter}{\numberline {A}Samples used}{29}{Appendix.1.A}% 
-\contentsline {section}{\numberline {A.1}Data samples}{29}{section.1.A.1}% 
-\contentsline {section}{\numberline {A.2}Signal samples}{29}{section.1.A.2}% 
-\contentsline {section}{\numberline {A.3}Backgrounds samples}{29}{section.1.A.3}% 
-\contentsline {chapter}{Bibliography}{35}{chapter*.61}% 
+\contentsline {chapter}{\numberline {1}Event selection}{1}{chapter.1}% 
+\contentsline {section}{\numberline {1.1}Objects selection}{1}{section.1.1}% 
+\contentsline {subsection}{\numberline {1.1.1}Triggers selection}{1}{subsection.1.1.1}% 
+\contentsline {subsection}{\numberline {1.1.2}Electrons selection}{4}{subsection.1.1.2}% 
+\contentsline {subsection}{\numberline {1.1.3}Muons selection}{4}{subsection.1.1.3}% 
+\contentsline {subsection}{\numberline {1.1.4}Jet selection}{4}{subsection.1.1.4}% 
+\contentsline {section}{\numberline {1.2}Signals regions}{4}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Control regions}{4}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}\acf {SS} \ac {CR}}{4}{subsection.1.3.1}% 
+\contentsline {section}{\numberline {1.4}Background-signal discrimination}{4}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Discriminating variables}{4}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Neural network}{5}{subsection.1.4.2}% 
+\contentsline {chapter}{\numberline {2}Results and interpretations}{7}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Systematics and uncertainties}{7}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Results}{7}{section.2.2}% 
+\contentsline {chapter}{\numberline {3}Conclusions}{9}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Future prospects}{9}{section.3.1}% 
+\contentsline {chapter}{Appendices}{11}{section*.20}% 
+\contentsline {chapter}{\numberline {A}Samples used}{13}{Appendix.1.A}% 
+\contentsline {section}{\numberline {A.1}Data samples}{13}{section.1.A.1}% 
+\contentsline {section}{\numberline {A.2}Signal samples}{13}{section.1.A.2}% 
+\contentsline {section}{\numberline {A.3}Backgrounds samples}{13}{section.1.A.3}% 
+\contentsline {chapter}{Bibliography}{19}{chapter*.34}% 
