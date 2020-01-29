@@ -58,6 +58,8 @@
   {0pt}{0pt}{50pt}
 \makeatother
 
+\renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
 %\setlength{\headheight}{20pt}
 %\pagestyle{fancy}
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
@@ -252,6 +254,9 @@
 \acro{FR}[FR]{Fake Rate}
 \acro{SS}[SS]{Same Sign}
 \acro{EWK}[EWK]{Electroweak}
+\acro{BDT}[BDT]{Boosted Decision Trees}
+\acro{POG}[POG]{Physics Object Group}
+
 %Appendix A
 \acro{DAS}[DAS]{Data Aggregation System}
 
@@ -2904,7 +2909,6 @@ Even though quite negligible, some additional backgrounds still need to be consi
 
 
 
-
 \chapter{Event selection} \label{chapter:Selection}
 
 This Chapter will be dedicated to the analysis itself, by defining first of all the different objects actually used in this case, along with the actual selection that has been applied to enhance the quality of such objects in this particular search in Section~\ref{section:Selection}. Then, the different \acfp{SR} defined in which a high purity of signal is expected are defined in Section~\ref{section:SR} while all the different \acfp{CR} defined in order to check the behavior of the \ac{MC} simulation performed for the major backgrounds on this analysis, such as the single top or \ac{SM} $t \bar t$ production, will be introduced in Section~\ref{section:CR}. 
@@ -3023,8 +3027,32 @@ These triggers have been studied in order to make sure that they are efficient e
 \label{fig:TriggEffEle}
 \end{figure}
 
-
 \subsection{Electrons selection} \label{section:EleSel}
+
+Several strategies are used in \ac{CMS} in order to be able to identify prompts electrons and isolate this signal over background sources coming mainly from photon conversions, misidentification of jets or electrons coming from the semileptonic decay of the bottom and charm quarks. Several variables, which can be divided in the several following categories, allow introduce some discrimination between these prompt and fake electrons:
+
+\begin{itemize}
+\item The \textbf{calorimetric observables}, used to separate prompt and misidentified electrons by using the transverse shape of electromagnetic showers in the \ac{ECAL}, the fact that these electromagnetic showers should be narrower than hadronic showers and the fraction of energy deposited in the \ac{HCAL} and in the preshower/endcaps of the \ac{ECAL} itself. %Many different variables belong to this category, such as:
+%\begin{itemize}
+%\item \textbf{hOverE} $\left ( \frac{H}{E} \right )$, where $H$ is energy deposited in the \ac{HCAL} over the energy $E$ deposited in the \ac{ECAL}
+%\item \textbf{ooEmoop} $\left ( \frac{1}{E_{\text{SC}}} - \frac{1}{p} \right )$, where $E_{\text{SC}}$ is the \acf{SC} energy and $p$ the momentum of the track at the point of closest approach to the \ac{PV}
+%\item \textbf{dEtaInSee} $\Delta \eta$ (\textbf{dPhiInSee} $\Delta \phi$), the $\eta$  ($\phi$) difference between the \ac{SC} and the inner track extrapolated from the interaction vertex
+%\item The \textbf{\ac{SC} $\eta$ ($\phi$) width}
+%\end{itemize}
+\item The \textbf{isolation variables}, requiring the electron candidates to be quite isolated with respect to nearby energetic activity since most of the non-prompt electrons, such as electrons within a jet, are emitted with a large amount of surrounding energy. The main isolation related variable is the so-called \textbf{relIsoWithEA} variable, corresponding to the \ac{PF} isolation defined in a cone of size $\Delta R = 0.3$ around the electron direction and relative to the electron $p_T$, and taking into account the \ac{PU} contamination in this cone.
+
+%\begin{equation}
+%\label{eq:relIsoEle}
+%\text{ISO}_{\text{EA}} = 
+%\end{equation}
+\item The \textbf{tracking quality variables}, taking into account the expected hits in the tracker for a prompt electron or the $\chi^2$ value calculated from the reconstructed track and its corresponding hits for example.
+\item The \textbf{conversion rejection variables}, mostly used to reject most of the photon conversion contamination when defining electrons. This rejection is mostly performed using the transverse $d_0$ and  longitudinal $d_z$ transverse parameters .
+\end{itemize}
+
+Four different electron \acfp{WP} (veto, loose, medium, tight) are then defined with slightly different cuts in the barrel or in the endcaps in order to select electrons with a given efficiency while trying to limit the misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons from other source, to be used when the backgrounds are expected to be large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
+
+In this analysis however, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. 
+
 \subsection{Muons selection} \label{section:MuSel}
 \subsection{Jet selection} \label{section:JetSel}
 
