@@ -3,22 +3,23 @@
 \contentsline {section}{\numberline {1.1}Objects selection}{1}{section.1.1}% 
 \contentsline {subsection}{\numberline {1.1.1}Triggers selection}{1}{subsection.1.1.1}% 
 \contentsline {subsection}{\numberline {1.1.2}Electrons selection}{3}{subsection.1.1.2}% 
-\contentsline {subsection}{\numberline {1.1.3}Muons selection}{4}{subsection.1.1.3}% 
-\contentsline {subsection}{\numberline {1.1.4}Jet selection}{4}{subsection.1.1.4}% 
-\contentsline {section}{\numberline {1.2}Signals regions}{4}{section.1.2}% 
-\contentsline {section}{\numberline {1.3}Control regions}{5}{section.1.3}% 
-\contentsline {subsection}{\numberline {1.3.1}\acf {SS} \ac {CR}}{5}{subsection.1.3.1}% 
-\contentsline {section}{\numberline {1.4}Background-signal discrimination}{5}{section.1.4}% 
-\contentsline {subsection}{\numberline {1.4.1}Discriminating variables}{5}{subsection.1.4.1}% 
-\contentsline {subsection}{\numberline {1.4.2}Neural network}{6}{subsection.1.4.2}% 
-\contentsline {chapter}{\numberline {2}Results and interpretations}{7}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Systematics and uncertainties}{7}{section.2.1}% 
-\contentsline {section}{\numberline {2.2}Results}{7}{section.2.2}% 
-\contentsline {chapter}{\numberline {3}Conclusions}{9}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Future prospects}{9}{section.3.1}% 
-\contentsline {chapter}{Appendices}{11}{section*.28}% 
-\contentsline {chapter}{\numberline {A}Samples used}{13}{Appendix.1.A}% 
-\contentsline {section}{\numberline {A.1}Data samples}{13}{section.1.A.1}% 
-\contentsline {section}{\numberline {A.2}Signal samples}{13}{section.1.A.2}% 
-\contentsline {section}{\numberline {A.3}Backgrounds samples}{13}{section.1.A.3}% 
-\contentsline {chapter}{Bibliography}{19}{chapter*.34}% 
+\contentsline {subsection}{\numberline {1.1.3}Muons selection}{6}{subsection.1.1.3}% 
+\contentsline {subsection}{\numberline {1.1.4}Jet selection}{6}{subsection.1.1.4}% 
+\contentsline {section}{\numberline {1.2}Signals regions}{6}{section.1.2}% 
+\contentsline {section}{\numberline {1.3}Control regions}{8}{section.1.3}% 
+\contentsline {subsection}{\numberline {1.3.1}Same sign control region}{8}{subsection.1.3.1}% 
+\contentsline {section}{\numberline {1.4}Background-signal discrimination}{8}{section.1.4}% 
+\contentsline {subsection}{\numberline {1.4.1}Discriminating variables}{8}{subsection.1.4.1}% 
+\contentsline {subsection}{\numberline {1.4.2}Neural network}{10}{subsection.1.4.2}% 
+\contentsline {chapter}{\numberline {2}Results and interpretations}{11}{chapter.2}% 
+\contentsline {section}{\numberline {2.1}Systematics and uncertainties}{11}{section.2.1}% 
+\contentsline {section}{\numberline {2.2}Results}{11}{section.2.2}% 
+\contentsline {chapter}{\numberline {3}Conclusions}{13}{chapter.3}% 
+\contentsline {section}{\numberline {3.1}Future prospects}{13}{section.3.1}% 
+\contentsline {chapter}{Appendices}{15}{section*.34}% 
+\contentsline {chapter}{\numberline {A}Samples used}{17}{Appendix.1.A}% 
+\contentsline {section}{\numberline {A.1}Data samples}{17}{section.1.A.1}% 
+\contentsline {section}{\numberline {A.2}Signal samples}{17}{section.1.A.2}% 
+\contentsline {section}{\numberline {A.3}Backgrounds samples}{17}{section.1.A.3}% 
+\contentsline {chapter}{\numberline {B}Neural network optimization}{21}{Appendix.1.B}% 
+\contentsline {chapter}{Bibliography}{25}{chapter*.40}% 
