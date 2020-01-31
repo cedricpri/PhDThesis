@@ -49,6 +49,7 @@
 \usepackage{subfiles}
 \usepackage{bm}
 \usepackage[compat=1.1.0]{tikz-feynman}
+\usepackage{lscape}
 
 \makeatletter
 \titleformat{\chapter}[block]
@@ -280,7 +281,7 @@
 \setlength{\parskip}{8pt}
 \pagenumbering{arabic}
 %Introduction
-\iffalse
+
 \chapter{Introduction}
 
 The \ac{SM} of particle physics introduced in Section~\ref{section:SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the four fundamental forces of nature (electromagnetic, weak and strong interactions). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} and \ac{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -2890,8 +2891,21 @@ Even though quite negligible, some additional backgrounds still need to be consi
 \label{fig:DiBosons}
 \end{figure}
 
-%\subsection{Weights and corrections applied} \label{subsection:Weights}
-\fi
+\subsection{Weights and corrections applied} \label{subsection:Weights}
+
+\subsubsection{Prefiring corrections}
+
+In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout in the \ac{ECAL} endcap to be assigned by the \acf{L1} to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a top control region is shown in Figure~\ref{fig:Prefiring}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=7cm]{figs/Prefiring.png}
+\caption{Data/\ac{MC} agreement with (on the right) and without (on the left) prefiring corrections in a 2017 top control region.}
+\label{fig:Prefiring}
+\end{center}
+\end{figure}
+
+\subsubsection{Top $p_T$ reweighting}
 
 
 
@@ -3077,7 +3091,7 @@ Several strategies are used in \ac{CMS} in order to be able to identify prompts 
 
 In this analysis, instead of relying on the four basic \ac{POG} official \acfp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
-Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ \ac{WP} has been chosen for the electron definition, along with additional quality cuts defined in Table~\ref{table:EleWP} (as previously mentionned, these cuts sometines differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
+Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ \ac{WP} has been chosen for the electron definition, along with additional quality cuts defined in Table~\ref{table:EleWP} (as previously mentionned, these cuts sometines differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
 \begin{table}
 \begin{center}
@@ -3101,10 +3115,10 @@ hOverE & $<$ & 0.060 & 0.065 \\
   GsfTrack $\chi^2$/NDOF & $<$ & - & 3.0 \\
  	\hline
  	\textbf{Additional selection} & &  \\ 
- lostHits & $< 1$ & $< 1$ \\
- $d_{xy}$ & $< 0.05$ & $< 0.1$ \\
- $d_z$ & $< 0.1$ & $< 0.2$ \\
- pfRelIso03 & $< 0.0588$ & $< 0.0571$ \\
+ lostHits & $<$ & 1 & 1 \\
+ $d_{xy}$ & $<$ &  $0.05$ & $0.1$ \\
+ $d_z$ & $<$ & $0.1$ & $0.2$ \\
+ pfRelIso03 & $<$ & $0.0588$ & $0.0571$ \\
 \hline
 \end{tabular}
 %}
@@ -3172,9 +3186,89 @@ This selection leads to efficiencies higher than 80\% for all the muon momenta a
 
 \subsection{Jet selection} \label{section:JetSel}
 
+Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typiclal distance parameter $R = 0.4$). 
+
+A selection is then applied on these jets in order to separate noise from real jets. In this analysis, this selection follows the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking, as shown in Tables~\ref{table:JetID2016} and~\ref{table:JetID2017}. The tight \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$.
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c|c|c } 
+ \hline
+ Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+\hline
+Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.98$ & - \\
+Neutral EM Fraction & $< 0.99$ & $< 0.99$ & $> 0.01$ & $< 0.90$ \\ 
+Number of Constituents & $> 1$ & $> 1$ & - & - \\
+Charged Hadron Fraction & $> 0$ & - & - & - \\
+Charged Multiplicity & $> 0$ & - & - & - \\
+Charged EM Fraction & $< 0.99$ & - & - & - \\
+Number of Neutral Particles	 & - & - & $> 2$ & $> 10$ \\
+\hline
+\end{tabular}
+%}
+\caption{JET/MET \ac{POG} tight \ac{WP} for 2016.}
+\label{table:JetID2016}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c|c|c } 
+ \hline
+ Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+\hline
+Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & - & $> 0.02$ \\
+Neutral EM Fraction & $< 0.90$ & $< 0.90$ & $> 0.02$ and $<0.99$ & $< 0.90$ \\
+Number of Constituents & $> 1$ & $> 1$ & - & - \\
+Charged Hadron Fraction & $> 0$ & - & - & - \\
+Charged Multiplicity & $> 0$ & $> 0$ & - & - \\
+Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
+\hline
+\end{tabular}
+%}
+\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018.}
+\label{table:JetID2017}
+\end{center}
+\end{table}
+
+A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}.
+
+The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The loose deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is considered a b-jet in this analysis if it passes the following cuts:
+
+\begin{multicols}{3}
+\begin{itemize}
+\item $p_T > 20$ GeV
+\item $|\eta| < 2.4$
+\item deepCSV $> 0.1241$ 
+\end{itemize}
+\end{multicols}
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c|c|c } 
+ \hline
+ Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+\hline
+Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.99$ & $> 0.02$ \\
+Neutral EM Fraction & $< 0.90$ & $< 0.90$ & - & $< 0.90$ \\
+Number of Constituents & $> 1$ & $> 1$ & - & - \\
+Charged Hadron Fraction & $> 0$ & - & - & - \\
+Charged Multiplicity & $> 0$ & - & - & - \\
+Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
+\hline
+\end{tabular}
+%}
+\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018, for jets having a $p_T > 50$ GeV.}
+\label{table:JetSelPU}
+\end{center}
+\end{table}
+
 \section{Signals regions} \label{section:SR}
 
-It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be ploted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
+It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be plotted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
 
 \section{Control regions} \label{section:CR}
 
@@ -3469,9 +3563,39 @@ All the data samples considered for this analysis are listed in Tables~\ref{tabl
 
 \section{Backgrounds samples}  \label{appendix:BkgSamples}
 
-\color{red} To be completed once the analysis actually performed \color{black}
-LO/NLO 
-Generator used
+All the background \ac{MC} samples considered for this analysis are listed in Table~\ref{table:MC}.
+
+%\begin{landscape}
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Process & Sample & Cross section [pb] \\
+\hline
+\multirow{1}{*}{\ac{DY}} & DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 18610 \\
+& DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 6189.38 \\
+\hline
+\multirow{1}{*}{TTTo2L2Nu} & TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 87.31 \\
+\multirow{1}{*}{Single top} & ST\_s-channel\_4f\_leptonDecays\_TuneCP5\_13TeV-madgraph-pythia8 & 3.36 \\
+& ST\_t-channel\_antitop\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 26.38 \\
+& ST\_t-channel\_top\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 44.33 \\
+& ST\_tW\_antitop\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+& ST\_tW\_top\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+\hline
+WWTo2L2Nu & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
+\multirow{1}{*}{Zg} & ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 131.3 \\ 
+\multirow{1}{*}{Wg} & WGToLNuG\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 405.271 \\
+\hline
+WZTo3LNu & WZTo3LNu\_mllmin01\_NNPDF31\_TuneCP5\_13TeV\_powheg\_pythia8 & 58.59 \\
+ \hline
+\end{tabular}
+}
+\caption{Main \ac{MC} simulations for the different background processes considered for this analysis and their respective cross section \color{red}To be updated!\color{black}.}
+\label{table:MC}
+\end{center}
+\end{table}
+%\end{landscape}
 
 \chapter{Neural network optimization} \label{appendix:Optimization}
 
@@ -4193,9 +4317,25 @@ CMS-PAS-LUM-17-001, 2018}
 "CMS Luminosity Measurements for the 2018 Data Taking Period",
 CMS-PAS-LUM-17-001, 2019}
 
+\bibitem{Prefire}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}{\ac{CMS} Twiki,
+"Reweighting recipe to emulate Level 1 ECAL prefiring"}
+
+\bibitem{ElePOG}
+\href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}{\ac{CMS} Twiki,
+"Electron and Photon Physics Object Offline Guide"}
+
 \bibitem{MuonPOG}
 \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2}{\ac{CMS} Twiki,
 "Baseline muon selections for Run-II", 2019}
+
+\bibitem{JETMETPOG}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/JetID}{\ac{CMS} Twiki,
+"Jet Identification"}
+
+\bibitem{BTagPOG}
+\href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/BTV13TeVDPDeepCSV}{\ac{CMS} Twiki,
+"Heavy flavor identification at CMS with deep neural networks"}
 
 %APPENDINX A
 
