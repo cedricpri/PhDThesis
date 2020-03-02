@@ -366,7 +366,7 @@ If the neutrinos are considered to be normal Dirac fermions in the sense the ant
 \begin{center}
 \includegraphics[width=8cm, height=6cm]{figs/SMFermions.png}
 \caption{Representation of the 12 fermions of the \ac{SM} \cite{SMFermions} along with the main force carriers and the Higgs boson, discovered in 2012 and completing the \ac{SM}.}
-\label{figure:SMFermions}e 
+\label{figure:SMFermions}
 \end{center}
 \end{figure}
 
@@ -1220,7 +1220,7 @@ This combination managed to exclude the production of scalar mediators up to 290
 
 
 
-\iffalse
+
 \chapter{The experimental setup} \label{chapter:Device}
 
 The data analyzed throughout this work is the result of the proton-proton collisions at a center of mass energy of 13 TeV provided by the \acf{LHC}. Is is therefore extremely important to describe this particle accelerator and to detail its main characteristics in order to understand better the origin of our data, as will be done in Section~\ref{section:LHC}. 
@@ -1729,9 +1729,9 @@ We will now study in a bit more details the reconstruction method applied in ord
 
 \section{\acf{PV} definition} \label{section:PVDef}
 
-Different kind of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}: the \textbf{\acf{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC}, the \textbf{primary vertex}, usually assumed to be the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and the \textbf{secondary vertices}, due to the eventual presence of long lived particles, decay chains or jets. 
+Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}: the \textbf{\acf{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC}, the \textbf{primary vertex}, usually assumed to be the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and the \textbf{secondary vertices}, due to the eventual presence of long lived particles, decay chains or jets. 
 
-The first task of the \ac{PF} algorithm is to identify all these vertices of the interaction. This is done by considering all the tracker tracks, by clustering them together and by performing fits to determine the likelihood these tracks originated from a common vertex. The reconstructed vertex with the largest total $p_T$ is then assumed to be the \ac{PV}, as it is considered to be the origin of the most interesting $pp$ collision from which many different tracks are emitted.
+The first task of the \ac{PF} algorithm is to identify all these vertices of the interaction. This is done by considering all the tracker tracks, by clustering them together and by performing fits to determine the likelihood these tracks originated from a common vertex. The reconstructed vertex with the largest $p_T^2$ summed over all the physics objects of the event is then assumed to be the \ac{PV}, as it is considered to be the origin of the most interesting $pp$ collision from which many different tracks are emitted.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1852,7 +1852,7 @@ This practically means that once a single quark is produced, it will start losin
 
 Several algorithms can be used to reconstruct the jets by linking the information coming from the tracker and the calorimeters, but the most used tool in \ac{CMS} is the so-called anti-$k_T$ algorithm, able to cluster all the charged and neutral hadrons along with the eventual non-isolated photons or lepton produced and merge them into a single jet \cite{JetReco}. Its main objective is to compute the energy and direction of the original quark as precisely as possible. This is actually the best algorithm developed so far to resolve jets, but the worst for studying jet substructure due to its clustering preference.
 
-To perform such a job, sequential clustering algorithm such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij}^2 = (\eta_i - \eta_j)^2 + (\phi_i + \phi_j)^2$, the distance between $i$ and $j$ in the ($\eta - \phi$) space, the $p_T^2$ of each particle and $R^2$, the algorithm radius parameters determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. 
+To perform such a job, sequential clustering algorithm such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij}^2 = (\eta_i - \eta_j)^2 + (\phi_i + \phi_j)^2$, the distance between $i$ and $j$ in the ($\eta - \phi$) space, the $p_T^2$ of each particle and $R$, the clustering algorithm radius parameters determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. This distance parameter defines a cone in which the momenta of all the particles is summed to get the momentum of the jet itself.
 
 \begin{equation}
 \label{eq:antikt}
@@ -1868,7 +1868,7 @@ The algorithm works by looking at all the $i, j$ combinations, comparing the dis
 \item If $d_{iB}$ is smaller, then $i$ is considered to be the final jet and is therefore removed from the list of jet candidates as well.
 \end{itemize}
 
-Several corrections are then usually applied to the jets constructed using this algorithm, in order to take into account several parameters, such as the non-linearity of the response of the calorimeter, the electronic noise, the \acf{PU} effects and the dependance of the reconstruction on the jet flavor and distance parameter $R$. This typically introduces a source of uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
+Several corrections are then usually applied to the jets constructed using this algorithm, in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \acf{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
 
 The efficiency of the \ac{PF} algorithm for jet identification and reconstruction has been checked using simulation, as shown in Figure~\ref{fig:PFSimu}. This study clearly shows that between 95 and 97\% of the energy of the \ac{PF} jet candidates can be reconstructed, compared to a 40-60\% reconstruction efficiency using only the calorimeters data, and that this algorithm also leads to a gain in resolution up to a factor 3, depending on the jet $p_T$.
 
@@ -2161,16 +2161,17 @@ Once all the different samples produced centrally up to the nanoAOD stage, anoth
 
 As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Section~\ref{appendix:DataSamples}.
+During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
 
 \section{Signal samples} \label{section:Signals}
 
-\color{red} To be completed once the files are actually available \color{black}
-Listed in Section~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC}signal samples have been produced centrally for this analysis, corresponding to the $t$+DM (along with its different channels of production) and to the $t \bar t$+DM signal. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 50 to 500 GeV. In this context, 17 different mass points have been produced for each mediator, as listed in Appendix~\ref{appendix:SignalSamples}.
+
+\color{red} To be updated once the $t+DM$ samples are actually available \color{black}
 
 \section{Backgrounds prediction} \label{section:Backgrounds}
 
-Several different \ac{SM} background processes have been considered for this analysis, all listed in Section~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
+Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
 
 \begin{itemize}
 \item The major background for the $t \bar t$+DM analysis, the \ac{SM} $t \bar t$, kinematically really close to the signal searched for (Section~\ref{subsection:ttbar}). 
@@ -2180,7 +2181,7 @@ Several different \ac{SM} background processes have been considered for this ana
 \item Finally, the non-prompt background is another important piece of this analysis mainly because of the particular data-driven method used to compute them (Section~\ref{subsection:Fakes}).
 \end{itemize}
 
-\color{red} Add percentage of each background once known \color{black}
+\color{red} Add percentage of each background in the SR once known \color{black}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2906,7 +2907,7 @@ The effect this correction has on the data/\ac{MC} agreement in a 2017 top enric
 Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}.
 
 \color{red} Section to be completed with plots showing the effect of the weights \color{black}
-\fi
+
 
 
 
@@ -3782,7 +3783,61 @@ All the data samples considered for this analysis are listed in Tables~\ref{tabl
 
 \section{Signal samples}  \label{appendix:SignalSamples}
 
-\color{red} To be completed once the files are actually available \color{black}
+The \ac{MC} signal samples have been produced centrally, considering different dark matter and mediators (scalar, pseudoscalar) masses, for both the $t$+DM and $t \bar t$+DM analyses. All the mass points considered along with their respective cross sections can be found in Tables~\ref{table:tDMsignals} ($t$+DM analysis) and~\ref{table:ttDMsignals}. The mass points generated are the same for 2016, 2017 and 2018.
+
+\color{red} To be updated once the tDM signals are actually available \color{black}
+
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c } 
+ \hline
+ Mass point & Cross-section [pb] \\
+\hline
+\textbf{Scalar mediators} & \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 7.136 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 1.686 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.5619 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.2526 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.1337 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.08323 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.05696 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.03561 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.02326 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.01614 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 1.687 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 1.691 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 1.709 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 1.728 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 1.747 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.02068 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.01038 \\
+ \hline
+\textbf{Pseudoscalar mediators} & \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 0.759 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 0.4889 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.3269 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.242 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.1707 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.1222 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.07111 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.03719 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.02489 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.01783 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 0.4881 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 0.4896 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 0.4893 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 0.4903 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 0.4931 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.04549 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.0183 \\
+ \hline
+\end{tabular}
+}
+\caption{Signal samples mass points considered for the $t \bar t$+DM signal used in this analysis.}
+\label{table:ttDMsignals}
+\end{center}
+\end{table}
 
 \section{Backgrounds samples}  \label{appendix:BkgSamples}
 
