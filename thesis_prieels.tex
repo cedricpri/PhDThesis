@@ -297,7 +297,7 @@ Of course, I would especially like to thank to my father Philippe, my mother Cha
 \setlength{\parskip}{8pt}
 \pagenumbering{arabic}
 %Introduction
-\iffalse
+
 \chapter{Introduction}
 
 The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -2192,7 +2192,57 @@ During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) 
 
 \section{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC}signal samples have been produced centrally for this analysis, corresponding to the $t$+DM (along with its different channels of production) and to the $t \bar t$+DM signal. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 50 to 500 GeV. In this context, 17 different mass points have been produced for each mediator, as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t$+DM (along with its different channels of production) and to the $t \bar t$+DM signal. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 50 to 500 GeV. In this context, 17 different mass points have been produced for each mediator, as listed in Appendix~\ref{appendix:SignalSamples}.
+
+The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalScalar} and~\ref{fig:signalPseudoscalar}, considering scalar and pseudoscalar mediators respectively. As expected from Table~\ref{table:ttDMsignals}, we can see on one hand first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself is not impacting in any way this spectrum.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[Dark matter mass fixed to 1 GeV]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/scalarMETmChi1Norm.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/scalarMETmChi1.png}
+\end{minipage} \hfill
+}
+\subfigure[Mediator mass fixed to 100 GeV]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/scalarMETmChiLargeNorm.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/scalarMETmChiLarge.png}
+\end{minipage} \hfill
+}
+\caption{\ac{PUPPI} \ac{MET} spectrum considering different \textbf{scalar} mediator (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
+\label{fig:signalScalar}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[Dark matter mass fixed to 1 GeV]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/pseudoscalarMETmChi1Norm.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/pseudoscalarMETmChi1.png}
+\end{minipage} \hfill
+}
+\subfigure[Mediator mass fixed to 100 GeV]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/pseudoscalarMETmChiLargeNorm.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/pseudoscalarMETmChiLarge.png}
+\end{minipage} \hfill
+}
+\caption{\ac{PUPPI} \ac{MET} spectrum considering different \textbf{pseudoscalar} mediator (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
+\label{fig:signalPseudoscalar}
+\end{figure}
 
 \color{red} To be updated once the $t+DM$ samples are actually available \color{black}
 
@@ -3619,7 +3669,7 @@ However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t 
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 \section{Future prospects}
-\fi
+
 
 
 
