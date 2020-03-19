@@ -165,7 +165,21 @@
 \newpage
 %
 \chapter*{\huge{Acknowledgments}}
+
+First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in the personal and professional point of view, and something I will definitely benefit from in the future.
+
+I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. I cannot count the number of bugs and issues you helped me solve, so thank you for keeping your door open at all times anyway, and for spending so much time correcting the talks I gave over the years.
+
+Pablo Mart\'{i}nez, you have been a great co-director, this work would probably not have been possible without your help and dedication to this analysis. You also became a friend and I will never be able to thank you enough for your help, especially in this last year which has been quite challenging for me. 
+
+I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, and Celso, mostly for all the administrative relative issues I faced. This work would not have been possible either without the help of many people involved in this particular analysis, such as Deborah, Dominic, . Thank you to all the persons involved in the development of the Latino framework, which quickly became a great tool to work with. UNIOVI
+
+Thank you also to my PhD coworkers, Pedro, Nicol\`{o}, Celia, Andrea and Pablo for making the students office a better place to work in. I wish you all the best in the future. 
+
+Of course, I would especially like to thank to my father Philippe, my mother Chantal and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this PhD in the first place and you can be sure I don't regret this decision. You brought me more than you can imagine and I will never forget all these great moments we spent during the last 7 years, and the many more still to come.
+
 \newpage
+
 %
 \chapter*{\huge{Acronyms used}}
 \begin{multicols}{2}
@@ -212,6 +226,7 @@
 \acro{HO}[HO]{Hadron Outer}
 \acro{IACT}[IACT]{Imaging Atmospheric Cherenkov Telescopes}
 \acro{IAXO}[IAXO]{International AXion Observatory}
+\acro{IFCA}[IFCA]{Instituo de F\'{i}sica de Cantabria}
 \acro{ISR}[ISR]{Initial State Radiation}
 \acro{KF}[KF]{Kalman Filter}
 \acro{L1}[L1]{Level-1 Trigger}
@@ -282,7 +297,7 @@
 \setlength{\parskip}{8pt}
 \pagenumbering{arabic}
 %Introduction
-
+\iffalse
 \chapter{Introduction}
 
 The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -905,15 +920,15 @@ The \acf{LHC}, colliding protons at a center of mass energy of 13 TeV, is actual
 Several major categories of \ac{DM} searches exist at the \ac{LHC}, performed mainly by the \ac{CMS} and \ac{ATLAS} collaborations, depending on the strategy applied for such searches:
 
 \begin{itemize}
-\item First of all are the so-called \textbf{mono-X searches}, where X stands for a detectable \ac{SM} particle used to trigger the event while the \ac{DM} mediator usually decays into a pair of particles escaping the detector, leaving behind some \ac{MET}, a key variable to all these searches, as shown in Figure~\ref{fig:MonoX}. Depending on the nature of the X particle, several searches can be performed: we can for example mention the mono-$\gamma$ \cite{MonoGammaAtlas, MonoGammaCMS} or mono-jet \cite{MonoJetCMS, MonoJetCMS2} 13 TeV searches performed by the \ac{ATLAS} and \ac{CMS} collaborations.
+\item First of all are the so-called \textbf{mono-X searches}, where X stands for a detectable \ac{SM} particle used to trigger the event while the \ac{DM} mediator usually decays into a pair of particles escaping the detector, leaving behind some \ac{MET}, a key variable to all these searches that will be described in Section~\ref{section:RecoMET}. Depending on the nature of the X particle, several searches can be performed: we can for example mention the mono-$\gamma$ \cite{MonoGammaAtlas, MonoGammaCMS} or mono-jet \cite{MonoJetCMS, MonoJetCMS2} 13 TeV searches performed by the \ac{ATLAS} and \ac{CMS} collaborations.
 
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=6.5cm, height=5.5cm]{figs/METSchema.png}
-\caption{Schematic representation of a typical mono-X event, with an \ac{ISR} jet in this case going back-to-back with some \ac{MET} \cite{ColliderSearches}.}
-\label{fig:MonoX}
-\end{center}
-\end{figure}
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=6.5cm, height=5.5cm]{figs/METSchema.png}
+%\caption{Schematic representation of a typical mono-X event, with an \ac{ISR} jet in this case going back-to-back with some \ac{MET} \cite{ColliderSearches}.}
+%\label{fig:MonoX}
+%\end{center}
+%\end{figure}
 
 Additionally, if the \ac{DM} mass is high enough, a coupling to the Higgs boson is also possible, or an eventual decay of the Higgs itself to a couple of \ac{DM} particles $H \rightarrow \chi \bar \chi$ is kinematically not impossible. This channel, known as the mono-Higgs, is sensitive to all the decays of the Higgs, even though the searches excluding most of the phase spaces are performed using the $H \rightarrow b \bar b$ and $H \rightarrow \gamma \gamma$ decays \cite{MonoHiggsAtlas, MonoHiggsCMS}. 
 
@@ -3604,7 +3619,7 @@ However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t 
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 \section{Future prospects}
-
+\fi
 
 
 
