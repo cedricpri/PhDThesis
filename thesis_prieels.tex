@@ -366,7 +366,7 @@ Finally, a statistical interpretation of our data will be performed and differen
 
 
 
-
+\iffalse
 \chapter{The dark matter case}\label{chapter:Case}
 
 In this chapter, some general explanations about the \ac{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \ac{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} will be presented in Section~\ref{section:DMCandidates}. The main ways we have to search (direct, indirect and collider searches) for this new exotic physics along with the main experiments dedicated to such searches will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion limits published over the course of the previous years by the \ac{ATLAS} and \ac{CMS} collaborations will be shown in Section~\ref{section:PreviousResults}.
@@ -1208,7 +1208,7 @@ This combination managed to exclude the production of scalar mediators up to 290
 \label{figure:Combination2019}
 \end{center}
 \end{figure}
-
+\fi
 
 
 
@@ -1398,9 +1398,9 @@ The \ac{CMS} name partly comes from its central piece, a huge superconducting so
 
 Finally, on the outside of the detector can be found the complete muon system and particularly performing in \ac{CMS}. This subdetector is currently made out of three main sub-systems (the \acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
 
-\subsubsection*{Coordinate system}
+\subsubsection*{Coordinates system}
 
-Before starting with the description of all these subdetectors, it is important to detail the coordinate system typically used within the \ac{CMS} collaboration. As a convention, is has been decided to use a right-handed Cartesian coordinate system with the origin defined as the \acf{PV}, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
+Before starting with the description of all these subdetectors, it is important to detail the coordinates system typically used within the \ac{CMS} collaboration. As a convention, is has been decided to use a right-handed Cartesian coordinate system with the origin defined as the \acf{PV}, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1619,7 +1619,7 @@ Finally, the different features of the three muon sub-systems used by the \ac{CM
  Average efficiency (13 TeV) & 97.1\% & $97.4$\% & \makecell{\vspace{-10pt} \\ 94.2\% (barrel) \\ 96.4\% (endcaps)} \\ 
  \hline
 \end{tabular}
-\caption{Comparison of the three main sub-systems currently used by \ac{CMS} in order to identify muons \cite{MuonReco, MuonSystemsEff}.}
+\caption{Comparison of the three main sub-systems currently used by \ac{CMS} in order to identify muons \cite{MuonSystemsEff}.}
 \label{table:CMSMuonsSystems}
 \end{center}
 \end{table}
@@ -1723,24 +1723,24 @@ from online event processing in the \ac{HLT}, the transfer of the data from loca
 
 As we just saw, the \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particle with this detector into electronic signals that can be measured and stored. However, this signal collected is made out of raw information coming from different kind of subsystems and an algorithmic strategy then needs to be put in place in order to read all these separate signals and to combine them to extract some useful data, such as the number of particles produced by the collision along with their energy, charge and direction. Producing this kind of data is essential for all the offline analyses which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
 
-The algorithm able to combine this raw data and to produce useful objects and variables is the so-called \acf{PF} algorithm \cite{PF}, which will be described in Section~\ref{section:PF}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as the electrons and muons (Section~\ref{section:RecoLep}), the jets (Section~\ref{section:RecoJet}), the \acf{MET} (Section~\ref{section:RecoMET}) and the top reconstruction (Section~\ref{section:RecoTop}) of the different $pp$ collisions recorded.
+The algorithm able to combine this raw data and to produce useful objects and variables is the so-called \acf{PF} algorithm \cite{PF}, which will be first of all described in Section~\ref{section:PF}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as the electrons and muons (Section~\ref{section:RecoLep}), the jets (Section~\ref{section:RecoJet}), the \ac{MET} (Section~\ref{section:RecoMET}) and the top reconstruction (Section~\ref{section:RecoTop}) of the different $pp$ collisions recorded.
 
 \section{\acf{PF} algorithm} \label{section:PF}
 
-The \acf{PF} is an algorithm aiming to combine in the best way possible all the information coming from the different parts of the \ac{CMS} detector in order to identify and reconstruct the hundreds of new particles produced by each $pp$ collision provided by the \ac{LHC}. This reconstruction can be divided into two main steps: first of all, the data coming from the different subsystems of the detector is read in order to identify and measure the properties of some basic stable objects, such as leptons, photos and hadrons. Then, more complex calculations are performed to identify eventual unstable particles, jets from the hadronization of quarks and to compute complex variables such as the leptons isolation and the \acf{MET}.
+The \ac{PF} is an algorithm aiming to combine in the best way possible all the information coming from the different parts of the \ac{CMS} detector (mostly, tracks and clusters of energy) in order to identify and reconstruct the hundreds of new particles produced by each $pp$ collision provided by the \ac{LHC}. This reconstruction can be divided into two main steps: first of all, the data coming from the different subsystems of the detector is read in order to identify and measure the properties of some basic stable objects, such as leptons, photos and hadrons. Then, more complex calculations are performed to identify eventual unstable particles, jets from the hadronization of quarks and to compute complex variables such as the leptons isolation and the \ac{MET}.
 
-The most basic elements used by this algorithm for the reconstruction of high-level physics objects are the tracks of charged particles, the clusters of energy left in the two calorimeters and the hits recorded in the muon chambers. For this algorithm to be as efficient as possible, the detector has been carefully designed: a magnetic field as large as possible and a small calorimeter granularity are indeed crucial in order to separate efficiently charged and neutral particles, and the tracker was designed to be as efficient and small as possible to have the smallest material budget possible in front of the calorimeters.
+The most basic elements used by this algorithm for the reconstruction of high-level physics objects are the tracks of charged particles, the clusters of energy left in the two calorimeters and the hits recorded in the muon chambers. For this algorithm to be as efficient as possible, the detector has been carefully designed, as described in Chapter~\ref{chapter:Device}: a magnetic field as large as possible and a small calorimeter granularity are indeed crucial in order to separate efficiently charged and neutral particles, and the tracker was designed to be as efficient and small as possible to have the smallest material budget possible in front of the calorimeters. The muon system as been carefully designed as well and, in general, the whole detector is obviously as hermetic as possible.
 
 The way the different particles produced in each collision are identified is quite easy to summarize and is represented in Figure~\ref{fig:CMSIdentify}. Basically, the different kind of particles produced are going to interact with different parts of the detector and combining the information given by the tracker and the rest of the subsystems then allows to unequivocally identify each particle. This is usually done in a specific order in order to be as efficient as possible:
 
 \begin{enumerate}
-\item First of all, the most energetic \textbf{\acf{PV}} is identified by taking into account the \acf{PU} and by assigning the different tracks to the different $pp$ collisions happening during a single bunch-crossing. 
+\item First of all, the most energetic \textbf{\acf{PV}} is identified by taking into account the \ac{PU} and by assigning the different tracks to the different $pp$ collisions happening during a single bunch-crossing. 
 
 All the particles originating from less energetic \ac{PV} or from a secondary vertex of interaction are typically ignored and the corresponding hits in the tracker left by such particles can therefore be removed, leaving less hits available for the clustering algorithm later on, allowing for a more efficient reconstruction of the following objects.
-\item Then, \textbf{muons} are the easiest particles to identify since they are at first order the only particles leaving many hits in the muon chambers placed on the outside of the detector. Each muon identified is associated to its track in the tracker, where all the hits matching a muon can therefore be removed.
-\item \textbf{Electrons} do have a charge, so they are visible by the tracker and by the \ac{ECAL}, where they are going to produce an electromagnetic shower. Identifying electrons is a bit more challening than muons because of their associated bremsstrahlung emission of photons that need to be attached to the original electrons to avoid any double counting. All the tracker hits corresponding to electrons are also removed after identification.
-\item \textbf{Charged hadrons} also leave hits in the tracker and some energy deposits in the \ac{ECAL}, but mostly in the \ac{HCAL}, so they are easy to identify as well as a third step, using the latest hits available in the tracker.
-\item \textbf{Photons} are on the other hand neutral particles, so they do not lave any hits in the tracker. They then appear as some energy deposits in the \ac{ECAL} for which no corresponding tracker track can be associated.
+\item Then, \textbf{muons} are the easiest particles to identify since they are at first order the only particles leaving many hits in the muon chambers placed on the outside of the detector. Each muon identified is associated to its track in the tracker, where all the hits matching a muon can therefore be removed to simplify the following reconstruction steps.
+\item \textbf{Electrons} do have a charge, so they are visible by the tracker and by the \ac{ECAL}, where they are going to produce an electromagnetic shower. Identifying electrons is a bit more challenging than muons because of their associated bremsstrahlung emission of photons that need to be attached to the original electrons to avoid any double counting. All the tracker hits corresponding to electrons are also removed after identification.
+\item \textbf{Charged hadrons} also leave hits in the tracker and some energy deposits in the \ac{ECAL}, but mostly in the \ac{HCAL}, so they are easy to identify as well as a fourth step, using the last hits available in the tracker.
+\item \textbf{Photons} are on the other hand neutral particles, so they do not leave any hits in the tracker. They then appear as some energy deposits in the \ac{ECAL} for which no corresponding tracker track can be associated.
 \item Finally, \textbf{neutral hadrons} can be identified as particles leaving some energy mostly in the \ac{HCAL} for which no corresponding tracker track has been found as well.
 \end{enumerate}
 
@@ -1756,13 +1756,13 @@ We will now study in a bit more details the reconstruction method applied in ord
 
 \section{\acf{PV} definition} \label{section:PVDef}
 
-Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}: the \textbf{\acf{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC}, the \textbf{primary vertex}, usually assumed to be the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and the \textbf{secondary vertices}, due to the eventual presence of long lived particles, decay chains or jets. 
+Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}: the \textbf{\ac{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC}, the \textbf{\ac{PV}}, usually assumed to be the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and the \textbf{secondary vertices}, due to the eventual presence of long lived particles, decay chains or jets. 
 
-The first task of the \ac{PF} algorithm is to identify all these vertices of the interaction. This is done by considering all the tracker tracks, by clustering them together and by performing fits to determine the likelihood these tracks originated from a common vertex. The reconstructed vertex with the largest $p_T^2$ summed over all the physics objects of the event is then assumed to be the \ac{PV}, as it is considered to be the origin of the most interesting $pp$ collision from which many different tracks are emitted.
+The first task of the \ac{PF} algorithm is to identify all these vertices. This is done by consiering all the tracker hits observed, by clustering them together and by performing fits to determine the likelihood these tracks originated from a common vertex. The reconstructed vertex with the largest $p_T^2$ summed over all the physics objects of the event is then assumed to be the \ac{PV}, as it is considered to be the origin of the most interesting $pp$ collision from which many different tracks are emitted.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=7.5cm, height=4.2cm]{figs/LHCPU.png}
+\includegraphics[width=7.5cm, height=4cm]{figs/LHCPU.png}
 \caption{Different kind of vertices typically observed in a $pp$ collision in the \ac{LHC}.}
 \label{fig:LHCPU}
 \end{center}
@@ -1770,54 +1770,56 @@ The first task of the \ac{PF} algorithm is to identify all these vertices of the
 
 \section{Leptons reconstruction} \label{section:RecoLep}
 
-Different kind of leptons are typically produced by a $pp$ collision. The muons and the electrons can be quite easily identified, mainly because their lifetime and velocity is high enough, meaning that they are not expected to decay inside the \ac{CMS} detector, so they can be directly identified. Taus on the other hand are a bit trickier to deal with because they usually decay inside of the beam pipe itself, $\sim 35\%$ of the time to electrons and muons and $\sim 65\%$ of the time to hadrons. However, since our analysis does not consider taus directly but only the leptons originating from the their decays, the details of their reconstruction will not be explained in this section.
+Different kind of leptons are typically produced by a $pp$ collision. The muons and the electrons can be quite easily identified, mainly because their lifetime and velocity is high enough, meaning that they are not expected to decay inside the \ac{CMS} detector, so they can be directly identified. Taus on the other hand are a bit trickier to deal with because they usually decay inside of the beam pipe itself, $\sim 35\%$ of the time to electrons and muons and $\sim 65\%$ of the time to hadrons. However, since our analysis does not consider taus directly but only the leptons originating from their decays, the details of their reconstruction will not be explained in this section.
 
 \subsection{Muons} \label{subsection:Muons}
 
-Muons are the first leptons to be reconstructed by the \ac{PF} algorithm since, at first order, they are the only particles expected to reach the muon chambers, resulting in their easy identification. 
+Muons are the first leptons to be reconstructed by the \ac{PF} algorithm since, by design and at first order, they are the only particles expected to reach the muon chambers, resulting in their easy identification. 
 
-The typical signature of a muon consists in several hits in the silicon tracker forming a track since muons do have an electric charge, associated with several hits in the muon chambers, electronic signals coming from the wires and strips of these chambers due to the gas ionization induced by the passage of these charged particles. Muons only deposit a negligible amount of energy within the two calorimeters since their interaction cross section is quite low for their full range of energies, going from a few hundreds MeV up to a few TeV.
+The typical signature of a muon consists in several hits in the silicon tracker forming a track associated with several hits in the muon chambers, electronic signals coming from the wires and strips of these chambers due to the gas ionization induced by the passage of these charged particles. Muons only deposit a negligible amount of energy within the two calorimeters since their interaction cross section is quite low for their full range of energies, going from a few hundreds MeV up to a few TeV.
 
-The data coming from the different subsystems of \ac{CMS} are then combined and fed into three different \ac{PF} algorithms, able to reconstruct different kind of muons.
+The data coming from the different subsystems of \ac{CMS} are then combined and fed into three different \ac{PF} algorithms, able to reconstruct different kind of muons \cite{MuonSystemsEff}.
 
 \subsubsection*{Standalone muons}
-These are muons reconstructed using only the hits observed in the muon system without trying to relate this data to the tracker hits. Basically, the \ac{PF} algorithm looks in this case at the eventual hits left in the \acp{DT}, \acp{CSC} and \acp{RPC} and tries to reconstruct a vector of trajectory in each case using a \ac{KF} filter \cite{KF}. These segments are then combined in the best statistical way possible in order to form a candidate track for each muon of the event, by extrapolating the innermost vectors are propagated to the layer surface of the next chamber and by comparing it with the local track segment. The trajectory parameters are then computed and the process continues until reaching the outermost chamber, before being reversed in order to estimate the innermost track parameters as well.
+The standalone muons are muons reconstructed using only the hits observed in the muon system without trying to relate this data to the tracker hits. Basically, the \ac{PF} algorithm looks in this case at the eventual hits left in the \acp{DT}, \acp{CSC} and \acp{RPC} and tries to reconstruct a vector of trajectory in each case using a \ac{KF} filter \cite{KF}. These segments are then combined in the best statistical way possible in order to form a candidate track for each muon of the event, by extrapolating the innermost vectors to the layer surface of the next chamber and by comparing it with the local track segment. The trajectory parameters are then computed and the process continues until reaching the outermost chamber, before being performed in the resverse order to estimate the innermost track parameters as well.
 
-To limit the possibility of misidentification due to showering of cosmic rays, the tracks need to pass some quality criteria in order to be considered valid: for example, at least two hits need to be measured for the fit to be performed, one of them coming from either the \acp{DT} or \acp{CSC}, in order to remove fake segments contamination due to combinatories. Additional constraints by checking the extrapolation of the trajectory to the point of closest approach to the beam line also allow to reduce this contamination.
+To limit the possibility of misidentification due to showering of cosmic rays, the tracks need to pass some quality criteria in order to be considered valid: for example, at least two hits need to be measured for the fit to be performed, one of them coming from either the \acp{DT} or \acp{CSC}, in order to remove fake segments contamination due to combinatories. Additional constraints by for example checking the extrapolation of the trajectory to the point of closest approach to the beam line also allow to reduce this contamination.
 
-Candidates reconstructed as standalone muons typically have a worse momentum reconstruction and are more sensitive to cosmic muons contamination.  
+In any case, candidates reconstructed as standalone muons typically have a worse momentum reconstruction and are more sensitive to cosmic muons contamination.  
 
 \subsubsection*{Tracker muons}
-The algorithm able to reconstruct such muons on the other hand is able to propagate tracks identified in the inner silicon tracker (having a momentum $p > 2.5$ GeV and $p_T > 0.5$ GeV) to the muon system itself in order to try and find corresponding segments in the different muon chambers (these tracks are therefore said to be built \textit{inside-out}). 
+The algorithm able to reconstruct such muons on the other hand is able to propagate tracks identified in the inner silicon tracker (having a momentum $p > 2.5$ GeV and $p_T > 0.5$ GeV) to the muon system itself in order to try and find corresponding segments in the different muon chambers (these tracks are therefore said to be built \textit{inside-out}). An extrapolated track and a segment are only matched if the difference between their positions in the $x$ coordinate is smaller than 3cm or if the pull, the ratio of this distance to its uncertainty, is smaller than 4.
 
 These muons are particularly efficient for less instrumented regions of the detector and for the low $p_T$ end of the energy spectrum but they are also quite contaminated with fake muons tracks, since a single hit in any of the muon chambers is enough for the candidate to be considered a valid tracker muon, even though hadron shower remnants can for example quite easily reach the innermost muon station. The momentum assigned to such muons is the same as the one measured by the silicon tracker track itself.
 
 \subsubsection*{Global muons}
-Finally, these muons are built \textit{outside-in} since they are obtained matching standalone muon tracks with independently reconstructed tracks coming from the tracker itself (of course, in order to avoid any double counting, global muons and tracker muons that share the same tracker track are actually merged into a single candidate). 
+Finally, these muons are built \textit{outside-in} since they are obtained by matching standalone muon tracks with independently reconstructed tracks coming from the tracker itself (of course, in order to avoid any double counting, global muons and tracker muons that share the same tracker track are actually merged into a single candidate). 
 
 This category of muons presents the advantage of being less sensitive to the muon misidentification rate than tracker muons since it uses the information from more than one muon chamber. The $p_T$ measurement in this case is also improved (especially at high $p_T$, $> 200$ GeV) by exploiting the information from both the inner tracker and the muon system, while at low momentum, the best momentum resolution for muons is obtained from the inner silicon tracker directly.
 
-Using this strategy, about 99\% of the muons produced within the geometrical acceptance of the muon system are reconstructed either as global or tracker muons \cite{MuonReco}, as seen in Figure~\ref{fig:MuonEff}.
+Using this strategy, about 99\% of the muons produced within the geometrical acceptance of the muon system are reconstructed either as global or tracker muons, as seen in Figure~\ref{fig:MuonEff}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=13cm, height=6.5cm]{figs/MuonEff.png}
+\includegraphics[width=13cm, height=6cm]{figs/MuonEff.png}
 \caption{Muon $p_T$ resolution obtained in simulation in the barrel (on the left) and endcap (on the right) for different kind of reconstructed muons \cite{Quarkonium}.}
 \label{fig:MuonEff}
 \end{center}
 \end{figure}
 
-Once reconstructed, candidates are required to pass some selection criteria and are then fed to the actual \ac{PF} algorithm itself to start the global reconstruction of the event. This selection consists mainly in applying identification and isolation (evaluated relative to its $p_T$ by summing up the energy in geometrical cones of radius $\Delta R = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2}$ surrounding the muon, as shown in Figure~\ref{fig:IsoCone}) criteria in order to enhance the purity of the reconstructed muons by rejecting muons coming from W+jets and QCD processes. 
+Once reconstructed, candidates are required to pass some selection criteria and are then fed to the actual \ac{PF} algorithm itself to start the global reconstruction of the event. This selection consists mainly in applying identification and isolation (evaluated relative to its $p_T$ by summing up the energy in geometrical cones of radius $\Delta R = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2}$ surrounding the muon in the ($\eta, \phi$) plane, as shown in Figure~\ref{fig:IsoCone}) criteria in order to enhance the purity of the reconstructed prompt muons (for example. coming from the decay of a W boson) by rejecting muons coming from the decay of heavy flavour quarks, typically surrounded by a large amout of hadronic activity. The calculation of the isolation is typically performed considering only the \ac{PV} since higher levels of \ac{PU} are expected to bias this measurement by increasing the hadronic activity.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=7cm, height=7cm]{figs/IsoCone.png}
-\caption{Lepton isolation cone typically used to reduce the background levels from \ac{SM} processes.}
+\includegraphics[width=7cm, height=6.5cm]{figs/IsoCone.png}
+\caption{Lepton isolation cone typically used to enhance the prompt leptons purity.}
 \label{fig:IsoCone}
 \end{center}
 \end{figure}
 
-Different \acfp{WP} can then be defined for the offline analyses, from loose to tight, in order to reject more or less contamination from misidentified leptons, keeping in mind that a tighter selection will also have an impact on the efficiency of the selection. The actual selection applied to the global muons used in this particular analysis will be detailed in Chapter~\ref{chapter:Selection}.
+Different identification \acfp{WP} can then be defined for the offline analyses, from veto to tight, in order to reject more or less contamination from misidentified leptons, keeping in mind that a tighter selection will also have an impact on the efficiency of the selection. The loose and tight \ac{WP} have then been defined in order to respectively achieve 95\% and 98\% efficiencies. These efficiencies are tunes using simulated $Z \rightarrow \mu^+ \mu^-$ events with a $p_T > 20$ GeV, while the efficiency to reject muons in jets is done using simulated QCD and W+jets processes \cite{MuonSystemsEff}.
+
+Our particular muon definition is based on the tight \ac{WP} provided centrally by the muon \ac{POG}, but has been tweaked based on the requirements of our group and will be detailed in Chapter~\ref{chapter:Selection}.
 
 \subsection{Electrons} \label{subsection:Electrons}
 
@@ -1849,7 +1851,7 @@ Finally, once the hits are collected, a \ac{GSF} fit is performed to estimate th
 
 \item The final step consists in identifying the clusters left in the \ac{ECAL} by the photons emitted by extrapolation of the \ac{GSF} track and in \textbf{merging this \ac{GSF} track and the \ac{ECAL} \acp{SC}} previously built. This step is also designed to preserve the highest efficiency possible while keeping the misidentification probability low and ambiguities related to single electron seeds which can often lead to several reconstructed tracks are also resolved at this stage.
 
-Finally, a loose preselection is applied to the electron candidates in order to reject fake electrons and the variables related to the energy and geometrical matching between the \ac{GSF} track and the \ac{ECAL} cluster(s) are combined into a \acf{MVA} estimator allowing to define several electron \acf{WP} as well.
+Finally, a loose preselection is applied to the electron candidates in order to reject fake electrons and the variables related to the energy and geometrical matching between the \ac{GSF} track and the \ac{ECAL} cluster(s) are combined into a \acf{MVA} estimator allowing to define several electron \acp{WP} as well.
 \end{enumerate}
 
 This complete electron workflow explained here in a simplified way can be summarized in Figure~\ref{fig:EleWorkflow}.
@@ -1877,9 +1879,9 @@ This practically means that once a single quark is produced, it will start losin
 \end{center}
 \end{figure}
 
-Several algorithms can be used to reconstruct the jets by linking the information coming from the tracker and the calorimeters, but the most used tool in \ac{CMS} is the so-called anti-$k_T$ algorithm, able to cluster all the charged and neutral hadrons along with the eventual non-isolated photons or lepton produced and merge them into a single jet \cite{JetReco}. Its main objective is to compute the energy and direction of the original quark as precisely as possible. This is actually the best algorithm developed so far to resolve jets, but the worst for studying jet substructure due to its clustering preference.
+Several algorithms can be used to reconstruct the jets by linking the information coming from the tracker and the calorimeters, but the most used tool in \ac{CMS} is the so-called anti-$k_T$ algorithm, able to cluster all the charged and neutral hadrons along with the eventual non-isolated photons or lepton produced and merge them into a single jet \cite{JetReco}. Its main objective is to compute the energy and direction of the original quark as precisely as possible. This is actually the best algorithm developed so far to resolve jets, but the worst for studying jet substructure due to its clustering preference ; in this case, other algorithms can be applied.
 
-To perform such a job, sequential clustering algorithm such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij}^2 = (\eta_i - \eta_j)^2 + (\phi_i + \phi_j)^2$, the distance between $i$ and $j$ in the ($\eta - \phi$) space, the $p_T^2$ of each particle and $R$, the clustering algorithm radius parameters determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. This distance parameter defines a cone in which the momenta of all the particles is summed to get the momentum of the jet itself.
+To perform such a job, sequential clustering algorithms such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij}^2 = (\eta_i - \eta_j)^2 + (\phi_i + \phi_j)^2$, the distance between $i$ and $j$ in the ($\eta, \phi$) space, the $p_T^2$ of each particle and $R$, the clustering algorithm radius parameters determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. This distance parameter defines a cone in which the momenta of all the particles is summed to get the momentum of the jet itself.
 
 \begin{equation}
 \label{eq:antikt}
@@ -1891,11 +1893,11 @@ d_{iB} = \frac{1}{p_{T, i}^2}
 
 The algorithm works by looking at all the $i, j$ combinations, comparing the distances $d_{ij}$ and $d_{iB}$ until only jets are present in the event: 
 \begin{itemize}
-\item If $d_{ij}$ is smaller, then $i$ and $j$ are combined into a single particle $(ij)$ by summing their 4-vectors and both are removed from the list of particles to be clustered.
-\item If $d_{iB}$ is smaller, then $i$ is considered to be the final jet and is therefore removed from the list of jet candidates as well.
+\item If $d_{ij}$ is smaller than $d_{iB}$, then $i$ and $j$ are combined into a single particle $(ij)$ by summing their 4-vectors and both are removed from the list of particles to be clustered.
+\item If $d_{iB}$ is smaller than $d_{ij}$, then $i$ is considered to be the final jet and is therefore removed from the list of jet candidates as well.
 \end{itemize}
 
-Several corrections are then usually applied to the jets constructed using this algorithm, in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \acf{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
+Several corrections are then usually applied to the jets constructed using this algorithm in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \ac{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of systematic uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
 
 The efficiency of the \ac{PF} algorithm for jet identification and reconstruction has been checked using simulation, as shown in Figure~\ref{fig:PFSimu}. This study clearly shows that between 95 and 97\% of the energy of the \ac{PF} jet candidates can be reconstructed, compared to a 40-60\% reconstruction efficiency using only the calorimeters data, and that this algorithm also leads to a gain in resolution up to a factor 3, depending on the jet $p_T$.
 
@@ -1911,7 +1913,7 @@ The efficiency of the \ac{PF} algorithm for jet identification and reconstructio
 
 Jets coming from bottom quarks are usually quite interesting to study, especially in this analysis which relies heavily on the number of b-jets produced to define the control and signal regions, as will be discussed in Chapter~\ref{chapter:Selection}. 
 
-This specific kind of jets can be distinguished from other jets because of the relatively long lifetime of the bottom quark ($\tau \sim 1.5$ ps) that produces in the detector a secondary vertex displaced by a few millimeters with respect to the \ac{PV}, as shown in Figure~\ref{fig:CMSBJets}; and this gives a perfect way to discriminate jets coming from light quarks from b-jets. Another consequence of the large mass of the bottom quark is that a large number of particles is typically present inside this particular kind of jets and that the decay of the bottom quark even leads to the apparition of soft leptons in the decay chain in around 20\% of the cases.
+This specific kind of jets can be distinguished from other jets because of the relatively long lifetime of the bottom quark ($\tau \sim 1.5$ps) that produces in the detector a secondary vertex displaced by a few millimeters with respect to the \ac{PV}, as shown in Figure~\ref{fig:CMSBJets} ; and this gives a perfect way to discriminate b-jets and jets coming from light quarks. Another consequence of the large mass of the bottom quark is that a large number of particles is typically present inside this particular kind of jets and that the decay of the bottom quark even leads to the apparition of soft leptons in the decay chain in around 20\% of the cases.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1933,7 +1935,7 @@ In this analysis, the typical deep \ac{CSV} algorithm able to combine the inform
 \end{center}
 \end{figure}
 
-Different \acfp{WP} are then made available for all the offline analyses in order to tweak the combo b-jet identification efficiency/misidentification rate. The loose, medium and tight \acp{WP} have been developed in such a way to limit this misidentification rate of a light jet as a b-jet to 10\%, 1\% and 0.1\% respectively.
+Different \acp{WP} are then also made available for all the offline analyses in order to tweak the combo b-jet identification efficiency/misidentification rate. The loose, medium and tight b-jets \acp{WP} have been developed in such a way to limit this misidentification rate of a light jet as a b-jet to 10\%, 1\% and 0.1\% respectively.
 
 \section{\acf{MET}} \label{section:RecoMET}
 
@@ -1942,8 +1944,8 @@ Since the $pp$ collisions happen mostly head-on, we know that the initial total 
 However, this statement is not totally true since we are aware of several effects that could induce an imbalance in this transverse momentum, as shown in Figure~\ref{fig:MET}:
 
 \begin{itemize}
-\item Even though the detector has been carefully designed, some particles could be created outside of the acceptance of the detector and therefore escape the detection (a particle can for example be created with such a boost that it could be emitted back to the beam pipe itself, making it impossible to detect it).
-\item Because of their extremely low interaction cross-section, \ac{SM} neutrinos are expected to escape the detector with some energy staying completely undetected.
+\item Even though the \ac{CMS} detector has been carefully designed, some particles could be created outside of its acceptance and therefore escape the detection (a particle can for example be created with such a boost that it could be emitted back to the beam pipe itself, making it impossible to detect it).
+\item Because of their extremely low interaction cross-section, \ac{SM} neutrinos are expected to escape the detector with some energy while staying completely undetected.
 \item The finite momentum resolution of the detector can also lead to some inaccuracies in the measurement of the transverse momentum of all the particles created, leading to an instrumental \ac{MET} in some cases.
 \item Finally, the eventual exotic weakly interacting particles produced, such as \acf{DM}, is typically expected to leave some \ac{MET} in the detector as well.
 \end{itemize}
@@ -1965,11 +1967,11 @@ The \acf{MET} variable, defined in Equation~\ref{eq:MET} as the negative sum of 
 
 Different algorithms can be used in order to reconstruct this variable, the most famous being \cite{METReco}:
 \begin{itemize}
-\item The \textbf{particle flow \ac{MET}} (PFMET), including all the information of the detector (as opposed to the \textbf{calorimeter} or \textbf{tracker \ac{MET}}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses today, because of its simple, robust, yet very performant estimate of the \ac{MET} spectrum.
-\item The \textbf{\ac{PUPPI} \ac{MET}}, actually used in this analysis, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information.
+\item The \textbf{particle flow \ac{MET}} (PFMET), including all the information of the detector (as opposed to the calorimeter or tracker \ac{MET}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses today, because of its simple, robust, yet very performant estimate of the \ac{MET} spectrum.
+\item The \textbf{\ac{PUPPI} \ac{MET}}, actually used in this analysis, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
-Several corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector, because of several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+Several corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1981,9 +1983,11 @@ Several corrections also need to be applied to this spectrum to filter anomalous
 
 \section{Top reconstruction} \label{section:RecoTop}
 
-Although not formerly a part of the \ac{PF} algorithm and done off-line, the kinematic reconstruction of the \ac{SM} $t \bar t$ process detailed in Section~\ref{subsection:ttbar} is still an extremely important part of this analysis. As previously explained, because of the high mass of the top quark, it is expected to decay before reaching the detector, almost 100\% of the time into a $b \bar b$ pair of quarks, which can be identified using the b-tagging method explained in Section~\ref{section:BTag}, and a W boson, unstable as well (in our particular case, only the W decay to a lepton and a neutrino is considered for reasons explained in Section~\ref{section:diLeptonFS}, even though this decay has a low \acf{BR}).
+Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the \ac{SM} $t \bar t$ process detailed in Section~\ref{subsection:ttbar} is still an extremely important part of this analysis. 
 
-The ideal kinematics of such an event can be expressed using the four-momenta of the different particles involved, as expressed in the Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}.
+As previously explained, because of the high mass of the top quark, it is expected to decay before reaching the detector, almost 100\% of the time into a $b \bar b$ pair of quarks, which can be identified using the b-tagging method explained in Section~\ref{section:BTag}, and a W boson, unstable as well (in our particular case, only the W decay to a lepton and a neutrino is considered for reasons explained in Section~\ref{section:diLeptonFS}, even though this decay has a low \acf{BR}).
+
+The ideal kinematics of such an event can be expressed using the four-momenta of the different particles involved, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
 \begin{subequations}
 \begin{equation}
@@ -2013,7 +2017,7 @@ m_{\bar t}^2 = (E_{\bar b} + E_{l^-} + E_{\bar \nu})^2 - (\overrightarrow{p}_{\b
 
 In all these previous equations, the quantities related to the leptons and the b-jets can be measured using the \ac{PF} reconstruction, while the energy of the neutrinos can be considered equal to their momentum because of their extremely low mass. It is also important to note that the different masses appearing in these equations will be treated as exactly known even though this is only true at first approximation since they are actually \ac{BW} distributions. 
 
-We therefore have 6 equations to solve and exactly 6 unknowns corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved, leading to a quartic equation in one of the unknowns analytically solvable but quite ambiguous given the variable number of solutions of such equation \cite{TopReco}.
+We therefore have 6 equations to solve and exactly 6 unknowns corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved, leading to a quartic equation in one of the unknowns analytically solvable but quite ambiguous given the variable number of solutions of such equation \cite{TopReco}. Solving this problem considering \ac{SM} $t \bar t$ is in this sense extremely helpful since it gives us access to the $p_T$ of the neutrinos produced.
 
 \subsection{Top reconstruction in practice}
 
@@ -2029,6 +2033,7 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 
 \color{red} Section to be updated once the analysis performed and the details about the top reco performed known, and add the results obtained. \color{black}
 
+\subsection{Top reconstruction with additional \ac{DM}}
 
 
 
@@ -2059,8 +2064,7 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 
 
 
-
-
+\iffalse
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 
 In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
@@ -3669,7 +3673,7 @@ However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t 
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 \section{Future prospects}
-
+\fi
 
 
 
@@ -4660,11 +4664,6 @@ JINST 13 (2018) P10034 [arXiv: 1807.03289]
 "Performance of the CMS muon detector and muon reconstruction with proton-proton collisions at $\sqrt{s} = 13$ TeV",
 JINST 13 (2018) P06015 [arXiv: 1804.04528]}
 
-\bibitem{MuonReco}
-\href{https://arxiv.org/abs/1804.04528}{CMS Collaboration,
-"Performance of the CMS muon detector and muon reconstruction with proton-proton collisions at $\sqrt{s} = 13$ TeV",
-JINST 13 (2018) P06015 [arXiv: 1804.04528]}
-
 \bibitem{PF}
 \href{http://inspirehep.net/record/925379/}{CMS Collaboration,
 "Particle-Flow Event Reconstruction in CMS and Performance for Jets, Taus, and MET",
@@ -4694,12 +4693,6 @@ J. Phys. Conf. Ser. 1162 012008, 2019}
 \href{https://iopscience.iop.org/article/10.1088/1742-6596/645/1/012008/pdf}{P.L.S. Connor,
 "Review of jet reconstruction algorithms",
 Ryan Atkin J. Phys. Conf. Ser. 645 012008, 2015}
-
-\bibitem{JetCorr}
-\href{https://arxiv.org/abs/1607.03663}{CMS Collaboration,
-"Jet energy scale and resolution in the CMS experiment in pp collisions at 8 TeV",
-JINST 12 (2017) P02014 [arXiv: 1607.03663]
-}
 
 \bibitem{PF2}
 \href{https://arxiv.org/abs/1401.8155}{F. Beaudette,
