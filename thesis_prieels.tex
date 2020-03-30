@@ -161,24 +161,23 @@
 \chapter*{\huge{Abstract}}
 \newpage
 %
-\chapter*{\huge{Resumen}}
+\chapter*{\huge{Resumen en espa\~{n}ol}}
 \newpage
 %
 \chapter*{\huge{Acknowledgments}}
 
-\iffalse
-First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in the personal and professional point of view, and something I will definitely benefit from in the future.
+First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in both the personal and professional points of view, and something I will definitely benefit from in the future.
 
-I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. I cannot count the number of bugs and issues you helped me solve, so thank you for keeping your door open at all times anyway, and for spending so much time correcting the talks I gave over the years.
+I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. You taught me a lot and I cannot count the number of bugs and issues you helped me solve, so I am thankful you kept your door open at all times anyway.
 
-Pablo Mart\'{i}nez, you have been a great co-director, this work would probably not have been possible without your help and dedication to this analysis. You also became a friend and I will never be able to thank you enough for your help, especially in this last year which has been quite challenging for me. 
+Pablo Mart\'{i}nez, you have been a great co-director, and this work not have been possible without your help and dedication to this analysis. You also became a friend over the years and I will never be able to thank you enough for your help, especially in this last year which has undoubtedly been quite challenging for me. 
 
-I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, and Celso, mostly for all the administrative relative issues I faced. This work would not have been possible either without the help of many people involved in this particular analysis, such as Deborah, Dominic, . Thank you to all the persons involved in the development of the Latino framework, which quickly became a great tool to work with. UNIOVI
+I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah and Dominic. Thank you as well to all the persons involved in the development of the Latino framework, which quickly became a great tool to work with. Citng them all would take too long, but I am also deeplygrateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the wednesday morning special each week. 
 
-Thank you also to my PhD coworkers, Pedro, Nicol\`{o}, Celia, Andrea and Pablo for making the students office a better place to work in. I wish you all the best in the future. 
+Thank you also to my (PhD) coworkers who fought alongside me. Pedro, Nicol\`{o}, Celia, Clara, Andrea and Pablo, you made the students office a better place to work in and I wish you all the best, even though I am sure you will achieve great things in the future.
 
-Of course, I would especially like to thank to my father Philippe, my mother Chantal and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this PhD in the first place and you can be sure I don't regret this decision. You brought me more than you can imagine and I will never forget all these great moments we spent during the last 7 years, and the many more still to come.
-\fi
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You know how I feel about you, you brought me more than you can imagine and I will never forget all these great moments we spent together. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family for many more years.
+
 \newpage
 
 %
@@ -1988,11 +1987,11 @@ Although not formerly a part of the \ac{PF} algorithm and done offline, the kine
 
 As previously explained, because of the high mass of the top quark, it is expected to decay before reaching the detector, almost 100\% of the time into a $b \bar b$ pair of quarks, which can be identified using the b-tagging method explained in Section~\ref{section:BTag}, and a W boson, unstable as well (in our particular case, only the W decay to a lepton and a neutrino is considered for reasons explained in Section~\ref{section:diLeptonFS}, even though this decay has a low \acf{BR}).
 
-\subsection{Analytical top reconstruction}
+\subsection{Numerical and analytical top reconstruction}
 
 Two main methods exist in order to solve this reconstruction problem, now shortly described:
 \begin{itemize}
-\item The \textbf{Sonnenschein method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
+\item The \textbf{Sonnenschein numerical method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
 \begin{subequations}
 \begin{equation}
@@ -2026,7 +2025,7 @@ In this case, we therefore have 6 equations to solve and exactly 6 unknowns corr
 
 %This method then relies on an additional minimization process of this quartic equation to find the optimal solution, while some of the loss of reconstruction efficiency due to the contribution to the \ac{MET} given by the eventual presence of \ac{DM} particles can typically be recovered. This minimization process allows to estimate the value of the $p_T$ of the mediator of the \ac{DM} interaction, an interesting discriminating variable between the \ac{SM} $t \bar t$ process and our signal that will be described later on this section.
 
-\item The \textbf{Betchart method} on the other hand is able to analytically describe the decay $t \rightarrow b + l + \nu$ using a geometric approach. This method was chosen in this analysis because it offers the following advantages:
+\item The \textbf{Betchart analytical method} on the other hand is able to describe the decay $t \rightarrow b + l + \nu$ using a geometric approach. This method was chosen in this analysis because it offers the following advantages:
 \begin{itemize}
 \item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously. 
 \item As we will now see, the solution set for each neutrino momentum in this case in an ellipse that can be described precisely. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
@@ -2078,9 +2077,9 @@ The solutions for the momenta of the neutrinos will then be given by the interse
 
 So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a reconstruction efficiency of only $\sim 75$\%, compared to the $\sim 96$\% obtained considering only the standard $t \bar t$ process. The method then needs to be slightly adaptated to our particular case, as we will now see.
 
-\subsection{Top reconstruction with additional \ac{DM}}
+\subsection{Top reconstruction with additional \ac{DM}} \label{section:ttrecoDM}
 
-In this particular case, including an additional contribution $\bm{\phi}$ to the \ac{MET} is equivalent to slightly modifying the Equation~\ref{eq:related} to obtain Equation~\ref{eq:relatedDM}.
+In this particular case, including an additional contribution $\bm{\phi_\perp} = (\phi_x, \phi_y, 0)^T$ to the \ac{MET} is equivalent to slightly modifying the Equation~\ref{eq:related} to obtain Equation~\ref{eq:relatedDM}.
 
 \begin{equation}
 \label{eq:relatedDM}
@@ -2099,9 +2098,39 @@ In this particular case, including an additional contribution $\bm{\phi}$ to the
 \end{pmatrix} \equiv \Gamma (\nu_\perp + \phi_\perp)
 \end{equation}
 
-This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it will provide us a way to determine two excellent discriminating variables.
+By sustituting these values into Equation~\ref{eq:matrix}, we then get a new relation between the two ellipses for the neutrino, $N_\perp$, and for the antineutrino, $\bar N_\perp$, given by Equation~\ref{eq:lastrel}.
 
-\color{red} Develop this section if we decide to use the dark pt variable \color{black}
+ \begin{equation}
+\label{eq:lastrel}
+\nu_\perp^T \Gamma^T \bar N_\perp \Gamma \nu_\perp + \nu_\perp^T \Gamma^T \bar N_\perp \Gamma \phi_\perp + \phi_\perp^T \Gamma^T \bar N_\perp \Gamma \nu_\perp + \phi_\perp^T \Gamma^T \bar N_\perp \Gamma \phi_\perp = 0
+\end{equation}
+
+This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it will provide us a way to determine two excellent discriminating variable:
+
+\begin{itemize}
+\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, as we just saw, if the system considered does not admit any solution, then there is no intersecton between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimated the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developped later in Section~\ref{section:Discrimination}.
+\item The second interesting variable is the so-called \textbf{overlapping factor $R$}, defined in Equation~\ref{eq:overlapping}, where $l_1$ and $l_2$ are the two sizes of the ellipses measured along the axis joining their centers, and $d$ is the distance between these centers.
+
+\begin{equation}
+\label{eq:overlapping}
+R = \frac{l_1 + l_2}{d}
+\end{equation}
+
+By its definition, this factor is able to take into account not only the distance between these two ellipses but also their respective sizes and this is extremely important since, at the end of the day, we want an event having small ellipses far away from each other to have a much higher weight than an event featuring two incredibly large ellipses and therefore less significative when trying to distinguish the background and signal processes. Both these extreme cases are represented in Figure~\ref{fig:ellipsesDM}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=5.5cm]{figs/ellipseDM.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=5.5cm]{figs/ellipsenoDM.png}
+\end{minipage} \hfill
+\caption{ Schematic representation of the two extreme cases that can be observed when defining the overlapping factor: athe reconstruction of a system with (on the left) and without (on the right) the presence of \ac{DM} \cite{Agustin}.}
+\label{fig:ellipsesDM}
+\end{figure}
+
+\end{itemize}
 
 \subsection{Top reconstruction in practice}
 
@@ -3714,6 +3743,11 @@ In order to cover for most of the discrepancies between the data and the simulat
 
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
+
+\subsubsection*{Dark $p_T$ and overlapping factor}
+
+Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these variables is of course expected to give some discrimination, since the standar $t \bar t$ process is expected to peak around 0 while...
+
 \subsubsection*{\acf{MET}}
 
 This variable has already been defined in Section~\ref{section:RecoMET}, and corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
@@ -4800,6 +4834,11 @@ Phys.Rev.D73:054015, 2016}
 \href{https://arxiv.org/pdf/1305.1878.pdf}{B.A. Betchart, R. Demina and A. Harel,
 "Analytic solutions for neutrino momenta in decay of top quarks",
 2013 [arXiv: 1305.1878]}
+
+\bibitem{Agustin}
+\href{https://repositorio.unican.es/xmlui/bitstream/handle/10902/15648/Lantero\%20Barreda\%20Agustin.pdf}{A. Lantero Barreda,
+"Improvement of the signal-to-background discrimination in search for Dark Matter produced in association with a pair of top-antitop quarks",
+UNICAN repository, 2018}
 
 \bibitem{MCGen}
 \href{https://arxiv.org/abs/1304.6677}{M.H. Seymour and M. Marx,

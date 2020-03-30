@@ -8,7 +8,7 @@
 \BOOKMARK [2][-]{subsection.1.4.1}{B-tagging}{section.1.4}% 8
 \BOOKMARK [1][-]{section.1.5}{Missing Transverse Energy \(MET\)}{chapter.1}% 9
 \BOOKMARK [1][-]{section.1.6}{Top reconstruction}{chapter.1}% 10
-\BOOKMARK [2][-]{subsection.1.6.1}{Analytical top reconstruction}{section.1.6}% 11
+\BOOKMARK [2][-]{subsection.1.6.1}{Numerical and analytical top reconstruction}{section.1.6}% 11
 \BOOKMARK [2][-]{subsection.1.6.2}{Top reconstruction with additional DM}{section.1.6}% 12
 \BOOKMARK [2][-]{subsection.1.6.3}{Top reconstruction in practice}{section.1.6}% 13
 \BOOKMARK [0][-]{chapter.2}{Data, signals and backgrounds}{}% 14
@@ -45,10 +45,10 @@
 \BOOKMARK [1][-]{section.4.2}{Results}{chapter.4}% 45
 \BOOKMARK [0][-]{chapter.5}{Conclusions}{}% 46
 \BOOKMARK [1][-]{section.5.1}{Future prospects}{chapter.5}% 47
-\BOOKMARK [0][-]{section*.99}{Appendices}{}% 48
+\BOOKMARK [0][-]{section*.101}{Appendices}{}% 48
 \BOOKMARK [0][-]{Appendix.1.A}{Samples used}{}% 49
 \BOOKMARK [1][-]{section.1.A.1}{Data samples}{Appendix.1.A}% 50
 \BOOKMARK [1][-]{section.1.A.2}{Signal samples}{Appendix.1.A}% 51
 \BOOKMARK [1][-]{section.1.A.3}{Backgrounds samples}{Appendix.1.A}% 52
 \BOOKMARK [0][-]{Appendix.1.B}{Neural network optimization}{}% 53
-\BOOKMARK [0][-]{chapter*.109}{Bibliography}{}% 54
+\BOOKMARK [0][-]{chapter*.111}{Bibliography}{}% 54

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.11)  30 MAR 2020 13:12
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2020.1.11)  30 MAR 2020 21:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1085,33 +1085,37 @@ s been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.164 \chapter
-              *{\huge{Resumen}} [2
+              *{\huge{Resumen en espa\~{n}ol}} [2
 
 ] [3] [4
 
-] [5] [6
+]
+Package acronym Info: Label `acro:IFCA' newly defined as it shall be overridden
+
+although it is yet undefined on input line 169.
+ [5] [6
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 247--248
+Underfull \hbox (badness 10000) in paragraph at lines 246--247
 []\OT1/cmr/m/n/10 Minimal Su-per-sym-met-ric Stan-dard
  []
 
 [7] [8] (./thesis_prieels.toc
 Package acronym Info: Label `acro:PF' newly defined as it shall be overridden
-although it is yet undefined on input line 3.
+although it is yet undefined on input line 2.
 Package acronym Info: Label `acro:PV' newly defined as it shall be overridden
-although it is yet undefined on input line 4.
+although it is yet undefined on input line 3.
 Package acronym Info: Label `acro:MET' newly defined as it shall be overridden
-although it is yet undefined on input line 10.
+although it is yet undefined on input line 9.
 Package acronym Info: Label `acro:DM' newly defined as it shall be overridden
-although it is yet undefined on input line 13.
+although it is yet undefined on input line 12.
 Package acronym Info: Label `acro:MC' newly defined as it shall be overridden
-although it is yet undefined on input line 16.
+although it is yet undefined on input line 15.
  [9
 
 ]
 Package acronym Info: Label `acro:DY' newly defined as it shall be overridden
-although it is yet undefined on input line 43.
+although it is yet undefined on input line 42.
 )
 \tf@toc=\write6
 \openout6 = `thesis_prieels.toc'.
@@ -1121,1129 +1125,1139 @@ although it is yet undefined on input line 43.
 ]
 Chapter 1.
 Package acronym Info: Label `acro:CMS' newly defined as it shall be overridden
-although it is yet undefined on input line 1725.
+although it is yet undefined on input line 1724.
 Package acronym Info: Label `acro:LHC' newly defined as it shall be overridden
-although it is yet undefined on input line 1731.
+although it is yet undefined on input line 1730.
 
 LaTeX Warning: Reference `chapter:Device' on page 1 undefined on input line 173
-3.
+2.
 
 [1
 
 ]
 Package acronym Info: Label `acro:PU' newly defined as it shall be overridden
-although it is yet undefined on input line 1738.
+although it is yet undefined on input line 1737.
 Package acronym Info: Label `acro:ECAL' newly defined as it shall be overridden
 
-although it is yet undefined on input line 1742.
+although it is yet undefined on input line 1741.
 Package acronym Info: Label `acro:HCAL' newly defined as it shall be overridden
 
-although it is yet undefined on input line 1743.
-<figs/CMSIdentify.png, id=486, 1445.4pt x 955.57pt>
+although it is yet undefined on input line 1742.
+<figs/CMSIdentify.png, id=489, 1445.4pt x 955.57pt>
 File: figs/CMSIdentify.png Graphic file (type png)
 <use figs/CMSIdentify.png>
-Package pdftex.def Info: figs/CMSIdentify.png  used on input line 1750.
+Package pdftex.def Info: figs/CMSIdentify.png  used on input line 1749.
 (pdftex.def)             Requested size: 369.8844pt x 227.62094pt.
  [2]
-<figs/LHCPU.png, id=513, 378.66469pt x 199.49532pt>
+<figs/LHCPU.png, id=516, 378.66469pt x 199.49532pt>
 File: figs/LHCPU.png Graphic file (type png)
 <use figs/LHCPU.png>
-Package pdftex.def Info: figs/LHCPU.png  used on input line 1766.
+Package pdftex.def Info: figs/LHCPU.png  used on input line 1765.
 (pdftex.def)             Requested size: 213.39703pt x 113.81091pt.
  [3 <./figs/CMSIdentify.png> <./figs/LHCPU.png>]
 Package acronym Info: Label `acro:DT' newly defined as it shall be overridden
-although it is yet undefined on input line 1785.
+although it is yet undefined on input line 1784.
 Package acronym Info: Label `acro:CSC' newly defined as it shall be overridden
-although it is yet undefined on input line 1785.
+although it is yet undefined on input line 1784.
 Package acronym Info: Label `acro:RPC' newly defined as it shall be overridden
-although it is yet undefined on input line 1785.
+although it is yet undefined on input line 1784.
 Package acronym Info: Label `acro:KF' newly defined as it shall be overridden
-although it is yet undefined on input line 1785.
+although it is yet undefined on input line 1784.
  [4]
-<figs/MuonEff.png, id=548, 1891.065pt x 1184.425pt>
+<figs/MuonEff.png, id=551, 1891.065pt x 1184.425pt>
 File: figs/MuonEff.png Graphic file (type png)
 <use figs/MuonEff.png>
-Package pdftex.def Info: figs/MuonEff.png  used on input line 1805.
+Package pdftex.def Info: figs/MuonEff.png  used on input line 1804.
 (pdftex.def)             Requested size: 369.86713pt x 170.71611pt.
-<figs/IsoCone.png, id=555, 1292.83pt x 1182.4175pt>
+<figs/IsoCone.png, id=558, 1292.83pt x 1182.4175pt>
 File: figs/IsoCone.png Graphic file (type png)
 <use figs/IsoCone.png>
-Package pdftex.def Info: figs/IsoCone.png  used on input line 1815.
+Package pdftex.def Info: figs/IsoCone.png  used on input line 1814.
 (pdftex.def)             Requested size: 199.1635pt x 184.9327pt.
 Package acronym Info: Label `acro:WP' newly defined as it shall be overridden
-although it is yet undefined on input line 1821.
+although it is yet undefined on input line 1820.
  [5 <./figs/MuonEff.png>]
 Package acronym Info: Label `acro:POG' newly defined as it shall be overridden
-although it is yet undefined on input line 1823.
+although it is yet undefined on input line 1822.
 Package acronym Info: Label `acro:SC' newly defined as it shall be overridden
-although it is yet undefined on input line 1834.
+although it is yet undefined on input line 1833.
 
 
 LaTeX Warning: Reference `subsection:ECAL' on page 6 undefined on input line 18
-34.
+33.
 
 [6 <./figs/IsoCone.png>]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1844
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 1843
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1844.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1843.
 
 Package acronym Info: Label `acro:GSF' newly defined as it shall be overridden
-although it is yet undefined on input line 1851.
+although it is yet undefined on input line 1850.
 Package acronym Info: Label `acro:MVA' newly defined as it shall be overridden
-although it is yet undefined on input line 1855.
-<figs/EleWorkflow.png, id=616, 2515.3975pt x 897.3525pt>
+although it is yet undefined on input line 1854.
+<figs/EleWorkflow.png, id=619, 2515.3975pt x 897.3525pt>
 File: figs/EleWorkflow.png Graphic file (type png)
 <use figs/EleWorkflow.png>
-Package pdftex.def Info: figs/EleWorkflow.png  used on input line 1862.
+Package pdftex.def Info: figs/EleWorkflow.png  used on input line 1861.
 (pdftex.def)             Requested size: 398.32658pt x 142.25116pt.
  [7]
-<figs/CMSJets.png, id=632, 1111.15125pt x 410.53375pt>
+<figs/CMSJets.png, id=635, 1111.15125pt x 410.53375pt>
 File: figs/CMSJets.png Graphic file (type png)
 <use figs/CMSJets.png>
-Package pdftex.def Info: figs/CMSJets.png  used on input line 1877.
+Package pdftex.def Info: figs/CMSJets.png  used on input line 1876.
 (pdftex.def)             Requested size: 341.43538pt x 128.03464pt.
  [8 <./figs/EleWorkflow.png> <./figs/CMSJets.png>]
-<figs/PFSimu.png, id=654, 2720.1625pt x 977.6525pt>
+<figs/PFSimu.png, id=657, 2720.1625pt x 977.6525pt>
 File: figs/PFSimu.png Graphic file (type png)
 <use figs/PFSimu.png>
-Package pdftex.def Info: figs/PFSimu.png  used on input line 1907.
+Package pdftex.def Info: figs/PFSimu.png  used on input line 1906.
 (pdftex.def)             Requested size: 426.76761pt x 156.48726pt.
  [9 <./figs/PFSimu.png>]
-<figs/CMSBJets.png, id=669, 903.375pt x 924.18877pt>
+<figs/CMSBJets.png, id=672, 903.375pt x 924.18877pt>
 File: figs/CMSBJets.png Graphic file (type png)
 <use figs/CMSBJets.png>
-Package pdftex.def Info: figs/CMSBJets.png  used on input line 1921.
+Package pdftex.def Info: figs/CMSBJets.png  used on input line 1920.
 (pdftex.def)             Requested size: 199.17043pt x 199.16208pt.
 Package acronym Info: Label `acro:CSV' newly defined as it shall be overridden
-although it is yet undefined on input line 1929.
+although it is yet undefined on input line 1928.
 Package acronym Info: Label `acro:DNN' newly defined as it shall be overridden
-although it is yet undefined on input line 1929.
-<figs/CMSBTag.png, id=674, 1875.005pt x 1278.7775pt>
+although it is yet undefined on input line 1928.
+<figs/CMSBTag.png, id=677, 1875.005pt x 1278.7775pt>
 File: figs/CMSBTag.png Graphic file (type png)
 <use figs/CMSBTag.png>
-Package pdftex.def Info: figs/CMSBTag.png  used on input line 1933.
+Package pdftex.def Info: figs/CMSBTag.png  used on input line 1932.
 (pdftex.def)             Requested size: 369.87312pt x 241.83852pt.
  [10 <./figs/CMSBJets.png>]
 Package acronym Info: Label `acro:SM' newly defined as it shall be overridden
-although it is yet undefined on input line 1949.
-<figs/MET.png, id=696, 1606.0pt x 1369.115pt>
+although it is yet undefined on input line 1948.
+<figs/MET.png, id=700, 1606.0pt x 1369.115pt>
 File: figs/MET.png Graphic file (type png)
 <use figs/MET.png>
-Package pdftex.def Info: figs/MET.png  used on input line 1956.
+Package pdftex.def Info: figs/MET.png  used on input line 1955.
 (pdftex.def)             Requested size: 199.15665pt x 156.47348pt.
 Package acronym Info: Label `acro:BSM' newly defined as it shall be overridden
-although it is yet undefined on input line 1962.
+although it is yet undefined on input line 1961.
  [11 <./figs/CMSBTag.png>]
 Package acronym Info: Label `acro:PUPPI' newly defined as it shall be overridde
 n
-although it is yet undefined on input line 1972.
-<figs/METFilters.png, id=727, 2603.7275pt x 1252.68pt>
+although it is yet undefined on input line 1971.
+<figs/METFilters.png, id=730, 2603.7275pt x 1252.68pt>
 File: figs/METFilters.png Graphic file (type png)
 <use figs/METFilters.png>
-Package pdftex.def Info: figs/METFilters.png  used on input line 1979.
+Package pdftex.def Info: figs/METFilters.png  used on input line 1978.
 (pdftex.def)             Requested size: 398.32928pt x 176.40617pt.
  [12 <./figs/MET.png>]
 
 LaTeX Warning: Reference `section:diLeptonFS' on page 13 undefined on input lin
-e 1989.
+e 1988.
 
 Package acronym Info: Label `acro:BR' newly defined as it shall be overridden
-although it is yet undefined on input line 1989.
+although it is yet undefined on input line 1988.
 [13pdfTeX warning (ext4): destination with the same identifier (name{equation.1
 .6.3}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2026 
+l.2025 
         <./figs/METFilters.png>]
-<figs/ellipse0.png, id=770, 708.6475pt x 698.61pt>
+<figs/ellipse0.png, id=773, 708.6475pt x 698.61pt>
 File: figs/ellipse0.png Graphic file (type png)
 <use figs/ellipse0.png>
-Package pdftex.def Info: figs/ellipse0.png  used on input line 2065.
+Package pdftex.def Info: figs/ellipse0.png  used on input line 2064.
 (pdftex.def)             Requested size: 122.33914pt x 122.34386pt.
-<figs/ellipse2.png, id=771, 695.59875pt x 688.5725pt>
+<figs/ellipse2.png, id=774, 695.59875pt x 688.5725pt>
 File: figs/ellipse2.png Graphic file (type png)
 <use figs/ellipse2.png>
-Package pdftex.def Info: figs/ellipse2.png  used on input line 2068.
+Package pdftex.def Info: figs/ellipse2.png  used on input line 2067.
 (pdftex.def)             Requested size: 122.34721pt x 122.34067pt.
-<figs/ellipse4.png, id=772, 694.595pt x 692.5875pt>
+<figs/ellipse4.png, id=775, 694.595pt x 692.5875pt>
 File: figs/ellipse4.png Graphic file (type png)
 <use figs/ellipse4.png>
-Package pdftex.def Info: figs/ellipse4.png  used on input line 2071.
+Package pdftex.def Info: figs/ellipse4.png  used on input line 2070.
 (pdftex.def)             Requested size: 122.34024pt x 122.34596pt.
- [14] [15 <./figs/ellipse0.png> <./figs/ellipse2.png> <./figs/ellipse4.png>] [1
-6]
-Chapter 2.
-
-LaTeX Warning: Reference `section:ourChannel' on page 17 undefined on input lin
-e 2152.
-
-<figs/MCGen.png, id=835, 1764.5925pt x 1614.03pt>
-File: figs/MCGen.png Graphic file (type png)
-<use figs/MCGen.png>
-Package pdftex.def Info: figs/MCGen.png  used on input line 2166.
-(pdftex.def)             Requested size: 199.16776pt x 156.48683pt.
-Package acronym Info: Label `acro:UE' newly defined as it shall be overridden
-although it is yet undefined on input line 2167.
-[17
+ [14] [15 <./figs/ellipse0.png> <./figs/ellipse2.png> <./figs/ellipse4.png>]
+<figs/ellipseDM.png, id=815, 811.03pt x 647.41875pt>
+File: figs/ellipseDM.png Graphic file (type png)
+<use figs/ellipseDM.png>
+Package pdftex.def Info: figs/ellipseDM.png  used on input line 2124.
+(pdftex.def)             Requested size: 179.24391pt x 156.4901pt.
+<figs/ellipsenoDM.png, id=816, 803.0pt x 631.35875pt>
+File: figs/ellipsenoDM.png Graphic file (type png)
+<use figs/ellipsenoDM.png>
+Package pdftex.def Info: figs/ellipsenoDM.png  used on input line 2127.
+(pdftex.def)             Requested size: 179.24588pt x 156.49057pt.
+ [16 <./figs/ellipseDM.png> <./figs/ellipsenoDM.png>] [17] [18
 
 ]
+Chapter 2.
+
+LaTeX Warning: Reference `section:ourChannel' on page 19 undefined on input lin
+e 2181.
+
+<figs/MCGen.png, id=866, 1764.5925pt x 1614.03pt>
+File: figs/MCGen.png Graphic file (type png)
+<use figs/MCGen.png>
+Package pdftex.def Info: figs/MCGen.png  used on input line 2195.
+(pdftex.def)             Requested size: 199.16776pt x 156.48683pt.
+Package acronym Info: Label `acro:UE' newly defined as it shall be overridden
+although it is yet undefined on input line 2196.
+[19]
 Package acronym Info: Label `acro:PDF' newly defined as it shall be overridden
-although it is yet undefined on input line 2184.
+although it is yet undefined on input line 2213.
 Package acronym Info: Label `acro:QCD' newly defined as it shall be overridden
-although it is yet undefined on input line 2193.
- [18 <./figs/MCGen.png>]
+although it is yet undefined on input line 2222.
+ [20 <./figs/MCGen.png>]
 Package acronym Info: Label `acro:ISR' newly defined as it shall be overridden
-although it is yet undefined on input line 2195.
+although it is yet undefined on input line 2224.
 Package acronym Info: Label `acro:MPI' newly defined as it shall be overridden
-although it is yet undefined on input line 2199.
-<figs/TopPt.png, id=879, 788.9475pt x 1027.84pt>
+although it is yet undefined on input line 2228.
+<figs/TopPt.png, id=909, 788.9475pt x 1027.84pt>
 File: figs/TopPt.png Graphic file (type png)
 <use figs/TopPt.png>
-Package pdftex.def Info: figs/TopPt.png  used on input line 2206.
+Package pdftex.def Info: figs/TopPt.png  used on input line 2235.
 (pdftex.def)             Requested size: 176.398pt x 199.16547pt.
-<figs/TopRapidity.png, id=880, 788.9475pt x 1027.84pt>
+<figs/TopRapidity.png, id=910, 788.9475pt x 1027.84pt>
 File: figs/TopRapidity.png Graphic file (type png)
 <use figs/TopRapidity.png>
-Package pdftex.def Info: figs/TopRapidity.png  used on input line 2209.
+Package pdftex.def Info: figs/TopRapidity.png  used on input line 2238.
 (pdftex.def)             Requested size: 176.398pt x 199.16547pt.
- [19 <./figs/TopPt.png> <./figs/TopRapidity.png>]
+ [21 <./figs/TopPt.png> <./figs/TopRapidity.png>]
 Package acronym Info: Label `acro:CERN' newly defined as it shall be overridden
 
-although it is yet undefined on input line 2238.
-<figs/CMSGEANT.png, id=909, 2724.1775pt x 973.6375pt>
+although it is yet undefined on input line 2267.
+<figs/CMSGEANT.png, id=939, 2724.1775pt x 973.6375pt>
 File: figs/CMSGEANT.png Graphic file (type png)
 <use figs/CMSGEANT.png>
-Package pdftex.def Info: figs/CMSGEANT.png  used on input line 2242.
+Package pdftex.def Info: figs/CMSGEANT.png  used on input line 2271.
 (pdftex.def)             Requested size: 398.30025pt x 142.25092pt.
 Package acronym Info: Label `acro:SF' newly defined as it shall be overridden
-although it is yet undefined on input line 2248.
+although it is yet undefined on input line 2277.
 
-[20]
+[22]
 Package acronym Info: Label `acro:AOD' newly defined as it shall be overridden
-although it is yet undefined on input line 2258.
+although it is yet undefined on input line 2287.
 Package acronym Info: Label `acro:EDM' newly defined as it shall be overridden
-although it is yet undefined on input line 2269.
- [21 <./figs/CMSGEANT.png>]
+although it is yet undefined on input line 2298.
+ [23 <./figs/CMSGEANT.png>]
 
-LaTeX Warning: Reference `subsection:Lumi' on page 22 undefined on input line 2
-275.
+LaTeX Warning: Reference `subsection:Lumi' on page 24 undefined on input line 2
+304.
 
-<figs/scalarMETmChi1Norm.png, id=960, 700.6175pt x 477.785pt>
+<figs/scalarMETmChi1Norm.png, id=992, 700.6175pt x 477.785pt>
 File: figs/scalarMETmChi1Norm.png Graphic file (type png)
 <use figs/scalarMETmChi1Norm.png>
-Package pdftex.def Info: figs/scalarMETmChi1Norm.png  used on input line 2295.
+Package pdftex.def Info: figs/scalarMETmChi1Norm.png  used on input line 2324.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/scalarMETmChi1.png, id=961, 700.6175pt x 477.785pt>
+<figs/scalarMETmChi1.png, id=993, 700.6175pt x 477.785pt>
 File: figs/scalarMETmChi1.png Graphic file (type png)
 <use figs/scalarMETmChi1.png>
-Package pdftex.def Info: figs/scalarMETmChi1.png  used on input line 2295.
+Package pdftex.def Info: figs/scalarMETmChi1.png  used on input line 2324.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/scalarMETmChiLargeNorm.png, id=962, 700.6175pt x 477.785pt>
+<figs/scalarMETmChiLargeNorm.png, id=994, 700.6175pt x 477.785pt>
 File: figs/scalarMETmChiLargeNorm.png Graphic file (type png)
 <use figs/scalarMETmChiLargeNorm.png>
 Package pdftex.def Info: figs/scalarMETmChiLargeNorm.png  used on input line 23
-04.
+33.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/scalarMETmChiLarge.png, id=963, 700.6175pt x 477.785pt>
+<figs/scalarMETmChiLarge.png, id=995, 700.6175pt x 477.785pt>
 File: figs/scalarMETmChiLarge.png Graphic file (type png)
 <use figs/scalarMETmChiLarge.png>
-Package pdftex.def Info: figs/scalarMETmChiLarge.png  used on input line 2304.
+Package pdftex.def Info: figs/scalarMETmChiLarge.png  used on input line 2333.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/pseudoscalarMETmChi1Norm.png, id=968, 700.6175pt x 477.785pt>
+<figs/pseudoscalarMETmChi1Norm.png, id=1000, 700.6175pt x 477.785pt>
 File: figs/pseudoscalarMETmChi1Norm.png Graphic file (type png)
 <use figs/pseudoscalarMETmChi1Norm.png>
 Package pdftex.def Info: figs/pseudoscalarMETmChi1Norm.png  used on input line 
-2319.
+2348.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/pseudoscalarMETmChi1.png, id=969, 700.6175pt x 477.785pt>
+<figs/pseudoscalarMETmChi1.png, id=1001, 700.6175pt x 477.785pt>
 File: figs/pseudoscalarMETmChi1.png Graphic file (type png)
 <use figs/pseudoscalarMETmChi1.png>
-Package pdftex.def Info: figs/pseudoscalarMETmChi1.png  used on input line 2319
+Package pdftex.def Info: figs/pseudoscalarMETmChi1.png  used on input line 2348
 .
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/pseudoscalarMETmChiLargeNorm.png, id=970, 700.6175pt x 477.785pt>
+<figs/pseudoscalarMETmChiLargeNorm.png, id=1002, 700.6175pt x 477.785pt>
 File: figs/pseudoscalarMETmChiLargeNorm.png Graphic file (type png)
 <use figs/pseudoscalarMETmChiLargeNorm.png>
 Package pdftex.def Info: figs/pseudoscalarMETmChiLargeNorm.png  used on input l
-ine 2328.
+ine 2357.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-<figs/pseudoscalarMETmChiLarge.png, id=971, 700.6175pt x 477.785pt>
+<figs/pseudoscalarMETmChiLarge.png, id=1003, 700.6175pt x 477.785pt>
 File: figs/pseudoscalarMETmChiLarge.png Graphic file (type png)
 <use figs/pseudoscalarMETmChiLarge.png>
 Package pdftex.def Info: figs/pseudoscalarMETmChiLarge.png  used on input line 
-2328.
+2357.
 (pdftex.def)             Requested size: 199.16492pt x 142.25761pt.
-[22]
+[24]
 Package acronym Info: Label `acro:SR' newly defined as it shall be overridden
-although it is yet undefined on input line 2342.
+although it is yet undefined on input line 2371.
 Package acronym Info: Label `acro:CR' newly defined as it shall be overridden
-although it is yet undefined on input line 2342.
-<figs/ProcessesXS.png, id=1005, 582.175pt x 704.6325pt>
+although it is yet undefined on input line 2371.
+<figs/ProcessesXS.png, id=1035, 582.175pt x 704.6325pt>
 File: figs/ProcessesXS.png Graphic file (type png)
 <use figs/ProcessesXS.png>
-Package pdftex.def Info: figs/ProcessesXS.png  used on input line 2351.
+Package pdftex.def Info: figs/ProcessesXS.png  used on input line 2380.
 (pdftex.def)             Requested size: 227.61586pt x 256.07591pt.
- [23 <./figs/scalarMETmChi1Norm.png> <./figs/scalarMETmChi1.png> <./figs/scalar
+ [25 <./figs/scalarMETmChi1Norm.png> <./figs/scalarMETmChi1.png> <./figs/scalar
 METmChiLargeNorm.png> <./figs/scalarMETmChiLarge.png>]
 Package acronym Info: Label `acro:ML' newly defined as it shall be overridden
-although it is yet undefined on input line 2363.
+although it is yet undefined on input line 2392.
 Package acronym Info: Label `acro:LO' newly defined as it shall be overridden
-although it is yet undefined on input line 2371.
- [24 <./figs/pseudoscalarMETmChi1Norm.png> <./figs/pseudoscalarMETmChi1.png> <.
+although it is yet undefined on input line 2400.
+ [26 <./figs/pseudoscalarMETmChi1Norm.png> <./figs/pseudoscalarMETmChi1.png> <.
 /figs/pseudoscalarMETmChiLargeNorm.png> <./figs/pseudoscalarMETmChiLarge.png>]
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2395.
+tance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2395.
+stance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2395.
+distance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2395.
+tance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2395.
+stance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2395.
+distance' requires LuaTeX. It will be ignored. on input line 2424.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2417.
+tance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2417.
+stance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2417.
+distance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2417.
+tance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2417.
+stance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2417.
+distance' requires LuaTeX. It will be ignored. on input line 2446.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2439.
+tance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2439.
+stance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2439.
+distance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2439.
+tance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2439.
+stance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2439.
+distance' requires LuaTeX. It will be ignored. on input line 2468.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2469.
+tance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2469.
+stance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2469.
+distance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2469.
+tance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2469.
+stance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2469.
+distance' requires LuaTeX. It will be ignored. on input line 2498.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2493.
+tance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2493.
+stance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2493.
+distance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2493.
+tance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2493.
+stance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2493.
+distance' requires LuaTeX. It will be ignored. on input line 2522.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2520.
+tance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2520.
+stance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2520.
+distance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2520.
+tance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2520.
+stance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2520.
+distance' requires LuaTeX. It will be ignored. on input line 2549.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2541.
+tance' requires LuaTeX. It will be ignored. on input line 2570.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2541.
+stance' requires LuaTeX. It will be ignored. on input line 2570.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2541.
+distance' requires LuaTeX. It will be ignored. on input line 2570.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2541.
+tance' requires LuaTeX. It will be ignored. on input line 2570.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2541.
+stance' requires LuaTeX. It will be ignored. on input line 2570.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2541.
+distance' requires LuaTeX. It will be ignored. on input line 2570.
 
-[25 <./figs/ProcessesXS.png>]
+[27 <./figs/ProcessesXS.png>]
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2574.
+tance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2574.
+stance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2574.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2574.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2574.
-
-
-Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2574.
+distance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2597.
+tance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2597.
+stance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2597.
+distance' requires LuaTeX. It will be ignored. on input line 2603.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2597.
+tance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2597.
+stance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2597.
+distance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2628.
+tance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2628.
+stance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2628.
+distance' requires LuaTeX. It will be ignored. on input line 2626.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2628.
+tance' requires LuaTeX. It will be ignored. on input line 2657.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2628.
+stance' requires LuaTeX. It will be ignored. on input line 2657.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2628.
+distance' requires LuaTeX. It will be ignored. on input line 2657.
 
-[26]
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
+tance' requires LuaTeX. It will be ignored. on input line 2657.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
+stance' requires LuaTeX. It will be ignored. on input line 2657.
+
+
+Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
+distance' requires LuaTeX. It will be ignored. on input line 2657.
+
+[28]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2636.
+(hyperref)                removing `math shift' on input line 2665.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 2636.
+(hyperref)                removing `math shift' on input line 2665.
 
 Package acronym Info: Label `acro:FSR' newly defined as it shall be overridden
-although it is yet undefined on input line 2638.
+although it is yet undefined on input line 2667.
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2664.
+tance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2664.
+stance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2664.
+distance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2664.
+tance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2664.
+stance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2664.
+distance' requires LuaTeX. It will be ignored. on input line 2693.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2688.
+tance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2688.
+stance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2688.
+distance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2688.
+tance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2688.
+stance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2688.
+distance' requires LuaTeX. It will be ignored. on input line 2717.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2711.
+tance' requires LuaTeX. It will be ignored. on input line 2740.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2711.
+stance' requires LuaTeX. It will be ignored. on input line 2740.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2711.
+distance' requires LuaTeX. It will be ignored. on input line 2740.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2711.
+tance' requires LuaTeX. It will be ignored. on input line 2740.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2711.
+stance' requires LuaTeX. It will be ignored. on input line 2740.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2711.
+distance' requires LuaTeX. It will be ignored. on input line 2740.
 
 Package acronym Info: Label `acro:PR' newly defined as it shall be overridden
-although it is yet undefined on input line 2726.
-[27]
+although it is yet undefined on input line 2755.
+[29]
 Package acronym Info: Label `acro:FR' newly defined as it shall be overridden
-although it is yet undefined on input line 2728.
+although it is yet undefined on input line 2757.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2751.
+tance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2751.
+stance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2751.
+distance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2751.
+tance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2751.
+stance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2751.
+distance' requires LuaTeX. It will be ignored. on input line 2780.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2771.
+tance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2771.
+stance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2771.
+distance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2771.
+tance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2771.
+stance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2771.
+distance' requires LuaTeX. It will be ignored. on input line 2800.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2793.
+tance' requires LuaTeX. It will be ignored. on input line 2822.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2793.
+stance' requires LuaTeX. It will be ignored. on input line 2822.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2793.
+distance' requires LuaTeX. It will be ignored. on input line 2822.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 2793.
+tance' requires LuaTeX. It will be ignored. on input line 2822.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 2793.
+stance' requires LuaTeX. It will be ignored. on input line 2822.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 2793.
+distance' requires LuaTeX. It will be ignored. on input line 2822.
 
-<figs/FakesJet.png, id=1106, 2627.8175pt x 1041.8925pt>
+<figs/FakesJet.png, id=1137, 2627.8175pt x 1041.8925pt>
 File: figs/FakesJet.png Graphic file (type png)
 <use figs/FakesJet.png>
-Package pdftex.def Info: figs/FakesJet.png  used on input line 2823.
+Package pdftex.def Info: figs/FakesJet.png  used on input line 2852.
 (pdftex.def)             Requested size: 227.59178pt x 113.79773pt.
-[28]
+[30]
 Package acronym Info: Label `acro:EWK' newly defined as it shall be overridden
-although it is yet undefined on input line 2849.
-<figs/Ele_FR_pt_combined_2016.png, id=1122, 548.0475pt x 574.145pt>
+although it is yet undefined on input line 2878.
+<figs/Ele_FR_pt_combined_2016.png, id=1152, 548.0475pt x 574.145pt>
 File: figs/Ele_FR_pt_combined_2016.png Graphic file (type png)
 <use figs/Ele_FR_pt_combined_2016.png>
 Package pdftex.def Info: figs/Ele_FR_pt_combined_2016.png  used on input line 2
-863.
+892.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_FR_pt_combined_2016.png, id=1123, 548.0475pt x 574.145pt>
+<figs/Muon_FR_pt_combined_2016.png, id=1153, 548.0475pt x 574.145pt>
 File: figs/Muon_FR_pt_combined_2016.png Graphic file (type png)
 <use figs/Muon_FR_pt_combined_2016.png>
 Package pdftex.def Info: figs/Muon_FR_pt_combined_2016.png  used on input line 
-2863.
+2892.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Ele_FR_pt_combined_2017.png, id=1124, 548.0475pt x 574.145pt>
+<figs/Ele_FR_pt_combined_2017.png, id=1154, 548.0475pt x 574.145pt>
 File: figs/Ele_FR_pt_combined_2017.png Graphic file (type png)
 <use figs/Ele_FR_pt_combined_2017.png>
 Package pdftex.def Info: figs/Ele_FR_pt_combined_2017.png  used on input line 2
-872.
+901.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_FR_pt_combined_2017.png, id=1125, 548.0475pt x 574.145pt>
+<figs/Muon_FR_pt_combined_2017.png, id=1155, 548.0475pt x 574.145pt>
 File: figs/Muon_FR_pt_combined_2017.png Graphic file (type png)
 <use figs/Muon_FR_pt_combined_2017.png>
 Package pdftex.def Info: figs/Muon_FR_pt_combined_2017.png  used on input line 
-2872.
+2901.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Ele_FR_pt_combined_2018.png, id=1126, 548.0475pt x 574.145pt>
+<figs/Ele_FR_pt_combined_2018.png, id=1156, 548.0475pt x 574.145pt>
 File: figs/Ele_FR_pt_combined_2018.png Graphic file (type png)
 <use figs/Ele_FR_pt_combined_2018.png>
 Package pdftex.def Info: figs/Ele_FR_pt_combined_2018.png  used on input line 2
-881.
+910.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_FR_pt_combined_2018.png, id=1127, 548.0475pt x 574.145pt>
+<figs/Muon_FR_pt_combined_2018.png, id=1157, 548.0475pt x 574.145pt>
 File: figs/Muon_FR_pt_combined_2018.png Graphic file (type png)
 <use figs/Muon_FR_pt_combined_2018.png>
 Package pdftex.def Info: figs/Muon_FR_pt_combined_2018.png  used on input line 
-2881.
+2910.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Ele_PR_pt_2016.png, id=1136, 548.0475pt x 574.145pt>
+<figs/Ele_PR_pt_2016.png, id=1166, 548.0475pt x 574.145pt>
 File: figs/Ele_PR_pt_2016.png Graphic file (type png)
 <use figs/Ele_PR_pt_2016.png>
-Package pdftex.def Info: figs/Ele_PR_pt_2016.png  used on input line 2904.
+Package pdftex.def Info: figs/Ele_PR_pt_2016.png  used on input line 2933.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_PR_pt_2016.png, id=1137, 548.0475pt x 574.145pt>
+<figs/Muon_PR_pt_2016.png, id=1167, 548.0475pt x 574.145pt>
 File: figs/Muon_PR_pt_2016.png Graphic file (type png)
 <use figs/Muon_PR_pt_2016.png>
-Package pdftex.def Info: figs/Muon_PR_pt_2016.png  used on input line 2904.
+Package pdftex.def Info: figs/Muon_PR_pt_2016.png  used on input line 2933.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Ele_PR_pt_2017.png, id=1138, 548.0475pt x 574.145pt>
+<figs/Ele_PR_pt_2017.png, id=1168, 548.0475pt x 574.145pt>
 File: figs/Ele_PR_pt_2017.png Graphic file (type png)
 <use figs/Ele_PR_pt_2017.png>
-Package pdftex.def Info: figs/Ele_PR_pt_2017.png  used on input line 2913.
+Package pdftex.def Info: figs/Ele_PR_pt_2017.png  used on input line 2942.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_PR_pt_2017.png, id=1139, 548.0475pt x 574.145pt>
+<figs/Muon_PR_pt_2017.png, id=1169, 548.0475pt x 574.145pt>
 File: figs/Muon_PR_pt_2017.png Graphic file (type png)
 <use figs/Muon_PR_pt_2017.png>
-Package pdftex.def Info: figs/Muon_PR_pt_2017.png  used on input line 2913.
+Package pdftex.def Info: figs/Muon_PR_pt_2017.png  used on input line 2942.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Ele_PR_pt_2018.png, id=1140, 548.0475pt x 574.145pt>
+<figs/Ele_PR_pt_2018.png, id=1170, 548.0475pt x 574.145pt>
 File: figs/Ele_PR_pt_2018.png Graphic file (type png)
 <use figs/Ele_PR_pt_2018.png>
-Package pdftex.def Info: figs/Ele_PR_pt_2018.png  used on input line 2922.
+Package pdftex.def Info: figs/Ele_PR_pt_2018.png  used on input line 2951.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
-<figs/Muon_PR_pt_2018.png, id=1141, 548.0475pt x 574.145pt>
+<figs/Muon_PR_pt_2018.png, id=1171, 548.0475pt x 574.145pt>
 File: figs/Muon_PR_pt_2018.png Graphic file (type png)
 <use figs/Muon_PR_pt_2018.png>
-Package pdftex.def Info: figs/Muon_PR_pt_2018.png  used on input line 2922.
+Package pdftex.def Info: figs/Muon_PR_pt_2018.png  used on input line 2951.
 (pdftex.def)             Requested size: 199.17015pt x 199.16656pt.
 
 
-LaTeX Warning: Float too large for page by 9.71661pt on input line 2925.
+LaTeX Warning: Float too large for page by 9.71661pt on input line 2954.
 
-[29pdfTeX warning (ext4): destination with the same identifier (name{equation.2
+[31pdfTeX warning (ext4): destination with the same identifier (name{equation.2
 .6.2}) has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
-l.2930 
-        <./figs/FakesJet.png>] [30 <./figs/Ele_FR_pt_combined_2016.png> <./figs
+l.2959 
+        <./figs/FakesJet.png>] [32 <./figs/Ele_FR_pt_combined_2016.png> <./figs
 /Muon_FR_pt_combined_2016.png> <./figs/Ele_FR_pt_combined_2017.png> <./figs/Muo
 n_FR_pt_combined_2017.png> <./figs/Ele_FR_pt_combined_2018.png> <./figs/Muon_FR
-_pt_combined_2018.png>] [31 <./figs/Ele_PR_pt_2016.png> <./figs/Muon_PR_pt_2016
+_pt_combined_2018.png>] [33 <./figs/Ele_PR_pt_2016.png> <./figs/Muon_PR_pt_2016
 .png> <./figs/Ele_PR_pt_2017.png> <./figs/Muon_PR_pt_2017.png> <./figs/Ele_PR_p
 t_2018.png> <./figs/Muon_PR_pt_2018.png>]
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3001.
+tance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3001.
+stance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3001.
+distance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3001.
+tance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3001.
+stance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3001.
+distance' requires LuaTeX. It will be ignored. on input line 3030.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3022.
+tance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3022.
+stance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3022.
+distance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3022.
+tance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3022.
+stance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3022.
+distance' requires LuaTeX. It will be ignored. on input line 3051.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3042.
+tance' requires LuaTeX. It will be ignored. on input line 3071.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3042.
+stance' requires LuaTeX. It will be ignored. on input line 3071.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3042.
+distance' requires LuaTeX. It will be ignored. on input line 3071.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/node dis
-tance' requires LuaTeX. It will be ignored. on input line 3042.
+tance' requires LuaTeX. It will be ignored. on input line 3071.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/level di
-stance' requires LuaTeX. It will be ignored. on input line 3042.
+stance' requires LuaTeX. It will be ignored. on input line 3071.
 
 
 Package tikz-feynman Warning: The key you tried to use '/graph drawing/sibling 
-distance' requires LuaTeX. It will be ignored. on input line 3042.
+distance' requires LuaTeX. It will be ignored. on input line 3071.
 
-[32]
+[34]
 Package acronym Info: Label `acro:L1' newly defined as it shall be overridden
-although it is yet undefined on input line 3056.
-<figs/Prefiring.png, id=1196, 2334.7225pt x 1120.185pt>
+although it is yet undefined on input line 3085.
+<figs/Prefiring.png, id=1228, 2334.7225pt x 1120.185pt>
 File: figs/Prefiring.png Graphic file (type png)
 <use figs/Prefiring.png>
-Package pdftex.def Info: figs/Prefiring.png  used on input line 3062.
+Package pdftex.def Info: figs/Prefiring.png  used on input line 3091.
 (pdftex.def)             Requested size: 398.32257pt x 199.16325pt.
- [33] [34 <./figs/Prefiring.png>]
+ [35] [36 <./figs/Prefiring.png>]
 Chapter 3.
 
-LaTeX Warning: Reference `subsection:Trigger' on page 35 undefined on input lin
-e 3118.
+LaTeX Warning: Reference `subsection:Trigger' on page 37 undefined on input lin
+e 3147.
 
 Package acronym Info: Label `acro:HLT' newly defined as it shall be overridden
-although it is yet undefined on input line 3125.
-[35
+although it is yet undefined on input line 3154.
+[37
 
 ]
-<figs/TriggEffEle.png, id=1245, 1059.96pt x 887.315pt>
+<figs/TriggEffEle.png, id=1275, 1059.96pt x 887.315pt>
 File: figs/TriggEffEle.png Graphic file (type png)
 <use figs/TriggEffEle.png>
-Package pdftex.def Info: figs/TriggEffEle.png  used on input line 3213.
+Package pdftex.def Info: figs/TriggEffEle.png  used on input line 3242.
 (pdftex.def)             Requested size: 170.71304pt x 156.48744pt.
-<figs/TriggEffEta.png, id=1246, 1076.02pt x 893.3375pt>
+<figs/TriggEffEta.png, id=1276, 1076.02pt x 893.3375pt>
 File: figs/TriggEffEta.png Graphic file (type png)
 <use figs/TriggEffEta.png>
-Package pdftex.def Info: figs/TriggEffEta.png  used on input line 3216.
+Package pdftex.def Info: figs/TriggEffEta.png  used on input line 3245.
 (pdftex.def)             Requested size: 170.70544pt x 156.48634pt.
- [36] [37 <./figs/TriggEffEle.png> <./figs/TriggEffEta.png>]
+ [38] [39 <./figs/TriggEffEle.png> <./figs/TriggEffEta.png>]
 Package acronym Info: Label `acro:RMS' newly defined as it shall be overridden
-although it is yet undefined on input line 3233.
+although it is yet undefined on input line 3262.
 Package acronym Info: Label `acro:BDT' newly defined as it shall be overridden
-although it is yet undefined on input line 3254.
-<figs/EleEff.png, id=1288, 2394.9475pt x 1114.1625pt>
+although it is yet undefined on input line 3283.
+<figs/EleEff.png, id=1318, 2394.9475pt x 1114.1625pt>
 File: figs/EleEff.png Graphic file (type png)
 <use figs/EleEff.png>
-Package pdftex.def Info: figs/EleEff.png  used on input line 3317.
+Package pdftex.def Info: figs/EleEff.png  used on input line 3346.
 (pdftex.def)             Requested size: 398.32861pt x 184.93393pt.
 
-Underfull \hbox (badness 2277) in paragraph at lines 3318--3318
+Underfull \hbox (badness 2277) in paragraph at lines 3347--3347
 []\OT1/cmr/m/n/10 Figure 3.2: |Tight elec-tron ef-fi-cien-cies for this anal-y-
 sis, based on the Egamma [][]
  []
 
-[38] [39]
-<figs/MuonEff2016.png, id=1316, 1660.2025pt x 355.3275pt>
+[40] [41]
+<figs/MuonEff2016.png, id=1348, 1660.2025pt x 355.3275pt>
 File: figs/MuonEff2016.png Graphic file (type png)
 <use figs/MuonEff2016.png>
-Package pdftex.def Info: figs/MuonEff2016.png  used on input line 3357.
+Package pdftex.def Info: figs/MuonEff2016.png  used on input line 3386.
 (pdftex.def)             Requested size: 398.33008pt x 113.81012pt.
-<figs/MuonEff2017.png, id=1317, 1597.97pt x 361.35pt>
+<figs/MuonEff2017.png, id=1349, 1597.97pt x 361.35pt>
 File: figs/MuonEff2017.png Graphic file (type png)
 <use figs/MuonEff2017.png>
-Package pdftex.def Info: figs/MuonEff2017.png  used on input line 3361.
+Package pdftex.def Info: figs/MuonEff2017.png  used on input line 3390.
 (pdftex.def)             Requested size: 398.34552pt x 113.80931pt.
-<figs/MuonEff2018.png, id=1318, 1614.03pt x 361.35pt>
+<figs/MuonEff2018.png, id=1350, 1614.03pt x 361.35pt>
 File: figs/MuonEff2018.png Graphic file (type png)
 <use figs/MuonEff2018.png>
-Package pdftex.def Info: figs/MuonEff2018.png  used on input line 3365.
+Package pdftex.def Info: figs/MuonEff2018.png  used on input line 3394.
 (pdftex.def)             Requested size: 398.33461pt x 110.96422pt.
- [40 <./figs/EleEff.png>]
+ [42 <./figs/EleEff.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3458.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3458.
-
-<figs/placeholder.png, id=1364, 401.5pt x 401.5pt>
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3472.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3472.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3481.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3481.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3490.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-File: figs/placeholder.png Graphic file (type png)
-<use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3490.
-(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-[41 <./figs/MuonEff2016.png> <./figs/MuonEff2017.png> <./figs/MuonEff2018.png>]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3497.
+(hyperref)                removing `math shift' on input line 3487.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 3497.
+(hyperref)                removing `math shift' on input line 3487.
+
+<figs/placeholder.png, id=1394, 401.5pt x 401.5pt>
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3501.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3501.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3510.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3510.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3519.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+File: figs/placeholder.png Graphic file (type png)
+<use figs/placeholder.png>
+Package pdftex.def Info: figs/placeholder.png  used on input line 3519.
+(pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
+[43 <./figs/MuonEff2016.png> <./figs/MuonEff2017.png> <./figs/MuonEff2018.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3526.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 3526.
 
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3511.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3540.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3511.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3540.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3520.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3549.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3520.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3549.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3529.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3558.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3529.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3558.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-[42] [43 <./figs/placeholder.png>] [44]
+[44] [45 <./figs/placeholder.png>] [46]
 
-LaTeX Warning: Reference `section:wwCR' on page 45 undefined on input line 3540
+LaTeX Warning: Reference `section:wwCR' on page 47 undefined on input line 3569
 .
 
 
-LaTeX Warning: Reference `section:ttVCR' on page 45 undefined on input line 354
-0.
+LaTeX Warning: Reference `section:ttVCR' on page 47 undefined on input line 356
+9.
 
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3558.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3587.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3558.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3587.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3567.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3596.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3567.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3596.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3576.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3605.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3576.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3605.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3597.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3626.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3597.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3626.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3606.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3635.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3606.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3635.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3615.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3644.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
 File: figs/placeholder.png Graphic file (type png)
 <use figs/placeholder.png>
-Package pdftex.def Info: figs/placeholder.png  used on input line 3615.
+Package pdftex.def Info: figs/placeholder.png  used on input line 3644.
 (pdftex.def)             Requested size: 199.17502pt x 199.17502pt.
-<figs/SSemu0j2016.png, id=1443, 1236.62pt x 1238.6275pt>
+<figs/SSemu0j2016.png, id=1474, 1236.62pt x 1238.6275pt>
 File: figs/SSemu0j2016.png Graphic file (type png)
 <use figs/SSemu0j2016.png>
-Package pdftex.def Info: figs/SSemu0j2016.png  used on input line 3690.
+Package pdftex.def Info: figs/SSemu0j2016.png  used on input line 3719.
 (pdftex.def)             Requested size: 199.16522pt x 199.16724pt.
-<figs/SSemu1j2016.png, id=1444, 1226.5825pt x 1206.5075pt>
+<figs/SSemu1j2016.png, id=1475, 1226.5825pt x 1206.5075pt>
 File: figs/SSemu1j2016.png Graphic file (type png)
 <use figs/SSemu1j2016.png>
-Package pdftex.def Info: figs/SSemu1j2016.png  used on input line 3690.
+Package pdftex.def Info: figs/SSemu1j2016.png  used on input line 3719.
 (pdftex.def)             Requested size: 199.1582pt x 199.1572pt.
-<figs/SSemu0j2017.png, id=1445, 1226.5825pt x 1232.605pt>
+<figs/SSemu0j2017.png, id=1476, 1226.5825pt x 1232.605pt>
 File: figs/SSemu0j2017.png Graphic file (type png)
 <use figs/SSemu0j2017.png>
-Package pdftex.def Info: figs/SSemu0j2017.png  used on input line 3699.
+Package pdftex.def Info: figs/SSemu0j2017.png  used on input line 3728.
 (pdftex.def)             Requested size: 199.1582pt x 199.15805pt.
-<figs/SSemu1j2017.png, id=1446, 1230.5975pt x 1218.5525pt>
+<figs/SSemu1j2017.png, id=1477, 1230.5975pt x 1218.5525pt>
 File: figs/SSemu1j2017.png Graphic file (type png)
 <use figs/SSemu1j2017.png>
-Package pdftex.def Info: figs/SSemu1j2017.png  used on input line 3699.
+Package pdftex.def Info: figs/SSemu1j2017.png  used on input line 3728.
 (pdftex.def)             Requested size: 199.15291pt x 199.15594pt.
-<figs/SSemu0j2018.png, id=1447, 1268.74pt x 1210.5225pt>
+<figs/SSemu0j2018.png, id=1478, 1268.74pt x 1210.5225pt>
 File: figs/SSemu0j2018.png Graphic file (type png)
 <use figs/SSemu0j2018.png>
-Package pdftex.def Info: figs/SSemu0j2018.png  used on input line 3708.
+Package pdftex.def Info: figs/SSemu0j2018.png  used on input line 3737.
 (pdftex.def)             Requested size: 199.16939pt x 199.15498pt.
-<figs/SSemu1j2018.png, id=1448, 1224.575pt x 1212.53pt>
+<figs/SSemu1j2018.png, id=1479, 1224.575pt x 1212.53pt>
 File: figs/SSemu1j2018.png Graphic file (type png)
 <use figs/SSemu1j2018.png>
-Package pdftex.def Info: figs/SSemu1j2018.png  used on input line 3708.
+Package pdftex.def Info: figs/SSemu1j2018.png  used on input line 3737.
 (pdftex.def)             Requested size: 199.1686pt x 199.17073pt.
-[45] [46] [47] [48 <./figs/SSemu0j2016.png> <./figs/SSemu1j2016.png> <./figs/SS
+[47] [48] [49] [50 <./figs/SSemu0j2016.png> <./figs/SSemu1j2016.png> <./figs/SS
 emu0j2017.png> <./figs/SSemu1j2017.png> <./figs/SSemu0j2018.png> <./figs/SSemu1
-j2018.png>] [49] [50]
+j2018.png>] [51] [52]
 Chapter 4.
-[51
+[53
 
-] [52
+] [54
 
 ]
 Chapter 5.
-[53] [54
+[55] [56
 
-] [55
+] [57
 
-] [56]
+] [58]
 Appendix A.
 Package acronym Info: Label `acro:DAS' newly defined as it shall be overridden
-although it is yet undefined on input line 3795.
+although it is yet undefined on input line 3829.
 
-LaTeX Warning: Float too large for page by 26.50441pt on input line 3858.
+LaTeX Warning: Float too large for page by 26.50441pt on input line 3892.
 
 
-LaTeX Warning: Reference `table:tDMsignals' on page 57 undefined on input line 
-3949.
+LaTeX Warning: Reference `table:tDMsignals' on page 59 undefined on input line 
+3983.
 
-[57
+[59
 
-] [58] [59] [60] [61] [62] [63] [64]
+] [60] [61] [62] [63] [64] [65] [66]
 Appendix B.
-[65
+[67
 
-] [66
+] [68
 
-] (./thesis_prieels.lof [67]
+] (./thesis_prieels.lof [69]
 Overfull \hbox (16.88626pt too wide) in paragraph at lines 46--46
  [][] [][][]\OT1/cmr/m/n/10 Tight elec-tron ef-fi-cien-cies for this anal-y-sis
 , based on the Egamma [][] $\OML/cmm/m/it/10 mva[]\OT1/cmr/m/n/10 90\OML/cmm/m/
 it/10 p[]Iso\OT1/cmr/m/n/10 2016$ 
  []
 
-[68])
+[70])
 \tf@lof=\write7
 \openout7 = `thesis_prieels.lof'.
 
- [69] [70
+ [71] [72
 
 ] (./thesis_prieels.lot)
 \tf@lot=\write8
 \openout8 = `thesis_prieels.lot'.
 
- [71] [72
+ [73] [74
 
-] [73] [74] [75] [76] [77]
-[78]
-Underfull \hbox (badness 10000) in paragraph at lines 4887--4888
+] [75] [76] [77] [78] [79]
+[80]
+Underfull \hbox (badness 10000) in paragraph at lines 4926--4927
 [][][]\OT1/cmr/m/n/10 W. Tanen-baum, "A ROOT/IO Based Soft-ware Frame-work for 
 CMS",
  []
 
-[79]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4937.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 4937.
+[81]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4976.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4976.
  (./thesis_prieels.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4937.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4937.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4976.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4976.
 
 Package rerunfilecheck Info: File `thesis_prieels.out' has not changed.
-(rerunfilecheck)             Checksum: C2529094B8DCF2E1F450A513DCB7BA54;3648.
+(rerunfilecheck)             Checksum: AFB89ACBDF06DEBB56BAAA7C1B8E9E8F;3663.
 
 
 LaTeX Warning: There were undefined references.
@@ -2251,13 +2265,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4937.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4976.
  ) 
 Here is how much of TeX's memory you used:
- 25115 strings out of 494880
- 479255 string characters out of 6179601
- 670145 words of memory out of 5000000
- 27378 multiletter control sequences out of 15000+600000
+ 25147 strings out of 494880
+ 479748 string characters out of 6179601
+ 670880 words of memory out of 5000000
+ 27401 multiletter control sequences out of 15000+600000
  21051 words of font info for 72 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
  66i,21n,103p,1465b,1771s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2285,10 +2299,10 @@ s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
 c/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/la
 txfont/line10.pfb>
-Output written on thesis_prieels.pdf (94 pages, 8033230 bytes).
+Output written on thesis_prieels.pdf (96 pages, 8136683 bytes).
 PDF statistics:
- 2377 PDF objects out of 2487 (max. 8388607)
- 2093 compressed objects within 21 object streams
- 525 named destinations out of 1000 (max. 500000)
- 720 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2418 PDF objects out of 2487 (max. 8388607)
+ 2125 compressed objects within 22 object streams
+ 532 named destinations out of 1000 (max. 500000)
+ 730 words of extra memory for PDF output out of 10000 (max. 10000000)
 
