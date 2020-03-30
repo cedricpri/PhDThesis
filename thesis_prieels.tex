@@ -166,6 +166,7 @@
 %
 \chapter*{\huge{Acknowledgments}}
 
+\iffalse
 First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in the personal and professional point of view, and something I will definitely benefit from in the future.
 
 I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. I cannot count the number of bugs and issues you helped me solve, so thank you for keeping your door open at all times anyway, and for spending so much time correcting the talks I gave over the years.
@@ -177,7 +178,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 Thank you also to my PhD coworkers, Pedro, Nicol\`{o}, Celia, Andrea and Pablo for making the students office a better place to work in. I wish you all the best in the future. 
 
 Of course, I would especially like to thank to my father Philippe, my mother Chantal and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this PhD in the first place and you can be sure I don't regret this decision. You brought me more than you can imagine and I will never forget all these great moments we spent during the last 7 years, and the many more still to come.
-
+\fi
 \newpage
 
 %
@@ -298,6 +299,7 @@ Of course, I would especially like to thank to my father Philippe, my mother Cha
 \pagenumbering{arabic}
 %Introduction
 
+\iffalse
 \chapter{Introduction}
 
 The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -366,7 +368,7 @@ Finally, a statistical interpretation of our data will be performed and differen
 
 
 
-\iffalse
+
 \chapter{The dark matter case}\label{chapter:Case}
 
 In this chapter, some general explanations about the \ac{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \ac{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} will be presented in Section~\ref{section:DMCandidates}. The main ways we have to search (direct, indirect and collider searches) for this new exotic physics along with the main experiments dedicated to such searches will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion limits published over the course of the previous years by the \ac{ATLAS} and \ac{CMS} collaborations will be shown in Section~\ref{section:PreviousResults}.
@@ -1208,7 +1210,6 @@ This combination managed to exclude the production of scalar mediators up to 290
 \label{figure:Combination2019}
 \end{center}
 \end{figure}
-\fi
 
 
 
@@ -1688,7 +1689,7 @@ Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig
 
 The \ac{DAQ} is indeed also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
 from online event processing in the \ac{HLT}, the transfer of the data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times. %The \ac{DAQ} is therefore an essential part of the detector.
-
+\fi
 
 
 
@@ -1983,11 +1984,15 @@ Several corrections also need to be applied to this spectrum to filter anomalous
 
 \section{Top reconstruction} \label{section:RecoTop}
 
-Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the \ac{SM} $t \bar t$ process detailed in Section~\ref{subsection:ttbar} is still an extremely important part of this analysis. 
+Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the \ac{SM} $t \bar t$ process detailed in Section~\ref{subsection:ttbar} is still an extremely important part of this analysis. The reconstruction of the top quark from channels containing leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the sum of neutrino momenta can only be inferred from the total momentum imbalance which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques that will be briefly introduced in this section.
 
 As previously explained, because of the high mass of the top quark, it is expected to decay before reaching the detector, almost 100\% of the time into a $b \bar b$ pair of quarks, which can be identified using the b-tagging method explained in Section~\ref{section:BTag}, and a W boson, unstable as well (in our particular case, only the W decay to a lepton and a neutrino is considered for reasons explained in Section~\ref{section:diLeptonFS}, even though this decay has a low \acf{BR}).
 
-The ideal kinematics of such an event can be expressed using the four-momenta of the different particles involved, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
+\subsection{Analytical top reconstruction}
+
+Two main methods exist in order to solve this reconstruction problem, now shortly described:
+\begin{itemize}
+\item The \textbf{Sonnenschein method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
 \begin{subequations}
 \begin{equation}
@@ -2015,13 +2020,92 @@ m_{\bar t}^2 = (E_{\bar b} + E_{l^-} + E_{\bar \nu})^2 - (\overrightarrow{p}_{\b
 \end{equation}
 \end{subequations}
 
-In all these previous equations, the quantities related to the leptons and the b-jets can be measured using the \ac{PF} reconstruction, while the energy of the neutrinos can be considered equal to their momentum because of their extremely low mass. It is also important to note that the different masses appearing in these equations will be treated as exactly known even though this is only true at first approximation since they are actually \ac{BW} distributions. 
+%In these previous equations, the \ac{PF} reconstruction help with the measurement of the quantities related to the leptons and b-jets, while the energy of the neutrinos is considered equal to their momentum because of their extremely low mass. It is also important to note that the different masses appearing in these equations are typically treated as exactly known even though this is only true at first order since they are actually \ac{BW} distributions. 
 
-We therefore have 6 equations to solve and exactly 6 unknowns corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved, leading to a quartic equation in one of the unknowns analytically solvable but quite ambiguous given the variable number of solutions of such equation \cite{TopReco}. Solving this problem considering \ac{SM} $t \bar t$ is in this sense extremely helpful since it gives us access to the $p_T$ of the neutrinos produced.
+In this case, we therefore have 6 equations to solve and exactly 6 unknowns corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved \cite{TopReco}, leading to a quartic equation in one of the unknowns, analytically solvable but quite ambiguous given the variable number of solutions of such equation. 
+
+%This method then relies on an additional minimization process of this quartic equation to find the optimal solution, while some of the loss of reconstruction efficiency due to the contribution to the \ac{MET} given by the eventual presence of \ac{DM} particles can typically be recovered. This minimization process allows to estimate the value of the $p_T$ of the mediator of the \ac{DM} interaction, an interesting discriminating variable between the \ac{SM} $t \bar t$ process and our signal that will be described later on this section.
+
+\item The \textbf{Betchart method} on the other hand is able to analytically describe the decay $t \rightarrow b + l + \nu$ using a geometric approach. This method was chosen in this analysis because it offers the following advantages:
+\begin{itemize}
+\item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously. 
+\item As we will now see, the solution set for each neutrino momentum in this case in an ellipse that can be described precisely. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
+\item The results obtained here can be useful for other event topologies featuring similar kinematic constraints as well.
+\end{itemize}
+
+Basically, this methods relies on two observations constraining the geometrical shape of the W boson momentum vector. First of all, the decay of top quark constrains this vector to an ellipsoidal surface of revolution about an axis coincident with the bottom quark momentum. The decay of the W boson itself on the other hand additionally constrain this vector to another ellipsoidal surface of revolution about an axis matching the momentum of the resulting charged lepton. The W boson momentum vector will then be defined by the intersection of the surfaces given by these two constraints, resulting in an ellipse in the phase space. The neutrino momentum vector can then be expressed as a translation of this ellipse, using a a parametric expression in the laboratory coordinate system.
+
+In the two neutrinos final state, it is then possible to show that the elliptical solution sets for the neutrino momenta ($\nu_\perp$, $\bar \nu_\perp$) respective to the two top quarks decaying to leptons are given by Equation~\ref{eq:matrix} \cite{Betchart}, where $N_\perp$ is the solution ellipse in the transverse place.
+
+
+\begin{equation}
+\label{eq:matrix}
+\begin{dcases}
+\nu_\perp^T N_\perp \nu_\perp = 0 \\
+\bar \nu_\perp^T \bar N_\perp \bar \nu_\perp = 0
+\end{dcases}
+\end{equation}
+
+Given the fact that the measured components ($\cancel{x}$, $\cancel{y}$) of the \ac{MET} are the sum of the $\nu_\perp$ and $\bar \nu_\perp$ components, they can be related by Equation~\ref{eq:related}.
+
+\begin{equation}
+\label{eq:related}
+\bar \nu_\perp = \begin{pmatrix}
+\\[-1.3cm] -1 & 0 & \cancel{x} \\[-0.5cm]
+0 & -1 & \cancel{y} \\[-0.5cm]
+0 & 0 & 1
+\end{pmatrix} \nu_\perp \equiv \Gamma \nu_\perp
+\end{equation}
+
+The solutions for the momenta of the neutrinos will then be given by the intersections of these two ellipses giving either zero, two or four solution pairs ($\bm{p}_\nu, \bm{p}_{\bar \nu}$), as shown in Figure~\ref{fig:ellipses}. If the two ellipses do not intersect, a $\chi^2$ method can be used to check the compability between the solution obtained and the standard $t \bar t$ process, the best solution being defined as the point of closest approach between the ellipses.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.3cm, height=4.3cm]{figs/ellipse0.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.3cm, height=4.3cm]{figs/ellipse2.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.3cm, height=4.3cm]{figs/ellipse4.png}
+\end{minipage} \hfill
+\caption{ Three events constraining the neutrino and antineutrino momenta (black and grey arrows, respectively) resulting in 0 (on the left), 2 (on the center) or 4 (on the right) solutions. The dashed ellipsed is obtained by using the additional constraint according to which measured \ac{MET} is equal to the sum of neutrino transverse momenta \cite{Betchart}.}
+\label{fig:ellipses}
+\end{figure}
+
+\end{itemize}
+
+So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a reconstruction efficiency of only $\sim 75$\%, compared to the $\sim 96$\% obtained considering only the standard $t \bar t$ process. The method then needs to be slightly adaptated to our particular case, as we will now see.
+
+\subsection{Top reconstruction with additional \ac{DM}}
+
+In this particular case, including an additional contribution $\bm{\phi}$ to the \ac{MET} is equivalent to slightly modifying the Equation~\ref{eq:related} to obtain Equation~\ref{eq:relatedDM}.
+
+\begin{equation}
+\label{eq:relatedDM}
+\bar \nu_\perp = \begin{pmatrix}
+\\[-1.3cm] \bar \nu_x \\[-0.5cm]
+\bar \nu_y \\[-0.5cm]
+1
+\end{pmatrix} = \begin{pmatrix}
+\\[-1.3cm] -1 & 0 & \cancel{x} \\[-0.5cm]
+0 & -1 & \cancel{y} \\[-0.5cm]
+0 & 0 & 1
+\end{pmatrix} \begin{pmatrix}
+\\[-1.3cm] \nu_x + \phi_x \\[-0.5cm]
+\nu_y + \phi_y \\[-0.5cm]
+1
+\end{pmatrix} \equiv \Gamma (\nu_\perp + \phi_\perp)
+\end{equation}
+
+This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it will provide us a way to determine two excellent discriminating variables.
+
+\color{red} Develop this section if we decide to use the dark pt variable \color{black}
 
 \subsection{Top reconstruction in practice}
 
-Even though the equations and the problem seems quite well defined and solvable, in practice, several complications quickly appears. First of all, when considering real data, the pairing between the leptons and the b-jets observed is not obvious to perform. Typically, three cases will then be defined in order to take this effect into account:
+Even though the equations seem quite well defined and solvable, several complications quickly appears when solving this problem in practice. First of all, when considering real data, the pairing between the leptons and the b-jets observed is not obvious to perform. Typically, three cases will then be defined in order to take this effect into account, by categorizing the event depending on the number of b-jets observed:
 
 \begin{itemize}
 \item If exactly 0 b-jets are observed, the event will not be considered in this analysis, according to the selection of the signal regions performed and explained later in Chapter~\ref{chapter:Selection}.
@@ -2029,13 +2113,11 @@ Even though the equations and the problem seems quite well defined and solvable,
 \item Finally, if exactly one b-jet is observed, then it will be kept and all the non b-tagged jets will be considered as the second b-jet candidate. In this case, several combinations between the two leptons and all these jets are then considered, resulting in $2n$ different combinations, where $n$ is the number of jets in the event.
 \end{itemize}
 
-The combination leading to the lowest invariant mass for the $t \bar t$ system is then chosen between all the different possibilities for the reconstruction of the system.
+The combination leading to the lowest invariant mass for the $t \bar t$ system is then chosen between all the different possibilities for the reconstruction of the system. When taking into account all these possible combinations, a reconstruction efficiency of $\sim 96$\% has been achieved when considering \ac{SM} $t \bar t$ \ac{MC} samples.
 
-\color{red} Section to be updated once the analysis performed and the details about the top reco performed known, and add the results obtained. \color{black}
+This efficencify can be slightly increased by performing a \textbf{smearing} method, taking into account imperfectly measured kinematics by repeating the reconstruction 100 times for each event, by changing each time the jets and leptons energy and directions within their respective uncertainties. 
 
-\subsection{Top reconstruction with additional \ac{DM}}
-
-
+\color{red} Add details about the smearing once known \color{black}
 
 
 
@@ -2064,7 +2146,7 @@ The combination leading to the lowest invariant mass for the $t \bar t$ system i
 
 
 
-\iffalse
+
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 
 In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
@@ -2184,7 +2266,7 @@ In this particular case, the 6th version of the nanoAOD, introducing a series of
 
 \section{Analysis code} \label{section:Code}
 
-The code used for the event generation, simulation and reconstruction is the version 10\_2\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package writen in C++. 
+The code used for the event generation, simulation and reconstruction is the version 10\_4\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package writen in C++. 
 
 Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This selection will be detailed in Chapter~\ref{chapter:Selection}. This \textit{Latino} framework, written in phyton, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different corrections to the \ac{MC} samples and produce the histograms needed to perform a search such as this one.
 
@@ -3171,7 +3253,7 @@ Several strategies are used in \ac{CMS} in order to be able to identify prompts 
 
 In this analysis, instead of relying on the four basic \ac{POG} official \acfp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
-Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ (for 2016) and $mvaFall17V1Iso\_WP90$ (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and ~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
+Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ (for 2016) and $mvaFall17V1Iso\_WP90$ (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
 \begin{table}
 \begin{center}
@@ -3369,7 +3451,7 @@ Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
 
 \section{Signals regions} \label{section:SR}
 
-It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. The data available to be plotted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year. 
+It is important to note that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1 fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset.
 
 Two signal regions have been defined in order to isolate on one hand the $t/ \bar t$+DM process and on the other hand the $t \bar t$+DM signal.
 
@@ -3537,44 +3619,44 @@ As shown in Figure~\ref{fig:TopCR}
 
 \color{red}To be added once defined \color{black}
 
-\subsection{ttV control region} \label{section:ttVCR}
-
-As shown in Figure~\ref{fig:ttVCR}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 ttV \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 ttV \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 ttV \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$, on the left, and \ac{PUPPI} \ac{MET}, on the right) represented in the ttV control region defined.}
-\label{fig:ttVCR}
-\end{figure}
-
-\color{red}To be added once defined \color{black}
+%\subsection{ttV control region} \label{section:ttVCR}
+%
+%As shown in Figure~\ref{fig:ttVCR}
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 ttV \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2017 ttV \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2018 ttV \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+%\end{minipage} \hfill
+%}
+%\caption{Two different variables ($m_{ll}$, on the left, and \ac{PUPPI} \ac{MET}, on the right) represented in the ttV control region defined.}
+%\label{fig:ttVCR}
+%\end{figure}
+%
+%\color{red}To be added once defined \color{black}
 
 \subsection{Same sign control region} \label{section:SSCR}
 
@@ -3593,7 +3675,7 @@ A same sign control region has also been defined in order to check the non-promp
 \end{itemize}
 \end{multicols}
 
-Several regions are then defined according to this cut, depending on the data taking period, on the channel, on the number of jets observed and on the $p_T$ of the second lepton. Some plots can be found in Figure~\ref{fig:SSCR}.
+Several regions are then defined according to this cut, depending on the data taking period, on the channel, on the number of jets observed and on the $p_T$ of the second lepton. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3656,7 +3738,7 @@ m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}
 
 This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest value.
 
-In this particular analysis, $M_{T2}(ll)$ is calculated, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
+In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
 
 However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
 
@@ -3673,7 +3755,7 @@ However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t 
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 \section{Future prospects}
-\fi
+
 
 
 
@@ -4714,6 +4796,11 @@ JINST 14 (2019) P07004 [arXiv: 1903.06078}
 "Analytical solution of ttbar dilepton equations",
 Phys.Rev.D73:054015, 2016}
 
+\bibitem{Betchart}
+\href{https://arxiv.org/pdf/1305.1878.pdf}{B.A. Betchart, R. Demina and A. Harel,
+"Analytic solutions for neutrino momenta in decay of top quarks",
+2013 [arXiv: 1305.1878]}
+
 \bibitem{MCGen}
 \href{https://arxiv.org/abs/1304.6677}{M.H. Seymour and M. Marx,
 "Monte Carlo Event Generators",
@@ -4783,6 +4870,11 @@ J. Phys.: Conf. Ser. 214 06021}
 \href{https://arxiv.org/abs/hep-ph/9906349}{C.G. Lester and D.J. Summers,
 "Measuring masses of semi-invisibly decaying particles pair produced at hadron colliders",
 Phys.Lett.B463:99-103, 1999}
+
+\bibitem{MT2Calc}
+\href{https://arxiv.org/abs/1411.4312}{C.G. Lester and B. Nachman,
+"Bisection-based asymmetric MT2 computation: a higher precision calculator than existing symmetric methods",
+JHEP03(2015)100, 1999 [arXiv: 1411.4312]}
 
 \bibitem{CMSSW}
 \href{https://arxiv.org/abs/1611.03215}{K. Bloom,
