@@ -176,7 +176,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my (PhD) coworkers who fought alongside me. Pedro, Nicol\`{o}, Celia, Clara, Andrea and Pablo, you made the students office a better place to work in and I wish you all the best, even though I am sure you will achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You know how I feel about you, you brought me more than you can imagine and I will never forget all these great moments we spent together. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family for many more years.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You brought me more than you can imagine and I will never forget all these great moments we spent together. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family for many more years.
 
 \newpage
 
@@ -1983,15 +1983,15 @@ Several corrections also need to be applied to this spectrum to filter anomalous
 
 \section{Top reconstruction} \label{section:RecoTop}
 
-Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the \ac{SM} $t \bar t$ process detailed in Section~\ref{subsection:ttbar} is still an extremely important part of this analysis. The reconstruction of the top quark from channels containing leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the sum of neutrino momenta can only be inferred from the total momentum imbalance which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques that will be briefly introduced in this section.
+Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signal from the different background processes introduced in Section~\ref{section:Discrimination} are spin correlated variables, sensitive to the nature of the \ac{DM} mediator but which require knowledge of the top quark and anti-quark four-momenta, not immediately available without such complete reconstruction of the $t \bar t$ system. 
 
-As previously explained, because of the high mass of the top quark, it is expected to decay before reaching the detector, almost 100\% of the time into a $b \bar b$ pair of quarks, which can be identified using the b-tagging method explained in Section~\ref{section:BTag}, and a W boson, unstable as well (in our particular case, only the W decay to a lepton and a neutrino is considered for reasons explained in Section~\ref{section:diLeptonFS}, even though this decay has a low \acf{BR}).
+However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the sum of neutrino momenta can only be inferred from the total momentum imbalance which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques, either numerical or analytical, that will now be briefly introduced.
 
 \subsection{Numerical and analytical top reconstruction}
 
 Two main methods exist in order to solve this reconstruction problem, now shortly described:
 \begin{itemize}
-\item The \textbf{Sonnenschein numerical method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains, as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
+\item The \textbf{Sonnenschein numerical method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains (in this case, we consider only the chain $t \rightarrow bW \rightarrow bl\nu$ for the two tops, as previously explained), as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
 \begin{subequations}
 \begin{equation}
@@ -2021,20 +2021,20 @@ m_{\bar t}^2 = (E_{\bar b} + E_{l^-} + E_{\bar \nu})^2 - (\overrightarrow{p}_{\b
 
 %In these previous equations, the \ac{PF} reconstruction help with the measurement of the quantities related to the leptons and b-jets, while the energy of the neutrinos is considered equal to their momentum because of their extremely low mass. It is also important to note that the different masses appearing in these equations are typically treated as exactly known even though this is only true at first order since they are actually \ac{BW} distributions. 
 
-In this case, we therefore have 6 equations to solve and exactly 6 unknowns corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved \cite{TopReco}, leading to a quartic equation in one of the unknowns, analytically solvable but quite ambiguous given the variable number of solutions of such equation. 
+In this case, we therefore have 6 equations to solve and exactly 6 unknowns (since the energy of the neutrinos is considered equal to their momentum because of their extremely low mass and if we assume the W boson and top quark masses to be known and fixed) corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved \cite{TopReco}, leading to a quartic equation in $p_{\nu_x}$, analytically solvable but quite ambiguous given the variable number of solutions of such equation (typically, the solution giving the lowest invariant mass for the $t \bar t$ system is then chosen).
 
 %This method then relies on an additional minimization process of this quartic equation to find the optimal solution, while some of the loss of reconstruction efficiency due to the contribution to the \ac{MET} given by the eventual presence of \ac{DM} particles can typically be recovered. This minimization process allows to estimate the value of the $p_T$ of the mediator of the \ac{DM} interaction, an interesting discriminating variable between the \ac{SM} $t \bar t$ process and our signal that will be described later on this section.
 
-\item The \textbf{Betchart analytical method} on the other hand is able to describe the decay $t \rightarrow b + l + \nu$ using a geometric approach. This method was chosen in this analysis because it offers the following advantages:
+\item The \textbf{Betchart analytical method} on the other hand is able to describe the decay $t \rightarrow bl\nu$ using this time a geometric approach. This method was chosen in this analysis because it offers the following advantages:
 \begin{itemize}
 \item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously. 
-\item As we will now see, the solution set for each neutrino momentum in this case in an ellipse that can be described precisely. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
+\item As we will now see, the solution set for each neutrino momentum in this case is an ellipse that can be described precisely and from which the solutions for the neutrino momenta can be reduced to a discrete set of values. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
 \item The results obtained here can be useful for other event topologies featuring similar kinematic constraints as well.
 \end{itemize}
 
-Basically, this methods relies on two observations constraining the geometrical shape of the W boson momentum vector. First of all, the decay of top quark constrains this vector to an ellipsoidal surface of revolution about an axis coincident with the bottom quark momentum. The decay of the W boson itself on the other hand additionally constrain this vector to another ellipsoidal surface of revolution about an axis matching the momentum of the resulting charged lepton. The W boson momentum vector will then be defined by the intersection of the surfaces given by these two constraints, resulting in an ellipse in the phase space. The neutrino momentum vector can then be expressed as a translation of this ellipse, using a a parametric expression in the laboratory coordinate system.
+Basically, this methods relies on two observations constraining the geometrical shape of the W boson momentum vector. First of all, the decay of top quark constrains this vector to an ellipsoidal surface of revolution about an axis coincident with the bottom quark momentum. The decay of the W boson itself on the other hand additionally constrain this vector to another ellipsoidal surface of revolution about an axis matching the momentum of the resulting charged lepton. The W boson momentum vector will then be defined by the intersection of the surfaces given by these two constraints, resulting in an ellipse in the phase space. The neutrino momentum vector can then be expressed as a translation of this ellipse, using a parametric expression, as described in \cite{Betchart}.
 
-In the two neutrinos final state, it is then possible to show that the elliptical solution sets for the neutrino momenta ($\nu_\perp$, $\bar \nu_\perp$) respective to the two top quarks decaying to leptons are given by Equation~\ref{eq:matrix} \cite{Betchart}, where $N_\perp$ is the solution ellipse in the transverse place.
+In the two neutrinos final state, it is then possible to show that the elliptical solution sets for the neutrino momenta ($\nu_\perp$, $\bar \nu_\perp$) respective to the two top quarks decaying to leptons are given by Equation~\ref{eq:matrix}, where $N_\perp$ and $\bar N_\perp$ are the solution ellipses of the (anti)neutrino in the transverse plane and expressed in the laboratory coordinate system.
 
 
 \begin{equation}
@@ -2075,7 +2075,7 @@ The solutions for the momenta of the neutrinos will then be given by the interse
 
 \end{itemize}
 
-So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a reconstruction efficiency of only $\sim 75$\%, compared to the $\sim 96$\% obtained considering only the standard $t \bar t$ process. The method then needs to be slightly adaptated to our particular case, as we will now see.
+So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adaptated to our particular case, as we will now see.
 
 \subsection{Top reconstruction with additional \ac{DM}} \label{section:ttrecoDM}
 
@@ -2105,10 +2105,10 @@ By sustituting these values into Equation~\ref{eq:matrix}, we then get a new rel
 \nu_\perp^T \Gamma^T \bar N_\perp \Gamma \nu_\perp + \nu_\perp^T \Gamma^T \bar N_\perp \Gamma \phi_\perp + \phi_\perp^T \Gamma^T \bar N_\perp \Gamma \nu_\perp + \phi_\perp^T \Gamma^T \bar N_\perp \Gamma \phi_\perp = 0
 \end{equation}
 
-This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it will provide us a way to determine two excellent discriminating variable:
+This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it provides us a way to determine two excellent discriminating variables:
 
 \begin{itemize}
-\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, as we just saw, if the system considered does not admit any solution, then there is no intersecton between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimated the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developped later in Section~\ref{section:Discrimination}.
+\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, as we just saw, if the system considered does not admit any solution, then there is no intersecton between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that the distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimating the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developped later in Section~\ref{section:Discrimination}.
 \item The second interesting variable is the so-called \textbf{overlapping factor $R$}, defined in Equation~\ref{eq:overlapping}, where $l_1$ and $l_2$ are the two sizes of the ellipses measured along the axis joining their centers, and $d$ is the distance between these centers.
 
 \begin{equation}
@@ -2134,23 +2134,62 @@ By its definition, this factor is able to take into account not only the distanc
 
 \subsection{Top reconstruction in practice}
 
-Even though the equations seem quite well defined and solvable, several complications quickly appears when solving this problem in practice. First of all, when considering real data, the pairing between the leptons and the b-jets observed is not obvious to perform. Typically, three cases will then be defined in order to take this effect into account, by categorizing the event depending on the number of b-jets observed:
+The idea of the algorithm is quite simple: it basically takes as input two leptons and two b-jets, performs all the calculations just described and returns the optimal momenta value for the two neutrinos. However, in practice, several complications quickly appears when solving this problem in practice, for several reasons now described.
 
+First of all, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations, taken two by two. In practice, the following categories are therefore defined: 
 \begin{itemize}
-\item If exactly 0 b-jets are observed, the event will not be considered in this analysis, according to the selection of the signal regions performed and explained later in Chapter~\ref{chapter:Selection}.
-\item If more than one b-jet is observed, then only two different permutations considering the two b-jets and the two leptons having the highest momentum $\{l^+ \leftrightarrow b_1, l^- \leftrightarrow b_2 \}$ and $\{l^- \leftrightarrow b_1, l^+ \leftrightarrow b_2 \}$ are considered.
-\item Finally, if exactly one b-jet is observed, then it will be kept and all the non b-tagged jets will be considered as the second b-jet candidate. In this case, several combinations between the two leptons and all these jets are then considered, resulting in $2n$ different combinations, where $n$ is the number of jets in the event.
+\item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions performed and explained later in Chapter~\ref{chapter:Selection}.
+\item If 2 or more b-jets are observed, then the first b-jet is used and then all the possible combinations between the two leptons and the other different b-jets of the event are considered.
+\item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this remaining set of jets are then tested.
 \end{itemize}
 
-The combination leading to the lowest invariant mass for the $t \bar t$ system is then chosen between all the different possibilities for the reconstruction of the system. When taking into account all these possible combinations, a reconstruction efficiency of $\sim 96$\% has been achieved when considering \ac{SM} $t \bar t$ \ac{MC} samples.
+When taking into account all these possible combinations, a reconstruction efficiency of $\sim 96$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples.
 
-This efficencify can be slightly increased by performing a \textbf{smearing} method, taking into account imperfectly measured kinematics by repeating the reconstruction 100 times for each event, by changing each time the jets and leptons energy and directions within their respective uncertainties. 
+This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
+\begin{itemize}
+\item First of all, the jets and leptons energies are updated within their respective uncertainties, and the \ac{MET} is recomputed each time using these newly calculated parameters.
+\item Then, an angular smearing is also performed, using the angles $\alpha$ and $\omega$ shown in Figure~\ref{fig:angsmearing}. 
 
-\color{red} Add details about the smearing once known \color{black}
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=3.3cm, height=4.2cm]{figs/angularSmearing.png}
+\caption{Definition of the angles used in the smearing of the leptons and jets directions \cite{DESYAN}.}
+\label{fig:angsmearing}
+\end{figure}
 
+The $\omega$ angle is first of all taken from a simple uniform distribution, while $\alpha$ is determined from simulation of the \ac{SM} $t \bar t$ process, for b-jets and leptons separetely, as shown in the distributions in Figure~\ref{fig:angdistributions}.
+\item Finally, the mass of the W boson, entering the reconstruction as a parameter and not a universal constant in nature, is updated each time by generating a random number according to a Breit-Weigner distribution of mean 80.38 GeV and width 2.08 GeV.
+\end{itemize}
 
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{Simulated distributions of the $\alpha$ angle between the particle and detector level direction for jets (on the left) and letpons (on the right).}
+\label{fig:angdistributions}
+\end{figure}
 
+During each iteration of the smearing process, an individual weight $w$ is computed from the true invariant mass $m_{lb}$ distribution previously obtained using generation. Both the W mass distribution obtained and this distribution are represented in Figure~\ref{fig:truemlb}.
 
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/bw.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/mlb2.png}
+\end{minipage} \hfill
+\caption{Breit-Wigner spectrum obtained when generating randomly the mass of the W boson (on the left) and true $m_{lb}$ distribution obtained using the generation information from the standard $t \bar t$ process (on the right).}
+\label{fig:truemlb}
+\end{figure}
+
+A global weight $W$ is then assigned to each lepton/b-jet combination by summing the weight $\sum w(m_{l \bar b}) \cdot w(m_{\bar l b})$ obtained for each smearing iteration, and the combination with the largest weight is considered to be the solution of the event. This weight distribution is another variable used to discriminate the signal from the backgrounds processes, as detailed in Section~\ref{section:Discrimination}. 
+
+Even though this techniques increases the efficiency of the reconstruction to XX\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to assign a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values if this algorithm fails.
 
 
 
@@ -3744,9 +3783,15 @@ In order to cover for most of the discrepancies between the data and the simulat
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 
-\subsubsection*{Dark $p_T$ and overlapping factor}
+\subsubsection*{Dark $p_T$ and overlapping factor $R$}
 
-Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these variables is of course expected to give some discrimination, since the standar $t \bar t$ process is expected to peak around 0 while...
+Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by constructions expected to give some discrimination between the signal and the different background processes, mainly the $t \bar t$. Indeed, the dark $p_T$ is expected to take slightly higher values for the signal, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}.
+
+The overlapping factor $R$ defined in Equation~\ref{eq:overlapping}, on the other hand, is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered.
+
+\subsubsection*{Spin correlated variables}
+
+
 
 \subsubsection*{\acf{MET}}
 
@@ -4839,6 +4884,10 @@ Phys.Rev.D73:054015, 2016}
 \href{https://repositorio.unican.es/xmlui/bitstream/handle/10902/15648/Lantero\%20Barreda\%20Agustin.pdf}{A. Lantero Barreda,
 "Improvement of the signal-to-background discrimination in search for Dark Matter produced in association with a pair of top-antitop quarks",
 UNICAN repository, 2018}
+
+\bibitem{DESYAN}
+\href{http://cms.cern.ch/iCMS/user/noteinfo?cmsnoteid=CMS\%20AN-2016/240}{CMS Collaboration,
+"Search for dark matter production in association with dileptonically decaying top quarks at 13 TeV", AN2016-240}
 
 \bibitem{MCGen}
 \href{https://arxiv.org/abs/1304.6677}{M.H. Seymour and M. Marx,
