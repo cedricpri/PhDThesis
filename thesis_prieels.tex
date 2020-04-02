@@ -172,7 +172,7 @@ I would also like to personally thank J\'{o}natan Piedra for supervising this th
 
 Pablo Mart\'{i}nez, you have been a great co-director, and this work not have been possible without your help and dedication to this analysis. You also became a friend over the years and I will never be able to thank you enough for your help, especially in this last year which has undoubtedly been quite challenging for me. 
 
-I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah and Dominic. Thank you as well to all the persons involved in the development of the Latino framework, which quickly became a great tool to work with. Citng them all would take too long, but I am also deeplygrateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the wednesday morning special each week. 
+I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah and Dominic. Thank you as well to all the persons involved in the development of the Latino framework, which quickly became a great tool to work with. Citing them all would take too long, but I am also deeplygrateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the wednesday morning special each week. 
 
 Thank you also to my (PhD) coworkers who fought alongside me. Pedro, Nicol\`{o}, Celia, Clara, Andrea and Pablo, you made the students office a better place to work in and I wish you all the best, even though I am sure you will achieve great things in the future.
 
@@ -2121,10 +2121,10 @@ By its definition, this factor is able to take into account not only the distanc
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=5.5cm]{figs/ellipseDM.png}
+\includegraphics[width=6.3cm, height=5.5cm]{figs/ElipseDM3.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=5.5cm]{figs/ellipsenoDM.png}
+\includegraphics[width=6.3cm, height=5.5cm]{figs/Elipsettnormal.png}
 \end{minipage} \hfill
 \caption{ Schematic representation of the two extreme cases that can be observed when defining the overlapping factor: athe reconstruction of a system with (on the left) and without (on the right) the presence of \ac{DM} \cite{Agustin}.}
 \label{fig:ellipsesDM}
@@ -2136,19 +2136,25 @@ By its definition, this factor is able to take into account not only the distanc
 
 The idea of the algorithm is quite simple: it basically takes as input two leptons and two b-jets, performs all the calculations just described and returns the optimal momenta value for the two neutrinos. However, in practice, several complications quickly appears when solving this problem in practice, for several reasons now described.
 
-First of all, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations, taken two by two. In practice, the following categories are therefore defined: 
+First of all, as we already saw, when the two ellipses intersect each other, we can observe either 2 or 4 solutions, even though only one actually corresponds to the physical momenta of the neutrinos. The solution giving the lowest possible invariant mass for the $t \bar t$ system is then simply chosen and taken in consideration for the analysis.
+
+Then, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations, taken two by two. In practice, the following categories are therefore defined: 
 \begin{itemize}
 \item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions performed and explained later in Chapter~\ref{chapter:Selection}.
 \item If 2 or more b-jets are observed, then the first b-jet is used and then all the possible combinations between the two leptons and the other different b-jets of the event are considered.
 \item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this remaining set of jets are then tested.
 \end{itemize}
 
-When taking into account all these possible combinations, a reconstruction efficiency of $\sim 96$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples.
-
-This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
+When taking into account all these possible combinations, a reconstruction efficiency of $\sim 91$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
 \begin{itemize}
-\item First of all, the jets and leptons energies are updated within their respective uncertainties, and the \ac{MET} is recomputed each time using these newly calculated parameters.
-\item Then, an angular smearing is also performed, using the angles $\alpha$ and $\omega$ shown in Figure~\ref{fig:angsmearing}. 
+\item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a gaussian distribution whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information. The \ac{MET} is also recomputed each time using these newly calculated parameters, according to Equation~\ref{eq:updateMET}.
+
+\begin{equation}
+\label{eq:updateMET}
+\cancel{E}_{T_{x,y}}^{\text{updated}} = \cancel{E}_{T_{x,y}}^{\text{reco}} + \sum_{\text{jet}_i = 1}^{2} (p_{x,y}^{\text{jet}_i, \text{updated}} - p_{x,y}^{\text{jet}_i, \text{reco}})
+\end{equation}
+
+\item An angular smearing is also performed, using the angles $\alpha$ and $\omega$ shown in Figure~\ref{fig:angsmearing}. 
 
 \begin{figure}[htbp]
 \centering
@@ -2157,7 +2163,16 @@ This efficiency can be slightly increased even more by performing a \textbf{smea
 \label{fig:angsmearing}
 \end{figure}
 
-The $\omega$ angle is first of all taken from a simple uniform distribution, while $\alpha$ is determined from simulation of the \ac{SM} $t \bar t$ process, for b-jets and leptons separetely, as shown in the distributions in Figure~\ref{fig:angdistributions}.
+The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while the angle $\alpha$ is taken as a random number generated from the distributions of the angle between the particle and detector level direction, as shown in Figure~\ref{fig:angdistributions}. These distributions have been obtained in \ac{MC} using Equation~\ref{eq:alpha}, relating the generation and reco normalized vectors $\hat{p}$ representing the direction of the momentum of a given object (lepton or b-jet).
+
+\begin{equation}
+\label{eq:alpha}
+\begin{dcases}
+\alpha = \arccos(\hat{p}^{\text{reco}} \cdot \hat{p}^{\text{gen}}) \\
+\hat{p} \equiv \frac{\overrightarrow{p}}{|\overrightarrow{p}|} = (\cos(\phi) \cdot \sin(\theta), \sin(\phi) \cdot \sin(\theta), \cos(\theta))
+\end{dcases}
+\end{equation}
+
 \item Finally, the mass of the W boson, entering the reconstruction as a parameter and not a universal constant in nature, is updated each time by generating a random number according to a Breit-Weigner distribution of mean 80.38 GeV and width 2.08 GeV.
 \end{itemize}
 
@@ -2169,11 +2184,11 @@ The $\omega$ angle is first of all taken from a simple uniform distribution, whi
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=6.3cm, height=4.7cm]{figs/placeholder.png}
 \end{minipage} \hfill
-\caption{Simulated distributions of the $\alpha$ angle between the particle and detector level direction for jets (on the left) and letpons (on the right).}
+\caption{Simulated distributions of the $\alpha$ angle between the particle and detector level direction for b-jets (on the left) and leptons (on the right).}
 \label{fig:angdistributions}
 \end{figure}
 
-During each iteration of the smearing process, an individual weight $w$ is computed from the true invariant mass $m_{lb}$ distribution previously obtained using generation. Both the W mass distribution obtained and this distribution are represented in Figure~\ref{fig:truemlb}.
+During each iteration of the smearing process, an individual weight $w$ is computed from the true invariant mass $m_{lb}$ distribution previously obtained using generation. Both the W mass and true $m_{lb}$ distributions obtained are represented in Figure~\ref{fig:truemlb}.
 
 \begin{figure}[htbp]
 \centering
@@ -2189,7 +2204,7 @@ During each iteration of the smearing process, an individual weight $w$ is compu
 
 A global weight $W$ is then assigned to each lepton/b-jet combination by summing the weight $\sum w(m_{l \bar b}) \cdot w(m_{\bar l b})$ obtained for each smearing iteration, and the combination with the largest weight is considered to be the solution of the event. This weight distribution is another variable used to discriminate the signal from the backgrounds processes, as detailed in Section~\ref{section:Discrimination}. 
 
-Even though this techniques increases the efficiency of the reconstruction to XX\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to assign a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values if this algorithm fails.
+Even though this smearing increases the efficiency of the reconstruction to 91.5\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to assign a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values if this algorithm fails.
 
 
 
@@ -3783,29 +3798,28 @@ In order to cover for most of the discrepancies between the data and the simulat
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 
-\subsubsection*{Dark $p_T$ and overlapping factor $R$}
-
-Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by constructions expected to give some discrimination between the signal and the different background processes, mainly the $t \bar t$. Indeed, the dark $p_T$ is expected to take slightly higher values for the signal, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}.
-
-The overlapping factor $R$ defined in Equation~\ref{eq:overlapping}, on the other hand, is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered.
-
-\subsubsection*{Spin correlated variables}
-
-
+Several variables that will now be briefly described can be used in order to define a region enriched in the signal studied. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
 
 \subsubsection*{\acf{MET}}
 
-This variable has already been defined in Section~\ref{section:RecoMET}, and corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
+Already defined in Section~\ref{section:RecoMET}, this variable corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
 
-This variable is expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds.
+This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds, as seen in Figure~\ref{fig:SRdiscMET}.
 
 \color{red} TALK ABOUT SINGLE TOP? \color{black}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\caption{Pf (on the left) and \ac{PUPPI} \ac{MET} (on the right) variables spectra for the backgrounds and several signal mass points in our signal region.}
+\label{fig:SRdiscMET}
+\end{figure}
 
 \subsubsection*{Stransverse mass}
 
 The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
 
-In this particular case, two particles contribute to the presence of \acf{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the decay considered \cite{MT2}.
+In this particular case, two particles contribute to the presence of \ac{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the particles involver in the decay considered \cite{MT2}.
 
 \begin{equation}
 \label{eq:mt2}
@@ -3815,13 +3829,101 @@ m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}
 \end{dcases}
 \end{equation}
 
-This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest value.
+This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest possible value.
 
-In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because, according to the definition just given, the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event.
+In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector, as seen in Figure~\ref{fig:SRdiscMT2}.
 
-However, in practice, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
+A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs will also be used. This variable is constructed in the same way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{$M_{T2}(ll)$ (on the left) and $M_{T2}(bl, bl)$ (on the right) variables spectra for the backgrounds and several signal mass points in our signal region.}
+\label{fig:SRdiscMET}
+\end{figure}
 
 \color{red} TALK ABOUT SINGLE TOP? \color{black}
+
+\subsubsection*{Dark $p_T$ and overlapping factor $R$}
+
+Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by constructions expected to give some discrimination between the signal and the different background processes, mainly the \ac{SM} $t \bar t$. 
+
+On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signal, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figure~\ref{fig:SRdisc1}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{Dark $p_T$ (on the left) and overlapping factor $R$ (on the right) obtained in the \ac{SR} of the analysis for the background and different signals processes considered.}
+\label{fig:SRdisc1}
+\end{figure}
+
+\subsubsection*{Spin correlated variables}
+
+The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction methods described in Section~\ref{section:RecoTop}. These variables are extremly intersting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
+
+Several variables belonging to this category such as $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos, and $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay productsin their respective parent rest frames have then been represented in Figure~\ref{fig:SRdisc2}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{Two examples of spin-correlated variables in our signal region, actually sensitive to the spin of the mediator of the interaction.}
+\label{fig:SRdisc2}
+\end{figure}
+
+\subsubsection*{Additional variables}
+
+A few additional variables are going to be used in the next part of the analysis as well, as shown in Figure~\ref{fig:SRdisc3}. Among them, we can for example quote:
+\begin{itemize}
+\item $\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figure~\ref{fig:scheme_deltaphi}. 
+
+\begin{minipage}[c]{.32\linewidth}
+   	\centering{
+   		\vspace{15pt}
+		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_mine.jpg}
+	}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.32\linewidth}
+   	\centering{
+		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_low_mine.jpg} \\
+	}
+   \end{minipage} \hfill
+   \begin{minipage}[c]{.32\linewidth}
+   	\centering{
+		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_high_mine.jpg} \\
+	}
+   \end{minipage} \hfill
+   \captionof{figure}{Schematic representation in the $\Phi$ plane of the distribution of the particles for the $t \bar t$ process (on the left) and the for the $t \bar t$ + DM (on the center and right). \\}
+   \label{fig:scheme_deltaphi}
+
+\item The kinematic reconstruction weight $W$ obtained from the $t \bar t$ reconstruction process, for reasons explained in Section~\ref{section:RecoTop}.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{Other discriminating variables used in this analysis: the angle $\Delta \Phi$ between the leptons and the \ac{MET} (on the left), and the $t \bar t$ reconstruction kinematic weight $W$ (on the right).}
+\label{fig:SRdisc3}
+\end{figure}
 
 \subsection{Neural network} \label{section:NN}
 
