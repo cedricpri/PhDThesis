@@ -164,8 +164,10 @@
 \chapter*{\huge{Resumen en espa\~{n}ol}}
 \newpage
 %
+
 \chapter*{\huge{Acknowledgments}}
 
+\iffalse
 First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in both the personal and professional points of view, and something I will definitely benefit from in the future.
 
 I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. You taught me a lot and I cannot count the number of bugs and issues you helped me solve, so I am thankful you kept your door open at all times anyway.
@@ -177,6 +179,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 Thank you also to my (PhD) coworkers who fought alongside me. Pedro, Nicol\`{o}, Celia, Clara, Andrea and Pablo, you made the students office a better place to work in and I wish you all the best, even though I am sure you will achieve great things in the future.
 
 Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You brought me more than you can imagine and I will never forget all these great moments we spent together. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family for many more years.
+\fi 
 
 \newpage
 
@@ -269,6 +272,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{TEC}[TEC]{Tracker EndCap} 
 \acro{TIB/TBD}[TIB/TBD]{Tracker Inner Barrel and Disks}
 \acro{TOB}[TOB]{Tracker Outer Barrel}
+\acro{TPG}[TPG]{Trigger Primitive Generators}
 \acro{UE}[UE]{Underlying Event}
 \acro{UED}[UED]{Universal Extra Dimensions}
 \acro{VBF}[VBF]{Vector Boson Fusion}
@@ -298,7 +302,6 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \pagenumbering{arabic}
 %Introduction
 
-\iffalse
 \chapter{Introduction}
 
 The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -370,7 +373,7 @@ Finally, a statistical interpretation of our data will be performed and differen
 
 \chapter{The dark matter case}\label{chapter:Case}
 
-In this chapter, some general explanations about the \ac{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \ac{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} will be presented in Section~\ref{section:DMCandidates}. The main ways we have to search (direct, indirect and collider searches) for this new exotic physics along with the main experiments dedicated to such searches will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \acf{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion limits published over the course of the previous years by the \ac{ATLAS} and \ac{CMS} collaborations will be shown in Section~\ref{section:PreviousResults}.
+In this chapter, some general explanations about the \ac{SM} will first of all be given in Section~\ref{section:SM} as a general introduction about today's most accepted mathematical model describing all the known particles and their interactions. The case for \ac{DM} will then be presented in Section~\ref{section:DMOrigins}, along with a summary of the main evidences, mostly astrophysical, which lead to the introduction of this kind of \acf{BSM} physics. Then, the main properties expected by such exotic matter will be introduced in Section~\ref{section:DMProperties} and nowadays's most accepted \ac{DM} candidates, such as the \acf{WIMP} will be presented in Section~\ref{section:DMCandidates}. The main ways we have to search (direct, indirect and collider searches) for this new exotic physics along with the main experiments dedicated to such searches will then be shown in Section~\ref{section:DMSearches}. Finally, the searches performed in colliders such as the \ac{LHC} and our particular channels of interest (\ac{DM} produced in association with either one or two top quarks) will be detailed in Section~\ref{section:ourChannel} and the latest similar results and exclusion limits published over the course of the previous years by the \ac{ATLAS} and \ac{CMS} collaborations will be shown in Section~\ref{section:PreviousResults}.
 
 \section{The Standard Model} \label{section:SM}
 
@@ -448,7 +451,7 @@ Actually, observations made by Vera Rubin and her team in the early 1970s with a
 \end{figure}
 
 \vspace{-10pt}
-\subsection{\acf{CMB} anisotropies} \label{subsection:CMB}
+\subsection{\ac{CMB} anisotropies} \label{subsection:CMB}
 
 The \ac{CMB} is a mostly uniform background of primary radio waves emitted when the Universe became transparent around 380 000 years after the Big Bang and was discovered accidentally in the 1940s \cite{CMBDiscovery}. Studying it is extremely important, as it is actually made of the oldest and cleanest electromagnetic radiation we can find in the Universe. Precise measurements of this radiation are actually critical in many different fields of physics, since any proposed model of the Universe must be able to explain this radiation, its temperature and anisotropies. 
 
@@ -552,7 +555,7 @@ In any case, \ac{DM} is not expected to have a mass lower than 300 eV since at t
 \end{center}
 \end{figure}
 
-All these properties narrow quite a lot the number of possible \ac{DM} candidates, as we will now see in the following section.
+All these properties narrow quite a lot the number of possible \ac{DM} candidates.
 
 \section{Dark matter candidates} \label{section:DMCandidates}
 
@@ -607,7 +610,7 @@ However, two physical reasons can explain why we do not really believe that \ac{
 Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expected to be cold, i.e. non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today. We can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
 
 \subsubsection*{Sterile neutrinos}
-The most obvious \ac{SM} particles being ruled out as \ac{DM} candidates, it is now time to introduce other \ac{BSM} theories introducing additional particles that could have the properties searched for. The first one of these theories introduces the so-called sterile neutrinos, usually referring to right-handed \ac{SM} neutrinos, as discussed in the previous subsection. 
+The most obvious \ac{SM} particles being ruled out as \ac{DM} candidates, we can now introduce other \ac{BSM} theories introducing additional particles that could have the properties searched for. The first one of these theories introduces the so-called sterile neutrinos, usually referring to right-handed \ac{SM} neutrinos, as discussed in the previous subsection. 
 
 If they exist, sterile neutrinos are expected to interact in an even weaker way than \ac{SM} active neutrinos, they could be very long-lived as well and in principle, nothing prevents us from considering that they could have a mass superior to 0.4 keV, giving therefore the correct \ac{DM} relic abundance \cite{keVSterile}. A superior bound of 50 keV on such particles can also be obtained considering limits on the observation of the monochromatic decay $\gamma$ line originating from the one loop radiative decay $N \rightarrow \nu + \gamma$ of such particles.
 
@@ -651,7 +654,7 @@ Several axion search experiments have therefore been set up, such as the \ac{ADM
 \end{figure}
 
 \subsubsection*{\acfp{WIMP}} 
-The actual \ac{DM} candidates that will be mostly considered throughout this work are the so-called \acfp{WIMP}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle", an important concept that can be translated mathematically as well. Indeed, because of the freeze-out scenario explained in Section~\ref{section:DMProperties}, we can find an expression relating the relic abundance of \ac{DM} $\Omega_\chi$ with its annihilation cross section $\langle \sigma_A v \rangle$ through Equation~\ref{eq:Annihilation} \cite{IndirectSearches}.
+The actual \ac{DM} candidates that will be mostly considered throughout this work are the so-called \acp{WIMP}, which are expected to interact, even though very weakly, with ordinary baryonic matter and which have an expected mass in the range of 100 GeV to 1 TeV for reasonable electroweak production cross-section values, right where we expect \ac{DM} to be found from its relic density: this is the so-called "WIMP miracle", an important concept that can be translated mathematically as well. Indeed, because of the freeze-out scenario explained in Section~\ref{section:DMProperties}, we can find an expression relating the relic abundance of \ac{DM} $\Omega_\chi$ with its annihilation cross section $\langle \sigma_A v \rangle$ through Equation~\ref{eq:Annihilation} \cite{IndirectSearches}.
 
 \begin{equation}
 \label{eq:Annihilation}
@@ -668,7 +671,7 @@ The \acp{WIMP} are also interesting in the sense that introducing them in the te
 
 As previously stated, several cosmological evidences allow us to introduce the concept of dark matter, but its properties such as its mass, coupling and interaction cross-section are difficult to study in this context. Several different ways can then be used to try and detect \ac{DM} particles in order to study them, as represented in Figure~\ref{fig:ThreeWays}, strategies which can usually be divided into three categories: the direct and indirect searches, mostly relying on the production of baryonic matter from the interaction between two \ac{DM} particles or on the observation of the interaction between the dark and baryonic sectors, and the production in colliders, usually able to probe lower \ac{DM} candidates masses and which will actually be the main focus of this work. 
 
-A discussion about these different detection strategies along with the main results obtained by different experiments in each case will now be presented.
+%A discussion about these different detection strategies along with the main results obtained by different experiments in each case will now be presented.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -791,7 +794,7 @@ The flux coming from the annihilation of two \ac{DM} particles is then expected 
 
 This equation is extremely important for two reasons. First of all, it shows that, if a signal is found in direct detection, we could use this detection to determine the new object mass and scattering cross section and then use this information in order to obtain the \ac{DM} density profile this way: the data obtained by the different strategies of detection are actually complementary. The second reason is that as we can see, the flux of incoming particles can actually be divided into two factors: $P$, entirely dependent on the physics of the \ac{DM} particle, and the $J$-factor $J(\Delta \Omega)$, depending only on the distribution of \ac{DM} within the system considered. This $J$-factor is in this sense actually a measurement of the quality of an astronomical object for an indirect measurement, since the higher the flux received, the better the measurement will be in general (even though this is not the only factor which matters, since for example the galactic center has a higher $J$-factor than the best dwarf galaxy observable, but also has a lot of backgrounds affecting the measurement).
 
-As different channels of observation are available for us to analyze the eventual annihilation of \ac{DM}, several strategies can be used in order to detect \ac{DM} indirectly, as we will now see, by searching different kinds of \ac{SM} particles. Anyway, all these strategies have one goal in common: try to reduce the background, since the signal searched for is usually quite low while the uncertainties associated to the background in astrophysics are usually quite high.
+As different channels of observation are available for us to analyze the eventual annihilation of \ac{DM}, several strategies can be used in order to detect \ac{DM} indirectly, by searching different kinds of \ac{SM} particles. Anyway, all these strategies have one goal in common: try to reduce the background, since the signal searched for is usually quite low while the uncertainties associated to the background in astrophysics are usually quite high.
 
 \subsubsection*{Through $\gamma$-rays detection}
 The golden channel for such searches is through the production of $\gamma$-rays by \ac{DM} annihilation $\chi \chi \rightarrow \gamma + X$ or decay $\chi \rightarrow \gamma + X$, mainly because the energy scale of the \acp{WIMP} implies that most of the annihilation and decay radiation will be emitted in this range of energies and because $\gamma$-rays are usually not deflected when traveling to the observer (this means that the exact source of this kind of radiation can be quite easily and precisely pin-pointed). However, they do have one drawback as well: the Earth's atmosphere is usually opaque to this kind of radiation at this level of energy. This means that most of experiments searching for them simply cannot be performed from the ground and have to be sent to space. 
@@ -912,11 +915,11 @@ An additional categorization of the \ac{DM} production models can be done, by se
 \end{center}
 \end{figure}
 
-In this work, simplified models with either scalar or pseudoscalar mediators will always be considered because of their relative simplicity and the lack of strong assumptions behind them. We will now study in particular the production and the search for \ac{DM} within the \ac{LHC}.
+In this work, simplified models with either scalar or pseudoscalar mediators will always be considered because of their relative simplicity and the lack of strong assumptions behind them.% We will now study in particular the production and the search for \ac{DM} within the \ac{LHC}.
 
 \section{\ac{DM} production at the \ac{LHC}} \label{section:ourChannel}
 
-The \acf{LHC}, colliding protons at a center of mass energy of 13 TeV, is actually a perfect machine to study such processes, because of the expected range of masses (100 GeV to 1 TeV) for the best \ac{DM} candidates, as discussed in Section~\ref{section:DMProperties}. However, because of the weak interactions of such particles, they are not expected to interact at all with the detector, which will then basically search for missing transverse energy along with a \ac{SM} particle triggering the event.
+The \ac{LHC}, colliding protons at a center of mass energy of 13 TeV, is actually a perfect machine to study such processes, because of the expected range of masses (100 GeV to 1 TeV) for the best \ac{DM} candidates, as discussed in Section~\ref{section:DMProperties}. However, because of the weak interactions of such particles, they are not expected to interact at all with the detector, which will then basically search for missing transverse energy along with a \ac{SM} particle triggering the event.
 
 Several major categories of \ac{DM} searches exist at the \ac{LHC}, performed mainly by the \ac{CMS} and \ac{ATLAS} collaborations, depending on the strategy applied for such searches:
 
@@ -983,7 +986,7 @@ These results have also been compared to the results obtained by several direct 
 \label{fig:DDComparison}
 \end{figure}
 
-This particular analysis and our signal of interest, the search for \ac{DM} production together with a single or a pair of top quarks falls into the second category and will now be detailed. It is already important to note that this analysis has been performed considering the \ac{DM} candidate to be a Dirac fermion with all the couplings equal and set to 1, as recommended by the \ac{DMWG} \cite{DMWG}.
+This particular analysis and our signal of interest, the search for \ac{DM} production together with a single or a pair of top quarks falls into the second category. It is already important to note that this analysis has been performed considering the \ac{DM} candidate to be a Dirac fermion with all the couplings equal and set to 1, as recommended by the \ac{DMWG} \cite{DMWG}.
 
 \subsection{The single top production channel} \label{subsection:singleTopChannel}
 
@@ -1238,21 +1241,19 @@ This combination managed to exclude the production of scalar mediators up to 290
 
 \chapter{The experimental setup} \label{chapter:Device}
 
-The data analyzed throughout this work is the result of the proton-proton collisions at a center of mass energy of 13 TeV provided by the \acf{LHC}. Is is therefore extremely important to describe this particle accelerator and to detail its main characteristics in order to understand better the origin of our data, as will be done in Section~\ref{section:LHC}. 
-
-This kind of collisions at high energy typically produces hundreds of new particles that we then need to identify, and whose exact properties, such as their momentum or electric charge, need to be measured. This is done by using the \acf{CMS} detector, an incredibly sophisticated detector, result of the work of thousands of people and made of several different layers, which will be described in Section~\ref{section:CMS}.
+The data analyzed throughout this work is the result of several years of proton-proton collisions produced at the \ac{LHC} with a center of mass energy of 13 TeV, and the particles emerging from these collisions have been recorded with the \ac{CMS} detector. In order to provide the experimental context of this thesis, the Section~\ref{section:LHC} of this section will be dedicated to the description of the accelerator, while the detector, in which thousands of people were involved and made of several different layers, will be described in Section~\ref{section:CMS}.
 
 \section{The \ac{LHC} accelerator} \label{section:LHC}
 
-The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and lead ions up to velocities close to the speed of light (0.999999990 c). Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground (under France and Switzerland) to avoid part of the contamination due to the cosmic rays and located at \ac{CERN}, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then an incredible achievement of the accelerator, after only a few years years of operation.
+The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and lead ions up to velocities close to the speed of light (0.999999990c). Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground (under France and Switzerland) to avoid part of the contamination due to the cosmic rays and located at \ac{CERN}, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then a magnificent achievement of the accelerator, after only a few years years of operation.
 
-Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass, couplings or spin, many groups of scientists are involved in different kind of \ac{BSM} physics since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allows us to reach a level of energy never reached before and therefore allows us to probe new parts of the phase space, searching for eventual hints of new physics. These kind of searches of course include the search for eventual \ac{DM} production as the one performed in this work. 
+Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass, couplings or spin, many groups of scientists are involved in different kind of \ac{BSM} physics since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allows us to reach a level of energy never reached before and therefore allows us to probe new parts of the phase space, searching for eventual hints of new physics. These kind of searches of course include the search for \ac{DM} production as the one performed in this work. 
 
-Let's now start with a global description of the general design of this particle accelerator in Section~\ref{section:LHCNut} before describing in more details the key parameters allowing us to evaluate its actual performances in Section~\ref{section:LHCParams}.
+%Let's now start with a global description of the general design of this particle accelerator in Section~\ref{section:LHCNut} before describing in more details the key parameters allowing us to evaluate its actual performances in Section~\ref{section:LHCParams}.
 
 \subsection{The \ac{LHC} in a nutshell}\label{section:LHCNut}
 
-The \ac{LHC} is an underground particle accelerator built in the same 27 kilometers tunnel where the \ac{LEP} was previously used. This machine is accelerating two beams made out of ~$10^{10}$ protons or lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing respectively to curve the beam to maintain a nominal circular trajectory and to focus it by compensating its natural dispersion due to the repulsion of the protons making up these beams. A dedicated small section of the accelerator is then made out of 16 radio-frequency cavities synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the actual acceleration of such particles.
+The \ac{LHC} is an underground particle accelerator built in the same 27 kilometers tunnel where the \ac{LEP} was previously used \cite{LEP}. This machine is accelerating two beams made out of ~$10^{10}$ protons or ~$7\cdot10^{7}$ lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing respectively to curve the beam to maintain a nominal circular trajectory and to focus it by compensating its natural dispersion due to the repulsion of the protons making up these beams. A dedicated small section of the accelerator is then made out of 16 radio-frequency cavities synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the actual acceleration of such particles.
 
 Once the nominal center of mass energy $\sqrt{s} = 13$ TeV is reached (this concept will be described in Subsection~\ref{subsection:CMEnergy}), the protons are then smashed together in four different places on the \ac{LHC}, where the four detectors (\ac{ATLAS}, \ac{CMS}, \ac{ALICE} and LHCb) have been placed in order to study the collisions. Both \ac{ATLAS} and \ac{CMS} are general detectors able to study exotic processes such as the production of \ac{DM} and to make precision measurements on \ac{SM} physics as well (the decision to build two separate detectors was made in order to introduce some redundancy and to check the results). \ac{ALICE} on the other hand is mostly dedicated to the study of heavy ions collisions that happen $\sim 10$\% of the time in order to study in particular a specific state of matter, called quark-gluon plasma \cite{ALICE}. Finally, LHCb has been designed to study in particular the CP violation phenomena, which could be the sign of some new physics \cite{LHCb}.
 
@@ -1268,7 +1269,7 @@ It is important to note at this point that the \ac{LHC} is not a standalone acce
 
 During this phase of acceleration, the beam is separated in 2808 bunches of protons nominally separated by 25 ns (giving a collision rate of 40 MHz), so that the experiments have the time to record the collision, clean the detectors and get ready for the next bunch crossing, coming just a few nanoseconds later. Each time one bunch crossing happens, around 30-35 collisions of protons happen at once, on average: this phenomena, usually referred to as \ac{PU}, has to be taken into account as well and will be described in the next section.
 
-As previously stated, the amount of data collected is a crucial parameter for many analyses, meaning that the \ac{LHC} would ideally need to run 24 hours a day, 365 days per year in order to maximize the data taking. However, this is not possible, as setting up a beam takes time and cannot keep rotating at maximal energy in the machine for a long time, so in ideal conditions around 20 hours of data taking a day are expected. The \ac{LHC} is then running around 9 months per year, being usually stopped during winter for maintenance operations, and the data taking periods are defined into Runs of a few years, after which the accelerator is usually stopped for a longer period of time, a \acf{LS}, in order to also have the time to perform upgrade operations of the machine. 
+As previously stated, the amount of data collected is a crucial parameter for many analyses, meaning that the \ac{LHC} would ideally need to run 24 hours a day, 365 days per year in order to maximize the data taking. However, this is typically not possible, as setting up a beam takes time and we cannot keep it rotating at maximal energy in the machine for a long time so in ideal conditions, around 20 hours of data taking a day are expected. The \ac{LHC} is then running around 9 months per year, being usually stopped during winter for maintenance operations, and the data taking periods are defined into Runs of a few years, after which the accelerator is usually stopped for a longer period of time, a \ac{LS}, in order to also have the time to perform additional upgrade operations of the machine. 
 
 The data analyzed in this work corresponds to the second phase of the Run II of operation of the \ac{LHC}, from 2016 to 2018, while the Run III is now expected to start in the Spring of 2021. The summary of the main parameters of operation of the \ac{LHC} across the different Runs of operations can be found in Table~\ref{table:LHCRuns}.
 
@@ -1278,7 +1279,7 @@ The data analyzed in this work corresponds to the second phase of the Run II of 
  \hline
  Parameter & Run I & Run II & Run III & Design \\
 \hline
-Energy [TeV] & 7 $\rightarrow$ 8 & 13 & 14 & 14 \\
+Energy [TeV] & 7 $\rightarrow$ 8 & 13 & 13 & 14 \\
 Bunch spacing [ns] & 50 & 25 & 25 & 25 \\
 Intensity [$10^{11}$ protons per beam] & 1.6 & 1.2 & Up to 1.8 & 1.15 \\
 Bunches & 1400 & 2500 & 2800 & 2800 \\
@@ -1298,14 +1299,14 @@ Peak \ac{PU} & 45 & 60 & 55 & 25 \\
 
 \subsubsection{Center of mass energy} \label{subsection:CMEnergy}
 
-The center of mass energy is defined as a Lorentz invariant quantity under longitudinal boosts resulting of the collisions of two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle, as developed in Equation~\ref{eq:CMEnergy}. It is a key variable of the \ac{LHC} since the phase space of particles that can be explored directly depends on this value.
+The center of mass energy is defined as a Lorentz invariant quantity under any kind of boost resulting of the collisions of two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle, as developed in Equation~\ref{eq:CMEnergy}. It is a key variable of the \ac{LHC} since the phase space of particles that can be explored directly depends on this value.
 
 \begin{equation}
 \label{eq:CMEnergy}
 \sqrt{s} = \sqrt{(m_1)^2 + (m_2)^2 + 2 \left (E_1 E_2-2 |\overrightarrow{p_1}| \text{ } |\overrightarrow{p_2}| \text{ cos}(\theta) \right )} = 13 \text{ TeV}
 \end{equation}
 
-The LHC started its operation in 2008 running at an energy of 7 TeV, quickly moved to 8 TeV and kept this level of energy during the end of the Run I of operation. In 2015, for the Run II of data taking, the energy was increased until reaching 13 TeV (2 times 6.5 TeV for each beam) and an expected value of 14 TeV, the nominal energy for which the \ac{LHC} was originally built, is expected to be reached in the near future, probably in the Run III.
+The LHC started its operation in 2008 running at an energy of 7 TeV, quickly moved to 8 TeV and kept this level of energy during the end of the Run I of operation. In 2015, for the Run II of data taking, the energy was increased until reaching 13 TeV (2 times 6.5 TeV for each beam) and an expected value of 14 TeV, the nominal energy for which the \ac{LHC} was originally built, is expected to be reached in the near future.
 
 \subsubsection{Luminosity} \label{subsection:Lumi}
 
@@ -1325,7 +1326,7 @@ This instantaneous luminosity we just introduced $\mathcal{L}$ can be defined us
 
 \begin{equation}
 \label{eq:Luminosity}
-\mathcal{L} = \frac{\gamma f_{\text{rev}} k_B N_p^2}{4 \pi \epsilon_n \beta^*}R \text{,  where } R = \frac{1}{\sqrt{1+\frac{\theta_C \sigma_z}{2 \sigma}}}
+\mathcal{L} = \frac{\gamma f_{\text{rev}} k_B N_p^2}{4 \pi \epsilon_n \beta^*}G \text{,  where } G = \frac{1}{\sqrt{1+\frac{\theta_C \sigma_z}{2 \sigma}}}
 \end{equation}
 
 In this last equation, the following properties of the accelerator have been introduced, giving the \ac{LHC} a nominal instantaneous luminosity $\mathcal{L} = 10^{34}$ cm$^{-2}$ s$^{-1}$:
@@ -1336,12 +1337,12 @@ In this last equation, the following properties of the accelerator have been int
 \item $N_p$ is the number of protons per bunch ($1.15 \cdot 10^{11}$ protons)
 \item $\epsilon_n$ is the transverse normalized emittance (3.75 $\mu$m)
 \item $\beta^*$ is the betatron function at the interaction point (0.55 m)
-\item $R$ is the geometrical factor accounting for the fact that the collisions do not happen exactly head-on, therefore reducing the effective luminosity, expressed from the full crossing angle between colliding beam $\theta_C$ (285 $\mu$rad), and $\sigma$, $\sigma_z$, the transverse and longitudinal r.m.s. sizes (respectively 16.7 $\mu$m and 7.55 cm).
+\item $G$ is the geometrical factor accounting for the fact that the collisions do not happen exactly head-on, therefore reducing the effective luminosity, expressed from the full crossing angle between colliding beam $\theta_C$ (285 $\mu$rad), and $\sigma$, $\sigma_z$, the transverse and longitudinal r.m.s. sizes (respectively 16.7 $\mu$m and 7.55 cm).
 \end{itemize}
 
 As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting in order to produce processes having a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam or the beam crossing angle at the interaction point. New radio-frequency crab cavities will probably be installed during the next \ac{LS} of the \ac{LHC} in order to increase the value of the geometrical factor $R$ and the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
 
-The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available and analyzed in this work have an integrated luminosity of 35.9~fb$^{-1}$ (2016), 41.5~fb$^{-1}$ and 59.7~fb$^{-1}$ (2018), resulting in a total dataset of 137 fb$^{-1}$ recorded during the Run II of operation. This means that we roughly expect to produce around 137 events of any process whose cross section of production would be equal to 1 fb.
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available for the Run II and analyzed in this work have an integrated luminosity of 35.9~fb$^{-1}$ (2016), 41.5~fb$^{-1}$ (2017) and 59.7~fb$^{-1}$ (2018), resulting in a total dataset of 137~fb$^{-1}$ recorded during the Run II of operation. This roughly means that we expect to have produced around 137 events of any process whose cross section of production would be equal to 1~fb.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1351,9 +1352,9 @@ The total integrated luminosity taken by the \ac{LHC} during its different years
 \end{center}
 \end{figure}
 
-\subsubsection{\acf{PU}} \label{subsection:PU}
+\subsubsection{Number of simultaneous interactions: \acf{PU}} \label{subsection:PU}
 
-The last key parameter of the \ac{LHC} discussed here is the \ac{PU}. Usually, because of the high density of protons within the beams, a bunch crossing in an experiment produces around 30-35 collisions protons collisions, as seen in Figure~\ref{fig:PU}, defining the \ac{PV} as the most interesting one, while the other vertices are usually referred to as the \ac{PU}. The tracker of \ac{CMS}, which will be introduced in Section~\ref{subsection:Tracker}, therefore needs to be able to reconstruct all these events in order to define the \ac{PV} of the interaction. 
+The last key parameter of the \ac{LHC} discussed here is the number of simultaneous interactions, also called \ac{PU}. Usually, because of the high density of protons within the beams, a bunch crossing in an experiment produces around 30-35 proton collisions, as seen in Figure~\ref{fig:PU}, defining the \ac{PV} as the most interesting one, while the other vertices are usually referred to as the \ac{PU}. The tracker of \ac{CMS}, which will be introduced in Section~\ref{subsection:Tracker}, therefore needs to be able to reconstruct all these events in order to define the \ac{PV} of the interaction. 
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1365,24 +1366,13 @@ The last key parameter of the \ac{LHC} discussed here is the \ac{PU}. Usually, b
 
 \section{The \ac{CMS} detector} \label{section:CMS}
 
-The \acf{CMS} is one of the two general purpose detectors of the \ac{LHC} and is installed at the access point 5 of the \ac{LHC}. Its main purposes are to discover the Higgs boson, make precision measurement of most of the \ac{SM} processes and to try and discover \ac{BSM} physics, such as the possible existence of \ac{DM}. 
+The \acf{CMS} is one of the two general purpose detectors of the \ac{LHC} and is installed at the access point 5 of the \ac{LHC}. Its main purposes are to discover the Higgs boson, make precision measurement of its properties and also of other \ac{SM} processes and to discover \ac{BSM} physics, such as the possible existence of \ac{DM}. 
 
-It has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe, the point of origin of the collisions provided by the \ac{LHC}, and is therefore made of three main sections: the cylindrical barrel at the center, and two endcaps, one on each side of the detector. \ac{CMS}, quite compact with its 14.000 tons, diameter of 15 meters and length of 28.7 meters, was lowered into the experimental cavern after being built on the surface in 14 different moving pieces, a flexible design allowing to access its inner parts, by opening and closing the detector when needed.
-
-\subsubsection*{Main goals}
-
-The \ac{CMS} detector has been built in order to meet the goals of the \ac{LHC} physics program, which have been summarized in \cite{CMSDescription} as:
-
-\begin{itemize}
-\item Good muon identification and momentum resolution over a wide range of momenta and angles, good dimuon mass resolution ($\sim 1$\% at 100 GeV), and the ability to determine unambiguously the charge of muons with momentum $p <$ 1 TeV.
-\item Good charged-particle momentum resolution and reconstruction efficiency in the inner tracker. Efficient triggering and offline tagging of taus and b-jets, requiring pixel detectors close to the interaction region.
-\item Good electromagnetic energy resolution, good diphoton and dielectron mass resolution ($\sim 1$\% at 100 GeV), wide geometric coverage, $\pi^0$ rejection, and efficient photon and lepton isolation at high luminosities.
-\item Good missing-transverse-energy and dijet-mass resolution, requiring hadron calorimeters with a large hermetic geometric coverage and with fine lateral segmentation.
-\end{itemize}
+\ac{CMS} has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe. It therefore counts with a central part with cylindrical shape, the barrel, and two endcaps, one on each side of the detector. With its 14.000 tons, distributed over a diameter of 15 meters and a length of 28.7 meters, the detector can be considered quite compact and was lowered into the experimental cavern after being built on the surface in 14 different moving pieces, a flexible design allowing to access its inner parts, by opening and closing the detector when needed.
 
 \subsubsection*{\ac{CMS} subdetectors}
 
-As shown in Figure~\ref{fig:CMS}, \ac{CMS} is made out of different layers corresponding to different subdetectors, each able to provide different kinds of information about the particles created by each collision \cite{CMSDescription}. These subdetectors will be described in detail in the following sections, but they have all been designed in order to make the reconstruction of the different events as efficient, fast and precise as possible and need to be extremely resistant to the radiation produced.
+As shown in Figure~\ref{fig:CMS}, \ac{CMS} is made out of different layers corresponding to different subdetectors, each able to provide different kinds of information about the particles created by each collision \cite{CMSDescription}. These subdetectors will be described in detail in the following sections, but they have all been designed in order to make the reconstruction of the different events efficient, fast and precise while matching the tight conditions occuring at the \ac{LHC}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1392,25 +1382,26 @@ As shown in Figure~\ref{fig:CMS}, \ac{CMS} is made out of different layers corre
 \end{center}
 \end{figure}
 
-The inner part of the \ac{CMS} detector is the so-called tracker, a device made out of silicon pixels and strips, described in Section~\ref{subsection:Tracker} and responsible for the precise reconstruction of all the charged particles coming from the different interaction vertices. A bit further outside can be found the \acf{ECAL}, made out of thousands of crystals as described in Section~\ref{subsection:ECAL} and used to precisely measure the energy of particles able to interact electromagnetically by producing an electromagnetic shower that can be detected. Then comes the \acf{HCAL}, described in Section~\ref{subsection:HCAL} and whose main purpose is to identify and measure the main properties of the hadrons produced in the collisions by producing hadronic showers.
+The inner part of the \ac{CMS} detector is the so-called tracker, a device made out of silicon pixels and strips, described in Section~\ref{subsection:Tracker} and responsible for the precise reconstruction of all the charged particles coming from the different interaction vertices. A bit further, the \acf{ECAL} can be found, made out of thousands of crystals as described in Section~\ref{subsection:ECAL} and used to precisely measure the energy of particles able to interact electromagnetically by producing an electromagnetic shower that can be detected. Then, the \acf{HCAL} comes, described in Section~\ref{subsection:HCAL} and whose main purpose is to identify and measure the main properties of the hadrons produced in the collisions.
 
-The \ac{CMS} name partly comes from its central piece, a huge superconducting solenoid described in Section~\ref{subsection:Solenoid} and able to produce a 3.8 T magnetic field in the detector, with a magnetic flux density increased even more by the addition of the steel return yoke layers (red parts in Figure~\ref{fig:CMS}). This magnetic field is essential in the sense that it is able to deflect the charged particles which have been produced via the Lorentz interaction, therefore giving us a perfect way to measure their charge and energy from the measurement of the curvature of the induced binding.
+The \ac{CMS} name partly comes from its central piece, a huge superconducting solenoid described in Section~\ref{subsection:Solenoid} and able to produce a 3.8 T magnetic field in the detector, with a magnetic flux density increased even more by the addition of the steel return yoke layers (red parts in Figure~\ref{fig:CMS}). This magnetic field is essential in the sense that it is able to deflect the charged particles which have been produced via the Lorentz interaction, therefore giving us a way to measure their charge and energy from the measurement of the curvature of the induced binding.
 
-Finally, on the outside of the detector can be found the complete muon system and particularly performing in \ac{CMS}. This subdetector is currently made out of three main sub-systems (the \acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
+Finally, on the outside of the detector the complete muon system can be found and particularly performing in \ac{CMS}. This subdetector is currently made out of three main sub-systems (the \acp{DT}, \acp{CSC} and \acp{RPC}), as explained in Section~\ref{subsection:Muon}, and is responsible for the identification and measurement of the momentum of the muons produced by the collisions.
 
 \subsubsection*{Coordinates system}
 
-Before starting with the description of all these subdetectors, it is important to detail the coordinates system typically used within the \ac{CMS} collaboration. As a convention, is has been decided to use a right-handed Cartesian coordinate system with the origin defined as the \acf{PV}, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
+%Before starting with the description of all these subdetectors, it is important to detail the coordinates system typically used within the \ac{CMS} collaboration. 
+As a convention, is has been decided to use within the \ac{CMS} collaboration a right-handed Cartesian coordinate system with the origin defined as the interaction point, and with an x-axis pointing towards the center of the ring, an y-axis pointing upwards and a z-axis pointing towards the Jura mountains (along the counterclockwise beam direction), as represented in Figure~\ref{fig:CMSAxis}. 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=12cm, height=6cm]{figs/CMSAxis.png}
+\includegraphics[width=12.2cm, height=6.5cm]{figs/CMSAxis.png}
 \caption{Schematic representation of the \ac{CMS} coordinate system used by convention.}
 \label{fig:CMSAxis}
 \end{center}
 \end{figure}
 
-The $\theta$ and $\phi$ angles are then defined as the angles between the z and y axes and the x and y axes respectively and the pseudorapidity $\eta$, defined in Equation~\ref{eq:Pseudorapidity}, a Lorentz invariant quantity under longitudinal boosts quite often used in the different analyses since the multiplicity of high energy particles is roughly constant in $\eta$.
+The $\theta$ and $\phi$ angles are then defined as the angles between the z and y axes and the x and y axes respectively and the pseudorapidity $\eta$, defined in Equation~\ref{eq:Pseudorapidity}, a Lorentz invariant quantity under boosts quite often used in the different analyses since the multiplicity of high energy particles is roughly expected to be constant in $\eta$.
 
 \begin{equation}
 \label{eq:Pseudorapidity}
@@ -1457,14 +1448,14 @@ Additionally, Figure~\ref{fig:TrackerEff} shows that muons are reconstructed wit
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=12cm, height=5.5cm]{figs/TrackerEff.png}
-\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) calculated in simulation for different pseudorapidities and particle momenta (1, 10 and 100 GeV) \cite{CMSDescription}.}
+\caption{Tracker reconstruction efficiency of muons (on the left) and pions (on the right) in simulation for different pseudorapidities and particle momenta (1, 10 and 100 GeV) \cite{CMSDescription}.}
 \label{fig:TrackerEff}
 \end{center}
 \end{figure}
 
 \subsection{\acf{ECAL}} \label{subsection:ECAL}
 
-The \acf{ECAL} of CMS is a mostly homogeneous detector inside the solenoid but enclosing the tracker system that gives information about the energy of electrons and photons, both able to interact electromagnetically with its crystals.
+The \ac{ECAL} of CMS is a mostly homogeneous detector inside the solenoid but enclosing the tracker system that gives information about the energy of electrons and photons, both able to interact electromagnetically with its crystals.
 
 The \ac{ECAL} can also be divided into several sections: first of all, at pseudorapidites $|\eta| < 1.479$ is found the barrel part of the \ac{ECAL} (EB), made out of 61 200 lead tungstate (PbWO$_4$) crystals, located at a radius of 1.29 meters of the beam pipe. Then, two endcaps, each made out of 7 324 of those crystals, increase the coverage of the detector up to $|\eta| < 3$, as shown in Figure~\ref{fig:CMSECAL}, and the preshower completes the \ac{ECAL}.
 
@@ -1501,7 +1492,7 @@ Finally, a preshower layer has been set up in the fiducial region ($1.653 < |\et
 
 \subsection{\acf{HCAL}}\label{subsection:HCAL}
 
-We know that charged hadrons lose energy in a continuous when they traverse matter due to the ionization process and that all the hadrons strongly interact with the nuclei of any given medium. These principles are actually used in order to measure the energy of the hadrons produced by the \ac{LHC} collisions using the \acf{HCAL} sub-system of \ac{CMS}. 
+We know that charged hadrons lose energy in a continuous when they traverse matter due to the ionization process and that all the hadrons strongly interact with the nuclei of any given medium. These principles are actually used in order to measure the energy of the hadrons produced by the \ac{LHC} collisions using the \ac{HCAL} sub-system of \ac{CMS}. 
 
 In this case as well, showers of particles due to a chain reaction are expected since the primary hadronic interaction will produce several additional hadrons, themselves interacting even more with the medium while losing energy. This kind of hadronic showers is characterized by the $\lambda$ parameter, the nuclear interaction length, defined as the mean distance between two interactions of relativistic hadrons. The nuclear interaction length $\lambda$ is usually much larger than the radiation length $X_0$, resulting in a \ac{HCAL} typically much larger in size than the \ac{ECAL}. 
 
@@ -1538,7 +1529,7 @@ The barrel covers $|\eta|$ regions up to 1.3, while the coverage up to $|\eta| <
 
 The central piece of \ac{CMS} is its extremely large (12.5 meters of length and 6 meters of diameter) and heavy (220 tons) superconducting solenoid able to produce a 3.8 T magnetic field, storing when active a huge energy of 2.6 GJ. It is the largest magnet of its type ever constructed, therefore allowing the tracker, \ac{ECAL} and \ac{HCAL} calorimeters to be placed inside the coil, resulting in a detector that is, overall, quite compact compared to detectors of similar weight.
 
-The magnetic field produced by this coil is extremely useful since it allows to measure quite precisely the charge and the momentum of the different charged particles interacting with the detector just by measuring the curvature of their track, according to the Lorentz equation~\ref{eq:Lorentz}. This solenoid has been designed to reach a momentum resolution $\Delta p/p \sim 10$\% at $p = 1$ TeV. 
+The magnetic field produced by this coil is extremely useful since it allows to measure quite precisely the charge and the momentum of the different charged particles interacting with the detector just by measuring the curvature of their track, according to the Lorentz Equation~\ref{eq:Lorentz}. This solenoid has been designed to reach a momentum resolution $\Delta p/p \sim 10$\% at $p = 1$ TeV. 
 
 \begin{equation}
 \label{eq:Lorentz}
@@ -1563,7 +1554,7 @@ Finally, a two pumping stations system has been put in place in order to setup a
 
 The muon detection is extremely useful since many interesting processes are expected to produce such particles. Their detection and the correct measurement of their main properties such as their position and momentum is therefore crucial in most of the analyses performed. Detecting muons is at the end of the day quite easy, as we will see, and the data extracted from them is usually more reliable than the one obtained from electrons since muons are less likely to be affected by the inner parts of the detector, such as the tracker, because of their low interaction cross section.
 
-The muon system of \ac{CMS} is actually made out of three different gaseous sub-subsystems combined in order to perform a reconstruction as precise as possible of such particles over the the entire kinematic range of the \ac{LHC}. These different muon chambers systems do share some characteristics: they mostly have to be distributed over a cylindrical area, because of the geometrical shape of the inner systems of \ac{CMS} and they have to be reliable and cheap, since they cover a total area of more than 25 000 m$^2$.
+The muon system of \ac{CMS} is actually made out of three different gaseous sub-subsystems combined in order to perform a reconstruction as precise as possible of such particles over the the entire kinematic range of the \ac{LHC}. These different muon chambers systems do share some characteristics: they mostly have to be distributed over a cylindrical area, because of the geometrical shape of the inner systems of \ac{CMS} and they have to be reliable and cheap, since they cover a total area corresponding to more than 25 000 m$^2$.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1573,11 +1564,11 @@ The muon system of \ac{CMS} is actually made out of three different gaseous sub-
 \end{center}
 \end{figure}
 
-Let's now describe in details each category of muon chambers used in the different pseudorapidity areas, as shown in Figure~\ref{fig:CMSMuons}, in order to form a muon system as hermetic as possible.
+Each category of muon chambers is typically used in a different pseudorapidity area, as shown in Figure~\ref{fig:CMSMuons}, in order to form a muon system as hermetic as possible.
 
 \subsubsection*{\acfp{DT}}
 
-First of all, in the barrel region, where the flux of muons is low and where the magnetic field is mostly uniform and low as well, the \textbf{\acfp{DT}} have been installed. This system covers the $|\eta| < 1.2$ area and has been divided into 4 different layers, each containing a number of stations optimized in order to provide a full coverage of the $\theta$ angles, a good efficiency for the muon hits reconstruction into a single track and a good rejection of eventual background hits. This distribution of the \acp{DT} is represented in Figure~\ref{fig:CMSDT}.
+First of all, in the barrel region, where the flux of muons is low and where the magnetic field is mostly uniform and low as well, the \textbf{\acp{DT}} have been installed. This system covers the $|\eta| < 1.2$ area and has been divided into 4 different layers, each containing a number of stations optimized in order to provide a full coverage of the $\theta$ angles, a good efficiency for the muon hits reconstruction into a single track and a good rejection of eventual background hits. This distribution of the \acp{DT} is represented in Figure~\ref{fig:CMSDT}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1591,13 +1582,13 @@ The \ac{DT} system is made out of 172 000 sensitive wires able to collect the re
 
 \subsubsection*{\acfp{CSC}}
 
-In the two endcap regions, where the muon rates and the background levels are much larger and where the magnetic field is large and non-uniform, a different system had to be installed. First of all, the \textbf{\acfp{CSC}}, multiwire proportional chambers providing a fast response while being resistant to the radiation, are able to identify muons in a $0.9 < |\eta| < 2.4$ region (in the $0.9 < |\eta| < 1.2$ region, muons cross both \acp{DT} and \acp{CSC} while in the $1.2 < |\eta| < 2.4$ area, muons cross between 3 and 4 \acp{CSC} only). 
+In the two endcap regions, where the muon rates and the background levels are much larger and where the magnetic field is large and non-uniform, a different system had to be installed. First of all, the \textbf{\acp{CSC}}, multiwire proportional chambers providing a fast response while being resistant to the radiation, are able to identify muons in a $0.9 < |\eta| < 2.4$ region (in the $0.9 < |\eta| < 1.2$ region, muons cross both \acp{DT} and \acp{CSC} while in the $1.2 < |\eta| < 2.4$ area, muons typically cross between 3 and 4 \acp{CSC} only). 
 
 This sub-system is made out of 540 different chambers in total, all perpendicular to the beam pipe. The sensitive plates of this sub-system are made out of 2 million wires, cover about 5000 m$^2$ and the total gas volume included in such chambers is equal to about 50 m$^3$.
 
 \subsubsection*{\acfp{RPC}}
 
-Finally, some \textbf{\acfp{RPC}} have been added to the barrel and to the endcap regions in order to cope with the uncertainty associated with the eventual background rates and with the (in)ability of the previous muon
+Finally, some \textbf{\acp{RPC}} have been added to the barrel and to the endcap regions in order to cope with the uncertainty associated with the eventual background rates and with the (in)ability of the previous muon
 system to identify unequivocally the correct bunch crossing when the \ac{LHC} is running at full luminosity. Indeed, the time resolution of the \acp{DT} of 380 ns is way larger than the bunch spacing in the \ac{LHC}, while a \ac{RPC} is capable
 of tagging an ionizing event in less than 25 ns, making it an ideal candidate to trigger the event.
 
@@ -1619,7 +1610,7 @@ Finally, the different features of the three muon sub-systems used by the \ac{CM
  Average efficiency (13 TeV) & 97.1\% & $97.4$\% & \makecell{\vspace{-10pt} \\ 94.2\% (barrel) \\ 96.4\% (endcaps)} \\ 
  \hline
 \end{tabular}
-\caption{Comparison of the three main sub-systems currently used by \ac{CMS} in order to identify muons \cite{MuonSystemsEff}.}
+\caption{Comparison of the three main sub-systems currently used by \ac{CMS} in order to identify and measure muons \cite{MuonSystemsEff}.}
 \label{table:CMSMuonsSystems}
 \end{center}
 \end{table}
@@ -1636,7 +1627,7 @@ The muon reconstruction efficiency obtained by the muon system strongly depends 
 \end{center}
 \end{figure}
 
-Taking advantage of the \acf{LS} 2, a new muon system is currently being installed in the experimental cavern: the so-called \textbf{\acfp{GEM}}, placed in the endcaps, where the radiation and event rates are the highest. This new subdetector will provide additional redundancy and measurement points to the current system, therefore allowing a better muon track identification and reconstruction and a wider coverage in the very forward region. 
+Taking advantage of the \ac{LS}2, a new muon system is currently being installed in the experimental cavern: the so-called \textbf{\acfp{GEM}}, placed in the endcaps, where the radiation and event rates are the highest. This new subdetector will provide additional redundancy and measurement points to the current system, therefore allowing a better muon track identification and reconstruction and a wider coverage in the very forward region. 
 
 The first 144 chambers of the \ac{GEM} sub-system, filled with a mixture of Ar and CO$_2$ and where the primary ionization due to incident muon is expected to happen, are currently being installed in the first disk of both endcaps (cf. Figure~\ref{fig:CMSGEM}), while the rest will be set up during the next \ac{LS} expected in 2024, before the phase II of operation of the \ac{LHC}.
 
@@ -1650,47 +1641,59 @@ The first 144 chambers of the \ac{GEM} sub-system, filled with a mixture of Ar a
 
 \subsection{Trigger system} \label{subsection:Trigger}
 
-The \ac{CMS} experiment is facing a data acquisition limitation since the collision rate delivered by the \ac{LHC} (one bunch crossing each 25 ns, leading to an impressive rate of collisions of 40 MHz) is much larger than the data acquisition rate currently achievable by nowaday's electronics (around 1kHz only, more or less equivalent to 1Gb of data per second). It is therefore impossible to store and process all the collisions provided by the \ac{LHC}; instead, a selection needs to be made in order to select and record only the most interesting events.
+The \ac{CMS} experiment faces a data acquisition limitation since the collision rate delivered by the \ac{LHC} (one bunch crossing each 25 ns, leading to an impressive rate of collisions of 40 MHz) is much larger than the data acquisition rate currently achievable by nowaday's electronics (around 1kHz only, more or less equivalent to 1Gb of data per second). It is therefore impossible to store and process all the collisions provided by the \ac{LHC}; instead, a selection needs to be made in order to select and record only the most interesting events.
 
-A system, called the trigger system, has therefore been put in place in order to select extremely quickly 1 kHz of interesting events out the 40 MHz. This system is based on two different levels: first of all, the \ac{L1}, a hardware set of electronics selecting around 100 kHz of data, followed by the \ac{HLT}, a software layer improving the selection even more. Let's now give a bit more details about these two levels of trigger.
+A system, called the trigger system, has therefore been put in place in order to select extremely quickly 1 kHz of interesting events out the 40 MHz. This system is based on two different levels: first of all, the \ac{L1}, a hardware set of electronics selecting around 100 kHz of data, followed by the \ac{HLT}, a software layer improving the selection even more.% Let's now give a bit more details about these two levels of trigger.
 
 \subsubsection*{\acf{L1}}
 
-The \acf{L1} is the first level of trigger, based directly on hardware. In order to maximize its efficiency, it is implemented in different subsystems of the detector (on the calorimeters and muons system) and in the service cavern, just next to the detector, so that the electric signals do not have to travel large distances, therefore saving a few precious nanoseconds of decision time. 
+The \ac{L1} is the first level of trigger \cite{L1}, based directly on hardware. In order to maximize its efficiency, it is mostly implemented in different subsystems of the detector (on the calorimeters and muons system) and in the service cavern, just next to the detector, so that the electric signals do not have to travel large distances, therefore saving a few precious nanoseconds of decision time. 
 
-This trigger, whose architecture is represented in Figure~\ref{fig:L1Trigg} gets new data each 25 ns and today's electronics is not fast enough in order to deal with such a massive input of data, so an ingenious systems of buffers had to be put in place in order to put in line several events before analyzing all of them at once, using only basic segmented data provided by the detector.
+The L1 trigger, whose architecture is represented in Figure~\ref{fig:L1Trigg}, has local, regional and global components. First of all, the local triggers, also referred to the \ac{TPG}, are using the energy deposits measured in the calorimeter and the track segments or hit patterns in the muon chambers. Then, regional triggers combine this information and use pattern logic to determine ranked and sorted trigger objects
+such as electron or muon candidates in limited spatial regions. The rank is typically determined as a function of energy or momentum and quality, which reflects the level of confidence attributed to the L1 parameter measurements, based on detailed knowledge of the detectors and trigger electronics
+and on the amount of information available. Finally, the global calorimeter and muon triggers combine this local information to determine the highest-rank calorimeter and muon objects across the entire experiment and transfer them to the the top entity of the L1 hierarchy, the global trigger. This level is in charge of taking the final decision on whether to keep or reject the event, and eventually passes it to the \ac{HLT}.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=9cm, height=6cm]{figs/L1Trigg.png}
-\caption{Architecture of \acf{L1} of \ac{CMS} \cite{CMSDescription}.}
+\caption{Architecture of the \ac{L1} trigger of \ac{CMS} \cite{CMSDescription}.}
 \label{fig:L1Trigg}
 \end{center}
 \end{figure}
 
+This trigger gets new data each 25ns and today's electronics is not fast enough in order to deal with such a massive input of data, so an ingenious systems of buffers had to be put in place in order to put in line several events before analyzing all of them at once, using only basic segmented data provided by the detector.
+
 \subsubsection*{\acf{HLT}}
 
-On the other hand, the \acf{HLT} does get access to the complete read-out data of the detector, since the rate has already been strongly reduced by the \ac{L1} Trigger, allowing it to perform complete calculations such as the ones that will be later performed offline. Since this is a software based layer and the decision time is not as critic, it runs on a farm of computers on the surface and is in constant evolution, getting constantly improvements and updates in order to select and reconstruct in a better and more efficient way interesting data from the collisions.
+On the other hand, the \ac{HLT} \cite{HLT} does get access to the complete read-out data of the detector, since the rate has already been strongly reduced by the \ac{L1} Trigger, allowing it to perform complete calculations such as the ones that will be later performed offline. Since this is a software based layer and the decision time is not as critic, it runs on a farm of computers on the surface and is in constant evolution, getting constantly improvements and updates in order to select and reconstruct in a better and more efficient way interesting data from the collisions.
 
-The \ac{HLT} trigger is divided in several so-called \textbf{trigger paths}, especially developed in order to select a target object or physics process, usually with some $p_T$ requirement in order to reduce the statistics collected by any given trigger, to avoid passing the bandwidth limit of 1kHz. These triggers paths can then for example require the presence of one or two leptons, a jet whose $p_T$ is higher to a certain threshold or the presence of \acf{MET} in the event. Some of these trigger paths need to record events with a reduced content in order to avoid saturating the data taking bandwidth. Such triggers, said to be \textbf{prescaled}, typically include the paths with low $p_T$ requirements, as the ones used for the fake rate calculation explained in Section~\ref{subsection:Fakes}.
+The \ac{HLT} uses the so-called \textbf{trigger paths} in order to select specific particle topologies in the collisions. This selection imposes some tresholds on key quantities of the different objects, such as their transverse momentum $p_T$, to avoid passing the bandwidth limit of 1kHz. In some cases, not all the events of a given category can be collected and only a fraction of them are therefore recorded. Trigger paths designed to behave like this are called pre-scaled trigger paths.
 
-\subsection{Data acquisition system} \label{subsection:DAQ}
+\subsection{\acf{DAQ}} \label{subsection:DAQ}
 
-Finally, the CMS \acf{DAQ}, whose architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed to collect and analyze the data information at the nominal collision rate of 40MHz and is feeded directly from the \acf{L1}. This means that it has to be able to read a flux of data of the order of 100kHz ($\sim 100$Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$, while keeping some resources available for other tasks.
+In summary, the CMS \ac{DAQ}, whose global architecture is represented in Figure~\ref{fig:CMSDAQ}, has been designed to collect and analyze the data information at the nominal collision rate of 40MHz and is feeded directly from the \ac{L1} trigger. This means that it has to be able to read a flux of data of the order of 100kHz ($\sim 100$Gb/s) coming from approximately 650 different sources at once, while providing enough computing power for the \ac{HLT} to be able to reduce this rate by a factor $\sim 100$, while keeping some resources available for other tasks.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=9cm, height=4.5cm]{figs/CMSDAQ.png}
-\caption{Architecture of \ac{CMS} \acf{DAQ} system \cite{CMSDescription}.}
+\caption{Architecture of the \ac{CMS} \ac{DAQ} system \cite{CMSDescription}.}
 \label{fig:CMSDAQ}
 \end{center}
 \end{figure}
 
 The \ac{DAQ} is indeed also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
 from online event processing in the \ac{HLT}, the transfer of the data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times. %The \ac{DAQ} is therefore an essential part of the detector.
-\fi
 
+\section{\ac{CMS} main goals}
 
+At the end of the day, the \ac{CMS} detector has been built in order to meet the goals of the \ac{LHC} physics program, which have been summarized in \cite{CMSDescription} as:
+
+\begin{itemize}
+\item Good muon identification and momentum resolution over a wide range of momenta and angles, good dimuon mass resolution ($\sim 1$\% at 100 GeV), and the ability to determine unambiguously the charge of muons with momentum $p <$ 1 TeV.
+\item Good charged-particle momentum resolution and reconstruction efficiency in the inner tracker. Efficient triggering and offline tagging of taus and b-jets, requiring pixel detectors close to the interaction region.
+\item Good electromagnetic energy resolution, good diphoton and dielectron mass resolution ($\sim 1$\% at 100 GeV), wide geometric coverage, $\pi^0$ rejection, and efficient photon and lepton isolation at high luminosities.
+\item Good missing-transverse-energy and dijet-mass resolution, requiring hadron calorimeters with a large hermetic geometric coverage and with fine lateral segmentation.
+\end{itemize}
 
 
 
@@ -1953,12 +1956,12 @@ However, this statement is not totally true since we are aware of several effect
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=7cm, height=5.5cm]{figs/MET.png}
-\caption{Schematic representation of the \acf{MET}.}
+\caption{Schematic representation of the \ac{MET}.}
 \label{fig:MET}
 \end{center}
 \end{figure}
 
-The \acf{MET} variable, defined in Equation~\ref{eq:MET} as the negative sum of the transverse momentum of all the particles $j$ of the event, is able to take into account this eventual imbalance in the transverse momentum and is therefore a key variable in most of the analyses searching for new \ac{BSM} physics, which is not expected to interact with the detector.
+The \ac{MET} variable, defined in Equation~\ref{eq:MET} as the negative sum of the transverse momentum of all the particles $j$ of the event, is able to take into account this eventual imbalance in the transverse momentum and is therefore a key variable in most of the analyses searching for new \ac{BSM} physics, which is not expected to interact with the detector.
 
 \begin{equation}
 \label{eq:MET}
@@ -1968,7 +1971,7 @@ The \acf{MET} variable, defined in Equation~\ref{eq:MET} as the negative sum of 
 Different algorithms can be used in order to reconstruct this variable, the most famous being \cite{METReco}:
 \begin{itemize}
 \item The \textbf{particle flow \ac{MET}} (PFMET), including all the information of the detector (as opposed to the calorimeter or tracker \ac{MET}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses today, because of its simple, robust, yet very performant estimate of the \ac{MET} spectrum.
-\item The \textbf{\ac{PUPPI} \ac{MET}}, actually used in this analysis, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
+\item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, actually used in this analysis, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
 Several corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
@@ -1985,11 +1988,11 @@ Several corrections also need to be applied to this spectrum to filter anomalous
 
 Although not formerly a part of the \ac{PF} algorithm and done offline, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signal from the different background processes introduced in Section~\ref{section:Discrimination} are spin correlated variables, sensitive to the nature of the \ac{DM} mediator but which require knowledge of the top quark and anti-quark four-momenta, not immediately available without such complete reconstruction of the $t \bar t$ system. 
 
-However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the sum of neutrino momenta can only be inferred from the total momentum imbalance which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques, either numerical or analytical, that will now be briefly introduced.
+However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the sum of neutrino momenta can only be inferred from the total momentum imbalance which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques, either numerical or analytical.
 
 \subsection{Numerical and analytical top reconstruction}
 
-Two main methods exist in order to solve this reconstruction problem, now shortly described:
+Two main methods exist in order to solve this reconstruction problem:
 \begin{itemize}
 \item The \textbf{Sonnenschein numerical method} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains (in this case, we consider only the chain $t \rightarrow bW \rightarrow bl\nu$ for the two tops, as previously explained), as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
@@ -2028,7 +2031,7 @@ In this case, we therefore have 6 equations to solve and exactly 6 unknowns (sin
 \item The \textbf{Betchart analytical method} on the other hand is able to describe the decay $t \rightarrow bl\nu$ using this time a geometric approach. This method was chosen in this analysis because it offers the following advantages:
 \begin{itemize}
 \item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously. 
-\item As we will now see, the solution set for each neutrino momentum in this case is an ellipse that can be described precisely and from which the solutions for the neutrino momenta can be reduced to a discrete set of values. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
+\item The solution set for each neutrino momentum in this case is an ellipse that can be described precisely and from which the solutions for the neutrino momenta can be reduced to a discrete set of values. This provides us with a more precise measurement of the $p_T$ of the mediator of the interaction, while also giving us information about the precision of this measurement.
 \item The results obtained here can be useful for other event topologies featuring similar kinematic constraints as well.
 \end{itemize}
 
@@ -2075,7 +2078,7 @@ The solutions for the momenta of the neutrinos will then be given by the interse
 
 \end{itemize}
 
-So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adaptated to our particular case, as we will now see.
+So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adaptated to our particular case.
 
 \subsection{Top reconstruction with additional \ac{DM}} \label{section:ttrecoDM}
 
@@ -2134,7 +2137,7 @@ By its definition, this factor is able to take into account not only the distanc
 
 \subsection{Top reconstruction in practice}
 
-The idea of the algorithm is quite simple: it basically takes as input two leptons and two b-jets, performs all the calculations just described and returns the optimal momenta value for the two neutrinos. However, in practice, several complications quickly appears when solving this problem in practice, for several reasons now described.
+The idea of the algorithm is quite simple: it basically takes as input two leptons and two b-jets, performs all the calculations just described and returns the optimal momenta value for the two neutrinos. However, in practice, several complications quickly appears when solving this problem in practice, for several reasons.
 
 First of all, as we already saw, when the two ellipses intersect each other, we can observe either 2 or 4 solutions, even though only one actually corresponds to the physical momenta of the neutrinos. The solution giving the lowest possible invariant mass for the $t \bar t$ system is then simply chosen and taken in consideration for the analysis.
 
@@ -2145,7 +2148,7 @@ Then, even though the process studied is always the same and is supposed to give
 \item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this remaining set of jets are then tested.
 \end{itemize}
 
-When taking into account all these possible combinations, a reconstruction efficiency of $\sim 91$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
+When taking into account all these possible combinations, a reconstruction efficiency of $\sim 90.3$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
 \begin{itemize}
 \item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a gaussian distribution whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information. The \ac{MET} is also recomputed each time using these newly calculated parameters, according to Equation~\ref{eq:updateMET}.
 
@@ -2153,6 +2156,15 @@ When taking into account all these possible combinations, a reconstruction effic
 \label{eq:updateMET}
 \cancel{E}_{T_{x,y}}^{\text{updated}} = \cancel{E}_{T_{x,y}}^{\text{reco}} + \sum_{\text{jet}_i = 1}^{2} (p_{x,y}^{\text{jet}_i, \text{updated}} - p_{x,y}^{\text{jet}_i, \text{reco}})
 \end{equation}
+
+\item The energy of the leptons is also updated using a random correction factor generated from the distribution shown in Figure~\ref{fig:lepsmearing}, computed in \ac{MC} and representing the energy deviation between the generation and reco information.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=6.3cm, height=4.7cm]{figs/ler.png}
+\caption{Definition of the angles used in the smearing of the leptons and jets directions \cite{DESYAN}.}
+\label{fig:lepsmearing}
+\end{figure}
 
 \item An angular smearing is also performed, using the angles $\alpha$ and $\omega$ shown in Figure~\ref{fig:angsmearing}. 
 
@@ -2179,10 +2191,10 @@ The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/placeholder.png}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/bphat.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/placeholder.png}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/lphat.png}
 \end{minipage} \hfill
 \caption{Simulated distributions of the $\alpha$ angle between the particle and detector level direction for b-jets (on the left) and leptons (on the right).}
 \label{fig:angdistributions}
@@ -2196,7 +2208,7 @@ During each iteration of the smearing process, an individual weight $w$ is compu
 \includegraphics[width=6.3cm, height=4.7cm]{figs/bw.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/mlb2.png}
+\includegraphics[width=6.3cm, height=4.7cm]{figs/mlb.png}
 \end{minipage} \hfill
 \caption{Breit-Wigner spectrum obtained when generating randomly the mass of the W boson (on the left) and true $m_{lb}$ distribution obtained using the generation information from the standard $t \bar t$ process (on the right).}
 \label{fig:truemlb}
@@ -2242,7 +2254,7 @@ As previously explained, the generation of \ac{MC} simulations for the most comm
 
 The basic idea of the \ac{MC} simulation consists in using a random number generator to simulate the randomness of nature and produce as many events as computationally possible for all the \ac{SM} processes, taking into account the probability density functions of these processes. This is performed by specific softwares called \textbf{event generators} and it is important to note that since we usually don't know everything about the \ac{SM} or \ac{BSM} process being generated, the perfect event generator does not exist.
 
-To make the generation of such simulations a bit easier, the description of a typical $pp$ collision can usually be divided into several steps that will now be described, as shown with the color code used in Figure~\ref{fig:MCGen}. The typical approximations used to make this kind of simulation possible from the computational point of view will also be briefly introduced at this point.
+To make the generation of such simulations a bit easier, the description of a typical $pp$ collision can usually be divided into several steps, as shown with the color code used in Figure~\ref{fig:MCGen}. The typical approximations used to make this kind of simulation possible from the computational point of view will also be briefly introduced at this point.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2345,7 +2357,7 @@ Two additional formats were introduced since the end of the Run I. First of all 
 
 Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can rely on such files in order to work. 
 
-In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds) that will now be listed in the next sections. 
+In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds). 
 
 \section{Analysis code} \label{section:Code}
 
@@ -2801,7 +2813,7 @@ The resulting cross section of such process is a bit lower than the production o
 
 \subsection{Non prompt contamination} \label{subsection:Fakes}
 
-Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the \acp{SR}, this background is interesting in the sense that is can be estimated using a data-driven method that will now be described instead of being taken directly from \ac{MC}.
+Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the \acp{SR}, this background is interesting in the sense that is can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
 
 A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
 \begin{itemize}
@@ -2881,7 +2893,7 @@ A few definitions are first of all needed to explain the method used to compute 
 
 This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose datadriven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
 
-In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign \ac{CR} enriched in fakes in order to perform a closure test of the yields and kinematics of this background. All these steps will now be detailed.
+In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign \ac{CR} enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
 
 \subsubsection*{\acf{FR} computation}
 
@@ -3130,29 +3142,35 @@ Even though quite negligible, some additional backgrounds still need to be consi
 
 \subsection{Weights and corrections applied} \label{subsection:Weights}
 
-Several different weights and \acf{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions. 
+Several different weights and \acf{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.  The \ac{MC} samples are aditionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossins (the \ac{PU}, as defined in Section~\ref{subsection:PU}).
 
-In this section, several weights that are applied to the \ac{MC} samples will be detailed.	
+In this section, two particular weights that are applied to the \ac{MC} samples will be detailed.	
 
 \subsubsection{Prefiring corrections}
 
-In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \acf{L1} to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. 
+In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. 
 
 The effect this correction has on the data/\ac{MC} agreement in a 2017 top enriched control region is shown in Figure~\ref{fig:Prefiring}.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=14cm, height=7cm]{figs/Prefiring.png}
-\caption{Data/\ac{MC} agreement with (on the right) and without (on the left) prefiring corrections in a 2017 top control region.}
+\caption{Data/\ac{MC} agreement with (on the right) and without (on the left) prefiring corrections in a general 2017 top control region.}
 \label{fig:Prefiring}
 \end{center}
 \end{figure}
 
 \subsubsection{Top $p_T$ reweighting}
 
-Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}.
+Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
 
-\color{red} Section to be completed with plots showing the effect of the weights \color{black}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\caption{Data/\ac{MC} agreement with (on the right) and without (on the left) top $p_T$ reweighting corrections in a general 2017 top control region.}
+\label{fig:Toppt}
+\end{center}
+\end{figure}
 
 
 
@@ -3188,11 +3206,11 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 
 This Chapter will be dedicated to the analysis itself, by defining first of all the different objects actually used in this case, along with the actual selection that has been applied to enhance the quality of such objects in this particular search in Section~\ref{section:Selection}. Then, the different \acfp{SR} defined in which a high purity of signal is expected are defined in Section~\ref{section:SR} while all the different \acfp{CR} defined in order to check the behavior of the \ac{MC} simulation performed for the major backgrounds on this analysis, such as the single top or \ac{SM} $t \bar t$ production, will be introduced in Section~\ref{section:CR}. 
 
-Finally will come a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds in Section~\ref{section:Discrimination}, along with a global description of the \acf{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible.
+Finally will come a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds in Section~\ref{section:Discrimination}, along with a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible.
 
 \section{Objects selection} \label{section:Selection}
 
-We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM signal: the typical signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \acf{MET} coming from the two \ac{DM} particles created along the way. It is therefore extremely important to describe the \acf{WP} chosen and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the possible misidentification rates of such objects.
+We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM signal: the typical signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two \ac{DM} particles created along the way. It is therefore extremely important to describe the \ac{WP} chosen and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the possible misidentification rates of such objects.
 
 First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
 
@@ -3334,7 +3352,7 @@ Several strategies are used in \ac{CMS} in order to be able to identify prompts 
 
 %Four different electron \acfp{WP} (veto, loose, medium, tight) are then defined with slightly different quality cuts in the barrel or in the endcaps in order to select electrons with a given efficiency while trying to limit the misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons from other source, to be used when the backgrounds are expected to be large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
 
-In this analysis, instead of relying on the four basic \ac{POG} official \acfp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
+In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
 Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ (for 2016) and $mvaFall17V1Iso\_WP90$ (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
@@ -3798,7 +3816,7 @@ In order to cover for most of the discrepancies between the data and the simulat
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 
-Several variables that will now be briefly described can be used in order to define a region enriched in the signal studied. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
+Several variables can be used in order to define a region enriched in the signal studied. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
 
 \subsubsection*{\acf{MET}}
 
@@ -4871,10 +4889,15 @@ JHEP 02 (2017) 135 [arXiv: 1610.09218]
 Particle Data Group,
 Phys. Rev. D98, 030001 (2018)}
 
+\bibitem{LEP}
+\href{https://arxiv.org/abs/hep-ex/0503050}{G. Giacomelli and R. Giacomelli,
+"The LEP legacy", 
+2005 [arXiv:hep-ex/0503050]}
+
 \bibitem{ALICE}
 \href{https://arxiv.org/abs/hep-ph/0509259}{R. Schicker,
 "The ALICE detector at LHC",
-2005
+2005 [arXiv:hep-ex/0509259]
 }
 
 \bibitem{LHCb}
@@ -4927,6 +4950,16 @@ JINST 13 (2018) P10034 [arXiv: 1807.03289]
 "Performance of the CMS muon detector and muon reconstruction with proton-proton collisions at $\sqrt{s} = 13$ TeV",
 JINST 13 (2018) P06015 [arXiv: 1804.04528]}
 
+\bibitem{L1}
+\href{http://cdsweb.cern.ch/record/706847}{CMS Collaboration,
+"CMS TriDAS project : Technical Design Report, Volume 1: The Trigger Systems",
+CERN-LHCC-2000-038, 2000}
+
+\bibitem{HLT}
+\href{http://cdsweb.cern.ch/record/578006}{CMS Collaboration,
+"CMS The TriDAS Project : Technical Design Report, Volume 2: Data Acquisition and High-Level Trigger",
+CERN-LHCC-2002-026, 2002}
+
 \bibitem{PF}
 \href{http://inspirehep.net/record/925379/}{CMS Collaboration,
 "Particle-Flow Event Reconstruction in CMS and Performance for Jets, Taus, and MET",
@@ -4966,6 +4999,11 @@ Ryan Atkin J. Phys. Conf. Ser. 645 012008, 2015}
 \href{https://arxiv.org/abs/1712.07158}{CMS Collaboration,
 "Identification of heavy-flavour jets with the CMS detector in pp collisions at 13 TeV",
 JINST 13 (2018) P05011 [arXiv: 1712.07158]}
+
+\bibitem{PUPPI}
+\href{https://arxiv.org/pdf/1407.6013.pdf}{D. Bertolini et all.,
+"Pileup Per Particle Identification", 
+JHEP 1410 (2014) 59 [arXiv: 1407.6013]}
 
 \bibitem{METReco}
 \href{https://arxiv.org/abs/1903.06078}{CMS Collaboration,
@@ -5099,6 +5137,10 @@ CMS-PAS-LUM-17-001, 2019}
 \href{https://arxiv.org/abs/1607.00837}{CMS Collaboration,
 "Measurement of the differential cross sections for top quark pair production as a function of kinematic event variables in pp collisions at $\sqrt{s} = 7$ and 8 TeV",
 Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
+
+\bibitem{TopPtRecipe}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting}{\ac{CMC} Twiki,
+"pt(top-quark) based reweighting of ttbar MC"}
 
 \bibitem{ElePOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}{\ac{CMS} Twiki,
