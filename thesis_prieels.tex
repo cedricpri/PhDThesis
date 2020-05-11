@@ -74,6 +74,13 @@
 \renewcommand{\listtablename}{List of tables}
 \renewcommand{\floatpagefraction}{.95}%
 
+% Avoid having a lost line in a page
+\widowpenalty10000
+\clubpenalty10000
+
+%Avoid short lines
+\setlength{\parfillskip}{0pt plus\dimexpr\textwidth-2\parindent}
+
 %Titlepage
 \doublespacing
 \baselineskip=0.7\baselineskip
@@ -304,7 +311,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 
 \chapter{Introduction}
 
-The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). This model is quite simple in concept, but has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
+The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). Even though quite simple in concept, it has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 13$ TeV, announced at the \ac{CERN} on the 4th of July 2012. 
 
 However, as accurate as it seems to be, this theory, introduced in Section~\ref{section:SM}, is known to have several shortcomings which require further investigation. Eventual exotic particles which do not fit in the current model could be the sign of new physics and have therefore been extensively searched for over the course of the last decades in order to enhance our understanding of the Universe and all its constituents.
 
@@ -1195,7 +1202,7 @@ The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, using 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=14cm, height=6cm]{figs/CMSttbarExclusion.png}
+\includegraphics[width=16cm, height=6.5cm]{figs/CMSttbarExclusion.png}
 \caption{95\% \ac{CL} exclusion plots on the signal strength computed as a function of the mediator and \ac{DM} masses obtained by \ac{CMS} considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite{PreviousDoubleTopAllLep13CMS}.}
 \label{figure:CMSttbarExclusion}
 \end{center}
@@ -1207,7 +1214,7 @@ This combination managed to exclude the production of scalar mediators up to 290
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=14cm, height=6cm]{figs/Combination2019.png}
+\includegraphics[width=16cm, height=6.5cm]{figs/Combination2019.png}
 \caption{Expected and observed 95\% \ac{CL} limits on the \ac{DM} production cross sections shown considering scalar (on the left) and pseudoscalar (on the right) mediators for the interaction \cite{PreviousSingleDoubleTopAllLep13CMS}.}
 \label{figure:Combination2019}
 \end{center}
@@ -1724,7 +1731,7 @@ At the end of the day, the \ac{CMS} detector has been built in order to meet the
 
 \chapter{Objects reconstruction} \label{chapter:Reco}
 
-As we just saw, the \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particle with this detector into electronic signals that can be measured and stored. However, this signal collected is made out of raw information coming from different kind of subsystems and an algorithmic strategy then needs to be put in place in order to read all these separate signals and to combine them to extract some useful data, such as the number of particles produced by the collision along with their energy, charge and direction. Producing this kind of data is essential for all the offline analyses which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
+The \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particle with this detector into electronic signals that can be measured and stored. However, this signal collected is made out of raw information coming from different kind of subsystems and an algorithmic strategy then needs to be put in place in order to read all these separate signals and to combine them to extract some useful data, such as the number of particles produced by the collision along with their energy, charge and direction. Producing this kind of data is essential for all the offline analyses which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
 
 The algorithm able to combine this raw data and to produce useful objects and variables is the so-called \acf{PF} algorithm \cite{PF}, which will be first of all described in Section~\ref{section:PF}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as the electrons and muons (Section~\ref{section:RecoLep}), the jets (Section~\ref{section:RecoJet}), the \ac{MET} (Section~\ref{section:RecoMET}) and the top reconstruction (Section~\ref{section:RecoTop}) of the different $pp$ collisions recorded.
 
@@ -2111,7 +2118,7 @@ By sustituting these values into Equation~\ref{eq:matrix}, we then get a new rel
 This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it provides us a way to determine two excellent discriminating variables:
 
 \begin{itemize}
-\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, as we just saw, if the system considered does not admit any solution, then there is no intersecton between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that the distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimating the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developped later in Section~\ref{section:Discrimination}.
+\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, if the system considered does not admit any solution, then there is no intersecton between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that the distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimating the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developped later in Section~\ref{section:Discrimination}.
 \item The second interesting variable is the so-called \textbf{overlapping factor $R$}, defined in Equation~\ref{eq:overlapping}, where $l_1$ and $l_2$ are the two sizes of the ellipses measured along the axis joining their centers, and $d$ is the distance between these centers.
 
 \begin{equation}
@@ -2148,23 +2155,25 @@ Then, even though the process studied is always the same and is supposed to give
 \item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this remaining set of jets are then tested.
 \end{itemize}
 
-When taking into account all these possible combinations, a reconstruction efficiency of $\sim 90.3$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. This efficiency can be slightly increased even more by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
+When taking into account all these possible combinations, a reconstruction efficiency of $\sim 61$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. This efficiency can be increased by performing a \textbf{smearing} method, taking into account imperfectly measured kinematic variables by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
 \begin{itemize}
-\item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a gaussian distribution whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information. The \ac{MET} is also recomputed each time using these newly calculated parameters, according to Equation~\ref{eq:updateMET}.
-
-\begin{equation}
-\label{eq:updateMET}
-\cancel{E}_{T_{x,y}}^{\text{updated}} = \cancel{E}_{T_{x,y}}^{\text{reco}} + \sum_{\text{jet}_i = 1}^{2} (p_{x,y}^{\text{jet}_i, \text{updated}} - p_{x,y}^{\text{jet}_i, \text{reco}})
-\end{equation}
+\item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a gaussian distribution whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information.
 
 \item The energy of the leptons is also updated using a random correction factor generated from the distribution shown in Figure~\ref{fig:lepsmearing}, computed in \ac{MC} and representing the energy deviation between the generation and reco information.
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=6.3cm, height=4.7cm]{figs/ler.png}
+\includegraphics[width=7cm, height=5cm]{figs/ler.png}
 \caption{Definition of the angles used in the smearing of the leptons and jets directions \cite{DESYAN}.}
 \label{fig:lepsmearing}
 \end{figure}
+
+\item The \ac{MET} is also recomputed each time using both these newly calculated parameters, according to Equation~\ref{eq:updateMET}.
+
+\begin{equation}
+\label{eq:updateMET}
+\cancel{E}_{T_{x,y}}^{\text{updated}} = \cancel{E}_{T_{x,y}}^{\text{reco}} + \sum_{\text{jet}_i = 1}^{2} \Delta(p_{x,y}^{\text{jet}_i}) + \sum_{\text{lep}_i = 1}^{2} \Delta(p_{x,y}^{\text{lep}_i})
+\end{equation}
 
 \item An angular smearing is also performed, using the angles $\alpha$ and $\omega$ shown in Figure~\ref{fig:angsmearing}. 
 
@@ -2191,10 +2200,10 @@ The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/bphat.png}
+\includegraphics[width=7cm, height=5cm]{figs/bphat.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/lphat.png}
+\includegraphics[width=7cm, height=5cm]{figs/lphat.png}
 \end{minipage} \hfill
 \caption{Simulated distributions of the $\alpha$ angle between the particle and detector level direction for b-jets (on the left) and leptons (on the right).}
 \label{fig:angdistributions}
@@ -2205,18 +2214,18 @@ During each iteration of the smearing process, an individual weight $w$ is compu
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/bw.png}
+\includegraphics[width=7cm, height=5cm]{figs/bw.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=6.3cm, height=4.7cm]{figs/mlb.png}
+\includegraphics[width=7cm, height=5cm]{figs/mlb.png}
 \end{minipage} \hfill
 \caption{Breit-Wigner spectrum obtained when generating randomly the mass of the W boson (on the left) and true $m_{lb}$ distribution obtained using the generation information from the standard $t \bar t$ process (on the right).}
 \label{fig:truemlb}
 \end{figure}
 
-A global weight $W$ is then assigned to each lepton/b-jet combination by summing the weight $\sum w(m_{l \bar b}) \cdot w(m_{\bar l b})$ obtained for each smearing iteration, and the combination with the largest weight is considered to be the solution of the event. This weight distribution is another variable used to discriminate the signal from the backgrounds processes, as detailed in Section~\ref{section:Discrimination}. 
+A global weight $W$ is then assigned to each lepton/b-jet combination by summing the weight $\sum w(m_{l \bar b}) \cdot w(m_{\bar l b})$ obtained for each smearing iteration, and the combination with the largest weight is considered to be the solution of the event. This weight distribution will be another variable used to discriminate the signal from the backgrounds processes. 
 
-Even though this smearing increases the efficiency of the reconstruction to 91.5\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to assign a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values if this algorithm fails.
+Even though this smearing increases the efficiency of the reconstruction to $\sim 90$\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to assign a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values.
 
 
 
@@ -2340,7 +2349,7 @@ The results of the comparison between the output of two different versions of th
 \end{center}
 \end{figure}
 
-However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}. This will be detailed later on.
+However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}.
 
 \section{Files format} \label{section:Files}
 
@@ -2369,13 +2378,13 @@ Once all the different samples produced centrally up to the nanoAOD stage, anoth
 
 As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained  by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
+During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
 
 \section{Signal samples} \label{section:Signals}
 
 Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t$+DM (along with its different channels of production) and to the $t \bar t$+DM signal. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 50 to 500 GeV. In this context, 17 different mass points have been produced for each mediator, as listed in Appendix~\ref{appendix:SignalSamples}.
 
-The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalScalar} and~\ref{fig:signalPseudoscalar}, considering scalar and pseudoscalar mediators respectively. As expected from Table~\ref{table:ttDMsignals}, we can see on one hand first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself is not impacting in any way this spectrum.
+The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalScalar} and~\ref{fig:signalPseudoscalar}, considering scalar and pseudoscalar mediators respectively. As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event.
 
 \begin{figure}[htbp]
 \centering
@@ -2432,14 +2441,13 @@ The impact on the kinematics (in this particular case, on the spectrum of \ac{PU
 Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
 
 \begin{itemize}
-\item The major background for the $t \bar t$+DM analysis, the \ac{SM} $t \bar t$, kinematically really close to the signal searched for (Section~\ref{subsection:ttbar}). 
-\item On the other hand, the major background for the $t/\bar t$+DM analysis is the single top production, which has an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}).
-\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is usually important ton consider. Even though quite reduced in the \acp{SR} because of the cuts applied, a specific \ac{CR} will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}). 
-\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) may have a kinematics even closer to our $t \bar t$+DM signal than the $t \bar t$ process and is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
-\item Finally, the non-prompt background is another important piece of this analysis mainly because of the particular data-driven method used to compute them (Section~\ref{subsection:Fakes}).
+\item The major background of this analysis is the \ac{SM} $t \bar t$ ($\sim 90\%$ in the signal region), kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The single top production is also extremly important to consider, being kinematically close to our $t/\bar t$+DM signal, having an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}), mainly because of the variety of channels resulting in such a final state. Asking for two jets does allow us to reduce this background impact to $\sim 5\%$, while leaving some signal behind in the process as well.
+\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process ($\sim 2\%$) is usually important to consider. Even though kinematically different to our signals and therefore quite easy to reduce in the actual \acp{SR} with some specific cuts, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
+\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process ($\sim 1\%$), with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
+\item Finally, the non-prompt background ($< 1\%$) is another important piece of this analysis mainly because of the particular data-driven method used to compute its expected kinematic and yields (Section~\ref{subsection:Fakes}).
 \end{itemize}
 
-\color{red} Add percentage of each background in the SR once known \color{black}
+\color{red} Add table of percentage of each background in the SR once known \color{black}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2449,21 +2457,19 @@ Several different \ac{SM} background processes have been considered for this ana
 \end{center}
 \end{figure}
 
-Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production, and the weights and corrections applied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}.
+Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production, while some weights and corrections applied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}.
 
 \subsection{Top production}
 
 Because of the relatively high production cross section of top quarks at 13 TeV, the production of a single or a pair of top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
-They also have a kinematics quite close to the one expected for our signal: some additional \ac{MET} is expected because of the production of a pair of \ac{DM} particles, which might lead to a distribution $\phi$ distribution as well, but other than that achieving some discrimination between these processes is quite complex. This process mostly relies on the use of \acf{ML} techniques and will be fully detailed in Section~\ref{section:Discrimination}.
-
-Typically, given the importance of such processes, a specific \ac{CR} to check for the validity of the \ac{CR} of such processes is defined, as explained in Section~\ref{section:CR}.
+Such backgrounds have kinematics quite close to the one expected for our signal: event though some additional \ac{MET} is expected because of the production of a pair of \ac{DM} particles, leading to a few kinematical differences, achieving some discrimination between these kind of processes is quite complex. To get the best discrimination possible, this work therefore relies on the use of advanced \acf{ML} techniques, as will be discussed in Section~\ref{section:Discrimination}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
 %This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
 
-Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} and, due to its importance, dedicated \acp{CR} have been designed in which to check for the data/\ac{MC} agreement.
+Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -2587,7 +2593,7 @@ Different Feynman diagrams also account for this process in the s-channel (Figur
 \end{tikzpicture}
 }
 \end{minipage} 
-\caption{Feynman diagrams for s-channel production mode of a single top quarks.}
+\caption{Feynman diagrams for the s-channel production mode of a single top quark.}
 \label{fig:singleTopSChann}
 \end{figure}
 
@@ -2635,7 +2641,7 @@ Different Feynman diagrams also account for this process in the s-channel (Figur
 \end{tikzpicture}
 }
 \end{minipage} 
-\caption{Feynman diagrams for t-channel (on the left) and tW (on the right) production modes of a single top quarks.}
+\caption{Feynman diagrams for the t-channel (on the left) and tW (on the right) production modes of a single top quark.}
 \label{fig:singleTopOtherChann}
 \end{figure}
 
@@ -2697,7 +2703,7 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis but because of the huge cross section of this process, two to three orders of magnitude larger than the production of top, the contribution of this process in the \acp{SR} is still quite important. 
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of top, a thorough description of such process is still extremely important.
 
 \begin{figure}[htbp]
 \centering
@@ -2726,7 +2732,7 @@ As previously mentioned, most of the \ac{DY}, produced through the Feynman diagr
 \label{fig:DY}
 \end{figure}
 
-This background is also estimated from \ac{MC} as well and is being checked in a specific \ac{CR} as well, as described in Section~\ref{section:CR}.
+This background is also estimated from \ac{MC} as well and is being checked in a specific control region as well, as described in Section~\ref{section:CR}.
 
 \subsection{$t \bar t + V$} \label{subsection:ttV}
 
@@ -2805,7 +2811,7 @@ This background is coming from a usual $t \bar t$ production along with an \ac{I
 \end{tikzpicture}
 }
 \end{minipage} 
-\caption{Possible Feynman diagrams for the \acf{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \acf{FSR} ttZ (on the center and right).}
+\caption{Possible Feynman diagrams for the \ac{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \ac{FSR} ttZ (on the center and right).}
 \label{fig:ttV}
 \end{figure}
 
@@ -3070,7 +3076,7 @@ Now that we have a way to estimate the kinematics and yields of the non-prompt b
 
 \subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Even though quite negligible, some additional backgrounds still need to be considered, such as the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC}. 
+Even though quite negligible adn reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the signal regions. 
 
 \begin{figure}[htbp]
 \centering
@@ -4397,16 +4403,6 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 "The Standard Model of Particle Physics",
 CERN-PH-TH/2005-206, 2005}
 
-\bibitem{CMS}
-\href{http://inspirehep.net/record/796887/}{CMS Collaboration,
-"The CMS Experiment at the CERN LHC",
-JINST 3 S08004, 2008}
-
-\bibitem{ATLAS}
-\href{http://inspirehep.net/record/796888/}{ATLAS Collaboration,
-"The ATLAS Experiment at the CERN Large Hadron Collider",
-JINST 3 S08003, 2008}
-
 \bibitem{HiggsPostulate1} 
 \href{https://journals.aps.org/prl/abstract/10.1103/PhysRevLett.13.321}{F. Englert and R. Brout, 
 "Broken symmetry and the mass of gauge vector mesons",
@@ -4427,6 +4423,16 @@ Phys. Lett. B716, pp. 30-61, 2012 [arXiv: 1207.7235]
 \href{https://arxiv.org/abs/1207.7214}{G. Aad et al.,
 "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC", 
 Phys. Lett. B716, pp. 1-29, 2012 [arXiv: 1207.7214]}
+
+\bibitem{CMS}
+\href{http://inspirehep.net/record/796887/}{CMS Collaboration,
+"The CMS Experiment at the CERN LHC",
+JINST 3 S08004, 2008}
+
+\bibitem{ATLAS}
+\href{http://inspirehep.net/record/796888/}{ATLAS Collaboration,
+"The ATLAS Experiment at the CERN Large Hadron Collider",
+JINST 3 S08003, 2008}
 
 \bibitem{FirstEvidence}
 \href{https://ui.adsabs.harvard.edu/abs/1980ApJ...238..471R/abstract}{V.C. Rubin, W.K. Ford and N. Thonnard,
