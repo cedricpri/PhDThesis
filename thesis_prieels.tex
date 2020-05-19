@@ -2416,9 +2416,21 @@ During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) 
 
 \section{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t$+DM (along with its different channels of production) and to the $t \bar t$+DM signal. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 50 to 500 GeV. In this context, 17 different mass points have been produced for each mediator, as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the tW $t$+DM and to the $t \bar t$+DM signals. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 10 to 1000 GeV depending on the model considered. In this context, 8 (17) different mass points have been produced for the $t$+DM (each $t \bar t$+DM mediator), as listed in Appendix~\ref{appendix:SignalSamples}.
 
-The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalScalar} and~\ref{fig:signalPseudoscalar}, considering scalar and pseudoscalar mediators respectively. As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event.
+The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingle} ($t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{\ac{PUPPI} \ac{MET} spectrum for the $t$+DM signal considering several mediator masses, with (on the left) and without normalization (on the right).}
+\label{fig:signalSingle}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -2440,7 +2452,7 @@ The impact on the kinematics (in this particular case, on the spectrum of \ac{PU
 \includegraphics[width=7cm, height=5cm]{figs/scalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
-\caption{\ac{PUPPI} \ac{MET} spectrum considering different \textbf{scalar} mediator (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
+\caption{\ac{PUPPI} \ac{MET} spectrum for several $t \bar t$+DM \textbf{scalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
 \label{fig:signalScalar}
 \end{figure}
 
@@ -2464,11 +2476,9 @@ The impact on the kinematics (in this particular case, on the spectrum of \ac{PU
 \includegraphics[width=7cm, height=5cm]{figs/pseudoscalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
-\caption{\ac{PUPPI} \ac{MET} spectrum considering different \textbf{pseudoscalar} mediator (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
+\caption{\ac{PUPPI} \ac{MET} spectrum for several $t \bar t$+DM \textbf{pseudoscalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
 \label{fig:signalPseudoscalar}
 \end{figure}
-
-\color{red} To be updated once the $t+DM$ samples are actually available \color{black}
 
 \section{Backgrounds prediction} \label{section:Backgrounds}
 
@@ -3678,13 +3688,13 @@ As shown in Figure~\ref{fig:DoubleSR}
 
 Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. 
 
-In this context, the \ac{DY} control region will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$, WW and ttV processes will be checked in the Sections~\ref{section:TopCR},~\ref{section:wwCR} and~\ref{section:ttVCR} respectively.
+In this context, the \ac{DY} control region will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$ and ttV processes will be checked in the Sections~\ref{section:TopCR} and~\ref{section:ttVCR} respectively.
 
 \subsection{\acs{DY} control region} \label{section:DYCR}
 
-%Given the huge cross section of the \ac{DY}, this process is expected to be important at almost any selection level and to be therefore present in the signal regions of this analysis, making it important to study in a dedicated control region. This region is defined by the following cuts.
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z veto in the $ee$ and $\mu \mu$ channels. This region is defined exactly as the signal region, but reversing the Z-veto requirement.
 
-As shown in Figure~\ref{fig:DYCR}
+Results obtained in this control region are shown in Figure~\ref{fig:DYCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3862,11 +3872,11 @@ Several variables can be used in order to either separate the signal from the di
 
 Let's start with the two most useful variables in order to separate the $t \bar t$+DM and $t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this variable is an obvious choice for a good discriminating variable. However, vetoing the second b-jet to select the $t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which would result in a large surviving $t \bar t$+DM background.
 
-A more effective strategy than vetoing b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the b-jets of the events (if two or more j-bets are observed), or over the b-jet observed plus all the other jets of the event. The final spectrum obtained in both cases are shown in Figure~\ref{fig:signalsDiscrimination}.
+A more effective strategy than vetoing b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more j-bets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final spectrum obtained in both cases are shown in Figure~\ref{fig:signalsDiscrimination}.
 
 \begin{equation}
 \label{eq:mblt}
-m_{bl}^t = \min \left (\max(l_1 j_1, l_2 j_2) \right)
+m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
 \end{equation}
 
 \begin{figure}[htbp]
@@ -4208,9 +4218,31 @@ All the data samples considered for this analysis are listed in Tables~\ref{tabl
 
 \section{Signal samples}  \label{appendix:SignalSamples}
 
-The \ac{MC} signal samples have been produced centrally, considering different dark matter and mediators (scalar, pseudoscalar) masses, for both the $t$+DM and $t \bar t$+DM analyses. All the mass points considered along with their respective cross sections can be found in Tables~\ref{table:tDMsignals} ($t$+DM analysis) and~\ref{table:ttDMsignals}. The mass points generated are the same for 2016, 2017 and 2018.
+The \ac{MC} signal samples have been produced centrally, considering different dark matter and mediator masses and different production channels, for both signals of this analysis. All the mass points considered along with their respective cross sections can be found in Tables~\ref{table:tDMsignals} ($t$+DM signal) and~\ref{table:ttDMsignals} ($t \bar t$+DM signal). The mass points generated are the same for 2016, 2017 and 2018.
 
-\color{red} To be updated once the tDM signals are actually available \color{black}
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c } 
+ \hline
+ Mass point & Cross-section [pb] \\
+\hline
+\textbf{tW production channel} & \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4626 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3023 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1246 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05334 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02246 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01260 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.003034 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002863 \\
+ \hline
+\end{tabular}
+%}
+\caption{Signal samples mass points considered for the $t$+DM signal used in this analysis.}
+\label{table:ttDMsignals}
+\end{center}
+\end{table}
 
 \begin{table}
 \begin{center}
