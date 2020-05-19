@@ -1,4 +1,5 @@
 \documentclass[a4paper, 10pt, openright]{report}
+%\usepackage[Conny]{fncychap}
 %\documentclass[a4paper, 10pt]{report}
 \usepackage[
    a4paper,
@@ -50,14 +51,47 @@
 \usepackage{bm}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{lscape}
+\usepackage{etoolbox}
 
 \makeatletter
 \titleformat{\chapter}[block]
   {\Huge}{\filright\enspace \@chapapp~\thechapter\enspace \\}
   {8pt}{\Huge\bfseries\filcenter}
 \titlespacing*{\chapter}
-  {0pt}{0pt}{50pt}
+ {0pt}{0pt}{50pt}
 \makeatother
+
+%For Conny package
+%\makeatletter
+%\renewcommand*{\@makechapterhead}[1]{%
+%  \vspace*{0\p@}%
+%  {\parindent \z@ \raggedright \normalfont
+%    \ifnum \c@secnumdepth >\m@ne
+%      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+%        \DOCH
+%      \fi
+%    \fi
+%    \interlinepenalty\@M
+%    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+%      \DOTI{#1}%
+%    \else%
+%      \DOTIS{#1}%
+%    \fi
+%  }}
+%% For the case \chapter*:
+%\renewcommand*{\@makeschapterhead}[1]{%
+%  \vspace*{0\p@}%
+%  {\parindent \z@ \raggedright
+%    \normalfont
+%    \interlinepenalty\@M
+%    \DOTIS{#1}
+%    \vskip 0\p@
+%  }}
+%\makeatother
+%
+%\ChNameAsIs
+%\ChTitleAsIs
+%\ChRuleWidth{0.8pt}
 
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
@@ -165,14 +199,14 @@
 \setlength{\parskip}{5pt}
 \setcounter{page}{1}
 
-\chapter*{\huge{Abstract}}
+\chapter*{Abstract}
 \newpage
 %
-\chapter*{\huge{Resumen en espa\~{n}ol}}
+\chapter*{Resumen en espa\~{n}ol}
 \newpage
 %
 
-\chapter*{\huge{Acknowledgments}}
+\chapter*{Acknowledgments}
 
 \iffalse
 First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in both the personal and professional points of view, and something I will definitely benefit from in the future.
@@ -191,7 +225,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \newpage
 
 %
-\chapter*{\huge{Acronyms used}}
+\chapter*{Acronyms used}
 \begin{multicols}{2}
 \begin{acronym}
 
@@ -458,7 +492,7 @@ Actually, observations made by Vera Rubin and her team in the early 1970s with a
 \end{figure}
 
 \vspace{-10pt}
-\subsection{\ac{CMB} anisotropies} \label{subsection:CMB}
+\subsection{\acs{CMB} anisotropies} \label{subsection:CMB}
 
 The \ac{CMB} is a mostly uniform background of primary radio waves emitted when the Universe became transparent around 380 000 years after the Big Bang and was discovered accidentally in the 1940s \cite{CMBDiscovery}. Studying it is extremely important, as it is actually made of the oldest and cleanest electromagnetic radiation we can find in the Universe. Precise measurements of this radiation are actually critical in many different fields of physics, since any proposed model of the Universe must be able to explain this radiation, its temperature and anisotropies. 
 
@@ -924,7 +958,7 @@ An additional categorization of the \ac{DM} production models can be done, by se
 
 In this work, simplified models with either scalar or pseudoscalar mediators will always be considered because of their relative simplicity and the lack of strong assumptions behind them.% We will now study in particular the production and the search for \ac{DM} within the \ac{LHC}.
 
-\section{\ac{DM} production at the \ac{LHC}} \label{section:ourChannel}
+\section{Dark matter production at the LHC} \label{section:ourChannel}
 
 The \ac{LHC}, colliding protons at a center of mass energy of 13 TeV, is actually a perfect machine to study such processes, because of the expected range of masses (100 GeV to 1 TeV) for the best \ac{DM} candidates, as discussed in Section~\ref{section:DMProperties}. However, because of the weak interactions of such particles, they are not expected to interact at all with the detector, which will then basically search for missing transverse energy along with a \ac{SM} particle triggering the event.
 
@@ -1250,7 +1284,7 @@ This combination managed to exclude the production of scalar mediators up to 290
 
 The data analyzed throughout this work is the result of several years of proton-proton collisions produced at the \ac{LHC} with a center of mass energy of 13 TeV, and the particles emerging from these collisions have been recorded with the \ac{CMS} detector. In order to provide the experimental context of this thesis, the Section~\ref{section:LHC} of this section will be dedicated to the description of the accelerator, while the detector, in which thousands of people were involved and made of several different layers, will be described in Section~\ref{section:CMS}.
 
-\section{The \ac{LHC} accelerator} \label{section:LHC}
+\section{The \acs{LHC} accelerator} \label{section:LHC}
 
 The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and lead ions up to velocities close to the speed of light (0.999999990c). Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground (under France and Switzerland) to avoid part of the contamination due to the cosmic rays and located at \ac{CERN}, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then a magnificent achievement of the accelerator, after only a few years years of operation.
 
@@ -1258,7 +1292,7 @@ Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shift
 
 %Let's now start with a global description of the general design of this particle accelerator in Section~\ref{section:LHCNut} before describing in more details the key parameters allowing us to evaluate its actual performances in Section~\ref{section:LHCParams}.
 
-\subsection{The \ac{LHC} in a nutshell}\label{section:LHCNut}
+\subsection{The \acs{LHC} in a nutshell}\label{section:LHCNut}
 
 The \ac{LHC} is an underground particle accelerator built in the same 27 kilometers tunnel where the \ac{LEP} was previously used \cite{LEP}. This machine is accelerating two beams made out of ~$10^{10}$ protons or ~$7\cdot10^{7}$ lead ions in each direction and is mostly made out of more than 4000 superconducting magnets, in majority dipoles and quadrupoles, allowing respectively to curve the beam to maintain a nominal circular trajectory and to focus it by compensating its natural dispersion due to the repulsion of the protons making up these beams. A dedicated small section of the accelerator is then made out of 16 radio-frequency cavities synchronized in such a way that these protons always face a negative electric charge, which is used as the driving process of the actual acceleration of such particles.
 
@@ -1302,7 +1336,7 @@ Peak \ac{PU} & 45 & 60 & 55 & 25 \\
 \end{center}
 \end{table}
 
-\subsection{\ac{LHC} key parameters}\label{section:LHCParams}
+\subsection{Key parameters}\label{section:LHCParams}
 
 \subsubsection{Center of mass energy} \label{subsection:CMEnergy}
 
@@ -1377,7 +1411,7 @@ The \acf{CMS} is one of the two general purpose detectors of the \ac{LHC} and is
 
 \ac{CMS} has been carefully designed by hundreds of different physicists and engineers in order to be as hermetic as possible, covering all the possible angles around the beam pipe. It therefore counts with a central part with cylindrical shape, the barrel, and two endcaps, one on each side of the detector. With its 14.000 tons, distributed over a diameter of 15 meters and a length of 28.7 meters, the detector can be considered quite compact and was lowered into the experimental cavern after being built on the surface in 14 different moving pieces, a flexible design allowing to access its inner parts, by opening and closing the detector when needed.
 
-\subsubsection*{\ac{CMS} subdetectors}
+\subsubsection*{\acs{CMS} subdetectors}
 
 As shown in Figure~\ref{fig:CMS}, \ac{CMS} is made out of different layers corresponding to different subdetectors, each able to provide different kinds of information about the particles created by each collision \cite{CMSDescription}. These subdetectors will be described in detail in the following sections, but they have all been designed in order to make the reconstruction of the different events efficient, fast and precise while matching the tight conditions occuring at the \ac{LHC}.
 
@@ -1691,7 +1725,7 @@ In summary, the CMS \ac{DAQ}, whose global architecture is represented in Figure
 The \ac{DAQ} is indeed also in charge of performing additional tasks, such as the generation of the \ac{DQM} information resulting
 from online event processing in the \ac{HLT}, the transfer of the data from local storage at the \ac{CMS} site to mass storage in the \ac{CERN} data centre at the Meyrin site and the operation of the \ac{DCS} system, ensuring the correct operation of the detector and a high quality data taking at all times. %The \ac{DAQ} is therefore an essential part of the detector.
 
-\section{\ac{CMS} main goals}
+\section{\acs{CMS} main goals}
 
 At the end of the day, the \ac{CMS} detector has been built in order to meet the goals of the \ac{LHC} physics program, which have been summarized in \cite{CMSDescription} as:
 
@@ -1735,7 +1769,7 @@ The \ac{CMS} detector is made out of different layers, each able to convert the 
 
 The algorithm able to combine this raw data and to produce useful objects and variables is the so-called \acf{PF} algorithm \cite{PF}, which will be first of all described in Section~\ref{section:PF}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as the electrons and muons (Section~\ref{section:RecoLep}), the jets (Section~\ref{section:RecoJet}), the \ac{MET} (Section~\ref{section:RecoMET}) and the top reconstruction (Section~\ref{section:RecoTop}) of the different $pp$ collisions recorded.
 
-\section{\acf{PF} algorithm} \label{section:PF}
+\section{Particle flow algorithm} \label{section:PF}
 
 The \ac{PF} is an algorithm aiming to combine in the best way possible all the information coming from the different parts of the \ac{CMS} detector (mostly, tracks and clusters of energy) in order to identify and reconstruct the hundreds of new particles produced by each $pp$ collision provided by the \ac{LHC}. This reconstruction can be divided into two main steps: first of all, the data coming from the different subsystems of the detector is read in order to identify and measure the properties of some basic stable objects, such as leptons, photos and hadrons. Then, more complex calculations are performed to identify eventual unstable particles, jets from the hadronization of quarks and to compute complex variables such as the leptons isolation and the \ac{MET}.
 
@@ -1764,7 +1798,7 @@ All the particles originating from less energetic \ac{PV} or from a secondary ve
 
 We will now study in a bit more details the reconstruction method applied in order to reconstruct the main objects of this analysis, i.e. leptons, jets, \ac{MET} and top quarks.
 
-\section{\acf{PV} definition} \label{section:PVDef}
+\section{Primary vertex definition} \label{section:PVDef}
 
 Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}: the \textbf{\ac{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC}, the \textbf{\ac{PV}}, usually assumed to be the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and the \textbf{secondary vertices}, due to the eventual presence of long lived particles, decay chains or jets. 
 
@@ -2087,7 +2121,7 @@ The solutions for the momenta of the neutrinos will then be given by the interse
 
 So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adaptated to our particular case.
 
-\subsection{Top reconstruction with additional \ac{DM}} \label{section:ttrecoDM}
+\subsection{Top reconstruction with additional dark matter} \label{section:ttrecoDM}
 
 In this particular case, including an additional contribution $\bm{\phi_\perp} = (\phi_x, \phi_y, 0)^T$ to the \ac{MET} is equivalent to slightly modifying the Equation~\ref{eq:related} to obtain Equation~\ref{eq:relatedDM}.
 
@@ -2257,7 +2291,7 @@ In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} co
 
 Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
 
-\section{The \acf{MC} simulation method} \label{section:MC}
+\section{The Monte-Carlo simulation method} \label{section:MC}
 
 As previously explained, the generation of \ac{MC} simulations for the most common \ac{SM} processes is a crucial step of any analysis because they are considered to be the reference to which the data collected is compared in order to try and find some discrepancies, which could the sign of the existence of \ac{BSM} physics. Searches for exotic physics therefore heavily depend on these simulations, which need to be generated with great care and to which a large uncertainty is typically associated since the collision between the partons of two protons and the interaction between the particles produced and the detector itself are extremely complex by nature. 
 
@@ -3646,7 +3680,7 @@ Different control regions where the data/\ac{MC} agreement can be checked have b
 
 In this context, the \ac{DY} control region will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$, WW and ttV processes will be checked in the Sections~\ref{section:TopCR},~\ref{section:wwCR} and~\ref{section:ttVCR} respectively.
 
-\subsection{\ac{DY} control region} \label{section:DYCR}
+\subsection{\acs{DY} control region} \label{section:DYCR}
 
 %Given the huge cross section of the \ac{DY}, this process is expected to be important at almost any selection level and to be therefore present in the signal regions of this analysis, making it important to study in a dedicated control region. This region is defined by the following cuts.
 

@@ -12,7 +12,7 @@
 \BOOKMARK [2][-]{subsection.2.5.1}{Direct searches}{section.2.5}% 12
 \BOOKMARK [2][-]{subsection.2.5.2}{Indirect searches}{section.2.5}% 13
 \BOOKMARK [2][-]{subsection.2.5.3}{Collider production}{section.2.5}% 14
-\BOOKMARK [1][-]{section.2.6}{DM production at the LHC}{chapter.2}% 15
+\BOOKMARK [1][-]{section.2.6}{Dark matter production at the LHC}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.6.1}{The single top production channel}{section.2.6}% 16
 \BOOKMARK [2][-]{subsection.2.6.2}{The t \040production channel}{section.2.6}% 17
 \BOOKMARK [2][-]{subsection.2.6.3}{The dilepton final state}{section.2.6}% 18
@@ -20,7 +20,7 @@
 \BOOKMARK [0][-]{chapter.3}{The experimental setup}{}% 20
 \BOOKMARK [1][-]{section.3.1}{The LHC accelerator}{chapter.3}% 21
 \BOOKMARK [2][-]{subsection.3.1.1}{The LHC in a nutshell}{section.3.1}% 22
-\BOOKMARK [2][-]{subsection.3.1.2}{LHC key parameters}{section.3.1}% 23
+\BOOKMARK [2][-]{subsection.3.1.2}{Key parameters}{section.3.1}% 23
 \BOOKMARK [1][-]{section.3.2}{The CMS detector}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.2.1}{Tracker}{section.3.2}% 25
 \BOOKMARK [2][-]{subsection.3.2.2}{Electromagnetic Calorimeter \(ECAL\)}{section.3.2}% 26
@@ -31,8 +31,8 @@
 \BOOKMARK [2][-]{subsection.3.2.7}{Data Acquisition System \(DAQ\)}{section.3.2}% 31
 \BOOKMARK [1][-]{section.3.3}{CMS main goals}{chapter.3}% 32
 \BOOKMARK [0][-]{chapter.4}{Objects reconstruction}{}% 33
-\BOOKMARK [1][-]{section.4.1}{Particle Flow \(PF\) algorithm}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.2}{Primary Vertex \(PV\) definition}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.1}{Particle flow algorithm}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.2}{Primary vertex definition}{chapter.4}% 35
 \BOOKMARK [1][-]{section.4.3}{Leptons reconstruction}{chapter.4}% 36
 \BOOKMARK [2][-]{subsection.4.3.1}{Muons}{section.4.3}% 37
 \BOOKMARK [2][-]{subsection.4.3.2}{Electrons}{section.4.3}% 38
@@ -41,10 +41,10 @@
 \BOOKMARK [1][-]{section.4.5}{Missing Transverse Energy \(MET\)}{chapter.4}% 41
 \BOOKMARK [1][-]{section.4.6}{Top reconstruction}{chapter.4}% 42
 \BOOKMARK [2][-]{subsection.4.6.1}{Numerical and analytical top reconstruction}{section.4.6}% 43
-\BOOKMARK [2][-]{subsection.4.6.2}{Top reconstruction with additional DM}{section.4.6}% 44
+\BOOKMARK [2][-]{subsection.4.6.2}{Top reconstruction with additional dark matter}{section.4.6}% 44
 \BOOKMARK [2][-]{subsection.4.6.3}{Top reconstruction in practice}{section.4.6}% 45
 \BOOKMARK [0][-]{chapter.5}{Data, signals and backgrounds}{}% 46
-\BOOKMARK [1][-]{section.5.1}{The Monte Carlo \(MC\) simulation method}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.1}{The Monte-Carlo simulation method}{chapter.5}% 47
 \BOOKMARK [1][-]{section.5.2}{Files format}{chapter.5}% 48
 \BOOKMARK [1][-]{section.5.3}{Analysis code}{chapter.5}% 49
 \BOOKMARK [1][-]{section.5.4}{Data samples}{chapter.5}% 50
@@ -78,9 +78,9 @@
 \BOOKMARK [0][-]{chapter.8}{Conclusions}{}% 78
 \BOOKMARK [1][-]{section.8.1}{Future prospects}{chapter.8}% 79
 \BOOKMARK [0][-]{section*.201}{Appendices}{}% 80
-\BOOKMARK [0][-]{Appendix.1.A}{Samples used}{}% 81
-\BOOKMARK [1][-]{section.1.A.1}{Data samples}{Appendix.1.A}% 82
-\BOOKMARK [1][-]{section.1.A.2}{Signal samples}{Appendix.1.A}% 83
-\BOOKMARK [1][-]{section.1.A.3}{Backgrounds samples}{Appendix.1.A}% 84
-\BOOKMARK [0][-]{Appendix.1.B}{Neural network optimization}{}% 85
-\BOOKMARK [0][-]{chapter*.211}{Bibliography}{}% 86
+\BOOKMARK [0][-]{appendix.1.A}{Samples used}{}% 81
+\BOOKMARK [1][-]{section.1.A.1}{Data samples}{appendix.1.A}% 82
+\BOOKMARK [1][-]{section.1.A.2}{Signal samples}{appendix.1.A}% 83
+\BOOKMARK [1][-]{section.1.A.3}{Backgrounds samples}{appendix.1.A}% 84
+\BOOKMARK [0][-]{appendix.1.B}{Neural network optimization}{}% 85
+\BOOKMARK [0][-]{appendix*.211}{Bibliography}{}% 86
