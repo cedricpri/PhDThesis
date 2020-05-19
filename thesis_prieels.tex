@@ -2234,7 +2234,7 @@ The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5cm]{figs/bphat.png}
+\includegraphics[width=7cm, height=5cm]{figs/jphat.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5cm]{figs/lphat.png}
@@ -3856,9 +3856,32 @@ In order to cover for most of the discrepancies between the data and the simulat
 \section{Background-signal discrimination} \label{section:Discrimination}
 \subsection{Discriminating variables}
 
-Several variables can be used in order to define a region enriched in the signal studied. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
+Several variables can be used in order to either separate the signal from the different background processes, or to separate the two signals we are interested in into separate signal regions, to study them separately. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
 
-\subsubsection*{\acf{MET}}
+\subsubsection*{Number of bjets and $m_{bl}^t$}
+
+Let's start with the two most useful variables in order to separate the $t \bar t$+DM and $t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this variable is an obvious choice for a good discriminating variable. However, vetoing the second b-jet to select the $t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which would result in a large surviving $t \bar t$+DM background.
+
+A more effective strategy than vetoing b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the b-jets of the events (if two or more j-bets are observed), or over the b-jet observed plus all the other jets of the event. The final spectrum obtained in both cases are shown in Figure~\ref{fig:signalsDiscrimination}.
+
+\begin{equation}
+\label{eq:mblt}
+m_{bl}^t = \min \left (\max(l_1 j_1, l_2 j_2) \right)
+\end{equation}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.6cm]{figs/nbJet.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.6cm]{figs/mblt.png}
+\end{minipage} \hfill
+\caption{Number of b-jets (on the left) and $m_{bl}^t$ variable (on the right), mostly used to separate our two signals in this analysis, in a region close to the actual signal region.}
+\label{fig:signalsDiscrimination}
+\end{figure}
+
+\subsubsection*{Missing transverse energy}
 
 Already defined in Section~\ref{section:RecoMET}, this variable corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
 
@@ -5133,6 +5156,11 @@ J. Phys.: Conf. Ser. 898 042005}
 \href{https://www.researchgate.net/publication/335864848_A_further_reduction_in_CMS_event_data_for_analysis_the_NANOAOD_format}{A. Rizzi, G. Petrucciani and M. Peruzzi,
 "A further reduction in CMS event data for analysis: the NANOAOD format",
 J. Phys.: Conf. Ser. 214 06021}
+
+\bibitem{mblt}
+\href{https://arxiv.org/abs/1812.00694}{U. Aisch and G. Polesello,
+"Searching for production of dark matter in association with top quarks at the LHC",
+High Energy Physics - Phenomenology, 2018 [arXiv: 1812.00694]}
 
 \bibitem{MT2}
 \href{https://arxiv.org/abs/hep-ph/9906349}{C.G. Lester and D.J. Summers,
