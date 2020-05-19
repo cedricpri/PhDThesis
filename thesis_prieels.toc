@@ -80,16 +80,16 @@
 \contentsline {subsection}{\numberline {6.3.3}Same sign control region}{103}{subsection.6.3.3}
 \contentsline {section}{\numberline {6.4}Background-signal discrimination}{107}{section.6.4}
 \contentsline {subsection}{\numberline {6.4.1}Discriminating variables}{107}{subsection.6.4.1}
-\contentsline {subsection}{\numberline {6.4.2}Neural network}{110}{subsection.6.4.2}
+\contentsline {subsection}{\numberline {6.4.2}Neural network}{111}{subsection.6.4.2}
 \contentsline {chapter}{\numberline {7}Results and interpretations}{113}{chapter.7}
 \contentsline {section}{\numberline {7.1}Systematics and uncertainties}{113}{section.7.1}
 \contentsline {section}{\numberline {7.2}Results}{113}{section.7.2}
 \contentsline {chapter}{\numberline {8}Conclusions}{115}{chapter.8}
 \contentsline {section}{\numberline {8.1}Future prospects}{115}{section.8.1}
-\contentsline {chapter}{Appendices}{117}{section*.201}
+\contentsline {chapter}{Appendices}{117}{section*.202}
 \contentsline {chapter}{\numberline {A}Samples used}{119}{Appendix.1.A}
 \contentsline {section}{\numberline {A.1}Data samples}{119}{section.1.A.1}
 \contentsline {section}{\numberline {A.2}Signal samples}{119}{section.1.A.2}
 \contentsline {section}{\numberline {A.3}Backgrounds samples}{119}{section.1.A.3}
 \contentsline {chapter}{\numberline {B}Neural network optimization}{127}{Appendix.1.B}
-\contentsline {chapter}{Bibliography}{135}{chapter*.211}
+\contentsline {chapter}{Bibliography}{135}{chapter*.212}
