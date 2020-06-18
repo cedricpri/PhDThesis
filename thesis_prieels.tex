@@ -146,7 +146,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ruiz del \'{A}rbol}\\}
 	\vspace{1.4cm}
-	{\Large Santander, June 2020}
+	{\Large Santander, September 2020}
 	\vfill
 
 \end{titlepage}
@@ -181,7 +181,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ruiz del \'{A}rbol}\\}
 	\vspace{1.4cm}
-	{\Large Santander, Junio 2020}
+	{\Large Santander, Septiembre 2020}
 	\vfill
 
 \end{titlepage}
@@ -205,7 +205,6 @@
 
 \chapter*{Acknowledgments}
 
-\iffalse
 First of all, I would like to thank the group of high energy physics of the \ac{IFCA} in general for the opportunity they gave me by offering such an interesting PhD position within the group. This was a great opportunity for me to start working as a CERN collaborator, which had been a dream of mine for many years. All these years spent at \ac{IFCA} were for sure extremely interesting, brought me a lot in both the personal and professional points of view, and something I will definitely benefit from in the future.
 
 I would also like to personally thank J\'{o}natan Piedra for supervising this thesis, but also for all your help and patience during all these years, especially at the beginning. You taught me a lot and I cannot count the number of bugs and issues you helped me solve, so I am thankful you kept your door open at all times anyway.
@@ -216,8 +215,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my (PhD) coworkers who fought alongside me. Pedro, Nicol\`{o}, Celia, Clara, Andrea and Pablo, you made the students office a better place to work in and I wish you all the best, even though I am sure you will achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You brought me more than you can imagine and I will never forget all these great moments we spent together. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family for many more years.
-\fi 
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. You brought me more than you can imagine and I will never forget all these great moments we spent. Even though one chapter ends, all I hope now is to find a way to stay in touch with you and your family in the future.
 
 \newpage
 
@@ -269,6 +267,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{IAXO}[IAXO]{International AXion Observatory}
 \acro{IFCA}[IFCA]{Instituo de F\'{i}sica de Cantabria}
 \acro{ISR}[ISR]{Initial State Radiation}
+\acro{JEC}[JEC]{Jet Energy Correction}
 \acro{KF}[KF]{Kalman Filter}
 \acro{L1}[L1]{Level-1 Trigger}
 \acro{LAT}[LAT]{Fermi Large Telescope}
@@ -1938,7 +1937,7 @@ The algorithm works by looking at all the $i, j$ combinations, comparing the dis
 \item If $d_{iB}$ is smaller than $d_{ij}$, then $i$ is considered to be the final jet and is therefore removed from the list of jet candidates as well.
 \end{itemize}
 
-Several corrections are then usually applied to the jets constructed using this algorithm in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \ac{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of systematic uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
+Several corrections, mainly the so-called \acp{JEC} \cite{JEC}, are then usually applied to the jets constructed using this algorithm in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \ac{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of systematic uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
 
 The efficiency of the \ac{PF} algorithm for jet identification and reconstruction has been checked using simulation, as shown in Figure~\ref{fig:PFSimu}. This study clearly shows that between 95 and 97\% of the energy of the \ac{PF} jet candidates can be reconstructed, compared to a 40-60\% reconstruction efficiency using only the calorimeters data, and that this algorithm also leads to a gain in resolution up to a factor 3, depending on the jet $p_T$.
 
@@ -3401,7 +3400,7 @@ Several strategies are used in \ac{CMS} in order to be able to identify prompts 
 
 In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
-Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the tight \ac{POG} $mva\_90p\_Iso2016$ (for 2016) and $mvaFall17V1Iso\_WP90$ (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
+Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the \ac{POG} \textit{mvaSpring16GP\_WP90} (for 2016) and \textit{mvaFall17V1Iso\_WP9} (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
 \begin{table}
 \begin{center}
@@ -3411,6 +3410,7 @@ Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePO
  Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
 \hline
 \textbf{Basic selection} & &  \\ 
+$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
  $|\eta|$ & $<$ & - & $2.5$ \\
  \hline
 \textbf{\ac{HLT} safe selection} & &  \\ 
@@ -3445,7 +3445,10 @@ hOverE & $<$ & 0.060 & 0.065 \\
  Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
 \hline
 \textbf{Basic selection} & &  \\ 
+$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
  $|\eta|$ & $<$ & - & $2.5$ \\
+ \hline
+ 	\textbf{Additional selection} & &  \\ 
  convVeto & $=$ & 1 & 1 \\
  $d_{xy}$ & $<$ &  $0.05$ & $0.1$ \\
  $d_z$ & $<$ & $0.1$ & $0.2$ \\
@@ -3463,7 +3466,7 @@ The electron efficiencies computed for this particular selection can be seen in 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=14cm, height=6.5cm]{figs/EleEff.png}
-\caption{Tight electron efficiencies for this analysis, based on the Egamma \ac{POG} $mva\_90p\_Iso2016$ \ac{WP}, for the data taking period of 2016.}
+\caption{Tight electron efficiencies for this analysis, based on our tight electron definition, for the data taking period of 2016.}
 \label{fig:EleEff}
 \end{figure}
 
@@ -3473,15 +3476,15 @@ The selection applied to muons is mostly based on the Muon \ac{POG}, providing r
 
 At the end of the day, a muon can be labeled as \textbf{Tight \ac{POG}} if:
 \begin{itemize}
-\item The \ac{PF} muon reconstructed is a global muon.
+\item The \ac{PF} muon reconstructed is a global muon
 \item The $\chi^2$/NDOF of the global muon track fit is less than 10 and at least one muon chamber hit is included in the global muon track fit%, in order to suppress hadronic punch-through and muons from decays in flight
-\item Muon segments in at least two muon stations have been observed.
-\item Its tracker track has a transverse impact parameter $dxy < 0.2$ cm and a longitudinal impact parameter $d_Z < 0.5$ cm with respect to the \ac{PV} .
-\item The number of pixel hits is larger than 0.
+\item Muon segments in at least two muon stations have been observed
+\item Its tracker track has a transverse impact parameter $dxy < 0.2$ cm and a longitudinal impact parameter $d_Z < 0.5$ cm with respect to the \ac{PV} 
+\item The number of pixel hits is larger than 0
 \item At least 5 tracker layers with hits have been observed.
 \end{itemize}
 
-The selection applied to muons of this particular analysis is a bit tighter though, since the following cuts are applied on top of this selection:
+The selection applied to muons of this particular analysis is a bit tighter though, since the following cuts are applied on top of this selection for 2016, 2017 and 2018:
 
 \begin{itemize}
 \item $p_T > 10$ GeV, $|\eta| < 2.4$ and $|d_z| < 0.1$ cm
@@ -3519,7 +3522,7 @@ This selection leads to efficiencies higher than 80\% for all the muon momenta a
 
 Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typiclal distance parameter $R = 0.4$). 
 
-A selection is then applied on these jets in order to separate noise from real jets. In this analysis, this selection follows the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking, as shown in Tables~\ref{table:JetID2016} and~\ref{table:JetID2017}. The tight \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$.
+Jets are first of all required to have a $p_T > 15$ GeV and a $|\eta| < 5.2$ to be considered in this analysis. A selection is then applied on these jets in order to separate noise from real jets. In this analysis, this selection follows the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking, as shown in Tables~\ref{table:JetID2016} and~\ref{table:JetID2017}. The tight \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$.
 
 \begin{table}
 \begin{center}
@@ -3566,15 +3569,7 @@ Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
 
 A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}.
 
-The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The loose deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is considered a b-jet in this analysis if it passes the following cuts:
-
-\begin{multicols}{3}
-\begin{itemize}
-\item $p_T > 20$ GeV
-\item $|\eta| < 2.4$
-\item deepCSV $> 0.1241$ 
-\end{itemize}
-\end{multicols}
+The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The loose deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.1241.
 
 \begin{table}
 \begin{center}
@@ -5083,6 +5078,11 @@ J. Phys. Conf. Ser. 1162 012008, 2019}
 \href{https://iopscience.iop.org/article/10.1088/1742-6596/645/1/012008/pdf}{P.L.S. Connor,
 "Review of jet reconstruction algorithms",
 Ryan Atkin J. Phys. Conf. Ser. 645 012008, 2015}
+
+\bibitem{JEC}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/IntroToJEC}{Jet Energy Resolutions and Corrections Twiki,
+"Introduction to Jet Energy Corrections at CMS",
+2016}
 
 \bibitem{PF2}
 \href{https://arxiv.org/abs/1401.8155}{F. Beaudette,
