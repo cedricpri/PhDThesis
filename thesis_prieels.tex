@@ -983,7 +983,7 @@ These searches have to combine the discriminant power of several variables to se
 \item Finally, and this is quite new, \textbf{long-lived searches} can also be performed. These are interesting because they can extend the current searches performed to also consider the eventual creation of long-lived particles which would decay a few centimeters further than the primary vertex of the $pp$ collision \cite{LLSearches}. Typical \ac{SM} signatures do not usually include such events, making this channel relatively background-free, even though the reconstruction of the different objects is much harder in this case.
 \end{itemize}
 
-All the results from the different searches performed by the \ac{CMS} collaboration using the full $35.9$ fb$^{-1}$ dataset collected at $13$ TeV can be summarized in Figure~\ref{fig:SummarySpin0} for spin-0 mediators and in Figure~\ref{fig:SummarySpin1} when considering spin-1 mediators.
+All the results from the different searches performed by the \ac{CMS} collaboration using the full $35.9 \pm 0.9$ fb$^{-1}$ dataset collected at $13$ TeV can be summarized in Figure~\ref{fig:SummarySpin0} for spin-0 mediators and in Figure~\ref{fig:SummarySpin1} when considering spin-1 mediators.
 
 \begin{figure}[htbp]
 \centering
@@ -1379,7 +1379,7 @@ In this last equation, the following properties of the accelerator have been int
 
 As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting in order to produce processes having a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam or the beam crossing angle at the interaction point. New radio-frequency crab cavities will probably be installed during the next \ac{LS} of the \ac{LHC} in order to increase the value of the geometrical factor $R$ and the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
 
-The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available for the Run II and analyzed in this work have an integrated luminosity of 35.9~fb$^{-1}$ (2016), 41.5~fb$^{-1}$ (2017) and 59.7~fb$^{-1}$ (2018), resulting in a total dataset of 137~fb$^{-1}$ recorded during the Run II of operation. This roughly means that we expect to have produced around 137 events of any process whose cross section of production would be equal to 1~fb.
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available for the Run II and analyzed in this work have an integrated luminosity of $35.9 \pm 0.9$~fb$^{-1}$ (2016), $41.5 \pm 1.0$~fb$^{-1}$ (2017) and $59.7 \pm 1.5$~fb$^{-1}$ (2018), resulting in a total dataset of $137.1 \pm 2.0$~fb$^{-1}$ recorded during the Run II of operation. This roughly means that we expect to have produced around 137 events of any process whose cross section of production would be equal to 1~fb.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2283,9 +2283,9 @@ Even though this smearing increases the efficiency of the reconstruction to $\si
 
 \chapter{Data, signals and backgrounds} \label{chapter:Samples}
 
-In order to find a possible hint of the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}.
+In order to find a possible hint for the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. 
 
-Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be then detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
+All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}. Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
 
 \section{The Monte-Carlo simulation method} \label{section:MC}
 
@@ -2330,7 +2330,7 @@ The parton showering then consists in simulating these showers for not only the 
 
 \subsubsection*{\acf{UE}}
 
-Once the hard scattering and all the possible gluon emissions simulated, the next step consists in considering the so-called \textbf{\acf{UE}} arising from the parton showers just described and from the secondary collisions between partons not involved in the primary hard process, the so-called \acp{MPI}. The \ac{UE} is usually responsible for the production of particles at low transverse momenta $p_T$ that cannot be experimentally distinguished from particles produced from initial or final state radiation but still need to be simulated.
+Once the hard scattering and all the possible gluon emissions simulated, the next step consists in considering the so-called \textbf{\acf{UE}} arising from the parton showers just described and from the secondary collisions between partons not involved in the primary hard process, the so-called \acp{MPI}. The \ac{UE} is usually responsible for the production of particles at low transverse momenta $p_T$ that cannot be experimentally distinguished from particles produced from initial or final state radiation but still need to be accounted for and simulated.
 
 These secondary collisions typically lead to the production of extra hadrons and therefore need to be simulated as well by events generators, usually by distributing the partons of the incoming protons in an area of 1fm$^2$: an increased \ac{UE} will be obtained when the so-called impact parameter, the distance between the parton and the centre of this area, is decreased, making the collision mostly central and almost head-on \cite{UE}. The \ac{UE} is typically well simulated using softwares such as Herwig \cite{Herwig} and PYTHIA \cite{PYTHIA}. The spectrum for the generation of some variables in a top enriched sample can be found in Figure~\ref{fig:ComparisonGen}.
 
@@ -2364,7 +2364,7 @@ This is typically done by the GEANT4 software \cite{Geant4}, able to model diffe
 \item Modeling of the interaction region
 \item Modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes
 \item Modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation)
-\item Modeling of the detector's electronics response
+\item Modeling of the detector's electronic response
 \end{itemize}
 
 This modeling accounts for all the cracks and for the disposition of the subsystems inside of the \ac{CMS} detector. This software is for example able to model the interaction of the electrons with the tracker, responsible for the emission of bremsstrahlung photons, as explained in Section~\ref{subsection:Electrons}.
@@ -2383,7 +2383,7 @@ However, the modeling of the detector is not perfect and not all the inefficienc
 
 \section{Files format} \label{section:Files}
 
-Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the analyses. Different types of analysis are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
+Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the different analyses. Different types of analyses are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
 
 \begin{itemize}
 \item Virgin-RAW: used only in low rate runs with heavy ions collisions (10-15Mb/event)
@@ -2394,7 +2394,7 @@ Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a co
 
 Two additional formats were introduced since the end of the Run I. First of all the MiniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
 
-Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can rely on such files in order to work. 
+Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can actually rely on such files in order for their work. 
 
 In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds). 
 
@@ -2412,9 +2412,9 @@ During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) 
 
 \section{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the tW $t$+DM and to the $t \bar t$+DM signals. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 55 GeV, and different scalar or pseudoscalar mediator masses, ranging from 10 to 1000 GeV depending on the model considered. In this context, 8 (17) different mass points have been produced for the $t$+DM (each $t \bar t$+DM mediator, respectively), as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t$+DM and to the $t \bar t$+DM signals. Different mass points were produced in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses, ranging from 10 to 1000 GeV depending on the model considered. In this context, 8 (17) different mass points have been produced for the $t$+DM (each $t \bar t$+DM mediator, respectively), as listed in Appendix~\ref{appendix:SignalSamples}.
 
-The impact on the kinematics (in this particular case, on the spectrum of \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingle} ($t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event.
+The impact on the kinematics (in this particular case, on the spectrum of the \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingle} ($t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event.
 
 \begin{figure}[htbp]
 \centering
@@ -2481,13 +2481,11 @@ The impact on the kinematics (in this particular case, on the spectrum of \ac{PU
 Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
 
 \begin{itemize}
-\item The major background of this analysis is the \ac{SM} $t \bar t$ ($\sim 90\%$ in the signal region), kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The single top production is also extremly important to consider, being kinematically close to our $t/\bar t$+DM signal, having an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}), mainly because of the variety of channels resulting in such a final state. Asking for two jets does allow us to reduce this background impact to $\sim 5\%$, while leaving some signal behind in the process as well.
-\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process ($\sim 2\%$) is usually important to consider. Even though kinematically different to our signals and therefore quite easy to reduce in the actual \acp{SR} with some specific cuts, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
-\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process ($\sim 1\%$), with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
-\item Finally, the non-prompt background ($< 1\%$) is another important piece of this analysis mainly because of the particular data-driven method used to compute its expected kinematic and yields (Section~\ref{subsection:Fakes}).
+\item The major background of this analysis is the \ac{SM} $t \bar t$, kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The single top production is also extremly important to consider, being kinematically close to our $t/\bar t$+DM signal, having an even higher cross section than the $t \bar t$ (Section~\ref{subsection:singleTop}), mainly because of the variety of channels resulting in such a final state. Asking for two jets does allow us to reduce this background impact, while unfortunately leaving some signal behind in the process.
+\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is usually important to consider. Even though kinematically different to our signals and therefore quite easy to reduce in the actual \acp{SR} with some specific cuts, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
+\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process, with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact (Section~\ref{subsection:ttV}).
+\item Finally, the non-prompt background is another important piece of this analysis mainly because of the particular data-driven method used to compute its expected kinematic and yields (Section~\ref{subsection:Fakes}).
 \end{itemize}
-
-\color{red} Add table of percentage of each background in the SR once known \color{black}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2497,19 +2495,43 @@ Several different \ac{SM} background processes have been considered for this ana
 \end{center}
 \end{figure}
 
-Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production, while some weights and corrections applied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}.
+Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production, while some weights and corrections applied to all these \ac{MC} samples will be detailed in Section~\ref{subsection:Weights}. The actual impact of these different processes on the different signal regions is shown in Table~\ref{tab:yields}.
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Process & $t$+DM 2018 \ac{SR} & $t \bar t$+DM 2018 \ac{SR} \\
+ \hline
+ \ac{SM} $t \bar t$ & XXXX (XX\%) & XXXX (XX\%) \\
+ Single top & XXXX (XX\%) & XXXX (XX\%) \\
+ DY & XXXX (XX\%) & XXXX (XX\%) \\
+ WW & XXXX (XX\%) & XXXX (XX\%) \\
+ $t \bar t + V$ & XXXX (XX\%) & XXXX (XX\%) \\
+ Non-prompt & XXXX (XX\%) & XXXX (XX\%) \\
+ \hline
+\end{tabular}
+%}
+\caption{Number of yields and percentage of different processes in the 2018 signal regions.}
+\label{tab:yields}
+\end{center}
+\end{table}	
+%}
+
+\color{red} Add corrected yields and percentages after unblinding \color{black}
 
 \subsection{Top production}
 
 Because of the relatively high production cross section of top quarks at 13 TeV, the production of a single or a pair of top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
-Such backgrounds have kinematics quite close to the one expected for our signal: event though some additional \ac{MET} is expected because of the production of a pair of \ac{DM} particles, leading to a few kinematical differences, achieving some discrimination between these kind of processes is quite complex. To get the best discrimination possible, this work therefore relies on the use of advanced \acf{ML} techniques, as will be discussed in Section~\ref{section:Discrimination}.
+Such backgrounds have kinematics quite close to the one expected for our signals: event though some additional \ac{MET} is expected because of the production of a pair of \ac{DM} particles, leading to a few kinematical differences, achieving some discrimination between these kind of processes is quite complex. To get the best discrimination possible, this work therefore relies on the use of advanced \acf{ML} techniques, as will be discussed in Section~\ref{section:Discrimination}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
 %This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
 
-Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis.
+Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis and checked in a dedicated control region.
 
 \begin{figure}[htbp]
 \centering
@@ -2585,7 +2607,7 @@ Different Feynman diagrams contribute to this process at \ac{LO} in a hadron col
 
 \subsubsection{Single top} \label{subsection:singleTop}
 
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production mode (Figure~\ref{fig:singleTopOtherChann}).
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}).
 
 \begin{figure}[htbp]
 \centering
@@ -2687,7 +2709,7 @@ Different Feynman diagrams also account for this process in the s-channel (Figur
 
 \subsubsection{Top decay} \label{subsection:topDecay}
 
-As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson can decay itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered of the top/antitop produced is represented in Figure~\ref{fig:TopDecay}.
+As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson can decay itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered for the top/antitop produced is represented in Figure~\ref{fig:TopDecay}.
 
 \begin{figure}[htbp]
 \centering
@@ -2743,7 +2765,7 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of top, a thorough description of such process is still extremely important.
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top, a thorough description of such process is still extremely important.
 
 \begin{figure}[htbp]
 \centering
@@ -2776,7 +2798,7 @@ This background is also estimated from \ac{MC} as well and is being checked in a
 
 \subsection{$t \bar t + V$} \label{subsection:ttV}
 
-This background is coming from a usual $t \bar t$ production along with an \ac{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of this background is also taken directly from \ac{MC}.
+This background is coming from a usual $t \bar t$ production along with an \acp{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of this background is also taken directly from \ac{MC}.
 
 \begin{figure}[htbp]
 \centering
@@ -2859,7 +2881,7 @@ The resulting cross section of such process is a bit lower than the production o
 
 \subsection{Non prompt contamination} \label{subsection:Fakes}
 
-Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the \acp{SR}, this background is interesting in the sense that is can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
+Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the signal regions, this background is interesting in the sense that is can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
 
 A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
 \begin{itemize}
@@ -2939,7 +2961,7 @@ A few definitions are first of all needed to explain the method used to compute 
 
 This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose datadriven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
 
-In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign \ac{CR} enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
+In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign control region enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
 
 \subsubsection*{\acf{FR} computation}
 
@@ -2989,7 +3011,7 @@ Events passing the following prescaled triggers are then selected in this region
 
 The remaining of the \ac{EWK} processes (W+jets, Z+jets) able to pass the previous cuts of the QCD region, are then simply substracted: this is the so-called \textbf{\ac{EWK} substraction}.
 
-Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the event) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
+Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the lepton) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3026,11 +3048,11 @@ Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event
 
 \subsubsection*{\acf{PR} computation}
 
-The \ac{PR}, taking into account the real lepton contamination in the \ac{CR} defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore be ignored.
+The \ac{PR}, taking into account the real lepton contamination in the region defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore typically be ignored.
 
 In our case, this rate has been calculated as well using a general tag and probe method in a Z+jets enriched sample. The main objective is to reconstruct $Z \rightarrow ll$ events in this region and to select all the events for which the first lepton can be characterized as tight. Then, we search for the second lepton coming from the decay of Z within all the leptons detected by calculating the reconstructed mass of all the possible leptons combinations and selecting the one which is closer to the expected mass of the Z boson. We can then simply count how many times this second lepton, expected to be tight, has actually been measured as a tight lepton to estimate this \ac{PR}.
 
-The results obtained in this case have been represented in Figure~\ref{fig:PR}
+The results obtained in this case have been represented in Figure~\ref{fig:PR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3061,7 +3083,7 @@ The results obtained in this case have been represented in Figure~\ref{fig:PR}
 \includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2018.png}
 \end{minipage} \hfill
 }
-\caption{Electron (on the left) and muon (on the right) \ac{PR} obtained in a Z+jets enriched region by a general tag and probe method for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
+\caption{Electron (on the left) and muon (on the right) \ac{PR} obtained in a Z+jets enriched region by a tag and probe method for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
 \label{fig:PR}
 \end{figure}
 
@@ -3070,13 +3092,13 @@ The results obtained in this case have been represented in Figure~\ref{fig:PR}
 Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the \acp{SR} of the analysis (usally, a l2loose region). For this, a simple set of equations can be used. We start by defining the following quantities:
 
 \begin{itemize}
-\item $N_{pp}$ events where both leptons are prompt
-\item $N_{fp}$ events where one lepton is prompt and the other is fake
-\item $N_{ff}$ events where both leptons are fake
-\item $N_{tx}$ ($x = 0,1,2$) events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
+\item $N_{pp}$, the number of events where both leptons are prompt
+\item $N_{fp}$, the number of events where one lepton is prompt and the other is fake
+\item $N_{ff}$, the number of events where both leptons are fake
+\item $N_{tx}$ ($x = 0,1,2$), the number of events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
 \end{itemize}
 
-It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated.
+It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated, we can find an expression relating all these quantities.
 \begin{equation}
 \label{eq:FR1}
 \begin{dcases}
@@ -3116,7 +3138,7 @@ Now that we have a way to estimate the kinematics and yields of the non-prompt b
 
 \subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Even though quite negligible adn reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the signal regions. 
+Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
 
 \begin{figure}[htbp]
 \centering
@@ -3188,9 +3210,9 @@ Even though quite negligible adn reducible, some additional backgrounds still ne
 
 \subsection{Weights and corrections applied} \label{subsection:Weights}
 
-Several different weights and \acf{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.  The \ac{MC} samples are aditionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossins (the \ac{PU}, as defined in Section~\ref{subsection:PU}).
+Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.  The \ac{MC} samples are aditionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}).
 
-In this section, two particular weights that are applied to the \ac{MC} samples will be detailed.	
+To illustrate this particular effect, two particular weights that are applied to the \ac{MC} samples will be detailed in this section:
 
 \subsubsection{Prefiring corrections}
 
@@ -4014,11 +4036,73 @@ A few additional variables are going to be used in the next part of the analysis
 %Relu se usa para DNN, para evitar perdida de señal cuando se deriva muchas veces seguidas
 %DNN permite modelizar fenomenos mas raros o disrptos pero es mas sensible al overtiffing porque tiene más libertad para %modelizar los datos. Metodos para evitar sobreajuste como el dropout
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Results and interpretations} \label{chapter:FinalResults}
 \section{Systematics and uncertainties} \label{section:Systematics}
 \section{Results}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \chapter{Conclusions} \label{chapter:Conclusion}
+
+In conclusion, a search for the production of dark matter in association with one or top top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full $137.1 \pm 2.0$ fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter have been found, but limits on the signal strength have been obtained by considering different producion models and channels.
+
+\color{red} Complete this once analysis done \color{black}
+
 \section{Future prospects}
 
 
@@ -4056,52 +4140,66 @@ A few additional variables are going to be used in the next part of the analysis
 
 \chapter{Resumen en espa\~{n}ol} \label{appendix:Resumen}
 
-El Modelo Est\'{a}ndar de la f\'{i}sica de part\'{i}culas \cite{SM} es hoy en d\'{i}a el modelo mat\'{e}matico m\'{a}s acceptado para describir las part\'{i}culas fundamentales y las diferentes interacciones entre estas part\'{i}culas. Basado en ideas simples, este modelo ha permitido explicar la gran mayor\'{i}a de los fen\'{o}menos observados en la naturaleza con un grado de precisi\'{o}n excelente, y ha sido capaz a lo largo de los a\~{n}os de hacer predicciones sobre la existencia de nuevas part\'{i}culas, tal y como el postulado del mecanismo de Brout-Englert-Higgs \cite{HiggsPostulate1, HiggsPostulate2}, seguido por el descubrimiento del bos\'{o}n de Higgs mismo por los experimentos \ac{CMS} \cite{CMS} y \ac{ATLAS} \cite{ATLAS} del \ac{CERN} en el a\~{n}o 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, analyzando colisiones entre protones producidas por el \ac{LHC} a una energ\'{i}a en el centro de masa $\sqrt{s} = 7$ TeV y $8$ TeV.
+El Modelo Est\'{a}ndar de la f\'{i}sica de part\'{i}culas \cite{SM} es hoy en d\'{i}a el modelo mat\'{e}matico m\'{a}s acceptado para describir las part\'{i}culas fundamentales y algunas de las diferentes interacciones que existen entre ellas. Basado en ideas simples, este modelo ha permitido explicar la gran mayor\'{i}a de los fen\'{o}menos observados en la naturaleza con un grado de precisi\'{o}n excelente, y ha sido capaz a lo largo de los a\~{n}os de hacer predicciones sobre la existencia de nuevas part\'{i}culas, tal y como el postulado del mecanismo de Brout-Englert-Higgs \cite{HiggsPostulate1, HiggsPostulate2}, seguido por el descubrimiento del bos\'{o}n de Higgs mismo en el a\~{n}o 2012 \cite{HiggsDiscovery1, HiggsDiscovery2} por los experimentos \ac{CMS} \cite{CMS} y \ac{ATLAS} \cite{ATLAS} del \ac{CERN}, analyzando colisiones entre protones producidas por el \ac{LHC} a una energ\'{i}a en el centro de masa $\sqrt{s} = 7$ TeV y $8$ TeV.
 
-A pesar de estas predicciones, suponemos hoy en d\'{i}a que el Modelo Est\'{a}ndar no es completo y tiene unos pocos defectos ya que no es capaz de explicar algunas observaciones cosm\'{o}logicas hechas a lo largo del siglo XX. Eventuales part\'{i}culas ex\'{o}ticas que no caben dentro de este modelo podr\'{i}an ser el signo de la existencia de f\'{i}sica m\'{a}s all\'{a} de este Modelo Est\'{a}ndar. Este trabajo consiste por lo tanto en intentar mejorar nuestro entedimineto del Universo en el cu\'{a}l vivimos buscando a part\'{i}culas de materia oscura que podr\'{i}an ser producidas con las colisiones entre protones del \acf{LHC} del \ac{CERN}.
+A pesar de estas predicciones, pensamos hoy en d\'{i}a que el Modelo Est\'{a}ndar no es completo y tiene unos pocos defectos ya que no es capaz de explicar algunas observaciones cosm\'{o}logicas hechas a lo largo del siglo XX. Eventuales part\'{i}culas ex\'{o}ticas que no caben dentro de este modelo podr\'{i}an ser el signo de la existencia de f\'{i}sica m\'{a}s all\'{a} de este Modelo Est\'{a}ndar. Este trabajo consiste por lo tanto en intentar mejorar nuestro entedimineto del Universo en el cu\'{a}l vivimos buscando a part\'{i}culas de materia oscura que podr\'{i}an ser producidas con las colisiones entre protones del \acf{LHC} del \ac{CERN}.
 
 \section{Materia oscura}
 
-La primera hip\'{o}tesis seria sobre la posible existencia de la materia oscura se desaroll\'{o} en los a\~{n}os 1970, despu\'{e}s de que varios astrof\'{i}sicos hayan observado anomal\'{i}as gravitacionales, siendo una manera sencilla de explicar la aparente falta de materia luminosa en el Universo \cite{FirstEvidence}. En efecto, la masa visible dentro de las galaxias parec\'{i}a ser muy baja para explicar algunas fen\'{o}menos observados, tal y como las curvas de rotaci\'{o} de las galaxias \cite{RotationCurves}, que parece ser incompatible con las leyes de la gravitaci\'{o} de Newton. Algunas medidas adicionales del efecto lente (en el Bullet Cluster, por ejemplo \cite{BulletCluster}) y las anisotropias observadas en el fondo c\'{o}smico de microondas \cite{CMBAnisotropies} son otras evidencias para la posible existencia de materia oscura.
+La primera hip\'{o}tesis seria sobre la posible existencia de la materia oscura se desaroll\'{o} en los a\~{n}os 1970, despu\'{e}s de que varios astrof\'{i}sicos hayan observado anomal\'{i}as gravitacionales, siendo una manera sencilla de explicar la aparente falta de materia luminosa en el Universo \cite{FirstEvidence}. En efecto, la masa visible dentro de las galaxias parec\'{i}a ser muy baja para explicar algunos fen\'{o}menos observados, tal y como las curvas de rotaci\'{o}n de las galaxias \cite{RotationCurves}, que parecen ser incompatibles con las leyes de la gravitaci\'{o}n de Newton. Algunas medidas adicionales del efecto lente (en el Bullet Cluster, por ejemplo \cite{BulletCluster}) y las anisotropias observadas en el fondo c\'{o}smico de microondas \cite{CMBAnisotropies} son otras evidencias para la posible existencia de materia oscura.
 
-Estas observaciones cosmolog\'{i}cas han permitido determinar que la materia barionica ordinaria solo constituye m\'{a}s o menos el 5\% del Universo visible, mientras la materia oscura cuenta para el 26\% de la densidad de energ\'{i}a total del Universo (la energ\'{i}a oscura, otro fen\'{o}meno completamente distinto cuenta para la parta faltante de esta densidad de energ\'{i}a). Entender la naturaleza y las propiedas de este nuevo tipo de part\'{i}culas es por lo tanto muy importante para entender las leyes f\'{i}sicas que rigen el Universo, con muchos cient\'{i}ficos y experimentos alrededor del mundo dedicados a este tipo de b\'{u}squedas.
+Estas observaciones cosmolog\'{i}cas han permitido determinar que la materia bario\'{o}nica ordinaria solo constituye m\'{a}s o menos el 5\% del Universo visible, mientras la materia oscura cuenta para el 26\% de la densidad de energ\'{i}a total del Universo (la energ\'{i}a oscura, otro fen\'{o}meno completamente distinto constituye la parta faltante de esta densidad de energ\'{i}a). Estudiar la naturaleza y las propiedas de este nuevo tipo de part\'{i}culas es por lo tanto muy importante para entender las leyes f\'{i}sicas que rigen nuestro Universo, con muchos cient\'{i}ficos y experimentos alrededor del mundo dedicados a este tipo de b\'{u}squedas.
 
-La existencia de la materia oscura est\'{a} muy motivada, pero nunca hemos sido capaces de observar este tipo de part\'{i}culas hasta la fecha y la \'{u}nica evidencia sobre su posible existencia viene de sus efectos gravitaciones observables a larga distancia. Se desconoce la masa, esp\'{i} y propiedades b\'{a}sicas de este tipo de materia, pero la mayor\'{i}a de las teor\'{i}as contemplan un tipo particular de candidatos para constituir la materia oscura: las \acp{WIMP}, ya que este tipo de part\'{i}culas cumplen con propiedas generalmente asociades a este idea de materia oscura. En efecto, sabemos que el candidato ideal para formar este materia ex\'{o}tica se debe de ser insensible a la readiaci\'{o} electromagnetica, no-baryonico, fr\'{i}o, m\'{a}s o menos estable y en un rango de masa entre 10 GeV y 1 TeV.
+La existencia de la materia oscura est\'{a} muy bien motivada, pero nunca hemos sido capaces de observar este tipo de part\'{i}culas hasta la fecha y la \'{u}nica evidencia sobre su posible existencia viene de sus efectos gravitaciones observables a larga distancia. Se desconocen la masa, esp\'{i}n y propiedades b\'{a}sicas de este tipo de materia, pero la mayor\'{i}a de las teor\'{i}as contemplan un tipo particular de candidatos para constituir la materia oscura: las \acp{WIMP}, ya que este tipo de part\'{i}culas cumplen con propiedas generalmente asociades a esta idea de materia oscura. En efecto, sabemos que el candidato ideal para formar esta materia ex\'{o}tica se debe de ser insensible a la radiaci\'{o}n electromagn\'{e}tica, no-bari\'{o}nico, fr\'{i}o, estable a largo plazo y en un rango de masa entre 10 GeV y 1 TeV.
 
 Diferentes m\'{e}todos se pueden usar para buscar a este nuevo tipo de part\'{i}culas, perteneciendo a tres categor\'{i}as principales:
 \begin{itemize}
-\item Las \textbf{b\'{u}squedas directas}, buscando posibles interacciones entre part\'{i}culas del Modelo Est\'{a}ndar y materia oscura, estudiando por ejemplo choques y cambio de energ\'{ia} entre estos dos sectores.
-\item Las \textbf{b\'{u}squedas indirectas}, tratando de encontrar a nuevas part\'{i}culas del Modelo Est\'{a}ndar que podr\'{i}an emerger de la interacci\'{o}n entre dos part\'{i}culas de materia oscura
-\item Y la \textbf{producci\'{o}n dentro de colisionadores de part\'{i}culas}, el m\'{e}todo de investigaci\'{o} estudiado en este trabajo, ya que se supone que choquar dos part\'{i}culas del Modelo Est\'{a}ndar con una determinada energ\'{i}a podr\'{i}a llegar a producir un par de part\'{i}culas de materia oscura. Este tipo de b\'{u}squedas resulta ser muy interesante ya que permite estudiar candidatos a materia oscura de muy baja masa.
+\item Las \textbf{b\'{u}squedas directas}, buscando posibles interacciones entre part\'{i}culas del Modelo Est\'{a}ndar y materia oscura, estudiando por ejemplo choques y cambio de energ\'{i}a entre estos dos sectores.
+\item Las \textbf{b\'{u}squedas indirectas}, tratando de encontrar a nuevas part\'{i}culas del Modelo Est\'{a}ndar que podr\'{i}an emerger de la interacci\'{o}n entre dos part\'{i}culas de materia oscura.
+\item Y la \textbf{producci\'{o}n dentro de colisionadores de part\'{i}culas}, el m\'{e}todo de investigaci\'{o}n principal de este trabajo, ya que se supone que choquar dos part\'{i}culas del Modelo Est\'{a}ndar con una determinada energ\'{i}a podr\'{i}a llegar a producir un par de part\'{i}culas de materia oscura. Este tipo de b\'{u}squedas resulta ser muy interesante ya que permite estudiar candidatos a materia oscura de muy baja masa.
 \end{itemize}
 
-Choquar part\'{i}culas fundamentales se puede hacer hoy en d\'{i}a en acceleradores de part\'{i}culas como el \ac{LHC}, pero estudiar la posible producci\'{o} de materia oscura resulta ser muy complicado por la naturaleza misma de este tipo de materia, ya que apenas interaciona con el detector dispuesto alredor del punto de colisi\'{o}n. Esto significa que, incluso si logramos producirlas, se espera que estas nuevas part\'{i}culas escapan el detector sin ser detectadas y este tipo de b\'{u}squedas tienen por lo tanto que buscar materia oscura producida en asociaci\'{o}n con part\'{i}culas del Modelo Est\'{a}ndar que se pueden detectar. 
+Choquar part\'{i}culas fundamentales se puede hacer hoy en d\'{i}a en acceleradores de part\'{i}culas como el \ac{LHC}, pero estudiar la posible producci\'{o}n de materia oscura resulta ser muy complicado por la naturaleza misma de este tipo de materia, ya que apenas interaciona con el detector dispuesto alrededor del punto de colisi\'{o}n. Esto significa que, incluso si logramos producirlas, se espera que estas nuevas part\'{i}culas escapen el detector sin ser detectadas y este tipo de b\'{u}squedas tiene por lo tanto que buscar materia oscura como energ\'{i}a faltante producida en asociaci\'{o}n con part\'{i}culas del Modelo Est\'{a}ndar que se pueden detectar. 
 
-En este trabajo en particular, se busca materia oscura producida en asociaci\'{o}n con uno o dos quarks top con el detector \ac{CMS} y a una energ\'{i}a en el centro de masa $\sqrt{s} = 13$ TeV, considerando los $\sim 137$ fb$^{-1}$ de datos colectados a lo largo de los a\~{n}os 2016, 2017 y 2018. Este canal de investigaci\'{o}n resulta ser muy interesante ya que se espera que el acoplamiento entre los sectores baryonico y oscuro sea de tipo Yukawa, y que sea por lo tanto mayor para part\'{i}culas que tengas una masa mayor, tal y como el quark top. Estos quarks tienen sin embargo un inconveniente en el sentido de que de decaen r\'{a}pidamente, antes de llegar al detector, y solo podemos observar el resultado de este decaimiento, siendo en general formado por unos leptones, unos jets, resultado del proceso de hadronizaci\'{o}n de los quarks producidos. El n\'{u}mero de leptones que esperamos observar depende del decaimiento del bos\'{o}n W que aparece en la cadena de decaimiento del quark top ; en este trabajo, nos concentramos en el decaimiento dilept\'{o}nico de este bos\'{o}m, que presenta la ventaja de ser un canal de desintegraci\'{o}n bastante limpios, con pocos fondos pero con el inconveniente de tener un branching ratio bastante peque\~{n}o.
+En este trabajo en particular, se busca materia oscura producida en asociaci\'{o}n con uno o dos quarks top con el detector \ac{CMS} a una energ\'{i}a en el centro de masa $\sqrt{s} = 13$ TeV, considerando los $\sim 137$ fb$^{-1}$ de datos colectados durante el RunII de operaci\'{o}n del \ac{LHC}, a lo largo de los a\~{n}os 2016, 2017 y 2018. Este canal de investigaci\'{o}n resulta ser muy interesante ya que se espera que el acoplamiento entre los sectores bari\'{o}nico y oscuro sea de tipo Yukawa, y que sea por lo tanto mayor para part\'{i}culas que tengan una masa mayor, tal y como el quark top. Estos quarks tienen sin embargo un inconveniente en el sentido de que decaen r\'{a}pidamente, antes de llegar al detector, y solo podemos observar el resultado de este decaimiento, siendo en general formado por unos leptones y unos jets, resultado del proceso de hadronizaci\'{o}n de los quarks producidos. El n\'{u}mero de leptones que esperamos observar depende del decaimiento del bos\'{o}n W que aparece en la cadena de decaimiento del quark top. En este trabajo, nos concentramos en el decaimiento dilept\'{o}nico de este bos\'{o}n, que presenta la ventaja de ser un canal de desintegraci\'{o}n bastante limpio, con pocos fondos pero con el inconveniente de tener un branching ratio bastante peque\~{n}o.
 
 \section{El dispositivo experimental}
 
 \subsubsection{El LHC}
 
-El \ac{LHC} es un colisionador de part\'{i}culas ubicado 100 metros por debajo tierra en la frontera entre Francia y Suiza, resultado de la colaboraci\'{o} entre miles de institutos y cient\'{i}ficos del mundo. Capaz de accelerar protones o iones de plomo a una velocidad muy cerca a la velocidad de la luz, este dispositivo, circular y de un tama\~{n}o de 27km, empez\'{o} a funcionar en el a\~{n}o 2010 a una energ\'{i}a en el centro de masa de 5 TeV. A lo largo de los a\'{n}os, esta energ\'{i}a subi\'{o} hasta llegar a los 13 TeV al empezar el Run II de funcionamiento en el a\'{n}o 2016, despu\'{e}s de una parada t\'{e}cnica de unos a\~{n}os. El \ac{LHC} es una m\'{a}quina ideal para estudiar f\'{i}sica m\'{a}s all\'{a} del Modelo Est\'{a}ndar por los niveles de energ\'{i}as alcanzables y por su alto n\'{u}mero de colisiones producidos por segundo (su luminosidad instantanea), lo que permite estudiar procesos con baja tasa de producci\'{o}n.
+El \ac{LHC} es un colisionador de part\'{i}culas ubicado 100 metros por debajo tierra en la frontera entre Francia y Suiza, resultando de la colaboraci\'{o} entre miles de institutos y cient\'{i}ficos del mundo. Capaz de accelerar protones o iones de plomo a una velocidad muy cerca a la velocidad de la luz, este dispositivo, circular y de un tama\~{n}o de 27 kil\'{o}metros, empez\'{o} a funcionar en el a\~{n}o 2010 a una energ\'{i}a en el centro de masa de 5 TeV. A lo largo de los a\~{n}os, esta energ\'{i}a subi\'{o} hasta llegar a los 13 TeV al empezar el Run II de funcionamiento en el 2016, despu\'{e}s de una parada t\'{e}cnica de unos a\~{n}os. El \ac{LHC} es una m\'{a}quina ideal para estudiar f\'{i}sica m\'{a}s all\'{a} del Modelo Est\'{a}ndar por los niveles de energ\'{i}as alcanzables y por su alto n\'{u}mero de colisiones producidos por segundo (su luminosidad instantanea), lo que permite estudiar procesos con baja tasa de producci\'{o}n.
 
 \subsubsection{El detector CMS}
 
-En el anillo principal de la cadena de acceleradores formando el \ac{LHC}, 4 detectores han sido construidos alrededor del \textit{beam pipe} para estudiar las part\'{i}culas producidas despu\'{e}s de las colisiones entre los protones. Estos detectores, \ac{CMS}, \ac{ATLAS}, \ac{ALICE} y LHCb, han sido desarollados usando equipos y m\'{e}todos disintos, para lograr varios objetivos. 
+En el anillo principal de la cadena de acceleradores formando el \ac{LHC}, 4 detectores han sido construidos alrededor del \textit{beam pipe} para estudiar las part\'{i}culas producidas despu\'{e}s de las colisiones entre los protones. Estos detectores, \ac{CMS}, \ac{ATLAS}, \ac{ALICE} y LHCb, han sido desarollados usando equipos y m\'{e}todos distintos, para lograr varios objetivos. 
 
-En particular, en este trabajo se estudian los datos colectados por el detector \ac{CMS}, un detector de forma cil\'{indrica}, de prop\'{o}sito general y dise\~{n}ado para ser lo \'{a}s herm\'{e}tico y compacto posible. Este detector pesa unos 12 500 toneladas, mide unos 14 metros de di\'{a}metro y unos 22 metros de altura, y est\'{a} compuesto de diferentes capas, cada una dise\~{n}ada con un objetivo distinto:
+En particular, en este trabajo se estudian los datos colectados por el detector \ac{CMS}, un detector de forma cil\'{i}ndrica, de prop\'{o}sito general y dise\~{n}ado para ser lo m\'{a}s herm\'{e}tico y compacto posible. Este detector pesa unos 12 500 toneladas, mide unos 14 metros de di\'{a}metro y unos 22 metros de altura, y est\'{a} compuesto de diferentes capas, cada una dise\~{n}ada con un objetivo distinto:
 \begin{itemize}
-\item Primero, en el interior del detector y muy cerca del punto de colisi\'{o}n, un sistema perfeccionado de detecci\'{o}n de trazas cargadas conicido como el \textit{tracker} ha sido instalado, para identificar el punto de origen de la colisi\'{o}n y ayudar con la identificaci\'{o}n y la medida del momento de las part\'{i}culas creadas. Este detector, compuesto por unas capas de p\'{i}xeles de silicio rodeada por un detector de tiras de silicio de 10 capas y por sus tapas correspondientes para que esta capa sea la m\'{a}s herm\'{e}tica posible, tiene que ser muy resistante y r\'{a}pido para medir todas las colisiones, que se producen cada 25 nanosegundos.
-\item Luego viene los dos calor\'{i}metros: el \ac{ECAL} y el \ac{HCAL}. Estos dispositivos permiten medir la energ\'{i}a de las part\'{i}culas interaccionando de manera electromagn\'{e}ticas o hadr\'{o}nicas respectivamente de manera muy eficiente. El \ac{ECAL} est\'{a} hecho de una parte central compuesta por 61 200 cristales de tungsteno de plomo PbWO$_4$ y completada por dos barriles de 7 324 cristales adicionales. El \ac{HCAL} por el otro lado está hecho de unas capas de centelladores y de material que permite desarollar cascadas hadr\'{o}nicas, lo que permite medir con precisi\'{o}n la energ\'{i}a de los eventuales hadrones producidos.
-\item La parte central del detector es un im\'{a}n capaz de crear un campo magn\'{e}tico de 3.8T, lo que permite determinar el momento de las part\'{i}culas gracias a la relaci\'{o} de Lorentz. 
-\item Fuera de esta parta central se encuentra el sistema de detecci\'{o}n de muones, ya que este tipo de part\'{i}culas interacciona poco con la materia y pueden escapar del detector. Este \'{u}ltimo sistema de detecci\'{o}n se basa en varias tecnolog\'{i}as: su zona central, donde el campo magn\'{e}tico es uniforme, viene por ejemplo formada por las c\'{a}maras de derivas (las \acp{DT}). Estas c\'{a}maras est\'{a}n divididas en 4 capas y est\'{a}n hechas por m\'{a}s de 172 000 cables que permiten medir la posici\'{o}n exacta de los muones gracias al fen\'{o}meno de ionizaci\'{o}n. Las tapas de este sistema, en la zona donde el campo magn\'{e}tico es no unforme y donde la tasa de muones y de fondos es m\'{a}s alta, las c\'{a}maras de tiras cat\'{o}dicas \acp{CSC} están instaladas y, por fin, el sistema est\'{a} completado por las c\'{a}maras de tiras resistivas \acp{RPC}, mucho m\'{a}s r\'{a}pidas que las \acp{CSC}.
+\item Primero, en el interior del detector y muy cerca del punto de colisi\'{o}n, un sistema perfeccionado de detecci\'{o}n de trazas cargadas conicido como el \textit{tracker} ha sido instalado, para identificar el punto de origen de la colisi\'{o}n y ayudar con la identificaci\'{o}n y la medida del momento de las part\'{i}culas creadas. Este detector, compuesto por unas capas de p\'{i}xeles de silicio rodeada por un detector de tiras de silicio de 10 capas y por sus tapas correspondientes para que esta capa sea la m\'{a}s herm\'{e}tica posible, tiene que ser muy resistante a la radiaci\'{o}n y r\'{a}pido para medir todas las colisiones, que se producen cada 25 nanosegundos.
+\item Luego viene los dos calor\'{i}metros: el \ac{ECAL} y el \ac{HCAL}. Estos dispositivos permiten medir la energ\'{i}a de las part\'{i}culas interaccionando de manera electromagn\'{e}ticas o hadr\'{o}nicas respectivamente de manera muy eficiente. El \ac{ECAL} est\'{a} hecho de una parte central compuesta por 61 200 cristales de tungsteno de plomo PbWO$_4$ y completada por dos barriles de 7 324 cristales adicionales. El \ac{HCAL} por el otro lado est\'{a} hecho por unas capas de centelladores y de material que permite desarollar cascadas hadr\'{o}nicas, lo que permite medir con precisi\'{o}n la energ\'{i}a de los eventuales hadrones producidos.
+\item La parte central del detector es un im\'{a}n capaz de crear un campo magn\'{e}tico de 3.8T, lo que permite determinar el momento de las part\'{i}culas gracias a la relaci\'{o}n de Lorentz. 
+\item Fuera de esta parta central se encuentra el sistema de detecci\'{o}n de muones, ya que este tipo de part\'{i}culas interacciona poco con la materia y puede escapar del detector. Este \'{u}ltimo sistema de detecci\'{o}n se basa en varias tecnolog\'{i}as: su zona central, donde el campo magn\'{e}tico es uniforme, viene por ejemplo formada por las c\'{a}maras de derivas (las \acp{DT}). Estas c\'{a}maras est\'{a}n divididas en 4 capas y est\'{a}n hechas por m\'{a}s de 172 000 cables que permiten medir la posici\'{o}n exacta de los muones gracias al fen\'{o}meno de ionizaci\'{o}n. Las tapas de este sistema, en la zona donde el campo magn\'{e}tico no es uniforme y donde la tasa de muones y de fondos es m\'{a}s alta, las c\'{a}maras de tiras cat\'{o}dicas \acp{CSC} est\'{a}n instaladas y, por fin, el sistema est\'{a} completado por las c\'{a}maras de tiras resistivas \acp{RPC}, mucho m\'{a}s r\'{a}pidas que las \acp{CSC}.
 \end{itemize}
 
-Debido a limitaciones computacionales, es imposible guardar todas las colisiones que se producen en el \ac{LHC} y, de todas maneras, la gran mayor\'{i}a de las colisiones son muy bien conocidas y poco interesantes. Por lo tanto, un sistema de \textit{trigger} ha sido desarollado a lo largo de los a\~{n}os para guardar solamente unos 1000 eventos por segundo que parecen ser interesantes desde el punto de vista de la f\'{i}sica para un an\'{a}lisis ulterior.
+Debido a limitaciones computacionales, es imposible guardar todas las colisiones que se producen en el \ac{LHC} y, de todas maneras, la gran mayor\'{i}a de las colisiones son muy bien conocidas y poco interesantes. Por lo tanto, un sistema de \textit{trigger} de dos niveles ha sido desarollado a lo largo de los a\~{n}os para guardar solamente unos 1000 eventos por segundo que parecen ser interesantes desde el punto de vista de la f\'{i}sica para un an\'{a}lisis ulterior.
 
 \section{Reconstrucci\'{o}n de objetos}
 
+Como lo acabamos de ver, el detector \ac{CMS} est\'{a} hecho de varias capas dedicadas a las medidas de diferentes propiedas de las miles de part\'{i}culas que se generan despu\'{e}s de cada colisi\'{o}n entre dos protones en el \textit{beam pipe}. Cada capa del detector atravesada por una de estas part\'{i}culas genera se\~{n}ales el\'{e}ctricas que se colectan y que se almacenan. Esta se\~{n}al solamente contiene datos brutos poco interesantes al principio, as\'{i} que un algoritmo conocido como el \textit{Particle Flow} ha sido desarollado para analizar las se\~{n}ales que provienen de cada parte del detector, para combinarlas y extraer informaci\'{o}n f\'{i}sica sobre la colisi\'{o}n estudiada.
+
+Para la b\'{u}squeda de materia oscura llevada a cabo en este trabajo, se seleccionan eventos que tienen dos leptons y dos jets y, por lo tanto, un sistema eficiente de detecci\'{o}n, reconstrucci\'{o}n e identificaci\'{o}n de este tipo de objetos es imprescindible. Los muones se reconstruyen primero con este algoritmo, ya que son las \'{u}nicas part\'{i}culas cargadas capaces de llegar a las c\'{a}maras de muones en el exterior del detector. Luego, se pueden reconstruir los electrones, indetificados como una c\'{a}scada electromagn\'{e}tica en el \ac{ECAL} asociada con trazas compatibles en el tracker y, por fin, se identifican los hadrones cargados y neutros asociando los hits que quedan en el tracker con la informaci\'{o}n del \ac{HCAL}. Los eventuales quarks que aparecen en una colisi\'{o}n se hadronizan y se manifiestan como jets de part\'{i}culas en el detector, m\'{a}s dif\'{i}ciles de reconstruir en general. Se desaroll\'{o} para llevar a cabo esta tarea el algoritmo \textit{anti-kT}, capaz de agrupar los hadrones, fotones y leptones que forman un solo jet. Este algoritmo es tambi\'{e}n capaz de distinguir un jet procedente de un bottom quark, ya que estos quarks tienen un tiempo de vida un poco m\'{a}s alto y que pueden por lo tanto viajar unos poco mil\'{i}metros antes de decaer. Este peque\~{n}o desplazamiento basta para distinguir estos jets, llamados b-jets, que tienen un papel importante en este an\'{a}lisis. 
+
+El \textit{Particle Flow} es tambi\'{e}n capaz de reconstruir un objeto llamado \ac{MET} y que representa la energ\'{i} transversal faltante de una colisi\'{o}n, siendo definido como la suma del momento transvero de todas las part\'{i}culas creadas y medidas por el detector. Como sabemos que estas colisions se producen de manera frontal, el momento transverso total de una colisi\'{o}n es exactamente 0 al principio y esperemos que se quede as\'{i} despu\'{e}s del choque por el fen\'{o}meno de conservaci\'{o}n del momento. Sim embargo, no siempre es el caso y a veces se puede observar un momento transverso total no nullo m\'{a}s que nada por imperfecciones en el detector, o debido a la producci\'{o}n de part\'{i}culas capaces de escapar el detector sin dejar ninguna se\~{n}al, tal y como los neutrinos del Modelo Est\'{a}ndar o eventuales part\'{i}culas ex\'{o}ticas. Una reconstrucci\'{o}n completa y precisa de esta variable es por lo tanto muy importante en este an\'{a}lisis buscando particulas de materia oscura.
+
+Por fin, hemos desarollado para esta an\'{a}lisis en particular un m\'{e}todo completo de reconstrucci\'{o}n \textit{offline} de los sistemas $t \bar t$. Este algoritmo es muy importante ya que se espera que muchas de las variables que nos permiten distinguir entre la se\~{n}al buscada y los fondos dependen del 4-momento de los quarks top, t\'{i}picamente no disponible sin este proceso de reconstrucci\'{o}n.
+
 \section{An\'{a}lisis de datos}
+
+Para este an\'{a}lisis, queremos intentar descubrir algunos eventos en los cu\'{a}les se observa materia oscura producida en asociaci\'{o}n con uno o dos quarks top. Dado lo poco que se conoce de la materia oscura hoy an d\'{i}a, diferentes modelos se consideran para este tipo de b\'{u}squedas, considerando diferentes canales de producci\'{o}n, masas (de 10 GeV a 1 TeV) y espines (0 o 1) de mediadores y distintas masas para la materia oscura misma (de 1 GeV a 51 GeV).
+
+Dos modelos principales se consideran en este an\'{a}lisis: los diferentes canales de producci\'{o}n de materia oscura con un solo quark top, llevando a un estado final t\'{i}picamente compuesto por un lept\'{o}n, un b-jet y energ\'{i}a faltante, y la producci\'{o}n de un par de part\'{i}culas de materia oscura en asociaci\'{o}n con dos quarks top, cuyo estado final estudiado aqu\'{i} est\'{a} hecho por dos leptones, dos b-jets y energi\'{a} faltante.
+
+\color{red} Complete this once analysis done \color{black}
 
 \section{Resultados obtenidos}
 
