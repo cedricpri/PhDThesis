@@ -2519,7 +2519,7 @@ Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:
 \end{table}	
 %}
 
-\color{red} Add corrected yields and percentages after unblinding \color{black}
+\color{red} FIXME: Add corrected yields and percentages after unblinding \color{black}
 
 \subsection{Top production}
 
@@ -3241,6 +3241,7 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{center}
 \end{figure}
 
+\color{red} FIXME: Add correct plots for top pt reweighting when available \color{black}
 
 
 
@@ -3656,7 +3657,7 @@ As shown in Figure~\ref{fig:SingleSR}
 \label{fig:SingleSR}
 \end{figure}
 
-\color{red}To be added once defined \color{black}
+\color{red}FIXME: To be added once defined \color{black}
 
 \subsection{$t \bar t$+DM region}
 
@@ -3695,7 +3696,7 @@ As shown in Figure~\ref{fig:DoubleSR}
 \label{fig:DoubleSR}
 \end{figure}
 
-\color{red}To be added once defined \color{black}
+\color{red}FIXME: To be added once defined \color{black}
 
 \section{Control regions} \label{section:CR}
 
@@ -3742,7 +3743,7 @@ Results obtained in this control region are shown in Figure~\ref{fig:DYCR}.
 \label{fig:DYCR}
 \end{figure}
 
-\color{red}To be added once defined \color{black}
+\color{red} FIXME: to be added once defined \color{black}
 
 \subsection{Top control region} \label{section:TopCR}
 
@@ -3781,7 +3782,7 @@ As shown in Figure~\ref{fig:TopCR}
 \label{fig:TopCR}
 \end{figure}
 
-\color{red}To be added once defined \color{black}
+\color{red}FIXME: To be added once defined \color{black}
 
 %\subsection{ttV control region} \label{section:ttVCR}
 %
@@ -3903,17 +3904,17 @@ In order to cover for most of the discrepancies between the data and the simulat
 
 \chapter{Background-signal discrimination} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
 
 \section{Discriminating variables} \label{section:Variables}
 
-Several variables can be used in order to either separate the signal from the different background processes, or to separate the two signals we are interested in into separate signal regions, to study them separately. Most of these variables will be used as the input of the \ac{MVA} technique in order to combine their discriminating power into a single variable, as will be described in Section~\ref{section:NN}.
+Several variables can at principle be used in order to either separate one of the signals of interest from the different background processes, or to separate the two signals we are interested in into separate signal regions, to study them separately. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but some of these variables with a discriminating power high enough will actually be used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable.
 
 \subsubsection*{Number of bjets and $m_{bl}^t$}
 
-Let's start with the two most useful variables in order to separate the $t \bar t$+DM and $t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this variable is an obvious choice for a good discriminating variable. However, vetoing the second b-jet to select the $t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which would result in a large surviving $t \bar t$+DM background.
+Let's start with the two variables we found to be the most useful in order to separate the $t$+DM and $t \bar t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply events featuring two b-jets or more to select a region enriched in $t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes.
 
-A more effective strategy than vetoing b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more j-bets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final spectrum obtained in both cases are shown in Figure~\ref{fig:signalsDiscrimination}.
+A slightly more effective strategy than vetoing events with multiple b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more j-bets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final distributions obtained for both variables are shown in Figure~\ref{fig:signalsDiscrimination}.
 
 \begin{equation}
 \label{eq:mblt}
@@ -3928,22 +3929,31 @@ m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5.6cm]{figs/mblt.png}
 \end{minipage} \hfill
-\caption{Number of b-jets (on the left) and $m_{bl}^t$ variable (on the right), mostly used to separate our two signals in this analysis, in a region close to the actual signal region.}
+\caption{Number of b-jets (on the left) and $m_{bl}^t$ variable (on the right), mostly used to separate our two signals in this analysis, in a control region close to the actual signal region, for different signal samples of the analysis.}
 \label{fig:signalsDiscrimination}
 \end{figure}
+
+As we can see in these plots, these variables do offer us some discriminations between the different signals considered but even by using them, we cannot define a signal region enriched in $t$+DM because of the low cross-section of this process.
+
+\color{red} FIXME: Update plots once final version available, add conclusion to the selection of the signal regions (do we want to use only the MVA to define them? \color{black}
 
 \subsubsection*{Missing transverse energy}
 
 Already defined in Section~\ref{section:RecoMET}, this variable corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
 
-This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough the $t \bar t$ in the dilepton final state is expected to produce two neutrinos and therefore some \ac{MET}, the $t \bar t$+DM signal model is expected to have mostly the same contribution to the \ac{MET} from its own two neutrinos, and an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signal than the backgrounds, as seen in Figure~\ref{fig:SRdiscMET}.
+This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough some \ac{SM} processes such as the \ac{SM} $t \bar t$ production in the dilepton final state is also expected to produce some neutrinos and therefore some \ac{MET}, both the $t$+DM and $t \bar t$+DM signal model are expected to have mostly the same contribution to the \ac{MET} from their own neutrinos, plus an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signals than the backgrounds, as shown in Figure~\ref{fig:SRdiscMET}.
 
-\color{red} TALK ABOUT SINGLE TOP? \color{black}
+\color{red} FIXME: Put final plots for all the variables once available \color{black}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\caption{Pf (on the left) and \ac{PUPPI} \ac{MET} (on the right) variables spectra for the backgrounds and several signal mass points in our signal region.}
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_puppimet.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.47\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_puppimet.png}
+\end{minipage}\hfill
+\caption{\ac{PUPPI} \ac{MET} distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
 \label{fig:SRdiscMET}
 \end{figure}
 
@@ -3951,7 +3961,7 @@ This is one of the most important variables of this analysis, expected to induce
 
 The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
 
-In this particular case, two particles contribute to the presence of \ac{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the particles involver in the decay considered \cite{MT2}.
+For the signals considered in this work, two neutrinos contribute to the presence of \ac{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the particles involver in the decay considered \cite{MT2}.
 
 \begin{equation}
 \label{eq:mt2}
@@ -3963,87 +3973,147 @@ m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}
 
 This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest possible value.
 
-In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual $t \bar t$+DM signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector, as seen in Figure~\ref{fig:SRdiscMT2}.
-
-A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs will also be used. This variable is constructed in the same way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept.
+In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual \ac{DM} signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector, as shown in Figure~\ref{fig:SRdiscMT2}.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_mt2ll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_mt2ll.png}
 \end{minipage} \hfill
-\caption{$M_{T2}(ll)$ (on the left) and $M_{T2}(bl, bl)$ (on the right) variables spectra for the backgrounds and several signal mass points in our signal region.}
-\label{fig:SRdiscMET}
+\caption{$M_{T2}(ll)$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdiscMT2}
 \end{figure}
 
-\color{red} TALK ABOUT SINGLE TOP? \color{black}
+A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs can also be defined. This variable is constructed in the same way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept. The distribution of this variable in our signal regions is represented in Figure~\ref{fig:SRdiscMT2bl}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_mt2bl.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_mt2bl.png}
+\end{minipage} \hfill
+\caption{$M_{T2}(bl, bl)$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdiscMT2bl}
+\end{figure}
 
 \subsubsection*{Dark $p_T$ and overlapping factor $R$}
 
-Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by constructions expected to give some discrimination between the signal and the different background processes, mainly the \ac{SM} $t \bar t$. 
+Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by construction expected to give some discrimination between the signals and the different background processes, mainly the \ac{SM} $t \bar t$. 
 
-On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signal, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figure~\ref{fig:SRdisc1}.
+On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signals, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figures~\ref{fig:SRdisc1} and~\ref{fig:SRdisc2}.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dark_pt.png}
 \end{minipage} \hfill
-\caption{Dark $p_T$ (on the left) and overlapping factor $R$ (on the right) obtained in the \ac{SR} of the analysis for the background and different signals processes considered.}
+\caption{Dark $p_T$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
 \label{fig:SRdisc1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_overlapping_factor.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_overlapping_factor.png}
+\end{minipage} \hfill
+\caption{Overlapping factor $R$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc2}
 \end{figure}
 
 \subsubsection*{Spin correlated variables}
 
-The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction methods described in Section~\ref{section:RecoTop}. These variables are extremely interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
+The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction methods described in Section~\ref{section:RecoTop}. These variables are interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
 
-Several variables belonging to this category such as $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos, and $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay products in their respective parent rest frames have then been represented in Figure~\ref{fig:SRdisc2}.
+Several variables belonging to this category have been considered, such as $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos, and $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay products in their respective parent rest frames, which has been represented in Figure~\ref{fig:SRdisc3} in our signal regions.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_cosphill.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_cosphill.png}
 \end{minipage} \hfill
-\caption{Two examples of spin-correlated variables in our signal region, actually sensitive to the spin of the mediator of the interaction.}
-\label{fig:SRdisc2}
+\caption{Cosine of the full opening angle of the top decay products in their respective parent rest frames in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc3}
 \end{figure}
 
 \subsubsection*{Additional variables}
 
-A few additional variables are going to be used in the next part of the analysis as well, as shown in Figure~\ref{fig:SRdisc3}. Among them, we can for example quote:
+A few additional variables which are expected to introduce some discrimination between the signals and the backgrounds have been considered as well. Among them, we can for example quote:
 \begin{itemize}
-\item $\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figure~\ref{fig:scheme_deltaphi}. 
+\item $\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figures~\ref{fig:scheme_deltaphi} and~\ref{fig:SRdisc4}. 
 
 \begin{minipage}[c]{.32\linewidth}
    	\centering{
    		\vspace{15pt}
-		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_mine.jpg}
+		\includegraphics[width= 140pt, height= 130pt]{figs/deltaphi_mine.jpg}
 	}
    \end{minipage} \hfill
    \begin{minipage}[c]{.32\linewidth}
    	\centering{
-		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_low_mine.jpg} \\
+		\includegraphics[width= 140pt, height= 130pt]{figs/deltaphi_low_mine.jpg} \\
 	}
    \end{minipage} \hfill
    \begin{minipage}[c]{.32\linewidth}
    	\centering{
-		\includegraphics[width= 140pt, height= 140pt]{figs/deltaphi_high_mine.jpg} \\
+		\includegraphics[width= 140pt, height= 130pt]{figs/deltaphi_high_mine.jpg} \\
 	}
    \end{minipage} \hfill
    \captionof{figure}{Schematic representation in the $\Phi$ plane of the distribution of the particles for the $t \bar t$ process (on the left) and the for the $t \bar t$ + DM (on the center and right). \\}
    \label{fig:scheme_deltaphi}
+   
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_dphillmet.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dphillmet.png}
+\end{minipage} \hfill
+\caption{$\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc4}
+\end{figure}
 
-\item The kinematic reconstruction weight $W$ obtained from the $t \bar t$ reconstruction process, for reasons already explained in Section~\ref{section:RecoTop}.
-\item \color{red} massT variable? \color{black}
+\item The kinematic reconstruction weight $W$ obtained from the $t \bar t$ reconstruction process is also expected to give us some discrimination to isolate our signals, as shown in Figure~\ref{fig:SRdisc5} for reasons already explained in Section~\ref{section:RecoTop}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_reco_weight.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_reco_weight.png}
+\end{minipage} \hfill
+\caption{Kinematic reconstruction weight $W$ distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc5}
+\end{figure}
+
+\item Finally, we observed that the variable we called \textit{totalET} and corresponding the scalar sum of the total transverse energy of the \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+\color{red} FIXME: replace this by the massT variable? \color{black}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_totalET.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_totalET.png}
+\end{minipage} \hfill
+\caption{Scalar sum of the transverse energy of the particles produced in the events distribution in the $t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc5}
+\end{figure}
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -4128,7 +4198,7 @@ Optimization details given in Appendix~\ref{appendix:Optimization}.
 
 In conclusion, a search for the production of dark matter in association with one or top top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full $137.1 \pm 2.0$ fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter have been found, but limits on the signal strength have been obtained by considering different production models and channels.
 
-\color{red} Complete this once analysis done \color{black}
+\color{red} FIXME: Complete this once analysis done \color{black}
 
 \section{Future prospects}
 
@@ -4226,7 +4296,7 @@ Para este an\'{a}lisis, queremos intentar descubrir algunos eventos en los cu\'{
 
 Dos modelos principales se consideran en este an\'{a}lisis: los diferentes canales de producci\'{o}n de materia oscura con un solo quark top, llevando a un estado final t\'{i}picamente compuesto por un lept\'{o}n, un b-jet y energ\'{i}a faltante, y la producci\'{o}n de un par de part\'{i}culas de materia oscura en asociaci\'{o}n con dos quarks top, cuyo estado final estudiado aqu\'{i} est\'{a} hecho por dos leptones, dos b-jets y energi\'{a} faltante.
 
-\color{red} Complete this once analysis done \color{black}
+\color{red} FIXME: Complete this once analysis done \color{black}
 
 \section{Resultados obtenidos}
 
