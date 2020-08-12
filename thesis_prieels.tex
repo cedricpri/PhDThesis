@@ -1379,7 +1379,7 @@ In this last equation, the following properties of the accelerator have been int
 
 As previously stated, increasing the luminosity of the \ac{LHC} is always something interesting in order to produce processes having a low production cross-section, and we can then see that many different parameters can be tweaked in order to achieve the highest possible instantaneous luminosity, such as the number of protons per bunch, the number of bunches per beam or the beam crossing angle at the interaction point. New radio-frequency crab cavities will probably be installed during the next \ac{LS} of the \ac{LHC} in order to increase the value of the geometrical factor $R$ and the instantaneous luminosity by a factor $\sim 10$ (HL-LHC project \cite{HLLHC}).
 
-The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available for the Run II and analyzed in this work have an integrated luminosity of $35.9 \pm 0.9$~fb$^{-1}$ (2016), $41.5 \pm 1.0$~fb$^{-1}$ (2017) and $59.7 \pm 1.5$~fb$^{-1}$ (2018), resulting in a total dataset of $137.1 \pm 2.0$~fb$^{-1}$ recorded during the Run II of operation. This roughly means that we expect to have produced around 137 events of any process whose cross section of production would be equal to 1~fb.
+The total integrated luminosity taken by the \ac{LHC} during its different years of operation has been summarized in Figure~\ref{fig:Lumi}. The final datasets available for the Run II and analyzed in this work have an integrated luminosity of ($35.9 \pm 0.9$)~fb$^{-1}$ (2016), ($41.5 \pm 1.0$)~fb$^{-1}$ (2017) and ($59.7 \pm 1.5$)~fb$^{-1}$ (2018), resulting in a total dataset of ($137.1 \pm 2.0$)~fb$^{-1}$ recorded during the Run II of operation. This roughly means that we expect to have produced around 137 events of any process whose cross section of production would be equal to 1~fb.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3258,8 +3258,6 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{center}
 \end{figure}
 
-\color{red} FIXME: Add correct plots for top pt reweighting when available \color{black}
-
 
 
 
@@ -4081,8 +4079,10 @@ Several variables belonging to this category have been considered, such as $\xi 
 
 A few additional variables which are expected to introduce some discrimination between the signals and the backgrounds have been considered as well. Among them, we can for example quote:
 \begin{itemize}
-\item $\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figures~\ref{fig:scheme_deltaphi} and~\ref{fig:SRdisc4}. 
+\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figures~\ref{fig:scheme_deltaphi} and~\ref{fig:SRdisc4}. 
 
+\begin{figure}[htbp]
+\centering
 \begin{minipage}[c]{.32\linewidth}
    	\centering{
    		\vspace{15pt}
@@ -4101,6 +4101,7 @@ A few additional variables which are expected to introduce some discrimination b
    \end{minipage} \hfill
    \captionof{figure}{Schematic representation in the $\Phi$ plane of the distribution of the particles for the $t \bar t$ process (on the left) and the for the $t \bar t$ + DM (on the center and right). \\}
    \label{fig:scheme_deltaphi}
+  \end{figure}
    
 \begin{figure}[htbp]
 \centering
@@ -4110,7 +4111,7 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dphillmet.png}
 \end{minipage} \hfill
-\caption{$\Delta \Phi(\cancel{E}_{T}^{\text{miss}}, ll)$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{$\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
 \label{fig:SRdisc4}
 \end{figure}
 
@@ -4128,7 +4129,7 @@ A few additional variables which are expected to introduce some discrimination b
 \label{fig:SRdisc5}
 \end{figure}
 
-\item Finally, we observed that the variable we called \textit{totalET} and corresponding the scalar sum of the total transverse energy of the \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+\item Finally, we observed that the variable we called total \textit{ET} and corresponding the scalar sum of the total transverse energy of the \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 \color{red} FIXME: replace this by the massT variable? \color{black}
 
 \begin{figure}[htbp]
@@ -4140,24 +4141,139 @@ A few additional variables which are expected to introduce some discrimination b
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_totalET.png}
 \end{minipage} \hfill
 \caption{Scalar sum of the transverse energy of the particles produced in the events distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
-\label{fig:SRdisc5}
+\label{fig:SRdisc6}
 \end{figure}
 \end{itemize}
 
-\section{Neural network} \label{section:NN}
+\section{Multivariate analysis} \label{section:NN}
 
 %Relu se usa para DNN, para evitar perdida de señal cuando se deriva muchas veces seguidas
 %DNN permite modelizar fenomenos mas raros o disrptos pero es mas sensible al overtiffing porque tiene más libertad para %modelizar los datos. Metodos para evitar sobreajuste como el dropout
 
-Optimization details given in Appendix~\ref{appendix:Optimization}.
+As already seen in the previous sections, we know that our signal region is going to be contaminated with some background processes, given the fact that such backgrounds have kinematics close to the signal searched for. A multiclass \acf{MVA} technique has therefore been used in order to perform the actual signal extraction of the analysis by combining the discriminating power of several of the variables previously presented, in order to find a way to characterize reliably any single event as either $t$+DM, $t \bar t$+DM or background-like.
 
+The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most interesting background and signal processes and on the other hand, we have unknown data collected by the detector and which needs to be characterized and labeled based on the value of several variables or features, by assigning a value of probability of belonging to any of these 3 particular categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be defined into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
 
+Two different \ac{MVA} methods among the most popular today have been studied in this work: \acf{BDT} and a \acf{DNN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
 
+\subsubsection{Boosted Decision Trees}
 
+This \ac{MVA} technique relies on the definition of different decision trees, able to split the data recursively based on a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given features until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees in such a way and then to combine all these trees together into a single strong classifier, by giving a weight to each tree depending on their actual accuracy. In our case, a multiclassification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundred of trees made out of different nodes, and label every single event as either $t$+DM, $t \bar t$+DM or background-like.
 
+The structure and complexity of a \ac{BDT} usually depends on the problem considered and can be characterized from several different parameters which need to be tuned in order to get the best possible signal extraction accuracy while avoiding overfitting:
 
+\begin{itemize}
+\item First of all, the \textbf{features}, or input variables, allowed to be used by the \ac{BDT} are extremely important, and a maximum number of features can be set when building a tree, forcing a random selection of input variables if too many features are given as input.
+\item The \textbf{depth} is usually chosen as a small number which characterizes the maximum number of vertical levels allowed for the \ac{BDT}.
+\item The \textbf{minimum samples per leaf} puts a requirement on the minimum number of samples required in order to create a new leaf.
+\item Regarding the boosting process itself, several additional parameters can be defined:
 
+\begin{itemize}
+\item The \textbf{loss function} is helpful when trying the distance between the prediction made by the \ac{BDT} and the actual value expected.
+\item The \textbf{learning rate} is another important parameter in the sense that it tells how much the weights of the tree should be adjusted after each training iteration. A value too small is slower and might not be enough to get out of an eventual local minimum, while a value too large is likely to miss the optimal training point.
+\item The \textbf{number of grid points} $n_\text{cut}$ used when finding the optimal cut when defining the node splitting is also important.
+\item Finally, the actual \textbf{number of trees} used to define the forest is obviously an important parameter as well that need to be optimized.
+\end{itemize}
 
+\end{itemize}
+
+The actual parameters used for this particular analysis obtained after a thorough optimization process can be found in Table~\ref{table:BDT}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=6cm, height=6cm]{figs/BDT.png}
+\caption{Schematic representation of a typical \ac{BDT}, with its nodes (represented by the blue boxes) and leaves \cite{FNALBDT}.}
+\label{fig:BDT}
+\end{figure}
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c } 
+\hline
+ BDT parameter & Optimized value \\
+ \hline
+ Maximum depth & 4 \\
+ Minimum samples per leaf & 1\% \\
+ Loss function & Quadratic \\
+ Boost algorithm & Adaboost \\
+ Learning rate & 0.2 \\
+ Grid points & 10.000 \\
+ Number of trees & 300 \\
+\hline
+\end{tabular}
+%}
+\caption{Summary of the parameters used for the training of the \ac{BDT} in this analysis.}
+\label{table:BDT}
+\end{center}
+\end{table}
+
+\subsubsection{Deep Neural Networks}
+
+Another large family of \ac{MVA} techniques rely on the so-called \textbf{neural networks}, sets of algorithms designed in order to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to either similarities among the example inputs or based on the information available in a training dataset.
+
+The basic idea for the existence of neural networks relies on the human brain itself, a complex system of thousands of billions of neurons interacting with each other and able to perform complex calculations and generate ideas. In this case, highly connected mathematical units called \textbf{artificial neurons} and grouped into layers are then defined, as shown in Figure~\ref{fig:NN}, connected with each other with connections (also called \textbf{edges}) characterized by a \textbf{weight}, denoting its significance. At the end of the day, these neurons are simply mathematical tools able to receive an input, modify it and send the computed signal to the next layer of neurons, while the connection to the next neuron will either increase or decrease this signal based on the weight of this connection.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=8cm, height=4.5cm]{figs/NN.png}
+\caption{Schematic representation of a typical neural network with a single hidden layer \cite{NN}.}
+\label{fig:NN}
+\end{figure}
+
+Mathematically, each neuron $i$ of an intermediate layer receives an input $x_{j}$ from each of the $n$ neurons of the previous layers, and combines them by multiplying them with the weight $\omega_{ij}$ of the corresponding connection between the two neurons involved. Once done, the neuron then applies an internal non-linear \textbf{activation function} $f$ to this previously computed value, and fires the computed final output $y_i$ to the next layer of neurons, as shown in Equation~\ref{eq:NN}, and this process is repeated until reaching the output layer.
+
+\begin{equation}
+\label{eq:NN}
+y_i = f \left (\sum_{j = 0}^n \omega_{ij} x_j \right)
+\end{equation}
+
+The objective of the training process in this case is to find the optimal weights $\bm \omega$ for each connection that are able to deliver an output as faithful to the known event category as possible. This faithfulness of a given set of weights can be obtained from the so-called \textbf{error function}, which can take different forms but usually simply computes the normalized sum of the difference between the expected $\hat{y_i^p}$ and obtained $y_i^p$ values for each neuron $i$ and each of the $p$ events found in the traning dataset, as shown in Equation~\ref{eq:NN2}.
+
+\begin{equation}
+\label{eq:NN2}
+E(\bm \omega) = \sum_{i, p} \left (y_i^p(\bm \omega) - \hat{y_i^p} \right)^2
+\end{equation}
+
+This error function allows us to determine the goodness of the output obtained from a given set of weights, but we still need a way to update these weights at any given training iteration to make this method useful. This can be done using different methods, such as by applying the backpropagation or performing a gradient descent method, which consists in starting from a random set of weights $\bm \omega_0$ and modifying them in the direction of the gradient of the error function $E$ at each iteration $k$, as shown in Equation~\ref{eq:NN3}, with a given \textbf{learning rate} $\eta$.
+
+\begin{equation}
+\label{eq:NN3}
+\bm \omega_{k+1} = \bm \omega_k - \eta \nabla_{\bm \omega} E(\bm \omega)
+\end{equation}
+
+In this work, we used models with many different hidden layers, therefore usually referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such method is helpful because it allows to solve a crucial problem in \ac{ML}: the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand (end to end approach).
+
+Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate, the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c } 
+\hline
+ DNN parameter & Optimized value \\
+ \hline
+ Neuron layers & 15, 10, 5, 3 \\
+ Activation functions & relu, relu, relu, softmax \\
+Error function & Mean square error \\
+Optimizer & Adam \\
+Learning rate & 0.005 \\
+Training epochs & 250 \\
+Batch size & 100 \\
+\hline
+\end{tabular}
+%}
+\caption{Summary of the parameters used for the training of the \ac{DNN} in this analysis.}
+\label{table:DNN}
+\end{center}
+\end{table}
+
+After a trial and error process, the best results have been obtained with both methods for the following variables:
+
+\color{red}FIXME: Update all these parameters and variables once final values are known! Which method did we choose? \color{black}
+
+Training different mass points, independant on sample (cf. Nicolo)
+Spanish text
 
 
 
@@ -5540,6 +5656,14 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{BTagPOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/BTV13TeVDPDeepCSV}{\ac{CMS} Twiki,
 "Heavy flavor identification at CMS with deep neural networks", https://twiki.cern.ch/twiki/bin/view/CMSPublic/BTV13TeVDPDeepCSV, as seen in May 2020}
+
+\bibitem{FNALBDT}
+\href{https://indico.fnal.gov/event/15356/contributions/31377/attachments/19671/24560/DecisionTrees.pdf}{K. Woodruff,
+"Introduction to boosted decision trees", Machine Learning Group Meeting, September 2017}
+
+\bibitem{NN}
+\href{https://indico.cern.ch/event/5007/contributions/1177811/attachments/962648/1366777/reu_presentation3.pdf}{M. Jachowski,
+"Multivariate Analysis, TMVA, and Artificial Neural Networks", Michigan REU Final Presentations, August 2006}
 
 %APPENDINX A
 
