@@ -298,6 +298,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{QCD}[QCD]{Quantum ChromoDynamics}
 \acro{QFT}[QFT]{Quantum Field Theory}
 \acro{RMS}[RMS]{Root Mean Square}
+\acro{ROC}[ROC]{Receiver Operating Characteristic}
 \acro{RPC}[RPC]{Resistive Plate Chamber}
 \acro{SC}[SC]{Super Cluster}
 \acro{SD}[SD]{Spin Dependent}
@@ -321,7 +322,9 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \newpage
 
 %Table of contents
+\baselineskip=0.98\baselineskip
 \tableofcontents
+\baselineskip=1.0\baselineskip
 
 \thispagestyle{empty}
 \newpage
@@ -983,7 +986,7 @@ These searches have to combine the discriminant power of several variables to se
 \item Finally, and this is quite new, \textbf{long-lived searches} can also be performed. These are interesting because they can extend the current searches performed to also consider the eventual creation of long-lived particles which would decay a few centimeters further than the primary vertex of the $pp$ collision \cite{LLSearches}. Typical \ac{SM} signatures do not usually include such events, making this channel relatively background-free, even though the reconstruction of the different objects is much harder in this case.
 \end{itemize}
 
-All the results from the different searches performed by the \ac{CMS} collaboration using the full $35.9 \pm 0.9$ fb$^{-1}$ dataset collected at $13$ TeV can be summarized in Figure~\ref{fig:SummarySpin0} for spin-0 mediators and in Figure~\ref{fig:SummarySpin1} when considering spin-1 mediators.
+All the results from the different searches performed by the \ac{CMS} collaboration using the full ($35.9 \pm 0.9$) fb$^{-1}$ dataset collected at $13$ TeV can be summarized in Figure~\ref{fig:SummarySpin0} for spin-0 mediators and in Figure~\ref{fig:SummarySpin1} when considering spin-1 mediators.
 
 \begin{figure}[htbp]
 \centering
@@ -1205,11 +1208,11 @@ Given the \ac{BR} of the W decay, it is easy to see that the dileptonic channel,
 
 This analysis being performed at a center of mass energy $\sqrt{s} = 13$ TeV, only the most relevant results to this energy obtained by both the \ac{CMS} and \ac{ATLAS} collaborations will be quoted. 
 
-First of all, the \textbf{\ac{ATLAS} collaboration} published interesting results at this center of mass energy, considering an integrated luminosity of 13.3 fb$^{-1}$, and obtained the corresponding exclusion limits at the 95\% \ac{CL}, considering the $t \bar t$+DM model and both scalar and pseudoscalar spin-0 mediators for the interaction, as shown in Figure~\ref{fig:ATLAS13}. In this case, and for the couplings considered, an exclusion up to $\sim 375$ GeV has been achieved \cite{PreviousDoubleTopNoLep13ATLAS}.
+First of all, the \textbf{\ac{ATLAS} collaboration} published interesting results at this center of mass energy, considering an integrated luminosity of 13.3 fb$^{-1}$, and obtained the corresponding exclusion limits at the 95\% \ac{CL}, considering the $t \bar t$+DM model and both scalar and pseudoscalar spin-0 mediators for the interaction, as shown in Figure~\ref{fig:ATLAS13}. In this case, and for the couplings considered, an exclusion up to $\sim375$ GeV has been achieved \cite{PreviousDoubleTopNoLep13ATLAS}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=14cm, height=6cm]{figs/Atlasttbar13fb.png}
+\includegraphics[width=14cm, height=5.8cm]{figs/Atlasttbar13fb.png}
 \caption{Limits on the \ac{DM} and mediator masses obtained by \ac{ATLAS} using 13.3 fb$^{-1}$ of 13 TeV data, considering scalar (on the left) and pseudoscalar (on the right) mediators \cite{PreviousDoubleTopNoLep13ATLAS}.}
 \label{fig:ATLAS13}
 \end{center}
@@ -1226,6 +1229,14 @@ Considering the full 2016 dataset of $36.1$ fb$^{-1}$, similar results have been
 \includegraphics[width=7cm, height=5.88cm]{figs/Atlas36b.png}
 \end{minipage}\hfill
 \caption{Exclusion limits at the 95\% \ac{CL} obtained by \ac{ATLAS} considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{PreviousDoubleTopBottomAllLep13ATLAS}.}\label{fig:atlas36}
+\end{figure}
+
+Finally, \ac{ATLAS} recently presented in ICHEP 2020 the first results for a combined search of stop and for a similar final state in the dilepton final state, and using the full Run II dataset, as shown in Figure~\ref{fig:ATLASICHEP} \cite{ATLASICHEP2020}. According to these latest results, the collaboration has now been able to achieve an exclusion of scalar (pseudoscalar) mediators with masses up to 250 (300) GeV.
+
+ \begin{figure}[htbp]
+\centering
+\includegraphics[width=14cm, height=6.3cm]{figs/ATLASICHEP.png}
+\caption{Exclusion limits at the 95\% \ac{CL} obtained by \ac{ATLAS} considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV, considering the dilepton final state of such model and the full Run II dataset \cite{PreviousDoubleTopBottomAllLep13ATLAS}.}\label{fig:ATLASICHEP}
 \end{figure}
 
 The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, using the $35.9$ fb$^{-1}$ of data collected during the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
@@ -1282,7 +1293,7 @@ The data analyzed throughout this work is the result of several years of proton-
 
 \section{The \acf{LHC} accelerator} \label{section:LHC}
 
-The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and lead ions up to velocities close to the speed of light (0.999999990c). Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground (under France and Switzerland) to avoid part of the contamination due to the cosmic rays and located at \ac{CERN}, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then a magnificent achievement of the accelerator, after only a few years years of operation.
+The \acf{LHC} is a superconducting particle accelerator able to accelerate protons and lead ions up to velocities close to the speed of light (0.99999999c). Planned since the end of the 20th century, this accelerator, a 27 kilometers ring put 100 meters underground (under France and Switzerland) to avoid part of the contamination due to the cosmic rays and located at \ac{CERN}, has now been running for 10 years. The \ac{LHC} is the result of the collaboration between thousands of scientists of more than 100 different nationalities and its main objective was first of all to either infer or confirm the possible existence of the Higgs boson, theoretically predicted in the 1960s \cite{HiggsPostulate1, HiggsPostulate2} but never observed in any experiment. The discovery of the Higgs boson, announced at \ac{CERN} on the 4th of July 2012 \cite{HiggsDiscovery1, HiggsDiscovery2}, was then a magnificent achievement of the accelerator, after only a few years years of operation.
 
 Now that the Higgs boson has been discovered, the priority of the \ac{LHC} shifted a bit. Even though many different teams are still studying this particle in order to determine precisely its most fundamental properties such as its mass, couplings or spin, many groups of scientists are involved in different kinds of \ac{BSM} physics since the \ac{LHC}, whose center of mass energy has kept increasing over the years, allows us to reach a level of energy never reached before and therefore allows us to probe new parts of the phase space, searching for eventual hints of new physics. These kind of searches of course include the search for \ac{DM} production as the one performed in this work. 
 
@@ -4154,6 +4165,8 @@ As already seen in the previous sections, we know that our signal region is goin
 
 The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most interesting background and signal processes and on the other hand, we have unknown data collected by the detector and which needs to be characterized and labeled based on the value of several variables or features, by assigning a value of probability of belonging to any of these 3 particular categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be defined into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
 
+\subsection{\ac{MVA} methods used}
+
 Two different \ac{MVA} methods among the most popular today have been studied in this work: \acf{BDT} and a \acf{DNN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
 
 \subsubsection{Boosted Decision Trees}
@@ -4242,7 +4255,7 @@ This error function allows us to determine the goodness of the output obtained f
 \bm \omega_{k+1} = \bm \omega_k - \eta \nabla_{\bm \omega} E(\bm \omega)
 \end{equation}
 
-In this work, we used models with many different hidden layers, therefore usually referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such method is helpful because it allows to solve a crucial problem in \ac{ML}: the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand (end to end approach).
+In this work, we used models with many different hidden layers, therefore usually referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such method is helpful because it allows to solve a crucial problem in \ac{ML}: the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand.
 
 Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate, the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
 
@@ -4254,7 +4267,7 @@ Several parameters are important to optimize during the training of a neural net
  DNN parameter & Optimized value \\
  \hline
  Neuron layers & 15, 10, 5, 3 \\
- Activation functions & relu, relu, relu, softmax \\
+ Activation functions & Relu (x3), softmax \\
 Error function & Mean square error \\
 Optimizer & Adam \\
 Learning rate & 0.005 \\
@@ -4268,12 +4281,131 @@ Batch size & 100 \\
 \end{center}
 \end{table}
 
-After a trial and error process, the best results have been obtained with both methods for the following variables:
+After a trial and error process, the best results have been obtained with both methods for the following variables, all described in Section~\ref{section:Variables}: 
 
-\color{red}FIXME: Update all these parameters and variables once final values are known! Which method did we choose? \color{black}
+\color{red}FIXME: Update all these parameters and variables once final values are known! Which method did we choose? Update the following text with the correct name \color{black}
 
-Training different mass points, independant on sample (cf. Nicolo)
-Spanish text
+\subsection{Training process}
+
+%Each \ac{DNN} has also been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. FIXME: add this? cf. Nicolo pg 126
+
+Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background. Since several mass points are inspected for each signal category, different \acp{DNN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis.
+
+The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{DNN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Table~\ref{table:importance}, a plot representing the correlation between these input variables for the backgrounds and the two signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, an overtraining plot for both the \ac{BDT} and the \ac{DNN} in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by considering the intermediate scalar 100 GeV mass point for both the $t$+DM and $t \bar t$+DM signals, and by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+\hline
+ Rank & Variable & Importance \\
+ \hline
+ 1 & $m_{bl}^t$ & $2.428 \cdot 10^{-1}$ \\
+ 2 & \ac{PUPPI} \ac{MET} & $2.340 \cdot 10^{-1}$ \\
+ 3 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $2.264 \cdot 10^{-1}$ \\
+ 4 & $M_{T2}(ll)$ & $2.068 \cdot 10^{-1}$ \\
+ 5 & nbJet & $9.008 \cdot 10^{-2}$ \\
+\hline
+\end{tabular}
+%}
+\caption{Ranking for the importance of the different variables used as input to the \ac{MVA}.}
+\label{table:importance}
+\end{center}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_bkg.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal0.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal1.png}
+\end{minipage} \hfill
+\caption{Correlation coefficient between the different variables used as input to the \ac{MVA} for the backgrounds (on the left), the $t \bar t$+DM (on the center) and the $t$+DM (on the right) processes.}
+\label{fig:correlationVar}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal0_bkg.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal1_bkg.png}
+\end{minipage} \hfill
+\caption{Signal versus background \ac{ROC} curves obtained for the $t \bar t$+DM (on the left) and the $t$+DM (on the right) processes.}
+\label{fig:ROC}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[\ac{BDT} classifier output distributions] {
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/BDT_bkg.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal0.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal1.png}
+\end{minipage} \hfill
+}
+
+\subfigure[\ac{DNN} classifier output distributions] {
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/DNN_bkg.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal0.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal1.png}
+\end{minipage} \hfill
+}
+\caption{Test and training distributions obtained for the backgrounds (on the left), the $t \bar t$+DM (on the center) and the $t$+DM (on the right) processes.}
+\label{fig:overtraining}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=12cm, height=7cm]{figs/input_distributions.png}
+\caption{Input variables distributions used for the \ac{MVA}.}
+\label{fig:inputVar}
+\end{figure}
+
+\color{red}FIXME: Update training results \color{black}
+
+\subsection{Evaluation process}
+
+Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to use them on the different \ac{MC} processes and on actual data, to estimate the probability of each event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_BDT_category.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_DNN_category.png}
+\end{minipage} \hfill
+\caption{Most likely category of the events corresponding to the different processes for the \ac{BDT} (on the left) and the \ac{DNN} (on the right).}
+\label{fig:weightsApplied}
+\end{figure}
+
+As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in $t \bar t$+DM signal, $t$+DM signal or backgrounds in the first, second and thirs bins respectively. We can also see that we still have a majority of background in each of the three bins, and that we have more $t \bar t$+DM than $t$+DM signal in the second bin because of the difference in cross-section between these processes, but this strategy does allow us to define separate regions enriched in the different processes anyway. We can also conclude at this point that the results obtained using the \ac{BDT} and the \ac{DNN} are quite similar, by looking at these plots and at the \ac{ROC} curves obtained for both methods in Figure~\ref{fig:ROC}.
+
+\color{red}FIXME: Update plots, talks about SR definition, add percentage table for each process? \color{black}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4293,7 +4425,38 @@ Spanish text
 
 
 \chapter{Results and interpretations} \label{chapter:FinalResults}
+
+We now have all the ingredients needed to proceed with the interpretation of the data in terms of exclusion limits on the signal strength. 
+
+CONTINUE
+
+\section{Statistical interpretation} \label{section:Statistics}
+
+
 \section{Systematics and uncertainties} \label{section:Systematics}
+
+All the measurements we can make in high energy physics and in physics in general present some
+uncertainties, and the determination of their value is a critical point of every analysis, especially in this case since we try to detect a really low signal over a large background. The uncertainties considered in this work belong to two major categories:
+
+\begin{itemize}
+\item On one hand, \textbf{statistical uncertainties} appear in any counting experiment \cite {statistical} since every given measurement, made by definition of a finite set of observations, typically results in different observations when repeated, and the statistical uncertainty is then just a measure giving us an idea about the range of this kind of variations. Given the high rate of collisions happening at the \ac{LHC}, we usually assume that our counting experiment can be approximated with a Poisson distribution, for which we know that the error on the number of measurements is directly given by its square root.
+\item On the other hand, \textbf{systematic uncertainties} are just as important, but are usually harder to estimate and are different in nature \cite{systematics} since they arise directly from the theory or from the detector itself. Some systematic uncertainties are treated as individual nuisance parameters when fitting the \ac{MC} observed to the data, nuisances which can either only affect the normalization of some processes, or affect the shape of the predictions across the distribution of the observables. These uncertainties share the need to be propagated through the full analysis chain to the discriminating distribution.
+\end{itemize}
+
+Even though the signal enriched bins are to be found in a region of the \ac{MVA} discriminant with lower number of events, where the impact of statistical uncertainties is higher, systematic uncertainties still play an important role in most of the analyses performed at \ac{CERN}, including this one.
+
+\subsubsection{Theoretical uncertainties}
+
+This category of systematic uncertainties is related directly to the theoretical models used in the analysis and is mostly related to the production of the \ac{MC} simulations described in Section~\ref{section:MC}. Several different uncertainties belong to this particular category:
+
+\begin{itemize}
+\item \textbf{PDF and higher order corrections}. 
+\end{itemize}
+
+\subsubsection{Experimental uncertainties}
+
+\subsubsection{Background normalization uncertainties}
+
 \section{Results}
 
 
@@ -4831,6 +4994,7 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 %\end{landscape}
 
 \chapter{Neural network optimization} \label{appendix:Optimization}
+\chapter{Impact plots} \label{appendix:Impact}
 
 \end{appendices}
 
@@ -4992,6 +5156,11 @@ ATLAS-CONF-2016-076, 2016}
 \href{https://arxiv.org/abs/1710.11412}{ATLAS Collaboration,
 "Search for dark matter produced in association with bottom or top quarks in $\sqrt{s} = 13$ TeV pp collisions with the ATLAS detector",
 Eur. Phys. J. C 78 (2018) 18 [arXiv: 1710.11412]}
+
+\bibitem{ATLASICHEP2020}
+\href{https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/CONFNOTES/ATLAS-CONF-2020-046/ATLAS-CONF-2020-046.pdf}{ATLAS Collaboration,
+"Search for new phenomena in events with two opposite-charge leptons, jets and missing transverse momentum in pp collisions at $\sqrt{s} = 13$ TeV with the ATLAS detector",
+ATLAS-CONF-2020-046, July 2020}
 
 \bibitem{PreviousDoubleTopBottomAllLep13CMS}
 \href{http://inspirehep.net/record/1603635}{CMS Collaboration,
@@ -5662,8 +5831,20 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 "Introduction to boosted decision trees", Machine Learning Group Meeting, September 2017}
 
 \bibitem{NN}
-\href{https://indico.cern.ch/event/5007/contributions/1177811/attachments/962648/1366777/reu_presentation3.pdf}{M. Jachowski,
+\href{https://indico.cern.ch/event/5007/contributions/1177811/attachments/962648/1366777/reu_presentation3.pdf}{K. Albertsson et all,
+"TMVA 4: Toolkit for Multivariate Data Analysis with ROOT, users guide", CERN-OPEN-2007-007}
+
+\bibitem{TMVA}
+\href{https://root.cern.ch/root/htmldoc/guides/tmva/TMVAUsersGuide.pdf}{M. Jachowski,
 "Multivariate Analysis, TMVA, and Artificial Neural Networks", Michigan REU Final Presentations, August 2006}
+
+\bibitem{statistical}
+\href{https://www-cdf.fnal.gov/~trj/tsi09/trjtsi_Day1.pdf}{T. Junk,
+"Statistical Methods for Experimental Particle Physics", TRIUMF Summer Institute, July 2009}
+
+\bibitem{systematics}
+\href{https://hep.physics.utoronto.ca/~pekka/papers/systematicsreview.pdf}{P.K. Sinervo,
+"Definition and Treatment of Systematic Uncertainties in High Energy Physics and Astrophysics", PHYSTAT2003, Stanford Linear Accelerator Center, September 2003}
 
 %APPENDINX A
 
