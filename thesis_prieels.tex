@@ -3928,9 +3928,9 @@ In order to cover for most of the discrepancies between the data and the simulat
 
 
 
-\chapter{Background-signal discrimination} \label{section:Discrimination}
+\chapter{Signal extraction} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
 
 \section{Discriminating variables} \label{section:Variables}
 
@@ -4398,7 +4398,7 @@ As we can see in these plots, each bin correspond to one particular category, su
 
 \color{red}FIXME: Update plots, talks about SR definition, add percentage table for each process? \color{black}
 
-
+\section{Shape analysis} \label{section:Shape}
 
 
 
@@ -4426,38 +4426,149 @@ As we can see in these plots, each bin correspond to one particular category, su
 
 \chapter{Results and interpretations} \label{chapter:FinalResults}
 
-We now have all the ingredients needed to proceed with the interpretation of the data in terms of exclusion limits on the signal strength. 
-
-CONTINUE
+We now have all the ingredients needed to proceed with the interpretation of the data in terms of exclusion limits on the signal strength, for the different mediators spins, mass points and signal models considered. In this chapter, a short but necessary theoretical introduction to the statistical concepts used will be performed in Section~\ref{section:Statistics}, before discussing about the impact of the systematics and uncertainties on the final results in Section~\ref{section:Systematics}. Finally, the results and final limits obtained for this particular analysis will be shown in Section~\ref{section:Results}.
 
 \section{Statistical interpretation} \label{section:Statistics}
 
+The results presented in this chapter follow the recommendations and use the tools given directly by the \ac{LHC} Higgs Combination Group \cite{combine}, result of a collaboration between teams of \ac{ATLAS} and \ac{CMS}. The exclusion limits on the signal strength presented here have been calculated according to the asymptotic formulas described in this section, allowing us to quantify how sensitive the experiment is to the new physics searched for by calculating both the expected and observed significance obtained for a variety of signal hypotheses, corresponding to different mediator spins and mass points, as described previously.
+
+Setting limits is typically performed using a frequentist statistical test, which rely on the definition of two hypotheses \cite{stat1, stat2}: 
+ 
+\begin{itemize} 
+\item The \textbf{null hypothesis $H_0$}, or $b$, according to which the signal searched for does not exist and does not contribute to the data observed in a given part of the phase space.
+\item And the \textbf{alternative hypothesis $H_1$} tested against $H_0$ and stating exactly the opposite, mainly that our signal does actually exist. Since the typical search
+is not free of background, this hypothesis is usually called $s+b$.
+\end{itemize}
+
+In practice, we can usually not give a definite true or false answer to the question whether the alternative hypothesis is correct or not: we actually need to compute and quote a \textbf{\ac{CL}} and a \textbf{confidence limit}, corresponding to the value of a population parameter excluded at a specified \ac{CL}, for the exclusion. The objective is in this sense to quantify the level of agreement of the observed data with a given hypothesis $H$ by computing the so-called \textbf{p-values}, corresponding to the probability of finding data of equal or greater incompatibility with the predictions of $H$, under the assumption of $H$. This hypothesis $H$ can then be disregarded if its p-value is observed below a specified threshold, typically set to 0.05, resulting in a \ac{CL} common for the exclusion limits of most of the \ac{BSM} searches performed at \ac{CERN}.
+
+%Mathematically, the so-called \textbf{likelihood ratio test-statistic} $Q$ shown in Equation~\ref{eq:Q} can be defined as the ratio of the likelihoods for the two hypotheses of interest $s$ and $s+b$, given an experimental dataset $\bm X$. This ratio is a kind of generalization of the change in $\chi^2$ for a fit to a distribution including signal plus background relative to a fit to a pure background distribution. 
+%
+%\begin{equation}
+%\label{eq:Q}
+%Q = \frac{\mathcal{L}(\bm X, s+b)}{\mathcal{L}(\bm X, b)}
+%\end{equation}
+%
+%According to this definition, the \ac{CL} of any of the hypotheses can be defined as the probability that the test-statistic $Q$ is less than or equal to the value observed in the experiment, $Q_{\text{obs}}$. 
+%
+%This likelihood function 
+
+In order to establish an eventual discovery or exclude certain models, this analysis then uses a quite typical frequentist significance test using a likelihood ratio, considering parameters of interest, such as the cross-section of the signal process and nuisance parameters, such as the background normalizations, as discussed in Section~\ref{section:Systematics}. 
+
+Mathematically, as shown in \cite{asymptotic}, this method can be understood by considering the $x$ variable corresponding to the \color{red} FIXME: mt2ll or this variable? \ac{MVA} output distributions \color{black} previously obtained, containing each a certain expected number of events per bin $E[n_i]$, given by Equation~\ref{eq:count}, where $b_i$ ($s_i$) is the number of background (signal) events in the \textit{i-th} bin and $\mu$ is the so-called \textbf{signal strength}, a positive parameter characterizing the normalization of the signal under consideration and independent on the bin considered ($\mu = 0$ therefore corresponds to the background-only hypothesis and $\mu = 1$ is the nominal signal hypothesis).
+
+\begin{equation}
+\label{eq:count}
+E[n_i] = b_i + \mu s_i
+\end{equation}
+
+The number of background and signal events in each bin can be expressed through Equation~\ref{eq:events}, where $b_{\text{tot}}$ ($s_{\text{tot}}$) correspond to the total number of background (signal) events, the function $f_b(x;\bm \theta_b)$ ($f_s(x;\bm \theta_s)$) are the \acp{PDF} of the variable $x$ considered for signal and background events and $\bm \theta = (\bm \theta_s, \bm \theta_b, b_\text{tot})$ represent all the nuisance parameters considered.
+
+\begin{equation}
+\label{eq:events}
+\begin{dcases}
+b_i = b_{\text{tot}} \int_{\text{bin }i} f_b(x;\bm \theta_b)dx \\
+s_i = s_{\text{tot}} \int_{\text{bin }i} f_s(x;\bm \theta_s)dx
+\end{dcases}
+\end{equation}
+
+To help constraining even more the nuisance parameters considered, control regions enriched in background where we expect to observe a low number of signal events if it were to exist in nature are usually defined. The expected number of events in each bin $E[m_j]$ can then be expressed in Equation ~\ref{eq:constraint} in a similar way, where $u_j$ is a calculable quantities depending on the set of nuisance parameters $\bm \theta$. The definition of such control region is particularly helpful when constraining the background normalization parameters introduced in Section~\ref{section:Systematics}.
+
+\begin{equation}
+\label{eq:constraint}
+E[m_j] = u_j(\bm \theta)
+\end{equation}
+
+If we assume that the number of events in each bin is large enough, then we can define in Equation~\ref{eq:likelihood} the likelihood function as a product of Poisson probabilities for each of the $N$ and $M$ bins, by using the mean expected number of events ($E[n_i]$ and $E[m_j]$) and the actual number of events measured ($n_i$ and $m_j$) in the signal and control regions.
+
+\begin{equation}
+\label{eq:likelihood}
+\mathcal{L}(\mu, \bm \theta) = \left (\prod_{i = 1}^N \frac{E[n_i]^{n_i}}{n_i!} e^{-E[n_i]} \right) \left (\prod_{j=1}^M \frac{E[m_j]^{m_j}}{m_j!} e^{-E[m_j]} \right)
+\end{equation}
+
+This last relation is helpful because it allows us to test any value of $\mu$, by considering the profile likelihood ratio $\lambda(\mu)$ defined in Equation~\ref{eq:likrat}, where $\hat{\bm \theta_\mu}$ is defined as the value of $\bm \theta$ that maximizes the value of the likelihood for a given $\mu$, while $\hat{\mu}$ and $\hat{\bm \theta}$ are respectively the unconditional maximum-likelihood estimators of $\mu$ and $\bm \theta$.
+
+\begin{equation}
+\label{eq:likrat}
+\lambda(\mu) = \frac{\mathcal{L}(\mu, \hat{\bm \theta_\mu})}{\mathcal{L}(\hat{\mu}, \hat{\bm \theta})} 
+\end{equation}
+
+This last relation is extremely important in the sense that it gives us a way to test the two hypotheses we have at our disposal against each other: the background-only hypothesis $b$ (if $\mu$ = 0) and the signal+background hypothesis $s + b$ (if $\mu$ = 1). Additionally, this equation allows us to determine which values of signal strength $\mu$ can be discarded at a given confidence level, usually set to 95\% within the \ac{CMS} collaboration. At this stage, it is important to note as well that if a significant excess is observed, additional tests are required to be able to claim for a discovery, as this method only allows to reject some signal models not significant enough.
+
+In order to finally be able to establish upper limits on the value of the parameter $\mu$, one final test-statistic $q_\mu$ is usually defined according to Equation~\ref{eq:q}. Larger values for this parameter than represent higher incompatibilities between the data and the given signal strength. The reason why we set the estimator to 0 when $\hat{\mu} > \mu$ is simply to make sure to have a one-sided confidence interval, because eventual upwards fluctuations of the data able to pass this condition should not be considered as evidence for a $\mu$-strong $s+b$ hypothesis.
+
+\begin{equation}
+\label{eq:q}
+q_\mu = 
+\begin{dcases}
+-2 \ln \lambda(\mu) & \hat{\mu} \leq \mu \\
+0 & \hat{\mu} > \mu
+\end{dcases}
+\end{equation}
+
+Additionally, p-values can be used in order to quantify the level of agreement between the data and the $\mu$-strong signal under investigation, as shown in Equation~\ref{p-value} for an observed value $q_{\mu, \text{obs}}$, if $f(q_\mu|\mu)$ is the \ac{PDF} of the test-statistic $q_\mu$ assuming a certain value of $\mu$.
+
+\begin{equation}
+\label{p-value}
+p_\mu = \int_{q_{\mu, \text{obs}}}^\infty f(q_\mu|\mu) dq_\mu 
+\end{equation}
+
+The confidence level on the signal $CL_s$ for a given signal strength is then defined in Equation~\ref{eq:CL}, where $p_\mu$ corresponds to the p-value obtained using the \ac{PDF} of the test-statistic $q_\mu$ assuming a value of $\mu$, while $p_b$ is the \ac{PDF} obtained for the same parameter but assuming $\mu = 0$. Most of these parameters introduced can be seen in Figure~\ref{fig:stat}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=8cm, height=6cm]{figs/stat.png}
+\caption{Schematic representation of the concept of \ac{PDF} and p-value used in the computation of our test-statistic $q_\mu$, under the hypotheses $\mu = 0$ and $\mu = 1$.}
+\label{fig:stat}
+\end{figure}
+
+\begin{equation}
+\label{eq:CL}
+CL_s(\mu) = \frac{p_\mu}{1-p_b}
+\end{equation}
+
+This latest parameter $CL_s$ can finally be tuned by modifying the value of $\mu$ until reaching a given threshold $\alpha$, set to 0.05 in this thesis and in most of the publications of the \ac{CMS} collaboration.
+
+Performing this complete calculation with observed is giving us the so-called \textbf{observed upper limits}, but we also typically need to calculate the expected sensitivity of the analysis, defined as the mean value of $\mu$ expected for a background-only hypothesis, computed from $N$ simulated datasets. Placing all the $\mu$ values obtained for a given threshold and a given dataset in a cumulative histogram then allows us to plot separate curves corresponding to both the observed and expected upper limits along with its corresponding error bars depending on the distribution of the $\mu$ values obtained for all the $N$ datasets. This actually allows us to make sure that the sensitivity of the search is good enough to be able to effectively see a signal if it exists. Getting an expected value of $\mu < 1$ for a given mass point is then typically the sign that if the signal did in fact exist, the analysis should be sensitive enough to see it and, if we don't see any significant deviation between the expected and observed curves, we can then rule out the possibility of such model actually existing.
+
+Finally, one last important concept can be discussed here. Two different kind of signals are searched for in this work at once, mainly the $t$+DM and the $t \bar t$+DM processes. Even though we can search for both processes independently, they are both able to exclude dark matter production models and a combination of both searches is therefore expected to give better results than two separate searches. Some of the nuisance parameters are common between the channels, but not all of them and, if we take the same initial signal strength value for both channels and if the channels are statistically independent, which is a condition verified in this case, then the full likelihood function is simply given by the product of the individual likelihoods in each channel $i$, allowing us to define a common test-statistic parameter shown in Equation~\ref{eq:comb}.
+
+\begin{equation}
+\label{eq:comb}
+\lambda (\mu) = \frac{\prod_i \mathcal{L}_i(\mu, \hat{\bm \theta_{\mu, i}})}{\prod_i \mathcal{L}_i (\hat{\mu}, \hat{\theta \bm_i})} = \prod_i \lambda_i (\mu)
+\end{equation}
+
+Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations apply when combining the different final states given by the different decays of the $W$ bosons.
 
 \section{Systematics and uncertainties} \label{section:Systematics}
 
 All the measurements we can make in high energy physics and in physics in general present some
-uncertainties, and the determination of their value is a critical point of every analysis, especially in this case since we try to detect a really low signal over a large background. The uncertainties considered in this work belong to two major categories:
+uncertainties, and the determination of their value is a critical point of every analysis, especially in this case since we try to detect a really low signal over a large background. Indeed, as we already saw, the nuisance parameters $\bm \theta$ are extremely important when defining the upper limits on the signal strength, so a good characterization of such source of uncertainties is crucial in most of the analyses searching for new physics. The uncertainties considered in this work belong to two major categories:
 
 \begin{itemize}
 \item On one hand, \textbf{statistical uncertainties} appear in any counting experiment \cite {statistical} since every given measurement, made by definition of a finite set of observations, typically results in different observations when repeated, and the statistical uncertainty is then just a measure giving us an idea about the range of this kind of variations. Given the high rate of collisions happening at the \ac{LHC}, we usually assume that our counting experiment can be approximated with a Poisson distribution, for which we know that the error on the number of measurements is directly given by its square root.
-\item On the other hand, \textbf{systematic uncertainties} are just as important, but are usually harder to estimate and are different in nature \cite{systematics} since they arise directly from the theory or from the detector itself. Some systematic uncertainties are treated as individual nuisance parameters when fitting the \ac{MC} observed to the data, nuisances which can either only affect the normalization of some processes, or affect the shape of the predictions across the distribution of the observables. These uncertainties share the need to be propagated through the full analysis chain to the discriminating distribution.
+\item On the other hand, \textbf{systematic uncertainties} are just as important, but are usually harder to estimate and are different in nature \cite{systematics} since they arise directly from the theory or from the detector itself. Some systematic uncertainties are treated as individual nuisance parameters when fitting the \ac{MC} observed to the data, nuisances which can either only affect the normalization of some processes, or affect the shape of the predictions across the distribution of the observables. These uncertainties share the need to be propagated through the full analysis chain all the way to the discriminating distributions.
 \end{itemize}
 
 Even though the signal enriched bins are to be found in a region of the \ac{MVA} discriminant with lower number of events, where the impact of statistical uncertainties is higher, systematic uncertainties still play an important role in most of the analyses performed at \ac{CERN}, including this one.
 
 \subsubsection{Theoretical uncertainties}
 
-This category of systematic uncertainties is related directly to the theoretical models used in the analysis and is mostly related to the production of the \ac{MC} simulations described in Section~\ref{section:MC}. Several different uncertainties belong to this particular category:
+This category of systematic uncertainties is related directly to the theoretical models used in the analysis and is mostly related to the production of the \ac{MC} simulations according to the process described in Section~\ref{section:MC}. Several different uncertainties belong to this particular category:
 
 \begin{itemize}
-\item \textbf{PDF and higher order corrections}. 
+\item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \ac{LO} or \ac{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} themselves are usually estimated by performing 100 NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
+%\item \textbf{Underlying event and parton shower modeling}.
+\item \textbf{}.
 \end{itemize}
 
 \subsubsection{Experimental uncertainties}
 
 \subsubsection{Background normalization uncertainties}
 
-\section{Results}
+\color{red} FIXME: check all systematics and add impact plots \color{black}
+
+\section{Results} \label{section:Results}
 
 
 
@@ -5838,6 +5949,21 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \href{https://root.cern.ch/root/htmldoc/guides/tmva/TMVAUsersGuide.pdf}{M. Jachowski,
 "Multivariate Analysis, TMVA, and Artificial Neural Networks", Michigan REU Final Presentations, August 2006}
 
+\bibitem{combine}
+\href{https://twiki.cern.ch/twiki/bin/view/LHCPhysics/HiggsCombination}{\ac{CMS} Twiki,
+"LHC Higgs Combination Group (LHC-HCG)", https://twiki.cern.ch/twiki/bin/view/LHCPhysics/HiggsCombination, as seen in August 2020}
+
+\bibitem{asymptotic}
+\href{https://arxiv.org/abs/1007.1727}{G. Cowan et all,
+"Asymptotic formulae for likelihood-based tests of new physics", Eur.Phys.J.C71:1554, 2011 [arXiv: 1007.1727]}
+
+\bibitem{stat1}
+\href{https://indico.cern.ch/event/398949/attachments/799330/1095613/The\_CLs\_Technique.pdf}{A.L. Read, "Presentation of search results: the CLs technique", J. Phys. G: Nucl. Part. Phys. 28 (2002) 2693-2704}
+
+\bibitem{stat2}
+\href{https://cds.cern.ch/record/411537/files/CERN-2000-005.pdf}{A.L. Read,
+"1st Workshop on Confidence Limits", CERN-2000-005, pp81-101"}
+
 \bibitem{statistical}
 \href{https://www-cdf.fnal.gov/~trj/tsi09/trjtsi_Day1.pdf}{T. Junk,
 "Statistical Methods for Experimental Particle Physics", TRIUMF Summer Institute, July 2009}
@@ -5845,6 +5971,14 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{systematics}
 \href{https://hep.physics.utoronto.ca/~pekka/papers/systematicsreview.pdf}{P.K. Sinervo,
 "Definition and Treatment of Systematic Uncertainties in High Energy Physics and Astrophysics", PHYSTAT2003, Stanford Linear Accelerator Center, September 2003}
+
+\bibitem{NNPDF}
+\href{https://arxiv.org/abs/1410.8849}{NNPDF Collaboration,
+"Parton distributions for the LHC Run II", 10.1007/JHEP04(2015)040, 2015 [arXiv: 1410.8849]}
+
+\bibitem{PDF4LHC}
+\href{https://arxiv.org/abs/1510.03865}{J. Buttwerworth et all.,
+"PDF4LHC recommendations for LHC Run II", J. Phys. G: Nucl. Part. Phys. 43 023001, 2016 [arXiv: 1510.03865]}
 
 %APPENDINX A
 
