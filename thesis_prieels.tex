@@ -1665,7 +1665,7 @@ Finally, the different features of the three muon sub-systems used by the \ac{CM
 
 Another advantage of the muon system such as the one built in \ac{CMS} is that it can also directly be used by the trigger system, which will be described in Section~\ref{subsection:Trigger}, independently of the rest of the detector and in addition of being able to detect, identify and measure several properties of muons crossing it.
 
-The muon reconstruction efficiency obtained by the muon system strongly depends on the pseudorapidity value of the muon considered, along with its transverse momentum, as shown in Figure~\ref{fig:MuonRecoEff}. In this figure, we can also see that several different kinds of muons can be defined, such as the \textbf{standalone muons}, defined using only the data coming from the muon system and the \textbf{global muons}, defined using both the information coming from the muon system and the tracker. This distinction will be detailed when discussing about the muons reconstruction in Section~\ref{subsection:Muons}). %Cross-checks between the different systems of \ac{CMS} can therefore be performed, as will be described in Chapter~\ref{chapter:Reco}.
+The muon reconstruction efficiency obtained by the muon system strongly depends on the pseudorapidity value of the muon considered, along with its transverse momentum, as shown in Figure~\ref{fig:MuonRecoEff}. In this figure, we can also see that several different kinds of muons can be defined, such as the \textbf{standalone muons}, defined using only the data coming from the muon system and the \textbf{global muons}, defined using both the information coming from the muon system and the tracker. This distinction will be detailed when discussing about the muons reconstruction in Section~\ref{subsection:Muons}. %Cross-checks between the different systems of \ac{CMS} can therefore be performed, as will be described in Chapter~\ref{chapter:Reco}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2420,7 +2420,7 @@ Once all the different samples produced centrally up to the nanoAOD stage, anoth
 
 As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of $35.9 \pm 0.9$ fb$^{-1}$ (2016) \cite{Lumi2016}, $41.5 \pm 1.0$ fb$^{-1}$ (2017) \cite{Lumi2017} and $59.7 \pm 1.5$ fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
+During this period, an integrated luminosity of ($35.9 \pm 0.9$ fb$^{-1}$) (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$ fb$^{-1}$) (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$ fb$^{-1}$) (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
 
 \section{Signal samples} \label{section:Signals}
 
@@ -2907,7 +2907,7 @@ This background is coming from a usual $t \bar t$ production along with an \acp{
 
 The resulting cross section of such process is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
 
-\subsection{Non prompt contamination} \label{subsection:Fakes}
+\subsection{Non prompt leptons contamination} \label{subsection:Fakes}
 
 Even though not extremely important in the sense that its kinematics allow us to remove most of its contributions in the signal regions, this background is interesting in the sense that is can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
 
@@ -4209,7 +4209,7 @@ The actual parameters used for this particular analysis obtained after a thoroug
  Maximum depth & 4 \\
  Minimum samples per leaf & 1\% \\
  Loss function & Quadratic \\
- Boost algorithm & Adaboost \\
+ Boost algorithm & Gradient descent \\
  Learning rate & 0.2 \\
  Grid points & 10.000 \\
  Number of trees & 300 \\
@@ -4400,7 +4400,7 @@ As we can see in these plots, each bin correspond to one particular category, su
 
 \section{Shape analysis} \label{section:Shape}
 
-
+\color{red} If section not put then remove it from the Chapter introduction \color{black}
 
 
 
@@ -4535,10 +4535,10 @@ Finally, one last important concept can be discussed here. Two different kind of
 
 \begin{equation}
 \label{eq:comb}
-\lambda (\mu) = \frac{\prod_i \mathcal{L}_i(\mu, \hat{\bm \theta_{\mu, i}})}{\prod_i \mathcal{L}_i (\hat{\mu}, \hat{\theta \bm_i})} = \prod_i \lambda_i (\mu)
+\lambda (\mu) = \frac{\prod_i \mathcal{L}_i(\mu, \hat{\bm \theta_{\mu, i}})}{\prod_i \mathcal{L}_i (\hat{\mu}, \hat{\bm \theta_i})} = \prod_i \lambda_i (\mu)
 \end{equation}
 
-Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations apply when combining the different final states given by the different decays of the $W$ bosons.
+Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations can also apply when combining for example the different final states given by the different decays of the $W$ bosons.
 
 \section{Systematics and uncertainties} \label{section:Systematics}
 
@@ -4558,15 +4558,33 @@ This category of systematic uncertainties is related directly to the theoretical
 
 \begin{itemize}
 \item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \ac{LO} or \ac{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} themselves are usually estimated by performing 100 NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
-%\item \textbf{Underlying event and parton shower modeling}.
-\item \textbf{}.
+%\item \textbf{Underlying event and parton shower modeling}. The choice of the parton shower generator and \ac{UE} tune is also to have an effect on the final results, however the impact of this systematic is extremely limited in this case because it mostly applies to the WW background, minor in our signal regions.
+%\item \textbf{}.
 \end{itemize}
 
 \subsubsection{Experimental uncertainties}
 
+Additional uncertainties related to the detector or to the experimental conditions are also taken into account when producing the upper limits on the signal strength.
+
+\begin{itemize}
+\item \textbf{Luminosity}. The actual integrated luminosity collected is not a fixed number and comes with an associated uncertainty of 2.5\%, 2.3\% and 2.\% for 2016, 2017 and 2018 respectively, based on van der Meer scans performed \cite{Lumi2016, Lumi2017, Lumi2018}.
+\item \textbf{Pileup modeling}. Varying the inelastic cross-section used to calculate the pileup distribution in simulation results in a systematic of the order of 5\% \cite{PUmodel}.
+\item \textbf{Lepton trigger}. An uncertainty associated to the lepton trigger efficiency is taken into account. It has an impact of the order of $\sim 2$\%, estimated from a general Tag and Probe method, by varying the Z window considered and the selection applied to the tag lepton. 
+\item \textbf{Lepton reconstruction and selection}. Scale factors are applied to the \ac{MC} processes in order to mimic the measured lepton reconstruction and selection efficiencies in data, and such scale factors come with estimated $p_T$ and $\eta$ uncertainties of the order of $\sim2$\% for electrons and muons.
+\item \textbf{b-tagging efficiency}.
+\end{itemize}
+
 \subsubsection{Background normalization uncertainties}
 
-\color{red} FIXME: check all systematics and add impact plots \color{black}
+Finally, the systematic associated to the backgrounds normalization is typically one of the largest source of uncertainties in an analysis, and is computed by estimating the normalization of the
+backgrounds that are estimated on data control samples whenever possible. 
+
+\begin{itemize}
+\item \textbf{Single top and diboson normalization}. 
+\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method pevious described. The impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim10$\%, while a flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined.
+\end{itemize}
+
+\color{red} FIXME: check all systematics, which ones we actually applied and add impact plots \color{black}
 
 \section{Results} \label{section:Results}
 
@@ -4602,9 +4620,9 @@ This category of systematic uncertainties is related directly to the theoretical
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 
-%In conclusion, a search for the production of dark matter in association with one or top top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter have been found, but limits on the signal strength have been obtained by considering different production models and channels.
-%
-%\color{red} FIXME: Complete this once analysis done \color{black}
+In conclusion, a search for the production of dark matter in association with one or top top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter have been found, but upper limits on the signal strength have been obtained by considering different production models and channels.
+
+\color{red} FIXME: Complete this once analysis done \color{black}
 
 \section{Future prospects}
 
@@ -4688,7 +4706,7 @@ Debido a limitaciones computacionales, es imposible guardar todas las colisiones
 
 \section{Reconstrucci\'{o}n de objetos}
 
-Como lo acabamos de ver, el detector \ac{CMS} est\'{a} hecho de varias capas dedicadas a las medidas de diferentes propiedades de las miles de part\'{i}culas que se generan despu\'{e}s de cada colisi\'{o}n entre dos protones en el \textit{beam pipe}. Cada capa del detector atravesada por una de estas part\'{i}culas genera se\~{n}ales el\'{e}ctricas que se colectan y que se almacenan. Esta se\~{n}al solamente contiene datos brutos poco interesantes al principio, as\'{i} que un algoritmo conocido como el \textit{Particle Flow} ha sido desarrollado para analizar las se\~{n}ales que provienen de cada parte del detector, para combinarlas y extraer informaci\'{o}n f\'{i}sica sobre la colisi\'{o}n estudiada.
+Como lo acabamos de ver, el detector \ac{CMS} est\'{a} hecho por varias capas dedicadas a las medidas de diferentes propiedades de las miles de part\'{i}culas que se generan despu\'{e}s de cada colisi\'{o}n entre dos protones en el \textit{beam pipe}. Cada capa del detector atravesada por una de estas part\'{i}culas genera se\~{n}ales el\'{e}ctricas que se colectan y que se almacenan. Esta se\~{n}al solamente contiene datos brutos poco interesantes al principio, as\'{i} que un algoritmo conocido como el \textit{Particle Flow} ha sido desarrollado para analizar las se\~{n}ales que provienen de cada parte del detector, para combinarlas y extraer informaci\'{o}n f\'{i}sica sobre la colisi\'{o}n estudiada.
 
 Para la b\'{u}squeda de materia oscura llevada a cabo en este trabajo, se seleccionan eventos que tienen dos leptones y dos jets y, por lo tanto, un sistema eficiente de detecci\'{o}n, reconstrucci\'{o}n e identificaci\'{o}n de este tipo de objetos es imprescindible. Los muones se reconstruyen primero con este algoritmo, ya que son las \'{u}nicas part\'{i}culas cargadas capaces de llegar a las c\'{a}maras de muones en el exterior del detector. Luego, se pueden reconstruir los electrones, indetificados como una c\'{a}scada electromagn\'{e}tica en el \ac{ECAL} asociada con trazas compatibles en el tracker y, por fin, se identifican los hadrones cargados y neutros asociando los hits que quedan en el tracker con la informaci\'{o}n del \ac{HCAL}. Los eventuales quarks que aparecen en una colisi\'{o}n se hadronizan y se manifiestan como jets de part\'{i}culas en el detector, m\'{a}s dif\'{i}ciles de reconstruir en general. Se desaroll\'{o} para llevar a cabo esta tarea el algoritmo \textit{anti-kT}, capaz de agrupar los hadrones, fotones y leptones que forman un solo jet. Este algoritmo es tambi\'{e}n capaz de distinguir un jet procedente de un bottom quark, ya que estos quarks tienen un tiempo de vida un poco m\'{a}s alto y que pueden por lo tanto viajar unos poco mil\'{i}metros antes de decaer. Este peque\~{n}o desplazamiento basta para distinguir estos jets, llamados b-jets, que tienen un papel importante en este an\'{a}lisis. 
 
@@ -5979,6 +5997,10 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{PDF4LHC}
 \href{https://arxiv.org/abs/1510.03865}{J. Buttwerworth et all.,
 "PDF4LHC recommendations for LHC Run II", J. Phys. G: Nucl. Part. Phys. 43 023001, 2016 [arXiv: 1510.03865]}
+
+\bibitem{PUmodel}
+\href{https://arxiv.org/abs/1802.02613}{CMS collaboration.,
+"Measurement of the inelastic proton-proton cross section at $\sqrt{s} = 13$ TeV", 	JHEP 07 (2018) 161 [arXiv: 1802.02613]}
 
 %APPENDINX A
 
