@@ -268,6 +268,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{IFCA}[IFCA]{Instituo de F\'{i}sica de Cantabria}
 \acro{ISR}[ISR]{Initial State Radiation}
 \acro{JEC}[JEC]{Jet Energy Correction}
+\acro{JES}[JES]{Jet Energy Scale}
 \acro{KF}[KF]{Kalman Filter}
 \acro{L1}[L1]{Level-1 Trigger}
 \acro{LAT}[LAT]{Fermi Large Telescope}
@@ -423,7 +424,7 @@ If the neutrinos are considered to be normal Dirac fermions in the sense the ant
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=8cm, height=6cm]{figs/SMFermions.png}
+\includegraphics[width=10cm, height=7.5cm]{figs/SMFermions.png}
 \caption{Representation of the 12 fermions of the \ac{SM} \cite{SMFermions} along with the main force carriers and the Higgs boson, discovered in 2012 and completing the \ac{SM}.}
 \label{figure:SMFermions}
 \end{center}
@@ -448,7 +449,7 @@ The origin of the concept of dark matter can be traced back to the 19th century,
 
 In the 20th century, the first experimental evidences for the existence of dark matter were found. In 1933, Fritz Zwicky managed to determine the mass of the Coma Cluster using the virial theorem \cite{Zwicky}, which states that in a cluster in equilibrium under its own gravitation the kinetic energy must be comparable to its gravitational binding energy. 
 
-Mathematically, the virial theorem can be written in Equation~\ref{equation:Virial}, where the brackets represent the mean value of the quantity obtained over time or position, the universal constant of gravitation is $G = 6.67 \cdot 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$ and where the gravitation potential energy expression can be simplified assuming a spherical distribution of the masses and the same average density everywhere in the cluster considered.
+Mathematically, the virial theorem can be written in Equation~\ref{equation:Virial}, where the brackets represent the mean value of the quantity obtained over time or position, the universal constant of gravitation is $G = 6.67 \cdot 10^{-11}$ m$^3$ kg$^{-1}$ s$^{-2}$ and where the gravitation potential energy expression can be simplified assuming a spherical distribution of the masses and the same average density everywhere in the cluster considered for the calculation.
 
 \begin{equation} \label{equation:Virial}
 2 \langle T \rangle + \langle V \rangle = 0 \text{, where}
@@ -647,7 +648,7 @@ However, two physical reasons can explain why we do not really believe that \ac{
 \Omega_\nu h^2 = \sum_{i=1}^3 \frac{m_{\nu_i}}{93 \text{ eV}}
 \end{equation}
 
-Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expected to be cold, i.e. non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today. We can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
+Additionally, for several reasons explained in Section~\ref{section:DMProperties}, a good \ac{DM} candidate is expected to be cold or in other words, non-relativistic. However, being extremely light, neutrinos are expected to be ultra-relativistic and could therefore not be responsible of the emergence of large scale structures as observed today: we can therefore most probably rule out the possibility of \ac{DM} being made of \ac{SM} neutrinos.
 
 \subsubsection*{Sterile neutrinos}
 The most obvious \ac{SM} particles being ruled out as \ac{DM} candidates, we can now introduce other \ac{BSM} theories introducing additional particles that could have the properties searched for. The first one of these theories introduces the so-called sterile neutrinos, usually referring to right-handed \ac{SM} neutrinos, as discussed in the previous subsection. 
@@ -3258,7 +3259,7 @@ In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energ
 \end{center}
 \end{figure}
 
-\subsubsection{Top $p_T$ reweighting}
+\subsubsection{Top $p_T$ reweighting} \label{subsection:toppt}
 
 Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
 
@@ -4146,8 +4147,32 @@ A few additional variables which are expected to introduce some discrimination b
 \label{fig:SRdisc5}
 \end{figure}
 
-\item Finally, we observed that the variable we called total \textit{ET} and corresponding the scalar sum of the total transverse energy of the \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+\item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the \ac{PUPPI} \ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
+\item Finally, we observed that the variable we called total $E_T$ and corresponding the scalar sum of the total transverse energy of the \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 \color{red} FIXME: replace this by the massT variable? \color{black}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[$r2l$ variable] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal1_r2l.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_r2l.png}
+\end{minipage} \hfill
+}
+
+\subfigure[$r2l4j$ variable] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal1_r2l4j.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_r2l4j.png}
+\end{minipage} \hfill
+}
+\caption{$r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in both the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:r2l}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
@@ -4563,9 +4588,10 @@ Even though the signal enriched bins are to be found in a region of the \ac{MVA}
 This category of systematic uncertainties is related directly to the theoretical models used in the analysis and is mostly related to the production of the \ac{MC} simulations according to the process described in Section~\ref{section:MC}. Several different uncertainties belong to this particular category:
 
 \begin{itemize}
-\item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \ac{LO} or \ac{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} themselves are usually estimated by performing 100 NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
+\item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \acf{LO} or \acf{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} and $\alpha_s$ parameters themselves are usually estimated by considering a hundred NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
 %\item \textbf{Underlying event and parton shower modeling}. The choice of the parton shower generator and \ac{UE} tune is also to have an effect on the final results, however the impact of this systematic is extremely limited in this case because it mostly applies to the WW background, minor in our signal regions.
 %\item \textbf{}.
+\item \textbf{Renormalization and factorization scales}. Uncertainties usually emerge due to the presence of the renormalization $\mu_R$ and factorization $\mu_F$ scales in the QCD calculations regarding the hard collisions of hadrons happening at the \ac{LHC}, which are updated by a factor 0.5 and 2 and then propagated to the distributions of the analysis. This uncertainty is considered to be uncorrelated among the different background processes considered.
 \end{itemize}
 
 \subsubsection{Experimental uncertainties}
@@ -4575,9 +4601,16 @@ Additional uncertainties related to the detector or to the experimental conditio
 \begin{itemize}
 \item \textbf{Luminosity}. The actual integrated luminosity collected is not a fixed number and comes with an associated uncertainty of 2.5\%, 2.3\% and 2.\% for 2016, 2017 and 2018 respectively, based on van der Meer scans performed \cite{Lumi2016, Lumi2017, Lumi2018}.
 \item \textbf{Pileup modeling}. Varying the inelastic cross-section used to calculate the pileup distribution in simulation results in a systematic of the order of 5\% \cite{PUmodel}.
-\item \textbf{Lepton trigger}. An uncertainty associated to the lepton trigger efficiency is taken into account. It has an impact of the order of $\sim 2$\%, estimated from a general Tag and Probe method, by varying the Z window considered and the selection applied to the tag lepton. 
-\item \textbf{Lepton reconstruction and selection}. Scale factors are applied to the \ac{MC} processes in order to mimic the measured lepton reconstruction and selection efficiencies in data, and such scale factors come with estimated $p_T$ and $\eta$ uncertainties of the order of $\sim2$\% for electrons and muons.
-\item \textbf{b-tagging efficiency}.
+\item \textbf{Lepton trigger}. An uncertainty associated to the lepton trigger efficiency is taken into account. It has an impact of the order of $\sim 2$\%, estimated from a general Tag and Probe method, by varying the Z window considered and the tag lepton $p_T$ selection cut. 
+\item \textbf{Lepton efficiency and energy scale}. Scale factors are applied to the \ac{MC} processes in order to mimic the measured lepton reconstruction and selection efficiencies in data, and such scale factors come with estimated $p_T$ and $\eta$ uncertainties of the order of $\sim2$\% for electrons and muons that have been applied.  
+\begin{itemize}
+\item In particular, for \textbf{electrons}, efficiencies are computed using a Tag and Probe method as well, involving background and signal fits, for which different fitting functions have been considered for the computation of the systematics. The tag selection has also been updated, mainly with different $p_T$ cuts, studying the impact such change has on the final efficiencies. Uncertainties from such different sources have been added in quadrature to get the final systematic associated to electrons.
+\item Then, four different parameters have been considered and updated with respect to the nominal Tag and Probe parameters to study their impact on the final \textbf{muon} efficiencies: the isolation of the tag muon, the signal fitting function used, the number of mass bins where the fit is done and finally, the Z-window considered for the calculation. 
+\end{itemize}
+\item \textbf{\ac{JES}}. Single nuisance parameter applied to the $p_T$ of each jets, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $m_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}.
+\item \textbf{\ac{MET} mismodelling}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
+\item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}. \color{red} Currently not applied? \color{black}
+\item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic covering for such differences observed between data and \ac{MC} is taken into account.
 \end{itemize}
 
 \subsubsection{Background normalization uncertainties}
@@ -4586,8 +4619,10 @@ Finally, the systematic associated to the backgrounds normalization is typically
 backgrounds that are estimated on data control samples whenever possible. 
 
 \begin{itemize}
-\item \textbf{Single top and diboson normalization}. 
-\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method pevious described. The impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim10$\%, while a flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined.
+\item \textbf{Single top and diboson normalization}. \color{red} Currently not applied? Value? \color{black}
+\item \textbf{\acf{DY} background}. Simulation is used in order to determine the kinematic shape of this background, and given its high cross-section, a control region enriched in this particular background has been defined in Section~\ref{section:DYCR}. \color{red} Currently not applied? Value? \color{black}
+included in the fit to further constrain its contribution in the signal region.
+\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method pevious described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
 \color{red} FIXME: check all systematics, which ones we actually applied and add impact plots \color{black}
@@ -6012,6 +6047,10 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{PUmodel}
 \href{https://arxiv.org/abs/1802.02613}{CMS collaboration.,
 "Measurement of the inelastic proton-proton cross section at $\sqrt{s} = 13$ TeV", 	JHEP 07 (2018) 161 [arXiv: 1802.02613]}
+
+\bibitem{btagEff}
+\href{https://arxiv.org/abs/1712.07158}{CMS collaboration.,
+"Identification of heavy-flavour jets with the CMS detector in pp collisions $\sqrt{s} = 13$ TeV", 		JINST 13 (2018) P05011 [arXiv: 1712.07158]}
 
 %APPENDINX A
 
