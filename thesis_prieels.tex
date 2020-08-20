@@ -3455,7 +3455,7 @@ Several strategies are used in \ac{CMS} in order to be able to identify prompts 
 
 In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
-Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the \ac{POG} \textit{mvaSpring16GP\_WP90} (for 2016) and \textit{mvaFall17V1Iso\_WP9} (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
+Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the \ac{POG} \textit{mvaSpring16GP\_WP90} (for 2016) and \textit{mvaFall17V1Iso\_WP90} (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
 \begin{table}
 \begin{center}
@@ -3624,7 +3624,7 @@ Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
 
 A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}.
 
-The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium working point).
+The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
 
 \begin{table}
 \begin{center}
@@ -3937,7 +3937,7 @@ In order to cover for most of the discrepancies between the data and the simulat
 
 \chapter{Signal extraction} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
 
 \section{Discriminating variables} \label{section:Variables}
 
@@ -4208,14 +4208,14 @@ The structure and complexity of a \ac{BDT} usually depends on the problem consid
 
 \begin{itemize}
 \item First of all, the \textbf{features}, or input variables, allowed to be used by the \ac{BDT} are extremely important, and a maximum number of features can be set when building a tree, forcing a random selection of input variables if too many features are given as input.
-\item The \textbf{depth} is usually chosen as a small number which characterizes the maximum number of vertical levels allowed for the \ac{BDT}.
+\item The \textbf{maximum depth} is usually chosen as a small number which characterizes the maximum number of vertical levels allowed for the \ac{BDT}.
 \item The \textbf{minimum samples per leaf} puts a requirement on the minimum number of samples required in order to create a new leaf.
 \item Regarding the boosting process itself, several additional parameters can be defined:
 
 \begin{itemize}
 \item The \textbf{loss function} is helpful when trying the distance between the prediction made by the \ac{BDT} and the actual value expected.
-\item The \textbf{learning rate} is another important parameter in the sense that it tells how much the weights of the tree should be adjusted after each training iteration. A value too small is slower and might not be enough to get out of an eventual local minimum, while a value too large is likely to miss the optimal training point.
-\item The \textbf{number of grid points} $n_\text{cut}$ used when finding the optimal cut when defining the node splitting is also important.
+\item The \textbf{learning rate}, or \textbf{shrinkage}, is another important parameter in the sense that it tells how much the weights of the tree should be adjusted after each training iteration. A small shrinkage typically demands more trees to be grown but can significantly improve the accuracy of the prediction made.
+\item The \textbf{number of grid points} $n_\text{cut}$, defined as the granularity used to find the optimal cut when determining the node splitting is also important.
 \item Finally, the actual \textbf{number of trees} used to define the forest is obviously an important parameter as well that need to be optimized.
 \end{itemize}
 
@@ -4241,8 +4241,8 @@ The actual parameters used for this particular analysis obtained after a thoroug
  Minimum samples per leaf & 1\% \\
  Loss function & Quadratic \\
  Boost algorithm & Gradient descent \\
- Learning rate & 0.2 \\
- Grid points & 10.000 \\
+ Shrinkage & 0.3 \\
+ Grid points $n_{\text{cut}}$ & 20 \\
  Number of trees & 300 \\
 \hline
 \end{tabular}
@@ -4288,7 +4288,7 @@ This error function allows us to determine the goodness of the output obtained f
 
 In this work, we used models with many different hidden layers, therefore usually referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such method is helpful because it allows to solve a crucial problem in \ac{ML}: the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand.
 
-Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate, the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
+Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate (giving an idea of how much the weights should be updated after each training iteration, which should obviously be optimized in order to reach the minimum of the cost function faster while avoiding getting stuck in an eventual local minimum), the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
 
 \begin{table}
 \begin{center}
@@ -4297,7 +4297,7 @@ Several parameters are important to optimize during the training of a neural net
 \hline
  DNN parameter & Optimized value \\
  \hline
- Neuron layers & 15, 10, 5, 3 \\
+ Hidden layers neurons & 20, 15, 10 \\
  Activation functions & Relu (x3), softmax \\
 Error function & Mean square error \\
 Optimizer & Adam \\
@@ -4320,7 +4320,7 @@ After a trial and error process, the best results have been obtained with both m
 
 %Each \ac{DNN} has also been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. FIXME: add this? cf. Nicolo pg 126
 
-Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background. Since several mass points are inspected for each signal category, different \acp{DNN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis.
+Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background. Since several mass points are inspected for each signal category, different \acp{DNN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, we decided to define a multiclass \ac{MVA}, training at the same time three categories of processes against each other: the $t/\bar t$+DM signal, the $t \bar t$+DM signal and the backgrounds, made out of a mix of both \ac{SM} single top and $t \bar t$ processes.
 
 The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{DNN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Table~\ref{table:importance}, a plot representing the correlation between these input variables for the backgrounds and the two signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, an overtraining plot for both the \ac{BDT} and the \ac{DNN} in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by considering the intermediate scalar 100 GeV mass point for both the $t$+DM and $t \bar t$+DM signals, and by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
 
@@ -4569,7 +4569,7 @@ Finally, one last important concept can be discussed here. Two different kind of
 \lambda (\mu) = \frac{\prod_i \mathcal{L}_i(\mu, \hat{\bm \theta_{\mu, i}})}{\prod_i \mathcal{L}_i (\hat{\mu}, \hat{\bm \theta_i})} = \prod_i \lambda_i (\mu)
 \end{equation}
 
-Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations can also apply when combining for example the different final states given by the different decays of the $W$ bosons.
+Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations can also apply when combining for example the different final states given by the different decays of the $W$ bosons, or when combining the data collected during the different years of operation of the \ac{LHC} during the Run II.
 
 \section{Systematics and uncertainties} \label{section:Systematics}
 
@@ -4974,42 +4974,42 @@ The \ac{MC} signal samples have been produced centrally, considering different d
  Mass point & Cross-section [pb] \\
 \hline
 \textbf{Scalar mediators} & \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 7.136 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 1.686 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.5619 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.2526 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.1337 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.08323 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.05696 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.03561 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.02326 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.01614 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 1.687 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 1.691 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 1.709 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 1.728 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 1.747 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.02068 \\
- TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.01038 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 3.508 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 0.790 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.256 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.107 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.0563 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.0346 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.0235 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.0144 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.00934 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.00641 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 0.792 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 0.793 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 0.803 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 0.813 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 0.821 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.00943 \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.00464 \\
  \hline
 \textbf{Pseudoscalar mediators} & \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 0.759 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 0.4889 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.3269 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.242 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.1707 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.1222 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.07111 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.03719 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.02489 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.01783 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 0.4881 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 0.4896 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 0.4893 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 0.4903 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 0.4931 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.04549 \\
- TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.0183 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & 0.367 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & 0.228 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & 0.148 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & 0.0995 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & 0.0687 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & 0.0486 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & 0.0281 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & 0.0145 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & 0.00963 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & 0.00679 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & 0.229 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & 0.229 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & 0.229 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & 0.229 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & 0.230 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & 0.0210 \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & 0.00813 \\
  \hline
 \end{tabular}
 }
@@ -5163,15 +5163,15 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 \end{table}
 %\end{landscape}
 
-\chapter{Neural network optimization} \label{appendix:Optimization}
+\chapter{\ac{MVA} optimization} \label{appendix:Optimization}
 
-The optimization of both the \ac{DNN} and the \ac{BDT} considered i this work was an important part of the analysis, to make sure to use optimized parameters in order to define our network and to get the best discrimination possible between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that usually influence the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{DNN}) during the 2016 analysis were used. 
+The study of the different hyperparameters defining both the \ac{DNN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that usually influence the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{DNN}) during the 2016 analysis were used. 
 
-The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered for the optimization are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each one of these parameters individually. Among all the candidate values for a given parameter, the one leading to the lowest possible validation error while leading to reasonable training times was then simply chosen for the analysis.
+The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each one of these parameters individually. Among all the candidate values for a given parameter, the one leading to the lowest possible validation error while keeping the time needed to train the network reasonable low was then simply chosen for the analysis. The training optimization has been performed for the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
 \subsubsection{Boosted Decisions Trees}
 
-Starting with the \ac{BDT}, the first obvious parameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact can be seen in Figure~\ref{fig:optTrees}. In all the plots presented in this section, the signal labeled as "signal0" is the $t \bar t$+DM, while the "signal1" label corresponds to the $t/\bar t$ +DM.
+Starting with the \ac{BDT}, the first obvious hyperparameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in Figure~\ref{fig:optTrees}.
 
 \begin{figure}[htbp]
 \centering
@@ -5203,133 +5203,309 @@ Starting with the \ac{BDT}, the first obvious parameter among all the parameters
 \label{fig:optTrees}
 \end{figure}
 
-Another important parameter of the \ac{BDT} and which was optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. However, given the relative small number of input variables used in this analysis and given to the \ac{BDT}, this parameter does not seem to be highly relevant.
+%Another important parameter of the \ac{BDT} and which was optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. However, given the relative small number of input variables used in this analysis and given to the \ac{BDT}, this parameter does not seem to be highly relevant since the results obtained are similar in all the cases.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Max depth = 3] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_3depth.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Max depth = 4]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_4depth.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Max depth = 5]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_5depth.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Max depth = 6]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_6depth.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{BDT} by trying out different maximum depths.}
+%\label{fig:optDepth}
+%\end{figure}
+
+The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scanning over the variable range to find the optimal splitting criterion has also been studied, as shown in Figure~\ref{fig:optCuts}.
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Max depth = 3] 
+\subfigure[$n_{\text{cut}}$ = 20] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_3depth.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_20cuts.png}
 \end{minipage}\hfill
 }
-\subfigure[Max depth = 4]
+\subfigure[$n_{\text{cut}}$ = 50]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_4depth.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_50cuts.png}
 \end{minipage} \hfill
 }
-\subfigure[Max depth = 5]
+\subfigure[$n_{\text{cut}}$ = 100]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_5depth.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_100cuts.png}
 \end{minipage}\hfill
 }
-\subfigure[Max depth = 6]
+\subfigure[$n_{\text{cut}}$ = 250]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_6depth.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{BDT} by trying out different maximum depths.}
-\label{fig:optDepth}
-\end{figure}
-Finally, the last parameter considered during the optimization of the \ac{BDT} $n_{\text{cut}}$ parameter, corresponding to the granularity used when scanning over the variable range to find the optimal splitting criterion, as shown in Figure~\ref{fig:optCuts}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[$n_{\text{cut}}$ = 1.000] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-}
-\subfigure[$n_{\text{cut}}$ = 5.000 nodes]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\subfigure[$n_{\text{cut}}$ = 10.000 nodes]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-}
-\subfigure[$n_{\text{cut}}$ = 20.000 nodes]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_250cuts.png}
 \end{minipage} \hfill
 }
 \caption{Background rejection achieved for the \ac{BDT} by trying out different $n_{\text{cut}}$ values.}
 \label{fig:optCuts}
 \end{figure}
 
-For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better better discrimination results but unfortunately, this usually also increase by a lot the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the parameters described in Table~\ref{table:BDT}.
+Finally, the impact that the shrinkage, or learning rate for the GradBoost algorithm, has on the final discrimination results has also been studied and is shown Figure~\ref{fig:optShrinkage}.  
+
+\begin{figure}[htbp]
+\centering
+\subfigure[Shrinkage = 0.1] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_1shrinkage.png}
+\end{minipage}\hfill
+}
+\subfigure[Shrinkage = 0.2]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_2shrinkage.png}
+\end{minipage} \hfill
+}
+\subfigure[Shrinkage = 0.3]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_3shrinkage.png}
+\end{minipage}\hfill
+}
+\subfigure[Shrinkage = 0.5]
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_5shrinkage.png}
+\end{minipage} \hfill
+}
+\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values.}
+\label{fig:optShrinkage}
+\end{figure}
+
+For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
 
 \subsubsection{Deep Neural Network}
 
-In our particular case, we decided to first of all focus the optimization of the neural network on most of the parameters already described in Section~\ref{section:DNN}, starting by the actual architecture of the network, trying out different number of layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter optimization can be found in Figure~\ref{fig:optLayers}. It is also important to note at this point that some of the hyperparameters considered for the optimization are actually related to each other but for the sake of simplicity, we decided to treat them as independent and to optimize the network by optimizing each one of these parameters individually.
+The same process has been repeated by considering this time the \ac{DNN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. As we can see in these plots, given the relatively small number of input events considered (the 50\%/50\% test/training splitting used only gave us around 15.000 events of each process for the training), the best networks seem to be the least complex ones, with less neurons and hidden layers. At the end of the day, the best combination validation accuracy/loss (0.5371/0.9295) was obtained for the architecture with 3 hidden layers made out of 20/15/10 neurons.
 
 \begin{figure}[htbp]
 \centering
 \subfigure[Hidden layers 15/10/5] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch15_10_5.png}
 \end{minipage}\hfill
 }
-\subfigure[Hidden layers 20/15/5]
+\subfigure[Hidden layers 20/15/10]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch20_15_10.png}
 \end{minipage} \hfill
 }
 \subfigure[Hidden layers 50/30/10]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_30_10.png}
 \end{minipage}\hfill
 }
 \subfigure[Hidden layers 20/15/10/5]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch20_15_10_5.png}
 \end{minipage} \hfill
 }
 \subfigure[Hidden layers 50/30/10/5]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_30_10_5.png}
 \end{minipage}\hfill
 }
 \subfigure[Hidden layers 50/40/30/20/10/5]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_40_30_20_10_5.png}
 \end{minipage} \hfill
 }
-\caption{Optimization of the \ac{DNN} used in the analysis, trying out different network  architectures, from the simplest (on the top left) to the most complex (on the bottom right).}
+\caption{Background rejection achieved for the \ac{DNN} by trying out different architectures.}
 \label{fig:optLayers}
 \end{figure}
 
-ADD CONCLUSION-> decided to keep...
+After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time the learning rate of the Adam algorithm used, as shown in Figure~\ref{fig:optLearning}. Usually, a larger learning rate allow us to avoid any eventual local minimum in the curve corresponding to the error function defined and to reach the minimum global faster, while a lower value is typically a bit more precise. In this case, it seems that keeping this parameter to a minimum is extremely important in order to avoid seeing discrepancies between the test and training datasets.
 
-After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time: i) the optimizer with different learning rates (Figure~\ref{fig:optOptimizer} and ii) the batch size parameter (Figure~\ref{fig:batch}).
+\begin{figure}[htbp]
+\centering
+\subfigure[Learning rate = 0.001] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0001.png}
+\end{minipage}\hfill
+}
+\subfigure[Learning rate = 0.005]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0005.png}
+\end{minipage} \hfill
+}
+\subfigure[Learning rate = 0.01]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning001.png}
+\end{minipage}\hfill
+}
+\subfigure[Learning rate = 0.05]
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning005.png}
+\end{minipage} \hfill
+}
+\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values.}
+\label{fig:optLearning}
+\end{figure}
 
+The last parameter that has been optimized in this case is the batch size, allowing us to gain some time by avoiding updating the weight of the network each time an input event is considered but by instead grouping them in batches. The results obtained in this case are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{DNN} with a batch size 20 than a higher value of 100.
 
-the number of epochs (by a simple trial and error simply by making sure that the results did not improve for a long time 
+\begin{figure}[htbp]
+\centering
+\subfigure[Batch size = 20] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch20.png}
+\end{minipage}\hfill
+}
+\subfigure[Batch size = 50]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch50.png}
+\end{minipage} \hfill
+}
+\subfigure[Batch size = 100]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch100.png}
+\end{minipage}\hfill
+}
+\subfigure[Batch size = 250]
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch250.png}
+\end{minipage} \hfill
+}
+\caption{Background rejection achieved for the \ac{DNN} by trying out different learning rates.}
+\label{fig:optBatch}
+\end{figure}
 
-number of epochs, batch size
+For all the previous tests, we took care of defining a number of epochs high enough by using a simple trial and error process, making sure to run at least 200 epochs and then making sure that the validation loss obtained did not decrease for at least 25 additional consecutive epochs.  
 
-Similar for the BDT.
+\subsubsection{Input variables chosen}
 
-Input variables. All normalized.
+Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. As en example, the scalar $t/\bar t$ and $t \bar t$+DM upper limits obtained considering different sets of variables and a global training considering the 100 GeV mass point are shown in Figures~\ref{fig:optVarBDT} (for the \ac{BDT}) and~\ref{fig:optVarDNN} (for the \ac{DNN}).
+
+\begin{figure}[htbp]
+\centering
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Upper limits obtained for the scalar $t/\bar t$+DM (on the left) and $t \bar t$+DM processes (on the right) obtained considering different variables used as input to the \ac{BDT}.}
+\label{fig:optVarBDT}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}] 
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+}
+\subfigure[\color{red} Set 1 \color{black}]
+{
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Upper limits obtained for the scalar $t/\bar t$+DM (on the left) and $t \bar t$+DM processes (on the right) obtained considering different variables used as input to the \ac{DNN}.}
+\label{fig:optVarDNN}
+\end{figure}
 
 \color{red} FIXME: did we end up using the DNN or the BDT? \color{black}
 
-\chapter{Impact plots} \label{appendix:Impact}
+\chapter{Pulls and impacts plots} \label{appendix:Impact}
+
+Given the large number of systematic uncertainties considered in this analysis, as described in Section~\ref{section:Systematics}, it is usually useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they are obtained by rerunning the fit performed with each nuisance parameters fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
 
 \end{appendices}
 
