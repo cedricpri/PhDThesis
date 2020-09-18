@@ -4980,24 +4980,34 @@ The \ac{MC} signal samples have been produced centrally, considering different d
  Mass point & Cross-section [pb] \\
 \hline
 \textbf{Scalar mediators} & \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4626 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3023 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1246 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05334 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02246 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01260 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.003034 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002863 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4632 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3021 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1236 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05262 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.03173 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02204 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01627 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01240 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.00951 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.006274 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.004236 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002995 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002844 \\
  \hline
  \textbf{Pseudoscalar mediators} & \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4626 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3023 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1246 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05334 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02246 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01260 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.003034 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002863 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.05745 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.05482 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.0462 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.03417 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.02572 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.01959 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01509 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01170 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.007333 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.004083 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.002891 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002168 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002607 \\
  \hline
 \end{tabular}
 %}
@@ -5472,11 +5482,10 @@ Finally, the input variables given to the \ac{MVA} is also an extremely importan
 & $m_{T2}(ll)$ \\
 \hline
 Set 2 & Set 1 and \\
-& \ac{MET} significance \\
 & $m_{T2}(bl, bl)$ \\
+& massT \\
 \hline
 Set 3 & Set 2 and \\
-& massT \\
 & reco weight $w$ \\
 \hline
 Set 4 & Set 3 and \\
@@ -5526,7 +5535,7 @@ Set 6 & Set 5 and \\
 %\label{fig:allVarCorr_signal0}
 %\end{figure}
 
-As an example, the scalar $t/\bar t$ and $t \bar t$+DM upper limits obtained considering different sets of variables and a global training considering the 2018 data taking period only and a single 100 GeV mass point are shown in Figures~\ref{fig:optVarBDT} (for the \ac{BDT}) and~\ref{fig:optVarDNN} (for the \ac{DNN}). Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that we were not allowed to plot the observed upper limits and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because not all the systematics were available when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
+As an example, the scalar $t/\bar t$ and $t \bar t$+DM upper limits obtained considering different sets of variables and a global training considering the 2018 data taking period only and a single 100 GeV mass point training are shown in Figures~\ref{fig:optVarBDT} (for the \ac{BDT}) and~\ref{fig:optVarDNN} (for the \ac{DNN}). Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb^${-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because not all the systematics were available when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
 
 \begin{figure}[htbp]
 \centering
