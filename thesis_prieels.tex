@@ -2805,7 +2805,7 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important.
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important, even in the $e \mu$ channels via tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$).
 
 \begin{figure}[htbp]
 \centering
@@ -2834,11 +2834,53 @@ As previously mentioned, most of the \ac{DY}, produced through the Feynman diagr
 \label{fig:DY}
 \end{figure}
 
-This background is also estimated from \ac{MC} but a correction factor obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
+The shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
 
-\subsection{$t \bar t + W$/$t \bar t$+Z} \label{subsection:ttV}
+\subsubsection{$R_{\text{in-out}}$ method} \label{subsection:rinout}
 
-These backgrounds are coming from a usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of both these backgrounds is also taken directly from \ac{MC}.
+The idea behind this method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z-peak. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of the Z mass window.
+
+\begin{equation}
+\label{eq:DYevents}
+N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
+\end{equation}
+
+The parameter $R_{\text{out/in}}$ is then defined as the ratio between the number of Monte-Carlo predicted events outside and inside this Z mass window. This ratio is then simply used to estimate DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
+
+\begin{equation}
+\label{eq:Routin}
+N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{\text{out/in}}
+\end{equation}
+
+This previous equation obviously assumes that the Z mass window is dominated by \ac{DY}
+events, which is not an evident assumption to make, since backgrounds belonging to two main categories are expected to be present in this window as well:
+
+\begin{itemize} 
+\item First, peaking backgrounds such as ZZ and WZ, which are easily taken into account since this contamination comes from a real Z boson and therefore leads to a similar $R_{\text{out/in}}$ factor. This contamination can therefore be simply subtracted inside of the Z mass window.
+\item Then, non peaking backgrounds, which are expected to give a continuous distribution in the dilepton invariant mass spectrum. The estimation of the contamination due to this particular category can be done in data by measuring the number of $e \mu$ events $N^{in}_{e \mu}$ observed in the Z mass window, and by introducing the factor $k_{ll}$, equal to the constant 0.5 (to account for the combinatoric factor between both $ll$ and the single $e \mu$ final states) and multiplied by a correction due to the respective reconstruction efficiencies for both electrons and muons. The ratios $k_{ee}$ and $k_{mm}$ can be expressed easily, as shown in Equations~\ref{eq:kll}, assuming that the branching ratios to both $ee$ and $\mu \mu$ channels and the geometrical acceptances for electrons and muons are equal.
+
+\begin{equation}
+\label{eq:kll}
+\begin{cases}
+k_{ee} = 0.5 \cdot \sqrt{\frac{n^{obs}_{ee}}{n^{obs}_{\mu \mu}}} \\
+k_{\mu \mu} = 0.5 \cdot \sqrt{\frac{n^{obs}_{\mu \mu}}{n^{obs}_{ee}}} 
+\end{cases}
+\end{equation}
+
+\end{itemize}
+
+At the end of the day, the number of estimated \ac{DY} events outside of the veto region can be obtained from Equation~\ref{eq:Rfinal}.
+
+\begin{equation}
+\label{eq:Rfinal}
+N^{out}_{DY, est} = R_{\text{out/in}} \cdot \left (N^{in}_{ll, data} - k_{ll} \cdot N^{in}_{e \mu} - N^{in}_{VZ, MC} \right )
+\end{equation}
+
+\color{red} What about the systematic associated to this method? \color{black}
+
+\subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
+
+These backgrounds are coming from a usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and separately checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}.
 
 \begin{figure}[htbp]
 \centering
@@ -3166,7 +3208,7 @@ N_{t0} \\ N_{t1} \\ N_{t2}
 
 \subsubsection*{Same sign control region}
 
-The non--prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced. A same sign \ac{CR} enriched in fakes has also been defined in order to check this background. %This will be done and detailed in Section~\ref{section:SSCR} of this work.
+The non--prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced. A same sign control region enriched in fakes has also been defined in order to check this background. %This will be done and detailed in Section~\ref{section:SSCR} of this work.
 
 %\subsubsection*{Limitations}
 %
@@ -3283,10 +3325,7 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 
 \color{red} FIXME: do we apply it? \color{black}
 
-\subsubsection{$R_{\text{in/out}}$ correction} \label{subsection:rinout}
-
-\color{red} FIXME: describe the method \color{black}
-
+\subsubsection{\ac{DY} gen $p_T$ reweighting}
 
 
 
@@ -3736,9 +3775,9 @@ Different control regions where the data/\ac{MC} agreement can be checked have b
 
 \subsection{\acs{DY} control region} \label{section:DYCR}
 
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. At the end of the day, this region is defined exactly as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal. Some distributions obtained in this control region are shown in Figure~\ref{fig:DYCR}.
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. At the end of the day, this region is defined exactly as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ described in Section~\ref{subsection:rinout}. 
 
-\color{red} Talk about Rin-out? \color{black}
+Some distributions obtained in this control region are shown in Figure~\ref{fig:DYCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3810,7 +3849,7 @@ As previously explained, the \ac{SM} $t \bar t$ control region is defined with t
 \label{fig:TopCR}
 \end{figure}
 
-\subsection{$t \bar t$+W/$t \bar t$+Z control regions} \label{section:ttVCR}
+\subsection{$t \bar t + W$/$t \bar t + Z$ control regions} \label{section:ttVCR}
 
 Control regions targeting the $t \bar t$+W and $t \bar t$+Z processes have also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring a higher number of leptons (exactly 3 for the region targeting the $t \bar t$+W process, at least 4 for the $t \bar t$+Z process). This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained are shown in Figures~\ref{fig:ttWCR} and~\ref{fig:ttZCR}.
 
