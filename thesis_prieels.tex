@@ -2834,49 +2834,7 @@ As previously mentioned, most of the \ac{DY}, produced through the Feynman diagr
 \label{fig:DY}
 \end{figure}
 
-The shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
-
-\subsubsection{$R_{\text{in-out}}$ method} \label{subsection:rinout}
-
-The idea behind this method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z-peak. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of the Z mass window.
-
-\begin{equation}
-\label{eq:DYevents}
-N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
-\end{equation}
-
-The parameter $R_{\text{out/in}}$ is then defined as the ratio between the number of Monte-Carlo predicted events outside and inside this Z mass window. This ratio is then simply used to estimate DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
-
-\begin{equation}
-\label{eq:Routin}
-N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{\text{out/in}}
-\end{equation}
-
-This previous equation obviously assumes that the Z mass window is dominated by \ac{DY}
-events, which is not an evident assumption to make, since backgrounds belonging to two main categories are expected to be present in this window as well:
-
-\begin{itemize} 
-\item First, peaking backgrounds such as ZZ and WZ, which are easily taken into account since this contamination comes from a real Z boson and therefore leads to a similar $R_{\text{out/in}}$ factor. This contamination can therefore be simply subtracted inside of the Z mass window.
-\item Then, non peaking backgrounds, which are expected to give a continuous distribution in the dilepton invariant mass spectrum. The estimation of the contamination due to this particular category can be done in data by measuring the number of $e \mu$ events $N^{in}_{e \mu}$ observed in the Z mass window, and by introducing the factor $k_{ll}$, equal to the constant 0.5 (to account for the combinatoric factor between both $ll$ and the single $e \mu$ final states) and multiplied by a correction due to the respective reconstruction efficiencies for both electrons and muons. The ratios $k_{ee}$ and $k_{mm}$ can be expressed easily, as shown in Equations~\ref{eq:kll}, assuming that the branching ratios to both $ee$ and $\mu \mu$ channels and the geometrical acceptances for electrons and muons are equal.
-
-\begin{equation}
-\label{eq:kll}
-\begin{cases}
-k_{ee} = 0.5 \cdot \sqrt{\frac{n^{obs}_{ee}}{n^{obs}_{\mu \mu}}} \\
-k_{\mu \mu} = 0.5 \cdot \sqrt{\frac{n^{obs}_{\mu \mu}}{n^{obs}_{ee}}} 
-\end{cases}
-\end{equation}
-
-\end{itemize}
-
-At the end of the day, the number of estimated \ac{DY} events outside of the veto region can be obtained from Equation~\ref{eq:Rfinal}.
-
-\begin{equation}
-\label{eq:Rfinal}
-N^{out}_{DY, est} = R_{\text{out/in}} \cdot \left (N^{in}_{ll, data} - k_{ll} \cdot N^{in}_{e \mu} - N^{in}_{VZ, MC} \right )
-\end{equation}
-
-\color{red} What about the systematic associated to this method? \color{black}
+The shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process (as described in Section~\ref{subsection:rinout}), which is additionally being checked in a specific control region as well.
 
 \subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
 
@@ -3324,6 +3282,51 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{figure}
 
 \color{red} FIXME: do we apply it? \color{black}
+
+\subsubsection{$R_{\text{in-out}}$ method} \label{subsection:rinout}
+
+The idea behind this method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+
+\begin{equation}
+\label{eq:DYevents}
+N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
+\end{equation}
+
+The parameter $R_{\text{out/in}}$ is then defined as the ratio between the number of Monte-Carlo predicted events outside and inside this Z mass window. This ratio is then simply used to estimate DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
+
+\begin{equation}
+\label{eq:Routin}
+N^{out}_{DY, data} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{\text{out/in},\text{ } MC}
+\end{equation}
+
+This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{\text{out/in}}$ factor because of the prompt Z boson present in such backgrounds. Additionally, we also have to assume that the $R_{\text{out/in}}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we will consider the most generic case where $R_{\text{out/in},\text{ } MC} = \kappa R_{\text{out/in},\text{ } data}$. This factor $\kappa$ can be easily computed in the 0 b-jet bin and extrapolated to the actual signal region, assuming that the DY shapes are equal in the 0 and 1 b-jet bins, as shown in Figure~\ref{fig:Rinoutver}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=9cm]{figs/placeholder.png}
+\caption{Normalized $m_{ll}$ distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1 b-jet (on the right) bins.}
+\label{fig:Rinoutver}
+\end{center}
+\end{figure}
+
+This leads to the more generic expression for the $R_{\text{out/in},\text{ } MC}$ factor shown in Equation~\ref{eq:genRinout}, that can therefore be replaced in Equation~\ref{eq:Routin} to find the scale factor to apply to the \ac{DY} process.	
+
+\begin{equation}
+\label{eq:genRinout}
+ R_{\text{out/in},\text{ } MC} = \kappa \cdot R_{\text{out/in},\text{ } data} = \frac{R_{\text{out/in},\text{ } MC}^{0b}}{R_{\text{out/in},\text{ } data}^{0b}} \cdot R_{\text{out/in},\text{ } data}
+\end{equation}
+
+Additionally, we checked the behaviour of the scale factor obtained across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. The systematic associated to this method is simply taken as the maximum between the central values of the different bins.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=9cm]{figs/placeholder.png}
+\caption{\ac{DY} scale factor obtained with the Rin-out data-driven method in bins of the \ac{MET}.}
+\label{fig:Rinoutcheck}
+\end{center}
+\end{figure}
+
+\color{red} What about the systematic associated to this method? \color{black}
 
 \subsubsection{\ac{DY} gen $p_T$ reweighting}
 
