@@ -1997,9 +1997,7 @@ Different \acp{WP} are then also made available in order to obtain the desired c
 
 \section{\acf{MET}} \label{section:RecoMET}
 
-Since the $pp$ collisions happen mostly head-on, we know that the initial total transverse momentum of the event is exactly equal to 0 before the collision and we expect that it stays 0 afterwards because of the momentum conversation. 
-
-However, this statement is not totally true since we are aware of several effects that could induce an imbalance in this transverse momentum, as shown in Figure~\ref{fig:MET}:
+Since the $pp$ collisions happen mostly head-on, we know that the initial total transverse momentum of the event is exactly equal to 0 before the collision and we expect that it stays 0 afterwards because of the momentum conversation. This statement is not totally true though since we are aware of several effects that could induce an imbalance in this transverse momentum, as shown in Figure~\ref{fig:MET}:
 
 \begin{itemize}
 \item Even though the \ac{CMS} detector has been carefully designed, some particles could be created outside of its acceptance and therefore escape the detection (a particle can for example be created with such a boost that it could be emitted back to the beam pipe itself, making it impossible to detect it).
@@ -2027,15 +2025,29 @@ E_{T}^{\text{miss}} = \overrightarrow{p}_T^{\text{miss}} = - \sum_j \overrightar
 Different algorithms can be used in order to reconstruct this variable, the most common being \cite{METReco}:
 \begin{itemize}
 \item The \textbf{particle flow \ac{MET}} (PFMET), including all the information of the detector (as opposed to the calorimeter or tracker \ac{MET}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses today, because of its simple, robust, yet very efficient estimate of the \ac{MET} spectrum.
-\item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, actually used in this analysis, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
+\item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
-Several corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+For this analysis, we decided to use the PFMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 \ac{DY} inclusive region. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_pfmet_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_puppimet_2018.png}
+\end{minipage} \hfill
+\caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\label{fig:metStudy}
+\end{figure}
+
+Several additional corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=14cm, height=6.2cm]{figs/METFilters.png}
-\caption{\ac{MET} and jet $\phi$ distributions with and without \ac{MET} filters applied \cite{METReco}.}
+\caption{\ac{MET} (on the left) and jet (on the right) $\phi$ distributions with and without \ac{MET} filters applied \cite{METReco}.}
 \label{fig:METFilters}
 \end{center}
 \end{figure}
@@ -2443,10 +2455,10 @@ The impact on the kinematics (in this particular case, on the spectrum of the \a
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/singleTopMETNorm.png}
+\includegraphics[width=8.2cm, height=6cm]{figs/singleTopMETNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/singleTopMET.png}
+\includegraphics[width=8.2cm, height=6cm]{figs/singleTopMET.png}
 \end{minipage} \hfill
 \caption{\ac{PUPPI} \ac{MET} spectrum for several $t/\bar t$+DM \textbf{scalar} mediators, with (on the left) and without normalization (on the right).}
 \label{fig:signalSingleScalar}
@@ -2455,35 +2467,35 @@ The impact on the kinematics (in this particular case, on the spectrum of the \a
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/placeholder.png}
+\includegraphics[width=8cm, height=6cm]{figs/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/placeholder.png}
+\includegraphics[width=8cm, height=6cm]{figs/placeholder.png}
 \end{minipage} \hfill
 \caption{\ac{PUPPI} \ac{MET} spectrum for several $t/\bar t$+DM \textbf{pseudoscalar} mediators, with (on the left) and without normalization (on the right).}
 \label{fig:signalSinglePseudo}
 \end{figure}
 
-\color{red} FIXME: add these pseudoscalar plots \color{black}
+\color{red} FIXME: add these pseudoscalar plots. Repeat all the plots with v7 and MET instead of PUPPI. \color{black}
 
 \begin{figure}[htbp]
 \centering
 \subfigure[Dark matter mass fixed to 1 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/scalarMETmChi1Norm.png}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1Norm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/scalarMETmChi1.png}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1.png}
 \end{minipage} \hfill
 }
 \subfigure[Mediator mass fixed to 100 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/scalarMETmChiLargeNorm.png}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLargeNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/scalarMETmChiLarge.png}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
 \caption{\ac{PUPPI} \ac{MET} spectrum for several $t \bar t$+DM \textbf{scalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
@@ -2495,19 +2507,19 @@ The impact on the kinematics (in this particular case, on the spectrum of the \a
 \subfigure[Dark matter mass fixed to 1 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/pseudoscalarMETmChi1Norm.png}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1Norm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/pseudoscalarMETmChi1.png}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1.png}
 \end{minipage} \hfill
 }
 \subfigure[Mediator mass fixed to 100 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/pseudoscalarMETmChiLargeNorm.png}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLargeNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.3cm, height=6cm]{figs/pseudoscalarMETmChiLarge.png}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
 \caption{\ac{PUPPI} \ac{MET} spectrum for several $t \bar t$+DM \textbf{pseudoscalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
@@ -6352,6 +6364,10 @@ JINST 14 (2019) P07004 [arXiv: 1903.06078]}
 \href{https://arxiv.org/abs/1407.6013}{D. Bertolini et all.,
 "Pileup Per Particle Identification", 
 JHEP 1410 (2014) 59 [arXiv: 1407.6013]}
+
+\bibitem{METTwiki}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MissingETRun2Corrections}{CMS Collaboration,
+"MET Corrections and Uncertainties for Run-II", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MissingETRun2Corrections}, 2020}
 
 \bibitem{METReco}
 \href{https://arxiv.org/abs/1903.06078}{CMS Collaboration,
