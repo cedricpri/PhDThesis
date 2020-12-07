@@ -3311,12 +3311,17 @@ The parameter $R_{\text{out/in}}$ is then defined as the ratio between the numbe
 N^{out}_{DY, data} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{\text{out/in},\text{ } MC}
 \end{equation}
 
-This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{\text{out/in}}$ factor because of the prompt Z boson present in such backgrounds. Additionally, we also have to assume that the $R_{\text{out/in}}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we will consider the most generic case where $R_{\text{out/in},\text{ } MC} = \kappa R_{\text{out/in},\text{ } data}$. This factor $\kappa$ can be easily computed in the 0 b-jet bin and extrapolated to the actual signal region, assuming that the DY shapes are equal in the 0 and 1 b-jet bins, as shown in Figure~\ref{fig:Rinoutver}.
+This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{\text{out/in}}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{\text{out/in}}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we will consider the most generic case where $R_{\text{out/in},\text{ } MC} = \kappa R_{\text{out/in},\text{ } data}$. This factor $\kappa$ can be easily computed in the 0 b-jet bin and extrapolated to the actual signal region, assuming that the DY shapes are similar in the 0 and 1 b-jet bins, as shown in Figure~\ref{fig:Rinoutver}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=8cm, height=9cm]{figs/placeholder.png}
-\caption{Normalized $m_{ll}$ distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1 b-jet (on the right) bins.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_0bjet_mll.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_1bjetOrMore_mll.png}
+\end{minipage} \hfill
+\caption{Normalized $m_{ll}$ \ac{DY} distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1+ b-jet (on the right) bins.}
 \label{fig:Rinoutver}
 \end{center}
 \end{figure}
@@ -3325,20 +3330,28 @@ This leads to the more generic expression for the $R_{\text{out/in},\text{ } MC}
 
 \begin{equation}
 \label{eq:genRinout}
- R_{\text{out/in},\text{ } MC} = \kappa \cdot R_{\text{out/in},\text{ } data} = \frac{R_{\text{out/in},\text{ } MC}^{0b}}{R_{\text{out/in},\text{ } data}^{0b}} \cdot R_{\text{out/in},\text{ } data}
+ R_{\text{out/in},\text{ } MC} = \kappa \cdot R_{\text{out/in},\text{ } data} = \frac{R_{\text{out/in},\text{ } MC}^{0bjet}}{R_{\text{out/in},\text{ } data}^{0bjet}} \cdot R_{\text{out/in},\text{ } data}
 \end{equation}
 
-Additionally, we checked the behaviour of the scale factor obtained across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. The systematic associated to this method is simply taken as the maximum between the central values of the different bins.
+Additionally, we checked the behaviour of the scale factor obtained across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the scale factor, we decided to apply a single scale factor to the \ac{DY} process, associating in the mean time a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 30\% in this case).
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=8cm, height=9cm]{figs/placeholder.png}
-\caption{\ac{DY} scale factor obtained with the Rin-out data-driven method in bins of the \ac{MET}.}
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Rinout2016.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Rinout2017.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Rinout2018.png}
+\end{minipage} \hfill
+\caption{\ac{DY} scale factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
 \label{fig:Rinoutcheck}
 \end{center}
 \end{figure}
 
-\color{red} What about the systematic associated to this method? \color{black}
+\begin{color}{red} These plots don't have mt2ll cut applied! \begin{color}{black}
 
 \subsubsection{\ac{DY} gen $p_T$ reweighting}
 
