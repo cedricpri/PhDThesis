@@ -215,7 +215,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to specially thank Aline for her incredible support over the past few months, which have not always been easy.
 
 \newpage
 
@@ -3913,40 +3913,7 @@ Control regions targeting the $t \bar t$+W and $t \bar t$+Z processes have also 
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+V control region defined.}
-\label{fig:ttWCR}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 $t \bar t$+Z \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 $t \bar t$+Z \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 $t \bar t$+Z \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+Z control region defined.}
-\label{fig:ttZCR}
+\label{fig:ttVCR}
 \end{figure}
 
 \subsection{Same sign control region} \label{section:SSCR}
@@ -4331,9 +4298,9 @@ The actual parameters used for this particular analysis obtained after a thoroug
  Minimum samples per leaf & 1\% \\
  Loss function & Quadratic \\
  Boost algorithm & Gradient descent \\
- Shrinkage & 0.3 \\
- Grid points $n_{\text{cut}}$ & 20 \\
- Number of trees & 300 \\
+ Shrinkage & 0.2 \\
+ Grid points $n_{\text{cut}}$ & 250 \\
+ Number of trees & 100 \\
 \hline
 \end{tabular}
 %}
@@ -4387,13 +4354,13 @@ Several parameters are important to optimize during the training of a neural net
 \hline
  DNN parameter & Optimized value \\
  \hline
- Hidden layers neurons & 20, 15, 10 \\
- Activation functions & Relu (x3), softmax \\
+ Hidden layers neurons & 80, 80, 40 \\
+ Activation functions & Relu (x3), softmax (output) \\
 Error function & Mean square error \\
 Optimizer & Adam \\
 Learning rate & 0.005 \\
 Training epochs & 250 \\
-Batch size & 100 \\
+Batch size & 250 \\
 \hline
 \end{tabular}
 %}
@@ -4440,24 +4407,24 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \includegraphics[width=4.5cm, height=4.5cm]{figs/corr_bkg.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal0.png}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal1.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal1.png}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal0.png}
 \end{minipage} \hfill
-\caption{Correlation coefficient between the different variables used as input to the \ac{MVA} for the backgrounds (on the left), the $t \bar t$+DM (on the center) and the $t/\bar t$+DM (on the right) processes.}
+\caption{Correlation coefficient between the different variables used as input to the \ac{MVA} for the backgrounds (on the left), the $t/\bar t$+DM (on the center) and the $t \bar t$+DM (on the right) processes.}
 \label{fig:correlationVar}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal0_bkg.png}
+\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal1_bkg.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal1_bkg.png}
+\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal0_bkg.png}
 \end{minipage} \hfill
-\caption{Signal versus background \ac{ROC} curves obtained for the $t \bar t$+DM (on the left) and the $t/\bar t$+DM (on the right) processes.}
+\caption{Signal versus background \ac{ROC} curves obtained for the $t/\bar t$+DM (on the left) and the $t \bar t$+DM (on the right) processes.}
 \label{fig:ROC}
 \end{figure}
 
@@ -4468,10 +4435,10 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \includegraphics[width=4.5cm, height=4cm]{figs/BDT_bkg.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal0.png}
+\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal1.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal1.png}
+\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal0.png}
 \end{minipage} \hfill
 }
 
@@ -4480,13 +4447,13 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \includegraphics[width=4.5cm, height=4cm]{figs/DNN_bkg.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal0.png}
+\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal1.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal1.png}
+\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal0.png}
 \end{minipage} \hfill
 }
-\caption{Test and training distributions obtained for the backgrounds (on the left), the $t \bar t$+DM (on the center) and the $t/\bar t$+DM (on the right) processes.}
+\caption{Test and training distributions obtained for the backgrounds (on the left), the $t/\bar t$+DM (on the center) and the $t \bar t$+DM (on the right) processes.}
 \label{fig:overtraining}
 \end{figure}
 
@@ -5328,44 +5295,51 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 
 The study of the different hyperparameters defining both the \ac{DNN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that usually influence the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{DNN}) during the 2016 analysis were used. 
 
-The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each one of these parameters individually. Among all the candidate values for a given parameter, the one leading to the lowest possible validation error while keeping the time needed to train the network reasonable low was then simply chosen for the analysis. The training optimization has been performed for the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
+The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each one of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. The training optimization has been performed for the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities and a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
 \subsubsection{Boosted Decisions Trees}
 
-Starting with the \ac{BDT}, the first obvious hyperparameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in Figure~\ref{fig:optTrees}.
+Starting with the \ac{BDT}, the first obvious hyperparameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
+
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[100 trees] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_100trees.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[200 trees]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_200trees.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[300 trees]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_300trees.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[500 trees]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_500trees.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{BDT} by trying out different number of trees.}
+%\label{fig:optTrees}
+%\end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[100 trees] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_100trees.png}
-\end{minipage}\hfill
-}
-\subfigure[200 trees]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_200trees.png}
-\end{minipage} \hfill
-}
-\subfigure[300 trees]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_300trees.png}
-\end{minipage}\hfill
-}
-\subfigure[500 trees]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_500trees.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{BDT} by trying out different number of trees.}
+\includegraphics[width=10cm, height=8cm]{figs/BDT_trees.png}
+\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different number of trees.}
 \label{fig:optTrees}
 \end{figure}
 
-%Another important parameter of the \ac{BDT} and which was optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. However, given the relative small number of input variables used in this analysis and given to the \ac{BDT}, this parameter does not seem to be highly relevant since the results obtained are similar in all the cases.
-%
+Another important parameter of the \ac{BDT} and which was optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. However, given the relative small number of input variables used in this analysis and given to the \ac{BDT}, this parameter does not seem to be highly relevant since the results obtained are similar in all the cases.
+
 %\begin{figure}[htbp]
 %\centering
 %\subfigure[Max depth = 3] 
@@ -5396,187 +5370,227 @@ Starting with the \ac{BDT}, the first obvious hyperparameter among all the param
 %\label{fig:optDepth}
 %\end{figure}
 
-The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scanning over the variable range to find the optimal splitting criterion has also been studied, as shown in Figure~\ref{fig:optCuts}.
-
 \begin{figure}[htbp]
 \centering
-\subfigure[$n_{\text{cut}}$ = 20] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_20cuts.png}
-\end{minipage}\hfill
-}
-\subfigure[$n_{\text{cut}}$ = 50]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_50cuts.png}
-\end{minipage} \hfill
-}
-\subfigure[$n_{\text{cut}}$ = 100]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_100cuts.png}
-\end{minipage}\hfill
-}
-\subfigure[$n_{\text{cut}}$ = 250]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_250cuts.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{BDT} by trying out different $n_{\text{cut}}$ values.}
-\label{fig:optCuts}
+\includegraphics[width=10cm, height=8cm]{figs/BDT_depths.png}
+\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different maximum depths.}
+\label{fig:optDepth}
 \end{figure}
 
-Finally, the impact that the shrinkage, or learning rate for the GradBoost algorithm, has on the final discrimination results has also been studied and is shown Figure~\ref{fig:optShrinkage}.  
+The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scanning over the variable range to find the optimal splitting criterion has also been studied, as shown in Figure~\ref{fig:optCuts}. Finally, the impact that the shrinkage, or learning rate for the GradBoost algorithm, has on the final discrimination results has also been studied and is shown in Figure~\ref{fig:optShrinkage}.
+
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[$n_{\text{cut}}$ = 20] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_20cuts.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[$n_{\text{cut}}$ = 50]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_50cuts.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[$n_{\text{cut}}$ = 100]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_100cuts.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[$n_{\text{cut}}$ = 250]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_250cuts.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{BDT} by trying out different $n_{\text{cut}}$ values.}
+%\label{fig:optCuts}
+%\end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Shrinkage = 0.1] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_1shrinkage.png}
-\end{minipage}\hfill
-}
-\subfigure[Shrinkage = 0.2]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_2shrinkage.png}
-\end{minipage} \hfill
-}
-\subfigure[Shrinkage = 0.3]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_3shrinkage.png}
-\end{minipage}\hfill
-}
-\subfigure[Shrinkage = 0.5]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/BDT_5shrinkage.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values.}
-\label{fig:optShrinkage}
+\includegraphics[width=10cm, height=8cm]{figs/BDT_cuts.png}
+\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different $n_{\text{cut}}$ values.}
+\label{fig:optCuts}
+\end{figure}  
+
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Shrinkage = 0.1] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_1shrinkage.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Shrinkage = 0.2]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_2shrinkage.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Shrinkage = 0.3]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_3shrinkage.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Shrinkage = 0.5]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/BDT_5shrinkage.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values.}
+%\label{fig:optShrinkage}
+%\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=10cm, height=8cm]{figs/BDT_shrinkages.png}
+\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different shrinkage values.}
+\label{fig:opShrinkage}
 \end{figure}
 
 For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
 
 \subsubsection{Deep Neural Network}
 
-The same process has been repeated by considering this time the \ac{DNN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. As we can see in these plots, given the relatively small number of input events considered (the 50\%/50\% test/training splitting used only gave us around 15.000 events of each process for the training), the best networks seem to be the least complex ones, with less neurons and hidden layers. At the end of the day, the best combination validation accuracy/loss (0.5371/0.9295) was obtained for the architecture with 3 hidden layers made out of 20/15/10 neurons.
+The same process has been repeated by considering this time the \ac{DNN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 45.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
+
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Hidden layers 15/10/5] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_15_10_5.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Hidden layers 80/80/40]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_80_80_40.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Hidden layers 50/30/10]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_50_30_10.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Hidden layers 20/15/10/5]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_20_15_10_5.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Hidden layers 50/30/10/5]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_50_30_10_5.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Hidden layers 50/40/30/20/10/5]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_50_40_30_20_10_5.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{DNN} by trying out different architectures.}
+%\label{fig:optLayers}
+%\end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Hidden layers 15/10/5] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch15_10_5.png}
-\end{minipage}\hfill
-}
-\subfigure[Hidden layers 20/15/10]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch20_15_10.png}
-\end{minipage} \hfill
-}
-\subfigure[Hidden layers 50/30/10]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_30_10.png}
-\end{minipage}\hfill
-}
-\subfigure[Hidden layers 20/15/10/5]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch20_15_10_5.png}
-\end{minipage} \hfill
-}
-\subfigure[Hidden layers 50/30/10/5]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_30_10_5.png}
-\end{minipage}\hfill
-}
-\subfigure[Hidden layers 50/40/30/20/10/5]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch50_40_30_20_10_5.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{DNN} by trying out different architectures.}
+\includegraphics[width=10cm, height=8cm]{figs/DNN_architectures.png}
+\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different architectures.}
 \label{fig:optLayers}
 \end{figure}
 
-After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time the learning rate of the Adam algorithm used, as shown in Figure~\ref{fig:optLearning}. Usually, a larger learning rate allow us to avoid any eventual local minimum in the curve corresponding to the error function defined and to reach the minimum global faster, while a lower value is typically a bit more precise. In this case, it seems that keeping this parameter to a minimum is extremely important in order to avoid seeing discrepancies between the test and training datasets.
+After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time the learning rate of the Adam algorithm used, as shown in Figure~\ref{fig:optLearning}. Usually, a larger learning rate allow us to avoid any eventual local minimum in the curve corresponding to the error function defined and to reach the minimum global faster, while a lower value is typically a bit more precise. %In this case, it seems that keeping this parameter to a minimum is extremely important in order to avoid seeing discrepancies between the test and training datasets.
+
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Learning rate = 0.001] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0001.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Learning rate = 0.005]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0005.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Learning rate = 0.01]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning001.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Learning rate = 0.05]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning005.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{DNN} by trying out different learning rates.}
+%\label{fig:optLearning}
+%\end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Learning rate = 0.001] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0001.png}
-\end{minipage}\hfill
-}
-\subfigure[Learning rate = 0.005]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning0005.png}
-\end{minipage} \hfill
-}
-\subfigure[Learning rate = 0.01]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning001.png}
-\end{minipage}\hfill
-}
-\subfigure[Learning rate = 0.05]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning005.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values.}
+\includegraphics[width=10cm, height=8cm]{figs/DNN_rates.png}
+\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different learning rates.}
 \label{fig:optLearning}
 \end{figure}
 
 The last parameter that has been optimized in this case is the batch size, allowing us to gain some time by avoiding updating the weight of the network each time an input event is considered but by instead grouping them in batches. The results obtained in this case are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{DNN} with a batch size 20 than a higher value of 100.
 
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Batch size = 20] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch20.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Batch size = 50]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch50.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Batch size = 100]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch100.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Batch size = 250]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch250.png}
+%\end{minipage} \hfill
+%}
+%\caption{Background rejection achieved for the \ac{DNN} by trying out different batch sizes.}
+%\label{fig:optBatch}
+%\end{figure}
+
 \begin{figure}[htbp]
 \centering
-\subfigure[Batch size = 20] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch20.png}
-\end{minipage}\hfill
-}
-\subfigure[Batch size = 50]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch50.png}
-\end{minipage} \hfill
-}
-\subfigure[Batch size = 100]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch100.png}
-\end{minipage}\hfill
-}
-\subfigure[Batch size = 250]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch250.png}
-\end{minipage} \hfill
-}
-\caption{Background rejection achieved for the \ac{DNN} by trying out different learning rates.}
+\includegraphics[width=10cm, height=8cm]{figs/DNN_batches.png}
+\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different batch sizes.}
 \label{fig:optBatch}
 \end{figure}
 
-For all the previous tests, we took care of defining a number of epochs high enough by using a simple trial and error process, making sure to run at least 200 epochs and then making sure that the validation loss obtained did not decrease for at least 25 additional consecutive epochs.  
+For all the previous tests, we took care of defining a number of epochs high enough by using a simple trial and error process, making sure to run at least 200 epochs and then making sure that the validation loss obtained did not decrease for at least 30 consecutive training epochs.  
 
 \subsubsection{Input variables chosen}
 
-Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. We therefore decided to train several times the \ac{DNN} and the \ac{BDT} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in ~\ref{table:sets}. The actual correlation observed for all these variables can be seen in Figure~\ref{fig:allVarCorr_bkg} for the background processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
+Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. We therefore decided to train several times the \ac{DNN} and the \ac{BDT} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in Table~\ref{table:sets}. %The actual correlation observed for all these variables can be seen in Figures~\ref{fig:allVarCorr_bkg} for the background and signal processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
 
 \begin{table}
 \begin{center}
@@ -5595,18 +5609,18 @@ Set 2 & Set 1 and \\
 & massT \\
 \hline
 Set 3 & Set 2 and \\
-& reco weight $w$ \\
-\hline
-Set 4 & Set 3 and \\
 & Spin correlated variables \\
 \hline
-Set 5 & Set 4 and \\
-& Dark $p_T$ \\
-& Overlapping factor $R$ \\
-\hline
-Set 6 & Set 5 and \\
+Set 4 & Set 3 and \\
 & $r2l$ \\
 & $r2l4j$ \\
+\hline
+Set 5 & Set 4 and \\
+& reco weight $w$ \\
+\hline
+Set 6 & Set 5 and \\
+& Dark $p_T$ \\
+& Overlapping factor $R$ \\
  \hline
 \end{tabular}
 \caption{Sets of input variables considered when optimizing the \ac{MVA} method.}
@@ -5623,12 +5637,17 @@ Set 6 & Set 5 and \\
 %\item The \textbf{set 4}
 %\end{itemize}
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=9.4cm, height=7cm]{figs/corr_allVariables_bkg.png}
-\caption{Correlation observed in the background processes between all the possible input variables considered.}
-\label{fig:allVarCorr_bkg}
-\end{figure}
+%\begin{figure}[htbp]
+%\centering
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/correlations_background.png}
+%\end{minipage}
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=5.7cm]{figs/correlations_signal.png}
+%\end{minipage}
+%\caption{Correlation observed in the background (on the left) and signal (on the right) processes between all the possible input variables considered.}
+%\label{fig:allVarCorr_bkg}
+%\end{figure}
 
 %\begin{figure}[htbp]
 %\centering
@@ -5644,47 +5663,47 @@ Set 6 & Set 5 and \\
 %\label{fig:allVarCorr_signal0}
 %\end{figure}
 
-As an example, the scalar $t/\bar t$ and $t \bar t$+DM upper limits obtained considering different sets of variables and a global training considering the 2018 data taking period only and a single 100 GeV mass point training are shown in Figures~\ref{fig:optVarBDT} (for the \ac{BDT}) and~\ref{fig:optVarDNN} (for the \ac{DNN}). Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because not all the systematics were available when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
+As an example, the scalar $t \bar t$+DM upper limits obtained considering different sets of variables and a global training (for the 2016 data taking period only, without considering any systematics and for a single 100 GeV mass point training) are shown in Figures~\ref{fig:optVarBDT} and~\ref{fig:optVarDNN}. Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because the systematics were not considered when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
 
 \begin{figure}[htbp]
 \centering
 \subfigure[Set 1] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_BDT.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 2] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_BDT.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 3] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_BDT.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 4]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_BDT.png}
 \end{minipage} \hfill
 }
 \subfigure[Set 5]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_BDT.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 6]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_BDT.png}
 \end{minipage} \hfill
 }
-\caption{Upper limits obtained for the scalar $t/\bar t$+DM (on the left) and $t \bar t$+DM processes (on the right) obtained considering different variables used as input to the \ac{BDT}.}
+\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{BDT} and different sets of variables used as input.}
 \label{fig:optVarBDT}
 \end{figure}
 
@@ -5693,44 +5712,44 @@ As an example, the scalar $t/\bar t$ and $t \bar t$+DM upper limits obtained con
 \subfigure[Set 1] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_DNN.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 2] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_DNN.png}
 \end{minipage}\hfill
 }
 \subfigure[Set 3] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_DNN.png}
 \end{minipage}\hfill
 }
-\subfigure[Set 4] 
+\subfigure[Set 4]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_DNN.png}
 \end{minipage} \hfill
 }
-\subfigure[Set 5] 
+\subfigure[Set 5]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_DNN.png}
 \end{minipage}\hfill
 }
-\subfigure[Set 6] 
+\subfigure[Set 6]
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_DNN.png}
 \end{minipage} \hfill
 }
-\caption{Upper limits obtained for the scalar $t/\bar t$+DM (on the left) and $t \bar t$+DM processes (on the right) obtained considering different variables used as input to the \ac{DNN}.}
+\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{DNN} and different sets of variables used as input.}
 \label{fig:optVarDNN}
 \end{figure}
 
-\color{red} FIXME: did we end up using the DNN or the BDT? Which set of input variables? \color{black}
+According to these last results, we decided to use the \ac{DNN} and the simplest possible set of input variables for the analysis given that the limits obtained using this method and such simple input variables were much better. 
 
 \chapter{Pulls and impacts plots} \label{appendix:Impact}
 
