@@ -215,7 +215,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to specially thank Aline for her incredible support over the past few months, which have not always been easy.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful.
 
 \newpage
 
@@ -2448,17 +2448,17 @@ During this period, an integrated luminosity of ($35.9 \pm 0.9$ fb$^{-1}$) (2016
 
 \section{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses, ranging from 10 to 1000 GeV depending on the model considered. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
 
-The impact on the kinematics (in this particular case, on the spectrum of the \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t$+DM), ~\ref{fig:signalSinglePseudo} (pseudoscalar $t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles.
+The impact on the kinematics (in this particular case, on the spectrum of the \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t/\bar t$+DM), ~\ref{fig:signalSinglePseudo} (pseudoscalar $t/\bar t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles. Finally, we can also observe in these plots the difference in kinematics between the background (in blue) and the different signals, which will be the basis of the analysis performed.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.2cm, height=6cm]{figs/singleTopMETNorm.pdf}
+\includegraphics[width=8.2cm, height=6cm]{figs/singleTopScalarMETNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8.2cm, height=6cm]{figs/singleTopMET.pdf}
+\includegraphics[width=8.2cm, height=6cm]{figs/singleTopScalarMET.png}
 \end{minipage} \hfill
 \caption{\ac{MET} spectrum for several $t/\bar t$+DM \textbf{scalar} mediators, with (on the left) and without normalization (on the right).}
 \label{fig:signalSingleScalar}
@@ -2467,35 +2467,33 @@ The impact on the kinematics (in this particular case, on the spectrum of the \a
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/placeholder.png}
+\includegraphics[width=8cm, height=6cm]{figs/singleTopPseudoMETNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/placeholder.png}
+\includegraphics[width=8cm, height=6cm]{figs/singleTopPseudoMET.png}
 \end{minipage} \hfill
 \caption{\ac{MET} spectrum for several $t/\bar t$+DM \textbf{pseudoscalar} mediators, with (on the left) and without normalization (on the right).}
 \label{fig:signalSinglePseudo}
 \end{figure}
-
-\color{red} FIXME: add these pseudoscalar plots. \color{black}
 
 \begin{figure}[htbp]
 \centering
 \subfigure[Dark matter mass fixed to 1 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1Norm.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1Norm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChi1.png}
 \end{minipage} \hfill
 }
 \subfigure[Mediator mass fixed to 100 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLargeNorm.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLargeNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLarge.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/scalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
 \caption{\ac{MET} spectrum for several $t \bar t$+DM \textbf{scalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
@@ -2507,19 +2505,19 @@ The impact on the kinematics (in this particular case, on the spectrum of the \a
 \subfigure[Dark matter mass fixed to 1 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1Norm.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1Norm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChi1.png}
 \end{minipage} \hfill
 }
 \subfigure[Mediator mass fixed to 100 GeV]
  {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLargeNorm.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLargeNorm.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLarge.pdf}
+\includegraphics[width=8cm, height=6cm]{figs/pseudoscalarMETmChiLarge.png}
 \end{minipage} \hfill
 }
 \caption{\ac{MET} spectrum for several $t \bar t$+DM \textbf{pseudoscalar} mediators (on the top) and dark matter (on the bottom) masses, with (on the left) and without normalization (on the right).}
@@ -3262,7 +3260,7 @@ Even though quite negligible and reducible, some additional backgrounds still ne
 
 \subsection{Weights and corrections applied} \label{subsection:Weights}
 
-Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions. The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, three particular weights that are applied to the \ac{MC} samples will now be detailed.
+Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions. The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed.
 
 \subsubsection{Prefiring corrections}
 
@@ -3295,23 +3293,23 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 
 \color{red} FIXME: do we apply it? \color{black}
 
-\subsubsection{$R_{\text{in-out}}$ method} \label{subsection:rinout}
+\subsubsection{$R_{in-out}$ method} \label{subsection:rinout}
 
-The idea behind this method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+The idea behind this data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
 
 \begin{equation}
 \label{eq:DYevents}
 N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
 \end{equation}
 
-The parameter $R_{\text{out/in}}$ is then defined as the ratio between the number of Monte-Carlo predicted events outside and inside this Z mass window. This ratio is then simply used to estimate DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
+The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the number of \ac{MC} or data events outside and inside this Z mass window. This ratio is then simply used to estimate the number of DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
 
 \begin{equation}
 \label{eq:Routin}
-N^{out}_{DY, data} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{\text{out/in},\text{ } MC}
+N^{out}_{DY, data} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
 \end{equation}
 
-This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{\text{out/in}}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{\text{out/in}}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we will consider the most generic case where $R_{\text{out/in},\text{ } MC} = \kappa R_{\text{out/in},\text{ } data}$. This factor $\kappa$ can be easily computed in the 0 b-jet bin and extrapolated to the actual signal region, assuming that the DY shapes are similar in the 0 and 1 b-jet bins, as shown in Figure~\ref{fig:Rinoutver}.
+This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3326,12 +3324,15 @@ This previous equation relies on several assumptions. First of all, we have to a
 \end{center}
 \end{figure}
 
-This leads to the more generic expression for the $R_{\text{out/in},\text{ } MC}$ factor shown in Equation~\ref{eq:genRinout}, that can therefore be replaced in Equation~\ref{eq:Routin} to find the scale factor to apply to the \ac{DY} process.	
-
 \begin{equation}
 \label{eq:genRinout}
- R_{\text{out/in},\text{ } MC} = \kappa \cdot R_{\text{out/in},\text{ } data} = \frac{R_{\text{out/in},\text{ } MC}^{0bjet}}{R_{\text{out/in},\text{ } data}^{0bjet}} \cdot R_{\text{out/in},\text{ } data}
-\end{equation}
+R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
+\end{equation}	
+
+%\begin{equation}
+%\label{eq:DYSF}
+%SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+%\end{equation}
 
 Additionally, we checked the behaviour of the scale factor obtained across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the scale factor, we decided to apply a single scale factor to the \ac{DY} process, associating in the mean time a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
 
