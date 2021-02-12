@@ -1,6 +1,7 @@
 \documentclass[8pt]{beamer}
 
 \usetheme[numbering=fraction, progressbar=foot, block=fill]{metropolis}
+%\usecolortheme{seahorse}
 
 \makeatletter
 \setlength{\metropolis@titleseparator@linewidth}{1pt}
@@ -50,6 +51,8 @@
 \setbeamerfont{institute}{size=\large}
 \setbeamerfont{author}{size=\normalsize}
 \setbeamerfont{date}{size=\normalsize}
+%\setbeamertemplate{frame footer}{\footnotesize \insertshortauthor~(\insertshortinstitute)}
+\setbeamerfont{page number in head/foot}{size=\small}
 
 \newcommand{\backupbegin}{
    \newcounter{finalframe}
@@ -81,7 +84,7 @@
 %}
 
 \date{\vspace{-3pt}February 22th 2021}
-\author{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol, J\'{o}natan Piedra Gomez, \textbf{C\'{e}dric Prieels}}
+\author{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol, J\'{o}natan Piedra Gomez, \textbf{C\'{e}dric Prie\"{e}ls}}
 \institute{Instituto de F\'{i}sica de Cantabria}
 
 \titlegraphic{
@@ -90,7 +93,6 @@
            \includegraphics[height=1.0cm]{figs/ifca_final.png}\hspace{18pt}\includegraphics[height=1.2cm]{figs/uc.jpg}\hspace{8pt}\includegraphics[height=1.4cm]{figs/csic.jpg}\hspace{8pt}\includegraphics[height=1.2cm]{figs/maetzu.png}\hspace{8pt}\includegraphics[height=1.2cm]{figs/cms.jpg}
        };
 }
-
 
 % ================== Document
 \begin{document}
@@ -178,7 +180,7 @@ However, this model \alert{has several shortcomings}: eventual exotic particles 
 
 \begin{frame}{At the origins of dark matter I}
 \justifying
-The concept of dark matter can be traced back to the 19th century, and was introduced to \textbf{explain several astrophysical evidences}, among which: \vfill
+The concept of dark matter can be traced back to the 19th century, and was introduced to \alert{explain several astrophysical evidences}, among which: \vfill
 
 \vspace{10pt}	
 \begin{block}{ \centering Zwicky's calculations}\end{block}
@@ -279,7 +281,7 @@ The WIMPs are the dark matter candidates considered in this work, because of the
 \end{itemize} \vfill
 
 \vspace{5pt}
-\begin{block}{ \centering Search strategies}\end{block} \vfill
+\begin{block}{ \centering Main search strategies}\end{block} \vfill
 
 \begin{columns}
 	\begin{column}{0.45\textwidth}
@@ -298,24 +300,110 @@ Different strategies are used:
 
 \begin{itemize}
 \justifying
-\item The \textbf{direct and indirect searches}, relying on the production of baryonic
+\item The \alert{direct and indirect searches}, relying on the production of baryonic
 matter from the interaction between two DM particles or on the observation of the interaction
 between the dark and baryonic sectors;
-\item And the \textbf{collider production}, able to probe lower dark matter candidates masses.
+\item And the \alert{collider production}, able to probe lower dark matter candidates masses.
 \end{itemize}
 
 \end{column}
 \end{columns} \vfill
 \end{frame}
 
-\begin{frame}{Focus of this thesis}
+\begin{frame}{Focus of this thesis I}
 \justifying
-Yukawa
+We are searching for \alert{dark matter produced in association with either one or two top quarks}. Several \textbf{Simplified models} are considered:
+
+\begin{itemize} 
+	\justifying
+	\item Spin 1/2 DM $\chi$ ($\in [1, 55]$ GeV, Dirac fermion) \\
+	\item Spin 0 scalar (S)/pseudoscalar (PS) mediator $\phi$ (Yukawa-like structure of such interactions $\rightarrow$ gain from the coupling of the mediator to top quarks) \\
+	\item Mediator mass $\in [10, 1000]$ GeV \\
+	\item Coupling $g_{\chi}$ mediator/DM set to 1 (same for all $g_q$ couplings) \\
+	%\item Most samples cross-section at NLO
+	%\item No mixing between $\phi$ and the SM Higgs boson
+\end{itemize}\vfill
+
+\begin{columns}
+	\begin{column}{0.675\textwidth}
+		\begin{center}
+			\begin{block}{ \centering $t/ \bar t$+DM tW models}\end{block}	
+			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
+			\includegraphics[width=1.0\textwidth]{figs/feynman_tDM_mine.png}
+    		 \end{center}
+	\end{column} \hfill
+	\begin{column}{0.3\textwidth}
+		\begin{center}
+			\begin{block}{\centering $t \bar t$+DM model}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			\includegraphics[width=1.0\textwidth]{figs/feynman_ttDM_mine.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns} \vfill
+
+%The Yukawa coupling typically favors searches for dark matter \textbf{produced in association with heavy quarks} such as this one. Such MET+X are heavily depend on the MET spectrum, which is expected to be larger for the signals than most backgrounds. \vfill
 \end{frame}
 
-\begin{frame}{Previous relevant results}
+\begin{frame}{Focus of this thesis II}
 \justifying
+The \textbf{typical final state} of such models is made out of:
+\begin{itemize}
+\justifying
+\item One or two b-tagged jets coming from the decay of the top quark(s);
+\item Two W bosons, seen as a combination of jets and leptons depending on the channel considered;
+\item Some MET coming from the dark matter and the decay of the Ws;
+\end{itemize} \vfill
 
+In particular, we are studying the \alert{dilepton final state} in this work: 
+\begin{itemize}
+\justifying
+\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the tree leptons;
+\item But, leptons can usually be reconstructed better than jets;
+\item And this channel also has the lowest number of backgrounds, resulting in a better signal isolation.
+\end{itemize} \vfill
+
+This channel is then \textbf{expected to be competitive with the hadronic channel}, especially when considering high mediator masses, which feature a higher global discrimination signal/background. \vfill
+\end{frame}
+
+\begin{frame}{Previous relevant results I}
+\justifying
+\vspace{5pt}
+A similar analysis has already been published by CMS using 2016 data, considering the $t \bar t$+DM signal only and a combination of the three possible final states \cite{PreviousDoubleTopAllLep13CMS}. \vfill
+
+\vspace{-10pt}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=11cm, height=4.8cm]{figs/CMSttbarExclusion.png}
+\end{center}
+\end{figure} \vfill
+
+The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
+This provided the \alert{most stringent constraints} ever obtained at the time on the scalar dark matter mediator model. \vfill
+\end{frame}
+
+\begin{frame}{Previous relevant results II}
+\justifying
+A \textbf{combination} of both the $t/ \bar t$+DM and $t \bar t$+DM processes has also been performed. \vfill
+The inclusion of the single top signal process \alert{improved up to a factor 2} the limits obtained by the $t \bar t$ analysis on its own \cite{PreviousSingleDoubleTopAllLep13CMS}. This analysis:
+
+\begin{itemize}
+\item Only considered the 2016 data-taking period;
+\item And only considered the semi-leptonic and hadronic final states.
+\end{itemize} \vfill
+
+\begin{center}
+\begin{columns}
+	\begin{column}{1.0\textwidth}
+		\begin{center}
+			%\begin{block}{\centering $t \bar t$+DM limits}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			\includegraphics[width=1.0\textwidth]{figs/limitsprevious.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns}
+\end{center} \vfill
+
+Scalar (pseudoscalar) mediators were with this combination \alert{excluded up to 290 (300) GeV} at the 95\% confidence level. The inclusion of the full Run II dataset and the dilepton final state \textbf{is expected to improve these results}.
 \end{frame}
 
 
@@ -362,69 +450,9 @@ The experimental setup
 
 
 
-\begin{frame}[standout]
-Analysis reminder
-\end{frame}
 
 
-\begin{frame}{Analysis reminder}
-\justifying
 
-Simplified model considered:
-
-\begin{itemize} 
-	\justifying
-	\item Spin 1/2 DM $\chi$ ($\in [1, 55]$ GeV, Dirac fermion) \\
-	\item Spin 0 scalar (S)/pseudoscalar (PS) mediator $\phi$ (Yukawa-like structure of such interactions $\rightarrow$ gain from the coupling of the mediator to top quarks) \\
-	\item Mediator mass $\in [10, 1000]$ GeV \\
-	\item Coupling $g_{\chi}$ mediator/DM set to 1 (same for all $g_q$ couplings) \\
-	%\item Most samples cross-section at NLO
-	%\item No mixing between $\phi$ and the SM Higgs boson
-\end{itemize}\vfill
-
-\begin{columns}
-	\begin{column}{0.49\textwidth}
-		\begin{center}
-			\begin{block}{ \centering $t/ \bar t$+DM models}\end{block}	
-			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
-			\includegraphics[width=0.8\textwidth]{figs/tDMfeynman.png}
-    		 \end{center}
-	\end{column} \hfill
-	\begin{column}{0.49\textwidth}
-		\begin{center}
-			\begin{block}{\centering $t \bar t$+DM model}\end{block}				
-			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
-			\includegraphics[width=0.80\textwidth]{figs/ttDM.png}
-    		 \end{center}
-	\end{column} \hfill
-\end{columns} \vfill
-\end{frame}
-
-\begin{frame}{2016 results}
-\justifying
-The inclusion of the $t/ \bar t$+DM process \alert{improves up to a factor 2 } the limits obtained by the $t \bar t$ analysis on its own. Published in 2016 as \href{http://cms.cern.ch/iCMS/analysisadmin/cadilines?line=EXO-18-010&tp=an&id=2085&ancode=EXO-18-010}{\beamergotobutton{CMS-EXO-18-010}}.
-
-\begin{itemize}
-\item Only considering semi-leptonic and hadronic final states
-\item Scalar (pseudoscalar) mediators \alert{excluded up to 290 (300) GeV} at 95\% CL.
-%\item Usually lower production cross-section than the $t \bar t$ + DM (30-100\%)
-%\item But non-flavour violating single top quark processes kinematically favored
-\end{itemize} \vfill
-
-\begin{center}
-\begin{columns}
-	\begin{column}{1.0\textwidth}
-		\begin{center}
-			%\begin{block}{\centering $t \bar t$+DM limits}\end{block}				
-			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
-			\includegraphics[width=1.0\textwidth]{figs/limitsprevious.png}
-    		 \end{center}
-	\end{column} \hfill
-\end{columns} \vfill
-
-\end{center} \vfill
-
-\end{frame}
 
 \begin{frame}{Analysis strategy}
 \justifying
@@ -550,6 +578,16 @@ CPHT-RR065.112019 [arXiv: 1912.02828]}
 "A Direct Empirical Proof of the Existence of Dark Matter",
 Astrophysical Journal Letters 648, 2006
 }
+
+\bibitem{PreviousDoubleTopAllLep13CMS}
+\href{https://arxiv.org/abs/1807.06522}{CMS Collaboration,
+"Search for dark matter particles produced in association with a top quark pair at $\sqrt{s} = 13$ TeV",
+Phys. Rev. Lett. 122, 011803 (2019) [arXiv: 1807.06522]}
+
+\bibitem{PreviousSingleDoubleTopAllLep13CMS}
+\href{https://arxiv.org/abs/1901.01553}{CMS Collaboration,
+"Search for dark matter produced in association with a single top quark or a top quark pair in proton-proton collisions at $\sqrt{s} = 13$ TeV",
+JHEP, vol. 03 141, 2019 [arXiv: 1901.01553]}
 \end{thebibliography}
 \end{frame}
 
