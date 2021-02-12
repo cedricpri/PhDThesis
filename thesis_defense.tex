@@ -16,8 +16,11 @@
 \usepackage{multicol}
 \usepackage{changepage}
 \usepackage{hyperref}
+\usepackage{makecell}
 \usepackage{multirow}
 \usepackage{arydshln}
+\usepackage{mathtools}
+\usepackage{graphicx}
 \usepackage[document]{ragged2e}
 \usepgfplotslibrary{dateplot}
 \usepackage{xspace}
@@ -53,6 +56,7 @@
 \setbeamerfont{date}{size=\normalsize}
 %\setbeamertemplate{frame footer}{\footnotesize \insertshortauthor~(\insertshortinstitute)}
 \setbeamerfont{page number in head/foot}{size=\small}
+\setbeamerfont{frametitle}{size=\normalsize}
 
 \newcommand{\backupbegin}{
    \newcounter{finalframe}
@@ -110,6 +114,7 @@
 \item The CMS detector
 \end{itemize}
 
+\item Global strategy
 \item Event reconstruction
 \item Data, signals and backgrounds
 \item Event selection
@@ -129,7 +134,7 @@ A search for the \alert{production of dark matter particles in association with 
 \justifying
 \item We study the $pp$ collisions produced by the LHC at $\sqrt{s} = 13$ TeV;
 \item Reconstruction performed by the CMS detector;
-\item Legacy analysis, considering the full Run II dataset (data collected in 2016, 2017 and 2018 and summing around 136 fb$^{-1}$).
+\item Legacy analysis, considering the full Run II dataset (data collected in 2016, 2017 and 2018 and summing around 137 fb$^{-1}$).
 \end{itemize} \vfill
 
 \begin{block}{\centering Motivation}\end{block}
@@ -349,8 +354,8 @@ We are searching for \alert{dark matter produced in association with either one 
 The \textbf{typical final state} of such models is made out of:
 \begin{itemize}
 \justifying
-\item One or two b-tagged jets coming from the decay of the top quark(s);
-\item Two W bosons, seen as a combination of jets and leptons depending on the channel considered;
+\item 1 or 2 b-tagged jets coming from the decay of the top quark(s);
+\item 2 W bosons, seen as a combination of jets and leptons depending on the channel considered;
 \item Some MET coming from the dark matter and the decay of the Ws;
 \end{itemize} \vfill
 
@@ -421,22 +426,117 @@ The experimental setup
 
 \begin{frame}{The Large Hadron Collider I}
 \justifying
+The data analyzed \alert{has been taken by the Large Hadron Collider}:
 
-\end{frame}
+\begin{columns}
+	\begin{column}{0.55	\textwidth}
+	\begin{itemize}
+\justifying
+\item A 27km circular underground proton-proton collider, located at CERN;
+\item Result of the collaboration of 22 countries;
+\item Built in order to study and reproduce the conditions of the Universe at its origin;
+\item Provided the collisions that lead to the discovery of the Higgs boson in 2012 \cite{HiggsDiscovery1, HiggsDiscovery2};
+\item Currently the most powerful accelerator in the world with its center of mass energy $\sqrt{s} = 13$ TeV, therefore able to \textbf{scan new parts of the phase space}.
+\end{itemize}
+	\end{column}
+	\begin{column}{0.48\textwidth}
+	\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5cm, height=3.6cm]{figs/LHCunderground.png}
+\end{center}
+\end{figure}
+	\end{column}
+\end{columns} \vfill
+
+\vspace{10pt}
+The data considered in this work has been collected during the \textbf{Run II of operation of the LHC} (from 2016 to 2018), at 13 TeV, totalling ($137.1 \pm 2.0$)~fb$^{-1}$ of data, selected by the different levels of trigger from the 40MhZ collision rate. \vfill
+\end{frame} 
 
 \begin{frame}{The Large Hadron Collider II}
 \justifying
+In the 4 interaction points of the LHC, \alert{4 detectors} have been placed: ATLAS, CMS, ALICE and LHCb, each having their own characteristics and features: \vfill
 
+\begin{columns}
+	\begin{column}{0.40	\textwidth}
+\begin{center}
+\includegraphics[width=5cm, height=3.6cm]{figs/LHCdetectors.png}
+\end{center}
+\end{column}
+\begin{column}{0.58	\textwidth}
+\begin{itemize}
+\justifying
+\item ATLAS and CMS are \textbf{general purpose detectors}, able to study exotic processes such as well as able to to make precision measurements on Standar Model physics;
+\item ALICE is mostly dedicated to the study of the quark-gluon plasma originating from heavy ions collisions;
+\item And LHCb has been designed to study the CP violation phenomena, which could be the sign of some new physics.
+\end{itemize}
+\end{column}
+\end{columns} \vfill
+
+\vspace{10pt}
+The collisions analyzed in this work \alert{have been collected by the CMS detector}. \vfill
 \end{frame}
 
 \begin{frame}{The CMS detector I}
 \justifying
 
+\begin{columns}
+\begin{column}{0.56	\textwidth}
+\justifying
+The \alert{Compact Muon Solenoid} is one of the two general purpose detectors of the LHC. Its main objectives consist in:
+\begin{itemize}
+\justifying
+\item Searching for and studying the properties of the Higgs boson;
+\item Trying to discover new BSM physics, such as the possible existence of dark matter.
+\end{itemize}
+\end{column}
+\begin{column}{0.40	\textwidth}
+\begin{center}
+\includegraphics[width=4.7cm, height=3.5cm]{figs/CMSphoto.jpg}
+\end{center}
+\end{column}
+\end{columns} \vfill
+
+In a nutshell, CMS:
+\begin{itemize}
+\justifying
+\item Is a relatively \textbf{compact} (14.000 tons, dsitributed over a 15m diameter and a length of 8m) cylindrical detector; 
+\item Is made out of a central part with cylindrical shape, the barrel, and two endcaps, one on each side in order to be \textbf{as hermetic as possible}, covering all the possible angles around the beam pipe;
+\item Has a \textbf{large solenoid} as middle piece, able to produce a 3.8T field;
+\item Features a \textbf{powerful tracker and muon detection system}.
+\end{itemize} \vfill
 \end{frame}
 
 \begin{frame}{The CMS detector II}
 \justifying
+The CMS detector is also \textbf{made out of different layers}, each having its own purpose, allowing for example to identify unequivocally each particle created. \vfill
 
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=9cm, height=6cm]{figs/CMS.png}
+\end{center}
+\end{figure} \vfill
+\end{frame}
+
+\begin{frame}{The CMS detector III}
+\justifying
+Each subdetector of CMS has been designed carefully to fill its specific purpose:
+
+\begin{itemize}
+\justifying
+\item The \alert{tracker} is the innermost piece of CMS, able to reconstruct the trajectories of charged particles issued from the interaction vertices in a quick and precise way;
+\item The \alert{Electromagnetic CALorimeter}, enclosing the tracker system and able to give information about the energy of electrons and photons;
+\item The \alert{Hadronic CALorimater}, able to measure the energy of incident hadrons from the ionization process happening in its core;
+\item The 12.5 meters long and 6 meters large \alert{solenoid}, allowing to measure precisely the charge and momentum of particles produced using the Lorentz effect, by measuring the curvature of their tracks;
+\item And finally, the \alert{muon system}, covering more than 25 000 m$^2$ and made out of three different subsystems:
+
+\begin{itemize}
+\justifying
+\item The \textbf{Drift Tubes} (DTs), in the barrel region;%, where the flux of muons is low and where the magnetic field is mostly uniform;
+\item The \textbf{Cathode Strip Chambers} (CSCs) in the two endcaps;%, where the muon rates and background levels are much larger and where the magnetic field is large and non-uniform;
+\item And the \textbf{Resistive Plate Chambers} (RPCs), mostly added to the barrel and to the endcap regions in order to cope with (in)ability of  the previous muon system to identify unequivocally the correct bunch crossing when the LHC is running at full luminosity.
+\end{itemize}
+
+\end{itemize}
 \end{frame}
 
 
@@ -451,8 +551,9 @@ The experimental setup
 
 
 
-
-
+\begin{frame}[standout]
+Global strategy
+\end{frame}
 
 \begin{frame}{Analysis strategy}
 \justifying
@@ -472,6 +573,14 @@ The effort is \alert{globally common} between the groups:
 \item Number of leptons and b-jet categorization to improve the sensitivity by defining enriched single top/$t \bar t$ regions
 \end{itemize}
 \end{itemize}
+\end{frame}
+
+\begin{frame}[standout]
+Hadronic final state
+\end{frame}
+
+\begin{frame}[standout]
+Sami-leptonic final state
 \end{frame}
 
 \begin{frame}[standout]
@@ -499,7 +608,7 @@ Dilepton final state
 
 \end{frame}
 
-\appendix
+
 \backupbegin
 
 \begin{frame}[standout]
@@ -509,12 +618,12 @@ Back up
 \begin{frame}{Gravitational lensing}
 \justifying
 \vspace{5pt}
-Consequence of the general relativity: massive objects placed between distant sources and the observer should be able to \textbf{act as lenses and bend the light of the source}. \vfill
+Consequence of the general relativity: massive objects placed between distant sources and the observer should be able to act as lenses and bend the light of the source. \vfill
 
 \begin{itemize}
 \justifying
-\item The deviation of the light is \textbf{proportional to the mass of the intermediate object}, giving us a way to measure its mass;
-\item The mass distribution obtained has been compared to the luminous distribution of several galaxies, \alert{leading to $8\sigma$ discrepancies} \cite{BulletClusterSigma}.
+\item The deviation of the light is proportional to the mass of the intermediate object, giving us a way to measure its mass;
+\item The mass distribution obtained has been compared to the luminous distribution of several galaxies, leading to $8\sigma$ discrepancies \cite{BulletClusterSigma}.
 \end{itemize} \vfill
 
 \vspace{-5pt}
@@ -539,12 +648,322 @@ values on this freeze-out abundance. \vfill
 \end{figure} \vfill
 \end{frame}
 
+\begin{frame}{Center of mass energy}
+\justifying
+The center of mass energy is defined as a Lorentz invariant quantity under any kind of boost resulting of the collisions between two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle. \vfill
+
+\begin{equation*}
+\sqrt{s} = \sqrt{(m_1)^2 + (m_2)^2 + 2 \left (E_1 E_2-2 |\overrightarrow{p_1}| \text{ } |\overrightarrow{p_2}| \text{ cos}(\theta) \right )}
+\end{equation*} \vfill
+
+The LHC started its operation in 2008 running at an energy of 7 TeV, quickly moved to 8 TeV
+and kept this level of energy during the end of the Run I of operation. In 2015, the energy was increased to 13 TeV. \vfill
+An expected value of 14 TeV, the nominal energy for which the LHC was originally built, is
+expected to be reached in the near future. \vfill
+\end{frame}
+
+\begin{frame}{Luminosity}
+\justifying
+The luminosity gives an indication on the number of collisions per second given by the accelerator. Increasing it is crucial to collect as much data as possible, to be able to isolate processes
+having a low production cross section. \vfill
+
+\begin{columns}
+	\begin{column}{0.4	\textwidth}
+	\justifying	
+The rate of production $R$ of any given process can be expressed from the instantaneous luminosity $\mathcal{L}(t)$ and the process production cross-section $\sigma$:	
+	
+\begin{equation*}
+\begin{dcases}
+R = \mathcal{L} \cdot \sigma \\
+N(T) = \sigma \int_0^T \mathcal{L}(t) dt = \sigma L
+\end{dcases}
+\end{equation*}
+\end{column}
+\begin{column}{0.6	\textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=7cm, height=5cm]{figs/CumuLumi.pdf}
+\end{center}
+\end{figure}
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\begin{frame}{Pile-up}
+\justifying
+\vspace{5pt}
+Because of the high density of protons within the beams, a bunch crossing in an experiment produces around 30-35 proton collisions. \vfill
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=5.5cm]{figs/PUSummary.png}
+\end{center}
+\end{figure} \vfill
+
+The Primary Vertex is defined as the most interesting and energetic vertex, while the other vertices are usually referred to as the pile-up. \vfill
+\end{frame}
+
+\begin{frame}{LHC operational parameters}
+\justifying
+Key parameters of operation of the LHC, depending on the data-taking period:
+
+\begin{table}
+\begin{center}
+\begin{tabular}{ c|c|c|c|c } 
+ \hline
+ Parameter & Run I & Run II & Run III & Design \\
+\hline
+Energy [TeV] & 7 $\rightarrow$ 8 & 13 & 13 & 14 \\
+Bunch spacing [ns] & 50 & 25 & 25 & 25 \\
+Intensity [$10^{11}$ protons per beam] & 1.6 & 1.2 & Up to 1.8 & 1.15 \\
+Bunches & 1400 & 2500 & 2800 & 2800 \\
+Emittance [$\mu m$] & 2.2 & 2.2 & 2.5 & 3.5 \\
+$\beta^*$ [cm] & 80 & 30 $\rightarrow$ 25 & 30 $\rightarrow$ 25 & 55 \\
+Crossing angle [$\mu$rad] & - & 300 $\rightarrow$ 260 & 300 $\rightarrow$ 260 & 285 \\
+Peak luminosity [$10^{34}$ cm$^{-2}$ s$^{-1}$] & 0.8 & 2.0 & 2.0 & 1.0 \\
+Peak pile-up & 45 & 60 & 55 & 25 \\
+ \hline
+\end{tabular}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{CMS tracker I}
+\justifying
+The tracker is the innermost piece of CMS, able to reconstruct the trajectories of charged particles issued from the interaction vertices in a quick and precise way:
+\begin{itemize}
+\justifying
+\item Needs to be extremely fast to read the 40MhZ of collision data, while being resistant to the radiation (expected lifetime $\sim 10$ years);
+\item It should be as small as possible to minize the interaction between the detector and the particles created;
+\item However, fast electronics usually needs to be cooled down, which increases the size of the subdetector.
+\end{itemize} \vfill
+
+Made out of two main parts: 
+\begin{itemize}
+\justifying
+\item The \alert{pixel detector}, made out 60 millions pixels which make up the 1856 after an modules of this detector, covering an area of $\sim 1$ m$^2$;
+\item The \alert{silicon strip detector}, covering an area of $\sim 200$ m$^2$, and made out of three different sub-systems for hermeticity.
+\end{itemize} \vfill
+
+A charged particle crossing the tracker will leave a hit each time it crosses one of the silicon sensors, allowing us to reconstruct its track. \vfill
+\end{frame}
+
+\begin{frame}{CMS tracker II}
+\justifying
+\vspace{5pt}
+The silicon detector is divided into three main parts:
+\begin{itemize}
+\item The Tracker Inner Barrel and Disks (TIB/TBD), using micro-strips parallel in the barrel and perpendicular to the beam axis in the endcaps;
+\item The Tracker Outer Barrel (TOB), adding 6 measurement layers to the tracker;
+\item And finally the Tracker EndCaps (TECs), made out of 9 disks, completing the system at high pseudorapidities.
+\end{itemize} \vfill
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=10cm, height=5.2cm]{figs/CMSTracker.png}
+\end{center}
+\end{figure}\vfill
+\end{frame}
+
+\begin{frame}{CMS electromagnetic calorimeter I}
+\justifying
+\vspace{5pt}
+The ECAL is a subdetector sitting inside the solenoid but enclosing the tracker
+system that gives information about the energy of electrons and photons, both able to interact
+electromagnetically with its crystals. \vfill
+
+\begin{columns}
+	\begin{column}{0.45 \textwidth}
+	Made out of different layers:
+	\begin{itemize}
+	\justifying
+	\item The barrel part (EB), at $|\eta| < 1.479$, made out of 61 200 lead tungstate (PbWO$_4$) crystals;
+	\item Two endcaps, each made out of 7 324 crystals, increasing the coverage of the detector up to $|\eta| < 3$;
+	\item The preshower, helping with the identification of electrons
+against minimum ionizing particles.
+	\end{itemize}
+	\end{column}
+	\begin{column}{0.55 \textwidth}
+	\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=6.6cm, height=4cm]{figs/CMSEcal.png}
+\end{center}
+\end{figure}
+	\end{column}
+\end{columns} \vfill
+
+\end{frame}
+
+\begin{frame}{CMS electromagnetic calorimeter II}
+\justifying
+\vspace{10pt}
+The principle of action of the ECAL is simple, and is based on \alert{electromagnetic showers}. When an electron or a photon enters the ECAL, it starts to interact in different ways:
+\begin{itemize}
+\item Photons will mainly produce pairs of electrons and anti-electrons;
+\item Electrons themselves tend to emit additional photons by bremsstrahlung effect.
+\end{itemize}
+This results in a chain reaction during which the incident particle gives most of its energy to the detector, energy measurable using photodetectors and photomultipliers. \vfill
+
+\begin{columns}
+	\begin{column}{0.45 \textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5.2cm, height=4cm]{figs/EMShowers.png}
+\end{center}
+\end{figure}
+\end{column}
+	\begin{column}{0.52 \textwidth}
+	\justifying
+	Although quite fragile and sensitive to the temperature, the short radiation length $X_0$ of the PbWO$_4$ crystals is an advantage, along with their scintillation decay time smaller than the bunch crossing.  \\ \vspace{10pt}
+	Each crystal measures 2.2 x 2.2 x 23 cm, corresponding to 26 radiation lengths.
+	\end{column}
+	\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{CMS hadronic calorimeter I}
+\justifying
+\vspace{10pt}
+Charged hadrons lose energy when they traverse matter due to the ionization process resulting from the strong interaction between them and the nuclei of the detector. \vfill
+Showers of particles are typically produced since the primary hadronic interaction will produce several additional hadrons, themselves interacting even more with the detector. \vfill
+
+\begin{columns}
+	\begin{column}{0.52 \textwidth}
+The HCAL is made out of alternating layers:
+\vspace{-10pt}
+\begin{itemize}
+\justifying
+\item Of thick \alert{absorber material}, in which the showers can develop;
+\item And thin layers of \alert{active material} used for the actual detection by sampling the energy deposition.
+\end{itemize}
+\end{column}
+	\begin{column}{0.45 \textwidth}
+	\begin{center}
+\includegraphics[width=5.2cm, height=4cm]{figs/CMSHcal.jpg}
+\end{center}
+	\end{column}
+	\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{CMS hadronic calorimeter II}
+\justifying
+\vspace{5pt}
+The HCAL is divided into:
+\begin{itemize}
+\item A barrel (HB), up to $|\eta| = 1.3$;
+\item Two endcaps, extending the pseudorapidities coverage up to $|\eta| = 3.0$;
+\item Two symmetrical forward regions (HF), covering up to $|\eta| = 5.2$;
+\item And the Hadron Outer (HO), outside of the solenoid, placed to increase the effective nuclear radiation length $\lambda$, otherwise low at a $90^{\circ}$ incidence angle.
+\end{itemize} \vfill
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8.2cm, height=5.2cm]{figs/CMSHCAL.png}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{CMS solenoid}
+\justifying
+\begin{columns}
+	\begin{column}{0.46 \textwidth}
+	\justifying
+The superconducting solenoid:
+\begin{itemize}
+\justifying
+\item Is made out of 6 endcap disks and 5 barrel wheels;
+\item Weights more than 12 000 tons in total, with the return yoke;
+\item Is able to produce a 3.8T magnetic field once cooled down to 4.5K;
+\item Stores at all times around 2.6GJ of energy.
+\end{itemize}
+\end{column}
+	\begin{column}{0.51 \textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=5.5cm, height=3.7cm]{figs/CMSMagnet.jpg}
+\end{center}
+\end{figure}
+	\end{column}
+	\end{columns} \vfill
+
+It allows the measurement of the momentum and charge of particles by studying the curvature of their tracks, according to the Lorentz equation:
+
+\begin{equation*}
+\overrightarrow{F} = \frac{m \overrightarrow{v}^2}{R} =  q \overrightarrow{E} + q \overrightarrow{v} \times \overrightarrow{B} = q \overrightarrow{v} \times \overrightarrow{B}
+\end{equation*}
+\vfill
+
+It has been designed to reach a momentum resolution $\Delta p/p \sim 10$\% at $p = 1$ TeV. \vfill
+\end{frame}
+
+\begin{frame}{CMS muon systems I}
+\justifying
+The muon systems is the outtermost section of CMS, covering around 25 000 m$^2$. \vfill 
+
+Three different categories of devices have been designed, in order to cope with the specific experimental conditions in the different parts of the detector: the Drift Tubes (DTs), the Cathode Strips Chambers (CSCs), and the Resistive Plate Chambers (RPCs). \vfill
+
+\begin{center}
+\includegraphics[width=8cm, height=4.9cm]{figs/CMSMuons.png}
+\end{center} \vfill
+
+All these detectors are gaseous, distributed over a cylindrical area given the shape of the innermost components of CMS, and cheap, given the large surface they cover. \vfill
+\end{frame}
+
+\begin{frame}{CMS muon systems II}
+Comparison of the different subsystems:
+\begin{table}[h!]
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c|c } 
+ \hline
+ Muon sub-system & DTs & CSCs & RPCs \\
+ \hline
+ $|\eta|$ coverage & 0.0-1.2 & 0.9-2.4 & 0.0-1.9 \\
+ Stations & 4 & 4 & 4 \\
+ Chambers & 250 & 540 & \makecell{\vspace{-10pt} \\ 480 (barrel) \\ 576 (endcaps)} \\
+ Readout channels & 172 000 & \makecell{\vspace{-10pt} \\ 266 112 (strips) \\ 210 816 (anode channels)} & \makecell{\vspace{-10pt} \\ 68 136 (barrel) \\ 55 296 (endcaps)} \\
+ Spatial resolution & 80-120 $\mu$m & 40-150 $\mu$m & 0.8-1.2 cm \\
+ Average efficiency (13 TeV) & 97.1\% & $97.4$\% & \makecell{\vspace{-10pt} \\ 94.2\% (barrel) \\ 96.4\% (endcaps)} \\ 
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{CMS DTs}
+\justifying
+\vspace{5pt}
+Placed in the barrel region (up to $|\eta| = 1.2$), where the background levels and magnetic field are low, this system allows a good efficiency for the muon hits reconstruction into a single track and a good rejection of eventual background hits. \vfill
+
+\begin{columns}
+	\begin{column}{0.48 \textwidth}
+	\justifying
+This system is:
+\begin{itemize}
+\justifying
+\item Able to collect the residuals charges left by the ionization tracks of muons;
+\item Made out of 172 000 sensitive wires, divided in 250 chambers;
+\item Redundant, by the installation of 4 layers, to reduce the impact coming from eventual neutrons or photons;
+\item Has a maximal drift time of 380ns, low enough to avoid the need of multi-hits electronics.
+\end{itemize}
+\end{column}
+	\begin{column}{0.51 \textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=6cm, height=5.2cm]{figs/CMSDT.png}
+\end{center}
+\end{figure}
+	\end{column}
+	\end{columns} \vfill
+\end{frame}
+
 \backupend
 
-\begin{frame}{References}
+\begin{thebibliography}{1}
+\begin{frame}{References I}
 \justifying
 
-\begin{thebibliography}{1}
 \bibitem{SMPredictions}
 \href{https://arxiv.org/abs/1808.10518}{J. Woithe, G.J. Wiener and F. Van der Vecken,
 "Let's have a coffee with the Standard Model of particle physics!",
@@ -578,6 +997,10 @@ CPHT-RR065.112019 [arXiv: 1912.02828]}
 "A Direct Empirical Proof of the Existence of Dark Matter",
 Astrophysical Journal Letters 648, 2006
 }
+\end{frame}
+
+\begin{frame}{References II}
+\justifying
 
 \bibitem{PreviousDoubleTopAllLep13CMS}
 \href{https://arxiv.org/abs/1807.06522}{CMS Collaboration,
@@ -588,7 +1011,18 @@ Phys. Rev. Lett. 122, 011803 (2019) [arXiv: 1807.06522]}
 \href{https://arxiv.org/abs/1901.01553}{CMS Collaboration,
 "Search for dark matter produced in association with a single top quark or a top quark pair in proton-proton collisions at $\sqrt{s} = 13$ TeV",
 JHEP, vol. 03 141, 2019 [arXiv: 1901.01553]}
-\end{thebibliography}
+
+\bibitem{HiggsDiscovery1} 
+\href{https://arxiv.org/abs/1207.7235}{S. Chatrchyan et al.,
+"Observation of a new boson at a mass of 125 GeV with the CMS experiment at the LHC",
+Phys. Lett. B716, pp. 30-61, 2012 [arXiv: 1207.7235]
+}
+
+\bibitem{HiggsDiscovery2} 
+\href{https://arxiv.org/abs/1207.7214}{G. Aad et al.,
+"Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC", 
+Phys. Lett. B716, pp. 1-29, 2012 [arXiv: 1207.7214]}
 \end{frame}
+\end{thebibliography}
 
 \end{document}
