@@ -3306,7 +3306,7 @@ The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the num
 
 \begin{equation}
 \label{eq:Routin}
-N^{out}_{DY, data} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
 \end{equation}
 
 This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
@@ -3324,10 +3324,6 @@ This previous equation relies on several assumptions. First of all, we have to a
 \end{center}
 \end{figure}
 
-\begin{equation}
-\label{eq:genRinout}
-R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
-\end{equation}	
 
 %\begin{equation}
 %\label{eq:DYSF}
@@ -3347,12 +3343,10 @@ Additionally, we checked the behaviour of the scale factor obtained across a lar
 \begin{minipage}[b]{.32\textwidth}
 \includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2018.png}
 \end{minipage} \hfill
-\caption{\ac{DY} scale factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
+\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
 \label{fig:Rinoutcheck}
 \end{center}
 \end{figure}
-
-\color{red} These plots don't have mt2ll cut applied! \color{black}
 
 \subsubsection{\ac{DY} gen $p_T$ reweighting}
 

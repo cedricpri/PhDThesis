@@ -1,0 +1,1376 @@
+\documentclass[9pt]{beamer}
+
+\usetheme[numbering=fraction, progressbar=foot, block=fill]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{1pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\usepackage{appendixnumberbeamer}
+\usepackage{booktabs}
+\usepackage{pgfplots}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{changepage}
+\usepackage{hyperref}
+\usepackage{multirow}
+\usepackage{arydshln}
+\usepackage[document]{ragged2e}
+\usepgfplotslibrary{dateplot}
+\usepackage{xspace}
+
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+% ================== Customization
+\definecolor{mygreen}{RGB}{40,85,175} %Dark green
+\definecolor{myred}{RGB}{153,26,0} %Dark red
+\definecolor{myblue}{RGB}{66,98,163} %Dark blue
+\definecolor{mycolor}{RGB}{66,98,163}
+
+\setbeamercolor{background canvas}{bg=white}
+
+%\setbeamerfont{institute}{series=\bfseries,parent=structure}
+\setbeamerfont{institute}{size=\large}
+\setbeamerfont{author}{size=\normalsize}
+\setbeamerfont{date}{size=\normalsize}
+
+%\setbeamertemplate{blocks}[rounded][shadow=false]
+
+% ================== Title page
+\title{$t/\bar t+DM$ analysis \\ CMS Exotica 2019 Workshop}
+%\subtitle{The subtitle goes here}
+%\date{\today}
+\date{}
+\author{\justifying Afiq Anuar, Alexander Grohsjean, Dominic Stafford, Nicole Stefanov (1), Kristian Hahn, Kevin Sung (2), Pablo Martinez Ruiz Del Arbol, J\'{o}natan Piedra,  \textbf{C\'{e}dric Prieels (3)}, Deborah Pinna, Victor Shang (4)}
+\institute{\textbf{\textbf{November 2, 2019}} \\ 
+\begin{multicols}{2}
+(1) DESY \\
+(2) NorthWestern University \\
+(3) Instituto de Fisica de Cantabria \\
+(4) University of Wisconsin
+\end{multicols}}
+
+\titlegraphic{
+   \tikz[overlay,remember picture]
+       \node[at=(current page.south east), anchor=south east] {
+           \includegraphics[height=1cm]{figs/desy.png}\hspace{18pt}\includegraphics[height=1.1cm]{figs/northwestern.png}\hspace{18pt}\includegraphics[height=0.9cm]{figs/ifca.jpg}\hspace{18pt}\includegraphics[height=1cm]{figs/wisconsin.png}\hspace{18pt}\includegraphics[height=1cm]{figs/cms.jpg}
+       };
+}
+
+% ================== Document
+\begin{document}
+
+\maketitle
+
+\begin{frame}{Analysis reminder}
+\justifying
+
+Simplified model being considered:
+
+\begin{itemize} 
+	\justifying
+	\item Spin 1/2 DM $\chi$ (1 GeV, Dirac fermion) \\
+	\item Spin 0 scalar (S)/pseudoscalar (PS) mediator $\phi$ (Yukawa-like structure of such interactions $\rightarrow$ gain from the coupling of the mediator to top quarks) \\
+	\item Mediator mass $\in [10, 500]$ GeV \\
+	\item Coupling $g_{\chi}$ mediator/DM set to 1 (same for all $g_q$ couplings) \\
+	%\item Most samples cross-section at NLO
+	%\item No mixing between $\phi$ and the SM Higgs boson
+\end{itemize}\vfill
+
+\begin{columns}
+	\begin{column}{0.49\textwidth}
+		\begin{center}
+			\begin{block}{ \centering $t$+DM models}\end{block}	
+			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
+			\includegraphics[width=0.8\textwidth]{figs/feynman1.jpg}
+    		 \end{center}
+	\end{column} \hfill
+	\begin{column}{0.49\textwidth}
+		\begin{center}
+			\begin{block}{\centering $t \bar t$+DM model}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			\includegraphics[width=0.95\textwidth]{figs/feynman_ttdm.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns} \vfill
+
+%\begin{columns}
+	%\begin{column}{0.5\textwidth}
+		%\begin{center}
+			%\begin{block}{DM searches}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			%\includegraphics[width=0.55\textwidth]{figs/allchannels.png}
+    		 %\end{center}
+%	\end{column} \hfill
+%\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{2016 $t \bar t$+DM analysis}
+\justifying
+
+Combination of the three final states (hadronic, semileptonic, dileptonic) of the $t \bar t$+DM search published as \href{http://cms-results.web.cern.ch/cms-results/public-results/preliminary-results/EXO-16-049/}{\beamergotobutton{CMS-EXO-16-049}} \vfill
+
+\begin{center}
+\begin{columns}
+	\begin{column}{0.49\textwidth}
+		\begin{center}
+			\begin{block}{ \centering Scalar mediator}\end{block}	
+			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
+			\includegraphics[width=0.95\textwidth]{figs/allchannels_scalar.png}
+    		 \end{center}
+	\end{column} \hfill
+	\begin{column}{0.49\textwidth}
+		\begin{center}
+		\vspace{-5pt}
+			\begin{block}{\centering Pseudoscalar mediator}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			\includegraphics[width=0.96\textwidth]{figs/allchannels_pseudo.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns} \vfill
+
+\end{center} \vfill 
+Scalar (pseudoscalar) mediators \alert{excluded up to 165 (223) GeV} at 95\% CL. \vfill 
+
+\end{frame}
+
+\begin{frame}{2016 $t/\bar t$+DM analysis}
+\justifying
+This process \alert{improves by a factor 2 } the limits obtained by the $t \bar t$ analysis on its own. Published as \href{http://cms.cern.ch/iCMS/analysisadmin/cadilines?line=EXO-18-010&tp=an&id=2085&ancode=EXO-18-010}{\beamergotobutton{CMS-EXO-18-010}} 
+
+\begin{itemize}
+\item Only considering semi-leptonic and hadronic final states
+\item Usually lower production cross-section than the $t \bar t$ + DM (30-100\%)
+%\item But non-flavour violating single top quark processes kinematically favored
+\end{itemize} \vfill
+
+\begin{center}
+\begin{columns}
+	\begin{column}{1.0\textwidth}
+		\begin{center}
+			%\begin{block}{\centering $t \bar t$+DM limits}\end{block}				
+			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+			\includegraphics[width=1.0\textwidth]{figs/combi_single.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns} \vfill
+
+\end{center} \vfill 
+Scalar (pseudoscalar) mediators \alert{excluded up to 290 (300) GeV} at 95\% CL. \vfill 
+
+\end{frame}
+
+\begin{frame}{Analysis strategy}
+\justifying
+Run II legacy paper expected to \alert{combine both the $t$+DM and $t \bar t$+DM analyses}, and the 3 different final states (hadronic, one and two leptons). \vfill
+This talk is mostly focused on:
+\begin{itemize}
+\item \textbf{Explaining} the global strategy and status of the analysis 
+\item \textbf{Show} the latest news and plans for each final state 
+\item \textbf{Display} the two leptons final state latest distributions for 2016, 2017 and 2018
+\end{itemize} \vfill
+The objects will be common, while control and signal regions will be decided to make them orthogonal between the channels (b-jet categorization to \textbf{improve the sensitivity} by defining enriched single top/$t \bar t$ regions). \vfill
+%This talk will be focused on the \alert{two leptons final state}. \vfill %TODO: complete this
+\end{frame}
+
+\section{Hadronic final state \\ Semileptonic final state}
+
+\begin{frame}{Event selection}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.64\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/slide10v2.png}
+     			$\rightarrow$ Object definitions can be found in the backup
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.39\textwidth}
+			\begin{center}
+				\begin{block}{\centering Single lepton}\end{block} \vfill
+				\begin{itemize}
+				\item Single lepton trigger
+				\item 1 isolated lepton (e, $\mu$)
+				\item $\geq 2$ jets
+				\item MET $> 160$ GeV
+				\item + $0, \geq 1$ forward jets ($|\eta|> 2.4$)
+				\end{itemize} \vfill
+				\begin{block}{\centering All hadronic}\end{block} \vfill	
+				\begin{itemize}
+				\item MET trigger
+				\item Leptons veto (e, $\mu$)
+				\item $\geq 3$ jets
+				\item MET $> 250$ GeV
+				\item + $0, \geq 1$ forward jets
+				\end{itemize} \vfill
+    		\end{center}		
+		\end{column} \hfill
+\end{columns}
+\end{frame}
+
+\begin{frame}{Current status}
+\justifying
+\alert{New framework} to employ nanoAOD validated using privately produced \\ nanoAODv5 t/t+DM signal samples for 2016 ($m_\chi = 1$GeV, $m_\phi = 100$GeV) from 2016 miniAOD. \vfill
+The goal was to \textbf{reproduce} signal yields and shapes from EXO-18-010:
+\begin{itemize}
+\item Object definition implemented from nanoAOD as close as possible to 2016 analysis (miniAOD)
+\item Agreement in terms of yields within a few \%
+\item Good agreement in terms of shape distribution also achieved (see next slides)
+\item Checked impact of different JEC/JetIDs between miniAOD and nanoAOD
+\item Work on-going to include minor SFs/corrections in analysis framework
+\end{itemize} \vfill
+\end{frame}
+
+\begin{frame}{\alert{Single lepton} discriminating variables}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+		\vspace{10pt}
+			\begin{block}{\rotatebox{90} {EXO-18-010}}\end{block}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Angle highest $p_T$ jet/MET}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/first.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_T$ of particle decaying into W+b}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/second.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Angle highest $p_T$ jet/MET}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/third.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+			\begin{block}{\rotatebox{90} {New framework}}\end{block}	
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/SL1b_minDeltaPhi_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/SL2b_MT2W_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/SL2b_minDeltaPhi_histo10302019.pdf}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vfill
+	\vspace{10pt}
+	$\rightarrow$ The validation leads to a \textbf{good agreement in terms of yields and shapes} for these discriminating variables. \vfill \vspace{-10pt}
+\end{frame}
+
+\begin{frame}{\alert{Single lepton} framework validation results}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+			\begin{block}{\rotatebox{90} {EXO-18-010}}\end{block}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/tDM/SL_1b_jets.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/SL_1b_fjets.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering $m_{ll}$}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/SL_2b_jets.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+			\begin{block}{\rotatebox{90} {New framework}}\end{block}	
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/njetsSL1b_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/nfjetsSL1b_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/njetsSL2b_histo10302019.pdf}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vfill
+	\vspace{10pt}
+	$\rightarrow$ The validation leads to a \textbf{good agreement in terms of yields and shapes}. \vfill \vspace{-10pt}
+\end{frame}
+
+\begin{frame}{\alert{All hadronic} framework validation results}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+			\begin{block}{\rotatebox{90} {EXO-18-010}}\end{block}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/tDM/AH_1b_jets.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/AH_1b_fjets.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering $m_{ll}$}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/AH_2b_jets.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+		\begin{column}{0.05\textwidth}
+			\begin{block}{\rotatebox{90} {New framework}}\end{block}	
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/njetsAH1b_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/nfjetsAH1b_histo10302019.pdf}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			%	\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/tDM/njetsAH2b_histo10302019.pdf}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vfill
+	\textbf{Next steps} for this channel:
+\begin{itemize}
+\item Proceed to process 2017/2018 data
+\item As a starting point the 2016 strategy will be considered
+\item Investigate possible re-optimization of the analysis as well as the inclusion of the resolved toptagger both for 1b and 2b categories 
+\end{itemize} \vfill
+\end{frame}
+
+\section{Dileptonic final state}
+
+\begin{frame}{Samples used}
+\justifying
+\begin{block}{\centering Data}\end{block}
+ Datasets built to avoid any eventual double counting. All Run2 data taking years considered:
+
+\begin{columns}
+\hspace{15pt}
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item $35.9$ fb$^{-1}$ for 2016
+		\end{itemize}
+	\end{column} \hfill
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item $41.5$ fb$^{-1}$ for 2017
+		\end{itemize}
+	\end{column} \hfill
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item $59.5$ fb$^{-1}$ for 2018
+		\end{itemize}
+	\end{column} \hfill
+\end{columns} \vfill
+\vspace{10pt}
+\begin{block}{\centering Monte-Carlo}\end{block}
+The major backgrounds have been considered, read from NanoAOD. \vfill
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Background & Name & Cross-section (pb) \\
+\hline
+Drell-Yan & DYJetsToLL\_M10to50 & 18610 \\
+& DYJetsToLL\_M50 & 6189 \\
+Top & TTJets, TTTo2L2Nu & 831.7, 87.3 \\
+%& TTJets\_SingleLeptonFromT & 182.1 \\
+Others & Single top, TTZ, WW2l, ZZ4l, ZZ2l, WZ3l,... & // \\
+\hline
+\end{tabular}
+} \vfill
+\vspace{8pt}
+\begin{block}{\centering Signal}\end{block}
+Privately produced nanoAOD signal samples for 2016 currently used (all possible decays considered) \vfill
+\end{frame}
+
+\begin{frame}{Objects}
+\justifying
+\vspace{5pt} \begin{block}{\centering Leptons}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Two tight leptons selected
+\item \alert{Tight POG WP} for muons, \alert{MVA WP90} for electrons.
+\end{itemize} \vfill
+
+\begin{block}{\centering Scale factors}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Jet energy corrections, leptons, b-jet and pile up SF all applied
+\end{itemize} \vfill
+
+\begin{block}{\centering MET}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item \alert{Puppi MET} currently considered instead of the PfType1MET %TODO: justify why
+
+%\item Latest recipe not (yet) applied
+\end{itemize} \vfill
+
+\begin{block}{\centering b-tag}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Considering deep CSV b-tag loose WP instead of CSVv2 (to be optimized)
+\end{itemize} \vfill
+
+\begin{block}{\centering Triggers}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Single and double lepton triggers combined to gain statistics (listed in the \alert{back up})
+\end{itemize} \vfill
+\end{frame}
+
+\begin{frame}{Data/MC regions defined}
+\justifying
+Three different regions defined to display our data/MC distributions: \vfill
+$\left. \text{\parbox{0.72\linewidth}{
+\begin{multicols}{2}
+\begin{itemize}
+\justifying
+\item Exactly 2 tight leptons ($p_T>$25 and 20 GeV)
+\item $|\eta| < 2.5$
+\item $m_{ll} > 20$ GeV
+\end{itemize}
+\end{multicols}
+}}\hspace{10pt} \right \}$ \alert{\textbf{Inclusive}} region
+
+$\left. \text{\parbox{0.72\linewidth}{
+\begin{multicols}{2}
+\begin{itemize}
+\justifying
+\item Inclusive region
+\item njet $\geq 2$ (jets $p_T > 30$ GeV, $\eta < 2.5$)
+\item Puppi MET $< 50$ GeV 
+\item $60\leq m_{ll} < 120$ GeV
+\end{itemize}
+\end{multicols}
+}}\hspace{10pt} \right \}$ \alert{\textbf{Drell-Yan}} region
+
+$\left. \text{\parbox{0.72\linewidth}{
+\begin{multicols}{2}
+\begin{itemize}
+\justifying
+\item Inclusive region
+\item Puppi MET $> 50$ GeV 
+\item Z Veto (76-106 GeV)
+\item njet $\geq 2$ (jets $p_T > 30$ GeV, $\eta < 2.5$)
+%\item nbjet $> 0$ (loose deep WP)
+\end{itemize}
+\end{multicols}
+}}\hspace{10pt} \right \}$ \alert{\textbf{Top}} region (blinded)
+
+\justifying
+Top region similar to the 2016 signal region, so our blinding policy allows us to only look at 1/4 of the data. \vfill
+\end{frame}
+
+\begin{frame}{Inclusive region (2016, $ll$ channel)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Puppi MET}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_puppimet.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			\begin{block}{\centering $m_{ll}$}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_mT2.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Year by year comparison (inclusive region)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2016}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2017}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2018}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_pt1.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_inclusive_ll_puppimet.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+%\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_puppimet.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_puppimet.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+%\begin{frame}{DY region (2016, $ee + \mu \mu$ channels)}
+%\justifying
+%\begin{columns}
+%		\hspace{5pt}
+%%		\begin{column}{0.05\textwidth}
+%%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+%		%\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Leading $p_T$}\end{block}	
+%				%\alert{Leading $p_T$} \\ \vspace{5pt}
+%     			\includegraphics[width=\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_pt1.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Leading $\eta$}\end{block}	
+%				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_eta1.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{ll}$}\end{block}	
+%				%\alert{Leading $\eta$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_mll.png}
+%   			 \end{center}
+%		\end{column} \hfill
+%	\end{columns} \vspace{-5pt}
+%	\begin{columns}
+%		\hspace{5pt}
+%%		\begin{column}{0.05\textwidth}
+%%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+%		%\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_puppimet.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_mT2.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering nJet}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/cratio_Control_DY_sf_njet.png}
+%   			 \end{center}
+%		\end{column} \hfill
+%	\end{columns}
+%\end{frame}
+%
+%\begin{frame}{"DY" region (2016, $e \mu + \mu e$ channels)}
+%\justifying
+%\begin{columns}
+%		\hspace{5pt}
+%%		\begin{column}{0.05\textwidth}
+%%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+%		%\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Leading $p_T$}\end{block}	
+%				%\alert{Leading $p_T$} \\ \vspace{5pt}
+%     			\includegraphics[width=\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_pt1.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Leading $\eta$}\end{block}	
+%				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_eta1.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{ll}$}\end{block}	
+%				%\alert{Leading $\eta$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_mll.png}
+%   			 \end{center}
+%		\end{column} \hfill
+%	\end{columns} \vspace{-5pt}
+%	\begin{columns}
+%		\hspace{5pt}
+%%		\begin{column}{0.05\textwidth}
+%%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+%		%\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_puppimet.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_mT2.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering nJet}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Norm100/cratio_Control_DY_df_njet.png}
+%   			 \end{center}
+%		\end{column} \hfill
+%	\end{columns}
+%\end{frame}
+
+
+\begin{frame}{Top region (2016, $e \mu + \mu e$ channels, blinded)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}	
+%				%\alert{Leading $\eta$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_puppimet.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_mT2.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Year by year comparison (top blinded region)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2016}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2017}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering 2018}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_pt1.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2016/Signal/cratio_Control_Top_df_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+%\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_eta1.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\section{Signal samples status}
+
+\begin{frame}{Signal sample status}
+\justifying
+We plan to produce privately from the $t\bar t+DM$ and $t+DM$ gridpacks 1 or 2 mass points in order to have some signal to optimize the analysis. \vfill
+We are moving to the randomized sampling method where all mass points are generated together. \vfill
+\begin{block}{\centering $t\bar t+DM$ samples}\end{block}
+The ttDM signal samples has now been \textbf{submitted centrally}. \vfill
+\begin{block}{\centering $t+DM$ samples}\end{block}
+The gridpacks production for $t+DM$ is \textbf{on-going} and should be ready by next week for a central submission later on. \vfill
+\end{frame}
+
+\begin{frame}{Plans and prospects}
+\justifying
+For the Run II legacy paper, both the $t$+DM and the $t \bar t$+DM analyses \alert{will be combined}. In practice, this means that: 
+
+\begin{itemize}
+\justifying
+\item Objects will be synchronized
+\item Control and signal regions will be designed in an orthogonal way (b-jet categories for sure, additional categorization might be needed)
+\end{itemize} \vfill
+
+Global \alert{strategy improvement} with respect to 2016:
+
+\begin{itemize}
+\justifying
+\item Search for new discriminating variables
+\item Deep CSV instead of CSVv2
+\item Top tagger improvement for the hadronic final state (and adapt it for the $t$+DM analysis)
+\item First ever look at the dileptonic final state for the $t$+DM
+\end{itemize} \vfill
+Discussion still on-going with ATLAS on \textbf{signal cross-section synchronization}. \vfill
+The analysis plans to target \alert{the beginning of 2020} for the pre-approval. \vfill
+
+\end{frame}
+
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{0pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{0pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{0pt}
+\makeatother
+\begin{frame}[standout]
+Thank you!
+\end{frame}
+
+\appendix
+
+%\begin{frame}{Analysis reminder}
+%\justifying
+%
+%\begin{columns}
+%	\begin{column}{0.49\textwidth}
+%		\begin{center}
+%			\begin{block}{ \centering $t$+DM models}\end{block}	
+%			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
+%			\includegraphics[width=0.95\textwidth]{figs/feynman1.jpg}
+%    		 \end{center}
+%	\end{column} \hfill
+%	\begin{column}{0.49\textwidth}
+%		\begin{center}
+%			\begin{block}{\centering $t \bar t$+DM model}\end{block}				
+%			%\alert{\textbf{$t \bar t$ + DM model}} \\ \vspace{5pt}
+%			\includegraphics[width=0.95\textwidth]{figs/feynman_ttdm.png}
+%    		 \end{center}
+%	\end{column} \hfill
+%\end{columns} \vfill
+%\end{frame}
+
+\begin{frame}{EXO-18-010 objects}
+Datasets and objects definition for the semi-leptonic and all hadronic channels, as found in EXO-18-010. \vfill
+\includegraphics[width=0.90\textwidth]{figs/2019/slide6.png} \vfill
+\end{frame}
+
+\begin{frame}{2016 triggers}
+\justifying
+%We are considering the logical OR of the following double leptons triggers.
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL
+\item HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL
+\end{itemize}
+}} \right \}$ \alert{DoubleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_IsoTkMu24
+\item HLT\_IsoMu24
+\end{itemize}
+}} \right \}$ \alert{SingleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL
+\item HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL
+\end{itemize}
+}} \right \}$ \alert{MuonEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ
+\end{itemize}
+}} \right \}$ \alert{DoubleEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele27\_WPTight\_Gsf
+\item HLT\_Ele25\_eta2p1\_WPTight\_Gsf
+\end{itemize}
+}} \right \}$ \alert{SingleEle} \vfill
+\end{frame}
+
+\begin{frame}{2016 MC samples}
+\justifying
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Process & Samples & Cross-section (pb) \\
+\hline
+Drell-Yan & DYJetsToLL\_M-10to50 & 18610 \\
+& DYJetsToLL\_M-50\_ext2 & 6025 \\
+\hline
+Top & TTTo2L2Nu & 87.3 \\
+& ST\_s-channel & 3.36 \\
+& ST\_t-channel\_antitop, ST\_t-channel\_top & 26.38, 44.33 \\ 
+& ST\_tW\_antitop, ST\_tW\_top & 35.60, 35.60 \\
+\hline
+WW & WWTo2L2Nu & 12.18 \\
+\hline
+VgS & Wg\_MADGRAPHMLM & 405 \\
+& WZTo3LNu\_mllmin01 & 58.59 \\
+\hline
+VZ & ZZTo2L2Nu & 0.56 \\
+& ZZTo2L2Q & 3.22 \\
+& ZZTo4L & 1.21 \\
+& WZTo2L2Q & 5.59 \\
+\hline
+Non-prompt & Data-driven (tight-to-loose method) & // \\
+\end{tabular}
+} \vfill
+\end{frame}
+
+\begin{frame}{2016 MET Data/MC}
+\justifying
+
+\begin{columns}
+	\begin{column}{1.0\textwidth}
+		\begin{center}
+			%\begin{block}{ \centering $t$+DM models}\end{block}	
+			%\alert{\textbf{$t$ + DM models}} \\ \vspace{5pt}
+			\includegraphics[width=0.5\textwidth]{figs/2016_met.png}
+    		 \end{center}
+	\end{column} \hfill
+\end{columns} \vfill
+
+\end{frame}
+
+\begin{frame}{2017 triggers}
+\justifying
+%We are considering the logical OR of the following double leptons triggers.
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ
+\end{itemize}
+}} \right \}$ \alert{DoubleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_IsoMu27
+\end{itemize}
+}} \right \}$ \alert{SingleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ
+\item HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ
+\end{itemize}
+}} \right \}$ \alert{MuonEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL
+\end{itemize}
+}} \right \}$ \alert{DoubleEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele35\_WPTight\_Gsf
+\end{itemize}
+}} \right \}$ \alert{SingleEle} \vfill
+\end{frame}
+
+\begin{frame}{2017 MC samples}
+\justifying
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Process & Samples & Cross-section (pb) \\
+\hline
+Drell-Yan & DYJetsToLL\_M-10to50-LO & 18610 \\
+& DYJetsToLL\_M-50 & 6189 \\
+\hline
+Top & TTTo2L2Nu & 87.3 \\
+& ST\_s-channel & 3.36 \\
+& ST\_t-channel\_antitop, ST\_t-channel\_top & 26.38, 44.33 \\ 
+& ST\_tW\_antitop, ST\_tW\_top & 35.60, 35.60 \\
+\hline
+WW & WWTo2L2Nu & 12.18 \\
+\hline
+VgS & Wg\_MADGRAPHMLM & 405 \\
+& ZGToLLG & 131 \\
+\hline
+VZ & ZZTo2L2Nu & 0.56 \\
+& ZZTo2L2Q & 3.22 \\
+& ZZTo4L & 1.21 \\
+& WZTo2L2Q & 5.59 \\
+\hline
+VVV & ZZZ & 0.01 \\
+& WZZ & 0.06 \\
+& WWZ & 0.16 \\
+& WWW & 0.18 \\
+\hline
+Non-prompt & Data-driven (tight-to-loose method) & // \\
+\end{tabular}
+} \vfill
+\end{frame}
+
+\begin{frame}{Inclusive region (2017, $ll$ channel)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Puppi MET}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_puppimet.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			\begin{block}{\centering $m_{ll}$}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/cratio_Control_inclusive_ll_mT2.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Top region (2017, $e \mu + \mu e$ channels, blinded)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}	
+%				%\alert{Leading $\eta$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_puppimet.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2017/Signal/cratio_Control_Top_df_mT2.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\begin{frame}{2018 triggers}
+\justifying
+%We are considering the logical OR of the following double leptons triggers.
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8
+\end{itemize}
+}} \right \}$ \alert{DoubleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_IsoMu24
+\end{itemize}
+}} \right \}$ \alert{SingleMu} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL
+\item HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ
+\end{itemize}
+}} \right \}$ \alert{MuonEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL
+\end{itemize}
+}} \right \}$ \alert{DoubleEG} \vfill
+
+$\left. \text{\parbox{0.8\linewidth}{
+\begin{itemize}
+\item HLT\_Ele32\_WPTight\_Gsf
+\end{itemize}
+}} \right \}$ \alert{SingleEle} \vfill
+\end{frame}
+
+\begin{frame}{2018 MC samples}
+\justifying
+\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Process & Samples & Cross-section (pb) \\
+\hline
+Drell-Yan & DYJetsToLL\_M-10to50-LO & 18610 \\
+& DYJetsToLL\_M-50\_ext & 6189 \\
+\hline
+Top & TTTo2L2Nu & 87.3 \\
+& ST\_s-channel & 3.36 \\
+& ST\_t-channel\_antitop, ST\_t-channel\_top & 26.38, 44.33 \\ 
+& ST\_tW\_antitop\_ext1, ST\_tW\_top\_ext1 & 35.60, 35.60 \\
+\hline
+WW & WWTo2L2Nu & 12.18 \\
+\hline
+VgS & Wg\_MADGRAPHMLM & 405 \\
+& Zg & 131 \\
+& WZTo3LNu\_mllmin01 & 58.59 \\
+\hline
+VZ & ZZTo2L2Nu\_ext1 & 0.56 \\
+& ZZTo2L2Q & 3.22 \\
+& ZZTo4L\_ext1 & 1.21 \\
+& WZTo2L2Q & 5.59 \\
+\hline
+Non-prompt & Data-driven (tight-to-loose method) & // \\
+\end{tabular}
+} \vfill
+\end{frame}
+
+\begin{frame}{Inclusive region (2018, $ll$ channel)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Puppi MET}\end{block}	
+				%\alert{Leading $\eta$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_puppimet.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+			\begin{block}{\centering $m_{ll}$}\end{block}	
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/cratio_Control_inclusive_ll_mT2.png}
+   			 \end{center}
+		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Top region (2018, $e \mu + \mu e$ channels, blinded)}
+\justifying
+\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$ee + \mu \mu$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $p_T$}\end{block}	
+				%\alert{Leading $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_pt1.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering Leading $\eta$}\end{block}	
+				%\alert{Trailing $p_T$} \\ \vspace{5pt}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_eta1.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}	
+%				%\alert{Leading $\eta$} \\ \vspace{5pt}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_puppimet.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns} \vspace{-5pt}
+	\begin{columns}
+		\hspace{5pt}
+%		\begin{column}{0.05\textwidth}
+%			\begin{block}{\rotatebox{90} {$e \mu + \mu e$ channels}}\end{block}		
+		%\end{column}
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+				\begin{block}{\centering $m_{ll}$}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_mll.png}
+    		\end{center}		
+		\end{column} \hfill
+		\begin{column}{0.32\textwidth}
+			\begin{center}
+\begin{block}{\centering nJet}\end{block}
+     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_njet.png}
+    		\end{center}		
+		\end{column} \hfill
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering $m_{T2}^{ll}$}\end{block}
+%     			\includegraphics[width=1.0\textwidth]{figs/2019/Full2018/Signal/cratio_Control_Top_df_mT2.png}
+%   			 \end{center}
+%		\end{column} \hfill
+	\end{columns}
+\end{frame}
+
+\end{document}

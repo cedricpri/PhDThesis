@@ -115,7 +115,7 @@
 \end{itemize}
 
 \item Global strategy
-\item Event reconstruction
+%\item Event reconstruction
 \item Data, signals and backgrounds
 \item Event selection
 \item Signal extraction
@@ -355,15 +355,15 @@ The \textbf{typical final state} of such models is made out of:
 \begin{itemize}
 \justifying
 \item 1 or 2 b-tagged jets coming from the decay of the top quark(s);
-\item 2 W bosons, seen as a combination of jets and leptons depending on the channel considered;
+\item 2 W bosons, seen as a combination of jets and leptons depending on the channel;
 \item Some MET coming from the dark matter and the decay of the Ws;
 \end{itemize} \vfill
 
 In particular, we are studying the \alert{dilepton final state} in this work: 
 \begin{itemize}
 \justifying
-\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the tree leptons;
-\item But, leptons can usually be reconstructed better than jets;
+\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the tree leptons (contains only $5\%$ of the signal events);
+\item But, leptons can usually be reconstructed better than jets, resulting in lower systematic uncertainties;
 \item And this channel also has the lowest number of backgrounds, resulting in a better signal isolation.
 \end{itemize} \vfill
 
@@ -383,7 +383,7 @@ A similar analysis has already been published by CMS using 2016 data, considerin
 \end{figure} \vfill
 
 The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
-This provided the \alert{most stringent constraints} ever obtained at the time on the scalar dark matter mediator model. \vfill
+%This provided the \alert{most stringent constraints} ever obtained at the time on the scalar dark matter mediator model. \vfill
 \end{frame}
 
 \begin{frame}{Previous relevant results II}
@@ -408,7 +408,7 @@ The inclusion of the single top signal process \alert{improved up to a factor 2}
 \end{columns}
 \end{center} \vfill
 
-Scalar (pseudoscalar) mediators were with this combination \alert{excluded up to 290 (300) GeV} at the 95\% confidence level. The inclusion of the full Run II dataset and the dilepton final state \textbf{is expected to improve these results}.
+Scalar (pseudoscalar) mediators were with this combination \alert{excluded up to 290 (300) GeV} at the 95\% confidence level. \vfill %The inclusion of the full Run II dataset and the dilepton final state \textbf{is expected to improve these results}.
 \end{frame}
 
 
@@ -557,50 +557,376 @@ Global strategy
 
 \begin{frame}{Analysis strategy}
 \justifying
-Run II legacy paper expected to \alert{combine both the $t$+DM and $t \bar t$+DM analyses}, and the 3 different final states (hadronic, one and two leptons). \vfill
-This talk mostly focuses on:
-\begin{itemize}
-\justifying
-\item Explaining the global strategy and status of the analysis 
-\item Show the latest news and plans for each final state 
-\item Display the two leptons final state latest distributions for 2016, 2017 and 2018
-\end{itemize} \vfill
+Run II legacy paper being worked on, expected to \alert{combine both the $t$+DM and $t \bar t$+DM searches}, and the 3 possible final states (hadronic, semi-leptonic and dileptonic). \vfill
+
 The effort is \alert{globally common} between the groups:
 \begin{itemize}
+\justifying
 \item Objects will be defined in a common way
 \item Control and signal region orthogonal between the channels
 \begin{itemize}
+\justifying
 \item Number of leptons and b-jet categorization to improve the sensitivity by defining enriched single top/$t \bar t$ regions
 \end{itemize}
 \end{itemize}
 \end{frame}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{frame}[standout]
 Hadronic final state
 \end{frame}
 
+%\begin{frame}{Analysis strategy}
+%\justifying
+%
+%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \begin{frame}[standout]
-Sami-leptonic final state
+Semi-leptonic final state
 \end{frame}
+
+%\begin{frame}{Analysis strategy}
+%\justifying
+%
+%\end{frame}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \begin{frame}[standout]
 Dilepton final state
 \end{frame}
 
 \begin{frame}{Global strategy}
-%\justifying
-%The global strategy is to train a MVA (either BDT or DNN) to separate the two signals from the background, mainly the SM $t \bar t$ and the single top.
-%
-%To do this, a Multiclass method is currently used, teaching a single network to classify an event as either $t/\bar t$+DM, $t \bar t$+DM or background. \vfill
+\justifying
+The main idea is to train a MVA (either BDT or DNN) to \textbf{separate the two signals from the backgrounds}, mainly the SM $t \bar t$ and the single top. \vfill
 
 \begin{block}{\centering Frameworks}\end{block}
-\alert{Two different frameworks} currently used in coordination:
+\textbf{Two different frameworks} used in coordination, by IFCA and DESY:
 \begin{itemize}
 \justifying
-\item Both frameworks use nanoAODv7 and the same samples
-\item A synchronization exercise has been performed in the different control and signal regions, in 2016, 2017 and 2018, as documented in our twiki [1].
+\item Both using nanoAODv7 and the same background/signal samples;
+\item Synchronization exercise performed in the different control and signal regions, in 2016, 2017 and 2018, as documented in our twiki \cite{ourTwiki}.
+\end{itemize} \vfill
+\end{frame}
+
+\begin{frame}{Data and MC samples}
+\justifying
+\begin{block}{\centering Data}\end{block}
+\alert{Single/double leptons datasets} built to avoid any eventual double counting, considering the 3 years of the Run II of operation of the LHC:
+\begin{columns}
+\hspace{15pt}
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item ($35.9 \pm 0.9$) fb$^{-1}$
+		\end{itemize}
+	\end{column} \hfill
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item ($41.5 \pm 1.0$)~fb$^{-1}$
+		\end{itemize}
+	\end{column} \hfill
+	\begin{column}{0.32\textwidth}
+		\begin{itemize}
+		\item ($59.7 \pm 1.5$)~fb$^{-1}$
+		\end{itemize}
+	\end{column} \hfill
+\end{columns} \vfill
+\vspace{5pt}
+A \textbf{blinding policy} is currently in place, allowing us to only look at $1$~fb$^{-1}$ of data per year near the signal regions. \vfill
+\vspace{10pt}
+\begin{block}{\centering Monte-Carlo}\end{block}
+The \alert{major backgrounds} have been considered from MC and read from NanoAOD:
+
+\begin{itemize}
+\justifying
+\item $t \bar t$: decaying to both 1 and 2 leptons;%, TuneCUETP8M2 (2016) and TuneCP5 (2017, 2018);
+\item Single top: s, t and tW channels considered;
+\item Drell-Yan: HT-binned samples to increase the statistics, with a correction factor derived from data applied;
+\item TTZ and TTW: usually grouped together as TTV;
+\item Others: dibosons, tribosons, non-prompt contamination (data-driven, not MC).
+\end{itemize} \vfill
+\end{frame}
+
+\begin{frame}{DY Rin-out method}
+\justifying
+We want to \textbf{estimate the DY yields outside of the Z-peak from the data}:
+
+\begin{itemize}
+\justifying
+\item Given the presence of large backgrounds (such as $t \bar t$) in the analysis region, we go inside of the Z-peak to compute the \alert{Rin-out factor}:
+\begin{equation*}
+N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+\end{equation*}
+\item To avoid any bias, the contamination of non-peaking backgrounds is removed and we additionally correct this factor by the ratio between the data/MC transfer factors in a CR close to the SR (asking for 0 b-jet instead of 1);
+\item We then get this Rin-out in bins of MET and for each channel ($ee$, $\mu \mu$) separately:
 \end{itemize}
-[1] \url{https://twiki.cern.ch/twiki/bin/view/CMS/TopPlusDMRunIILegacy} \vfill
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4cm, height=3cm]{figs/Rinout2016.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4cm, height=3cm]{figs/Rinout2017.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=4cm, height=3cm]{figs/Rinout2018.png}
+\end{minipage} \hfill
+\end{center}
+\end{figure} \vfill
+
+A flat scale factor and a fixed 20\% systematic uncertainty is then applied to the DY. \vfill
+\end{frame}
+
+\begin{frame}{Non-prompt contamination I}
+\justifying
+Fake leptons detection in the detector needs to be taken into account properly, through a \alert{data-driven tight-to-loose method} since the Monte-Carlo is not reliable in this case: \vfill
+
+\begin{block}{\centering Fake rate}\end{block} \vspace{-5pt}
+\begin{itemize}
+\justifying
+\item A QCD enriched region is defined with a looser particle selection criteria, where the misidentification should be high;
+\item Any eventual contamination from electroweak processes in this region is removed;
+\item The \alert{fake rate} is defined as the ratio between the fakeable object (lepton-like objects passing only the loose isolation requirements) and fully selected objects yields.
+\end{itemize} \vfill
+
+\begin{block}{\centering Prompt rate}\end{block} \vspace{-5pt}
+\begin{itemize}
+\justifying
+\item The \textbf{prompt rate}, taking into account the real lepton contamination is calculated in a Z enriched region from a general tag and probe method.
+\end{itemize} \vfill
+
+Then, we calculate from data an extrapolation factor to go back to the signal region of the analysis and the results obtained are checked in a \alert{same sign control region}. \vfill
+\end{frame}
+
+\begin{frame}{Non-prompt contamination II}
+\justifying
+\begin{block}{\centering 2016 fake rate}\end{block}
+\vspace{-15pt}
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.49\textwidth}
+\begin{block}{\centering Electron}\end{block}
+\begin{center}
+\includegraphics[width=4.2cm, height=3.7cm]{figs/Ele_FR_pt_35GeV_2016.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{block}{\centering Muon}\end{block}
+\begin{center}
+\includegraphics[width=4.2cm, height=3.7cm]{figs/Muon_FR_pt_25GeV_2016.png}
+\end{center}
+\end{minipage} \hfill
+\end{center}
+\end{figure} \vfill
+
+\vspace{-10pt}
+\begin{block}{\centering 2016 prompt rate}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.2cm, height=3.7cm]{figs/Ele_PR_pt_2016.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.2cm, height=3.7cm]{figs/Muon_PR_pt_2016.png}
+\end{center}
+\end{minipage} \hfill
+\end{center}
+\end{figure} \vfill
+
+A \textbf{flat 30\% systematic uncertainty} is finally associated to this background in order to cover the statistical uncertainty plus eventual discrepancies in this control region. \vfill
+\end{frame}
+
+\begin{frame}{$t/\bar t+DM$ signal samples}
+\justifying
+\begin{block}{\centering Scalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering With normalization}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopScalarMETNorm.png}
+\end{center}
+\end{minipage}
+\begin{minipage}[b]{.02\textwidth}\end{minipage}
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering Without normalization}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopScalarMET.png}
+\end{center}
+\end{minipage}
+\end{figure} \vfill
+
+\vspace{-5pt}
+\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopPseudoMETNorm.png}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopPseudoMET.png}
+\end{center}
+\end{minipage} \hfill
+\end{figure} \vfill
+\end{frame}
+
+\begin{frame}{$t \bar t+DM$ signal samples}
+\justifying
+\begin{block}{\centering Scalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering With normalization}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/scalarMETmChi1Norm.png}
+\end{center}
+\end{minipage}
+\begin{minipage}[b]{.02\textwidth}\end{minipage}
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering Without normalization}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/scalarMETmChi1.png}
+\end{center}
+\end{minipage}
+\end{figure} \vfill
+
+\vspace{-5pt}
+\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/pseudoscalarMETmChi1Norm.png}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/pseudoscalarMETmChi1.png}
+\end{center}
+\end{minipage} \hfill
+\end{figure} \vfill
+\end{frame}
+
+\begin{frame}{Objects definition}
+\justifying
+
+\end{frame}
+
+\begin{frame}{Control regions}
+\vspace{5pt}
+\begin{block}{\centering Control regions}\end{block} \vfill
+\vspace{-5pt}
+\begin{itemize}
+\item An \alert{inclusive} region:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{itemize}
+\item Exactly 2 tight leptons ($p_T > 25, 20$ GeV)
+\item Opposite sign leptons
+\item $m_{ll} > 20$ GeV
+\item At least 1 jet ($p_T > 30$ GeV, $|\eta| < 2.4$)
+\item At least 1 deep CSV b-jet (medium WP)
+\end{itemize}
+\end{multicols} \vfill
+
+\item A \alert{Drell-Yan} CR, defined as the inclusive region and:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{itemize}
+\item 15 GeV Z window ($ee$/$\mu \mu$ channels)
+\item $m_{T2}^{ll} > 80$ GeV
+\end{itemize}
+\end{multicols} \vfill
+
+\item A \alert{$t \bar t$} CR, similar to the $t \bar t$ + DM signal region:
+\begin{itemize}
+\item But only for events classified as background by the MVA 
+\item Currently blinded to 1fb$^{-1}$ per year
+\end{itemize} \vfill \vspace{10pt}
+
+\item A \alert{ttV} (ttW + ttZ) CR:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{itemize}
+\item At least 3 tight leptons
+\item $m_{T2}^{ll} > 80$ GeV
+\end{itemize}
+\end{multicols} \vfill
+
+\item A \alert{same-sign CR} for the non-prompt background:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{itemize}
+\item Inclusive with same sign leptons
+\item 15 GeV Z-veto ($ee$/$\mu \mu$ channels)
+\end{itemize}
+\end{multicols} \vfill
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Conclusions}
@@ -958,6 +1284,433 @@ This system is:
 	\end{columns} \vfill
 \end{frame}
 
+\begin{frame}{2016 data samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.65\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2016B} & & \\
+/DoubleEG/Run2016B\_ver2-Nano02Apr2020\_ver2-v1/NANOAOD & 143073268 (99.4Gb) & \multirow{ 5}{*}{5.8}  \\
+/DoubleMuon/Run2016B\_ver2-Nano02Apr2020\_ver2-v1/NANOAOD & 82535526 (53.2Gb) &   \\
+ /MuonEG/Run2016B\_ver2-Nano02Apr2020\_ver2-v1/NANOAOD & 32727796 (26.8Gb) & \\
+ /SingleElectron/Run2016B\_ver2-Nano02Apr2020\_ver2-v1/NANOAOD & 246440440 (167.8Gb) & \\
+ /SingleMuon/Run2016B\_ver2-Nano02Apr2020\_ver2-v1/NANOAOD & 158145722 (96.4Gb) & \\
+ \hline
+ \textbf{Run 2016C} & & \\
+ /DoubleEG/Run2016C-Nano02Apr2020-v1/NANOAOD & 47677856 (35.3Gb) & \multirow{ 5}{*}{2.6} \\
+ /DoubleMuon/Run2016C-Nano02Apr2020-v1/NANOAOD & 27934629 (19.7Gb) & \\
+ /MuonEG/Run2016C-Nano02Apr2020-v1/NANOAOD & 15405678 (12.8Gb) & \\
+ /SingleElectron/Run2016C-Nano02Apr2020-v1/NANOAOD & 97259854 (69.3Gb) & \\
+ /SingleMuon/Run2016C-Nano02Apr2020-v1/NANOAOD & 67441308 (42.4Gb) & \\
+ \hline
+ \textbf{Run 2016D} & & \\
+ /DoubleEG/Run2016D-Nano02Apr2020-v1/NANOAOD & 53324960 (39.6Gb) & \multirow{ 5}{*}{4.2} \\
+ /DoubleMuon/Run2016D-Nano02Apr2020-v1/NANOAOD & 33861745 (24.1Gb) & \\
+ /MuonEG/Run2016D-Nano02Apr2020-v1/NANOAOD & 23482352 (19.4Gb) & \\
+ /SingleElectron/Run2016D-Nano02Apr2020-v1/NANOAOD & 148167727 (104.4Gb) & \\
+ /SingleMuon/Run2016D-Nano02Apr2020-v1/NANOAOD & 98017996 (61.3Gb) & \\
+ \hline
+ \textbf{Run 2016E} & & \\
+ /DoubleEG/Run2016E-Nano02Apr2020-v1/NANOAOD & 49877710 (37.9Gb) & \multirow{ 5}{*}{4.0} \\
+ /DoubleMuon/Run2016E-Nano02Apr2020-v1/NANOAOD & 28246946 (20.8Gb) & \\
+ /MuonEG/Run2016E-Nano02Apr2020-v2/NANOAOD & 22519303 (19.0Gb) & \\
+ /SingleElectron/Run2016E-Nano02Apr2020-v1/NANOAOD & 117321545 (86.5Gb) & \\
+ /SingleMuon/Run2016E-Nano02Apr2020-v1/NANOAOD & 90984718 (58.7Gb) & \\
+ \hline
+ \textbf{Run 2016F} & & \\
+ /DoubleEG/Run2016F-Nano02Apr2020-v1/NANOAOD & 34577629 (26.9Gb) & \multirow{ 5}{*}{3.1} \\
+ /DoubleMuon/Run2016F-Nano02Apr2020-v1/NANOAOD & 20329921 (15.3Gb) & \\
+ /MuonEG/Run2016F-Nano02Apr2020-v1/NANOAOD & 16002165 (13.6Gb) & \\
+ /SingleElectron/Run2016F-Nano02Apr2020-v1/NANOAOD & 70593532 (51.4Gb) & \\
+ /SingleMuon/Run2016F-Nano02Apr2020-v1/NANOAOD & 65489554 (42.4Gb) & \\
+ \hline
+ \textbf{Run 2016G} & & \\
+ /DoubleEG/Run2016G-Nano02Apr2020-v1/NANOAOD & 78797031 (61.6Gb) & \multirow{ 5}{*}{7.6} \\
+ /DoubleMuon/Run2016G-Nano02Apr2020-v1/NANOAOD & 45235604 (34.2Gb) & \\
+ /MuonEG/Run2016G-Nano02Apr2020-v1/NANOAOD & 33854612 (29.0Gb) & \\
+ /SingleElectron/Run2016G-Nano02Apr2020-v1/NANOAOD & 153363109 (109.2Gb) & \\
+ /SingleMuon/Run2016G-Nano02Apr2020-v1/NANOAOD & 149912248 (94.6Gb) & \\
+ \hline
+ \textbf{Run 2016H} & & \\
+ /DoubleEG/Run2016H-Nano02Apr2020-v1/NANOAOD & 85388734 (67.7Gb) & \multirow{ 5}{*}{8.6} \\
+ /DoubleMuon/Run2016H-Nano02Apr2020-v1/NANOAOD & 48912812 (37.3Gb) & \\
+ /MuonEG/Run2016H-Nano02Apr2020-v1/NANOAOD & 29236516 (26.0Gb) & \\
+ /SingleElectron/Run2016H-Nano02Apr2020-v1/NANOAOD & 128854598 (93.8Gb) & \\
+ /SingleMuon/Run2016H-Nano02Apr2020-v1/NANOAOD & 174035164 (110.2Gb) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{2017 data samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2017B} & & \\
+/DoubleEG/Run2017B-Nano02Apr2020-v1/NANOAOD & 58088760 (46.6Gb) & \multirow{ 5}{*}{4.8} \\
+/DoubleMuon/Run2017B-Nano02Apr2020-v1/NANOAOD & 14501767 (10.8Gb) & \\
+/SingleElectron/Run2017B-Nano02Apr2020-v1/NANOAOD & 60537490 (42.2Gb) & \\
+/SingleMuon/Run2017B-Nano02Apr2020-v1/NANOAOD & 136300266 (86.2Gb) & \\
+/MuonEG/Run2017B-Nano02Apr2020-v1/NANOAOD & 4453465 (4.1Gb) & \\
+ \hline
+ \textbf{Run 2017C} & & \\
+ /DoubleEG/Run2017C-Nano02Apr2020-v1/NANOAOD & 65181125 (53.8Gb) & \multirow{ 5}{*}{9.7} \\
+ /DoubleMuon/Run2017C-Nano02Apr2020-v1/NANOAOD & 49636525 (39.5Gb) & \\
+ /SingleElectron/Run2017C-Nano02Apr2020-v1/NANOAOD & 136637888 (102.5Gb) & \\
+ /SingleMuon/Run2017C-Nano02Apr2020-v1/NANOAOD & 165652756 (109.5Gb) & \\
+ /MuonEG/Run2017C-Nano02Apr2020-v1/NANOAOD & 15595214 (15.0Gb) & \\
+ \hline
+ \textbf{Run 2017D} & & \\
+/DoubleEG/Run2017D-Nano02Apr2020-v1/NANOAOD & 25911432 (21.6Gb) & \multirow{ 5}{*}{4.2} \\
+/DoubleMuon/Run2017D-Nano02Apr2020-v1/NANOAOD & 23075733 (18.6Gb) & \\
+/SingleElectron/Run2017D-Nano02Apr2020-v1/NANOAOD & 51526710 (38.5Gb) & \\
+/SingleMuon/Run2017D-Nano02Apr2020-v1/NANOAOD & 70361660 (47.2Gb) & \\
+ /MuonEG/Run2017D-Nano02Apr2020-v1/NANOAOD & 9164365 (8.9Gb) & \\
+ \hline
+ \textbf{Run 2017E} & & \\
+/DoubleEG/Run2017E-Nano02Apr2020-v1/NANOAOD & 56233597 (49.8Gb) & \multirow{ 5}{*}{9.3} \\
+/DoubleMuon/Run2017E-Nano02Apr2020-v1/NANOAOD & 51589091 (44.4Gb) & \\
+/SingleElectron/Run2017E-Nano02Apr2020-v1/NANOAOD & 102121689 (81.3Gb) & \\
+/SingleMuon/Run2017E-Nano02Apr2020-v1/NANOAOD & 154630534 (111.0Gb) & \\
+/MuonEG/Run2017E-Nano02Apr2020-v1/NANOAOD & 19043421 (19.2Gb) & \\
+ \hline
+\textbf{Run 2017F} & & \\ 
+/DoubleEG/Run2017F-Nano02Apr2020-v1/NANOAOD & 74307066 (67.1Gb) & \multirow{ 5}{*}{13.5} \\
+/DoubleMuon/Run2017F-Nano02Apr2020-v1/NANOAOD & 79756560 (68.0Gb) & \\
+/SingleElectron/Run2017F-Nano02Apr2020-v1/NANOAOD & 128467223 (105.2Gb) & \\
+/SingleMuon/Run2017F-Nano02Apr2020-v1/NANOAOD & 242135500 (178.3Gb) \\
+ /MuonEG/Run2017F-Nano02Apr2020-v1/NANOAOD & 25776363 (26.3Gb) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{2018 data samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.8\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Dataset & Events (size) & $\mathcal{L}$ [fb$^{-1}$] \\
+\hline
+\textbf{Run 2018A} & & \\
+ /DoubleMuon/Run2018A-Nano02Apr2020-v1/NANOAOD & 75499908 (62.6Gb) & \multirow{ 4}{*}{13.5} \\
+ /EGamma/Run2018A-Nano02Apr2020-v1/NANOAOD & 327843843 (261.8Gb) & \\
+ /SingleMuon/Run2018A-Nano02Apr2020-v1/NANOAOD & 241608232 (167.7Gb) & \\
+ /MuonEG/Run2018A-Nano02Apr2020-v1/NANOAOD & 32958503 (32.3Gb) & \\
+ \hline
+\textbf{Run 2018B} & & \\
+ /DoubleMuon/Run2018B-Nano02Apr2020-v1/NANOAOD & 35057758 (28.3Gb) & \multirow{ 4}{*}{6.8} \\
+ /EGamma/Run2018B-Nano02Apr2020-v1/NANOAOD & 153822427 (123.1Gb) & \\
+ /SingleMuon/Run2018B-Nano02Apr2020-v1/NANOAOD & 119918017 (82.3Gb) & \\
+ /MuonEG/Run2018B-Nano02Apr2020-v1/NANOAOD & 16211567 (15.8Gb) & \\
+ \hline
+ \textbf{Run 2018C} & & \\
+/DoubleMuon/Run2018C-Nano02Apr2020-v1/NANOAOD & 34565869 (27.6Gb) & \multirow{ 4}{*}{6.6} \\
+/EGamma/Run2018C-Nano02Apr2020-v1/NANOAOD & 147827904 (119.2Gb) & \\
+/SingleMuon/Run2018C-Nano02Apr2020-v1/NANOAOD & 110032072 (75.7Gb) & \\
+/MuonEG/Run2018C-Nano02Apr2020-v1/NANOAOD & 15652198 (15.3Gb) & \\
+ \hline
+ \textbf{Run 2018D} & & \\
+/DoubleMuon/Run2018D-Nano02Apr2020\_ver2-v1/NANOAOD & 168605834 (128.6Gb) & \multirow{ 4}{*}{32.0} \\
+/EGamma/Run2018D-Nano02Apr2020-v1/NANOAOD & 751348648 (583.6Gb) & \\
+/SingleMuon/Run2018D-Nano02Apr2020-v1/NANOAOD & 513867253 (344.5Gb) & \\
+/MuonEG/Run2018D-Nano02Apr2020\_ver2-v1/NANOAOD & 71961587 (68.6Gb) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{2016 MC samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Process & Sample & Cross section [pb] \\
+\hline
+\multirow{1}{*}{Drell-Yan} & DYJetsToLL\_M-10to50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 ($H_T < 70$ GeV) & 18610.0 \\
+& DYJetsToLL\_M-5to50\_HT-70to100\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 303.8 \\
+& DYJetsToLL\_M-5to50\_HT-100to200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 224.2 \\
+& DYJetsToLL\_M-5to50\_HT-200to400\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 37.2 \\
+& DYJetsToLL\_M-5to50\_HT-400to600\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 3.581 \\
+& DYJetsToLL\_M-5to50\_HT-600toInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 1.124 \\
+& DYJetsToLL\_M-50\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 ($H_T < 70$ GeV) & 6025.20 \\
+& DYJetsToLL\_M-50\_HT-70to100\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 169.9 \\
+& DYJetsToLL\_M-50\_HT-100to200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 147.4 \\
+& DYJetsToLL\_M-50\_HT-200to400\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 40.99 \\
+& DYJetsToLL\_M-50\_HT-400to600\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 5.678 \\
+& DYJetsToLL\_M-50\_HT-600to800\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 1.367 \\
+& DYJetsToLL\_M-50\_HT-800to1200\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.6304 \\
+& DYJetsToLL\_M-50\_HT-1200to2500\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.1514 \\
+& DYJetsToLL\_M-50\_HT-2500toInf\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 0.003565 \\
+\hline
+\multirow{1}{*}{TTTo2L2Nu} & TTTo2L2Nu\_TuneCUETP8M2\_ttHtranche3\_13TeV-powheg-pythia8 & 87.310 \\
+\hline
+\multirow{1}{*}{Single top} & ST\_s-channel\_4f\_leptonDecays\_13TeV-amcatnlo-pythia8\_TuneCUETP8M1 & 3.360 \\
+& ST\_t-channel\_antitop\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1 & 80.95 \\
+& ST\_t-channel\_top\_4f\_inclusiveDecays\_13TeV-powhegV2-madspin-pythia8\_TuneCUETP8M1 & 136.02 \\
+& ST\_tW\_antitop\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1 & 35.60 \\
+& ST\_tW\_top\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1 & 35.60 \\
+\hline
+WW & WWTo2L2Nu\_13TeV-powheg & 12.178 \\
+& WWJJToLNuLNu\_EWK\_noTop\_13TeV-madgraph-pythia8 & 0.34520 \\
+& GluGluWWTo2L2Nu\_MCFM\_13TeV & 0.5905 \\
+\hline
+V$\gamma$/V$\gamma$* & WGToLNuG\_TuneCUETP8M1\_13TeV-madgraphMLM-pythia8 & 405.271 \\ 
+& ZGTo2LG\_TuneCUETP8M1\_13TeV-amcatnloFXFX-pythia8 & 131.300 \\
+& WZTo3LNu\_mllmin01\_13TeV-powheg-pythia8 & 58.59 \\
+\hline
+VZ & ZZTo2L2Nu\_13TeV\_powheg\_pythia8 & 0.5640 \\
+& ZZTo2L2Q\_13TeV\_powheg\_pythia8 & 3.22 \\
+& ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8 & 1.212 \\
+& WZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8 & 5.595 \\
+ \hline
+ VVV & ZZZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8 & 0.01398 \\
+ & WZZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8 & 0.05565 \\
+ & WWZ\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8 & 0.16510 \\
+ & WWW\_4F\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8 & 0.18331 \\
+ \hline
+ Non-Prompt & Data-driven (tight-to-loose method) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{2017 MC samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Process & Sample & Cross section [pb] \\
+\hline
+\multirow{1}{*}{Drell-Yan} & DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 ($H_T < 100$ GeV) & 18610 \\
+& DYJetsToLL\_M-4to50\_HT-100to200\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 204.0 \\
+& DYJetsToLL\_M-4to50\_HT-200to400\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 54.39 \\
+& DYJetsToLL\_M-4to50\_HT-400to600\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 5.697 \\
+& DYJetsToLL\_M-4to50\_HT-600toInf\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 1.85 \\
+& DYJetsToLL\_M-50\_TuneCP5\_13TeV-madgraphMLM-pythia8 ($H_T < 70$ GeV) & 6189.39 \\
+& DYJetsToLL\_M-50\_HT-70to100\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 169.9 \\
+& DYJetsToLL\_M-50\_HT-100to200\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 161.1 \\
+& DYJetsToLL\_M-50\_HT-200to400\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 48.66 \\
+& DYJetsToLL\_M-50\_HT-400to600\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 6.968 \\
+& DYJetsToLL\_M-50\_HT-600to800\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 1.743 \\
+& DYJetsToLL\_M-50\_HT-800to1200\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 0.8052 \\
+& DYJetsToLL\_M-50\_HT-1200to2500\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 0.1933 \\
+& DYJetsToLL\_M-50\_HT-2500toInf\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 0.003468 \\
+\hline
+\multirow{1}{*}{TTTo2L2Nu} & TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 87.310 \\
+\hline
+\multirow{1}{*}{Single top} & ST\_s-channel\_4f\_leptonDecays\_mtop1715\_TuneCP5\_PSweights\_13TeV-amcatnlo-pythia8 & 3.360 \\
+& ST\_t-channel\_antitop\_4f\_inclusiveDecays\_TuneCP5\_13TeV-powhegV2-madspin-pythia8 & 80.95 \\
+& ST\_t-channel\_top\_4f\_inclusiveDecays\_TuneCP5\_13TeV-powhegV2-madspin-pythia8 & 136.02 \\
+& ST\_tW\_antitop\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+& ST\_tW\_top\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+\hline
+WW & WWTo2L2Nu\_NNPDF31\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 12.178 \\
+& WWJJToLNuLNu\_EWK\_noTop\_TuneCP5\_13TeV-madgraph-pythia8 & 0.34520 \\
+& GluGluToWWTo*\_13TeV\_MCFM701\_pythia8 & 0.06387 \\
+\hline
+V$\gamma$/V$\gamma$* & WGToLNuG\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 405.271 \\
+& ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 58.83 \\
+& WZTo3LNu\_mllmin01\_NNPDF31\_TuneCP5\_13TeV\_powheg\_pythia8 & 58.59 \\
+ \hline
+ VZ & ZZTo2L2Nu\_13TeV\_powheg\_pythia8 & 0.5640 \\
+ & ZZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8 & 3.22 \\
+ & ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8 & 1.212 \\
+& WZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8 & 5.595 \\
+\hline
+VVV & ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.01398 \\
+& WZZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.05565 \\
+& WWZ\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.16510 \\
+& WWW\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.18331 \\
+ \hline
+ Non-Prompt & Data-driven (tight-to-loose method) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{2018 MC samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.9\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+ \hline
+ Process & Sample & Cross section [pb] \\
+\hline
+\multirow{1}{*}{Drell-Yan} & DYJetsToLL\_M-10to50\_TuneCP5\_13TeV-madgraphMLM-pythia8 ($H_T < 100$ GeV) & 18610.0 \\
+& DYJetsToLL\_M-4to50\_HT-100to200\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 204.0 \\
+& DYJetsToLL\_M-4to50\_HT-200to400\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 54.39 \\
+& DYJetsToLL\_M-4to50\_HT-400to600\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 5.697 \\
+& DYJetsToLL\_M-4to50\_HT-600toInf\_TuneCP5\_PSWeights\_13TeV-madgraphMLM-pythia8 & 1.85 \\
+& DYJetsToLL\_M-50\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 ($H_T < 70$ GeV) & 6189.39 \\
+& DYJetsToLL\_M-50\_HT-70to100\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 169.9 \\
+& DYJetsToLL\_M-50\_HT-100to200\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 161.1 \\
+& DYJetsToLL\_M-50\_HT-200to400\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 48.66 \\
+& DYJetsToLL\_M-50\_HT-400to600\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 6.968 \\
+& DYJetsToLL\_M-50\_HT-600to800\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 1.743 \\
+& DYJetsToLL\_M-50\_HT-800to1200\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 0.8052 \\
+& DYJetsToLL\_M-50\_HT-1200to2500\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 0.1933 \\
+& DYJetsToLL\_M-50\_HT-2500toInf\_TuneCP5\_PSweights\_13TeV-madgraphMLM-pythia8 & 0.003468 \\
+
+\hline
+\multirow{1}{*}{TTTo2L2Nu} & TTTo2L2Nu\_TuneCP5\_13TeV-powheg-pythia8 & 87.310 \\
+\hline
+\multirow{1}{*}{Single top} & ST\_s-channel\_4f\_leptonDecays\_TuneCP5\_13TeV-madgraph-pythia8 & 3.360 \\
+& ST\_t-channel\_antitop\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 80.95 \\
+& ST\_t-channel\_top\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 136.02 \\
+& ST\_tW\_antitop\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+& ST\_tW\_top\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+\hline
+WW & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
+& WWJJToLNuLNu\_EWK\_TuneCP5\_13TeV-madgraph-pythia8 & 0.4286 \\
+& GluGluToWWTo*\_TuneCP5\_13TeV\_MCFM701\_pythia8 & 0.06387 \\
+\hline
+V$\gamma$/V$\gamma$* & WGToLNuG\_TuneCP5\_13TeV-madgraphMLM-pythia8 & 405.271 \\
+& ZGToLLG\_01J\_5f\_TuneCP5\_13TeV-amcatnloFXFX-pythia8 & 131.300 \\
+& WZTo3LNu\_mllmin01\_NNPDF31\_TuneCP5\_13TeV\_powheg\_pythia8 & 58.59 \\
+\hline
+VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
+& ZZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8 & 3.22 \\
+& ZZTo4L\_TuneCP5\_13TeV\_powheg\_pythia8 & 1.212 \\
+& WZTo2L2Q\_13TeV\_amcatnloFXFX\_madspin\_pythia8 & 5.595 \\
+ \hline
+ VVV & ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.01398 \\
+ & WZZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.05565 \\
+ & WWZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.16510 \\
+ & WWW\_4F\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.18331 \\
+ \hline
+ Non-Prompt & Data-driven (tight-to-loose method) & \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{$t/\bar t$+DM signal samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.68\textwidth}{!}{
+\begin{tabular}{ c|c } 
+ \hline
+ Mass point & Cross-section [pb] \\
+\hline
+\textbf{Scalar mediators} & \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4632 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3021 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1236 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05262 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.03173 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02204 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01627 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01240 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.00951 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.006274 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.004236 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002995 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002844 \\
+ \hline
+ \textbf{Pseudoscalar mediators} & \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.05745 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.05482 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.0462 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.03417 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.02572 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.01959 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01509 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01170 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.007333 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.004083 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.002891 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002168 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002607 \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
+\begin{frame}{$t \bar t$+DM signal samples}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{0.85\textwidth}{!}{
+\begin{tabular}{ c|c } 
+ \hline
+ Mass point & Cross-section [pb] \\
+\hline
+\textbf{Scalar mediators} & \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & $3.405 \cdot 10^{-1}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & $8.027 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & $2.673 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & $1.158 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & $6.020 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & $3.579 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & $2.376 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & $1.443 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & $9.025 \cdot 10^{-4}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & $6.204 \cdot 10^{-4}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & $7.993 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & $8.052 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & $8.147 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & $8.319 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & $8.304 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & $9.735 \cdot 10^{-4}$ \\
+ TTbarDMJets\_Dilepton\_scalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & $4.835 \cdot 10^{-4}$ \\
+ \hline
+\textbf{Pseudoscalar mediators} & \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_50 & $3.440 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_100 & $2.164 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_150 & $1.414 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_200 & $9.773 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_250 & $6.753 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_300 & $4.808 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_350 & $2.742 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_400 & $1.409 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_450 & $9.302 \cdot 10^{-4}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_1\_mPhi\_500 & $6.618 \cdot 10^{-4}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_20\_mPhi\_100 & $2.166 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_30\_mPhi\_100 & $2.164 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_40\_mPhi\_100 & $2.162 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_45\_mPhi\_100 & $2.180 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_49\_mPhi\_100 & $2.151 \cdot 10^{-2}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_51\_mPhi\_100 & $1.993 \cdot 10^{-3}$ \\
+ TTbarDMJets\_Dilepton\_pseudoscalar\_LO\_TuneCP5\_13TeV-madgraph-mcatnlo-pythia8\_mChi\_55\_mPhi\_100 & $7.750 \cdot 10^{-4}$ \\
+ \hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+\end{frame}
+
 \backupend
 
 \begin{thebibliography}{1}
@@ -1022,6 +1775,12 @@ Phys. Lett. B716, pp. 30-61, 2012 [arXiv: 1207.7235]
 \href{https://arxiv.org/abs/1207.7214}{G. Aad et al.,
 "Observation of a new particle in the search for the Standard Model Higgs boson with the ATLAS detector at the LHC", 
 Phys. Lett. B716, pp. 1-29, 2012 [arXiv: 1207.7214]}
+
+\bibitem{ourTwiki} 
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/TopPlusDMRunIILegacy}{CMS Twiki,
+"Top + DM Run II Legacy analysis", 
+\url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPlusDMRunIILegacy}}
+
 \end{frame}
 \end{thebibliography}
 
