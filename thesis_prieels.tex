@@ -25,8 +25,7 @@
     linkcolor=black,
     urlcolor=black
 }
-\usepackage{mathenv}
-\usepackage{amsmath}
+\usepackage{mathenv}\usepackage{amsmath}
 \usepackage{mathtools}
 \usepackage{color}
 \usepackage{caption}
@@ -146,7 +145,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, March 2021}
+	{\Large Santander, May 2021}
 	\vfill
 
 \end{titlepage}
@@ -181,7 +180,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Marzo 2021}
+	{\Large Santander, Mayo 2021}
 	\vfill
 
 \end{titlepage}
@@ -199,9 +198,10 @@
 \setlength{\parskip}{5pt}
 \setcounter{page}{1}
 
-\chapter*{Abstract}
-\newpage
+%\chapter*{Abstract}
+%\newpage
 %
+%A search for dark matter particles produced in association with one or two top quarks is presented in this work. This search is based on the implementation of advanced Machine Learning techniques, allowing us to isolate the different signals studied with respect to the backgrounds, mainly estimated from Monte-Carlo and mostly made out of Standard Model $t \bar t$ and single top processes. A neural network was in this sense introduced, giving us a new unique input variable whose shape was used and directly fed to Combine, to perform a statistical analysis and excluse possible dark matter production models, depending on the mass of the mediator. At the end of the day {PUT FINAL EXCLUSIONS OBTAINED HERE}.
 
 \chapter*{Acknowledgments}
 
@@ -211,11 +211,11 @@ I would also like to personally thank J\'{o}natan Piedra for supervising this th
 
 Pablo Mart\'{i}nez, I am grateful for the great work you did as the co-director of this thesis, as I am sure this work would not have been possible without your help and dedication to this analysis. You also became a friend over the years and I will never be able to thank you enough for your help, especially in this last year which has undoubtedly been quite challenging for me. 
 
-I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah, Nicole, Alexander and Dominic. Thank you as well to all the people involved in the development of the Latino framework, which quickly became a great tool to work with. Naming them all would take too long, but I am also deeply grateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the Wednesday mornings special each week. 
+I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah, Nicole, Alexander and Dominic. Thank you as well to all the people involved in the development of the Latino framework, which quickly became a great tool to work with. I am also deeply grateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the Wednesday mornings special each week. 
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this thesis in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
 
 \newpage
 
@@ -228,9 +228,10 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{ADMX}[ADMX]{Axion Dark Matter Experiment}
 \acro{ALICE}[ALICE]{A Large Ion Collider Experiment}
 \acro{AMS}[AMS]{Alpha Magnetic Spectrometer}
+\acro{ANN}[ANN]{Analysis Neural Network}
 \acro{AOD}[AOD]{Analysis Object Data}
 \acro{ATLAS}[ATLAS]{A Toroidal LHC ApparatuS}
-\acro{BDT}[BDT]{Boosted Decision Trees}
+\acro{BDT}[BDT]{Boosted Decision Tree}
 \acro{BR}[BR]{Branching Ratio}
 \acro{BSM}[BSM]{Beyond the Standard Model}
 \acro{BW}[BW]{Breit-Wigner}
@@ -249,7 +250,6 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 \acro{DQM}[DQM]{Data Quality Monitoring}
 \acro{DM}[DM]{Dark Matter}
 \acro{DMWG}[DMWG]{Dark Matter Working Group}
-\acro{DNN}[DNN]{Deep Neural Network}
 \acro{DT}[DT]{Drift tube}
 \acro{DY}[DY]{Drell-Yan}
 \acro{ECAL}[ECAL]{Electromagnetic Calorimeter}
@@ -1983,7 +1983,7 @@ This specific kind of jets can be distinguished from other jets because of the r
 
 Because of these specific properties, an algorithm can distinguish between jets coming from a bottom quark or from a lighter quark, and this will be a key point in this analysis. In our case, this discrimination is additionally optimized by using a multivariate technique able to combine all the discriminating power of the previous typical characteristics of any heavy flavour jet in the best way possible after reconstruction of all the vertices of the event. The main objective of the algorithm is to be able to identify b-jets as efficiently as possible while reducing the risk of possible misidentification of a jet. 
 
-In this analysis, the deep \ac{CSV} algorithm able to combine the information on the secondary vertex with the one on the track impact parameters and based on a \ac{DNN}, has been used to identify such b-jets. The performance of this method can be observed in Figure~\ref{fig:CMSBTag}, where we can see that this deep \ac{CSV} algorithm is one of the best b-jets identification algorithms, depending on the phase space, while keeping a relatively low misidentification rate for light-flavor jets (u, d, s and gluons).
+In this analysis, the deep \ac{CSV} algorithm able to combine the information on the secondary vertex with the one on the track impact parameters and based on a \ac{ANN}, has been used to identify such b-jets. The performance of this method can be observed in Figure~\ref{fig:CMSBTag}, where we can see that this deep \ac{CSV} algorithm is one of the best b-jets identification algorithms, depending on the phase space, while keeping a relatively low misidentification rate for light-flavor jets (u, d, s and gluons).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2028,7 +2028,7 @@ Different algorithms can be used in order to reconstruct this variable, the most
 \item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
-For this analysis, we decided to use the PFMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 \ac{DY} inclusive region. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
+For this analysis, we decided to use the PFMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between data and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 \ac{DY} inclusive region. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
 
 \begin{figure}[htbp]
 \centering
@@ -2040,6 +2040,20 @@ For this analysis, we decided to use the PFMET for simplicity after observing th
 \end{minipage} \hfill
 \caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
 \label{fig:metStudy}
+\end{figure}
+
+Additionally, the \ac{MET} distribution is expected to be independent of $\phi$ because of the rotational symmetry of the collisions around the beam axis but we do observe that the reconstructed \ac{MET} does depend on $\phi$ because of possible anisotropic detector responses, inactive calorimeter cells or tracking regions, detector misalignment, or eventual displacements of the beam spot. XY-shift corrections have therefore been applied to reduce this modulation and, for 2017 only, an additional correction to reduce the effect of high $\eta$ EE noise has been considered on top, as recommended. The effect of this correction is shown in Figure~\ref{fig:metCorrEffect}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_pfmet_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2018.png}
+\end{minipage} \hfill
+\caption{Uncorrected PFMET (on the left) and PFMET after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\label{fig:metCorrEffect}
 \end{figure}
 
 Several additional corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
@@ -2444,13 +2458,13 @@ Once all the different samples produced centrally up to the nanoAOD stage, anoth
 
 As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of ($35.9 \pm 0.9$ fb$^{-1}$) (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$ fb$^{-1}$) (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$ fb$^{-1}$) (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of $137.1 \pm 2.0$ fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
+During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$) fb$^{-1}$ (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$) fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of ($137.1 \pm 2.0$) fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
 
 \section{Signal samples} \label{section:Signals}
 
 Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
 
-The impact on the kinematics (in this particular case, on the spectrum of the \ac{PUPPI} \ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t/\bar t$+DM), ~\ref{fig:signalSinglePseudo} (pseudoscalar $t/\bar t$+DM), ~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles. Finally, we can also observe in these plots the difference in kinematics between the background (in blue) and the different signals, which will be the basis of the analysis performed.
+The impact on the kinematics (in this particular case, on the spectrum of the pf\ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t/\bar t$+DM),~\ref{fig:signalSinglePseudo} (pseudoscalar $t/\bar t$+DM),~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles. Finally, we can also observe in these plots the difference in kinematics between the background (in blue) and the different signals, which will be the basis of the analysis performed.
 
 \begin{figure}[htbp]
 \centering
@@ -2573,7 +2587,7 @@ Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:
 
 \subsection{Top production}
 
-Because of the relatively high production cross section of top quarks at 13 TeV, the production of a single or a pair of top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
+Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
 Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}.
 
@@ -2844,7 +2858,61 @@ As previously mentioned, most of the \ac{DY}, produced through the Feynman diagr
 \label{fig:DY}
 \end{figure}
 
-The shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process (as described in Section~\ref{subsection:rinout}), which is additionally being checked in a specific control region as well.
+The shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
+
+\subsubsection{$R_{in-out}$ method} \label{subsection:rinout}
+
+The idea behind this data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+
+\begin{equation}
+\label{eq:DYevents}
+N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
+\end{equation}
+
+The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the number of \ac{MC} or data events outside and inside this Z mass window. This ratio is then simply used to estimate the number of DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
+
+\begin{equation}
+\label{eq:Routin}
+N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+\end{equation}
+
+This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_0bjet_mll.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_1bjetOrMore_mll.png}
+\end{minipage} \hfill
+\caption{Normalized $m_{ll}$ \ac{DY} distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1+ b-jet (on the right) bins.}
+\label{fig:Rinoutver}
+\end{center}
+\end{figure}
+
+\begin{equation}
+\label{eq:DYSF}
+SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+\end{equation}
+
+Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single scale factor to the \ac{DY} process, considering a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2016.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2017.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.32\textwidth}
+\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2018.png}
+\end{minipage} \hfill
+\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
+\label{fig:Rinoutcheck}
+\end{center}
+\end{figure}
 
 \subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
 
@@ -3022,7 +3090,7 @@ Because of its definition, the \ac{FR} is computed in a prompt lepton-free regio
 \item $p_{T} > 13 \text{ } (10)$ GeV for $e \text{ }(\mu)$ 
 \item $|\eta| < 2.5 \text{ } (2.4)$ for $e \text{ }(\mu)$ 
 \item mtw1 $< 20$ GeV
-\item PuppiMET $< 20$ GeV
+\item pf\ac{MET} $< 20$ GeV
 \item PassJets
 \end{itemize}
 \end{multicols}
@@ -3274,6 +3342,10 @@ In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energ
 \end{center}
 \end{figure}
 
+\subsubsection{\ac{MET} corrections}
+
+EE noise and XY-shift corrections are applied to the \ac{MET} spectrum, as already described in Section~\ref{section:RecoMET}, to fix the unexpected modulation of the $\phi$ of the \ac{MET} observed in data because of several effects related to the detector.
+
 \subsubsection{Top $p_T$ reweighting} \label{subsection:toppt}
 
 Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
@@ -3291,64 +3363,9 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{center}
 \end{figure}
 
-\color{red} FIXME: do we apply it? \color{black}
+Even though we initially planed on applying this correction factor, the most recent recommendation is currently not to apply this factor for \ac{BSM} searches, at least when the \ac{SM} $t \bar t$ process only contributes to the background \cite{topPtReweighting} made available. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed.
 
-\subsubsection{$R_{in-out}$ method} \label{subsection:rinout}
-
-The idea behind this data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
-
-\begin{equation}
-\label{eq:DYevents}
-N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
-\end{equation}
-
-The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the number of \ac{MC} or data events outside and inside this Z mass window. This ratio is then simply used to estimate the number of DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
-
-\begin{equation}
-\label{eq:Routin}
-N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
-\end{equation}
-
-This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_0bjet_mll.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_1bjetOrMore_mll.png}
-\end{minipage} \hfill
-\caption{Normalized $m_{ll}$ \ac{DY} distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1+ b-jet (on the right) bins.}
-\label{fig:Rinoutver}
-\end{center}
-\end{figure}
-
-
-%\begin{equation}
-%\label{eq:DYSF}
-%SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
-%\end{equation}
-
-Additionally, we checked the behaviour of the scale factor obtained across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the scale factor, we decided to apply a single scale factor to the \ac{DY} process, associating in the mean time a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2016.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2017.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2018.png}
-\end{minipage} \hfill
-\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
-\label{fig:Rinoutcheck}
-\end{center}
-\end{figure}
-
-\subsubsection{\ac{DY} gen $p_T$ reweighting}
+%\subsubsection{\ac{DY} gen $p_T$ reweighting}
 
 
 
@@ -3720,15 +3737,11 @@ Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
 
 It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole RunII dataset.
 
-Two signal regions have been defined in order to isolate on one hand the $t/ \bar t$+DM process and on the other hand the $t \bar t$+DM signal. A global pre-selection was agreed on between the groups involved, applied to both the signal regions, reducing by a large factor the contamination mostly due to the \ac{SM} $t \bar t$+ and the \ac{DY} processes. First of all, exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required. Events with a third lepton having a $p_T > 10$ GeV are rejected at this point, and low mass resonances are removed by asking for $m_{ll} > 20$ GeV. The \ac{DY} is additionally strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event. Finally, 1 medium deep CSV b-jet is also required, and a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal.
-
-The distinction between the signal regions targeting the $t/\bar t$+DM and the $t \bar t$+DM is quite obvious. Indeed, general multi-class \ac{MVA} methods have been trained, as explained in Section~\ref{section:Discrimination}. Such methods are able to give us the probability for an event to be either $t/\bar t$+DM, $t \bar t$+DM or background and a label is therefore assigned to each event found in the datasets according to the most likely category found. Depending on the output obtained, signal regions targeting the $t/\bar t$+DM ($t \bar t$+DM) have been represented in Figures~\ref{fig:SingleSR} and~\ref{fig:DoubleSR} respectively, while a control region enriched in \ac{SM} $t \bar t$ is defined from the subset of events labeled as background by the \ac{MVA}.
-
-\color{red}FIXME: Add final plots everywhere \color{black}
+First of all, a global pre-selection was agreed on between the groups involved, applied to all the signal regions, reducing by a large factor the contamination mostly due to the \ac{SM} $t \bar t$ and the \ac{DY} processes. First of all, exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required. Events with a third lepton having a $p_T > 10$ GeV are rejected at this point, and low mass resonances are removed by asking for $m_{ll} > 20$ GeV. The \ac{DY} is additionally strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event. Finally, 1 medium deep CSV b-jet is also required, and a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal anyway. Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
 \begin{figure}[htbp]
 \centering
-\subfigure[2016 $t/ \bar t$+DM \ac{SR}]
+\subfigure[2016 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3737,7 +3750,7 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\subfigure[2017 $t/ \bar t$+DM \ac{SR}]
+\subfigure[2017 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3746,7 +3759,7 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\subfigure[2018 $t/ \bar t$+DM \ac{SR}]
+\subfigure[2018 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3755,13 +3768,52 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables ($m_{ll}$, on the left, and \ac{PUPPI} \ac{MET}, on the right) represented in the signal region defined to study the $t/ \bar t$+DM process.}
-\label{fig:SingleSR}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the pre-selection region used for the training of the \ac{MVA}.}
+\label{fig:preSelSR}
+\end{figure}
+
+Several different signal regions have then actually been defined, depending on the mass point considered, since one different \ac{MVA} training was done for each mass point considered, leading each time to a slightly different phase space, as shown in Figures~\ref{fig:SR1} (scalar 100 GeV training) and~\ref{fig:SR2} (scalar 500 GeV training).
+
+%The distinction between the signal regions targeting the $t/\bar t$+DM and the $t \bar t$+DM is quite obvious. Indeed, general multi-class \ac{MVA} methods have been trained, as explained in Section~\ref{section:Discrimination}. Such methods are able to give us the probability for an event to be either $t/\bar t$+DM, $t \bar t$+DM or background and a label is therefore assigned to each event found in the datasets according to the most likely category found. Depending on the output obtained, signal regions targeting the $t/\bar t$+DM ($t \bar t$+DM) have been represented in Figures~\ref{fig:SingleSR} and~\ref{fig:DoubleSR} respectively, while a control region enriched in \ac{SM} $t \bar t$ is defined from the subset of events labeled as background by the \ac{MVA}.
+
+\color{red}FIXME: Update the text? And add final plots everywhere \color{black}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 100 GeV scalar training.}
+\label{fig:SR1}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[2016 $t \bar t$+DM \ac{SR}]
+\subfigure[2016 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3770,7 +3822,7 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\subfigure[2017 $t \bar t$+DM \ac{SR}]
+\subfigure[2017 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3779,7 +3831,7 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\subfigure[2018 $t \bar t$+DM \ac{SR}]
+\subfigure[2018 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
@@ -3788,123 +3840,159 @@ The distinction between the signal regions targeting the $t/\bar t$+DM and the $
 \includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables ($m_{ll}$, on the left, and \ac{PUPPI} \ac{MET}, on the right) represented in the signal region defined to study the $t \bar t$+DM process.}
-\label{fig:DoubleSR}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 500 GeV scalar training.}
+\label{fig:SR2}
 \end{figure}
 
 \section{Control regions} \label{section:CR}
 
-Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, the \ac{DY} control region will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$ and ttV processes will be checked in the Sections~\ref{section:TopCR} and~\ref{section:ttVCR} respectively.
+Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, two separate \ac{DY} control regions will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$, ttV and non-prompt contamination processes will be checked in Sections~\ref{section:TopCR},~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
 
 \subsection{\acs{DY} control region} \label{section:DYCR}
 
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. At the end of the day, this region is defined exactly as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ described in Section~\ref{subsection:rinout}. 
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. At the end of the day, two \ac{DY} enriched control region have been defined for this analysis:
 
-Some distributions obtained in this control region are shown in Figure~\ref{fig:DYCR}.
+\begin{itemize}
+\item An \textbf{inclusive control region}, defined as the region with the least possible number of cuts applied. In this case, this region is defined as the region with two adequate tight leptons, $m_{ll} > 20$, with at least 1 jet and 1 deep CSV medium b-jet. 
+\item And an \textbf{actual control region}, defined exactly as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}. 
+\end{itemize}
+
+Some distributions obtained in these control regions are shown in Figure~\ref{fig:DYCR1} (inclusive control region) and Figure~\ref{fig:DYCR2} (actual \ac{DY} control region).
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 inclusive \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2016.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 inclusive \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2017.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 inclusive \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2018.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the inclusive control region defined.}
+\label{fig:DYCR1}
+\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \subfigure[2016 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2018.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the \ac{DY} control region defined.}
-\label{fig:DYCR}
+\label{fig:DYCR2}
 \end{figure}
 
 \subsection{Top control region} \label{section:TopCR}
 
-As previously explained, the \ac{SM} $t \bar t$ control region is defined with the same pre-selection applied to both the signal regions, but selecting only events categorized as background by the \ac{MVA}. Distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
+As previously explained, the \ac{SM} $t \bar t$ control region is defined with the same pre-selection applied to both the signal regions, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to both signal regions. Distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
 
 \begin{figure}[htbp]
 \centering
 \subfigure[2016 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2018.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the top control region defined.}
+\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$ control region defined.}
 \label{fig:TopCR}
 \end{figure}
 
-\subsection{$t \bar t + W$/$t \bar t + Z$ control regions} \label{section:ttVCR}
+\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
 
-Control regions targeting the $t \bar t$+W and $t \bar t$+Z processes have also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring a higher number of leptons (exactly 3 for the region targeting the $t \bar t$+W process, at least 4 for the $t \bar t$+Z process). This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained are shown in Figure~\ref{fig:ttVCR}.
-
-\color{red} Definition might change \color{black}
+An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring exactly 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained are shown in Figure~\ref{fig:ttVCR}.
 
 \begin{figure}[htbp]
 \centering
 \subfigure[2016 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2018.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+V control region defined.}
@@ -3920,31 +4008,31 @@ Finally, a same sign control region has also been defined in order to check the 
 \subfigure[2016 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2018.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables ($m_{ll}$, on the left, and \ac{PUPPI} \ac{MET}, on the right) represented in the same sign control region defined.}
+\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the same sign control region defined.}
 \label{fig:SSCR}
 \end{figure}
 
@@ -3977,15 +4065,15 @@ Finally, a same sign control region has also been defined in order to check the 
 
 \chapter{Signal extraction} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.% Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
 
 \section{Discriminating variables} \label{section:Variables}
 
-Several variables can at principle be used in order to either separate one of the signals of interest from the different background processes, or to separate the two signals we are interested in into separate signal regions, to study them separately. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but some of these variables with a discriminating power high enough will actually be used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable.
+Several variables can at principle be used in order to either separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but some of these variables with a discriminating power high enough will actually be used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, as described in Section~\ref{section:NN}.
 
 \subsubsection*{Number of bjets and $m_{bl}^t$}
 
-Let's start with the two variables we found to be the most useful in order to separate the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply events featuring two b-jets or more to select a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes.
+Let's start with the two variables we found to be the most useful in order to separate the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply rejecting events featuring two b-jets or more to define a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes.
 
 A slightly more effective strategy than vetoing events with multiple b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more j-bets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final distributions obtained for both variables are shown in Figure~\ref{fig:signalsDiscrimination}.
 
@@ -3996,36 +4084,34 @@ m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Scalar mediator] {
+\subfigure[Scalar mediators] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.6cm]{figs/nbJet.png}
+\includegraphics[width=7cm, height=5.6cm]{figs/nbJet_scalar.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.6cm]{figs/mblt.png}
+\includegraphics[width=7cm, height=5.6cm]{figs/mblt_scalar.png}
 \end{minipage} \hfill
 }
 
-\subfigure[Pseudoscalar mediator] {
+\subfigure[Pseudoscalar mediators] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.6cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.6cm]{figs/nbJet_pseudo.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=5.6cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=5.6cm]{figs/mblt_pseudo.png}
 \end{minipage} \hfill
 }
 \caption{Number of b-jets (on the left) and $m_{bl}^t$ variable (on the right), mostly used to separate our two signals in this analysis, in a control region close to the actual signal region, for different mediator categories and signal samples of the analysis.}
 \label{fig:signalsDiscrimination}
 \end{figure}
 
-As we can see in these plots, these variables do offer us some discrimination between the different signals considered but even by using them, we cannot define a signal region enriched in $t/ \bar t$+DM because of the low cross-section of this process.
-
-\color{red} FIXME: Update plots once final version available, add conclusion to the selection of the signal regions (do we want to use only the MVA to define them? \color{black}
+As we can see in these plots, these variables do offer us some discrimination between the different signals considered but even by using them, we cannot easily define a signal region enriched in $t/ \bar t$+DM because of the low cross-section of this process. This is on of the main points on which the \ac{MVA} will be able to become useful later on.
 
 \subsubsection*{Missing transverse momentum}
 
 Already defined in Section~\ref{section:RecoMET}, this variable corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of a \ac{SM} neutrino or the existence of \ac{DM} particles, able to escape the detector without being detected.
 
-This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough some \ac{SM} processes such as the \ac{SM} $t \bar t$ production in the dilepton final state is also expected to produce some neutrinos and therefore some \ac{MET}, both the $t/ \bar t$+DM and $t \bar t$+DM signal model are expected to have mostly the same contribution to the \ac{MET} from their own neutrinos, plus an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signals than the backgrounds, as shown in Figure~\ref{fig:SRdiscMET}.
+This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough some \ac{SM} processes such as the \ac{SM} $t \bar t$ production in the dilepton final state is also expected to produce some neutrinos and therefore some \ac{MET}, both the $t/ \bar t$+DM and $t \bar t$+DM signal model are expected to have mostly the same contribution to the \ac{MET} from their own neutrinos, plus an additional contributions from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signals than the backgrounds, as shown in Figure~\ref{fig:SRdiscMET} in the pre-selection region of the analysis.
 
 \color{red} FIXME: Put final plots for all the variables once available \color{black}
 
@@ -4037,15 +4123,15 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{minipage}[b]{.47\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_puppimet.png}
 \end{minipage}\hfill
-\caption{\ac{PUPPI} \ac{MET} distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{pf\ac{MET} distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
 \label{fig:SRdiscMET}
 \end{figure}
 
 \subsubsection*{Stransverse mass}
 
-The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the $W \rightarrow l\nu$ decay, for example. 
+The $m_{T2}$ variable, also called \textbf{stransverse mass}, is an extension of the definition of the transverse mass $m_T$ to cases when pairs of particles with the same flavor decay into one visible and one invisible particle, such as what happens in the double $W \rightarrow l\nu$ decay, for example. 
 
-For the signals considered in this work, two neutrinos contribute to the presence of \ac{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the particles involver in the decay considered \cite{MT2}.
+For the signals considered in this work, two neutrinos contribute to the presence of \ac{MET} and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$ and $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. The stransverse mass is then defined according to Equation~\ref{eq:mt2}, where $\bm{p_{T_i}} = \overrightarrow{p_{T_i}}$ is the (visible) transverse momentum of the particle $i$ and $\alpha$ is the angle between the visible and invisible $p_T$ of the particles involved in the decay considered \cite{MT2}.
 
 \begin{equation}
 \label{eq:mt2}
@@ -4201,8 +4287,8 @@ A few additional variables which are expected to introduce some discrimination b
 \label{fig:SRdisc5}
 \end{figure}
 
-\item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the \ac{PUPPI} \ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
-\item Finally, we observed that the variable we called \textit{massT} and corresponding the scalar sum of the transverse component of the \ac{PUPPI} \ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+\item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
+\item Finally, we observed that the variable we called \textit{massT} and corresponding the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 \begin{figure}[htbp]
 \centering
 \subfigure[$r2l$ variable] {
@@ -4241,20 +4327,17 @@ A few additional variables which are expected to introduce some discrimination b
 
 \section{Multivariate analysis} \label{section:NN}
 
-%Relu se usa para DNN, para evitar perdida de señal cuando se deriva muchas veces seguidas
-%DNN permite modelizar fenomenos mas raros o disrptos pero es mas sensible al overtiffing porque tiene más libertad para %modelizar los datos. Metodos para evitar sobreajuste como el dropout
+As already seen in the previous sections, we know that our signal regions are going to be contaminated with some background processes, given the fact that such backgrounds have kinematics close to the signal searched for. A general \acf{MVA} technique has therefore been used in order to perform the actual signal extraction of the analysis by combining the discriminating power of several of the variables previously presented, in order to find a way to characterize reliably any single event as either more likely to be a signal (either $t/\bar t$+DM or $t \bar t$+DM) or a background event.
 
-As already seen in the previous sections, we know that our signal region is going to be contaminated with some background processes, given the fact that such backgrounds have kinematics close to the signal searched for. A multiclass \acf{MVA} technique has therefore been used in order to perform the actual signal extraction of the analysis by combining the discriminating power of several of the variables previously presented, in order to find a way to characterize reliably any single event as either $t/\bar t$+DM, $t \bar t$+DM or background-like.
-
-The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most interesting background and signal processes and on the other hand, we have unknown data collected by the detector and which needs to be characterized and labeled based on the value of several variables or features, by assigning a value of probability of belonging to any of these 3 particular categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be defined into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
+The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most interesting background and signal processes and on the other hand, we have unknown data collected by the detector and which needs to be characterized and labeled based on the value of several variables or features, by assigning a value of probability of belonging to any of these 3 particular categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be divided into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
 
 \subsection{Methods used}
 
-Two different \ac{MVA} methods among the most popular today have been studied in this work: \acf{BDT} and a \acf{DNN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
+Two different \ac{MVA} methods among the most popular nowadays have been studied in this work: a \acf{BDT} and a \acf{ANN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
 
-\subsubsection{Boosted Decision Trees}\label{section:BDT}
+\subsubsection{\acfp{BDT}}\label{section:BDT}
 
-This \ac{MVA} technique relies on the definition of different decision trees, able to split the data recursively based on a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given features until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees in such a way and then to combine all these trees together into a single strong classifier, by giving a weight to each tree depending on their actual accuracy. In our case, a multiclassification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundred of trees made out of different nodes, and label every single event as either $t/\bar t$+DM, $t \bar t$+DM or background-like.
+This method relies on the definition of different decision trees, able to split the data recursively based on a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given features until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees in such a way and then to combine all these trees together into a single strong classifier, by giving a weight to each tree depending on their actual accuracy. In our case, a multiclassification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundred of trees made out of different nodes, train them and apply the training to uncategorized events, labeling every single event as signal or background-like.
 
 The structure and complexity of a \ac{BDT} usually depends on the problem considered and can be characterized from several different parameters which need to be tuned in order to get the best possible signal extraction accuracy while avoiding overfitting:
 
@@ -4304,9 +4387,9 @@ The actual parameters used for this particular analysis obtained after a thoroug
 \end{center}
 \end{table}
 
-\subsubsection{Deep Neural Networks}\label{section:DNN}
+\subsubsection{\acfp{ANN}}\label{section:DNN}
 
-Another large family of \ac{MVA} techniques rely on the so-called \textbf{neural networks}, sets of algorithms designed in order to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to either similarities among the example inputs or based on the information available in a training dataset.
+Another large family of \ac{MVA} methods rely on the so-called \textbf{neural networks}, sets of algorithms designed to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to either similarities among the example inputs or based on the information available in a training dataset.
 
 The basic idea for the existence of neural networks relies on the human brain itself, a complex system of thousands of billions of neurons interacting with each other and able to perform complex calculations and generate ideas. In this case, highly connected mathematical units called \textbf{artificial neurons} and grouped into layers are then defined, as shown in Figure~\ref{fig:NN}, connected with each other with connections (also called \textbf{edges}) characterized by a \textbf{weight}, denoting its significance. At the end of the day, these neurons are simply mathematical tools able to receive an input, modify it and send the computed signal to the next layer of neurons, while the connection to the next neuron will either increase or decrease this signal based on the weight of this connection.
 
@@ -4338,9 +4421,9 @@ This error function allows us to determine the goodness of the output obtained f
 \bm \omega_{k+1} = \bm \omega_k - \eta \nabla_{\bm \omega} E(\bm \omega)
 \end{equation}
 
-In this work, we used models with many different hidden layers, therefore usually referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such method is helpful because it allows to solve a crucial problem in \ac{ML}: the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand.
+In this work, we used models with several hidden layers, therefore sometimes referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such methods with lots of hidden layers is helpful because it allows to solve the feature engineering problem, which states that to get the most of a certain dataset someone should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand. In s ummary, the \acp{ANN} allow to study phenomena a bit more disrupt, but are usually more sensitive to the overfitting even though some options, such as the dropout, droping randomly some weights in the network at each training iteration, have been used in this work to mitigate this issue. 
 
-Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate (giving an idea of how much the weights should be updated after each training iteration, which should obviously be optimized in order to reach the minimum of the cost function faster while avoiding getting stuck in an eventual local minimum), the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
+Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate (giving an idea of how much the weights should be updated after each training iteration, to be optimized in order to reach the minimum of the cost function faster while avoiding getting stuck in an eventual local minimum), the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process extensively described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
 
 \begin{table}
 \begin{center}
@@ -4359,22 +4442,20 @@ Batch size & 250 \\
 \hline
 \end{tabular}
 %}
-\caption{Summary of the parameters used for the training of the \ac{DNN} in this analysis.}
+\caption{Summary of the parameters used for the training of the \ac{ANN} in this analysis.}
 \label{table:DNN}
 \end{center}
 \end{table}
 
-After a trial and error process, the best results have been obtained with both methods for the following variables, all described in Section~\ref{section:Variables}: 
-
-\color{red}FIXME: Update all these parameters and variables once final values are known! Which method did we choose? Update the following text with the correct name \color{black}
+After a trial and error process, the best results have actually been obtained with our \ac{ANN} over the \ac{BDT}, considering as input a relatively simple set of variables, all described in Section~\ref{section:Variables}. By order of importance, we therefore decided to use as input the stransverse mass $M_{T2}^{ll}$, the angle $\Delta \Phi(E_{T}^{\text{miss}}, ll)$, the pf\ac{MET}, $m_{bl}^t$, one of the two spin correlated variables $\xi = \cos(\theta_i) \cos(\theta_j)$ and the number of b-jets observed. The extensive explanation behind the choice of all these parameters can be found in Appendix~\ref{appendix:Optimization}.
 
 \subsection{Training process}
 
-%Each \ac{DNN} has also been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. FIXME: add this? cf. Nicolo pg 126
+%Each \ac{ANN} has also been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. FIXME: add this? cf. Nicolo pg 126
 
-Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background. Since several mass points are inspected for each signal category, different \acp{DNN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, we decided to define a multiclass \ac{MVA}, training at the same time three categories of processes against each other: the $t/\bar t$+DM signal, the $t \bar t$+DM signal and the backgrounds, made out of a mix of both \ac{SM} single top and $t \bar t$ processes.
+Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background for the training process. Since several mass points are inspected for each signal category, different \acp{ANN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, given the limited number of training events available after applying the pre-selection, we decided to define a simple biclass \ac{MVA}, training at the same time only two categories of processes against each other: both the $t/\bar t$+DM and $t \bar t$+DM signals and the backgrounds, made out of a mix of both \ac{SM} $t \bar t$ and single top processes.
 
-The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{DNN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Table~\ref{table:importance}, a plot representing the correlation between these input variables for the backgrounds and the two signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, an overtraining plot for both the \ac{BDT} and the \ac{DNN} in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by considering the intermediate scalar 100 GeV mass point for both the $t/\bar t$+DM and $t \bar t$+DM signals, and by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
+The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2}, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, a plot to check for any sign of possible overtraining in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
 
 \begin{table}
 \begin{center}
@@ -4383,83 +4464,105 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \hline
  Rank & Variable & Importance \\
  \hline
- 1 & $m_{bl}^t$ & $2.428 \cdot 10^{-1}$ \\
- 2 & \ac{PUPPI} \ac{MET} & $2.340 \cdot 10^{-1}$ \\
- 3 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $2.264 \cdot 10^{-1}$ \\
- 4 & $M_{T2}(ll)$ & $2.068 \cdot 10^{-1}$ \\
- 5 & nbJet & $9.008 \cdot 10^{-2}$ \\
+ 1 & $M_{T2}(ll)$ & $2.30 \cdot 10^{-1}$ \\
+ 2 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $2.03 \cdot 10^{-1}$ \\
+ 3 & pf\ac{MET} & $1.90 \cdot 10^{-1}$ \\
+ 4 & $m_{bl}^t$ & $1.85 \cdot 10^{-1}$ \\
+ 5 & $\cos(\theta_i) \cos(\theta_j)$ & $1.18 \cdot 10^{-1}$ \\
+ 7 & nbJet & $6.92 \cdot 10^{-2}$ \\
 \hline
 \end{tabular}
 %}
-\caption{Ranking for the importance of the different variables used as input to the \ac{MVA}.}
-\label{table:importance}
+\caption{Ranking for the importance of the different variables used as input to the \ac{ANN}, considering the scalar 100 GeV training.}
+\label{table:importance1}
+\end{center}
+\end{table}
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+\hline
+ Rank & Variable & Importance \\
+ \hline
+ 1 & $M_{T2}(ll)$ & $2.27 \cdot 10^{-1}$ \\
+ 2 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $1.94 \cdot 10^{-1}$ \\ 
+ 2 & pf\ac{MET} & $1.92 \cdot 10^{-1}$ \\
+ 4 & $m_{bl}^t$ & $1.54 \cdot 10^{-1}$ \\
+ 5 & $\cos(\theta_i) \cos(\theta_j)$ & $1.53 \cdot 10^{-1}$ \\
+ 6 & nbJet & $7.90 \cdot 10^{-2}$ \\
+\hline
+\end{tabular}
+%}
+\caption{Ranking for the importance of the different variables used as input to the \ac{ANN}, considering the scalar 500 GeV training.}
+\label{table:importance2}
 \end{center}
 \end{table}
 
 \begin{figure}[htbp]
 \centering
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_bkg.png}
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=6.5cm]{figs/corr_background.png}
 \end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal1.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal0.png}
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=6.5cm]{figs/corr_signal.png}
 \end{minipage} \hfill
-\caption{Correlation coefficient between the different variables used as input to the \ac{MVA} for the backgrounds (on the left), the $t/\bar t$+DM (on the center) and the $t \bar t$+DM (on the right) processes.}
+\caption{Correlation coefficient between the different variables used as input to the \ac{ANN} for the backgrounds (on the left) and both signals (on the right).}
 \label{fig:correlationVar}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
+\subfigure[Scalar mediators] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal1_bkg.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=5.5cm]{figs/roc_signal0_bkg.png}
+\includegraphics[width=6.5cm, height=4.5cm]{figs/ROC_scalar100.png}
 \end{minipage} \hfill
-\caption{Signal versus background \ac{ROC} curves obtained for the $t/\bar t$+DM (on the left) and the $t \bar t$+DM (on the right) processes.}
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=4.5cm]{figs/ROC_scalar500.png}
+\end{minipage} \hfill
+}
+
+\subfigure[Pseudoscalar mediators] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=4.5cm]{figs/ROC_pseudo100.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=4.5cm]{figs/ROC_pseudo500.png}
+\end{minipage} \hfill
+}
+\caption{Signal versus background \ac{ROC} curves obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:ROC}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[\ac{BDT} classifier output distributions] {
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/BDT_bkg.png}
+\subfigure[Scalar overtraining plot] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=5cm]{figs/overtraining_scalar100.png}
 \end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal1.png}
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6.5cm, height=5cm]{figs/overtraining_scalar500.png}
 \end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/BDT_signal0.png}
-\end{minipage} \hfill
 }
 
-\subfigure[\ac{DNN} classifier output distributions] {
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/DNN_bkg.png}
+\subfigure[Pseudoscalar overtraining plot] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6cm, height=5cm]{figs/overtraining_pseudo100.png}
 \end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal1.png}
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=6cm, height=5cm]{figs/overtraining_pseudo500.png}
 \end{minipage}\hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=4.5cm, height=4cm]{figs/DNN_signal0.png}
-\end{minipage} \hfill
 }
-\caption{Test and training distributions obtained for the backgrounds (on the left), the $t/\bar t$+DM (on the center) and the $t \bar t$+DM (on the right) processes.}
+\caption{Overtraining distributions obtained for the 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:overtraining}
 \end{figure}
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=12cm, height=7cm]{figs/input_distributions.png}
+\includegraphics[width=12cm, height=7cm]{figs/MVA_input.png}
 \caption{Input variables distributions used for the \ac{MVA}.}
 \label{fig:inputVar}
 \end{figure}
-
-\color{red}FIXME: Update training results \color{black}
 
 \subsection{Evaluation process}
 
@@ -4467,23 +4570,30 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 
 \begin{figure}[htbp]
 \centering
+\subfigure[Scalar 100 GeV signal region] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_BDT_category.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_scalar100.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_DNN_category.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_scalar500.png}
 \end{minipage} \hfill
-\caption{Most likely category of the events corresponding to the different processes for the \ac{BDT} (on the left) and the \ac{DNN} (on the right).}
+}
+
+\subfigure[Pseudoscalar 100 GeV signal region] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_pseudo100.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_pseudo500.png}
+\end{minipage} \hfill
+}
+\caption{Most likely category of the events corresponding to the different processes for the 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:weightsApplied}
 \end{figure}
 
-As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in $t \bar t$+DM signal, $t/\bar t$+DM signal or backgrounds in the first, second and thirs bins respectively. We can also see that we still have a majority of background in each of the three bins, and that we have more $t \bar t$+DM than $t/\bar t$+DM signal in the second bin because of the difference in cross-section between these processes, but this strategy does allow us to define separate regions enriched in the different processes anyway. We can also conclude at this point that the results obtained using the \ac{BDT} and the \ac{DNN} are quite similar, by looking at these plots and at the \ac{ROC} curves obtained for both methods in Figure~\ref{fig:ROC}.
+As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in signals or backgrounds in the first and second bins respectively. We can also see that we still have a majority of background in each of the two bins, but this strategy does allow us to define separate regions enriched in the different processes anyway.
 
-\color{red}FIXME: Update plots, talks about SR definition, add percentage table for each process? \color{black}
-
-\section{Shape analysis} \label{section:Shape}
-
-\color{red} If section not put then remove it from the Chapter introduction \color{black}
+\color{red}FIXME: add percentage table for each process? \color{black}
 
 
 
@@ -4834,9 +4944,9 @@ Los objetos que se quieren usar en al an\'{a}lisis mismo se tienen que definir d
 
 \subsubsection{Extracci\'{o}n de se\~{n}al}
 
-Les se\~{n}ales de inter\'{e}s en este an\'{a}lisis est\'{a}n muy cerca de algunos fondos del Modelo Est\'{a}ndar desde el punto de vista de la cin\'{e}matica: se espera por ejemplo que sea complicado separar la se\~{n}al de $t \bar t$+DM del proceso $t \bar t$ sin que este sea acompa\~{n}ado por materia oscura. Se espera a\'{u}n as\'{i} que algunas variables presenten algo de discriminaci\'{o}n entre estos tipos de procesos muy similares: por ejemplo, la \ac{PUPPI} \ac{MET} deber\'{i}a ser estad\'{i}sticamente un poquito m\'{a}s alta cuando consideramos la se\~{n}al ya que, aunque el proceso $t \bar t$ y le se\~{n}al suelen presentar neutrinos con forma de energ\'{i}a transversa faltante en el detector, una contribuci\'{o}n adicional a la \ac{MET} se espera en el caso de la se\~{n}al, por la aparici\'{o}n de un par de part\'{i}culas de materia oscura.
+Les se\~{n}ales de inter\'{e}s en este an\'{a}lisis est\'{a}n muy cerca de algunos fondos del Modelo Est\'{a}ndar desde el punto de vista de la cin\'{e}matica: se espera por ejemplo que sea complicado separar la se\~{n}al de $t \bar t$+DM del proceso $t \bar t$ sin que este sea acompa\~{n}ado por materia oscura. Se espera a\'{u}n as\'{i} que algunas variables presenten algo de discriminaci\'{o}n entre estos tipos de procesos muy similares: por ejemplo, la pf\ac{MET} deber\'{i}a ser estad\'{i}sticamente un poquito m\'{a}s alta cuando consideramos la se\~{n}al ya que, aunque el proceso $t \bar t$ y la se\~{n}al suelen presentar neutrinos con forma de energ\'{i}a transversa faltante en el detector, una contribuci\'{o}n adicional a la \ac{MET} se espera en el caso de la se\~{n}al, por la aparici\'{o}n de un par de part\'{i}culas de materia oscura.
 
-En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarollado con el objetivo de poder combinar el poder de discriminaci\'{o}n de unas 10 variables que se se esperan que presenten algo de discriminaci\'{o}n por una parte entre las se\~{n}ales y los fondos del an\'{a}lisis, y por otra parte, entre las dos se\~{n}ales mismas, para poder definir zonas de se\~{n}al enrichidas en cada una de las se\~{n}ales de inter\'{e}s. El n\'{u}mero de b-jets observadas es una de las variables que pertenen a este \'{u}ltima categor\'{i}a, ya que la se\~{n}al de $t/\bar t$+DM suele presentar un solo top quark en el estado final en lugar de dos. Con este objetivo de sicriminaci\'{o}n en mente, se desarollaron en paralelo dos m\'{e}todos de \textit{machine learning} distintos: una \ac{BDT}, y una red neuronal profunda \ac{DNN}, ambas entrenadas con un conjunto labelizado de simulaciones de Monte-Carlo para que sean capaces de asi\~{n}ar una probabilidad de pertenencia a cada una de las 3 categor\'{i}as de inter\'{e}s: se\~{n}al 0 ($t \bar t$+DM), se\~{n}al 1 ($t/\bar t$+DM) o fondo. Un largo proceso de optimizaci\'{o}n de las redes tuvo lugar, con el objetivo de definir redes tan eficiente como sea posible y, una vez el training hecho y el proceso de validaci\'{o}n terminado, pasamos los datos colectados a traves de ambas redes para asignar un label a cada evento. De esta manera, definimos una \'{u}nica variable de salida que nos permite discriminar estos tres procesos con la cu\'{a}l hemos podido definir nuestras zonas de se\~{n}al del an\'{a}lisis.
+En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarollado con el objetivo de poder combinar el poder de discriminaci\'{o}n de unas 6 variables que se se esperan que presenten algo de discriminaci\'{o}n entre las se\~{n}ales y los fondos del an\'{a}lisis, para poder definir zonas de se\~{n}al enrichidas en las se\~{n}ales de inter\'{e}s. Con este objetivo de dicriminaci\'{o}n en mente, se desarollaron en paralelo dos m\'{e}todos de \textit{machine learning} distintos: una \ac{BDT}, y una red neuronal \ac{ANN}, ambas entrenadas con un conjunto labelizado de simulaciones de Monte-Carlo para que sean capaces de asi\~{n}ar una probabilidad de pertenencia a cada una de las 2 categor\'{i}as de inter\'{e}s: las dos se\~{n}ales ($t \bar t$+DM y $t/\bar t$+DM) o fondo. Un largo proceso de optimizaci\'{o}n de las redes tuvo por lo tanto lugar, con el objetivo de definir redes tan eficiente como sea posible y, una vez el training hecho y el proceso de validaci\'{o}n terminado, pasamos los datos colectados a traves de ambas redes para asignar un label a cada evento. De esta manera, definimos una \'{u}nica variable de salida que nos permite discriminar estos procesos y con la cu\'{a}l hemos podido definir nuestras zonas de se\~{n}al del an\'{a}lisis.
 
 %\color{red} FIXME: Complete this once analysis done \color{black}
 
@@ -5288,7 +5398,7 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 
 \chapter{\ac{MVA} optimization} \label{appendix:Optimization}
 
-The study of the different hyperparameters defining both the \ac{DNN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that usually influence the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{DNN}) during the 2016 analysis were used. 
+The study of the different hyperparameters defining both the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that usually influence the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
 
 The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each one of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. The training optimization has been performed for the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities and a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
@@ -5450,9 +5560,9 @@ The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scann
 
 For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
 
-\subsubsection{Deep Neural Network}
+\subsubsection{Analysis Neural Network}
 
-The same process has been repeated by considering this time the \ac{DNN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 45.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
+The same process has been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 45.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
 
 %\begin{figure}[htbp]
 %\centering
@@ -5492,14 +5602,14 @@ The same process has been repeated by considering this time the \ac{DNN} of the 
 %\includegraphics[width=7cm, height=5.7cm]{figs/DNN_arch_50_40_30_20_10_5.png}
 %\end{minipage} \hfill
 %}
-%\caption{Background rejection achieved for the \ac{DNN} by trying out different architectures.}
+%\caption{Background rejection achieved for the \ac{ANN} by trying out different architectures.}
 %\label{fig:optLayers}
 %\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm, height=8cm]{figs/DNN_architectures.png}
-\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different architectures.}
+\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different architectures.}
 \label{fig:optLayers}
 \end{figure}
 
@@ -5531,18 +5641,18 @@ After this first step of optimization, we kept the architecture which seemed to 
 %\includegraphics[width=7cm, height=5.7cm]{figs/DNN_learning005.png}
 %\end{minipage} \hfill
 %}
-%\caption{Background rejection achieved for the \ac{DNN} by trying out different learning rates.}
+%\caption{Background rejection achieved for the \ac{ANN} by trying out different learning rates.}
 %\label{fig:optLearning}
 %\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm, height=8cm]{figs/DNN_rates.png}
-\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different learning rates.}
+\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different learning rates.}
 \label{fig:optLearning}
 \end{figure}
 
-The last parameter that has been optimized in this case is the batch size, allowing us to gain some time by avoiding updating the weight of the network each time an input event is considered but by instead grouping them in batches. The results obtained in this case are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{DNN} with a batch size 20 than a higher value of 100.
+The last parameter that has been optimized in this case is the batch size, allowing us to gain some time by avoiding updating the weight of the network each time an input event is considered but by instead grouping them in batches. The results obtained in this case are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{ANN} with a batch size 20 than a higher value of 100.
 
 %\begin{figure}[htbp]
 %\centering
@@ -5570,14 +5680,14 @@ The last parameter that has been optimized in this case is the batch size, allow
 %\includegraphics[width=7cm, height=5.7cm]{figs/DNN_batch250.png}
 %\end{minipage} \hfill
 %}
-%\caption{Background rejection achieved for the \ac{DNN} by trying out different batch sizes.}
+%\caption{Background rejection achieved for the \ac{ANN} by trying out different batch sizes.}
 %\label{fig:optBatch}
 %\end{figure}
 
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=10cm, height=8cm]{figs/DNN_batches.png}
-\caption{\ac{ROC} curves obtained for the \ac{DNN} by trying out different batch sizes.}
+\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different batch sizes.}
 \label{fig:optBatch}
 \end{figure}
 
@@ -5585,7 +5695,7 @@ For all the previous tests, we took care of defining a number of epochs high eno
 
 \subsubsection{Input variables chosen}
 
-Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. We therefore decided to train several times the \ac{DNN} and the \ac{BDT} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in Table~\ref{table:sets}. %The actual correlation observed for all these variables can be seen in Figures~\ref{fig:allVarCorr_bkg} for the background and signal processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
+Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. We therefore decided to train several times the \ac{ANN} and the \ac{BDT} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in Table~\ref{table:sets}. %The actual correlation observed for all these variables can be seen in Figures~\ref{fig:allVarCorr_bkg} for the background and signal processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
 
 \begin{table}
 \begin{center}
@@ -5595,7 +5705,7 @@ Finally, the input variables given to the \ac{MVA} is also an extremely importan
 \hline
 \multirow{1}{*}{Set 1} & Number of b-jets \\
 & $m_{bl}^t$ \\
-& \ac{PUPPI} \ac{MET} \\
+& pf\ac{MET} \\
 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ \\
 & $m_{T2}(ll)$ \\
 \hline
@@ -5658,7 +5768,7 @@ Set 6 & Set 5 and \\
 %\label{fig:allVarCorr_signal0}
 %\end{figure}
 
-As an example, the scalar $t \bar t$+DM upper limits obtained considering different sets of variables and a global training (for the 2016 data taking period only, without considering any systematics and for a single 100 GeV mass point training) are shown in Figures~\ref{fig:optVarBDT} and~\ref{fig:optVarDNN}. Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because the systematics were not considered when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
+As an example, the scalar $t \bar t$+DM upper limits obtained considering different sets of variables and a global training (for the 2016 data taking period only, without considering any systematics and for a single 100 GeV scalar training) are shown in Figures~\ref{fig:optVarBDT} and~\ref{fig:optVarDNN}. Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because the systematics were not considered when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -5740,11 +5850,11 @@ As an example, the scalar $t \bar t$+DM upper limits obtained considering differ
 \includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_DNN.png}
 \end{minipage} \hfill
 }
-\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{DNN} and different sets of variables used as input.}
+\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{ANN} and different sets of variables used as input.}
 \label{fig:optVarDNN}
 \end{figure}
 
-According to these last results, we decided to use the \ac{DNN} and the simplest possible set of input variables for the analysis given that the limits obtained using this method and such simple input variables were much better. 
+According to these last results, we decided to use the \ac{ANN} for the analysis instead of the \ac{BDT}, trained with the simplest possible set of input variables, plus one of the two spin correlated variables from the set 3 (mainly because the two variables were found to be correlated at 99\%), since this seems to be the set of variables able to give us the best possible upper limits around 100 GeV, the mass point chosen for the training process. 
 
 \chapter{Pulls and impacts plots} \label{appendix:Impact}
 
@@ -6580,6 +6690,10 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{TopPtRecipe}
 \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting}{\ac{CMS} Twiki,
 "pt(top-quark) based reweighting of ttbar MC", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting}, as seen in May 2020}
+
+\bibitem{topPtReweighting}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting\#Case\_3\_1\_Analyses\_with\_SM\_tt\_as}{\ac{CMS} Twiki,
+"The modeling of the top quark $p_T$", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting\#Case\_3\_1\_Analyses\_with\_SM\_tt\_as}, as seen in February 2021}
 
 \bibitem{ElePOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}{\ac{CMS} Twiki,

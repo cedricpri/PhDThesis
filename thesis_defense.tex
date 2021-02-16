@@ -21,6 +21,8 @@
 \usepackage{arydshln}
 \usepackage{mathtools}
 \usepackage{graphicx}
+\usepackage{bm}
+\usepackage{cancel}
 \usepackage[document]{ragged2e}
 \usepgfplotslibrary{dateplot}
 \usepackage{xspace}
@@ -103,27 +105,27 @@
 
 \maketitle
 
-\begin{frame}{Outline}
-\justifying
-\begin{itemize}
-\item Introduction
-\item The dark matter case
-\item The experimental setup
-\begin{itemize}
-\item The LHC accelerator
-\item The CMS detector
-\end{itemize}
-
-\item Global strategy
-%\item Event reconstruction
-\item Data, signals and backgrounds
-\item Event selection
-\item Signal extraction
-\item Systematic uncertainties
-\item Results and interpretation
-\item Conclusions
-\end{itemize}
-\end{frame}
+%\begin{frame}{Outline}
+%\justifying
+%\begin{itemize}
+%\item Introduction
+%\item The dark matter case
+%\item The experimental setup
+%\begin{itemize}
+%\item The LHC accelerator
+%\item The CMS detector
+%\end{itemize}
+%
+%\item Global strategy
+%%\item Event reconstruction
+%\item Data, signals backgrounds and objects
+%\item Event selection
+%\item Signal extraction
+%\item Systematic uncertainties
+%\item Results and interpretation
+%\item Conclusions
+%\end{itemize}
+%\end{frame}
 
 \begin{frame}{Introduction}
 \justifying
@@ -149,7 +151,7 @@ A search for the \alert{production of dark matter particles in association with 
 \vspace{-5pt}
 \begin{itemize}
 \justifying
-\item Consider different dark matter production models to eventually exclude some of them or at least \textbf{put upper limits on their cross section of production}.
+\item Consider different dark matter production models to discover or eventually exclude some of them, or \textbf{put upper limits on their cross section of production}.
 \end{itemize} \vfill
 \end{frame}
 
@@ -322,7 +324,7 @@ We are searching for \alert{dark matter produced in association with either one 
 \begin{itemize} 
 	\justifying
 	\item Spin 1/2 DM $\chi$ ($\in [1, 55]$ GeV, Dirac fermion) \\
-	\item Spin 0 scalar (S)/pseudoscalar (PS) mediator $\phi$ (Yukawa-like structure of such interactions $\rightarrow$ gain from the coupling of the mediator to top quarks) \\
+	\item Spin 0 scalar (S)/pseudoscalar (PS) mediator $\phi$/a (Yukawa-like structure of such interactions $\rightarrow$ gain from the coupling of the mediator to top quarks) \\
 	\item Mediator mass $\in [10, 1000]$ GeV \\
 	\item Coupling $g_{\chi}$ mediator/DM set to 1 (same for all $g_q$ couplings) \\
 	%\item Most samples cross-section at NLO
@@ -424,7 +426,7 @@ Scalar (pseudoscalar) mediators were with this combination \alert{excluded up to
 The experimental setup
 \end{frame}
 
-\begin{frame}{The Large Hadron Collider I}
+\begin{frame}{The Large Hadron Collider}
 \justifying
 The data analyzed \alert{has been taken by the Large Hadron Collider}:
 
@@ -432,7 +434,7 @@ The data analyzed \alert{has been taken by the Large Hadron Collider}:
 	\begin{column}{0.55	\textwidth}
 	\begin{itemize}
 \justifying
-\item A 27km circular underground proton-proton collider, located at CERN;
+\item A 27 km circular underground proton-proton collider, located at CERN;
 \item Result of the collaboration of 22 countries;
 \item Built in order to study and reproduce the conditions of the Universe at its origin;
 \item Provided the collisions that lead to the discovery of the Higgs boson in 2012 \cite{HiggsDiscovery1, HiggsDiscovery2};
@@ -452,29 +454,29 @@ The data analyzed \alert{has been taken by the Large Hadron Collider}:
 The data considered in this work has been collected during the \textbf{Run II of operation of the LHC} (from 2016 to 2018), at 13 TeV, totalling ($137.1 \pm 2.0$)~fb$^{-1}$ of data, selected by the different levels of trigger from the 40MhZ collision rate. \vfill
 \end{frame} 
 
-\begin{frame}{The Large Hadron Collider II}
-\justifying
-In the 4 interaction points of the LHC, \alert{4 detectors} have been placed: ATLAS, CMS, ALICE and LHCb, each having their own characteristics and features: \vfill
-
-\begin{columns}
-	\begin{column}{0.40	\textwidth}
-\begin{center}
-\includegraphics[width=5cm, height=3.6cm]{figs/LHCdetectors.png}
-\end{center}
-\end{column}
-\begin{column}{0.58	\textwidth}
-\begin{itemize}
-\justifying
-\item ATLAS and CMS are \textbf{general purpose detectors}, able to study exotic processes such as well as able to to make precision measurements on Standar Model physics;
-\item ALICE is mostly dedicated to the study of the quark-gluon plasma originating from heavy ions collisions;
-\item And LHCb has been designed to study the CP violation phenomena, which could be the sign of some new physics.
-\end{itemize}
-\end{column}
-\end{columns} \vfill
-
-\vspace{10pt}
-The collisions analyzed in this work \alert{have been collected by the CMS detector}. \vfill
-\end{frame}
+%\begin{frame}{The Large Hadron Collider II}
+%\justifying
+%In the 4 interaction points of the LHC, \alert{4 detectors} have been placed: ATLAS, CMS, ALICE and LHCb, each having their own characteristics and features: \vfill
+%
+%\begin{columns}
+%	\begin{column}{0.40	\textwidth}
+%\begin{center}
+%\includegraphics[width=5cm, height=3.6cm]{figs/LHCdetectors.png}
+%\end{center}
+%\end{column}
+%\begin{column}{0.58	\textwidth}
+%\begin{itemize}
+%\justifying
+%\item ATLAS and CMS are \textbf{general purpose detectors}, able to study exotic processes such as well as able to to make precision measurements on Standar Model physics;
+%\item ALICE is mostly dedicated to the study of the quark-gluon plasma originating from heavy ions collisions;
+%\item And LHCb has been designed to study the CP violation phenomena, which could be the sign of some new physics.
+%\end{itemize}
+%\end{column}
+%\end{columns} \vfill
+%
+%\vspace{10pt}
+%The collisions analyzed in this work \alert{have been collected by the CMS detector}. \vfill
+%\end{frame}
 
 \begin{frame}{The CMS detector I}
 \justifying
@@ -557,18 +559,21 @@ Global strategy
 
 \begin{frame}{Analysis strategy}
 \justifying
-Run II legacy paper being worked on, expected to \alert{combine both the $t$+DM and $t \bar t$+DM searches}, and the 3 possible final states (hadronic, semi-leptonic and dileptonic). \vfill
+Run II legacy paper being worked on, expected to \alert{combine both the $t/\bar t$+DM and $t \bar t$+DM searches}, and the 3 possible final states (hadronic, semi-leptonic and dileptonic). \\
+\hspace{10pt} $\rightarrow$ Paper expected to be approved by LHCP ($\sim$ June). \vfill
 
-The effort is \alert{globally common} between the groups:
+The effort is \textbf{globally common} between the groups studying the different final states:
 \begin{itemize}
 \justifying
-\item Objects will be defined in a common way
+\item Objects are defined in a common way
 \item Control and signal region orthogonal between the channels
 \begin{itemize}
 \justifying
-\item Number of leptons and b-jet categorization to improve the sensitivity by defining enriched single top/$t \bar t$ regions
+\item Number of leptons and b-jet categorization to improve the sensitivity by defining enriched $t/\bar t$+DM/$t \bar t$+DM regions
 \end{itemize}
-\end{itemize}
+\end{itemize} \vfill
+
+This talk will \textbf{be focused on the dilepton final state}, the only channel involving our group. \vfill
 \end{frame}
 
 
@@ -586,44 +591,45 @@ The effort is \alert{globally common} between the groups:
 
 
 
-
-
-
-
-
-
-\begin{frame}[standout]
-Hadronic final state
-\end{frame}
-
-%\begin{frame}{Analysis strategy}
-%\justifying
-%
+%\begin{frame}[standout]
+%Hadronic final state \\
+%Semi-leptonic final state
 %\end{frame}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\begin{frame}[standout]
-Semi-leptonic final state
-\end{frame}
-
-%\begin{frame}{Analysis strategy}
-%\justifying
 %
+%\begin{frame}{Event selection}
+%\justifying
+%\begin{columns}
+%		\hspace{5pt}
+%		\begin{column}{0.64\textwidth}
+%			\begin{center}
+%				%\begin{block}{\centering Leading $p_T$}\end{block}	
+%				%\alert{Leading $p_T$} \\ \vspace{5pt}
+%     			\includegraphics[width=\textwidth]{figs/semiHadronicSelection.png}
+%    		\end{center}		
+%		\end{column} \hfill
+%		\begin{column}{0.39\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Single lepton}\end{block} \vfill
+%				\begin{itemize}
+%				\item Single lepton trigger
+%				\item 1 isolated lepton (e, $\mu$)
+%				\item $\geq 2$ jets
+%				\item MET $> 160$ GeV
+%				\item + $0, \geq 1$ forward jets ($|\eta|> 2.4$)
+%				\end{itemize} \vfill
+%				
+%				\vspace{10pt}
+%				\begin{block}{\centering All hadronic}\end{block} \vfill	
+%				\begin{itemize}
+%				\item MET trigger
+%				\item Leptons veto (e, $\mu$)
+%				\item $\geq 3$ jets
+%				\item MET $> 250$ GeV
+%				\item + $0, \geq 1$ forward jets
+%				\end{itemize} \vfill
+%    		\end{center}		
+%		\end{column} \hfill
+%\end{columns}
 %\end{frame}
 
 
@@ -659,7 +665,8 @@ The main idea is to train a MVA (either BDT or DNN) to \textbf{separate the two 
 \begin{itemize}
 \justifying
 \item Both using nanoAODv7 and the same background/signal samples;
-\item Synchronization exercise performed in the different control and signal regions, in 2016, 2017 and 2018, as documented in our twiki \cite{ourTwiki}.
+\item Synchronization exercise performed in the different control and signal regions, in 2016, 2017 and 2018, as documented in our twiki \cite{ourTwiki};
+\item Similar strategy followed in both cases, with different optimization attempts.
 \end{itemize} \vfill
 \end{frame}
 
@@ -734,7 +741,7 @@ A flat scale factor and a fixed 20\% systematic uncertainty is then applied to t
 
 \begin{frame}{Non-prompt contamination I}
 \justifying
-Fake leptons detection in the detector needs to be taken into account properly, through a \alert{data-driven tight-to-loose method} since the Monte-Carlo is not reliable in this case: \vfill
+Fake leptons detection (mostly jets misidentified or leptons coming from heavy hadrons decays) in the detector needs to be taken into account properly, through a \alert{data-driven tight-to-loose method} since the Monte-Carlo is not reliable in this case: \vfill
 
 \begin{block}{\centering Fake rate}\end{block} \vspace{-5pt}
 \begin{itemize}
@@ -874,7 +881,41 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 
 \begin{frame}{Objects definition}
 \justifying
+\vspace{5pt} \begin{block}{\centering Leptons}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Two tight leptons selected: \alert{tight POG WP} for muons, \alert{MVA WP90} for electrons;
+\item Some additional minor cuts (eg., in the $d_{xy}/d_z$ impact parameters) to reduce the impact of the fakes.
+\end{itemize} \vfill
 
+\begin{block}{\centering Jets}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item $p_T > 30$ GeV, $|\eta| < 2.4$;
+\item Tight JET/MET POG working point + loose jet PU ID (if $p_T > 50$ GeV).
+\end{itemize} \vfill
+
+\begin{block}{\centering b-tag}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item B-Tagging and Vertexing POG deep CSV b-tag medium WP (high efficiency, misidentification rate for a light jet as a b-jet $\sim 10\%$).
+\end{itemize} \vfill
+
+\begin{block}{\centering MET}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item PfType1MET considered, with xy-shift and EE noise (2017) corrections.
+\end{itemize} \vfill
+
+\begin{block}{\centering Triggers}\end{block} \vspace{-6pt}
+\begin{itemize}
+\justifying
+\item Single and double lepton triggers combined to gain statistics, listed in the backup.
+\end{itemize} \vfill
+\end{frame}
+
+\begin{frame}[standout]
+Control regions
 \end{frame}
 
 \begin{frame}{Control regions}
@@ -886,11 +927,12 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 \vspace{-10pt}
 \begin{multicols}{2}
 \begin{itemize}
-\item Exactly 2 tight leptons ($p_T > 25, 20$ GeV)
+\item First 2 tight leptons: $p_T > 25, 20$ GeV
+\item Third lepton: $p_T < 10$ GeV
 \item Opposite sign leptons
 \item $m_{ll} > 20$ GeV
-\item At least 1 jet ($p_T > 30$ GeV, $|\eta| < 2.4$)
-\item At least 1 deep CSV b-jet (medium WP)
+\item At least 1 jet
+\item At least 1 b-jet
 \end{itemize}
 \end{multicols} \vfill
 
@@ -899,22 +941,18 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 \begin{multicols}{2}
 \begin{itemize}
 \item 15 GeV Z window ($ee$/$\mu \mu$ channels)
-\item $m_{T2}^{ll} > 80$ GeV
+\item $M_{T2}^{ll} > 80$ GeV
 \end{itemize}
 \end{multicols} \vfill
 
-\item A \alert{$t \bar t$} CR, similar to the $t \bar t$ + DM signal region:
-\begin{itemize}
-\item But only for events classified as background by the MVA 
-\item Currently blinded to 1fb$^{-1}$ per year
-\end{itemize} \vfill \vspace{10pt}
+\item A \alert{$t \bar t$} CR, similar to the $t \bar t$ + DM signal region but with $60 < M_{T2}(ll) < 80$ GeV \vfill \vspace{10pt}
 
-\item A \alert{ttV} (ttW + ttZ) CR:
+\item A \alert{ttV} (ttW + ttZ) enriched CR:
 \vspace{-10pt}
 \begin{multicols}{2}
 \begin{itemize}
 \item At least 3 tight leptons
-\item $m_{T2}^{ll} > 80$ GeV
+\item $M_{T2}^{ll} > 80$ GeV
 \end{itemize}
 \end{multicols} \vfill
 
@@ -922,16 +960,538 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 \vspace{-10pt}
 \begin{multicols}{2}
 \begin{itemize}
-\item Inclusive with same sign leptons
+\item Inclusive selection but with same sign leptons
 \item 15 GeV Z-veto ($ee$/$\mu \mu$ channels)
 \end{itemize}
 \end{multicols} \vfill
 \end{itemize}
 \end{frame}
 
+\begin{frame}{Inclusive control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_mll_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_mll_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_mll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{DY control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_mllpeak_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_mllpeak_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_mllpeak_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_dyCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{$t \bar t$ control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_mll_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_mll_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_mll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{$ttV$ control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_mll_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_mll_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_mll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Same sign control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_mll_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_mll_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_mll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_SSCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}[standout]
+Signal extraction
+\end{frame}
+
+\begin{frame}{MVA training}
+\justifying
+We \alert{trained both a BDT and an ANN}, featuring the following common characteristics:
+\vspace{-5pt}
+\begin{itemize}
+\justifying
+\item Mix of standard model $t \bar t$ and single top as \textbf{backgrounds}, and mix of both $t/\bar t$+DM and $t \bar t$+DM as \textbf{signals};
+\item Only events passing the \textbf{following pre-selection} are considered for the training:
+\vspace{-10pt}
+\begin{multicols}{2}
+\begin{itemize}
+\item 2 tight leptons: $p_T > 25, 20$ GeV
+\item Third lepton: $p_T < 10$ GeV
+\item Opposite sign leptons
+\item $m_{ll} > 20$ GeV
+\item At least 1 jet
+\item At least 1 b-jet
+\item $M_{T2}^{ll} > 80$ GeV
+\end{itemize}
+\end{multicols} 
+\vspace{-10pt}
+\item 50\% train/test splitting used ($\sim 40.000$ training events in total).
+\end{itemize} \vfill
+
+At the end of the day though, the \textbf{ANN was chosen for the analysis} over the BDT, given that it gave $\sim$10\% better upper limits once optimized. \vfill
+
+The TMVA package was then finally used to study the training performed, as shown in the next few slides for the 2016 scalar 100/500GeV training performed. \vfill	
+\end{frame}
+
+\begin{frame}{Pre-selection region}
+For 2016?
+\end{frame}
+
+\begin{frame}{Hyperparameters optimization}
+\justifying
+The hyperparameters of the ANN \textbf{have been fully optimized} one by one, trying each time to minimize the error in the test dataset and the discrimination obtained. \vfill
+
+\begin{columns}
+		\begin{column}{0.59\textwidth}
+		\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c } 
+\hline
+ DNN parameter & Optimized value \\
+ \hline
+ Hidden layers neurons & 80, 80, 40 \\
+ Activation functions & Relu (x3), softmax (output) \\
+Error function & Mean square error \\
+Optimizer & Adam \\
+Learning rate & 0.005 \\
+Training epochs & 250 \\
+Batch size & 250 \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}
+		\end{column} 
+		\end{columns} \vfill
+		
+At the end of the day, the ANN using the following input variables was chosen:
+
+\begin{table}
+\begin{center}
+\resizebox{0.45\textwidth}{!}{
+\begin{tabular}{ c|c|c } 
+\hline
+ Rank & Variable & Importance \\
+ \hline
+ 1 & $M_{T2}(ll)$ & $2.30 \cdot 10^{-1}$ \\
+ 2 & pfMET & $1.92 \cdot 10^{-1}$ \\
+ 3 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $1.67 \cdot 10^{-1}$ \\
+ 4 & $m_{bl}^t$ & $1.38 \cdot 10^{-1}$ \\
+ 5 & $\cos(\theta_i) \cos(\theta_j)$ & $1.35 \cdot 10^{-1}$ \\
+ 6 & nbJet & $6.95 \cdot 10^{-2}$ \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table} \vfill	
+\end{frame}
+
+\begin{frame}{ROC curves}
+\justifying
+\begin{block}{\centering Scalar mediators}\end{block}
+
+\vspace{-10pt}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{\centering 100 GeV}\end{block}
+\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_scalar100.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{\centering 500 GeV}\end{block}
+\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_scalar500.png}
+\end{center}
+\end{minipage} \hfill
+
+\begin{block}{\centering Pseudoscalar mediators}\end{block}
+
+\vspace{-5pt}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_pseudo100.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_pseudo500.png}
+\end{center}
+\end{minipage} \hfill
+\end{frame}
+
+\begin{frame}{Overtraining plots}
+\justifying
+\begin{block}{\centering Scalar mediators}\end{block}
+
+\vspace{-10pt}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{\centering 100 GeV}\end{block}
+\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_scalar100.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{\centering 500 GeV}\end{block}
+\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_scalar500.png}
+\end{center}
+\end{minipage} \hfill
+
+\begin{block}{\centering Pseudoscalar mediators}\end{block}
+
+\vspace{-5pt}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_pseudo100.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_pseudo500.png}
+\end{center}
+\end{minipage} \hfill
+\end{frame}
+
+%
+%\begin{frame}{2018 $t/\bar t$+DM signal region}
+%\begin{columns}
+%\begin{column}{1.07\textwidth}
+%\begin{block}{\centering $ll$ channel}\end{block}
+%\end{column}
+%\end{columns} \vspace{-5pt}
+%\begin{columns}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2016}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column} 
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2017}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column} 
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2018}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column}
+%\end{columns} \vspace{-5pt}
+%\begin{columns}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering njet}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_mt2ll.pdf}
+%    		\end{center}		
+%		\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering nbjet}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_mt2ll.pdf}
+%    		\end{center}		
+%		\end{column}
+%\end{columns} \vfill
+%\end{frame}
+%
+%\begin{frame}{2018 $t \bar t$+DM signal region}
+%\begin{columns}
+%\begin{column}{1.07\textwidth}
+%\begin{block}{\centering $ll$ channel}\end{block}
+%\end{column}
+%\end{columns} \vspace{-5pt}
+%\begin{columns}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2016}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column} 
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2017}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column} 
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%			\begin{block}{\centering 2018}\end{block}
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
+%    		\end{center}		
+%		\end{column}
+%\end{columns} \vspace{-5pt}
+%\begin{columns}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering Puppi MET}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
+%    		\end{center}		
+%		\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				\begin{block}{\centering njet}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
+%    		\end{center}		
+%		\end{column}
+%		\begin{column}{0.32\textwidth}
+%			\begin{center}
+%				%\begin{block}{\centering nbjet}\end{block}	
+%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
+%    		\end{center}		
+%		\end{column}
+%\end{columns} \vfill
+%\end{frame}
+
+\begin{frame}[standout]
+Systematic uncertainties
+\end{frame}
+
+\begin{frame}[standout]
+Results obtained
+\end{frame}
+
 \begin{frame}{Conclusions}
 \justifying
+A search for \alert{dark matter produced in association with either one or two top quarks} is on-going and was presented:
 
+\begin{itemize}
+\justifying
+\item This search is considering the \textbf{Run II legacy dataset} collected by the CMS detector;
+\item At IFCA, our efforts are entirely focused on the \textbf{dilepton final state};
+\item This search is performed by defining both a DNN and a BDT, training the different networks to recognize background and signal events, to separate them and \textbf{increase the signal efficiency};
+\item First time that such a combination will be performed considering this canal, which should increase by a lot the limits published in 2016; 
+\item We expect this analysis \alert{to be approved by June}.
+\end{itemize}
 \end{frame}
 
 
@@ -1200,7 +1760,7 @@ The superconducting solenoid:
 \item Is made out of 6 endcap disks and 5 barrel wheels;
 \item Weights more than 12 000 tons in total, with the return yoke;
 \item Is able to produce a 3.8T magnetic field once cooled down to 4.5K;
-\item Stores at all times around 2.6GJ of energy.
+\item Stores around 2.6GJ of energy when active.
 \end{itemize}
 \end{column}
 	\begin{column}{0.51 \textwidth}
@@ -1709,6 +2269,191 @@ VZ & ZZTo2L2Nu\_TuneCP5\_13TeV\_powheg\_pythia8 & 0.5640 \\
 }
 \end{center}
 \end{table}
+\end{frame}
+
+\begin{frame}{2016 triggers}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{HLT trigger path} \\
+ \hline
+ \multirow{1}{*}{SingleMu} & \multirow{1}{*}{[273158,284044]}  & HLT\_IsoMu24\_v* \\
+& & HLT\_IsoTkMu24\_v* \\
+\hline
+\multirow{1}{*}{SingleEle} & \multirow{1}{*}{[273158,284044]} & HLT\_Ele27\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele25\_eta2p1\_WPTight\_Gsf\_v* \\
+\hline
+DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\multirow{1}{*}{DoubleMu} & \multirow{1}{*}{[273158,281612]} & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_v* \\
+& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_v* \\
+& \multirow{1}{*}{[281613,284044] }& HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_DZ\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & \multirow{1}{*}{[273158,278272]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
+& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
+ & \multirow{1}{*}{[278273,284044]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}	
+\end{frame}
+
+\begin{frame}{2017 triggers}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{HLT trigger path} \\
+ \hline
+ SingleMu & [297046,306462]  & HLT\_IsoMu27\_v* \\
+\hline
+EGamma & [297046,306462] & HLT\_Ele35\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& [299368,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & [297046,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [297046,299329] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [299368,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}	
+\end{frame}
+
+\begin{frame}{2018 triggers}
+\justifying
+\begin{table}
+\begin{center}
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{HLT trigger path} \\
+ \hline
+ SingleMu & [315252,325172] & HLT\_IsoMu24\_v* \\
+ & & HLT\_Mu5\_v* \\
+ & [314859,325175] & HLT\_IsoMu27\_v* \\
+\hline
+EGamma & [315252,325172] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele35\_WPTight\_Gsf\_v* \\
+& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\hline
+DoubleMu & [315252,325172] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
+ &  & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+\hline
+\multirow{1}{*}{MuonEG} & [315252,325172] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+& & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\hline
+\end{tabular}
+}
+\end{center}
+\end{table}	
+\end{frame}
+
+\begin{frame}{Available b-taggers}
+\justifying
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=11cm, height=7.5cm]{figs/CMSBTag.png}
+\end{center}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Stransverse mass $M_{T2}^{ll}$}
+\justifying
+Extension of the transverse mass $m_T$ to cases when pairs of same flavor particles decay into one visible and one invisible particle, such as the double $W \rightarrow l\nu$ decay. \vfill
+
+Here, 2 neutrinos contribute to the presence of MET and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. $M_{T2}^{ll}$ is defined as:
+\begin{equation*}
+\begin{dcases}
+M_{T2}^2 = \min_{\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}} \bigg (\max \Big (m_T^2(\bm{p_{T_1}}, \bm{\cancel{p}_{T_{1}}}), m_T^2(\bm{p_{T_2}}, \bm{\cancel{p}_{T_{2}}}) \Big ) \bigg ) \\
+m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}_{T}}| \text{ sin}^2 \left (\frac{\alpha}{2} \right ) 
+\end{dcases}
+\end{equation*} \vfill
+
+Different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ then need to be probed, keeping only the combination which results in the lowest possible value. \vfill
+
+The $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while our eventual signal does not have this limitation because of the pair of dark matter particles produced. \vfill
+\end{frame}
+
+\begin{frame}{$m_{bl}^t$ variable}
+\justifying
+If a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$: \vfill
+
+\begin{equation*}
+m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
+\end{equation*} \vfill
+
+In this equation, the minimization is performed either:
+\begin{itemize}
+\justifying
+\item Over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more j-bets are observed;
+\item Or over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event.
+\end{itemize} \vfill 
+
+This variable is expected to \textbf{give some discrimination} between our two signals of interest. \vfill
+\end{frame}
+
+\begin{frame}{Spin correlated variables}
+\justifying
+The spin correlation in a $t \bar t$like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products. \vfill
+Such variables are interesting because \textbf{the spin correlation depend on the production mechanism} and will be influenced by
+the additional coupling to a scalar or pseudoscalar mediator, making this a perfect candidate to be a good discriminating variable. \vfill
+
+In particular, two spin correlated variables are considered:
+\begin{itemize}
+\justifying
+\item $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos;
+\item $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay products in their respective parent rest frames.
+\end{itemize}
+\end{frame}
+
+\begin{frame}{BDT vs ANN}
+\textbf{Disclaimer:} comparison done without systematics, considering the 2016 with a single 100 GeV training and for a single fb$^{-1}$ of data given the blinding policy applied. \vfill
+
+\begin{columns}
+	\begin{column}{0.48 \textwidth}
+\begin{center}
+\begin{block}{\centering BDT}\end{block}
+\includegraphics[width=5cm, height=4.4cm]{figs/limit_ttDM_scalar__set3_BDT.png}
+\end{center}
+\end{column}
+	\begin{column}{0.51 \textwidth}
+\begin{figure}[htbp]
+\begin{center}
+\begin{block}{\centering DNN}\end{block}
+\includegraphics[width=5cm, height=4.4cm]{figs/limit_ttDM_scalar__set3_DNN.png}
+\end{center}
+\end{figure}
+	\end{column}
+	\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Input variables correlation}
+\justifying
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_background.png}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=4.5cm, height=4.5cm]{figs/corr_signal.png}
+\end{center}
+\end{minipage} \hfill
+\end{figure}
 \end{frame}
 
 \backupend
