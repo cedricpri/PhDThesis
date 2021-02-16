@@ -1256,7 +1256,54 @@ The TMVA package was then finally used to study the training performed, as shown
 \end{frame}
 
 \begin{frame}{Pre-selection region}
-For 2016?
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
 \end{frame}
 
 \begin{frame}{Hyperparameters optimization}
@@ -1309,168 +1356,230 @@ At the end of the day, the ANN using the following input variables was chosen:
 \end{table} \vfill	
 \end{frame}
 
+\begin{frame}{2018 discriminating variables}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering 2018, $ll$ channel}\end{block} \vspace{10pt}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_dphillmet_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mblt_2018.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_costhetall_2018.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_nbjet_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
 \begin{frame}{ROC curves}
 \justifying
-\begin{block}{\centering Scalar mediators}\end{block}
-
-\vspace{-10pt}
+\begin{block}{\centering Scalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
 \begin{minipage}[b]{.49\textwidth}
-\begin{center}
+\vspace{-5pt}
 \begin{block}{\centering 100 GeV}\end{block}
-\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_scalar100.png}
-\end{center}
-\end{minipage} \hfill
-\begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\begin{block}{\centering 500 GeV}\end{block}
-\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_scalar500.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_scalar100.png}
 \end{center}
-\end{minipage} \hfill
-
-\begin{block}{\centering Pseudoscalar mediators}\end{block}
+\end{minipage}
+\begin{minipage}[b]{.02\textwidth}\end{minipage}
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering 500 GeV}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_scalar500.png}
+\end{center}
+\end{minipage}
+\end{figure} \vfill
 
 \vspace{-5pt}
+\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_pseudo100.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo100.png}
 \end{center}
-\end{minipage} \hfill
+\end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=4.6cm, height=3.4cm]{figs/ROC_pseudo500.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo500.png}
 \end{center}
 \end{minipage} \hfill
+\end{figure} \vfill
 \end{frame}
 
 \begin{frame}{Overtraining plots}
 \justifying
-\begin{block}{\centering Scalar mediators}\end{block}
-
-\vspace{-10pt}
+\begin{block}{\centering Scalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
 \begin{minipage}[b]{.49\textwidth}
-\begin{center}
+\vspace{-5pt}
 \begin{block}{\centering 100 GeV}\end{block}
-\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_scalar100.png}
-\end{center}
-\end{minipage} \hfill
-\begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\begin{block}{\centering 500 GeV}\end{block}
-\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_scalar500.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/overtraining_scalar100.png}
 \end{center}
-\end{minipage} \hfill
-
-\begin{block}{\centering Pseudoscalar mediators}\end{block}
+\end{minipage}
+\begin{minipage}[b]{.02\textwidth}\end{minipage}
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering 500 GeV}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/overtraining_scalar500.png}
+\end{center}
+\end{minipage}
+\end{figure} \vfill
 
 \vspace{-5pt}
+\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_pseudo100.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/overtraining_pseudo100.png}
 \end{center}
-\end{minipage} \hfill
+\end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=4.5cm, height=3.4cm]{figs/overtraining_pseudo500.png}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/overtraining_pseudo500.png}
 \end{center}
 \end{minipage} \hfill
+\end{figure} \vfill
 \end{frame}
 
-%
-%\begin{frame}{2018 $t/\bar t$+DM signal region}
-%\begin{columns}
-%\begin{column}{1.07\textwidth}
-%\begin{block}{\centering $ll$ channel}\end{block}
-%\end{column}
-%\end{columns} \vspace{-5pt}
-%\begin{columns}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2016}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column} 
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2017}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column} 
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2018}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column}
-%\end{columns} \vspace{-5pt}
-%\begin{columns}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				\begin{block}{\centering Puppi MET}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				\begin{block}{\centering njet}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_mt2ll.pdf}
-%    		\end{center}		
-%		\end{column}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				\begin{block}{\centering nbjet}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal1_scalar100_set8_mt2ll.pdf}
-%    		\end{center}		
-%		\end{column}
-%\end{columns} \vfill
-%\end{frame}
-%
-%\begin{frame}{2018 $t \bar t$+DM signal region}
-%\begin{columns}
-%\begin{column}{1.07\textwidth}
-%\begin{block}{\centering $ll$ channel}\end{block}
-%\end{column}
-%\end{columns} \vspace{-5pt}
-%\begin{columns}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2016}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column} 
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2017}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column} 
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%			\begin{block}{\centering 2018}\end{block}
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_pfmet.pdf}
-%    		\end{center}		
-%		\end{column}
-%\end{columns} \vspace{-5pt}
-%\begin{columns}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				\begin{block}{\centering Puppi MET}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
-%    		\end{center}		
-%		\end{column}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				\begin{block}{\centering njet}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
-%    		\end{center}		
-%		\end{column}
-%		\begin{column}{0.32\textwidth}
-%			\begin{center}
-%				%\begin{block}{\centering nbjet}\end{block}	
-%     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_set8_mt2ll.pdf}
-%    		\end{center}		
-%		\end{column}
-%\end{columns} \vfill
-%\end{frame}
+\begin{frame}{Scalar 100 GeV signal region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Scalar 500 GeV signal region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll_2018.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
 
 \begin{frame}[standout]
 Systematic uncertainties
@@ -2454,6 +2563,96 @@ In particular, two spin correlated variables are considered:
 \end{center}
 \end{minipage} \hfill
 \end{figure}
+\end{frame}
+
+\begin{frame}{2016 discriminating variables}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering 2016, $ll$ channel}\end{block}\vspace{10pt}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2016.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_dphillmet_2016.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mblt_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_costhetall_2016.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_nbjet_2016.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{2017 discriminating variables}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering 2017, $ll$ channel}\end{block}\vspace{10pt}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mt2ll_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_METcorrected_pt_2017.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_dphillmet_2017.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_mblt_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_costhetall_2017.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/log_cratio_topCR_ll_nbjet_2017.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
 \end{frame}
 
 \backupend

@@ -7,8 +7,8 @@
    bindingoffset=2.5cm,
    inner=1cm,
    outer=2.5cm,
-   top=2cm,
-   bottom=3cm,
+   top=2cm,  %Was 2cm before fancy package
+   bottom=2.6cm,
    headsep=1.2cm
 ]{geometry}
 
@@ -35,7 +35,7 @@
 \usepackage[toc,page]{appendix}
 \usepackage[]{acronym}
 \usepackage{setspace}
-%\usepackage[Sonny]{fncychap}
+\usepackage[Conny]{fncychap}
 \usepackage{fancyhdr}
 \usepackage{titlesec}
 \usepackage{gensymb}
@@ -52,54 +52,69 @@
 \usepackage{lscape}
 \usepackage{etoolbox}
 
-\makeatletter
-\titleformat{\chapter}[block]
-  {\Huge}{\filright\enspace \@chapapp~\thechapter\enspace \\}
-  {8pt}{\Huge\bfseries\filcenter}
-\titlespacing*{\chapter}
- {0pt}{0pt}{50pt}
-\makeatother
+%\makeatletter
+%\titleformat{\chapter}[block]
+%  {\Huge}{\filright\enspace \@chapapp~\thechapter\enspace \\}
+%  {8pt}{\Huge\bfseries\filcenter}
+%\titlespacing*{\chapter}
+% {0pt}{0pt}{50pt}
+%\makeatother
 
 %For Conny package
-%\makeatletter
-%\renewcommand*{\@makechapterhead}[1]{%
-%  \vspace*{0\p@}%
-%  {\parindent \z@ \raggedright \normalfont
-%    \ifnum \c@secnumdepth >\m@ne
-%      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
-%        \DOCH
-%      \fi
-%    \fi
-%    \interlinepenalty\@M
-%    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
-%      \DOTI{#1}%
-%    \else%
-%      \DOTIS{#1}%
-%    \fi
-%  }}
-%% For the case \chapter*:
-%\renewcommand*{\@makeschapterhead}[1]{%
-%  \vspace*{0\p@}%
-%  {\parindent \z@ \raggedright
-%    \normalfont
-%    \interlinepenalty\@M
-%    \DOTIS{#1}
-%    \vskip 0\p@
-%  }}
-%\makeatother
-%
-%\ChNameAsIs
-%\ChTitleAsIs
-%\ChRuleWidth{0.8pt}
+\makeatletter
+\renewcommand*{\@makechapterhead}[1]{%
+  \vspace*{0\p@}%
+  {\parindent \z@ \raggedright \normalfont
+    \ifnum \c@secnumdepth >\m@ne
+      \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 040920
+        \DOCH
+      \fi
+    \fi
+    \interlinepenalty\@M
+    \if@mainmatter%%%%% Fix for frontmatter, mainmatter, and backmatter 060424
+      \DOTI{#1}%
+    \else%
+      \DOTIS{#1}%
+    \fi
+  }}
+% For the case \chapter*:
+\renewcommand*{\@makeschapterhead}[1]{%
+  \vspace*{0\p@}%
+  {\parindent \z@ \raggedright
+    \normalfont
+    \interlinepenalty\@M
+    \DOTIS{#1}
+    \vskip 0\p@
+  }}
+\makeatother
+
+\ChNameAsIs
+\ChTitleAsIs
+\ChRuleWidth{0.8pt}
 
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-%\setlength{\headheight}{20pt}
-%\pagestyle{fancy}
+\pagestyle{fancy}
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
-%\rhead{\thepage \hfill \leftmark}
-%\lhead{\thepage \hfill \leftmark}
-%\cfoot{}
+\fancyhf{}
+\fancyhead[EL]{\vspace{20pt} \thepage \hfill \nouppercase\leftmark \vspace{4pt}}
+\fancyhead[OL]{\vspace{20pt} \thepage \hfill \nouppercase\rightmark \vspace{4pt}}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0pt}% Line at the footer invisible
+}
+\setlength{\headheight}{25pt} %Space between top of the page and text
+
+%\pagestyle{fancy}
+%\fancyhf{}
+%\fancyhead[EL]{\vspace{20pt} \textbf{\nouppercase\leftmark} \vspace{4pt}}
+%\fancyhead[OR]{\vspace{20pt} \nouppercase\rightmark \vspace{4pt}}
+%\fancyhead[ER,OL]{\thepage}
+%\setlength{\headheight}{25pt} %Space between top of the page and text
 
 \begin{document}
 
@@ -360,8 +375,6 @@ However, observing \ac{DM} is still extremely difficult, mainly because it barel
 In the context of this work, \ac{DM} is searched for in association with one or two top quarks which play the role of the \ac{SM} particle allowing us to actually trigger the event, as described in Section~\ref{section:focus}. The top quark, the most most massive of all the fundamental particles observed by far, is indeed an excellent object to study in this context, mainly because of its high mass and because of the expected Yukawa-like coupling structure of the new physics model \cite{MFVYukawa}. However, this also means that the phenomenology of this quark is mostly driven by its large mass and that it decays before hadronization can occur, almost always into a W boson and a bottom quark. The final state of the process we are interested in is then made of some b-jets, leptons and/or quarks and is mostly categorized depending on the decay of the W itself. This work will actually be focused on the two leptons final state, also known as the dileptonic channel, mostly because leptons are by reconstruction much cleaner than jets and because this channel does not have lots of background processes raising to a similar final state, even though its branching ratio is the smallest, as will be explained in Section~\ref{section:ourChannel}.
 
 The \ac{LHC} has now been running for a decade, and several similar searches have already been carried out and published in the past by the \ac{CMS} and \ac{ATLAS} collaborations, at different center of mass energies, as described in Section~\ref{section:PreviousResults}. First of all, at 8 TeV, several searches for a pair of top quarks were published by the \ac{CMS} (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and \ac{ATLAS} collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. Then, at 13 TeV, the \ac{ATLAS} collaboration published on one hand several studies, considering different final states and different luminosities (ranging from 13.3 fb$^{-1}$ to 137.1 fb$^{-1}$) \cite{PreviousDoubleTopNoLep13ATLAS, PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS, PreviousDoubleTopBottomAllLep13ATLAS,  ATLASICHEP2020}. On the other hand, the \ac{CMS} collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the data collected during the year 2016 \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis while considering the full Run II dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
-
-\newpage
 
 After a general introduction about dark matter in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC}, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. The data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $(137.1 \pm 0.2)$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. A particular care will be given to the explanation of the \acf{PF} algorithm, used to reconstruct the different objects of the analysis and that will be defined in Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
 
@@ -2561,23 +2574,23 @@ Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:
 
 \begin{table}
 \begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c } 
+\resizebox{\textwidth}{!}{
+\begin{tabular}{ c|c|c|c|c } 
  \hline
- Process & $t/\bar t$+DM 2018 \ac{SR} & $t \bar t$+DM 2018 \ac{SR} \\
+ Process & Scalar 100 GeV \ac{SR} & Scalar 500 GeV \ac{SR} & Pseudoscalar 100 GeV \ac{SR} & Pseudoscalar 500 GeV \ac{SR} \\
  \hline
- \ac{SM} $t \bar t$ & XXXX (XX\%) & XXXX (XX\%) \\
- Single top & XXXX (XX\%) & XXXX (XX\%) \\
- DY & XXXX (XX\%) & XXXX (XX\%) \\
- WW & XXXX (XX\%) & XXXX (XX\%) \\
- $t \bar t + V$ & XXXX (XX\%) & XXXX (XX\%) \\
- Non-prompt & XXXX (XX\%) & XXXX (XX\%) \\
+ \ac{SM} $t \bar t$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+ Single top & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+ DY & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+ WW & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+ $t \bar t + V$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+ Non-prompt & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
  \hline
- Data & XXXX (XX\%) & XXXX (XX\%) \\
+ Data & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
  \hline
 \end{tabular}
-%}
-\caption{Number of yields and percentage of different processes in the 2018 signal regions.}
+}
+\caption{Number of yields and percentage of different processes in some of the 2018 signal regions.}
 \label{tab:yields}
 \end{center}
 \end{table}	
@@ -3744,28 +3757,28 @@ First of all, a global pre-selection was agreed on between the groups involved, 
 \subfigure[2016 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the pre-selection region used for the training of the \ac{MVA}.}
@@ -3783,28 +3796,28 @@ Several different signal regions have then actually been defined, depending on t
 \subfigure[2016 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 100 GeV scalar training.}
@@ -3816,28 +3829,28 @@ Several different signal regions have then actually been defined, depending on t
 \subfigure[2016 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2016.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2016.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2017.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2017.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 500 GeV scalar training.}
@@ -4118,12 +4131,12 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_puppimet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_puppimet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2018.png}
 \end{minipage}\hfill
-\caption{pf\ac{MET} distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 pf\ac{MET} distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMET}
 \end{figure}
 
@@ -4148,12 +4161,12 @@ In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
 \end{minipage} \hfill
-\caption{$M_{T2}(ll)$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 $M_{T2}(ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2}
 \end{figure}
 
@@ -4167,7 +4180,7 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_mt2bl.png}
 \end{minipage} \hfill
-\caption{$M_{T2}(bl, bl)$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 $M_{T2}(bl, bl)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2bl}
 \end{figure}
 
@@ -4175,21 +4188,20 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 
 Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by construction expected to give some discrimination between the signals and the different background processes, mainly the \ac{SM} $t \bar t$. 
 
-On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signals, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figures~\ref{fig:SRdisc1} and~\ref{fig:SRdisc2}.
+On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signals, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figure~\ref{fig:SRdisc1}.
 
 \begin{figure}[htbp]
 \centering
+\subfigure[Dark $p_T$ variable] {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dark_pt.png}
 \end{minipage} \hfill
-\caption{Dark $p_T$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
-\label{fig:SRdisc1}
-\end{figure}
+}
 
-\begin{figure}[htbp]
+\subfigure[Overlapping factor $R$ variable] {
 \centering
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_overlapping_factor.png}
@@ -4197,8 +4209,9 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_overlapping_factor.png}
 \end{minipage} \hfill
-\caption{Overlapping factor $R$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
-\label{fig:SRdisc2}
+}
+\caption{2018 dark $p_T$ and overlapping factor $R$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions (on the right) for the backgrounds and several signal samples.}
+\label{fig:SRdisc1}
 \end{figure}
 
 \subsubsection*{Spin correlated variables}
@@ -4210,12 +4223,12 @@ Several variables belonging to this category have been considered, such as $\xi 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_cosphill.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_costhetall_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_cosphill.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_costhetall_2018.png}
 \end{minipage} \hfill
-\caption{Cosine of the full opening angle of the top decay products in their respective parent rest frames in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 $\xi = \cos(\theta_i) \cos(\theta_j)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc3}
 \end{figure}
 
@@ -4250,12 +4263,12 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_dphillmet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_dphillmet_2018.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dphillmet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_dphillmet_2018.png}
 \end{minipage} \hfill
-\caption{$\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc4}
 \end{figure}
 
@@ -4269,7 +4282,7 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_MET_significance.png}
 \end{minipage} \hfill
-\caption{\ac{MET} significance distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 \ac{MET} significance distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMETsign}
 \end{figure}
 
@@ -4283,12 +4296,13 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_reco_weight.png}
 \end{minipage} \hfill
-\caption{Kinematic reconstruction weight $W$ distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 kinematic reconstruction weight $W$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc5}
 \end{figure}
 
 \item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
 \item Finally, we observed that the variable we called \textit{massT} and corresponding the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+
 \begin{figure}[htbp]
 \centering
 \subfigure[$r2l$ variable] {
@@ -4308,7 +4322,7 @@ A few additional variables which are expected to introduce some discrimination b
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_r2l4j.png}
 \end{minipage} \hfill
 }
-\caption{$r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in both the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 $r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:r2l}
 \end{figure}
 
@@ -4320,7 +4334,7 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_massT.png}
 \end{minipage} \hfill
-\caption{Scalar sum of the transverse energy of the particles produced in the events distribution in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM 2018 signal regions (on the right) for the backgrounds and several signal samples.}
+\caption{2018 scalar sum of the transverse energy of the particles produced in the events distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc6}
 \end{figure}
 \end{itemize}
@@ -4453,7 +4467,7 @@ After a trial and error process, the best results have actually been obtained wi
 
 %Each \ac{ANN} has also been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. FIXME: add this? cf. Nicolo pg 126
 
-Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background for the training process. Since several mass points are inspected for each signal category, different \acp{ANN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, given the limited number of training events available after applying the pre-selection, we decided to define a simple biclass \ac{MVA}, training at the same time only two categories of processes against each other: both the $t/\bar t$+DM and $t \bar t$+DM signals and the backgrounds, made out of a mix of both \ac{SM} $t \bar t$ and single top processes.
+Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background for the training process. Since several mass points are inspected for each signal category, different \acp{ANN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, given the limited number of training events available after applying the pre-selection, we decided to define a simple biclass \ac{MVA}, training at the same time only two categories of processes against each other: both the $t/\bar t$+DM and $t \bar t$+DM signals and the backgrounds, made out of a mix of both \ac{SM} $t \bar t$ and single top processes. Only the events passing the pre-selection of the analysis, as described in Section~\ref{section:SR}, are considered for the training. 
 
 The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2}, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, a plot to check for any sign of possible overtraining in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
 
@@ -4570,7 +4584,7 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Scalar 100 GeV signal region] {
+\subfigure[Scalar signal region] {
 \begin{minipage}[b]{.49\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_scalar100.png}
 \end{minipage}\hfill
@@ -4579,7 +4593,7 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 \end{minipage} \hfill
 }
 
-\subfigure[Pseudoscalar 100 GeV signal region] {
+\subfigure[Pseudoscalar signal region] {
 \begin{minipage}[b]{.49\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_pseudo100.png}
 \end{minipage}\hfill
