@@ -1257,11 +1257,25 @@ Finally, \ac{ATLAS} recently presented in ICHEP 2020 the first results for a com
 \caption{Exclusion limits at the 95\% \ac{CL} obtained by \ac{ATLAS} considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV, considering the dilepton final state of such model and the full Run II dataset \cite{PreviousDoubleTopBottomAllLep13ATLAS}.}\label{fig:ATLASICHEP}
 \end{figure}
 
+Finally, recent summary plots for ATLAS dark matter searches, showing the exclusion limits obtained for the three possible final states have been published, as shown in Figure~\ref{fig:ATLASICHEP2}. The collaboration did not perform any combination between the different channels though.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.4\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/ATLASttDM_scalar.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/ATLASttDM_pseudoscalar.png}
+\end{minipage}\hfill
+\caption{Exclusion limits at the 95\% \ac{CL} obtained by \ac{ATLAS} considering  scalar (on the left) and pseudoscalar (on the right) mediators, for a \ac{DM} mass of 1 GeV \cite{ATLASICHEP2020}.}
+\label{fig:ATLASICHEP2}
+\end{figure}
+
 The \textbf{\ac{CMS} collaboration} published in 2018 a similar analysis, using the $35.9$ fb$^{-1}$ of data collected during the year 2016. This analysis combined the three different final states possible (hadronic, semileptonic and dileptonic) and computed the limits on the signal strength for different mediator and dark matter masses, considering both scalar and pseudoscalar mediators \cite{PreviousDoubleTopAllLep13CMS}. The results obtained can be found in Figure~\ref{figure:CMSttbarExclusion}. 
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=15.6cm, height=6.2cm]{figs/CMSttbarExclusion.png}
+\includegraphics[width=15cm, height=6.2cm]{figs/CMSttbarExclusion.png}
 \caption{95\% \ac{CL} exclusion plots on the signal strength computed as a function of the mediator and \ac{DM} masses obtained by \ac{CMS} considering a scalar (on the left) and a pseudoscalar (on the right) mediator for the interaction \cite{PreviousDoubleTopAllLep13CMS}.}
 \label{figure:CMSttbarExclusion}
 \end{center}
@@ -2046,10 +2060,10 @@ For this analysis, we decided to use the PFMET for simplicity after observing th
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_pfmet_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_puppimet_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_puppimet.png}
 \end{minipage} \hfill
 \caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
 \label{fig:metStudy}
@@ -2060,10 +2074,10 @@ Additionally, the \ac{MET} distribution is expected to be independent of $\phi$ 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_pfmet_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 \caption{Uncorrected PFMET (on the left) and PFMET after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
 \label{fig:metCorrEffect}
@@ -2889,7 +2903,7 @@ The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the num
 N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
 \end{equation}
 
-This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
+This previous equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodelling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodelling does not have a dependance in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}, experimentally determined to be of the order of $\sim 5\%$.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2905,9 +2919,14 @@ This previous equation relies on several assumptions. First of all, we have to a
 \end{figure}
 
 \begin{equation}
-\label{eq:DYSF}
-SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
-\end{equation}
+\label{eq:genRinout}
+R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
+\end{equation}	
+
+%\begin{equation}
+%\label{eq:DYSF}
+%SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+%\end{equation}
 
 Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single scale factor to the \ac{DY} process, considering a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
 
@@ -3748,7 +3767,7 @@ Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
 
 \section{Signal regions} \label{section:SR}
 
-It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole RunII dataset.
+It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole RunII dataset. Additonally, only the statistical errors are represented in all the plots of this Section, unless stated otherwise.
 
 First of all, a global pre-selection was agreed on between the groups involved, applied to all the signal regions, reducing by a large factor the contamination mostly due to the \ac{SM} $t \bar t$ and the \ac{DY} processes. First of all, exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required. Events with a third lepton having a $p_T > 10$ GeV are rejected at this point, and low mass resonances are removed by asking for $m_{ll} > 20$ GeV. The \ac{DY} is additionally strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event. Finally, 1 medium deep CSV b-jet is also required, and a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal anyway. Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
@@ -3757,28 +3776,28 @@ First of all, a global pre-selection was agreed on between the groups involved, 
 \subfigure[2016 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the pre-selection region used for the training of the \ac{MVA}.}
@@ -3796,28 +3815,28 @@ Several different signal regions have then actually been defined, depending on t
 \subfigure[2016 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 100 GeV scalar training.}
@@ -3829,28 +3848,28 @@ Several different signal regions have then actually been defined, depending on t
 \subfigure[2016 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 500 GeV scalar training.}
@@ -3877,28 +3896,28 @@ Some distributions obtained in these control regions are shown in Figure~\ref{fi
 \subfigure[2016 inclusive \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_inclusiveCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 inclusive \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_inclusiveCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 inclusive \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_mll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_inclusiveCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the inclusive control region defined.}
@@ -3910,28 +3929,28 @@ Some distributions obtained in these control regions are shown in Figure~\ref{fi
 \subfigure[2016 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 \ac{DY} \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_mllpeak_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_dyCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the \ac{DY} control region defined.}
@@ -3947,28 +3966,28 @@ As previously explained, the \ac{SM} $t \bar t$ control region is defined with t
 \subfigure[2016 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 top \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_mll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$ control region defined.}
@@ -3984,28 +4003,28 @@ An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z pr
 \subfigure[2016 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 $t \bar t$+V \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_mll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttVCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+V control region defined.}
@@ -4021,28 +4040,28 @@ Finally, a same sign control region has also been defined in order to check the 
 \subfigure[2016 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2016.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2017.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 same sign \ac{CR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_mll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_mll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_SSCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the same sign control region defined.}
@@ -4131,10 +4150,10 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
 \end{minipage}\hfill
 \caption{2018 pf\ac{MET} distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMET}
@@ -4161,10 +4180,10 @@ In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_mt2ll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
 \caption{2018 $M_{T2}(ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2}
@@ -4175,10 +4194,10 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_mt2bl.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_mt2bl.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_mt2bl.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_mt2bl.png}
 \end{minipage} \hfill
 \caption{2018 $M_{T2}(bl, bl)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2bl}
@@ -4194,20 +4213,20 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \centering
 \subfigure[Dark $p_T$ variable] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_dark_pt.png}
 \end{minipage} \hfill
 }
 
 \subfigure[Overlapping factor $R$ variable] {
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_overlapping_factor.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_overlapping_factor.png}
 \end{minipage} \hfill
 }
 \caption{2018 dark $p_T$ and overlapping factor $R$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions (on the right) for the backgrounds and several signal samples.}
@@ -4216,17 +4235,17 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 
 \subsubsection*{Spin correlated variables}
 
-The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction methods described in Section~\ref{section:RecoTop}. These variables are interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
+The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction method described in Section~\ref{section:RecoTop}. These variables are interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
 
 Several variables belonging to this category have been considered, such as $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos, and $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay products in their respective parent rest frames, which has been represented in Figure~\ref{fig:SRdisc3} in our signal regions.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_costhetall_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_costhetall.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_costhetall_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_costhetall.png}
 \end{minipage} \hfill
 \caption{2018 $\xi = \cos(\theta_i) \cos(\theta_j)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc3}
@@ -4263,10 +4282,10 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_dphillmet_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_dphillmet.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_scalar100_dphillmet_2018.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_dphillmet.png}
 \end{minipage} \hfill
 \caption{2018 $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc4}
@@ -4580,7 +4599,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 
 \subsection{Evaluation process}
 
-Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to use them on the different \ac{MC} processes and on actual data, to estimate the probability of each event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}.
+Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}.
 
 \begin{figure}[htbp]
 \centering
@@ -4607,7 +4626,7 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 
 As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in signals or backgrounds in the first and second bins respectively. We can also see that we still have a majority of background in each of the two bins, but this strategy does allow us to define separate regions enriched in the different processes anyway.
 
-\color{red}FIXME: add percentage table for each process? \color{black}
+\color{red}FIXME: add percentage table for each process? Did we end up using the control region of the MVA or simply  \color{black}
 
 
 
@@ -4662,7 +4681,7 @@ In practice, we can usually not give a definite true or false answer to the ques
 
 In order to establish an eventual discovery or exclude certain models, this analysis then uses a quite typical frequentist significance test using a likelihood ratio, considering parameters of interest, such as the cross-section of the signal process and nuisance parameters, such as the background normalizations, as discussed in Section~\ref{section:Systematics}. 
 
-Mathematically, as shown in \cite{asymptotic}, this method can be understood by considering the $x$ variable corresponding to the \color{red} FIXME: mt2ll or this variable? \ac{MVA} output distributions \color{black} previously obtained, containing each a certain expected number of events per bin $E[n_i]$, given by Equation~\ref{eq:count}, where $b_i$ ($s_i$) is the number of background (signal) events in the \textit{i-th} bin and $\mu$ is the so-called \textbf{signal strength}, a positive parameter characterizing the normalization of the signal under consideration and independent on the bin considered ($\mu = 0$ therefore corresponds to the background-only hypothesis and $\mu = 1$ is the nominal signal hypothesis).
+Mathematically, as shown in \cite{asymptotic}, this method can be understood by considering the $x$ variable corresponding to any of the shape of the \ac{ANN} output distributions previously obtained, containing each a certain expected number of events per bin $E[n_i]$, given by Equation~\ref{eq:count}, where $b_i$ ($s_i$) is the number of background (signal) events in the \textit{i-th} bin and $\mu$ is the so-called \textbf{signal strength}, a positive parameter characterizing the normalization of the signal under consideration and independent on the bin considered ($\mu = 0$ therefore corresponds to the background-only hypothesis and $\mu = 1$ is the nominal signal hypothesis).
 
 \begin{equation}
 \label{eq:count}
@@ -4700,7 +4719,7 @@ This last relation is helpful because it allows us to test any value of $\mu$, b
 \lambda(\mu) = \frac{\mathcal{L}(\mu, \hat{\bm \theta_\mu})}{\mathcal{L}(\hat{\mu}, \hat{\bm \theta})} 
 \end{equation}
 
-This last relation is extremely important in the sense that it gives us a way to test the two hypotheses we have at our disposal against each other: the background-only hypothesis $b$ (if $\mu$ = 0) and the signal+background hypothesis $s + b$ (if $\mu$ = 1). Additionally, this equation allows us to determine which values of signal strength $\mu$ can be discarded at a given confidence level, usually set to 95\% within the \ac{CMS} collaboration. At this stage, it is important to note as well that if a significant excess is observed, additional tests are required to be able to claim for a discovery, as this method only allows to reject some signal models not significant enough.
+This equation is extremely important in the sense that it gives us a way to test the two hypotheses we have at our disposal against each other: the background-only hypothesis $b$ (if $\mu$ = 0) and the signal+background hypothesis $s + b$ (if $\mu$ = 1). Additionally, this equation allows us to determine which values of signal strength $\mu$ can be discarded at a given confidence level, usually set to 95\% within the \ac{CMS} collaboration. At this stage, it is important to note as well that if a significant excess is observed, additional tests are required to be able to claim for a discovery, as this method only allows to reject some signal models not significant enough.
 
 In order to finally be able to establish upper limits on the value of the parameter $\mu$, one final test-statistic $q_\mu$ is usually defined according to Equation~\ref{eq:q}. Larger values for this parameter than represent higher incompatibilities between the data and the given signal strength. The reason why we set the estimator to 0 when $\hat{\mu} > \mu$ is simply to make sure to have a one-sided confidence interval, because eventual upwards fluctuations of the data able to pass this condition should not be considered as evidence for a $\mu$-strong $s+b$ hypothesis.
 
