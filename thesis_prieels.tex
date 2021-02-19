@@ -2489,7 +2489,7 @@ During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016
 
 \section{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC} signal samples have been produced centrally for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally with MADGRAPH and PYTHIA8 at \ac{LO} for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
 
 The impact on the kinematics (in this particular case, on the spectrum of the pf\ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t/\bar t$+DM),~\ref{fig:signalSinglePseudo} (pseudoscalar $t/\bar t$+DM),~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles. Finally, we can also observe in these plots the difference in kinematics between the background (in blue) and the different signals, which will be the basis of the analysis performed.
 
@@ -2616,13 +2616,13 @@ Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:
 
 Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
-Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}.
+Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}. Several systematic effects are studied and applied on the \ac{MC} simulation, such as the QCD scale, PDF variation, Jet Energy Corrections, b-tagging efficiencies, lepton trigger and both the ID and isolation scale factors, but this will be detailed in Section~\ref{section:Systematics}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
 %This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
 
-Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis and checked in a dedicated control region.
+Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis and checked in a dedicated control region. NNPDF3.0 \cite{NNPDF} was used as the default \ac{PDF}, while the default POWHEG setup with the PYTHIA8 CUETP8M2 (for 2016) and CP5 (for 2017 and 2018) tunes were used for the generation of this particular sample \cite{PythiaTunes}.
 
 \begin{figure}[htbp]
 \centering
@@ -2698,7 +2698,7 @@ Different Feynman diagrams contribute to this process at \ac{LO} in a hadron col
 
 \subsubsection{Single top} \label{subsection:singleTop}
 
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}).
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}). This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
 
 \begin{figure}[htbp]
 \centering
@@ -2856,7 +2856,7 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important, even in the $e \mu$ channels via tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$).
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important, even in the $e \mu$ channels via tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). These samples are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then splitted into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV, while the HT-binned samples have been chosen over the inclusive ones to increase the statistics available.
 
 \begin{figure}[htbp]
 \centering
@@ -2948,7 +2948,7 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 \subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
 
-These backgrounds are coming from a usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and separately checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}.
+These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and separately checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
 
 \begin{figure}[htbp]
 \centering
@@ -4194,10 +4194,10 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_mt2bl.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_mt2bl.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_mt2bl.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2bl.png}
 \end{minipage} \hfill
 \caption{2018 $M_{T2}(bl, bl)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2bl}
@@ -4213,20 +4213,20 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \centering
 \subfigure[Dark $p_T$ variable] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_dark_pt.png}
 \end{minipage} \hfill
 }
 
 \subfigure[Overlapping factor $R$ variable] {
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal1_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_overlapping_factor.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_2j_signal0_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_overlapping_factor.png}
 \end{minipage} \hfill
 }
 \caption{2018 dark $p_T$ and overlapping factor $R$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions (on the right) for the backgrounds and several signal samples.}
@@ -4296,10 +4296,10 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_MET_significance.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_MET_significance.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_MET_significance.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_MET_significance.png}
 \end{minipage} \hfill
 \caption{2018 \ac{MET} significance distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMETsign}
@@ -4310,10 +4310,10 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_reco_weight.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_reco_weight.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_reco_weight.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_reco_weight.png}
 \end{minipage} \hfill
 \caption{2018 kinematic reconstruction weight $W$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc5}
@@ -4326,19 +4326,19 @@ A few additional variables which are expected to introduce some discrimination b
 \centering
 \subfigure[$r2l$ variable] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal1_r2l.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_r2l.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_r2l.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_r2l.png}
 \end{minipage} \hfill
 }
 
 \subfigure[$r2l4j$ variable] {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal1_r2l4j.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_r2l4j.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_signal0_r2l4j.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_r2l4j.png}
 \end{minipage} \hfill
 }
 \caption{2018 $r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
@@ -4348,10 +4348,10 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal1_massT.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_massT.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_2j_signal0_massT.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_massT.png}
 \end{minipage} \hfill
 \caption{2018 scalar sum of the transverse energy of the particles produced in the events distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdisc6}
@@ -4599,7 +4599,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 
 \subsection{Evaluation process}
 
-Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}.
+Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}, and the acual \ac{ANN} output distributions for each mediator mass point, used in a general shape analysis later on, as shown in Figure~\ref{fig:ANNShapesScalar} to \ref{fig:ANNShapesPseudo}.
 
 \begin{figure}[htbp]
 \centering
@@ -4622,6 +4622,70 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 }
 \caption{Most likely category of the events corresponding to the different processes for the 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:weightsApplied}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2017 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2018 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{\ac{ANN} output distribution used in the shape analysis performed later on, for the scalar 100 GeV (on the left) and 500 GeV (on the right) training.}
+\label{fig:ANNShapesScalar}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2017 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2018 distributions] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{\ac{ANN} output distribution used in the shape analysis performed later on, for the pseudoscalar 100 GeV (on the left) and 500 GeV (on the right) training.}
+\label{fig:ANNShapesPseudo}
 \end{figure}
 
 As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in signals or backgrounds in the first and second bins respectively. We can also see that we still have a majority of background in each of the two bins, but this strategy does allow us to define separate regions enriched in the different processes anyway.
@@ -5282,6 +5346,10 @@ All the background \ac{MC} samples considered for this analysis are listed in Ta
 & ST\_tW\_antitop\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1 & 35.60 \\
 & ST\_tW\_top\_5f\_inclusiveDecays\_13TeV-powheg-pythia8\_TuneCUETP8M1 & 35.60 \\
 \hline
+\multirow{1}{*}{ttV} & TTWJetsToLNu\_TuneCUETP8M1\_13TeV-amcatnloFXFX-madspin-pythia8 & 0.2043 \\
+& ttZJets\_13TeV\_madgraphMLM-pythia8 & 0.7826 \\
+& TTZToLLNuNu\_M-10\_TuneCUETP8M1\_13TeV-amcatnlo-pythia8 & 0.2529 \\
+\hline
 WW & WWTo2L2Nu\_13TeV-powheg & 12.178 \\
 & WWJJToLNuLNu\_EWK\_noTop\_13TeV-madgraph-pythia8 & 0.34520 \\
 & GluGluWWTo2L2Nu\_MCFM\_13TeV & 0.5905 \\
@@ -5340,6 +5408,11 @@ VZ & ZZTo2L2Nu\_13TeV\_powheg\_pythia8 & 0.5640 \\
 & ST\_t-channel\_top\_4f\_inclusiveDecays\_TuneCP5\_13TeV-powhegV2-madspin-pythia8 & 136.02 \\
 & ST\_tW\_antitop\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
 & ST\_tW\_top\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+\hline
+\multirow{1}{*}{ttV} & ttWJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8 & 0.6105 \\
+& TTWJetsToLNu\_TuneCP5\_PSweights\_13TeV-amcatnloFXFX-madspin-pythia8 & 0.2001 \\
+& ttZJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8 & 0.7826 \\
+& TTZToLLNuNu\_M-10\_TuneCP5\_PSweights\_13TeV-amcatnlo-pythia8 & 0.2529 \\
 \hline
 WW & WWTo2L2Nu\_NNPDF31\_TuneCP5\_PSweights\_13TeV-powheg-pythia8 & 12.178 \\
 & WWJJToLNuLNu\_EWK\_noTop\_TuneCP5\_13TeV-madgraph-pythia8 & 0.34520 \\
@@ -5400,6 +5473,11 @@ VVV & ZZZ\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.01398 \\
 & ST\_t-channel\_top\_4f\_InclusiveDecays\_TuneCP5\_13TeV-powheg-madspin-pythia8 & 136.02 \\
 & ST\_tW\_antitop\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
 & ST\_tW\_top\_5f\_inclusiveDecays\_TuneCP5\_13TeV-powheg-pythia8 & 35.60 \\
+\hline
+\multirow{1}{*}{ttV} & ttWJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8 & 0.6105 \\
+& TTWJetsToLNu\_TuneCP5\_13TeV-amcatnloFXFX-madspin-pythia8 & 0.2043 \\
+& ttZJets\_TuneCP5\_13TeV\_madgraphMLM\_pythia8 & 0.7826 \\
+& TTZToLLNuNu\_M-10\_TuneCP5\_13TeV-amcatnlo-pythia8 & 0.2529 \\
 \hline
 WW & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 & WWJJToLNuLNu\_EWK\_TuneCP5\_13TeV-madgraph-pythia8 & 0.4286 \\
@@ -6710,6 +6788,14 @@ CMS-PAS-LUM-17-001, 2018}
 \href{http://inspirehep.net/record/1736713/}{CMS Collaboration,
 "CMS Luminosity Measurements for the 2018 Data Taking Period",
 CMS-PAS-LUM-17-001, 2019}
+
+\bibitem{NNPDF}
+\href{https://arxiv.org/abs/1410.8849}{NNPDF Collaboration,
+"Parton distributions for the LHC Run II", 10.1007/JHEP04(2015)040 [arXiv: 1410.8849]}
+
+\bibitem{PythiaTunes}
+\href{https://arxiv.org/abs/1903.12179}{\ac{CMS} Collaboration,
+"Extraction and validation of a new set of CMS PYTHIA8 tunes from underlying-event measurements", Eur. Phys. J. C 80 (2020) 4 [arXiv: 1903.12179]}
 
 \bibitem{Prefire}
 \href{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}{\ac{CMS} Twiki,
