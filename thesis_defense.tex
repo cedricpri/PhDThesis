@@ -284,7 +284,7 @@ The WIMPs are the dark matter candidates considered in this work, because of the
 \justifying
 \item Are expected to interact very weakly with ordinary baryonic matter;
 \item Have a mass in the 100 GeV-1 TeV range for reasonable electroweak production cross-section values;
-\item Give us a dark matter while being able to solve the \textbf{hierarchy problem}.
+\item Give us a dark matter candidate while being able to solve the \textbf{hierarchy problem}.
 \end{itemize} \vfill
 
 \vspace{5pt}
@@ -894,6 +894,7 @@ Inclusive selection
 \end{frame}
 
 \begin{frame}{Inclusive selection}
+\justifying
 \vspace{5pt}
 \begin{block}{\centering Inclusive selection}\end{block} \vfill
 \vspace{-5pt}
@@ -907,6 +908,10 @@ First, distributions in the following inclusive control region mostly enriched i
 \item At least 1 jet
 \item At least 1 medium deep CSV b-jet
 \end{itemize} \vfill
+
+This region is studied to have a look at the most inclusive selection to spot initial issues and problems. \vfill
+
+A slight mismodeling of the low mass DY+Jets sample and a general problem of the MET in DY events is observed, but these features are known in CMS and are mitigated with the analysis cuts applied. \vfill
 \end{frame}
 
 %\begin{frame}{Control regions}
@@ -1060,6 +1065,57 @@ First, distributions in the following inclusive control region mostly enriched i
 \end{columns} \vfill
 \end{frame}
 
+\begin{frame}{Inclusive control region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering df channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_inclusiveCR_df_mll.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_inclusiveCR_df_mll.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_inclusiveCR_df_mll.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_inclusiveCR_df_METcorrected_pt.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_inclusiveCR_df_METcorrected_pt.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_inclusiveCR_df_METcorrected_pt.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
 
 
 
@@ -1204,7 +1260,7 @@ At the end of the day, the ANN using the following input variables was chosen:
 \hline
  Rank & Variable & Importance \\
  \hline
- 1 & $M_{T2}(ll)$ & $2.30 \cdot 10^{-1}$ \\
+ 1 & $M_{T2}^{ll}$ & $2.30 \cdot 10^{-1}$ \\
  2 & pfMET & $1.92 \cdot 10^{-1}$ \\
  3 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $1.67 \cdot 10^{-1}$ \\
  4 & $m_{bl}^t$ & $1.38 \cdot 10^{-1}$ \\
@@ -1399,107 +1455,6 @@ Example distributions shown in the blinded 2018 pre-selection region. \vfill
 \end{columns} \vfill
 \end{frame}
 
-\begin{frame}{Scalar 100 GeV signal region}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $ll$ channel}\end{block}
-\end{column}
-\end{columns} \vspace{-5pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
-    		\end{center}		
-		\end{column}
-\end{columns}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
-    		\end{center}		
-		\end{column}
-\end{columns} \vfill
-\end{frame}
-
-\begin{frame}{Scalar 500 GeV signal region}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $ll$ channel}\end{block}
-\end{column}
-\end{columns} \vspace{-5pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\vspace{-8pt}
-			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
-    		\end{center}		
-		\end{column}
-\end{columns}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
-    		\end{center}		
-		\end{column}
-\end{columns} \vfill
-\end{frame}
 
 
 
@@ -1556,12 +1511,12 @@ The backgrounds are predicted either directly from \alert{Monte-Carlo simulation
 $\rightarrow$ A data validation region (low $m_{T2}^{ll}$) is explored to ensure the quality of the prediction;
 \item The \textbf{Drell-Yan} yields are obtained from a semi data-driven method using the excluded same flavor region on the Z peak as control region;
 \item The \textbf{non-prompt contamination} is estimated from data control regions and validated in a same sign validation region;
-\item The irreducible \textbf{ttV process} (ttW + ttZ) is taken from simulation and checked in a particlar validation region;
+\item The irreducible \textbf{ttV process} (ttW + ttZ) is taken from simulation and checked in a particular validation region;
 \item \textbf{Diboson processes and other minor backgrounds} are taken directly from MC.
 \end{itemize}
 \end{frame}
 
-\begin{frame}{$t \bar t$ control region}
+\begin{frame}{Top control region}
 \justifying
 Same as the signal region but with $60 < m_{T2}^{ll} < 80$ GeV. \vfill
 
@@ -1593,7 +1548,7 @@ Same as the signal region but with $60 < m_{T2}^{ll} < 80$ GeV. \vfill
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_ttbarCR_ll_mll.png}
     		\end{center}		
 		\end{column}
-\end{columns}
+\end{columns} \vspace{-10pt}
 \begin{columns}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
@@ -1649,6 +1604,7 @@ A flat scale factor and a fixed 20\% systematic uncertainty is then applied to t
 \end{frame}
 
 \begin{frame}{DY control region}
+\justifying
 \begin{columns}
 \begin{column}{1.09\textwidth}
 \begin{block}{\centering $ll$ channel}\end{block}
@@ -1658,25 +1614,26 @@ A flat scale factor and a fixed 20\% systematic uncertainty is then applied to t
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\vspace{-8pt}
-			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{5pt}
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\vspace{-8pt}
-			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{5pt}
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\vspace{-8pt}
-			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{5pt}
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
     		\end{center}		
 		\end{column}
 \end{columns}
+\vspace{-10pt}
 \begin{columns}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
@@ -1697,6 +1654,8 @@ A flat scale factor and a fixed 20\% systematic uncertainty is then applied to t
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
+
+The 0-bjet correction allows us to fix the data/MC discrepancies observed. A large systematic uncertainty is associated to this background, minor in the signal regions. \vfill
 \end{frame}
 
 \begin{frame}{Non-prompt contamination I}
@@ -1714,7 +1673,7 @@ Fake leptons detection (mostly jets misidentified or leptons coming from heavy h
 \begin{block}{\centering Prompt rate}\end{block} \vspace{-5pt}
 \begin{itemize}
 \justifying
-\item The \textbf{prompt rate}, taking into account the real lepton contamination is calculated in a Z enriched region from a general tag and probe method.
+\item The \alert{prompt rate}, taking into account the real lepton contamination is calculated in a Z enriched region from a general tag and probe method.
 \end{itemize} \vfill
 
 Then, we calculate from data an extrapolation factor to go back to the signal region of the analysis and the results obtained are checked in a \alert{same sign control region}. \vfill
@@ -1762,6 +1721,8 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 \end{frame}
 
 \begin{frame}{Same sign control region}
+\justifying
+This is checked in a dedicated same sign control region. \vfill
 \begin{columns}
 \begin{column}{1.09\textwidth}
 \begin{block}{\centering $ll$ channel}\end{block}
@@ -1789,7 +1750,7 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_SSCR_ll_mll.png}
     		\end{center}		
 		\end{column}
-\end{columns}
+\end{columns}  \vspace{-5pt}
 \begin{columns}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
@@ -1812,7 +1773,9 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
 \end{columns} \vfill
 \end{frame}
 
-\begin{frame}{$ttV$ control region}
+\begin{frame}{$ttV$ prediction}
+\justifying
+This process is taken directly from MC, and crosschecked in a dedicated control region. \vfill
 \begin{columns}
 \begin{column}{1.09\textwidth}
 \begin{block}{\centering $ll$ channel}\end{block}
@@ -1840,7 +1803,7 @@ A \textbf{flat 30\% systematic uncertainty} is finally associated to this backgr
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_ttVCR_ll_mll.png}
     		\end{center}		
 		\end{column}
-\end{columns}
+\end{columns} \vspace{-5pt}
 \begin{columns}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
@@ -2002,7 +1965,7 @@ A search for \alert{dark matter produced in association with either one or two t
 \justifying
 \item This search is considering the \textbf{Run II legacy dataset} collected by the CMS detector;
 \item At IFCA, our efforts are entirely focused on the \textbf{dilepton final state};
-\item This search is performed by defining both a DNN and a BDT, training the different networks to recognize background and signal events, to separate them and \textbf{increase the signal efficiency};
+\item This search is performed by defining a ANN, training it to be able to recognize background and signal events, to separate them and \textbf{increase the signal efficiency};
 \item First time that such a combination will be performed considering this canal, which should increase by a lot the limits published in 2016; 
 \item We expect this analysis \alert{to be approved by June}.
 \end{itemize}
@@ -3152,6 +3115,108 @@ In particular, two spin correlated variables are considered:
 			\begin{center}
 				%\begin{block}{\centering nbjet}\end{block}	
      			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_var_DNN_signal0_pseudo500.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Scalar 100 GeV signal region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Scalar 500 GeV signal region}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $ll$ channel}\end{block}
+\end{column}
+\end{columns} \vspace{-5pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2016}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2017}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\vspace{-8pt}
+			\begin{block}{\centering 2018}\end{block}\vspace{10pt}
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=90pt]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_mt2ll.png}
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
