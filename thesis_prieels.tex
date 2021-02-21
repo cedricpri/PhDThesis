@@ -2889,7 +2889,7 @@ The shape of this background is also estimated from \ac{MC} but a correction fac
 
 \subsubsection{$R_{in-out}$ method} \label{subsection:rinout}
 
-The idea behind this data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+The idea behind this semi data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use use such vetoed veto events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
 
 \begin{equation}
 \label{eq:DYevents}
@@ -3878,18 +3878,13 @@ Several different signal regions have then actually been defined, depending on t
 
 \section{Control regions} \label{section:CR}
 
-Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, two separate \ac{DY} control regions will be defined in Section~\ref{section:DYCR} while the \ac{SM} $t \bar t$, ttV and non-prompt contamination processes will be checked in Sections~\ref{section:TopCR},~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
+Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, an inclusive control region is defined in Section~\ref{section:inclusiveCR} to spot initial issues and problems. Then, a data validation region is defined to ensure the quality of the \ac{MC} prediction of both the $t \bar t$ and single top processes in Section~\ref{section:TopCR} and a \ac{DY} enriched specific control region is defined in Section~\ref{section:DYCR}. Finally, the $ttV$ and non-prompt contamination processes will be checked in Sections~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
 
-\subsection{\acs{DY} control region} \label{section:DYCR}
+\subsection{Inclusive control region} \label{section:inclusiveCR}
 
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. At the end of the day, two \ac{DY} enriched control region have been defined for this analysis:
+First, several distributions in a control region as inclusive as technically possible and mostly enriched in \ac{DY} were studied, in all the different channels available. This control region is defined as a two opposite sign tight leptons region, with a veto on any events featuring three leptons, with some small additional cuts ($m_{ll} > 20$ GeV to avoid low mass resonances, while at least 1 jet and 1 medium deep CSV b-jet are also required). The distributions obtained in all the channels in this particular control region are shown in Figure~\ref{fig:inclusiveCR}. 
 
-\begin{itemize}
-\item An \textbf{inclusive control region}, defined as the region with the least possible number of cuts applied. In this case, this region is defined as the region with two adequate tight leptons, $m_{ll} > 20$, with at least 1 jet and 1 deep CSV medium b-jet. 
-\item And an \textbf{actual control region}, defined exactly as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}. 
-\end{itemize}
-
-Some distributions obtained in these control regions are shown in Figure~\ref{fig:DYCR1} (inclusive control region) and Figure~\ref{fig:DYCR2} (actual \ac{DY} control region).
+In all the \ac{DY} enriched regions, a slight \ac{MC} mismodeling can typically be observed, and a general problem in the estimation of the pf\ac{MET} in \ac{DY} events is observed. These features are known in \ac{CMS} and mitigated anyway with the analysis cuts applied.
 
 \begin{figure}[htbp]
 \centering
@@ -3921,45 +3916,12 @@ Some distributions obtained in these control regions are shown in Figure~\ref{fi
 \end{minipage} \hfill
 }
 \caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the inclusive control region defined.}
-\label{fig:DYCR1}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the \ac{DY} control region defined.}
-\label{fig:DYCR2}
+\label{fig:inclusiveCR}
 \end{figure}
 
 \subsection{Top control region} \label{section:TopCR}
 
-As previously explained, the \ac{SM} $t \bar t$ control region is defined with the same pre-selection applied to both the signal regions, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to both signal regions. Distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
+As previously explained, the \ac{SM} $t \bar t$ control region is defined with the same pre-selection applied to both the signal regions, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to the signal regions. Distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3994,9 +3956,48 @@ As previously explained, the \ac{SM} $t \bar t$ control region is defined with t
 \label{fig:TopCR}
 \end{figure}
 
+\subsection{\acs{DY} control region} \label{section:DYCR}
+
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
+
+At the end of the day, this control region was defined exactly the same as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}. Some distributions obtained in these control regions are shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed in this region. Additonally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thansk to the cuts applied to the analysis.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the \ac{DY} control region defined.}
+\label{fig:DYCR2}
+\end{figure}
+
 \subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
 
-An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring exactly 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained are shown in Figure~\ref{fig:ttVCR}.
+An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring at least 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained in this case are shown in Figure~\ref{fig:ttVCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -4033,7 +4034,7 @@ An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z pr
 
 \subsection{Same sign control region} \label{section:SSCR}
 
-Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This \ac{CR} is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
+Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This control region is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
 
 \begin{figure}[htbp]
 \centering
