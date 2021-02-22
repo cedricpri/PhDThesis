@@ -77,6 +77,7 @@
       \DOTIS{#1}%
     \fi
   }}
+  
 % For the case \chapter*:
 \renewcommand*{\@makeschapterhead}[1]{%
   \vspace*{0\p@}%
@@ -93,6 +94,10 @@
 \ChRuleWidth{0.8pt}
 
 \renewcommand{\labelitemii}{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\usepackage{etoc}
+\renewcommand{\etocaftertitlehook}{\pagestyle{plain}}
+\renewcommand{\etocaftertochook}{\thispagestyle{plain}}
 
 \pagestyle{fancy}
 %\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
@@ -214,9 +219,12 @@
 \setcounter{page}{1}
 
 \chapter*{Abstract}
-\newpage
-%
-%A search for dark matter particles produced in association with one or two top quarks is presented in this work. This search is based on the implementation of advanced Machine Learning techniques, allowing us to isolate the different signals studied with respect to the backgrounds, mainly estimated from Monte-Carlo and mostly made out of Standard Model $t \bar t$ and single top processes. A neural network was in this sense introduced, giving us a new unique input variable whose shape was used and directly fed to Combine, to perform a statistical analysis and excluse possible dark matter production models, depending on the mass of the mediator. At the end of the day {PUT FINAL EXCLUSIONS OBTAINED HERE}.
+
+A search for dark matter particles produced in association with one or two top quarks is presented in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. This is the first time that such a search combining the $t/\bar t$ and $t \bar t$+DM models is performed in the dilepton final state.
+
+This search relies on the implementation of advanced Machine Learning techniques, allowing us to isolate the different signals studied with respect to the backgrounds, mainly estimated from Monte-Carlo and mostly made out of Standard Model $t \bar t$ and single top processes, and whose discriminating power was combined into a single output variable used to perform a shape analysis thanks to the definition and previous optimization of a neural network.
+
+Upper limits on the production cross section of different signal models, both scalar and pseudoscalar, were then extracted. At the end of the day, no evidence for the existence of dark matter has been found, but upper limits on the signal strength have been obtained by considering different production models and channels. This analysis allowed us in this sense to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, improving by a factor of more than 2 the previous results obtained in 2016 for the $t \bar t$+DM model alone.
 
 \chapter*{Acknowledgments}
 
@@ -234,8 +242,9 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 
 \newpage
 
-%
 \chapter*{Acronyms used}
+\pagestyle{plain}
+
 \begin{multicols}{2}
 \begin{acronym}
 
@@ -4098,7 +4107,7 @@ Finally, a same sign control region has also been defined in order to check the 
 
 \chapter{Signal extraction} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.% Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
 
 \section{Discriminating variables} \label{section:Variables}
 
@@ -4694,9 +4703,11 @@ As we can see in these plots, each bin correspond to one particular category, su
 \color{red}FIXME: add percentage table for each process? Did we end up using the control region of the MVA or simply  \color{black}
 
 
+\subsection{Shape analysis} \label{sec:Shape}
 
+The output of the \ac{MVA} method is used by a general shape analysis in order to extract the signals of interest. First of all, in order to perform such an analysis, the binning of the distribution was optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events.
 
-
+\color{red}FIXME: complete this? \color{black}
 
 
 
@@ -4885,12 +4896,68 @@ included in the fit to further constrain its contribution in the signal region.
 \item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method pevious described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
+The impact plots, showing the impact the each systematic has on the final upper limits obtained, are shown in Appendix~\ref{appendix:Impact}.
+
 \color{red} FIXME: check all systematics, which ones we actually applied and add impact plots \color{black}
 
 \section{Results} \label{section:Results}
 
+Expected and observed upper limits on the different signals production cross-section at the 95\% confidence level have been obtained and plotted against all the possible dark matter mediator masses considered in this actual analysis, considering both the scalar and pseudoscalar mediators, as shown in Figure~\ref{fig:limits}, for $m_\chi = 1$ GeV and when setting all the couplings of the different models to 1. In both cases, limits obtained separately for the $t/\bar t$+DM and $t \bar t$+DM have been obtained, along with a combination of the limits obtained after combining these two signals of interest. Finally, Figure~\ref{fig:limitsPerYear} show the limits obtained for each data taking period in the same plot, along with a combination of all the different exclusion limits, giving us the final exclusion limits for this analysis, for both the scalar and pseudoscalar mediators.
 
+By looking at all these plots, we can make several different observations and conclusions:
+\begin{itemize}
+\item First, these plots allow us to see that the \textbf{inclusion of the $t/\bar t$+DM signal is extremely important}, especially at high scalar mediator masses, where the limits obtained are even comparable to the ones obtained by considering the $t \bar t$+DM signal.
+\item We can also observe that the limits obtained in 2016 are slightly worse than the other two data taking periods. This is an expected effect as expected limits are roughly expected to decrease with the square root of the luminosity, slightly lower in 2016.
+\item Finally, we can observe that low masses mediators are easier to exclude than higher masses simply because, even though they feature a worse global signal/background discrimination, their cross-section is also much higher. In this sense, pseudoscalar exclusion limits are also typically slightly worse than the scalar ones, mainly because of the difference in cross-section between such processes.
+\end{itemize}
 
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 exclusion limits] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_scalar2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_pseudo2016.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2017 exclusion limits] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_scalar2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_pseudo2017.png}
+\end{minipage} \hfill
+}
+
+\subfigure[2018 exclusion limits] {
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_scalar2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_pseudo2018.png}
+\end{minipage} \hfill
+}
+\caption{Expected and observed upper limits on the signal strength $\mu$ for scalar (on the left) and pseudoscalar (on the right) models, considering with $m_\chi = 1$ GeV and $g_\chi = g_q = 1$.}
+\label{fig:limits}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_scalar_allYears.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/limit_pseudo_allYears.png}
+\end{minipage} \hfill
+\caption{Expected and observed upper limits on the signal strength $\mu$ for scalar (on the left) and pseudoscalar (on the right) models, considering with $m_\chi = 1$ GeV and $g_\chi = g_q = 1$, after combining the different Run II data taking periods.}
+\label{fig:limitsPerYear}
+\end{figure}
+
+At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, more than doubling the previous results obtained in 2016 for the $t \bar t$+DM model alone.
+
+\color{red} FIXME: check conclusions, talk about observed limits \color{black}
 
 
 
@@ -4921,18 +4988,32 @@ included in the fit to further constrain its contribution in the signal region.
 
 \chapter{Conclusions} \label{chapter:Conclusion}
 
-In conclusion, a search for the production of dark matter in association with one or top top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter have been found, but upper limits on the signal strength have been obtained by considering different production models and channels.
+In conclusion, a search for the production of dark matter in association with one or two top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter has been found, but upper limits on the signal strength have been obtained by considering different production models and channels.  Several steps where needed to reach this goal:
 
-\color{red} FIXME: Complete this once analysis done \color{black}
+\begin{itemize}
+\item First, the triggers were chosen in such a way to collect as mucvh interesting data as possible. Different objects were also defined and chosen at this point in coordination with other groups, such as the working point used for leptons and for the b-tag. The choice regarding the \ac{MET} used in this particular analysis was a bit trickier, given the impact this choice might have on the final results, but we finally settled on the usual pf typeI correct \ac{MET}, applying all the corrections recommended to this particular variable.
+\item Once this was done, a full top reconstruction method was developed in order to reconstruct in the best was possible the kinematic of the $t \bar t \rightarrow 2l$ process. This method allowed us for example to get the information related to each top quark separately, and to define new discriminating variables, such as as estimation of the mediator \bm $p_T$.
+\item All the signals samples were then produced, first privately and then centrally, considering all the different models that might be of interest for this analysis.
+\item The background were then carefully studied. Even though most of the backgrounds are estimated directly from \ac{MC}, some of them did require a bit extra work, such as the \ac{DY} process, for which a semi data-driven method was used for its estimation. The predictions made for most of the major backgrounds of the analysis were then checked in dedicated control regions.
+\item Several discriminating variables available to us were then explored, and a MVA method was set up in order to combine the discriminating power of all these variables into a single output, used to perform a general shape analysis. The optimization of all the hyperparameters was thoroughly done, as we ended up chosin an \ac{ANN} to perform the actual analysis, with a simple set of 6 different input variables.
+\item Finally, exclusion limitson the signal strength at the 95\% confidence level were set for the different models considered.
+\end{itemize}
+
+At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, improving by a factor of more than 2 the previous results obtained in 2016 for the $t \bar t$+DM model alone.
+
+\color{red} FIXME: Check this once analysis done \color{black}
 
 \section{Future prospects}
 
-ttH reinterpretation
-More data, decreasing limits as 1/sqrt(L)
+This is the first time that such a search combining the $t/\bar t$ and $t \bar t$+DM models is performed in the dilepton final state. Even though large parts of the phase space have already been excluded, several additions could be considered to improve and complete the results obtained by this analysis:
 
+\begin{itemize}
+\item The remaining models to be excluded correspond to high mediator masses, which feature a large signal/background discrimination on their own but which also have a low cross-section of production. The continous operation of the \ac{LHC} is therefore expected to give more data to analyze, in turn decreasing the limits on the signal strength roughly as $\sqrt{\frac{1}{\mathcal{L}}}$. This channel will therefore benefit from the larger luminosity collected during the full Run III of the LHC data taking period, expected to start soon in 2021.
+\item A single set of couplings was studied in this work, but exploring other accessible regions of the space (by considering different $m_\chi$ values, even tough they are expected to have a minimal impact on the kinematics of the event, and mostly by changing the value of the couplings considered) would in this sense be an interesting addition to this particular analysis.
+\item One possible addition to this work would be to include a ttH to invisible reinterpretation of this search, given the relative similarities between this kind of model and the dark matter models considered here. 
+\end{itemize}
 
-
-
+This analysis is in any case expected to gain momentum and provide us with even better exclusion limits over the course of the next years of operation of the \ac{LHC}.
 
 
 
