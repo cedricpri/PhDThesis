@@ -3749,7 +3749,7 @@ Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
 \end{center}
 \end{table}
 
-A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}.
+A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}. Jets are finally required to be $\Delta R > 0.4$ away from any lepton passing the criteria established for analysis to prevent signal leptons clustered as jets from entering the jet counting.
 
 The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
 
@@ -3776,7 +3776,7 @@ Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
 
 \section{Signal regions} \label{section:SR}
 
-It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole RunII dataset. Additonally, only the statistical errors are represented in all the plots of this Section, unless stated otherwise.
+It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. Additonally, only the statistical errors are represented in all the plots of this Section, unless stated otherwise.
 
 First of all, a global pre-selection was agreed on between the groups involved, applied to all the signal regions, reducing by a large factor the contamination mostly due to the \ac{SM} $t \bar t$ and the \ac{DY} processes. First of all, exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required. Events with a third lepton having a $p_T > 10$ GeV are rejected at this point, and low mass resonances are removed by asking for $m_{ll} > 20$ GeV. The \ac{DY} is additionally strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event. Finally, 1 medium deep CSV b-jet is also required, and a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal anyway. Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
@@ -4185,7 +4185,7 @@ m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}
 
 This equation can be understood in the following way: to compute the $m_{T2}$ variable, different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ need to be probed, keeping only the combination which results in the lowest possible value.
 
-In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}(ll)$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual \ac{DM} signal does not have this limitation in the $M_{T2}(ll)$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector, as shown in Figure~\ref{fig:SRdiscMT2}.
+In this particular analysis, $M_{T2}^{ll}$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}^{ll}$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual \ac{DM} signal does not have this limitation in the $M_{T2}^{ll}$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector, as shown in Figure~\ref{fig:SRdiscMT2}.
 
 \begin{figure}[htbp]
 \centering
@@ -4195,7 +4195,7 @@ In this particular analysis, $M_{T2}(ll)$ is calculated from a general algorithm
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
-\caption{2018 $M_{T2}(ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{2018 $M_{T2}^{ll}$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
 \label{fig:SRdiscMT2}
 \end{figure}
 
@@ -4265,6 +4265,32 @@ Several variables belonging to this category have been considered, such as $\xi 
 
 A few additional variables which are expected to introduce some discrimination between the signals and the backgrounds have been considered as well. Among them, we can for example quote:
 \begin{itemize}
+\item The $m_{bl}^t$ variable and number of b-jets, already described in the previous section and whose distributions can be found in Figures~\ref{fig:SRdiscmblt} and~\ref{fig:SRdiscnbjet} respectively.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_mblt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mblt.png}
+\end{minipage} \hfill
+\caption{2018 $m_{bl}^t$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\label{fig:SRdiscmblt}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_nbjet.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_nbjet.png}
+\end{minipage} \hfill
+\caption{2018 number of b-jets distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\label{fig:SRdiscnbjet}
+\end{figure}
+
 \item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figures~\ref{fig:scheme_deltaphi} and~\ref{fig:SRdisc4}. 
 
 \begin{figure}[htbp]
@@ -4330,7 +4356,7 @@ A few additional variables which are expected to introduce some discrimination b
 \end{figure}
 
 \item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
-\item Finally, we observed that the variable we called \textit{massT} and corresponding the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
+\item We finally observed that the variable \textit{massT} which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 
 \begin{figure}[htbp]
 \centering
@@ -4507,7 +4533,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \hline
  Rank & Variable & Importance \\
  \hline
- 1 & $M_{T2}(ll)$ & $2.30 \cdot 10^{-1}$ \\
+ 1 & $M_{T2}^{ll}$ & $2.30 \cdot 10^{-1}$ \\
  2 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $2.03 \cdot 10^{-1}$ \\
  3 & pf\ac{MET} & $1.90 \cdot 10^{-1}$ \\
  4 & $m_{bl}^t$ & $1.85 \cdot 10^{-1}$ \\
@@ -4528,7 +4554,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \hline
  Rank & Variable & Importance \\
  \hline
- 1 & $M_{T2}(ll)$ & $2.27 \cdot 10^{-1}$ \\
+ 1 & $M_{T2}^{ll}$ & $2.27 \cdot 10^{-1}$ \\
  2 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ & $1.94 \cdot 10^{-1}$ \\ 
  2 & pf\ac{MET} & $1.92 \cdot 10^{-1}$ \\
  4 & $m_{bl}^t$ & $1.54 \cdot 10^{-1}$ \\
@@ -4590,10 +4616,10 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 
 \subfigure[Pseudoscalar overtraining plot] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=6cm, height=5cm]{figs/overtraining_pseudo100.png}
+\includegraphics[width=6.5cm, height=5cm]{figs/overtraining_pseudo100.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=6cm, height=5cm]{figs/overtraining_pseudo500.png}
+\includegraphics[width=6.5cm, height=5cm]{figs/overtraining_pseudo500.png}
 \end{minipage}\hfill
 }
 \caption{Overtraining distributions obtained for the 100 (on the left) and 500 GeV (on the right) mediators.}
@@ -4633,6 +4659,8 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 \caption{Most likely category of the events corresponding to the different processes for the 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:weightsApplied}
 \end{figure}
+
+As we can see in these last plots, each bin correspond to one particular category, supposed to be enriched either in signals or backgrounds in the first and second bins respectively. We can also see that we still have a majority of background in each of the two bins, but this strategy does allow us to define separate regions enriched in the different processes anyway.
 
 \begin{figure}[htbp]
 \centering
@@ -4697,8 +4725,6 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 \caption{\ac{ANN} output distribution used in the shape analysis performed later on, for the pseudoscalar 100 GeV (on the left) and 500 GeV (on the right) training.}
 \label{fig:ANNShapesPseudo}
 \end{figure}
-
-As we can see in these plots, each bin correspond to one particular category, supposed to be enriched either in signals or backgrounds in the first and second bins respectively. We can also see that we still have a majority of background in each of the two bins, but this strategy does allow us to define separate regions enriched in the different processes anyway.
 
 \color{red}FIXME: add percentage table for each process? Did we end up using the control region of the MVA or simply  \color{black}
 
@@ -4860,7 +4886,7 @@ This category of systematic uncertainties is related directly to the theoretical
 
 \begin{itemize}
 \item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \acf{LO} or \acf{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} and $\alpha_s$ parameters themselves are usually estimated by considering a hundred NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
-\item \textbf{Underlying event and parton shower modeling}. The choice of the parton shower generator and \ac{UE} tune is also to have an effect on the final results, but since we did not observe any dependency of \ac{UE} variations on the number of jets, a flat 1.5\% \ac{UE} uncertaainty is assigned to cover all the up and down variations.
+\item \textbf{Underlying event and parton shower modeling}. The choice of the parton shower generator and \ac{UE} tune is also to have an effect on the final results, but since we did not observe any dependency of \ac{UE} variations on the number of jets, a flat 1.5\% \ac{UE} uncertainty is assigned to cover all the up and down variations.
 %\item \textbf{}.
 \item \textbf{Renormalization and factorization scales}. Uncertainties usually emerge due to the presence of the renormalization $\mu_R$ and factorization $\mu_F$ scales in the QCD calculations regarding the hard collisions of hadrons happening at the \ac{LHC}, which are updated by a factor 0.5 and 2 and then propagated to the distributions of the analysis. This uncertainty is considered to be uncorrelated among the different background processes considered.
 \end{itemize}
@@ -4878,7 +4904,7 @@ Additional uncertainties related to the detector or to the experimental conditio
 \item In particular, for \textbf{electrons}, efficiencies are computed using a Tag and Probe method as well, involving background and signal fits, for which different fitting functions have been considered for the computation of the systematics. The tag selection has also been updated, mainly with different $p_T$ cuts, studying the impact such change has on the final efficiencies. Uncertainties from such different sources have been added in quadrature to get the final systematic associated to electrons.
 \item Then, four different parameters have been considered and updated with respect to the nominal Tag and Probe parameters to study their impact on the final \textbf{muon} efficiencies: the isolation of the tag muon, the signal fitting function used, the number of mass bins where the fit is done and finally, the Z-window considered for the calculation. 
 \end{itemize}
-\item \textbf{\ac{JES}}. Single nuisance parameter applied to the $p_T$ of each jets, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $m_{T2}(ll)$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}.
+\item \textbf{\ac{JES}}. Single nuisance parameter applied to the $p_T$ of each jets, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}.
 \item \textbf{\ac{MET} mismodelling}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
 \item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}.
 \item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic covering for such differences observed between data and \ac{MC} is taken into account.
@@ -5304,34 +5330,34 @@ The \ac{MC} signal samples have been produced centrally, considering different d
  Mass point & Cross-section [pb] \\
 \hline
 \textbf{Scalar mediators} & \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.4632 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.3021 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.1236 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.05262 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.03173 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.02204 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01627 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01240 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.00951 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.006274 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.004236 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002995 \\
- DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002844 \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & $4.959 \cdot 10^{-2}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & $3.235 \cdot 10^{-2}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & $1.323 \cdot 10^{-2}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & $5.633 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & $3.397 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & $2.359 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & $1.720 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & $1.328 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & $1.018 \cdot 10^{-3}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & $6.717 \cdot 10^{-4}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & $4.535 \cdot 10^{-4}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & $3.206 \cdot 10^{-4}$ \\
+ DMscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & $3.045 \cdot 10^{-5}$ \\
  \hline
  \textbf{Pseudoscalar mediators} & \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & 0.05745 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & 0.05482 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & 0.0462 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & 0.03417 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & 0.02572 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & 0.01959 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & 0.01509 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & 0.01170 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & 0.007333 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & 0.004083 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & 0.002891 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & 0.002168 \\
- DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & 0.0002607 \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi10 & $6.151 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi20 & $5.869 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi50 & $4.946 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi100 & $3.658 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi150 & $2.754 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi200 & $2.097 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi250 & $1.616 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi300 & $1.253 \cdot 10^{-3}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi350 & $7.851 \cdot 10^{-4}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi400 & $4.371 \cdot 10^{-4}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi450 & $3.095 \cdot 10^{-4}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi500 & $2.321 \cdot 10^{-4}$ \\
+ DMpseudoscalar\_Dilepton\_top\_tWChan\_Mchi1\_Mphi1000 & $2.791 \cdot 10^{-5}$ \\
  \hline
 \end{tabular}
 %}
@@ -5900,7 +5926,7 @@ Finally, the input variables given to the \ac{MVA} is also an extremely importan
 & $m_{bl}^t$ \\
 & pf\ac{MET} \\
 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ \\
-& $m_{T2}(ll)$ \\
+& $M_{T2}^{ll}$ \\
 \hline
 Set 2 & Set 1 and \\
 & $m_{T2}(bl, bl)$ \\
@@ -5929,7 +5955,7 @@ Set 6 & Set 5 and \\
 % dark pt/overlapping factor, spin correlated, atlas
 %
 %\begin{itemize}
-%\item The \textbf{set 1} is the simple set of variables possible, made out of 5 variables: both the number of b-jets and $m_{bl}^t$, to discriminate the two signals with respect to each other, and the \ac{PUPPI} \ac{MET}, $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ and $m_{T2}(ll)$ to discriminate the signals with respect to the backgrounds considered, the \ac{SM} single top and $t \bar t$ processes.
+%\item The \textbf{set 1} is the simple set of variables possible, made out of 5 variables: both the number of b-jets and $m_{bl}^t$, to discriminate the two signals with respect to each other, and the \ac{PUPPI} \ac{MET}, $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ and $M_{T2}^{ll}$ to discriminate the signals with respect to the backgrounds considered, the \ac{SM} single top and $t \bar t$ processes.
 %\item The \textbf{set 2} is obtained by adding both the \ac{MET} significance and the $m_{T2}(bl, bl)$ variables to the set 1.
 %\item Then, the \textbf{set 3} is defined as the set 2, to which the massT and reo weights variables have been added.
 %\item The \textbf{set 4}
