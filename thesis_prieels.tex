@@ -4641,19 +4641,19 @@ Once the training performed and the weights of both \ac{MVA} methods computed, w
 \centering
 \subfigure[Scalar signal region] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_scalar100.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_var_DNN_category_scalar100.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_scalar500.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_var_DNN_category_scalar500.png}
 \end{minipage} \hfill
 }
 
 \subfigure[Pseudoscalar signal region] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_pseudo100.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_var_DNN_category_pseudo100.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_DNN_category_pseudo500.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_topCR_ll_var_DNN_category_pseudo500.png}
 \end{minipage} \hfill
 }
 \caption{Most likely category of the events corresponding to the different processes for the 100 (on the left) and 500 GeV (on the right) mediators.}
@@ -4880,12 +4880,16 @@ uncertainties, and the determination of their value is a critical point of every
 
 Even though the signal enriched bins are to be found in a region of the \ac{MVA} discriminant with lower number of events, where the impact of statistical uncertainties is higher, systematic uncertainties still play an important role in most of the analyses performed at \ac{CERN}, including this one.
 
+\subsubsection{Statistical uncertainties}
+
+Shape uncertainties due to the limited size of the simulated signal and background samples are simply included by allowing each bin of the distributions included in the signal extraction to fluctuate independently according to the statistical uncertainty on the simulation.
+
 \subsubsection{Theoretical uncertainties}
 
 This category of systematic uncertainties is related directly to the theoretical models used in the analysis and is mostly related to the production of the \ac{MC} simulations according to the process described in Section~\ref{section:MC}. Several different uncertainties belong to this particular category:
 
 \begin{itemize}
-\item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \acf{LO} or \acf{NLO}. This limitation introduce a small systematic uncertainty that needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} and $\alpha_s$ parameters themselves are usually estimated by considering a hundred NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
+\item \textbf{PDF and higher order corrections}. As accurate as Feynman diagrams can be, they do not represent the complete picture since we are computationally limited and therefore cannot consider high order perturbations, \ac{MC} samples being usually limited to the \acf{LO} or \acf{NLO}. This limitation introduce a small systematic uncertainty that usually needs to be taken into account. Additionally, uncertainties due to the choice of the \acp{PDF} and $\alpha_s$ parameters themselves are usually estimated by considering a hundred NNPDF3.0 \cite{NNPDF} replicas, according to the PDF4LHC recommendations for the \ac{LHC} Run II \cite{PDF4LHC}. The uncertainty obtained in a given bin is then set as the standard deviation of the content of the bin obtained from all these computed replicas.
 \item \textbf{Underlying event and parton shower modeling}. The choice of the parton shower generator and \ac{UE} tune is also to have an effect on the final results, but since we did not observe any dependency of \ac{UE} variations on the number of jets, a flat 1.5\% \ac{UE} uncertainty is assigned to cover all the up and down variations.
 %\item \textbf{}.
 \item \textbf{Renormalization and factorization scales}. Uncertainties usually emerge due to the presence of the renormalization $\mu_R$ and factorization $\mu_F$ scales in the QCD calculations regarding the hard collisions of hadrons happening at the \ac{LHC}, which are updated by a factor 0.5 and 2 and then propagated to the distributions of the analysis. This uncertainty is considered to be uncorrelated among the different background processes considered.
@@ -4910,16 +4914,14 @@ Additional uncertainties related to the detector or to the experimental conditio
 \item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic covering for such differences observed between data and \ac{MC} is taken into account.
 \end{itemize}
 
-\subsubsection{Background normalization uncertainties}
+\subsubsection{Background related uncertainties}
 
-Finally, the systematic associated to the backgrounds normalization is typically one of the largest source of uncertainties in an analysis, and is computed by estimating the normalization of the
-backgrounds that are estimated on data control samples whenever possible. 
+Finally, the systematic associated to the backgrounds normalization is typically one of the largest source of uncertainties in an analysis, and is computed by estimating the normalization of the backgrounds that are estimated on data control samples whenever possible. 
 
 \begin{itemize}
-\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
-\item \textbf{\acf{DY} background}. Simulation is used in order to determine the kinematic shape of this background, and given its high cross-section, a control region enriched in this particular background has been defined in Section~\ref{section:DYCR}. \color{red} Currently not applied? Value? \color{black}
-included in the fit to further constrain its contribution in the signal region.
-\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method pevious described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined in Section~\ref{section:SSCR}.
+%\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
+\item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodelling of this particular background, especially at high pf\ac{MET} values, a 20\% systematic is associated to this process.
+\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method peviously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
 The impact plots, showing the impact the each systematic has on the final upper limits obtained, are shown in Appendix~\ref{appendix:Impact}.
@@ -5072,7 +5074,7 @@ This analysis is in any case expected to gain momentum and provide us with even 
 
 El Modelo Est\'{a}ndar de la f\'{i}sica de part\'{i}culas \cite{SM} es hoy en d\'{i}a el modelo mat\'{e}matico m\'{a}s acceptado para describir las part\'{i}culas fundamentales y algunas de las diferentes interacciones que existen entre ellas. Basado en ideas simples, este modelo ha permitido explicar la gran mayor\'{i}a de los fen\'{o}menos observados en la naturaleza con un grado de precisi\'{o}n excelente, y ha sido capaz a lo largo de los a\~{n}os de hacer predicciones sobre la existencia de nuevas part\'{i}culas, tal y como el postulado del mecanismo de Brout-Englert-Higgs \cite{HiggsPostulate1, HiggsPostulate2}, seguido por el descubrimiento del bos\'{o}n de Higgs mismo en el a\~{n}o 2012 \cite{HiggsDiscovery1, HiggsDiscovery2} por los experimentos \ac{CMS} \cite{CMS} y \ac{ATLAS} \cite{ATLAS} del \ac{CERN}, analizando colisiones entre protones producidas por el \ac{LHC} a una energ\'{i}a en el centro de masa $\sqrt{s} = 7$ TeV y $8$ TeV.
 
-A pesar de estas predicciones, pensamos hoy en d\'{i}a que el Modelo Est\'{a}ndar no es completo y tiene unos pocos defectos ya que no es capaz de explicar algunas observaciones cosm\'{o}logicas hechas a lo largo del siglo XX. Eventuales part\'{i}culas ex\'{o}ticas que no caben dentro de este modelo podr\'{i}an ser el signo de la existencia de f\'{i}sica m\'{a}s all\'{a} de este Modelo Est\'{a}ndar. Este trabajo consiste por lo tanto en intentar mejorar nuestro entendimiento del Universo en el cu\'{a}l vivimos buscando a part\'{i}culas de materia oscura que podr\'{i}an ser producidas con las colisiones entre protones del \acf{LHC} del \ac{CERN}.
+A pesar de estas predicciones, pensamos hoy en d\'{i}a que el Modelo Est\'{a}ndar no es completo y tiene unos pocos defectos ya que no es capaz de explicar algunas observaciones cosm\'{o}logicas hechas a lo largo del siglo XX. Eventuales part\'{i}culas ex\'{o}ticas que no caben dentro de este modelo podr\'{i}an ser el signo de la existencia de f\'{i}sica m\'{a}s all\'{a} de este Modelo Est\'{a}ndar. Este trabajo consiste por lo tanto en tratar de mejorar nuestro entendimiento del Universo en el cu\'{a}l vivimos buscando a part\'{i}culas de materia oscura que podr\'{i}an ser producidas con las colisiones entre protones del \acf{LHC} del \ac{CERN}.
 
 \section{Materia oscura}
 
@@ -5080,11 +5082,11 @@ La primera hip\'{o}tesis seria sobre la posible existencia de la materia oscura 
 
 Estas observaciones cosmolog\'{i}cas han permitido determinar que la materia bari\'{o}nica ordinaria solo constituye m\'{a}s o menos el 5\% del Universo visible, mientras la materia oscura cuenta para el 26\% de la densidad de energ\'{i}a total del Universo (la energ\'{i}a oscura, otro fen\'{o}meno completamente distinto constituye la parta faltante de esta densidad de energ\'{i}a). Estudiar la naturaleza y las propiedades de este nuevo tipo de part\'{i}culas es por lo tanto muy importante para entender las leyes f\'{i}sicas que rigen nuestro Universo, con muchos cient\'{i}ficos y experimentos alrededor del mundo dedicados a este tipo de b\'{u}squedas.
 
-La existencia de la materia oscura est\'{a} muy bien motivada, pero nunca hemos sido capaces de observar este tipo de part\'{i}culas hasta la fecha y la \'{u}nica evidencia sobre su posible existencia viene de sus efectos gravitaciones observables a larga distancia. Se desconocen la masa, esp\'{i}n y propiedades b\'{a}sicas de este tipo de materia, pero la mayor\'{i}a de las teor\'{i}as contemplan un tipo particular de candidatos para constituir la materia oscura: las \acp{WIMP}, ya que este tipo de part\'{i}culas cumplen con propiedades generalmente asociadas a esta idea de materia oscura. En efecto, sabemos que el candidato ideal para formar esta materia ex\'{o}tica se debe de ser insensible a la radiaci\'{o}n electromagn\'{e}tica, no-bari\'{o}nico, fr\'{i}o, estable a largo plazo y en un rango de masa entre 10 GeV y 1 TeV.
+La existencia de la materia oscura est\'{a} muy bien motivada, pero nunca hemos sido capaces de observar este tipo de part\'{i}culas hasta la fecha y la \'{u}nica evidencia sobre su posible existencia viene de sus efectos gravitaciones observables a larga distancia. Se desconocen la masa, esp\'{i}n y propiedades b\'{a}sicas de este tipo de materia, pero la mayor\'{i}a de las teor\'{i}as contemplan un tipo particular de candidatos para constituir la materia oscura: las \acfp{WIMP}, ya que este tipo de part\'{i}culas cumplen con propiedades generalmente asociadas a esta idea de materia oscura. En efecto, sabemos que el candidato ideal para formar esta materia ex\'{o}tica se debe de ser en otros insensible a la radiaci\'{o}n electromagn\'{e}tica, no-bari\'{o}nico, fr\'{i}o, estable a largo plazo y en un rango de masa entre 10 GeV y 1 TeV.
 
 Diferentes m\'{e}todos se pueden usar para buscar a este nuevo tipo de part\'{i}culas, perteneciendo a tres categor\'{i}as principales:
 \begin{itemize}
-\item Las \textbf{b\'{u}squedas directas}, buscando posibles interacciones entre part\'{i}culas del Modelo Est\'{a}ndar y materia oscura, estudiando por ejemplo choques y cambio de energ\'{i}a entre estos dos sectores.
+\item Las \textbf{b\'{u}squedas directas}, buscando posibles interacciones entre materia oscura y part\'{i}culas del Modelo Est\'{a}ndar, estudiando por ejemplo choques y por lo tanto cambio de energ\'{i}a entre estos dos sectores.
 \item Las \textbf{b\'{u}squedas indirectas}, tratando de encontrar a nuevas part\'{i}culas del Modelo Est\'{a}ndar que podr\'{i}an emerger de la interacci\'{o}n entre dos part\'{i}culas de materia oscura.
 \item Y la \textbf{producci\'{o}n dentro de colisionadores de part\'{i}culas}, el m\'{e}todo de investigaci\'{o}n principal de este trabajo, ya que se supone que chocar dos part\'{i}culas del Modelo Est\'{a}ndar con una determinada energ\'{i}a podr\'{i}a llegar a producir un par de part\'{i}culas de materia oscura. Este tipo de b\'{u}squedas resulta ser muy interesante ya que permite estudiar candidatos a materia oscura de muy baja masa.
 \end{itemize}
@@ -5133,7 +5135,14 @@ Dos modelos principales de producci\'{o}n de materia oscura se consideran en est
 
 \subsubsection{Estimaci\'{o}n de fondos}
 
-Por otro lado, la estimaci\'{o}n de los distintos fondos del an\'{a}lisis tambi\'{e}n es muy importante, ya que sirve de referencia. La mayor\'{i}a de los fondos est\'{a}n bastante bien entendidos y se pueden por lo tanto estimar usando simulaciones de Monte-Carlo directamente, mientras que zonas de control se suelen definir para comprobar el acuerdo datos/\ac{MC} de los fondos m\'{a}s importantes del an\'{a}lisis, tal y como el Drell-Yan (m\'{a}s que nada por su alta secci\'{o}n eficaz de producci\'{o}n) y el $t \bar t$ del Modelo Est\'{a}ndar. La estimaci\'{o}n del impacto que tengan algunos procesos como el W+jets que solo tiene un lept\'{o}n en el estado final tambi\'{e}n puede llevar a contaminar la zona de se\~{n}al por culpa de los \textit{fakes}, que suelen ser objetos como jets misidentificados por el detector como leptones, o leptones que no provienen del Primary Vertex de la colisi\'{o}n prot\'{o}n-prot\'{o}n. La estimaci\'{o}n de este fondo se hace mediante un m\'{e}todo data-driven ya que se no se espera poder simular este tipo de fonde de manera optimal usando simulaciones de Monte-Carlo, y se controla este fondo peculiar en una zona enrichida en fakes, definida con dos leptones que tengan el mismo signo de carga.
+Por otro lado, la estimaci\'{o}n de los distintos fondos del an\'{a}lisis tambi\'{e}n es muy importante, ya que sirve de referencia. La mayor\'{i}a de los fondos est\'{a}n bastante bien entendidos y se pueden por lo tanto estimar usando simulaciones de Monte-Carlo directamente, mientras que zonas de control se suelen definir para comprobar el acuerdo datos/\ac{MC} de los fondos m\'{a}s importantes del an\'{a}lisis, tal y como el Drell-Yan (m\'{a}s que nada por su alta secci\'{o}n eficaz de producci\'{o}n, aunque reducir este fondo suele ser bastante f\'{a}cil ya que su cinem\'{a}tica resulta ser muy distinta a la de nuestras se\~{n}ales de int\'{e}s), el $t \bar t$ del Modelo Est\'{a}ndar y la producci\'{o}n de un simple top. 
+
+La mayor\'{i}a de los fondos se estiman directamente a partir de simulaciones mat\'{e}maticas de tipo Monte-Carlo, y se pueden controlar en zonas de control enriquidas en fondos en particular. A\'{u}n as\'{i}, dos fondos tienen un tratamiento un pocp peculiar:
+
+\begin{itemize}
+\item En el caso del Drell-Yan, se usan los datos mismos para calcular un factor de correci\'{o}n que permite estimar el n\'{u}mero de eventos de este proceso fuera del pico del Z a partir de los eventos observados dentro de este pico.
+\item Por otro lado, algunos procesos como el W+jets que solo tiene un lept\'{o}n en el estado final tambi\'{e}n puede llevar a contaminar la zona de se\~{n}al por culpa de los \textit{fakes}, que suelen ser objetos como jets misidentificados por el detector como leptones, o leptones que no provienen del Primary Vertex de la colisi\'{o}n prot\'{o}n-prot\'{o}n. La estimaci\'{o}n de este fondo se hace mediante un m\'{e}todo data-driven ya que se no se espera poder simular este tipo de fonde de manera optimal usando simulaciones de Monte-Carlo, y se controla este fondo peculiar en una zona enrichida en fakes, definida con dos leptones que tengan el mismo signo de carga.
+\end{itemize}
 
 \subsubsection{Definici\'{o}n de objetos}
 
@@ -5142,22 +5151,20 @@ Los objetos que se quieren usar en al an\'{a}lisis mismo se tienen que definir d
 \begin{itemize}
 \item Los \textit{triggers}, que permiten reducir el flujo de datos que se guardan, seleccionando eventos que tengan leptones aislados (o no) en este caso, son de esta manera los primeros objetos que hemos definido para los periodos de toma de datos 2016, 2017 y 2018. Se tomaron precauciones a la hora de seleccionar estos \textit{triggers}, m\'{a}s que nada para evitar calquier problema de \textit{double counting} que podr\'{i}a producirse si un evento tiene la posibilidad de entrar en dos \textit{triggers} distintos a la vez. 
 \item Luego, otra parte fundamental del an\'{a}lisis consiste en definir los leptones que se quieren usar. De esta manera, definimos electrones basand\'{o}nos en la definici\'{o}n usual de un electr\'{o}n \textit{tight} dada por el EGamma \ac{POG} \cite{ElePOG}, con unos cortes adicionales en los par\'{a}metros de impacto $d_{xy}$ y $d_z$ para reducir la contaminaci\'{o}n debida a los fakes en nuestras zonas de se\~{n}al. 
-\item Seguimos una estrateg\'{i}a similar a la hora de defnir nuestros muones, basand\'{o}nos esta vez en el \textit{tight working point} del muon \ac{POG} \cite{MuonPOG}. 
-\item Luego se requiere que los jets tengan un $p_T > 30$ GeV y un $|\eta| < 2.4$ (limite de la extensi\'{o}n del tracker a partir de la cu\'{a}l no se espera poder medir los jets con un alto grado de precisi\'{o}n) para formar parte del an\'{a}lisis. Adem\'{a}s, el tight \textit{working point} dado por el JET/MET \ac{POG} \cite{JETMETPOG} se usa, porque ofrece una eficiencia muy alta de rejecci\'{o}n del ruido. Los jets de \textit{pile-up} tambi\'{e}n se quitan aplicando adem\'{a}s la definici\'{o}n de loose \ac{PU} para jets de alto $p_T$ por encima.
+\item Seguimos una estrateg\'{i}a similar a la hora de defnir nuestros muones, basand\'{o}nos esta vez en el \textit{tight working point} del muon \ac{POG} \cite{MuonPOG}, con unos cortes addicionales tambi\'{e}n en los par\'{a}metros de impacto tambi\'{e}n.
+\item Luego se requiere que los jets tengan un $p_T > 30$ GeV y un $|\eta| < 2.4$ (limite de la extensi\'{o}n del tracker a partir de la cu\'{a}l no se espera poder medir los jets con un alto grado de precisi\'{o}n) para formar parte del an\'{a}lisis. Adem\'{a}s, el tight \textit{working point} dado por el JET/MET \ac{POG} \cite{JETMETPOG} se usa, porque ofrece una eficiencia muy alta de rejecci\'{o}n del ruido. Los jets de \textit{pile-up} tambi\'{e}n se quitan aplicando adem\'{a}s la definici\'{o}n de loose \ac{PU} para jets de alto $p_T$ (2017, 2018).
 \item Por fin, dada la presencia de quark tops que tienen un tiempo de vida peque\~{n}o y que decaen r\'{a}pidamente a bottom quarks, los b-jets son muy importantes y se definen a partir del \textit{medium working point} del \ac{POG} de b-tagging y vertexing \cite{BTagPOG}, para el cu\'{a}l la tasa de misidentificaci\'{o}n de un jet ligero como un b-jet es del 10\%.
 \end{itemize}
 
 \subsubsection{Extracci\'{o}n de se\~{n}al}
 
-Les se\~{n}ales de inter\'{e}s en este an\'{a}lisis est\'{a}n muy cerca de algunos fondos del Modelo Est\'{a}ndar desde el punto de vista de la cin\'{e}matica: se espera por ejemplo que sea complicado separar la se\~{n}al de $t \bar t$+DM del proceso $t \bar t$ sin que este sea acompa\~{n}ado por materia oscura. Se espera a\'{u}n as\'{i} que algunas variables presenten algo de discriminaci\'{o}n entre estos tipos de procesos muy similares: por ejemplo, la pf\ac{MET} deber\'{i}a ser estad\'{i}sticamente un poquito m\'{a}s alta cuando consideramos la se\~{n}al ya que, aunque el proceso $t \bar t$ y la se\~{n}al suelen presentar neutrinos con forma de energ\'{i}a transversa faltante en el detector, una contribuci\'{o}n adicional a la \ac{MET} se espera en el caso de la se\~{n}al, por la aparici\'{o}n de un par de part\'{i}culas de materia oscura.
+Les se\~{n}ales de inter\'{e}s en este an\'{a}lisis est\'{a}n muy cerca de algunos fondos del Modelo Est\'{a}ndar desde el punto de vista de la cin\'{e}matica: se espera por ejemplo que sea complicado separar la se\~{n}al de $t \bar t$+DM del proceso $t \bar t$ sin que este sea acompa\~{n}ado por materia oscura. Se espera a\'{u}n as\'{i} que algunas variables presenten algo de discriminaci\'{o}n entre estos tipos de procesos muy similares: por ejemplo, la \ac{MET} deber\'{i}a ser estad\'{i}sticamente un poquito m\'{a}s alta cuando consideramos la se\~{n}al ya que, aunque el proceso $t \bar t$ y la se\~{n}al suelen presentar neutrinos con forma de energ\'{i}a transversa faltante en el detector, una contribuci\'{o}n adicional a la \ac{MET} se espera en el caso de la se\~{n}al, por la aparici\'{o}n de un par de part\'{i}culas de materia oscura.
 
-En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarollado con el objetivo de poder combinar el poder de discriminaci\'{o}n de unas 6 variables que se se esperan que presenten algo de discriminaci\'{o}n entre las se\~{n}ales y los fondos del an\'{a}lisis, para poder definir zonas de se\~{n}al enrichidas en las se\~{n}ales de inter\'{e}s. Con este objetivo de dicriminaci\'{o}n en mente, se desarollaron en paralelo dos m\'{e}todos de \textit{machine learning} distintos: una \ac{BDT}, y una red neuronal \ac{ANN}, ambas entrenadas con un conjunto labelizado de simulaciones de Monte-Carlo para que sean capaces de asi\~{n}ar una probabilidad de pertenencia a cada una de las 2 categor\'{i}as de inter\'{e}s: las dos se\~{n}ales ($t \bar t$+DM y $t/\bar t$+DM) o fondo. Un largo proceso de optimizaci\'{o}n de las redes tuvo por lo tanto lugar, con el objetivo de definir redes tan eficiente como sea posible y, una vez el training hecho y el proceso de validaci\'{o}n terminado, pasamos los datos colectados a traves de ambas redes para asignar un label a cada evento. De esta manera, definimos una \'{u}nica variable de salida que nos permite discriminar estos procesos y con la cu\'{a}l hemos podido definir nuestras zonas de se\~{n}al del an\'{a}lisis.
-
-%\color{red} FIXME: Complete this once analysis done \color{black}
+En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarollado con el objetivo de poder combinar el poder de discriminaci\'{o}n de unas 6 variables que se se esperan que presenten algo de discriminaci\'{o}n entre las se\~{n}ales y los fondos del an\'{a}lisis, para poder definir zonas de se\~{n}al enrichidas en las se\~{n}ales de inter\'{e}s. Con este objetivo de dicriminaci\'{o}n en mente, se desarollaron en paralelo dos m\'{e}todos de \textit{machine learning} distintos: una \ac{BDT}, y una red neuronal \ac{ANN}, ambas entrenadas con un conjunto labelizado de simulaciones de Monte-Carlo para que sean capaces de asi\~{n}ar una probabilidad de pertenencia a cada una de las 2 categor\'{i}as de inter\'{e}s: las dos se\~{n}ales ($t \bar t$+DM y $t/\bar t$+DM) o fondo. Un largo proceso de optimizaci\'{o}n de las redes tuvo por lo tanto lugar, con el objetivo de definir redes tan eficiente como sea posible y, una vez el training hecho y el proceso de validaci\'{o}n terminado, pasamos los datos colectados a traves de ambas redes para asignar un label a cada evento. De esta manera, definimos una \'{u}nica variable de salida que nos permite discriminar estos procesos y con la cu\'{a}l hemos podido definir nuestras zonas de se\~{n}al del an\'{a}lisis. Esta variable de salida se usa adem\'{a}s para hacer un \textit{shape analysis}, que consiste en aplicar m\'{e}todos estad\'{i}sticos avanzados para estudiar la forma de esta variable para los diferentes procesos del an\'{a}lisis, con el objetivo de tratar de descubrir una posible se\~{n}al de materia oscura.
 
 \section{Resultados obtenidos}
 
-
+El resultado m\'{a}s importante de este trabajo consiste en pintar los limites de exclusi\'{o}n de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res, para las dos se\~{n}ales y para los 3 a\~{n}os de toma de datos por separado, y luego combinando todos estos par\'{a}metros. Esto se hace considerando diferentes fuentes de errores estad\'{i}sticos y sistem\'{a}ticos, ambos te\'{o}ricos (tal y como el sistem\'{a}tico relacionado con la estimaci\'{o}n de las \ac{PDF} de los diferentes procesos) y experimentales (tal y como el error asociado a la medida de la luminosidad colectada por el detector \ac{CMS}).
 
 
 
@@ -5774,7 +5781,7 @@ The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scann
 \centering
 \includegraphics[width=10cm, height=8cm]{figs/BDT_shrinkages.png}
 \caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different shrinkage values.}
-\label{fig:opShrinkage}
+\label{fig:optShrinkage}
 \end{figure}
 
 For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
@@ -6077,7 +6084,53 @@ According to these last results, we decided to use the \ac{ANN} for the analysis
 
 \chapter{Pulls and impacts plots} \label{appendix:Impact}
 
-Given the large number of systematic uncertainties considered in this analysis, as described in Section~\ref{section:Systematics}, it is usually useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they are obtained by rerunning the fit performed with each nuisance parameters fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
+Given the large number of systematic uncertainties considered in this analysis, as described in Section~\ref{section:Systematics}, it is usually useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they allow us to study the quality of the systematic estimation, expressed as the difference between the maximum likelihood estimator and our own estimation, along with the importance of every systematic of the analysis, according to the effect each systematic has on the signal strength $\mu$, by rerunning the fit performed with each nuisance parameters fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
+
+The impact plots obtained for different mediators are shown in Figures~\ref{fig:impactsScalar} and~\ref{fig:impactsPseudo}, for several scalar and pseudoscalar mediators, respectively.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[100 GeV] 
+{
+\begin{minipage}[b]{1.0\textwidth}
+\begin{center}
+\includegraphics[width=12cm, height=10cm]{figs/impactsScalar100.png}
+\end{center}
+\end{minipage}\hfill
+}
+\subfigure[500 GeV] 
+ {
+\begin{minipage}[b]{1.0\textwidth}
+\begin{center}
+\includegraphics[width=12cm, height=10cm]{figs/impactsScalar500.png}
+\end{center}
+\end{minipage} \hfill
+}
+\caption{2016 impacts and pulls obtained for the 30 most important systematics of the analysis, considering the 100 and 500 GeV scalar mediators.}
+\label{fig:impactsScalar}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[100 GeV] 
+{
+\begin{minipage}[b]{1.0\textwidth}
+\begin{center}
+\includegraphics[width=12cm, height=10cm]{figs/impactsPseudo100.png}
+\end{center}
+\end{minipage} \hfill
+}
+\subfigure[500 GeV] 
+ {
+\begin{minipage}[b]{1.0\textwidth}
+\begin{center}
+\includegraphics[width=12cm, height=10cm]{figs/impactsPseudo500.png}
+\end{center}
+\end{minipage} \hfill
+}
+\caption{2016 impacts and pulls obtained for the 30 most important systematics of the analysis, considering the 100 and 500 GeV pseudoscalar mediators.}
+\label{fig:impactsPseudo}
+\end{figure}
 
 \end{appendices}
 
