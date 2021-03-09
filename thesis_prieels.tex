@@ -4524,7 +4524,7 @@ After a trial and error process, the best results have actually been obtained wi
 
 Given the kinematics of the signal events considered in this analysis, the \ac{SM} $t \bar t$ and the single top processes are the only processes considered to be part of the background for the training process. Since several mass points are inspected for each signal category, different \acp{ANN} have been trained for each mass point, and for each mediator category (scalar or pseudoscalar), to enhance the sensitivity of the analysis. As explained previously, given the limited number of training events available after applying the pre-selection, we decided to define a simple bi-class \ac{MVA}, training at the same time only two categories of processes against each other: both the $t/\bar t$+DM and $t \bar t$+DM signals and the backgrounds, made out of a mix of both \ac{SM} $t \bar t$ and single top processes. Only the events passing the pre-selection of the analysis, as described in Section~\ref{section:SR}, are considered for the training. 
 
-The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyper-parameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2}, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figure~\ref{fig:ROC}, a plot to check for any sign of possible overtraining in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
+The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyper-parameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2}, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar}, the \ac{ROC} curve showing the background rejection achievable for a given selected signal efficiency in Figures~\ref{fig:ROC} and~\ref{fig:ROC2}, a plot to check for any sign of possible overtraining in Figure~\ref{fig:overtraining}, and the input variable distributions in Figure~\ref{fig:inputVar}. All these results have been obtained by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained. 
 
 \begin{table}
 \begin{center}
@@ -4601,6 +4601,18 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 }
 \caption{Signal versus background \ac{ROC} curves obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators.}
 \label{fig:ROC}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_scalar.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_pseudo.png}
+\end{minipage} \hfill
+\caption{Signal versus background \ac{ROC} curves obtained after the training performed with the \ac{ANN}, considering all the scalar (on the left) and pseudoscalar (on the right) mediators available.}
+\label{fig:ROC2}
 \end{figure}
 
 \begin{figure}[htbp]
