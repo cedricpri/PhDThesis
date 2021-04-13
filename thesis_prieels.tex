@@ -112,7 +112,7 @@
   \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
   \renewcommand{\footrulewidth}{0pt}% Line at the footer invisible
 }
-\setlength{\headheight}{25pt} %Space between top of the page and text
+\setlength{\headheight}{36pt} %Space between top of the page and text
 
 %\pagestyle{fancy}
 %\fancyhf{}
@@ -165,7 +165,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, May 2021}
+	{\Large Santander, June 2021}
 	\vfill
 
 \end{titlepage}
@@ -200,7 +200,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Mayo 2021}
+	{\Large Santander, Junio 2021}
 	\vfill
 
 \end{titlepage}
@@ -241,9 +241,8 @@ Thank you also to my past and present (PhD) coworkers who fought alongside me: P
 Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this thesis in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
 
 \newpage
-
+\pagestyle{empty}
 \chapter*{Acronyms used}
-\pagestyle{plain}
 
 \begin{multicols}{2}
 \begin{acronym}
@@ -344,6 +343,7 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 
 \end{acronym}
 \end{multicols}
+
 \newpage
 
 %Table of contents
@@ -365,8 +365,23 @@ Of course, I would especially like to thank my parents Philippe and Chantal, and
 %Here it starts!
 \setlength{\parskip}{8pt}
 \pagenumbering{arabic}
+
 %Introduction
 
+\pagestyle{fancy}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+\fancyhf{}
+\fancyhead[EL]{\vspace{20pt} \thepage \hfill \nouppercase\leftmark \vspace{4pt}}
+\fancyhead[OL]{\vspace{20pt} \thepage \hfill \nouppercase\rightmark \vspace{4pt}}
+
+% Redefine the plain page style
+\fancypagestyle{plain}{%
+  \fancyhf{}
+  \fancyfoot{}
+  \renewcommand{\headrulewidth}{0pt}% Line at the header invisible
+  \renewcommand{\footrulewidth}{0pt}% Line at the footer invisible
+}
+\setlength{\headheight}{36pt} %Space between top of the page and text
 \chapter{Introduction}
 
 The \acf{SM} of particle physics \cite{SM} is nowadays the most accepted mathematical model used to describe the elementary particles and three of the 4 fundamental forces of nature (electromagnetic, weak and strong interactions, while the gravitational interaction is out of reach of this model). Even though quite simple in concept, it has been able to describe most of the phenomena observed in nature so far with an incredible level of precision, and has made a lot of predictions that have now been proven to be true, such as the postulate of the Brout-Englert-Higgs mechanism \cite{HiggsPostulate1, HiggsPostulate2} followed by the discovery of the Higgs boson itself \cite{HiggsDiscovery1, HiggsDiscovery2} by the \ac{CMS} \cite{CMS} and \ac{ATLAS} \cite{ATLAS} experiments analyzing the proton-proton collisions produced by the \acf{LHC} at a center of mass energy $\sqrt{s} = 7$ and 8 TeV, announced at the \ac{CERN} on the 4th of July 2012. 
@@ -2447,10 +2462,10 @@ Once the event completely simulated using the event generators and the \ac{PU} t
 This is typically done by the GEANT4 software \cite{Geant4}, able to model different effects, such as:
 
 \begin{itemize}
-\item modeling of the interaction region
-\item modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes
-\item modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation)
-\item modeling of the detector's electronic response
+\item Modeling of the interaction region;
+\item Modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes;
+\item Modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation);
+\item Modeling of the detector's electronic response.
 \end{itemize}
 
 This modeling accounts for all the cracks and for the disposition of the subsystems inside of the \ac{CMS} detector. This software is for example able to model the interaction of the electrons with the tracker, responsible for the emission of bremsstrahlung photons, as explained in Section~\ref{subsection:Electrons}.
@@ -2472,10 +2487,10 @@ However, the modeling of the detector is not perfect and not all the inefficienc
 Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the different analyses. Different types of analyses are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
 
 \begin{itemize}
-\item Virgin-RAW: used only in low rate runs with heavy ions collisions (10-15Mb/event)
-\item RAW : standard raw data event content (1Mb/event)
-\item RECO: detailed information on reconstructed physics objects (3Mb/event)
-\item \ac{AOD}: physics objects used in analysis (400-500kB/event)
+\item \textbf{Virgin-RAW}: used only in low rate runs with heavy ions collisions (10-15Mb/event)
+\item \textbf{RAW} : standard raw data event content (1Mb/event)
+\item \textbf{RECO}: detailed information on reconstructed physics objects (3Mb/event)
+\item \textbf{\ac{AOD}}: physics objects used in analysis (400-500kB/event)
 \end{itemize}
 
 Two additional formats were introduced since the end of the Run I. First of all the miniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
@@ -3404,7 +3419,7 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{center}
 \end{figure}
 
-Even though we initially planed on applying this correction factor, the most recent recommendation is currently not to apply this factor for \ac{BSM} searches, at least when the \ac{SM} $t \bar t$ process only contributes to the background \cite{topPtReweighting} made available. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed.
+Even though we initially planed on applying this correction factor, the most recent recommendation is not to apply this factor for \ac{BSM} searches, at least when the \ac{SM} $t \bar t$ process only contributes to the background \cite{topPtReweighting} made available. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed.
 
 %\subsubsection{\ac{DY} gen $p_T$ reweighting}
 
@@ -3776,9 +3791,20 @@ Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
 
 \section{Signal regions} \label{section:SR}
 
-It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. Additionally, only the statistical errors are represented in all the plots of this Section, unless stated otherwise.
+It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already been seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. Additionally, only the statistical errors are represented in all the plots, unless stated otherwise.
 
-First of all, a global pre-selection was agreed on between the groups involved, applied to all the signal regions, reducing by a large factor the contamination mostly due to the \ac{SM} $t \bar t$ and the \ac{DY} processes. First of all, exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required. Events with a third lepton having a $p_T > 10$ GeV are rejected at this point, and low mass resonances are removed by asking for $m_{ll} > 20$ GeV. The \ac{DY} is additionally strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event. Finally, 1 medium deep CSV b-jet is also required, and a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal anyway. Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
+First of all, a global pre-selection was agreed on between the groups involved, applied to all the signal regions, reducing by a large factor the contamination due to several backgrounds, such as the \ac{SM} $t \bar t$ and the \ac{DY} processes:
+
+\begin{itemize}
+\item Exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required;
+\item Then, events with a third lepton having a $p_T > 10$ GeV are rejected;
+\item Low mass resonances are removed by asking for $m_{ll} > 20$ GeV;
+\item The \ac{DY} is then strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30$ GeV and $|\eta| < 2.4$ in the event;
+\item 1 medium deep CSV b-jet is also required;
+\item And, finally, a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, making it easier to combine our results while removing more background than signal anyway.
+\end{itemize}
+
+Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
 \begin{figure}[htbp]
 \centering
@@ -3813,42 +3839,42 @@ First of all, a global pre-selection was agreed on between the groups involved, 
 \label{fig:preSelSR}
 \end{figure}
 
-Several different signal regions have then actually been defined, depending on the mass point considered, since one different \ac{MVA} training was done for each mass point considered, leading each time to a slightly different phase space, as shown in Figures~\ref{fig:SR1} (scalar 100 GeV training) and~\ref{fig:SR2} (scalar 500 GeV training).
+Several different signal regions have then actually been defined, targeting each of the two signals of interest, depending on the number of jets and b-jets observed. The signal region targeting the $t/\bar t$+DM process is therefore made out of events having either exactly 1 jet, or 2 jets and exactly 1 b-jet. On the other hand, all the events passing the pre-selection but having either 2 jets and more than 1 b-jet or more than 2 jets make up the signal region targeting the $t \bar t$+DM process. Different \ac{MVA} trainings were done in these two regions, as explained in Section~\ref{section:Discrimination}. The signal regions can be even more divided, depending on the mass point that was used for the training, since the mediators with different masses typically feature different kinematic distributions.
 
-%The distinction between the signal regions targeting the $t/\bar t$+DM and the $t \bar t$+DM is quite obvious. Indeed, general multi-class \ac{MVA} methods have been trained, as explained in Section~\ref{section:Discrimination}. Such methods are able to give us the probability for an event to be either $t/\bar t$+DM, $t \bar t$+DM or background and a label is therefore assigned to each event found in the datasets according to the most likely category found. Depending on the output obtained, signal regions targeting the $t/\bar t$+DM ($t \bar t$+DM) have been represented in Figures~\ref{fig:SingleSR} and~\ref{fig:DoubleSR} respectively, while a control region enriched in \ac{SM} $t \bar t$ is defined from the subset of events labeled as background by the \ac{MVA}.
+Some distributions obtained in these signal regions are shown in Figures~\ref{fig:SR1} to ~\ref{fig:SR6}.
 
-\color{red}FIXME: Update the text? And add final plots everywhere \color{black}
+\color{red}FIXME: Add final plots everywhere \color{black}
 
 \begin{figure}[htbp]
 \centering
 \subfigure[2016 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 100 GeV scalar training.}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t/\bar t$+DM signal region defined from the 100 GeV scalar training.}
 \label{fig:SR1}
 \end{figure}
 
@@ -3857,32 +3883,164 @@ Several different signal regions have then actually been defined, depending on t
 \subfigure[2016 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined from the 500 GeV scalar training.}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t/\bar t$+DM signal region defined from the 500 GeV scalar training.}
 \label{fig:SR2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t/\bar t$+DM signal region defined from the 100 GeV pseudoscalar training.}
+\label{fig:SR3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t \bar t$+DM signal region defined from the 100 GeV scalar training.}
+\label{fig:SR4}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t \bar t$+DM signal region defined from the 500 GeV scalar training.}
+\label{fig:SR5}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/placeholder.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the $t \bar t$+DM signal region defined from the 100 GeV pseudoscalar training.}
+\label{fig:SR6}
 \end{figure}
 
 \section{Control regions} \label{section:CR}
@@ -4107,11 +4265,13 @@ Finally, a same sign control region has also been defined in order to check the 
 
 \chapter{Signal extraction} \label{section:Discrimination}
 
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}. Finally, Section~\ref{sec:Shape} will allow us to introduce concepts regarding the actual shape analysis that has been performed.
+In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
 
 \section{Discriminating variables} \label{section:Variables}
 
-Several variables can at principle be used in order to either separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but some of these variables with a discriminating power high enough will actually be used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, as described in Section~\ref{section:NN}.
+Several variables can at principle be used in order to either separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power high enough will actually be used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, as described in Section~\ref{section:NN}. 
+
+It is also important to note that some of these variables rely on the information obtained from top reconstruction performed, which might fail in some cases. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction.
 
 \subsubsection*{Number of bjets and $m_{bl}^t$}
 
@@ -4165,7 +4325,7 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{minipage}[b]{.47\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_METcorrected_pt.png}
 \end{minipage}\hfill
-\caption{2018 pf\ac{MET} distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{pf\ac{MET} distribution in the 2018 pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscMET}
 \end{figure}
 
@@ -4195,7 +4355,7 @@ In this particular analysis, $M_{T2}^{ll}$ is calculated from a general algorith
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2ll.png}
 \end{minipage} \hfill
-\caption{2018 $M_{T2}^{ll}$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{$M_{T2}^{ll}$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscMT2}
 \end{figure}
 
@@ -4209,7 +4369,7 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mt2bl.png}
 \end{minipage} \hfill
-\caption{2018 $M_{T2}(bl, bl)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{$M_{T2}(bl, bl)$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscMT2bl}
 \end{figure}
 
@@ -4239,26 +4399,8 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_overlapping_factor.png}
 \end{minipage} \hfill
 }
-\caption{2018 dark $p_T$ and overlapping factor $R$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions (on the right) for the backgrounds and several signal samples.}
+\caption{Dark $p_T$ and overlapping factor $R$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) regions (on the right) for the backgrounds and several signal samples.}
 \label{fig:SRdisc1}
-\end{figure}
-
-\subsubsection*{Spin correlated variables}
-
-The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction method described in Section~\ref{section:RecoTop}. These variables are interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
-
-Several variables belonging to this category have been considered, such as $\xi = \cos(\theta_i) \cos(\theta_j)$, where $i$ and $j$ are either leptons, b-jets or neutrinos, and $\cos(\Phi_{i,j})$, the cosine of the full opening angle of such top decay products in their respective parent rest frames, which has been represented in Figure~\ref{fig:SRdisc3} in our signal regions.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_costhetall.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_costhetall.png}
-\end{minipage} \hfill
-\caption{2018 $\xi = \cos(\theta_i) \cos(\theta_j)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
-\label{fig:SRdisc3}
 \end{figure}
 
 \subsubsection*{Additional variables}
@@ -4275,7 +4417,7 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_mblt.png}
 \end{minipage} \hfill
-\caption{2018 $m_{bl}^t$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{$m_{bl}^t$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscmblt}
 \end{figure}
 
@@ -4287,11 +4429,11 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_nbjet.png}
 \end{minipage} \hfill
-\caption{2018 number of b-jets distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{Number of b-jets distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscnbjet}
 \end{figure}
 
-\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figures~\ref{fig:scheme_deltaphi} and~\ref{fig:SRdisc4}. 
+\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figure~\ref{fig:scheme_deltaphi}. Some distributions obtained for this particular variable can additionally be found in Figure~\ref{fig:SRdisc4}. In the same way, the difference in azimuthal angle between the system "b-jet and closest lepton" and the pf\ac{MET} $\Delta \Phi(lb^{\Delta R_{\text{min}}}, E_{T}^{\text{miss}})$ has also been considered, as shown in Figure~\ref{fig:SRdisc4bis}.
 
 \begin{figure}[htbp]
 \centering
@@ -4323,8 +4465,20 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_dphillmet.png}
 \end{minipage} \hfill
-\caption{2018 $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{$\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdisc4}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{$\Delta \Phi(lb^{\Delta R_{\text{min}}}, E_{T}^{\text{miss}})$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+\label{fig:SRdisc4bis}
 \end{figure}
 
 \item The significance of the \ac{MET}, shown in Figure~\ref{fig:SRdiscMETsign}, which evaluates the likelihood the the measured \ac{MET} of an event is due to a resolution fluctuation because of detector-related limitations like finite measurement resolution \cite{METsign}. This variable does feature a high degree of discrimination but is expected to be highly correlated to the usual \ac{MET} variable.
@@ -4337,7 +4491,7 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_MET_significance.png}
 \end{minipage} \hfill
-\caption{2018 \ac{MET} significance distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{\ac{MET} significance distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdiscMETsign}
 \end{figure}
 
@@ -4351,12 +4505,11 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_reco_weight.png}
 \end{minipage} \hfill
-\caption{2018 kinematic reconstruction weight $W$ distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{Kinematic reconstruction weight $W$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdisc5}
 \end{figure}
 
 \item Two other interesting variables used by the \ac{ATLAS} collaboration for their own analysis and shown in Figure~\ref{fig:r2l} are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
-\item We finally observed that the variable \textit{massT} which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process is also able to help with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 
 \begin{figure}[htbp]
 \centering
@@ -4377,9 +4530,11 @@ A few additional variables which are expected to introduce some discrimination b
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_r2l4j.png}
 \end{minipage} \hfill
 }
-\caption{2018 $r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{$r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:r2l}
 \end{figure}
+
+\item We also observed that the variable \textit{massT} which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process helps with the discrimination process, as shown in Figure~\ref{fig:SRdisc6}.
 
 \begin{figure}[htbp]
 \centering
@@ -4389,8 +4544,102 @@ A few additional variables which are expected to introduce some discrimination b
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_massT.png}
 \end{minipage} \hfill
-\caption{2018 scalar sum of the transverse energy of the particles produced in the events distribution in the pre-selection (on the left) and 2018 scalar 100 GeV signal (on the right) regions for the backgrounds and several signal samples.}
+\caption{Scalar sum of the transverse energy of the particles produced in the events distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 \label{fig:SRdisc6}
+\end{figure}
+
+\item The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction method described in Section~\ref{section:RecoTop}. These variables are interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
+
+Several variables belonging to this category have been considered, such as $\xi = \cos(\theta_l) \cos(\theta_{\bar l})$, shown in Figure~\ref{fig:SRdisc3}, and $c_{\text{hel}}$, the full angle between the two leptons in their parent mass frame shown in Figure~\ref{fig:SRdisc3bis}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_costhetall.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_topCR_ll_DNN_signal0_scalar100_costhetall.png}
+\end{minipage} \hfill
+\caption{$\xi = \cos(\theta_l) \cos(\theta_{\bar l})$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+\label{fig:SRdisc3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+\caption{$c_{\text{hel}}$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+\label{fig:SRdisc3bis}
+\end{figure}
+
+\item Finally, general variables coming from different systems have also been computed since they can feature some discrimination. Among this category, we considered the invariant and transverse masses along with the $\Delta \phi$ angles of the different children in both the $t \bar t$ and $l \bar l b$ systems, as shown in Figures~\ref{fig:SRdisc7} and~\ref{fig:SRdisc8} respectively.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[Invariant mass] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[Transverse mass] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[$\Delta \phi$] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Some kinematic variables computed in the $t \bar t$ system and considered for the signal discrimination process in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+\label{fig:SRdisc7}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[Invariant mass] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[Transverse mass] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+
+\subfigure[$\Delta \phi$] {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/placeholder.png}
+\end{minipage} \hfill
+}
+\caption{Some kinematic variables computed in the $l \bar l b$ system and considered for the signal discrimination process in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+\label{fig:SRdisc8}
 \end{figure}
 \end{itemize}
 
@@ -7040,10 +7289,6 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{systematics}
 \href{https://hep.physics.utoronto.ca/~pekka/papers/systematicsreview.pdf}{P.K. Sinervo,
 "Definition and Treatment of Systematic Uncertainties in High Energy Physics and Astrophysics", PHYSTAT2003, Stanford Linear Accelerator Center, September 2003}
-
-\bibitem{NNPDF}
-\href{https://arxiv.org/abs/1410.8849}{NNPDF Collaboration,
-"Parton distributions for the LHC Run II", 10.1007/JHEP04(2015)040, 2015 [arXiv: 1410.8849]}
 
 \bibitem{PDF4LHC}
 \href{https://arxiv.org/abs/1510.03865}{J. Buttwerworth et all.,
