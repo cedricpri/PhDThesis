@@ -47,6 +47,7 @@
 \usepackage{multicol}
 \usepackage{makecell}
 \usepackage{subfiles}
+\usepackage{tikz}
 \usepackage{bm}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{lscape}
@@ -59,6 +60,8 @@
 %\titlespacing*{\chapter}
 % {0pt}{0pt}{50pt}
 %\makeatother
+
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
 
 %For Conny package
 \makeatletter
@@ -238,7 +241,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this thesis in the first place and I can now say this was one of the best decisions I ever made. I hope we will find a way to stay in touch in the future. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this thesis in the first place and I can now say this was one of the best decisions I ever made so far. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
 
 \newpage
 \pagestyle{empty}
@@ -2107,7 +2110,35 @@ Additionally, the \ac{MET} distribution is expected to be independent of $\phi$ 
 \label{fig:metCorrEffect}
 \end{figure}
 
-Several additional corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+Several additional corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters, detailed in Table~\ref{tab:METfilters}, are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Filter name & Applied to data & Applied to \ac{MC} \\
+\hline
+Flag\_goodVertices & \checkmark & \checkmark \\
+Flag\_globalSuperTightHalo2016Filter & \checkmark & \checkmark \\
+Flag\_HBHENoiseFilter & \checkmark & \checkmark \\
+Flag\_HBHENoiseIsoFilter & \checkmark & \checkmark \\
+Flag\_EcalDeadCellTriggerPrimitiveFilter & \checkmark & \checkmark \\
+Flag\_BadPFMuonFilter & \checkmark & \checkmark \\
+%Flag\_BadChargedCandidateFilter & \checkmark & \checkmark \\                                                                                                                       
+Flag\_ecalBadCalibFilterV2$^{\dagger}$ & \checkmark & \checkmark \\
+Flag\_eeBadScFilter & \checkmark & $-$ \\
+%Flag\_ecalBadCalibFilter & \checkmark & \checkmark \\                                                                                                                              
+\hline
+\end{tabular}
+%}
+\end{center}
+\footnotesize{$^{\dagger}$ applied only to 2017 and 2018.}
+\caption{
+  \ac{MET} filters applied to events selected in data and to simulated events, an hyphen ($-$) indicating the filter is not applied.
+}
+\label{tab:METfilters}
+\end{table}
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3466,7 +3497,7 @@ The triggers, described in Section~\ref{subsection:Trigger}, and particularly th
 %\resizebox{\textwidth}{!}{
 \begin{tabular}{ l|l|l } 
  \hline
- Dataset & Run range & \textbf{\ac{HLT} trigger path} \\
+ Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
  \multirow{1}{*}{SingleMu} & \multirow{1}{*}{[273158,284044]}  & HLT\_IsoMu24\_v* \\
 & & HLT\_IsoTkMu24\_v* \\
@@ -3483,7 +3514,7 @@ DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*
 \hline
 \multirow{1}{*}{MuonEG} & \multirow{1}{*}{[273158,278272]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
 & & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
- & \multirow{1}{*}{[278273,284044]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+ & \multirow{1}{*}{[278273,284044]} & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 & & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 \hline
 \end{tabular}
@@ -3498,19 +3529,20 @@ DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*
 %\resizebox{\textwidth}{!}{
 \begin{tabular}{ l|l|l } 
  \hline
- Dataset &Run range & \textbf{\ac{HLT} trigger path} \\
+ Dataset & Run range & \textbf{HLT trigger path} \\
+ \hline
+ SingleMu & [297020,306462]  & HLT\_IsoMu27\_v* \\
+ \hline
+ SingleEle & [297020,306462]  & HLT\_Ele35\_WPTight\_Gsf\_v* \\
 \hline
- SingleMu & [297046,306462]  & HLT\_IsoMu27\_v* \\
+DoubleEG & [297020,306462] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
-EGamma & [297046,306462] & HLT\_Ele35\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+DoubleMu & [297020,299336] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& [299337,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
 \hline
-DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
-& [299368,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
-\hline
-\multirow{1}{*}{MuonEG} & [297046,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
-& [297046,299329] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
-& [299368,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\multirow{1}{*}{MuonEG} & [297020,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [297020,299336] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [299337,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
 \end{tabular}
 %}
@@ -3524,20 +3556,17 @@ DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
 %\resizebox{\textwidth}{!}{
 \begin{tabular}{ l|l|l } 
  \hline
- Dataset & Run range & \textbf{\ac{HLT} trigger path} \\
+ Dataset & Run range & \textbf{HLT trigger path} \\
+ \hline
+ SingleMu & [315252,325175] & HLT\_IsoMu24\_v* \\
+ \hline
+ SingleEle & [315252,325175] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
 \hline
- SingleMu & [315252,325172] & HLT\_IsoMu24\_v* \\
- & & HLT\_Mu5\_v* \\
- & [314859,325175] & HLT\_IsoMu27\_v* \\
+DoubleEG & [315252,325175] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
-EGamma & [315252,325172] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele35\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
 \hline
-DoubleMu & [315252,325172] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
- &  & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
-\hline
-\multirow{1}{*}{MuonEG} & [315252,325172] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\multirow{1}{*}{MuonEG} & [315252,325175] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 & & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 \hline
 \end{tabular}
@@ -4576,7 +4605,7 @@ Several variables belonging to this category have been considered, such as $\xi 
 \label{fig:SRdisc3bis}
 \end{figure}
 
-\item Finally, general variables coming from different systems have also been computed since they can feature some discrimination. Among this category, we considered the invariant and transverse masses along with the $\Delta \phi$ angles of the different children in both the $t \bar t$ and $l \bar l b$ systems, as shown in Figures~\ref{fig:SRdisc7} and~\ref{fig:SRdisc8} respectively.
+\item Finally, general variables coming from different systems have also been computed since they can feature some discrimination. Among this category, we considered the invariant and transverse masses along with the $\Delta \phi$ angles of the different children in both the $t \bar t$ and $l \bar l b$ systems, where the b-jet is considered to be the b-jet with the highest $p_T$ in the event, as shown in Figures~\ref{fig:SRdisc7} and~\ref{fig:SRdisc8} respectively.
 
 \begin{figure}[htbp]
 \centering

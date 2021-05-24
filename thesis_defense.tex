@@ -1332,22 +1332,22 @@ As expected, a better discrimination is achieved for higher mediator masses. \vf
 \end{frame}
 
 
-\vspace{-5pt}
-\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo100.png}
-\end{center}
-\end{minipage}\hfill
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo500.png}
-\end{center}
-\end{minipage} \hfill
-\end{figure} \vfill
-\end{frame}
+%\vspace{-5pt}
+%\begin{block}{\centering Pseudoscalar mediators}\end{block} \vspace{-10pt}
+%\begin{figure}[htbp]
+%\centering
+%\begin{minipage}[b]{.49\textwidth}
+%\begin{center}
+%\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo100.png}
+%\end{center}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.49\textwidth}
+%\begin{center}
+%\includegraphics[width=5.2cm, height=3.5cm]{figs/ROC_pseudo500.png}
+%\end{center}
+%\end{minipage} \hfill
+%\end{figure} \vfill
+%\end{frame}
 
 \begin{frame}{Overtraining plots}
 \justifying
@@ -2840,7 +2840,7 @@ DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*
 \hline
 \multirow{1}{*}{MuonEG} & \multirow{1}{*}{[273158,278272]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
 & & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
- & \multirow{1}{*}{[278273,284044]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+ & \multirow{1}{*}{[278273,284044]} & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 & & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 \hline
 \end{tabular}
@@ -2858,17 +2858,18 @@ DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v*
  \hline
  Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
- SingleMu & [297046,306462]  & HLT\_IsoMu27\_v* \\
+ SingleMu & [297020,306462]  & HLT\_IsoMu27\_v* \\
+ \hline
+ SingleEle & [297020,306462]  & HLT\_Ele35\_WPTight\_Gsf\_v* \\
 \hline
-EGamma & [297046,306462] & HLT\_Ele35\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+DoubleEG & [297020,306462] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
-DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
-& [299368,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+DoubleMu & [297020,299336] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& [299337,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
 \hline
-\multirow{1}{*}{MuonEG} & [297046,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
-& [297046,299329] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
-& [299368,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\multirow{1}{*}{MuonEG} & [297020,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [297020,299336] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [299337,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
 \end{tabular}
 }
@@ -2885,18 +2886,15 @@ DoubleMu & [297046,299329] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
  \hline
  Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
- SingleMu & [315252,325172] & HLT\_IsoMu24\_v* \\
- & & HLT\_Mu5\_v* \\
- & [314859,325175] & HLT\_IsoMu27\_v* \\
+ SingleMu & [315252,325175] & HLT\_IsoMu24\_v* \\
+ \hline
+ SingleEle & [315252,325175] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
 \hline
-EGamma & [315252,325172] & HLT\_Ele32\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele35\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+DoubleEG & [315252,325175] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
-DoubleMu & [315252,325172] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
- &  & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
+DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_v* \\
 \hline
-\multirow{1}{*}{MuonEG} & [315252,325172] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
+\multirow{1}{*}{MuonEG} & [315252,325175] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 & & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
 \hline
 \end{tabular}
@@ -2912,6 +2910,32 @@ DoubleMu & [315252,325172] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_
 \includegraphics[width=11cm, height=7.5cm]{figs/CMSBTag.png}
 \end{center}
 \end{figure}
+\end{frame}
+
+\begin{frame}{MET filters}
+\begin{table}
+\begin{center}
+%\resizebox{\textwidth}{!}{
+\begin{tabular}{c|c|c}
+\hline
+Filter name & Applied to data & Applied to simulation \\
+\hline
+Flag\_goodVertices & \checkmark & \checkmark \\
+Flag\_globalSuperTightHalo2016Filter & \checkmark & \checkmark \\
+Flag\_HBHENoiseFilter & \checkmark & \checkmark \\
+Flag\_HBHENoiseIsoFilter & \checkmark & \checkmark \\
+Flag\_EcalDeadCellTriggerPrimitiveFilter & \checkmark & \checkmark \\
+Flag\_BadPFMuonFilter & \checkmark & \checkmark \\
+%Flag\_BadChargedCandidateFilter & \checkmark & \checkmark \\                                                                                                                       
+Flag\_ecalBadCalibFilterV2$^{\dagger}$ & \checkmark & \checkmark \\
+Flag\_eeBadScFilter & \checkmark & $-$ \\
+%Flag\_ecalBadCalibFilter & \checkmark & \checkmark \\                                                                                                                              
+\hline
+\end{tabular}
+%}
+\end{center}
+\footnotesize{$^{\dagger}$ applied only to 2017 and 2018.}
+\end{table}
 \end{frame}
 
 \begin{frame}{Stransverse mass $M_{T2}^{ll}$}
