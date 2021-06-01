@@ -168,7 +168,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, June 2021}
+	{\Large Santander, July 2021}
 	\vfill
 
 \end{titlepage}
@@ -203,7 +203,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Junio 2021}
+	{\Large Santander, Julio 2021}
 	\vfill
 
 \end{titlepage}
@@ -241,7 +241,7 @@ I would also like to thank all the people who helped me at some point: Alicia, R
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well: you are the reason why I came to Spain and started this thesis in the first place and I can now say this was one of the best decisions I ever made so far. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well, as I would never have started this thesis if I hadn't met you. Finally, I would like to especially thank Aline for her incredible support over the past few months, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one, and I sure hope that this is only the beginning with you.
 
 \newpage
 \pagestyle{empty}
@@ -2622,13 +2622,13 @@ The impact on the kinematics (in this particular case, on the spectrum of the pf
 
 \section{Backgrounds prediction} \label{section:Backgrounds}
 
-Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, such as:
+Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed:
 
 \begin{itemize}
-\item The major background of this analysis is the \ac{SM} $t \bar t$, kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The single top production is also important to consider, being kinematically close to our $t/\bar t$+DM signal and having a cross section higher than the $t \bar t$ (Section~\ref{subsection:singleTop}), mainly because of the variety of channels resulting in such a final state.
-\item Then, mainly because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is usually important to consider. However, this process is kinematically quite different to our signals and therefore quite easy to reduce in the actual \acp{SR} with some specific cuts.%, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
+\item The major background of this analysis is the \ac{SM} $t \bar t$, kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The dilepton decay of the top quarks is obviously more important in this analysis, but its semi-leptonic is also considered to cover possible events in which the jet emitted is misreconstructed by the detector. The single top production is also important to consider, being kinematically close to our $t/\bar t$+DM signal (Section~\ref{subsection:singleTop}).
+\item Because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is also important to consider. However, this process is kinematically quite different to our signals and it is therefore relatively easy to reduce it in the actual \acp{SR} with some specific cuts, by removing the Z peak in the $ee$ and $\mu \mu$ channels and applying a cut on the dilepton stranverse mass, for example.%, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
 \item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process, with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact.% (Section~\ref{subsection:ttV}).
-\item Finally, the non-prompt background is another important piece of this analysis mainly because of the particular data-driven method that can be used to compute its expected kinematic and yields, as shown in Section~\ref{subsection:Fakes}.
+\item Finally, the non-prompt background is another important piece of some analyses mainly because of the particular data-driven method that can be used to compute its expected kinematic and yields, described in Section~\ref{subsection:Fakes}, since the \ac{MC} are not fully reliable to describe such events. However, most of the non-prompt contamination in this analysis comes from semi-leptonic b-decays, expected to be well modeled. After detailed studies, we therefore decided to exclusively rely on \ac{MC} simulations for this background as well. 
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -2671,7 +2671,7 @@ Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:
 
 Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
-Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}. Several systematic effects are studied and applied on the \ac{MC} simulation, such as the QCD scale, PDF variation, Jet Energy Corrections, b-tagging efficiencies, lepton trigger and both the ID and isolation scale factors, but this will be detailed in Section~\ref{section:Systematics}.
+Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}. %Several systematic effects are additionally studied and applied to the \ac{MC} simulation for such processes, to cover for possible such as the QCD scale, PDF variation, Jet Energy Corrections, b-tagging efficiencies, lepton trigger and both the ID and isolation scale factors, but this will be detailed in Section~\ref{section:Systematics}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
@@ -2753,7 +2753,7 @@ Different Feynman diagrams contribute to this process at \ac{LO} in a hadron col
 
 \subsubsection{Single top} \label{subsection:singleTop}
 
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}). This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
 
 \begin{figure}[htbp]
 \centering
@@ -2855,7 +2855,7 @@ Different Feynman diagrams also account for this process in the s-channel (Figur
 
 \subsubsection{Top decay} \label{subsection:topDecay}
 
-As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson can decay itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered for the top/anti-top produced is represented in Figure~\ref{fig:TopDecay}.
+As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson then decays itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered for the top/anti-top produced is represented in Figure~\ref{fig:TopDecay}.
 
 \begin{figure}[htbp]
 \centering
@@ -2911,7 +2911,7 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 
 \subsection{Drell-Yan estimation} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important, even in the $e \mu$ channels via tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). These samples are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then split into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV, while the HT-binned samples have been chosen over the inclusive ones to increase the statistics available.
+As previously mentioned, most of the \ac{DY}, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important. Expected to be found mostly in the $ee$ and $\mu \mu$ channels, it does survive even in the $e \mu$ channels because of possible tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). These samples are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then split into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV. The HT-binned samples have been chosen over the inclusive ones in order to increase the statistics available.
 
 \begin{figure}[htbp]
 \centering
@@ -3003,7 +3003,7 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 \subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
 
-These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and separately checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
+These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
 
 \begin{figure}[htbp]
 \centering
@@ -3082,7 +3082,7 @@ These backgrounds are coming from an usual $t \bar t$ production along with an \
 \label{fig:ttV}
 \end{figure}
 
-The resulting cross section of such process is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
+The resulting cross section of such processes is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
 
 \subsection{Non prompt leptons contamination} \label{subsection:Fakes}
 
@@ -3329,9 +3329,9 @@ N_{t0} \\ N_{t1} \\ N_{t2}
 \end{pmatrix}
 \end{equation}
 
-\subsubsection*{Same sign control region}
+A same sign control region enriched in fakes has also been defined in order to check this background.
 
-The non--prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced. A same sign control region enriched in fakes has also been defined in order to check this background. %This will be done and detailed in Section~\ref{section:SSCR} of this work.
+The non-prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced.  %This will be done and detailed in Section~\ref{section:SSCR} of this work.
 
 %\subsubsection*{Limitations}
 %
@@ -3343,7 +3343,7 @@ The non--prompt contamination of this particular analysis however is expected to
 
 \subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ) productions, as shown in Figure~\ref{fig:DiBosons}. Backgrounds such as the W$\gamma$ and Higgs related productions are also considered at this stage. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
+Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WWG) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
 
 \begin{figure}[htbp]
 \centering
@@ -3415,9 +3415,11 @@ Even though quite negligible and reducible, some additional backgrounds still ne
 
 \subsection{Weights and corrections applied} \label{subsection:Weights}
 
-Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions. The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed.
+Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.
 
-\subsubsection{Prefiring corrections}
+The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed.
+
+\subsubsection{Corrective factors}
 
 In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2017 top enriched control region is shown in Figure~\ref{fig:Prefiring}.
 
@@ -3428,6 +3430,8 @@ In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energ
 \label{fig:Prefiring}
 \end{center}
 \end{figure}
+
+In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum and is therefore taken into account and corrected by introducing another weight to the simulation. 
 
 \subsubsection{\ac{MET} corrections}
 
@@ -3450,9 +3454,7 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \end{center}
 \end{figure}
 
-Even though we initially planed on applying this correction factor, the most recent recommendation is not to apply this factor for \ac{BSM} searches, at least when the \ac{SM} $t \bar t$ process only contributes to the background \cite{topPtReweighting} made available. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed.
-
-%\subsubsection{\ac{DY} gen $p_T$ reweighting}
+Even though we initially planed on applying this correction factor, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
 
 
 
@@ -3484,13 +3486,13 @@ This Chapter will be dedicated to the analysis itself, by defining first of all 
 
 \section{Objects selection} \label{section:Selection}
 
-We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM signal: the typical signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two \ac{DM} particles created along the way. It is therefore extremely important to describe the \ac{WP} chosen and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the possible misidentification rates of such objects.
+We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM signal: the typical signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two \ac{DM} particles created along the way. It is extremely important to describe the \ac{WP} chosen and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, chosen in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the possible misidentification rates of the different objects.
 
 First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
 
 \subsection{Triggers selection} \label{section:Triggers}
 
-The triggers, described in Section~\ref{subsection:Trigger}, and particularly the trigger paths chosen are an important part of each analysis since they will describe the kind of data that can be collected and therefore analyzed. The triggers used in this analysis for the years 2016, 2017 and 2018 can be found in Tables~\ref{table:Trigg2016},~\ref{table:Trigg2017} and~\ref{table:Trigg2018} respectively.
+The triggers, described in Section~\ref{subsection:Trigger}, and particularly the trigger paths chosen are an important part of each analysis since they describe the kind of data that can be collected and therefore analyzed. The triggers used in this analysis for the datasets available for the years 2016, 2017 and 2018 can be found in Tables~\ref{table:Trigg2016},~\ref{table:Trigg2017} and~\ref{table:Trigg2018} respectively.
 
 \begin{table}
 \begin{center}
@@ -3499,23 +3501,18 @@ The triggers, described in Section~\ref{subsection:Trigger}, and particularly th
  \hline
  Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
- \multirow{1}{*}{SingleMu} & \multirow{1}{*}{[273158,284044]}  & HLT\_IsoMu24\_v* \\
-& & HLT\_IsoTkMu24\_v* \\
+ SingleMu & [297020,306462]  & HLT\_IsoMu27\_v* \\
+ \hline
+ SingleEle & [297020,306462]  & HLT\_Ele35\_WPTight\_Gsf\_v* \\
 \hline
-\multirow{1}{*}{SingleEle} & \multirow{1}{*}{[273158,284044]} & HLT\_Ele27\_WPTight\_Gsf\_v* \\
-& & HLT\_Ele25\_eta2p1\_WPTight\_Gsf\_v* \\
+DoubleEG & [297020,306462] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
-DoubleEG & [273158,284044] & HLT\_Ele23\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+DoubleMu & [297020,299336] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
+& [299337,306462] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass8\_v* \\
 \hline
-\multirow{1}{*}{DoubleMu} & \multirow{1}{*}{[273158,281612]} & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_v* \\
-& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_v* \\
-& \multirow{1}{*}{[281613,284044] }& HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_v* \\
-& & HLT\_Mu17\_TrkIsoVVL\_TkMu8\_TrkIsoVVL\_DZ\_v* \\
-\hline
-\multirow{1}{*}{MuonEG} & \multirow{1}{*}{[273158,278272]} & HLT\_Mu8\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL \\
-& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL \\
- & \multirow{1}{*}{[278273,284044]} & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
-& & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+\multirow{1}{*}{MuonEG} & [297020,306462] & HLT\_Mu12\_TrkIsoVVL\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [297020,299336] & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_DZ\_v* \\
+& [299337,306462]  & HLT\_Mu23\_TrkIsoVVL\_Ele12\_CaloIdL\_TrackIdL\_IsoVL\_v* \\
 \hline
 \end{tabular}
 %}
@@ -3576,9 +3573,9 @@ DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_
 \end{center}
 \end{table}	
 
-Our analysis relying on the dilepton final state, the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths are usually considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting due to this effect.
+Our analysis relying on the dilepton final state, the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths is considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting.
 
-These triggers have been studied in order to make sure that they are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger. These trigger efficiencies, calculated using a general tag and probe method and found for example for different runs of the 2017 data taking period in Figure~\ref{fig:TriggEffEle} for a DoubleEG trigger, are then used to reweight the simulated samples.
+These triggers have been studied in order to make sure that they are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger. The trigger efficiencies have in this sense been calculated using a general tag and probe method and found for example for different runs of the 2017 data taking period in Figure~\ref{fig:TriggEffEle} for a DoubleEG trigger, and are used to reweight the simulated samples.
 
 \begin{figure}[htbp]
 \centering
@@ -3594,229 +3591,247 @@ These triggers have been studied in order to make sure that they are efficient e
 
 \subsection{Electrons selection} \label{section:EleSel}
 
-Several strategies are used in \ac{CMS} in order to be able to identify prompts electrons and isolate this signal over background sources coming mainly from photon conversions, misidentification of jets or electrons coming from the semileptonic decay of the bottom and charm quarks. Several variables, which can be divided in the several following categories, allow to introduce some discrimination between these prompt and fake electrons:
+%Several strategies are used in \ac{CMS} in order to be able to identify prompts electrons and isolate this signal over background sources coming mainly from photon conversions, misidentification of jets or electrons coming from the semileptonic decay of the bottom and charm quarks. Several variables, which can be divided in the several following categories, allow to introduce some discrimination between these prompt and fake electrons:
+%
+%\begin{itemize}
+%\item The \textbf{calorimetric observables} use the transverse shape of electromagnetic showers in the \ac{ECAL}, the fact that these electromagnetic showers should be narrower than hadronic showers and the fraction of energy deposited in the \ac{HCAL} and in the preshower/endcaps of the \ac{ECAL} itself for the discrimination. Many different variables belong to this category, such as:
+%\begin{itemize}
+%\item \textbf{hOverE} $\left ( \frac{H}{E} \right )$, where $H$ corresponds to the energy deposited in the \ac{HCAL} and $E$ the total energy deposited in the \ac{ECAL}.
+%\item \textbf{ooEmooP} $\left ( \frac{1}{E_{\text{SC}}} - \frac{1}{p} \right )$, where $E_{\text{SC}}$ is the \acf{SC} energy and $p$ the momentum of the track at the point of closest approach to the \ac{PV}.
+%\item \textbf{dEtaInSee} $\Delta \eta$ (\textbf{dPhiInSee} $\Delta \phi$), the $\eta$  ($\phi$) difference between the \ac{SC} and the inner track extrapolated from the interaction vertex.
+%%\item The \textbf{\ac{SC} $\eta$ ($\phi$) width}
+%\item \textbf{sigmaIetaIeta} ($\sigma_{\eta \eta}$), the weighted cluster \ac{RMS} inside 5x5 regions of \acp{SC} along $\eta$.
+%\end{itemize}
+%\item The \textbf{isolation variables}, requiring the electron candidates to be quite isolated with respect to nearby energetic activity since most of the non-prompt electrons, such as electrons within a jet, are emitted with a large amount of surrounding energy. 
+%\begin{itemize}
+%\item The \textbf{relIsoWithEA} is the main variable that belongs to this category, corresponding to the \ac{PF} isolation defined in a cone of size $\Delta R = 0.3$ around the electron direction and relative to the electron $p_T$, and taking into account the \ac{PU} contamination in this cone.
+%\end{itemize}
+%\item The \textbf{tracking quality variables}, such as:
+%\begin{itemize}
+%\item The \textbf{expected inner hits}, the number of pixels without corresponding hits in the trajectory of a reconstructed gsfTrack.
+%%\item The \textbf{matched track hits}, the number of tracker layers with hits in the trajectory of track.
+%\item The \textbf{matched gsfTracks hits}, the $\chi^2$ value calculated from the reconstructed gskTrack and its corresponding hits.
+%\end{itemize}%taking into account for example the expected hits in the tracker for a prompt electron or the $\chi^2$ value calculated from the reconstructed \ac{GSF} track and its corresponding hits.
+%\item The \textbf{conversion rejection variables}, mostly used to reject most of the photon conversion contamination when defining electrons, using variable such as:
+%\begin{itemize}
+%\item The \textbf{transverse} $d_0$ (or $d_{xy}$) and \textbf{longitudinal $d_z$ impact parameters}.
+%\item The \textbf{conversion veto}, checking if an electron candidate also matches at least one conversion candidate which also passes the selection cuts.
+%\end{itemize}
+%\end{itemize}
 
-\begin{itemize}
-\item The \textbf{calorimetric observables} use the transverse shape of electromagnetic showers in the \ac{ECAL}, the fact that these electromagnetic showers should be narrower than hadronic showers and the fraction of energy deposited in the \ac{HCAL} and in the preshower/endcaps of the \ac{ECAL} itself for the discrimination. Many different variables belong to this category, such as:
-\begin{itemize}
-\item \textbf{hOverE} $\left ( \frac{H}{E} \right )$, where $H$ corresponds to the energy deposited in the \ac{HCAL} and $E$ the total energy deposited in the \ac{ECAL}.
-\item \textbf{ooEmooP} $\left ( \frac{1}{E_{\text{SC}}} - \frac{1}{p} \right )$, where $E_{\text{SC}}$ is the \acf{SC} energy and $p$ the momentum of the track at the point of closest approach to the \ac{PV}.
-\item \textbf{dEtaInSee} $\Delta \eta$ (\textbf{dPhiInSee} $\Delta \phi$), the $\eta$  ($\phi$) difference between the \ac{SC} and the inner track extrapolated from the interaction vertex.
-%\item The \textbf{\ac{SC} $\eta$ ($\phi$) width}
-\item \textbf{sigmaIetaIeta} ($\sigma_{\eta \eta}$), the weighted cluster \ac{RMS} inside 5x5 regions of \acp{SC} along $\eta$.
-\end{itemize}
-\item The \textbf{isolation variables}, requiring the electron candidates to be quite isolated with respect to nearby energetic activity since most of the non-prompt electrons, such as electrons within a jet, are emitted with a large amount of surrounding energy. 
-\begin{itemize}
-\item The \textbf{relIsoWithEA} is the main variable that belongs to this category, corresponding to the \ac{PF} isolation defined in a cone of size $\Delta R = 0.3$ around the electron direction and relative to the electron $p_T$, and taking into account the \ac{PU} contamination in this cone.
-\end{itemize}
-\item The \textbf{tracking quality variables}, such as:
-\begin{itemize}
-\item The \textbf{expected inner hits}, the number of pixels without corresponding hits in the trajectory of a reconstructed gsfTrack.
-%\item The \textbf{matched track hits}, the number of tracker layers with hits in the trajectory of track.
-\item The \textbf{matched gsfTracks hits}, the $\chi^2$ value calculated from the reconstructed gskTrack and its corresponding hits.
-\end{itemize}%taking into account for example the expected hits in the tracker for a prompt electron or the $\chi^2$ value calculated from the reconstructed \ac{GSF} track and its corresponding hits.
-\item The \textbf{conversion rejection variables}, mostly used to reject most of the photon conversion contamination when defining electrons, using variable such as:
-\begin{itemize}
-\item The \textbf{transverse} $d_0$ (or $d_{xy}$) and \textbf{longitudinal $d_z$ impact parameters}.
-\item The \textbf{conversion veto}, checking if an electron candidate also matches at least one conversion candidate which also passes the selection cuts.
-\end{itemize}
-\end{itemize}
+Four different electron \acfp{WP} (veto, loose, medium, tight) are then defined by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG} with slightly different quality cuts in the barrel or in the endcaps in order to select electrons with a given efficiency while trying to limit the misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons from other source, to be used when the backgrounds are expected to be large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
 
-%Four different electron \acfp{WP} (veto, loose, medium, tight) are then defined with slightly different quality cuts in the barrel or in the endcaps in order to select electrons with a given efficiency while trying to limit the misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons from other source, to be used when the backgrounds are expected to be large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
+For this analysis, we rely on the cut based medium identification \ac{POG} \ac{WP} to define our electrons \cite{EleWPs}. Electrons originating from photon conversions are also rejected by requiring that the electron track not have missing hits in the innermost layers of the tracker, on top of the conversion veto included in the cut based ID definition.
 
-In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
+%
+%In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
-Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the \ac{POG} \textit{mvaSpring16GP\_WP90} (for 2016) and \textit{mvaFall17V1Iso\_WP90} (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
+%Two \acp{WP} are then given directly by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG}, corresponding to an electron selection efficiency of 80 and 90\% respectively. For this analysis, the \ac{POG} \textit{mvaSpring16GP\_WP90} (for 2016) and \textit{mvaFall17V1Iso\_WP90} (for 2017 and 2018) \acp{WP} have been chosen for the electron definition, along with additional quality cuts defined in Tables~\ref{table:EleWP2016} and~\ref{table:EleWP20178} (as previously mentioned, these cuts sometimes differ quite a bit depending on whether the electron interacts with the \ac{ECAL} barrel ($|\eta| < 1.479$) or one of the endcaps ($|\eta| \geq 1.479$)).
 
-\begin{table}
-\begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c } 
- \hline
- Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
-\hline
-\textbf{Basic selection} & &  \\ 
-$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
- $|\eta|$ & $<$ & - & $2.4$ \\
- \hline
-\textbf{\ac{HLT} safe selection} & &  \\ 
-hOverE & $<$ & 0.060 & 0.065 \\
- ooEmooP & $<$ & 0.013 & 0.013 \\
- $|\text{dEtaInSee } (\Delta \eta)|$ & $<$ & 0.004 & - \\  
- $|\text{dPhiInSee } (\Delta \phi)|$ & $<$ & 0.020 & - \\  
-  $\sigma_{\eta \eta}$ & $<$ & 0.011 & 0.031 \\
-  ecalPFClusterIso & $<$ & 0.160 & 0.120 \\
-  hcalPFClusterISO & $<$ & 0.120 & 0.120 \\
-  trackIso & $<$ & 0.08 & 0.08 \\
-  GsfTrack $\chi^2$/NDOF & $<$ & - & 3.0 \\
- 	\hline
- 	\textbf{Additional selection} & &  \\ 
- lostHits & $<$ & 1 & 1 \\
- $d_{xy}$ & $<$ &  $0.05$ & $0.1$ \\
- $d_z$ & $<$ & $0.1$ & $0.2$ \\
- pfRelIso03 & $<$ & $0.0588$ & $0.0571$ \\
-\hline
-\end{tabular}
-%}
-\caption{Quality cuts applied to define a 2016 tight electron in this analysis.}
-\label{table:EleWP2016}
-\end{center}
-\end{table}	
-
-\begin{table}
-\begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c } 
- \hline
- Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
-\hline
-\textbf{Basic selection} & &  \\ 
-$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
- $|\eta|$ & $<$ & - & $2.4$ \\
- \hline
- 	\textbf{Additional selection} & &  \\ 
- convVeto & $=$ & 1 & 1 \\
- $d_{xy}$ & $<$ &  $0.05$ & $0.1$ \\
- $d_z$ & $<$ & $0.1$ & $0.2$ \\
- pfRelIso03 & $<$ & $0.06$ & $0.06$ \\
-\hline
-\end{tabular}
-%}
-\caption{Quality cuts applied to define a 2017/2018 tight electron in this analysis.}
-\label{table:EleWP20178}
-\end{center}
-\end{table}	
-
-The electron efficiencies computed for this particular selection can be seen in Figure~\ref{fig:EleEff}.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=14cm, height=6.5cm]{figs/EleEff.png}
-\caption{Tight electron efficiencies for this analysis, based on our tight electron definition, for the data taking period of 2016.}
-\label{fig:EleEff}
-\end{figure}
+%\begin{table}
+%\begin{center}
+%%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c } 
+% \hline
+% Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
+%\hline
+%\textbf{Basic selection} & &  \\ 
+%$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
+% $|\eta|$ & $<$ & - & $2.5$ \\
+% \hline
+%\textbf{\ac{HLT} safe selection} & &  \\ 
+%hOverE & $<$ & 0.060 & 0.065 \\
+% ooEmooP & $<$ & 0.013 & 0.013 \\
+% $|\text{dEtaInSee } (\Delta \eta)|$ & $<$ & 0.004 & - \\  
+% $|\text{dPhiInSee } (\Delta \phi)|$ & $<$ & 0.020 & - \\  
+%  $\sigma_{\eta \eta}$ & $<$ & 0.011 & 0.031 \\
+%  ecalPFClusterIso & $<$ & 0.160 & 0.120 \\
+%  hcalPFClusterISO & $<$ & 0.120 & 0.120 \\
+%  trackIso & $<$ & 0.08 & 0.08 \\
+%  GsfTrack $\chi^2$/NDOF & $<$ & - & 3.0 \\
+% 	\hline
+% 	\textbf{Additional selection} & &  \\ 
+% lostHits & $<$ & 1 & 1 \\
+% $d_{xy}$ & $<$ &  $0.05$ & $0.1$ \\
+% $d_z$ & $<$ & $0.1$ & $0.2$ \\
+% pfRelIso03 & $<$ & $0.0588$ & $0.0571$ \\
+%\hline
+%\end{tabular}
+%%}
+%\caption{Quality cuts applied to define a 2016 tight electron in this analysis.}
+%\label{table:EleWP2016}
+%\end{center}
+%\end{table}	
+%
+%\begin{table}
+%\begin{center}
+%%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c } 
+% \hline
+% Variable & & Barrel cut ($|\eta| \leq 1.479$) & Endcap cut ($|\eta| > 1.479$) \\
+%\hline
+%\textbf{Basic selection} & &  \\ 
+%$p_T$ & $>$ & $10$ GeV & $10$ GeV \\
+% $|\eta|$ & $<$ & - & $2.5$ \\
+% \hline
+% 	\textbf{Additional selection} & &  \\ 
+% convVeto & $=$ & 1 & 1 \\
+% pfRelIso03 & $<$ & $0.06$ & $0.06$ \\
+%\hline
+%\end{tabular}
+%%}
+%\caption{Quality cuts applied to define a 2017/2018 tight electron in this analysis.}
+%\label{table:EleWP20178}
+%\end{center}
+%\end{table}	
+%
+%The electron efficiencies computed for this particular selection can be seen in Figure~\ref{fig:EleEff}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\includegraphics[width=14cm, height=6.5cm]{figs/EleEff.png}
+%\caption{Tight electron efficiencies for this analysis, based on our tight electron definition, for the data taking period of 2016.}
+%\label{fig:EleEff}
+%\end{figure}
 
 \subsection{Muons selection} \label{section:MuSel}
 
-The selection applied to muons is mostly based on the Muon \ac{POG}, providing references efficiencies for standard selection, recommendations for the tight selection \cite{MuonPOG}, with a few additional cuts on both the impact parameters. 
+The selection applied to muons is based on the Muon \ac{POG} as well, providing references efficiencies for standard selection and recommendations for the tight muon selection \cite{MuonPOG}.
 
-At the end of the day, a muon can be labeled as \textbf{Tight \ac{POG}} if:
-\begin{itemize}
-\item The \ac{PF} muon reconstructed is a global muon
-\item The $\chi^2$/NDOF of the global muon track fit is less than 10 and at least one muon chamber hit is included in the global muon track fit%, in order to suppress hadronic punch-through and muons from decays in flight
-\item Muon segments in at least two muon stations have been observed
-\item Its tracker track has a transverse impact parameter $dxy < 0.2$ cm and a longitudinal impact parameter $d_Z < 0.5$ cm with respect to the \ac{PV} 
-\item The number of pixel hits is larger than 0
-\item At least 5 tracker layers with hits have been observed.
-\end{itemize}
-
-The selection applied to muons of this particular analysis is a bit tighter though, since the following cuts are applied on top of this selection for 2016, 2017 and 2018:
-
-\begin{itemize}
-\item $p_T > 10$ GeV, $|\eta| < 2.4$ and $|d_z| < 0.1$ cm
-\item $|d_{xy}| < 0.01$ cm (if $p_T < 20$ GeV) or $|d_{xy}| < 0.02$ cm (if $p_T \geq 20$ GeV)
-\item Tight muon isolation requirement ($< 0.15$) with $\Delta \beta$ correction and in a cone size $\Delta R < 0.4$, as defined in Equation~\ref{eq:MuonISO}, in order to reduce the number of muons coming from the hadronization process of bottom and charm quarks.
+For our analysis, we decided to use directly the medium ID \ac{WP} provided by the \ac{POG} \cite{MuonWPs}, along with a tighter isolation criterium ($< 0.15$) with $\Delta \beta$ correction and in a cone size $\Delta R < 0.4$, as defined in Equation~\ref{eq:MuonISO}, in order to reduce the number of muons coming from the hadronization process of bottom and charm quarks.
 
 \begin{equation}
 \label{eq:MuonISO}
 \text{ISO} = \frac{\sum p_T^{\text{ch. had. (PV)}} + \max \big (0, \sum E_T^{\text{ neut. had.}} + \sum E_T^{\gamma}  - 0.5 \times \sum p_T^\text{ch. had. (PU)} \big )}{p_T(\mu)}
 \end{equation}
 
-\end{itemize}
+%At the end of the day, a muon can be labeled as \textbf{Tight \ac{POG}} if:
+%\begin{itemize}
+%\item The \ac{PF} muon reconstructed is a global muon
+%\item The $\chi^2$/NDOF of the global muon track fit is less than 10 and at least one muon chamber hit is included in the global muon track fit%, in order to suppress hadronic punch-through and muons from decays in flight
+%\item Muon segments in at least two muon stations have been observed
+%\item Its tracker track has a transverse impact parameter $dxy < 0.2$ cm and a longitudinal impact parameter $d_Z < 0.5$ cm with respect to the \ac{PV} 
+%\item The number of pixel hits is larger than 0
+%\item At least 5 tracker layers with hits have been observed.
+%\end{itemize}
+%
+%The selection applied to muons of this particular analysis is a bit tighter though, since the following cuts are applied on top of this selection for 2016, 2017 and 2018:
+%
+%\begin{itemize}
+%\item $p_T > 10$ GeV, $|\eta| < 2.4$ and $|d_z| < 0.1$ cm
+%\item $|d_{xy}| < 0.01$ cm (if $p_T < 20$ GeV) or $|d_{xy}| < 0.02$ cm (if $p_T \geq 20$ GeV)
+%\item Tight muon isolation requirement ($< 0.15$) with $\Delta \beta$ correction and in a cone size $\Delta R < 0.4$, as defined in Equation~\ref{eq:MuonISO}, in order to reduce the number of muons coming from the hadronization process of bottom and charm quarks.
+%
+%\begin{equation}
+%\label{eq:MuonISO}
+%\text{ISO} = \frac{\sum p_T^{\text{ch. had. (PV)}} + \max \big (0, \sum E_T^{\text{ neut. had.}} + \sum E_T^{\gamma}  - 0.5 \times \sum p_T^\text{ch. had. (PU)} \big )}{p_T(\mu)}
+%\end{equation}
+%
+%\end{itemize}
+%
+%This selection leads to efficiencies higher than 80\% for all the muon momenta and pseudorapidities range, as shown in Figure~\ref{fig:MuonEff}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 muon efficiencies]
+% {
+%\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2016.png}
+%}
+%\subfigure[2017 muon efficiencies]
+% {
+%\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2017.png}
+%}
+%\subfigure[2018 muon efficiencies]
+% {
+%\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2018.png}
+%}
+%\caption{Tight muon efficiencies for this analysis, based on the Muon \ac{POG} tight \ac{WP} with additional cuts for 2016, 2017 and 2018.}
+%\label{fig:MuonEff}
+%\end{figure}
 
-This selection leads to efficiencies higher than 80\% for all the muon momenta and pseudorapidities range, as shown in Figure~\ref{fig:MuonEff}.
+\subsection{Leptons selection} \label{section:LepSel}
 
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 muon efficiencies]
- {
-\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2016.png}
-}
-\subfigure[2017 muon efficiencies]
- {
-\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2017.png}
-}
-\subfigure[2018 muon efficiencies]
- {
-\includegraphics[width=14cm, height=3.7cm]{figs/MuonEff2018.png}
-}
-\caption{Tight muon efficiencies for this analysis, based on the Muon \ac{POG} tight \ac{WP} with additional cuts for 2016, 2017 and 2018.}
-\label{fig:MuonEff}
-\end{figure}
+A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be considered valid, and candidate lepton trajectories are further required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. 
+
+\subsubsection{Veto \ac{WP}}
+
+As we will see later on, events featuring more than two leptons are rejected, and this is achieved by definining a looser lepton selection. For electrons, the cut based veto ID definition is used, and the requirement of not having missing hits is removed while for muons, candidates satisfying the loose ID and very loose isolation criteria are selected to define the veto \ac{WP}.
 
 \subsection{Jet selection} \label{section:JetSel}
 
 Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typical distance parameter $R = 0.4$). 
 
-Jets are first of all required to have a $p_T > 30$ GeV and a $|\eta| < 2.4$ to be considered in this analysis. A selection is then applied on these jets in order to separate noise from real jets. In this analysis, this selection follows the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking, as shown in Tables~\ref{table:JetID2016} and~\ref{table:JetID2017}. The tight \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$.
+In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JETWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV and a $|\eta| < 2.5$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting.
 
-\begin{table}
-\begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c|c } 
- \hline
- Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
-\hline
-Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.98$ & - \\
-Neutral EM Fraction & $< 0.99$ & $< 0.99$ & $> 0.01$ & $< 0.90$ \\ 
-Number of Constituents & $> 1$ & $> 1$ & - & - \\
-Charged Hadron Fraction & $> 0$ & - & - & - \\
-Charged Multiplicity & $> 0$ & - & - & - \\
-Charged EM Fraction & $< 0.99$ & - & - & - \\
-Number of Neutral Particles	 & - & - & $> 2$ & $> 10$ \\
-\hline
-\end{tabular}
-%}
-\caption{JET/MET \ac{POG} tight \ac{WP} for 2016.}
-\label{table:JetID2016}
-\end{center}
-\end{table}
+%\begin{table}
+%\begin{center}
+%%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c|c } 
+% \hline
+% Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+%\hline
+%Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.98$ & - \\
+%Neutral EM Fraction & $< 0.99$ & $< 0.99$ & $> 0.01$ & $< 0.90$ \\ 
+%Number of Constituents & $> 1$ & $> 1$ & - & - \\
+%Charged Hadron Fraction & $> 0$ & - & - & - \\
+%Charged Multiplicity & $> 0$ & - & - & - \\
+%Charged EM Fraction & $< 0.99$ & - & - & - \\
+%Number of Neutral Particles	 & - & - & $> 2$ & $> 10$ \\
+%\hline
+%\end{tabular}
+%%}
+%\caption{JET/MET \ac{POG} tight \ac{WP} for 2016.}
+%\label{table:JetID2016}
+%\end{center}
+%\end{table}
+%
+%\begin{table}
+%\begin{center}
+%%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c|c } 
+% \hline
+% Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+%\hline
+%Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & - & $> 0.02$ \\
+%Neutral EM Fraction & $< 0.90$ & $< 0.90$ & $> 0.02$ and $<0.99$ & $< 0.90$ \\
+%Number of Constituents & $> 1$ & $> 1$ & - & - \\
+%Charged Hadron Fraction & $> 0$ & - & - & - \\
+%Charged Multiplicity & $> 0$ & $> 0$ & - & - \\
+%Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
+%\hline
+%\end{tabular}
+%%}
+%\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018.}
+%\label{table:JetID2017}
+%\end{center}
+%\end{table}
 
-\begin{table}
-\begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c|c } 
- \hline
- Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
-\hline
-Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & - & $> 0.02$ \\
-Neutral EM Fraction & $< 0.90$ & $< 0.90$ & $> 0.02$ and $<0.99$ & $< 0.90$ \\
-Number of Constituents & $> 1$ & $> 1$ & - & - \\
-Charged Hadron Fraction & $> 0$ & - & - & - \\
-Charged Multiplicity & $> 0$ & $> 0$ & - & - \\
-Number of Neutral Particles & - & - & $> 2$ & $> 10$ \\
-\hline
-\end{tabular}
-%}
-\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018.}
-\label{table:JetID2017}
-\end{center}
-\end{table}
+Finally, a slightly different selection (tight \ac{PU} jet ID) is applied to jets having a $p_T < 50$ GeV in order to reject jets coming from \ac{PU} interactions. Following the officical \ac{POG} recommendations, jet energy correction and resolution are also taken into account \cite{JEC2, JER}.
 
-A slightly different selection (loose \ac{PU} jet ID) is applied to jets having a $p_T > 50$ GeV in order to reject jets coming from \ac{PU} interactions in 2017 and 2018, as shown in Table~\ref{table:JetSelPU}. Jets are finally required to be $\Delta R > 0.4$ away from any lepton passing the criteria established for analysis to prevent signal leptons clustered as jets from entering the jet counting.
+\subsubsection{b-jets}
 
-The b-jets are then also select using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
+The b-jets are selected among the jets using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
 
-\begin{table}
-\begin{center}
-%\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c|c } 
- \hline
- Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
-\hline
-Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.99$ & $> 0.02$ \\
-Neutral EM Fraction & $< 0.90$ & $< 0.90$ & - & $< 0.90$ \\
-Number of Constituents & $> 1$ & $> 1$ & - & - \\
-Charged Hadron Fraction & $> 0$ & - & - & - \\
-Charged Multiplicity & $> 0$ & - & - & - \\
-Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
-\hline
-\end{tabular}
-%}
-\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018, for jets having a $p_T > 50$ GeV.}
-\label{table:JetSelPU}
-\end{center}
-\end{table}
+%\begin{table}
+%\begin{center}
+%%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c|c } 
+% \hline
+% Variable & $|\eta| \leq 2.4$ & $|\eta| \leq 2.7$ & $2.7 < |\eta| \leq 3.0$ & $|\eta| > 3.0$ \\
+%\hline
+%Neutral Hadron Fraction & $< 0.90$ & $< 0.90$ & $< 0.99$ & $> 0.02$ \\
+%Neutral EM Fraction & $< 0.90$ & $< 0.90$ & - & $< 0.90$ \\
+%Number of Constituents & $> 1$ & $> 1$ & - & - \\
+%Charged Hadron Fraction & $> 0$ & - & - & - \\
+%Charged Multiplicity & $> 0$ & - & - & - \\
+%Number of Neutral Particles & - & - & - & $> 2$ and $< 15$ \\
+%\hline
+%\end{tabular}
+%%}
+%\caption{JET/MET \ac{POG} tight \ac{WP} for 2017 and 2018, for jets having a $p_T > 50$ GeV.}
+%\label{table:JetSelPU}
+%\end{center}
+%\end{table}
 
 \section{Signal regions} \label{section:SR}
 
@@ -7222,6 +7237,11 @@ CMS-PAS-LUM-17-001, 2019}
 \href{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}{\ac{CMS} Twiki,
 "Reweighting recipe to emulate Level 1 ECAL prefiring", \url{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}, as seen in May 2020}
 
+\bibitem{HEM}
+\href{https://indico.cern.ch/event/744723/contributions/3077439/attachments/1714201/2764846/hirschauer_cms_lhcc_12sep2018.pdf}{J. Hirschauer,
+"CMS status report",
+LHCC Open Session, September 2018}
+
 \bibitem{topPt}
 \href{https://arxiv.org/abs/1607.00837}{CMS Collaboration,
 "Measurement of the differential cross sections for top quark pair production as a function of kinematic event variables in pp collisions at $\sqrt{s} = 7$ and 8 TeV",
@@ -7239,13 +7259,33 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}{\ac{CMS} Twiki,
 "Electron and Photon Physics Object Offline Guide", \url{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}, as seen in May 2020}
 
+\bibitem{EleWPs}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2}{\ac{CMS} Twiki,
+"Cut Based Electron ID for Run 2", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/CutBasedElectronIdentificationRun2}, as seen in May 2021}
+
 \bibitem{MuonPOG}
 \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2}{\ac{CMS} Twiki,
 "Baseline muon selections for Run-II", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2}, as seen in May 2020}
 
+\bibitem{MuonWPs}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2}{\ac{CMS} Twiki,
+"Baseline muon selections for Run-II", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/SWGuideMuonIdRun2}, as seen in May 2021}
+
 \bibitem{JETMETPOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMS/JetID}{\ac{CMS} Twiki,
 "Jet Identification", \url{https://twiki.cern.ch/twiki/bin/view/CMS/JetID}, as seen in May 2020}
+
+\bibitem{JetWPs}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/JetID\#Recommendations\_for\_13\_TeV\_data}{\ac{CMS} Twiki,
+"Jet Identification", \url{https://twiki.cern.ch/twiki/bin/view/CMS/JetID\#Recommendations\_for\_13\_TeV\_data}, as seen in May 2021}
+
+\bibitem{JEC2}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/JECDataMC}{\ac{CMS} Twiki,
+"Recommended Jet Energy Corrections and Uncertainties For Data and MC", \url{https://twiki.cern.ch/twiki/bin/view/CMS/JECDataMC}, as seen in May 2021}
+
+\bibitem{JER}
+\href{https://twiki.cern.ch/twiki/bin/view/CMS/JetResolution\#JER_Scaling_factors_and_Uncertai}{\ac{CMS} Twiki,
+"Jet Energy Resolution", \url{https://twiki.cern.ch/twiki/bin/view/CMS/JetResolution\#JER_Scaling_factors_and_Uncertai}, as seen in May 2021}
 
 \bibitem{BTagPOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/BTV13TeVDPDeepCSV}{\ac{CMS} Twiki,

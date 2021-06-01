@@ -659,7 +659,7 @@ Object and samples
 
 \begin{frame}{Objects definition I}
 \justifying
-Analysis groups have synchronized their frameworks. The following objects are used: \vfill
+We are currently using the following objects: \vfill
 
 \vspace{5pt} \begin{block}{\centering Triggers}\end{block} \vspace{-6pt}
 \begin{itemize}
@@ -668,16 +668,16 @@ Analysis groups have synchronized their frameworks. The following objects are us
 \item Any possible double counting of events in multiple trigger is taken care of;
 \item Trigger $p_T$ chosen to avoid any turn-on effect;
 \item SingleMuon, SingleEle, DoubleMuon, DoubleEG, MuonEG (2016) and SingleMuon, EGamma, DoubleMuon, MuonEG (2017/2018) data streams considered
-\item All triggers used are listed in the backup.
+\item All the triggers used are listed in the backup.
 \end{itemize} \vfill
 
 \begin{block}{\centering Leptons}\end{block} \vspace{-6pt}
 \begin{itemize}
 \justifying
-\item Analysis relies on the selection of events with two tight leptons;
-\item \alert{Tight Muon POG} working point used with a tight muon isolation requirement ($<$ 0.15) for muons, EGamma POG \alert{MVA WP90} for electrons;
-\item Some \textbf{additional quality cuts} (eg., in the $d_{xy}/d_z$ impact parameters) to reduce the impact of the fakes applied on top.
-\end{itemize} \vfill
+\item Analysis relies on the selection of events with two leptons;
+\item \alert{Medium cut based} POG WP used for electrons without additional ISO cut;
+\item \alert{Medium cut based} POG WP for muons with tight ISO (pfRelIso04\_all $< 0.15$)
+\end{itemize}
 \end{frame}
 
 \begin{frame}{Objects definition II}
@@ -689,8 +689,7 @@ Analysis groups have synchronized their frameworks. The following objects are us
 \item Basic selection: $p_T > 30$ GeV, $|\eta| < 2.4$;
 \item \alert{Tight JET/MET POG} working point (efficiency and background rejection $>$ 98\%);
 \item Have to be $\Delta R > 0.4$ away from any lepton passing the criteria established for analysis to prevent signal leptons clustered as jets from entering the jet counting;
-\item Loose jet PU ID (if $p_T > 50$ GeV) applied on top to reject jets coming from PU interactions in 2017 and 2018;
-\item Corresponding L1 ECAL prefiring corrections applied.
+\item Loose jet PU ID applied on top to reject jets coming from PU interactions.
 \end{itemize} \vfill
 
 \vspace{5pt}
@@ -2792,6 +2791,8 @@ VZ & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 \begin{center}
 \resizebox{\textwidth}{!}{
 \begin{tabular}{ l|l|l } 
+ \hline
+ Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
  Dataset & Run range & \textbf{HLT trigger path} \\
  \hline
