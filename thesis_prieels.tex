@@ -2096,21 +2096,7 @@ For this analysis, we decided to use the PFMET for simplicity after observing th
 \label{fig:metStudy}
 \end{figure}
 
-Additionally, the \ac{MET} distribution is expected to be independent of $\phi$ because of the rotational symmetry of the collisions around the beam axis but we do observe that the reconstructed \ac{MET} does depend on $\phi$ because of possible anisotropic detector responses, inactive calorimeter cells or tracking regions, detector misalignment, or eventual displacements of the beam spot. XY-shift corrections have therefore been applied to reduce this modulation and, for 2017 only, an additional correction to reduce the effect of high $\eta$ EE noise has been considered on top, as recommended. The effect of this correction is shown in Figure~\ref{fig:metCorrEffect}.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-\caption{Uncorrected PFMET (on the left) and PFMET after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
-\label{fig:metCorrEffect}
-\end{figure}
-
-Several additional corrections also need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters, detailed in Table~\ref{tab:METfilters}, are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+Several corrections need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters, detailed in Table~\ref{tab:METfilters}, are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
 
 \begin{table}
 \begin{center}
@@ -2987,16 +2973,22 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 \begin{figure}[htbp]
 \begin{center}
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2016.png}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2016.png}
+\end{center}
 \end{minipage} \hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2017.png}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2017.png}
+\end{center}
 \end{minipage} \hfill
-\begin{minipage}[b]{.32\textwidth}
-\includegraphics[width=5.5cm, height=4.3cm]{figs/Rinout2018.png}
+\begin{minipage}[b]{.99\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2018.png}
+\end{center}
 \end{minipage} \hfill
-\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the left), 2017 (on the middle) and 2018 (on the right).}
+\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
 \label{fig:Rinoutcheck}
 \end{center}
 \end{figure}
@@ -3417,25 +3409,23 @@ Even though quite negligible and reducible, some additional backgrounds still ne
 
 Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.
 
-The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed.
-
-\subsubsection{Corrective factors}
-
-In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2017 top enriched control region is shown in Figure~\ref{fig:Prefiring}.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=14cm, height=6cm]{figs/Prefiring.png}
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a general 2018 top control region.}
-\label{fig:Prefiring}
-\end{center}
-\end{figure}
-
-In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum and is therefore taken into account and corrected by introducing another weight to the simulation. 
+The \ac{MC} samples are additionally typically reweighted to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed. 
 
 \subsubsection{\ac{MET} corrections}
 
-EE noise and XY-shift corrections are applied to the \ac{MET} spectrum, as already described in Section~\ref{section:RecoMET}, to fix the unexpected modulation of the $\phi$ of the \ac{MET} observed in data because of several effects related to the detector.
+The \ac{MET} distribution is expected to be independent of $\phi$ because of the rotational symmetry of the collisions around the beam axis but we do observe that the reconstructed \ac{MET} does depend on $\phi$ because of possible anisotropic detector responses, inactive calorimeter cells or tracking regions, detector misalignment, or eventual displacements of the beam spot. XY-shift corrections have therefore been applied to reduce this modulation. In 2017, large level of noise were also observed in the data collected by the \ac{ECAL} at high pseudorapidities. To mitigate this effect, especially on the \ac{MET} tails, the correction consisting in completely excluding jets with raw transverse momentum $< 50$ GeV and $2.650 < |\eta| < 3.139$ from the calculation of the \ac{MET} was considered, as recommended by the JET/MET \ac{POG} \cite{EENoise}. The effect of these corrections is shown in Figure~\ref{fig:metCorrEffect}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+\caption{Uncorrected PFMET (on the left) and PFMET after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\label{fig:metCorrEffect}
+\end{figure}
 
 \subsubsection{Top $p_T$ reweighting} \label{subsection:toppt}
 
@@ -3456,7 +3446,19 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 
 Even though we initially planed on applying this correction factor, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
 
+\subsubsection{Other factors}
 
+In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2017 top enriched control region is shown in Figure~\ref{fig:Prefiring}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=14cm, height=6cm]{figs/Prefiring.png}
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a general 2018 top control region.}
+\label{fig:Prefiring}
+\end{center}
+\end{figure}
+
+In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum and is therefore taken into account and corrected by introducing another weight to the simulation.
 
 
 
@@ -3573,20 +3575,30 @@ DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_
 \end{center}
 \end{table}	
 
-Our analysis relying on the dilepton final state, the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths is considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting.
+Our analysis relies on the dilepton final state, so the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths is considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting.
 
-These triggers have been studied in order to make sure that they are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger. The trigger efficiencies have in this sense been calculated using a general tag and probe method and found for example for different runs of the 2017 data taking period in Figure~\ref{fig:TriggEffEle} for a DoubleEG trigger, and are used to reweight the simulated samples.
+In particular, the trigger efficiency, defined for each trigger as the ratio between the number of events passing our object selection and the trigger itself in the numerator and the number of events passing our selection in the denominator has been computed using orthogonal \ac{MET} datasets to avoid any bias. Studying this efficiency is important is the sense that we want to make sure that the triggers used are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger, and because we actually use them to reweight the simulated samples. The efficiencies have in this sense been calculated using orthogonal \ac{MET} triggers for the different data taking periods and for each dataset individually, as shown in Figure~\ref{fig:TriggEff}.
 
 \begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=6cm, height=5.5cm]{figs/TriggEffEle.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=6cm, height=5.5cm]{figs/TriggEffEta.png}
+\begin{center}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Efficiency_pt_2016_2016.png}
+\end{center}
 \end{minipage} \hfill
-\caption{DougleEG trigger efficiencies with respect to the $p_T$ (on the left) and $\eta$ (on the right), computed using a tag and probe method, for the 2017 data taking period.}
-\label{fig:TriggEffEle}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Efficiency_pt_2017_2017.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.99\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Efficiency_pt_2018_2018.png}
+\end{center}
+\end{minipage} \hfill
+\caption{Trigger efficiencies using orthogonal \ac{MET} datasets for each dataset in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
+\label{fig:TriggEff}
+\end{center}
 \end{figure}
 
 \subsection{Electrons selection} \label{section:EleSel}
@@ -3761,7 +3773,7 @@ As we will see later on, events featuring more than two leptons are rejected, an
 
 Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typical distance parameter $R = 0.4$). 
 
-In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JETWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV and a $|\eta| < 2.5$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting.
+In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JETWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV ($30$ GeV for the first jet) and a $|\eta| < 2.4$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting.
 
 %\begin{table}
 %\begin{center}
@@ -7236,6 +7248,10 @@ CMS-PAS-LUM-17-001, 2019}
 \bibitem{Prefire}
 \href{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}{\ac{CMS} Twiki,
 "Reweighting recipe to emulate Level 1 ECAL prefiring", \url{https://twiki.cern.ch/twiki/bin/view/CMS/L1ECALPrefiringWeightRecipe}, as seen in May 2020}
+
+\bibitem{EENoise}
+\href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MissingETUncertaintyPrescription\#Instructions_for_2017_data_with}{\ac{CMS} Twiki,
+"Official Prescription for calculating corrections and uncertainties on Missing Transverse Energy (MET)", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/MissingETUncertaintyPrescription\#Instructions_for_2017_data_with}, as seen in May 2021}
 
 \bibitem{HEM}
 \href{https://indico.cern.ch/event/744723/contributions/3077439/attachments/1714201/2764846/hirschauer_cms_lhcc_12sep2018.pdf}{J. Hirschauer,
