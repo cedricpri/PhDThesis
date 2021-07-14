@@ -168,7 +168,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, July 2021}
+	{\Large Santander, September 2021}
 	\vfill
 
 \end{titlepage}
@@ -203,7 +203,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Julio 2021}
+	{\Large Santander, Septiembre 2021}
 	\vfill
 
 \end{titlepage}
@@ -3453,7 +3453,7 @@ In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energ
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=14cm, height=6cm]{figs/Prefiring.png}
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a general 2018 top control region.}
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a general 2017 top control region.}
 \label{fig:Prefiring}
 \end{center}
 \end{figure}
@@ -3577,7 +3577,7 @@ DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_
 
 Our analysis relies on the dilepton final state, so the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths is considered. Eventual events passing several triggers is taken into account as well to make sure to avoid any double counting.
 
-In particular, the trigger efficiency, defined for each trigger as the ratio between the number of events passing our object selection and the trigger itself in the numerator and the number of events passing our selection in the denominator has been computed using orthogonal \ac{MET} datasets to avoid any bias. Studying this efficiency is important is the sense that we want to make sure that the triggers used are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger, and because we actually use them to reweight the simulated samples. The efficiencies have in this sense been calculated using orthogonal \ac{MET} triggers for the different data taking periods and for each dataset individually, as shown in Figure~\ref{fig:TriggEff}.
+In particular, the trigger efficiency, defined for each trigger as the ratio between the number of events passing our object selection and the trigger itself in the numerator and the number of events passing our selection in the denominator has been computed using orthogonal \ac{MET} datasets to avoid any bias. Studying this efficiency is important is the sense that we want to make sure that the triggers used are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger, and because we actually use the computed efficiency to reweight the simulated samples. The efficiencies have in this sense been calculated using orthogonal \ac{MET} triggers for the different data taking periods and for each channel individually, as shown in Figure~\ref{fig:TriggEff}, following the recommendations of \cite{triggerEff}. At the end of the day though, 2D efficiencies (the x-axis being the leading lepton $p_T$ ($ee$ and $\mu \mu$ channels) or the electron $p_T$ ($e \mu$ channel), while the trailing lepton $p_T$ ($ee$ and $\mu \mu$ channels) or the muon $p_T$ ($e \mu$ channel) was used to define the y-axis) were actually estimated in both data and \ac{MC}. A scale factor was then computed and used in the analysis to compute the weight of each event that needs to be applied to account for this effect.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3600,6 +3600,28 @@ In particular, the trigger efficiency, defined for each trigger as the ratio bet
 \label{fig:TriggEff}
 \end{center}
 \end{figure}
+
+%\begin{figure}[htbp]
+%\begin{center}
+%\begin{minipage}[b]{.49\textwidth}
+%\begin{center}
+%\includegraphics[width=7.5cm, height=5.6cm]{figs/SF_pt_ee_2016_2016.png}
+%\end{center}
+%\end{minipage} \hfill
+%\begin{minipage}[b]{.49\textwidth}
+%\begin{center}
+%\includegraphics[width=7.5cm, height=5.6cm]{figs/SF_pt_em_2016_2016.png}
+%\end{center}
+%\end{minipage} \hfill
+%\begin{minipage}[b]{.99\textwidth}
+%\begin{center}
+%\includegraphics[width=7.5cm, height=5.6cm]{figs/SF_pt_mm_2016_2016.png}
+%\end{center}
+%\end{minipage} \hfill
+%\caption{Scale factor applied to simulated events in 2016 for the $ee$ (on the top left), $e \mu$ (on the top right) and $\mu \mu$ channels (on the bottom). Similar results were obtained in 2017 and 2018.}
+%\label{fig:SFtriggereff}
+%\end{center}
+%\end{figure}
 
 \subsection{Electrons selection} \label{section:EleSel}
 
@@ -3773,7 +3795,7 @@ As we will see later on, events featuring more than two leptons are rejected, an
 
 Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typical distance parameter $R = 0.4$). 
 
-In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JETWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV ($30$ GeV for the first jet) and a $|\eta| < 2.4$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting.
+In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JetWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV ($30$ GeV for the first jet) and a $|\eta| < 2.4$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting.
 
 %\begin{table}
 %\begin{center}
@@ -3897,7 +3919,7 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 
 Several different signal regions have then actually been defined, targeting each of the two signals of interest, depending on the number of jets and b-jets observed. The signal region targeting the $t/\bar t$+DM process is therefore made out of events having either exactly 1 jet, or 2 jets and exactly 1 b-jet. On the other hand, all the events passing the pre-selection but having either 2 jets and more than 1 b-jet or more than 2 jets make up the signal region targeting the $t \bar t$+DM process. Different \ac{MVA} trainings were done in these two regions, as explained in Section~\ref{section:Discrimination}. The signal regions can be even more divided, depending on the mass point that was used for the training, since the mediators with different masses typically feature different kinematic distributions.
 
-Some distributions obtained in these signal regions are shown in Figures~\ref{fig:SR1} to ~\ref{fig:SR6}.
+Some distributions obtained in these signal regions are shown in Figures~\ref{fig:SR1} to~\ref{fig:SR6}.
 
 \color{red}FIXME: Add final plots everywhere \color{black}
 
@@ -4099,7 +4121,7 @@ Some distributions obtained in these signal regions are shown in Figures~\ref{fi
 \label{fig:SR6}
 \end{figure}
 
-\section{Control regions} \label{section:CR}
+\section{Background estimation and control regions} \label{section:CR}
 
 Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, an inclusive control region is defined in Section~\ref{section:inclusiveCR} to spot initial issues and problems. Then, a data validation region is defined to ensure the quality of the \ac{MC} prediction of both the $t \bar t$ and single top processes in Section~\ref{section:TopCR} and a \ac{DY} enriched specific control region is defined in Section~\ref{section:DYCR}. Finally, the $ttV$ and non-prompt contamination processes will be checked in Sections~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
 
@@ -7270,6 +7292,10 @@ Phys. Rev. D 94 (2016) 052006 [arXiv: 1607.00837]}
 \bibitem{topPtReweighting}
 \href{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting\#Case\_3\_1\_Analyses\_with\_SM\_tt\_as}{\ac{CMS} Twiki,
 "The modeling of the top quark $p_T$", \url{https://twiki.cern.ch/twiki/bin/viewauth/CMS/TopPtReweighting\#Case\_3\_1\_Analyses\_with\_SM\_tt\_as}, as seen in February 2021}
+
+\bibitem{triggerEff}
+\href{http://cms.cern.ch/iCMS/user/noteinfo?cmsnoteid=CMS\%20AN-2019/140}{CMS Collaboration,
+"Measurement of the trigger efficiencies for a dilepton selection for a ttbar analysis with the full run 2 dataset", AN2019-140}
 
 \bibitem{ElePOG}
 \href{https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideEgamma}{\ac{CMS} Twiki,
