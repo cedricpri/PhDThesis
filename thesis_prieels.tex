@@ -2082,17 +2082,17 @@ Different algorithms can be used in order to reconstruct this variable, the most
 \item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
-For this analysis, we decided to use the PFMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between data and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 \ac{DY} inclusive region. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
+For this analysis, we decided to use the PFMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between data and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 $t \bar t$ region, especially in the most interesting regions for us, at high \ac{MET} values. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_pfmet_extended.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_puppimet.png}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_puppimet.png}
 \end{minipage} \hfill
-\caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 $t \bar t$ control region.}
 \label{fig:metStudy}
 \end{figure}
 
@@ -2975,20 +2975,20 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 \begin{center}
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2016.png}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2016_data.png}
 \end{center}
 \end{minipage} \hfill
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2017.png}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2017_data.png}
 \end{center}
 \end{minipage} \hfill
 \begin{minipage}[b]{.99\textwidth}
 \begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2018.png}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2018_data.png}
 \end{center}
 \end{minipage} \hfill
-\caption{$R_{out/in,\text{ }} MC$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
+\caption{$R_{out/in}$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
 \label{fig:Rinoutcheck}
 \end{center}
 \end{figure}
@@ -3418,12 +3418,12 @@ The \ac{MET} distribution is expected to be independent of $\phi$ because of the
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet_phi.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_phi.png}
 \end{minipage} \hfill
-\caption{Uncorrected PFMET (on the left) and PFMET after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\caption{Uncorrected MET (on the left) and MET $\phi$ after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
 \label{fig:metCorrEffect}
 \end{figure}
 
@@ -3434,35 +3434,49 @@ Previous studies of the $t \bar t$ generator typically considered in the physics
 \begin{figure}[htbp]
 \begin{center}
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/cratio_topCR_df_2j_pt1_without.png}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins_noTopPt.png}
 \end{minipage} \hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/cratio_topCR_df_2j_pt1_with.png}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins.png}
 \end{minipage} \hfill
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) top $p_T$ reweighting corrections in a general 2017 top control region.}
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) top $p_T$ reweighting corrections in a 2018 top control region.}
 \label{fig:Toppt}
 \end{center}
 \end{figure}
 
-Even though we initially planed on applying this correction factor, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
+Even though we initially planed on applying this correction factor, as it seems to slightly improve the agreement between data and simulation, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches where $t \bar t$ \ac{MC} is used to model the background, as this correction factor might suppress a potential \ac{BSM} signal and bias the final results. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
 
 \subsubsection{Other factors}
 
-In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2017 top enriched control region is shown in Figure~\ref{fig:Prefiring}.
+In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2018 inclusive enriched control region is shown in Figure~\ref{fig:Prefiring}.
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=14cm, height=6cm]{figs/Prefiring.png}
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a general 2017 top control region.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_jeteta1_noPrefire.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_jeteta1.png}
+\end{minipage} \hfill
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a 2018 top control region.}
 \label{fig:Prefiring}
 \end{center}
 \end{figure}
 
-In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum and is therefore taken into account and corrected by introducing another weight to the simulation.
+In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum, as shown in Figure~\ref{fig:HEM} and is therefore taken into account and corrected by introducing another weight to the simulation.
 
-
-
-
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=6cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_withHEM.png}
+\end{minipage} \hfill
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) HEM correction factor in a 2018 top control region.}
+\label{fig:HEM}
+\end{center}
+\end{figure}
 
 
 
@@ -3657,6 +3671,12 @@ Four different electron \acfp{WP} (veto, loose, medium, tight) are then defined 
 
 For this analysis, we rely on the cut based medium identification \ac{POG} \ac{WP} to define our electrons \cite{EleWPs}. Electrons originating from photon conversions are also rejected by requiring that the electron track not have missing hits in the innermost layers of the tracker, on top of the conversion veto included in the cut based ID definition.
 
+%Finally, we decided to apply a few additional cuts on top of the electrons \ac{POG} official definition:
+%\begin{itemize}
+%\item In order to remove some of the non-prompt contamination, which might be a problem in the queue of the \ac{MET} spectrum, we remove events further than 0.05cm from the \ac{PV} in the $xy$ plane, and further than 0.1cm along the z-axis. Furthermore, for the same reason, we also require electron candidates to have a $sip3d$ value, corresponding to the significance of the 3D impact parameter to the event vertex, smaller than 4.
+%\item We also ask electrons to have $|\eta| < 2.4$, and we remove electrons in the \ac{ECAL} barrel-endcap transition region, having $1.444 < |\eta| < 1.566$.
+%\end{itemize}
+
 %
 %In this analysis, instead of relying on the four basic \ac{POG} official \acp{WP} (veto, loose, medium and tight) that can be defined with some quality cuts, we rely on the \ac{MVA} approach that consists in using a single discriminator variable to perform the discrimination between genuine and misidentified electrons, combining the information coming from more than 20 variables at once using \ac{BDT}. 
 
@@ -3785,7 +3805,9 @@ For our analysis, we decided to use directly the medium ID \ac{WP} provided by t
 
 \subsection{Leptons selection} \label{section:LepSel}
 
-A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be considered valid, and candidate lepton trajectories are further required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. 
+A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be considered valid.
+
+Furthermore, lepton candidates trajectories are further required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem in the queue of the \ac{MET} spectrum.
 
 \subsubsection{Veto \ac{WP}}
 
@@ -4123,7 +4145,7 @@ Some distributions obtained in these signal regions are shown in Figures~\ref{fi
 
 \section{Background estimation and control regions} \label{section:CR}
 
-Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, an inclusive control region is defined in Section~\ref{section:inclusiveCR} to spot initial issues and problems. Then, a data validation region is defined to ensure the quality of the \ac{MC} prediction of both the $t \bar t$ and single top processes in Section~\ref{section:TopCR} and a \ac{DY} enriched specific control region is defined in Section~\ref{section:DYCR}. Finally, the $ttV$ and non-prompt contamination processes will be checked in Sections~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
+Different control regions where the data/\ac{MC} agreement can be checked have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, an inclusive control region is defined in Section~\ref{section:inclusiveCR} to spot initial issues and problems. Finally, a data validation region is defined to ensure the quality of the \ac{MC} prediction of both the $t \bar t$ and single top processes in Section~\ref{section:TopCR} and a \ac{DY} enriched specific control region is defined in Section~\ref{section:DYCR}.% Finally, the $ttV$ and non-prompt contamination processes will be checked in Sections~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
 
 \subsection{Inclusive control region} \label{section:inclusiveCR}
 
@@ -4205,7 +4227,7 @@ As previously explained, the \ac{SM} $t \bar t$ control region is defined with t
 
 Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
 
-At the end of the day, this control region was defined exactly the same as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}. Some distributions obtained in these control regions are shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed in this region. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
+At the end of the day, this control region was defined exactly the same as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -4240,79 +4262,79 @@ At the end of the day, this control region was defined exactly the same as the s
 \label{fig:DYCR2}
 \end{figure}
 
-\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
-
-An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring at least 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained in this case are shown in Figure~\ref{fig:ttVCR}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 $t \bar t$+V \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 $t \bar t$+V \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 $t \bar t$+V \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+V control region defined.}
-\label{fig:ttVCR}
-\end{figure}
-
-\subsection{Same sign control region} \label{section:SSCR}
-
-Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This control region is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 same sign \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 same sign \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 same sign \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the same sign control region defined.}
-\label{fig:SSCR}
-\end{figure}
+%\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
+%
+%An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring at least 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained in this case are shown in Figure~\ref{fig:ttVCR}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2017 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2018 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the $t \bar t$+V control region defined.}
+%\label{fig:ttVCR}
+%\end{figure}
+%
+%\subsection{Same sign control region} \label{section:SSCR}
+%
+%Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This control region is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2017 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2018 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\caption{Two different variables ($m_{ll}$, on the left, and pf\ac{MET}, on the right) represented in the same sign control region defined.}
+%\label{fig:SSCR}
+%\end{figure}
 
 %In order to cover for most of the discrepancies between the data and the simulation observed in the distributions of this control region, a flat 30\% systematic uncertainty is typically associated to this background, as will be discussed in more details in Section~\ref{section:Systematics}.
 
@@ -5260,7 +5282,7 @@ Finally, the systematic associated to the backgrounds normalization is typically
 \begin{itemize}
 %\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
 \item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodeling of this particular background, especially at high pf\ac{MET} values, a 20\% systematic is associated to this process.
-\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method previously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} in the same-sign control region defined in Section~\ref{section:SSCR}.
+\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method previously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} observed in a same-sign control region enriched in this background.%in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
 The impact plots, showing the impact the each systematic has on the final upper limits obtained, are shown in Appendix~\ref{appendix:Impact}.
