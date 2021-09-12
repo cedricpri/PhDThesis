@@ -168,7 +168,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, September 2021}
+	{\Large Santander, October 2021}
 	\vfill
 
 \end{titlepage}
@@ -203,7 +203,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Septiembre 2021}
+	{\Large Santander, Octubre 2021}
 	\vfill
 
 \end{titlepage}
@@ -4729,12 +4729,12 @@ The actual parameters used for this particular analysis have been obtained after
  BDT parameter & Optimized value \\
  \hline
  Maximum depth & 4 \\
- Minimum samples per leaf & 1\% \\
+ Minimum samples per leaf & 2\% \\
  Loss function & Quadratic \\
  Boost algorithm & Gradient descent \\
- Shrinkage & 0.2 \\
- Grid points $n_{\text{cut}}$ & 250 \\
- Number of trees & 100 \\
+ Shrinkage & 0.3 \\
+ Grid points $n_{\text{cut}}$ & 1000 \\
+ Number of trees & 250 \\
 \hline
 \end{tabular}
 %}
@@ -4788,7 +4788,7 @@ Several parameters are important to optimize during the training of a neural net
 \hline
  DNN parameter & Optimized value \\
  \hline
- Hidden layers neurons & 80, 80, 40 \\
+ Hidden layers neurons & 20, 15, 15, 10 \\
  Activation functions & Relu (x3), softmax (output) \\
 Error function & Mean square error \\
 Optimizer & Adam \\
@@ -4807,11 +4807,11 @@ After a trial and error process, the best results have actually been obtained wi
 
 \subsection{Training process}
 
-One training has been per combination of mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. 
+One training has been done for each mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. 
 
-For the training process itself, all the signals for a given mass point have been mixed together and trained against all the possible backgrounds, in the pre-selection region defined in Section~\ref{section:SR}. Two different trainings were then performed for each mass point:
+For the training process itself, all the signals for a given mass point have been mixed together and trained against all the possible backgrounds, in the pre-selection region defined in Section~\ref{section:SR}. Two different trainings were actually performed for each mass point:
 \begin{itemize}
-\item One targeting mostly the $t/\bar t$+DM signal, by considering only the events having exactly 1 jet or 2 jets and exactly 1 b-jet;
+\item One targeting specifically the $t/\bar t$+DM signal, by considering only the events having 1 or 2 jets and exactly 1 b-jet;
 \item And another one targeting the $t \bar t$+DM signal, by considering this time only the events having more than 2 jets, or exactly 2 jets and more than 1 b-jet.
 \end{itemize}
 
@@ -4940,7 +4940,9 @@ All these results have been obtained by splitting the dataset available as 50\% 
 
 \subsection{Evaluation process}
 
-Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. Once the weights applied, we have therefore been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}, and the actual \ac{ANN} output distributions for each mediator mass point, used in a general shape analysis later on, as shown in Figures~\ref{fig:ANNShapesScalar} and \ref{fig:ANNShapesPseudo}.
+Once the training performed and the weights of both \ac{MVA} methods computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. This is simply done by reading the weights previously obtained by the training process, considering either the training that was performed in the $t/\bar t$+DM or $t \bar t$+DM enriched region, depending on the number of (b-)jets observed in the event.
+
+Once the weights applied, we have been able to obtain a distribution of the most probably category for all the processes considered in this analysis, as shown in Figure~\ref{fig:weightsApplied}, and the actual \ac{ANN} output distributions for each mediator mass point, used in a general shape analysis later on, as shown in Figures~\ref{fig:ANNShapesScalar} and \ref{fig:ANNShapesPseudo}.
 
 \begin{figure}[htbp]
 \centering
@@ -5901,11 +5903,11 @@ VZ & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 
 The study of the different hyper-parameters defining both the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyper-parameters that can have an impact on the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
 
-The global strategy used for the actual optimization process is quite straightforward: even though some of the hyper-parameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. The training optimization has been performed for the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. A similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
+The global strategy used for the actual optimization process is quite straightforward: even though some of the hyper-parameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. Finally, the training optimization has been performed using the data collected in 2018 and considering the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. %Finally, a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
 \subsubsection{Boosted Decisions Trees}
 
-Starting with the \ac{BDT}, the first obvious hyper-parameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
+Starting with the \ac{BDT} of the analysis, the first obvious hyper-parameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -5939,12 +5941,17 @@ Starting with the \ac{BDT}, the first obvious hyper-parameter among all the para
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/BDT_trees.png}
-\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different number of trees.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_trees_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_trees_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different number of trees, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optTrees}
 \end{figure}
 
-Another important parameter of the \ac{BDT} and which was optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. However, given the relative small number of input variables used in this analysis and given to the \ac{BDT}, this parameter does not seem to be highly relevant since the results obtained are similar in all the cases.
+Another important parameter of the \ac{BDT} which has been optimized is the maximal depth of the trees that we define, as shown in Figure~\ref{fig:optDepth}. Given the relative small number of input variables used in this analysis, this parameter does not seem to be highly relevant since the results obtained are similar in all the cases.
 
 %\begin{figure}[htbp]
 %\centering
@@ -5978,8 +5985,13 @@ Another important parameter of the \ac{BDT} and which was optimized is the maxim
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/BDT_depths.png}
-\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different maximum depths.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_depth_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_depth_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different maximal depths, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optDepth}
 \end{figure}
 
@@ -6017,10 +6029,15 @@ The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scann
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/BDT_cuts.png}
-\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different $n_{\text{cut}}$ values.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_cuts_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_cuts_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different $n_{\text{cut}}$ values, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optCuts}
-\end{figure}  
+\end{figure}
 
 %\begin{figure}[htbp]
 %\centering
@@ -6054,16 +6071,21 @@ The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scann
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/BDT_shrinkages.png}
-\caption{\ac{ROC} curves obtained for the \ac{BDT} by trying out different shrinkage values.}
-\label{fig:optShrinkage}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_shrinkage_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_shrinkage_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different shrinkage values, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\label{fig:optDepth}
 \end{figure}
 
 For most of the hyper-parameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyper-parameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
 
 \subsubsection{Analysis Neural Network}
 
-The same process has been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 45.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
+The same process has then been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results obtained for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 200.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6109,8 +6131,13 @@ The same process has been repeated by considering this time the \ac{ANN} of the 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/DNN_architectures.png}
-\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different architectures.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_arch_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_arch_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different architectures, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optLayers}
 \end{figure}
 
@@ -6148,8 +6175,13 @@ After this first step of optimization, we kept the architecture which seemed to 
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/DNN_rates.png}
-\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different learning rates.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_LR_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_LR_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different learning rates, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optLearning}
 \end{figure}
 
@@ -6187,8 +6219,13 @@ The last parameter that has been optimized in this case is the batch size, allow
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=10cm, height=8cm]{figs/DNN_batches.png}
-\caption{\ac{ROC} curves obtained for the \ac{ANN} by trying out different batch sizes.}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_batch_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_batch_TTbar.png}
+\end{minipage} \hfill
+\caption{Background rejection achieved for the \ac{BDT} by trying out different batch sizes, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optBatch}
 \end{figure}
 
@@ -6196,7 +6233,7 @@ For all the previous tests, we took care of defining a number of epochs high eno
 
 \subsubsection{Input variables chosen}
 
-Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. It has not been mentioned so far because it actually received a different treatment than the others, given its importance. Instead of simply changing this parameter to study the background rejection curve obtained, we decided to train several networks using different sets of input variables, to apply the weights for each network to the actual data and \ac{MC} and to repeat the calculation of the upper limits in each case. The objective of this process was to find the optimal set of input variables that leads directly to the lowest possible upper limits for the different models considered in a more precise way. We therefore decided to train several times the \ac{ANN} and the \ac{BDT} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in Table~\ref{table:sets}. %The actual correlation observed for all these variables can be seen in Figures~\ref{fig:allVarCorr_bkg} for the background and signal processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
+Finally, the input variables given to the \ac{MVA} is also an extremely important parameter to study. In order to study this parameter, we decided to train several times the \ac{BDT} and the \ac{ANN} considering each time a different set of input variables, all defined in Section~\ref{section:Discrimination}, as shown in Table~\ref{table:sets}. %The actual correlation observed for all these variables can be seen in Figures~\ref{fig:allVarCorr_bkg} for the background and signal processes.%, the $t/\bar t$+DM and the $t \bar t$+DM processes respectively.
 
 \begin{table}
 \begin{center}
@@ -6210,152 +6247,162 @@ Finally, the input variables given to the \ac{MVA} is also an extremely importan
 & $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ \\
 & $M_{T2}^{ll}$ \\
 \hline
-Set 2 & Set 1 and \\
+Set 2 & \textbf{Set 1 and} \\
 & $m_{T2}(bl, bl)$ \\
 & massT \\
 \hline
-Set 3 & Set 2 and \\
+Set 3 & \textbf{Set 2 and} \\
 & Spin correlated variables \\
 \hline
-Set 4 & Set 3 and \\
+Set 4 & \textbf{Set 3 and} \\
 & $r2l$ \\
 & $r2l4j$ \\
 \hline
-Set 5 & Set 4 and \\
+Set 5 & \textbf{Set 4 and} \\
 & reco weight $w$ \\
-\hline
-Set 6 & Set 5 and \\
 & Dark $p_T$ \\
 & Overlapping factor $R$ \\
  \hline
 \end{tabular}
-\caption{Sets of input variables considered when optimizing the \ac{MVA} method.}
+\caption{Sets of input variables considered for the optimization of both the \ac{MVA} methods considered.}
 \label{table:sets}
 \end{center}
 \end{table}
 
-% dark pt/overlapping factor, spin correlated, atlas
-%
-%\begin{itemize}
-%\item The \textbf{set 1} is the simple set of variables possible, made out of 5 variables: both the number of b-jets and $m_{bl}^t$, to discriminate the two signals with respect to each other, and the \ac{PUPPI} \ac{MET}, $\Delta \Phi(E_{T}^{\text{miss}}, ll)$ and $M_{T2}^{ll}$ to discriminate the signals with respect to the backgrounds considered, the \ac{SM} single top and $t \bar t$ processes.
-%\item The \textbf{set 2} is obtained by adding both the \ac{MET} significance and the $m_{T2}(bl, bl)$ variables to the set 1.
-%\item Then, the \textbf{set 3} is defined as the set 2, to which the massT and reo weights variables have been added.
-%\item The \textbf{set 4}
-%\end{itemize}
-
-%\begin{figure}[htbp]
-%\centering
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=5.7cm]{figs/correlations_background.png}
-%\end{minipage}
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=5.7cm]{figs/correlations_signal.png}
-%\end{minipage}
-%\caption{Correlation observed in the background (on the left) and signal (on the right) processes between all the possible input variables considered.}
-%\label{fig:allVarCorr_bkg}
-%\end{figure}
-
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[width=7cm, height=5.7cm]{figs/corr_allVariables_signal1.png}
-%\caption{Correlation observed in the $t/\bar t$+DM process between all the possible input variables considered.}
-%\label{fig:allVarCorr_signal1}
-%\end{figure}
-%
-%\begin{figure}[htbp]
-%\centering
-%\includegraphics[width=7cm, height=5.7cm]{figs/corr_allVariables_signal0.png}
-%\caption{Correlation observed in the $t \bar t$+DM process between all the possible input variables considered.}
-%\label{fig:allVarCorr_signal0}
-%\end{figure}
-
-As an example, the scalar $t \bar t$+DM upper limits obtained considering different sets of variables and a global training (for the 2016 data taking period only, without considering any systematics and for a single 100 GeV scalar training) are shown in Figures~\ref{fig:optVarBDT} and~\ref{fig:optVarDNN}. Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because the systematics were not considered when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
+The \ac{ROC} curves for each set of input variables have been obtained and plotted on top of each other in order to simplify their comparison, as shown in Figure~\ref{fig:InputVarROC}. At the end of the day, the set of input variables number XX was chosen over the others as it seems to be giving the best possible signal over background discrimination.
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Set 1] 
+\subfigure[\ac{BDT} ROC curves] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_BDT.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_input_ST.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDT_input_TTbar.png}
 \end{minipage}\hfill
 }
-\subfigure[Set 2] 
+\subfigure[\ac{ANN} ROC curves] 
 {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_BDT.png}
-\end{minipage}\hfill
-}
-\subfigure[Set 3] 
-{
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_input_ST.png}
+\end{minipage} \hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_BDT.png}
-\end{minipage}\hfill
-}
-\subfigure[Set 4]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_BDT.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/ANN_input_TTbar.png}
 \end{minipage} \hfill
 }
-\subfigure[Set 5]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_BDT.png}
-\end{minipage}\hfill
-}
-\subfigure[Set 6]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_BDT.png}
-\end{minipage} \hfill
-}
-\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{BDT} and different sets of variables used as input.}
-\label{fig:optVarBDT}
+\caption{Background rejection achieved for the \ac{BDT} (at the top) and the \ac{ANN} (at the bottom) by trying out different sets of input variables, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\label{fig:InputVarROC}
 \end{figure}
+
+%As an example, the scalar $t \bar t$+DM upper limits obtained considering different sets of variables and a global training (for the 2016 data taking period only, without considering any systematics and for a single 100 GeV scalar training) are shown in Figures~\ref{fig:optVarBDT} and~\ref{fig:optVarDNN}. Obviously, it is important to note that the optimization of the \ac{MVA} has been performed at an early stage of the analysis, and this has several consequences that can be observed on these plots: i) the blinding policy was still in place during this process, meaning that the limits shown have been obtained with a single fb$^{-1}$ and, more importantly, ii) the actual values obtained for the upper limits plots are not accurate and should not be considered to set exclusion limits on some \ac{DM} production models, because the systematics were not considered when the optimization was done, for example. However, even though the actual value of the upper limit should not be trusted, the differences observed between the trainings considering the different sets of input variables is able to bring us valuable information in order to choose the input variables for the actual analysis.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Set 1] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_BDT.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 2] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_BDT.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 3] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_BDT.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 4]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_BDT.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Set 5]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_BDT.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 6]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_BDT.png}
+%\end{minipage} \hfill
+%}
+%\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{BDT} and different sets of variables used as input.}
+%\label{fig:optVarBDT}
+%\end{figure}
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[Set 1] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_DNN.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 2] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_DNN.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 3] 
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_DNN.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 4]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_DNN.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[Set 5]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_DNN.png}
+%\end{minipage}\hfill
+%}
+%\subfigure[Set 6]
+%{
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_DNN.png}
+%\end{minipage} \hfill
+%}
+%\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{ANN} and different sets of variables used as input.}
+%\label{fig:optVarDNN}
+%\end{figure}
+
+\subsubsection{\ac{BDT} vs \ac{ANN} comparison}
+
+Finally, we compared the \ac{ROC} curves obtained with the best \ac{BDT} and the best \ac{ANN} together, in order to choose a singla \ac{MVA} method to perform this analysis. The result of this particular comparison is shown in Figure~\ref{fig:MVAcomparison}.
 
 \begin{figure}[htbp]
 \centering
-\subfigure[Set 1] 
-{
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set1_DNN.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDTvsDNN_ST.png}
 \end{minipage}\hfill
-}
-\subfigure[Set 2] 
-{
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set2_DNN.png}
+\includegraphics[width=7cm, height=5.7cm]{figs/BDTvsDNN_TTbar.png}
 \end{minipage}\hfill
-}
-\subfigure[Set 3] 
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set3_DNN.png}
-\end{minipage}\hfill
-}
-\subfigure[Set 4]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set4_DNN.png}
-\end{minipage} \hfill
-}
-\subfigure[Set 5]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set5_DNN.png}
-\end{minipage}\hfill
-}
-\subfigure[Set 6]
-{
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=6cm]{figs/limit_ttDM_scalar__set6_DNN.png}
-\end{minipage} \hfill
-}
-\caption{Upper limits obtained for the scalar $t/\bar t$+DM signal considering the optimal \ac{ANN} and different sets of variables used as input.}
-\label{fig:optVarDNN}
+\caption{Background rejection achieved for the \ac{BDT} and the \ac{ANN}, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\label{fig:MVAcomparison}
 \end{figure}
 
-According to these last results, we decided to use the \ac{ANN} for the analysis instead of the \ac{BDT}, trained with the simplest possible set of input variables, plus one of the two spin correlated variables from the set 3 (mainly because the two variables were found to be correlated at 99\%), since this seems to be the set of variables able to give us the best possible upper limits around 100 GeV, the mass point chosen for the training process. 
+According to all these results, we actually decided to use the \ac{BDT} for the analysis instead of the \ac{ANN}, given they it achieves a much higher background rejection when rejecting the same level of signal. The method was trained with the most complete set of input variables, since this seems to be the set of variables able to give us the best possible discrimination between the signals and the backgrounds around 100 GeV, the mass point chosen for the optimization process.
+
+
+
+
+
 
 \chapter{Pulls and impacts plots} \label{appendix:Impact}
 
