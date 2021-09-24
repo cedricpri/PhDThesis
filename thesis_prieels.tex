@@ -404,9 +404,9 @@ In the context of this work, \ac{DM} is searched for in association with one or 
 
 The \ac{LHC} has now been running for a decade, and several similar searches have already been carried out and published in the past by the \ac{CMS} and \ac{ATLAS} collaborations, at different center of mass energies, as described in Section~\ref{section:PreviousResults}. First of all, at 8 TeV, several searches for a pair of top quarks were published by the \ac{CMS} (in association with \ac{DM} in the semileptonic \cite{PreviousDoubleTopSingleLep8CMS} and dileptonic \cite{PreviousDoubleTopDiLep8CMS} final states) and \ac{ATLAS} collaborations \cite{PreviousDoubleTopAllLep8ATLAS}. Then, at 13 TeV, the \ac{ATLAS} collaboration published on one hand several studies, considering different final states and different luminosities (ranging from 35.9 fb$^{-1}$ to 137.1 fb$^{-1}$) \cite{PreviousDoubleTopOneLep13ATLAS, PreviousDoubleTopDiLep13ATLAS, PreviousDoubleTopBottomAllLep13ATLAS,  ATLASICHEP2020}. On the other hand, the \ac{CMS} collaboration published a few extremely important papers for this study \cite{PreviousDoubleTopBottomAllLep13CMS, PreviousDoubleTopAllLep13CMS}. For the first time in 2019, the results obtained by the $t/\bar t$+DM and $t \bar t$+DM analyses have also been combined and published using the data collected during the year 2016 \cite{PreviousSingleDoubleTopAllLep13CMS}. Our main objective is now to repeat and improve this analysis while considering the full Run II dataset, globally improving the analysis strategy and including the dileptonic final state for the first time in this combination.
 
-After a general introduction about dark matter in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC}, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. The data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $(137.1 \pm 0.2)$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. A particular care will be given to the explanation of the \acf{PF} algorithm, used to reconstruct the different objects of the analysis and that will be defined in Chapter~\ref{chapter:Reco}, while the estimation of the different backgrounds and the selection of interesting events will be detailed throughout Chapters~\ref{chapter:Samples} and~\ref{chapter:Selection}.
+After a general introduction about dark matter in Chapter~\ref{chapter:Case}, the experimental setup will be detailed in Chapter~\ref{chapter:Device}. This will include a discussion about the \ac{LHC}, along with a complete description of \ac{CMS}, the detector used to collect the data that will be analyzed throughout this work. The data has been collected during the years 2016, 2017 and 2018 and corresponds to an integrated luminosity of $(137.1 \pm 0.2)$ fb$^{-1}$, collected during the Run II of operation of the \ac{LHC} and at a center of mass energy $\sqrt{s} = 13$ TeV. A particular care will be given to the explanation of the \acf{PF} algorithm, used to reconstruct the different objects of the analysis and that will be defined in Chapter~\ref{chapter:Reco}, while the different samples and objects used throughout this analysis will be defined in Chapter~\ref{chapter:Samples}.
 
-Distinguishing between the signals we are studying and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse momentum due to the presence of physical neutrinos is even obtained). To enhance the signals and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to perform this task. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process will be detailed in Chapter~\ref{section:Discrimination}.
+Distinguishing between the signals we are studying and backgrounds having a much higher cross-section and kinematically really close, such as the \ac{SM} $t \bar t$ without production of \ac{DM} is not a straightforward task (sometimes a production of missing transverse momentum due to the presence of physical neutrinos is even obtained). To enhance the signals and to obtain some discrimination between these kind of processes, an algebraic reconstruction of the event and top-notch \ac{ML} techniques are used in this work, in order to train a network of neurons to perform this task. The main objective is to make them learn how to combine the discriminating power of a set of input variables in order to create a single output variable describing the probability of a single event to be classified as signal or background. All this process, along with the selection of interesting events, will be detailed in Chapter~\ref{chapter:Strategy}, while the different ways used in order to estimate the impact that the different background processes have in this analysis will be described in Chapter~\ref{section:CR}.
 
 Finally, a statistical interpretation of our data will be performed and different sources of systematic uncertainties will be considered in Chapter~\ref{chapter:FinalResults}. This will allow us to set upper limits on the signal strength of \ac{DM} particles produced in our particular channel and for the simplified models considered in this analysis. The conclusions of this work and some additional prospects for the future will then finally be presented in Chapter~\ref{chapter:Conclusion}.
 
@@ -2390,13 +2390,23 @@ Even though this smearing increases the efficiency of the reconstruction to $\si
 
 
 
-\chapter{Data, signals and backgrounds} \label{chapter:Samples}
+\chapter{Samples and objects definition} \label{chapter:Samples}
 
-In order to find a possible hint for the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. 
+In order to find a possible hint for the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All the samples and the code used for this particular search will therefore be thoroughly described in Section~\ref{section:Samples}.
 
-All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}. Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
+Another crucial part of the analysis is definition of the objects that we want to consider. Section~\ref{section:ObjectDef} will in this sense be devoted to the definition of the leptons, triggers and (b-)jets used in this work, while the different weights and correction factors that needs to be applied to the \ac{MC} simulation will finally be described in Section~\ref{subsection:Weights}.
 
-\section{The Monte-Carlo simulation method} \label{section:MC}
+%All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}. Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
+
+\section{Data and simulated samples} \label{section:Samples}
+
+\subsection{Data samples} \label{section:Data}
+
+As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
+
+During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$) fb$^{-1}$ (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$) fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of ($137.1 \pm 2.0$) fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
+
+\subsection{The Monte-Carlo simulation method} \label{section:MC}
 
 As previously explained, the generation of \ac{MC} simulations for the most common \ac{SM} processes is a crucial step of any analysis because they are considered to be the reference to which the data collected is compared in order to try and find some discrepancies, which could the sign of the existence of \ac{BSM} physics. Searches for exotic physics therefore heavily depend on these simulations, which need to be generated with great care and to which a large uncertainty is typically associated since the collision between the partons of two protons and the interaction between the particles produced and the detector itself are extremely complex by nature. 
 
@@ -2490,36 +2500,7 @@ The results of the comparison between the output of two different versions of th
 
 However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}.
 
-\section{Files format} \label{section:Files}
-
-Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the different analyses. Different types of analyses are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
-
-\begin{itemize}
-\item \textbf{Virgin-RAW}: used only in low rate runs with heavy ions collisions (10-15Mb/event)
-\item \textbf{RAW} : standard raw data event content (1Mb/event)
-\item \textbf{RECO}: detailed information on reconstructed physics objects (3Mb/event)
-\item \textbf{\ac{AOD}}: physics objects used in analysis (400-500kB/event)
-\end{itemize}
-
-Two additional formats were introduced since the end of the Run I. First of all the miniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
-
-Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can actually rely on such files in order for their work. 
-
-In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds). 
-
-\section{Analysis code} \label{section:Code}
-
-The code used for the event generation, simulation and reconstruction is the version 10\_4\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package written in C++. 
-
-Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This selection will be detailed in Chapter~\ref{chapter:Selection}. This \textit{Latino} framework, written in python, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different corrections to the \ac{MC} samples and produce the histograms needed to perform a search such as this one.
-
-\section{Data samples} \label{section:Data}
-
-As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
-
-During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$) fb$^{-1}$ (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$) fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of ($137.1 \pm 2.0$) fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
-
-\section{Signal samples} \label{section:Signals}
+\subsection{Signal samples} \label{section:Signals}
 
 Two different sets of \ac{MC} signal samples have been produced centrally with MADGRAPH and PYTHIA8 at \ac{LO} for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
 
@@ -2597,905 +2578,34 @@ The impact on the kinematics (in this particular case, on the spectrum of the pf
 \label{fig:signalPseudoscalar}
 \end{figure}
 
-\section{Backgrounds prediction} \label{section:Backgrounds}
+\subsection{Files format} \label{section:Files}
 
-Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed:
-
-\begin{itemize}
-\item The major background of this analysis is the \ac{SM} $t \bar t$, kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The dilepton decay of the top quarks is obviously more important in this analysis, but its semileptonic decay is also considered to cover possible events in which the jet emitted is misreconstructed by the detector. The single top production is also important to consider, being kinematically close to our $t/\bar t$+DM signal (Section~\ref{subsection:singleTop}).
-\item Because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is also important to consider. However, this process is kinematically quite different to our signals and it is therefore relatively easy to reduce it in the actual \acp{SR} with some specific cuts, by removing the Z peak in the $ee$ and $\mu \mu$ channels and applying a cut on the dilepton stranverse mass, for example.%, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
-\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process, with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact.% (Section~\ref{subsection:ttV}).
-\item Finally, the non-prompt background is another important piece of some analyses mainly because of the particular data-driven method that can be used to compute its expected kinematic and yields, described in Section~\ref{subsection:Fakes}, since the \ac{MC} are not fully reliable to describe such events. However, most of the non-prompt contamination in this analysis comes from semileptonic b-decays, expected to be well modeled. After detailed studies, we therefore decided to exclusively rely on \ac{MC} simulations for this background as well. 
-\end{itemize}
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=8cm, height=9cm]{figs/ProcessesXS.png}
-\caption{Production cross section of the most common \ac{SM} processes considering different center of mass energies, such as the 13 TeV of the \ac{LHC}.}
-\label{fig:ProcessesXS}
-\end{center}
-\end{figure}
-
-Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production. All of the backgrounds used in this analysis are estimated directly from \ac{MC}, even though some weights and corrections are typically applied to these \ac{MC} samples, as will be detailed in Section~\ref{subsection:Weights}. Ways to mitigate the impact these processes have on the signal regions will be presented in Chapter~\ref{chapter:Selection}, and the actual impact of all these different processes on the different signal regions is shown in Table~\ref{tab:yields}.
-
-\begin{table}
-\begin{center}
-\resizebox{\textwidth}{!}{
-\begin{tabular}{ c|c|c|c|c } 
- \hline
- Process & Scalar 100 GeV \ac{SR} & Scalar 500 GeV \ac{SR} & Pseudoscalar 100 GeV \ac{SR} & Pseudoscalar 500 GeV \ac{SR} \\
- \hline
- \ac{SM} $t \bar t$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- Single top & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- DY & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- WW & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- $t \bar t + V$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- Non-prompt & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- \hline
- Data & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
- \hline
-\end{tabular}
-}
-\caption{Number of yields and percentage of different processes in some of the 2018 signal regions.}
-\label{tab:yields}
-\end{center}
-\end{table}	
-%}
-
-\color{red} FIXME: Add corrected yields and percentages after unblinding \color{black}
-
-\subsection{Top production}
-
-Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
-
-Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}. %Several systematic effects are additionally studied and applied to the \ac{MC} simulation for such processes, to cover for possible such as the QCD scale, PDF variation, Jet Energy Corrections, b-tagging efficiencies, lepton trigger and both the ID and isolation scale factors, but this will be detailed in Section~\ref{section:Systematics}.
-
-\subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
-
-%This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
-
-Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. This background is estimated directly from \ac{MC} in this analysis and checked in a dedicated control region. NNPDF3.0 \cite{NNPDF} was used as the default \ac{PDF}, while the default POWHEG setup with the PYTHIA8 CUETP8M2 (for 2016) and CP5 (for 2017 and 2018) tunes were used for the generation of this particular sample \cite{PythiaTunes}.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (g1) {g};    
-    \vertex [below right=of g1] (a);
-    \vertex [right=of a] (b);
-  	\vertex (g2) [below left=of a] {g};
-	\vertex (t1) [above right=of b] {t};
-	\vertex (t2) [below right=of b] {$\bar t$};  
- 
-    \diagram* {
-      (g1) -- [gluon] (a),
-      (g2) -- [gluon] (a),
-      (a) -- [gluon] (b),
-	  (b) -- [fermion] (t1),
-	  (b) -- [anti fermion] (t2)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} \hfill
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (q1) {$\bar q$};    
-    \vertex [below right=of g1] (a);
-    \vertex [right=of a] (b);
-  	\vertex (q2) [below left=of a] {q};
-	\vertex (t1) [above right=of b] {t};
-	\vertex (t2) [below right=of b] {$\bar t$};  
- 
-    \diagram* {
-      (q1) -- [anti fermion] (a),
-      (q2) -- [fermion] (a),
-      (a) -- [gluon] (b),
-	  (b) -- [fermion] (t1),
-	  (b) -- [anti fermion] (t2)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} \hfill
-\begin{minipage}[b]{.22\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (g1) {g};    
-    \vertex (a) [below right=of g1];
-    \vertex (b) [below=of a];
-  	\vertex (g2) [below left=of b] {g};
-	\vertex (t1) [above right=of a] {t};
-	\vertex (t2) [below right=of b] {$\bar t$};  
- 
-    \diagram* {
-      (g1) -- [gluon] (a),
-      (g2) -- [gluon] (b),
-      (a) -- [fermion] (b),
-	  (a) -- [fermion] (t1),
-	  (b) -- [anti fermion] (t2)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} \hfill
-\caption{Main feynman diagrams for the production of the \ac{SM} $t \bar t$ process.}
-\label{fig:ttbarProd}
-\end{figure}
-
-\subsubsection{Single top} \label{subsection:singleTop}
-
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.22\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi) {$\bar q$};    
-    \vertex (a) [below right=of qi];
-    \vertex (qf) [above right=of a] {$\bar q'$};    
-  	\vertex (b) [below=of a];
-	\vertex (bi) [below left=of b] {b};
-	\vertex (tf) [below right=of b] {t};  
- 
-    \diagram* {
-      (qi) -- [anti fermion] (a) -- [anti fermion] (qf),
-      (a) -- [boson, edge label={W}] (b),
-      (bi) -- [fermion] (b) -- [fermion] (tf)     
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.28\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi) {g};    
-    \vertex (a) [below right=of gi];
-    \vertex (bf) [above right=of a] {$\bar b$};
-  	\vertex (b) [below right=of a];
-  	\vertex (tf) [right=of b] {t};
-	\vertex (c) [below left=of b];
-	\vertex (qi) [below left=of c] {q};
-	\vertex (qf) [below right=of c] {q'};  
- 
-    \diagram* {
-      (gi) -- [gluon] (a) -- [anti fermion] (bf),
-      (a) -- [fermion, edge label={b}] (b),
-      (b) -- [fermion] (tf),
-	  (b) -- [boson, edge label={W}] (c),
-	  (qi) -- [fermion] (c) -- [fermion] (qf)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Feynman diagrams for the s-channel production mode of a single top quark.}
-\label{fig:singleTopSChann}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (qi2) [below left=of a] {q};
-  	\vertex (b) [right=of a];
-  	\vertex (bf) [above right=of b] {$\bar b$};
-	\vertex (tf) [below right=of b] {t}; 
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a) -- [anti fermion] (qi2),
-      (a) -- [boson, edge label={W}] (b),
-      (b) -- [anti fermion] (bf),
-	  (b) -- [fermion] (tf)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi) {g};    
-    \vertex (a) [below right=of gi];
-    \vertex (bi) [below left=of a] {b};
-  	\vertex (b) [right=of a];
-	\vertex (Wf) [above right=of b] {W};
-	\vertex (tf) [below right=of b] {t};  
- 
-    \diagram* {
-      (gi) -- [gluon] (a) -- [anti fermion] (bi),
-      (a) -- [fermion, edge label={b}] (b),
-	  (b) -- [boson] (Wf),
-	  (b) -- [fermion] (tf)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Feynman diagrams for the t-channel (on the left) and tW (on the right) production modes of a single top quark.}
-\label{fig:singleTopOtherChann}
-\end{figure}
-
-\subsubsection{Top decay} \label{subsection:topDecay}
-
-As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson then decays itself into different channels even though only its leptonic decay is consider in this particular case. The decay considered for the top/anti-top produced is represented in Figure~\ref{fig:TopDecay}.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (ti) {t};    
-    \vertex (a) [right=of ti];
-    \vertex (W) [above right=of a];
-  	\vertex (bf) [below right=of a] {b};
-  	\vertex (b) [above right=of a];
-	\vertex (lf) [above right=of b] {$l^+$};
-	\vertex (nu) [below right=of b] {$\nu$};  
- 
-    \diagram* {
-      (ti) -- [fermion] (a),
-      (a) -- [boson, edge label={$W^+$}] (b),
-      (a) -- [fermion] (bf),
-	  (b) -- [fermion] (lf),
-	  (b) -- [fermion] (nu)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (ti) {$\bar t$};    
-    \vertex (a) [right=of ti];
-    \vertex (W) [above right=of a];
-  	\vertex (bf) [below right=of a] {$\bar b$};
-  	\vertex (b) [above right=of a];
-	\vertex (lf) [above right=of b] {$l^-$};
-	\vertex (nu) [below right=of b] {$\bar \nu$};  
- 
-    \diagram* {
-      (ti) -- [fermion] (a),
-      (a) -- [boson, edge label={$W^-$}] (b),
-      (a) -- [fermion] (bf),
-	  (b) -- [fermion] (lf),
-	  (b) -- [fermion] (nu)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Feynman diagrams for the leptonic decay of the top (on the left) and anti-top (on the right) quarks.}
-\label{fig:TopDecay}
-\end{figure}
-
-\subsection{Drell-Yan estimation} \label{subsection:DY}
-
-As previously mentioned, most of the \ac{DY} background, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important. Expected to be found mostly in the $ee$ and $\mu \mu$ channels, it does survive even in the $e \mu$ channels because of possible tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). The samples for such background are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then split into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV. The HT-binned\footnote{$H_T$ is a variable corresponding to the scalar sum of the transverse momenta of the jets in an event} samples have been chosen over the inclusive ones in order to increase the statistics available.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {q};
-	\vertex (a) [below right=of qi1];    
-    \vertex (qi2) [below left=of a] {$\bar q$};
-    \vertex (b) [right=of a]; 
-    \vertex (lf1) [above right=of b] {$\bar l$};
-    \vertex (lf2) [below right=of b] {l};
- 
-    \diagram* {
-      (qi1) -- [fermion] (a) -- [fermion] (qi2),
-      (a) -- [boson, edge label={$\gamma^*$/Z}] (b),
-	  (b) -- [anti fermion] (lf1),
-	  (b) -- [fermion] (lf2)      
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Feynman diagram for the \ac{DY} process involving a virtual $\gamma^*$ or Z boson.}
-\label{fig:DY}
-\end{figure}
-
-Apart from the impact it has on the different control and signal regions, the shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
-
-\subsubsection{\boldmath$R_{in-out}$ method} \label{subsection:rinout}
-
-The idea behind this semi data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use such vetoed events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
-
-\begin{equation}
-\label{eq:DYevents}
-N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
-\end{equation}
-
-The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the number of \ac{MC} or data events outside and inside this Z mass window. This ratio is then simply used to estimate the number of DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
-
-\begin{equation}
-\label{eq:Routin}
-N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
-\end{equation}
-
-This equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodeling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodeling does not have a dependence in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}, experimentally determined to be of the order of $\sim 5\%$.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_0bjet_mll.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_1bjetOrMore_mll.png}
-\end{minipage} \hfill
-\caption{Normalized $m_{ll}$ \ac{DY} distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1+ b-jet (on the right) bins.}
-\label{fig:Rinoutver}
-\end{center}
-\end{figure}
-
-\begin{equation}
-\label{eq:genRinout}
-R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
-\end{equation}	
-
-%\begin{equation}
-%\label{eq:DYSF}
-%SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
-%\end{equation}
-
-Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single scale factor to the \ac{DY} process, considering a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2016_data.png}
-\end{center}
-\end{minipage} \hfill
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2017_data.png}
-\end{center}
-\end{minipage} \hfill
-\begin{minipage}[b]{.99\textwidth}
-\begin{center}
-\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2018_data.png}
-\end{center}
-\end{minipage} \hfill
-\caption{$R_{out/in}$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
-\label{fig:Rinoutcheck}
-\end{center}
-\end{figure}
-
-\subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
-
-These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV} and checked in specific control regions. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.31\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q'$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (gf) [right=of a];
-    \vertex (b) [below=of a];
-  	\vertex (qi2) [below left=of b] {q};
-  	\vertex (Wf) [below right=of b] {W/Z};
-  	\vertex (c) [right of=a];
-  	\vertex (tf1) [above right=of c] {t};
-  	\vertex (tf2) [below right=of c] {$\bar t$};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a) -- [gluon] (c) -- [fermion] (tf1),
-      (tf2) -- [fermion] (c),
-      (a) -- [anti fermion] (b),
-      (qi2) -- [fermion] (b) -- [boson] (Wf)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi1) {g};    
-    \vertex (a) [below right=of gi1];
-    \vertex (gi2) [below left=of a] {g}; 
-    \vertex (b) [right=of a];
-    \vertex (tf1) [above right=of b] {t};
-  	\vertex (c) [below right=of b];
-  	\vertex (Zf) [above right=of c] {Z};
-  	\vertex (tf2) [below right=of c] {$\bar t$};
- 
-    \diagram* {
-      (gi1) -- [gluon] (a) -- [gluon] (b),
-      (gi2) -- [gluon] (a),
-      (b) -- [fermion] (tf1),
-      (b) -- [anti fermion] (c) -- [anti fermion] (tf2),
-      (c) -- [boson] (Zf)
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.29\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi1) {g};    
-    \vertex (a) [right=of gi1];
-    \vertex (b) [below=of a];
-    \vertex (c) [below=of b];
-    \vertex (gi2) [left=of c] {g};
-    \vertex (Zf) [right=of b] {Z};
-    \vertex (tf1) [right=of a] {t};
-  	\vertex (tf2) [right=of c] {$\bar t$};
- 
-    \diagram* {
-      (gi1) -- [gluon] (a) -- [fermion] (tf1),
-      (gi2) -- [gluon] (c) -- [anti fermion] (tf2),
-      (a) -- [anti fermion, edge label={t}] (b) -- [anti fermion, edge label={t}] (c),  
-      (b) -- [boson] (Zf) 
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Possible Feynman diagrams for the \ac{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \ac{FSR} ttZ (on the center and right).}
-\label{fig:ttV}
-\end{figure}
-
-The resulting cross section of such processes is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
-
-\subsection{Non prompt leptons contamination} \label{subsection:Fakes}
-
-Even though not extremely important in the sense that its kinematics allows us to remove most of its contributions in the signal regions, this background is interesting in the sense that it can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
-
-A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
-\begin{itemize}
-\item First of all, a \textbf{prompt lepton} is defined as a real lepton, in the sense that the lepton is originating from the \ac{PV} of a $pp$ collision.
-\item The \textbf{\ac{PR}} is defined as the number of prompt leptons passing the tight selection criteria of the analysis over the number of leptons passing the loose selection criteria. 
-\item On the other hand, by \textbf{fake} or \textbf{non-prompt lepton}, we usually refer to truly \textbf{fake leptons}, such as jets misidentified by the detector as leptons, as shown in Figure~\ref{fig:FakesW}, and real leptons coming from eventual heavy flavor decays.
-\item The \textbf{\ac{FR}} is then defined similarly to the prompt rate but considering this time fake leptons only for the tight-to-loose ratio. This ratio therefore corresponds to the probability for a fake lepton to be considered as a real lepton in the analysis.
-\end{itemize}
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.19\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (gi) {g};    
-    \vertex (a) [below right=of gi];
-    \vertex (qf) [above right=of a] {q'};
-    \vertex (b) [below=of a];
-  	\vertex (qi) [below left=of b] {q};
-  	\vertex (Wf) [below right=of b] {W};
- 
-    \diagram* {
-      (gi) -- [gluon] (a) -- [fermion] (qf),
-      (a) -- [anti fermion] (b),
-      (qi) -- [fermion] (b) -- [boson] (Wf)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.22\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q'$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (gf) [above right=of a] {g};
-    \vertex (b) [below=of a];
-  	\vertex (qi2) [below left=of b] {q};
-  	\vertex (Wf) [below right=of b] {W/Z};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a) -- [gluon] (qf),
-      (a) -- [anti fermion] (b),
-      (qi2) -- [fermion] (b) -- [boson] (Wf)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.31\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi) {q};    
-    \vertex (a) [below right=of qi];
-    \vertex (gi) [below left=of a] {g};
-    \vertex (b) [right=of a];
-  	\vertex (Z) [above right=of b] {Z};
-  	\vertex (q) [below right=of b] {q};
- 
-    \diagram* {
-      (qi) -- [fermion] (a),
-      (gi) -- [gluon] (a),
-      (a) -- [fermion] (b),
-      (b) -- [boson] (Z),
-      (b) -- [fermion] (q)    
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Possible Feynman diagrams for the production of a W/Z boson with a jet.}
-\label{fig:FakesW}
-\end{figure}
-
-This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose data-driven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
-
-In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign control region enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
-
-\subsubsection*{\acf{FR} computation}
-
-Because of its definition, the \ac{FR} is computed in a prompt lepton-free region, typically in a l1loose \ac{QCD} enriched region, defined with the following cuts:
-\begin{multicols}{2}
-\begin{itemize}
-\item Exactly 1 lepton
-\item $p_{T} > 13 \text{ } (10)$ GeV for $e \text{ }(\mu)$ 
-\item $|\eta| < 2.5 \text{ } (2.4)$ for $e \text{ }(\mu)$ 
-\item mtw1 $< 20$ GeV
-\item pf\ac{MET} $< 20$ GeV
-\item PassJets
-\end{itemize}
-\end{multicols}
-
-All the previous cuts have been designed to define a l1loose \ac{QCD} region as pure as possible by removing most of the W+jets and Z+jets contribution. The PassJets cut is a boolean obtained by looping over all the jets of the event trying to find a jet having an $E_T$ higher than a given threshold in order to control the average $p_T$ of the jet that fakes the lepton (actually, different \ac{FR} have been computed for different $E_T$ thresholds, from 10 to 50 GeV). 
-
-Using this method, the jet that fakes a lepton is actually the one recoiling against ($\Delta R > 1.0$) the jet used for the systematics, as shown in Figure~\ref{fig:FakesJet}.
-
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=8cm, height=4cm]{figs/FakesJet.png}
-\caption{Schematic representation of the two jets used for the systematics and for the jet faking a lepton in the tight-to-loose data-driven method.}
-\label{fig:FakesJet}
-\end{center}
-\end{figure}
-
-Events passing the following pre-scaled triggers are then selected in this region:
-
-\begin{subequations}
-\begin{equation}
-\text{Muon triggers = }
-\begin{dcases}
-\text{HLT\_Mu8\_TrkIsoVVL (if }p_T < 20 \text{ GeV}) \\
-\text{HLT\_Mu17\_TrkIsoVVL (if }p_T \geq 20 \text{ GeV}) 
-\end{dcases}
-\end{equation}
-\vspace{-20pt}
-\begin{equation}
-\text{Electron triggers = }
-\begin{dcases}
-\text{HLT\_Ele8\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T < 25 \text{ GeV}) \\
-\text{HLT\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T \geq 25 \text{ GeV}) 
-\end{dcases}
-\end{equation}
-\end{subequations}
-
-The remaining of the \ac{EWK} processes (W+jets, Z+jets) able to pass the previous cuts of the QCD region, are then simply subtracted: this is the so-called \textbf{\ac{EWK} subtraction}.
-
-Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the lepton) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 electron and muon fake rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2016.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2016.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 electron and muon fake rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2017.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2017.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 electron and muon fake rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2018.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2018.png}
-\end{minipage} \hfill
-}
-\caption{Electron (on the left) and muon (on the right) \ac{FR} obtained in a QCD enriched region for different jet $E_T$ thresholds for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
-\label{fig:FR}
-\end{figure}
-
-\subsubsection*{\acf{PR} computation}
-
-The \ac{PR}, taking into account the real lepton contamination in the region defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore typically be ignored.
-
-In our case, this rate has been calculated as well using a general tag and probe method in a Z+jets enriched sample. The main objective is to reconstruct $Z \rightarrow ll$ events in this region and to select all the events for which the first lepton can be characterized as tight. Then, we search for the second lepton coming from the decay of Z within all the leptons detected by calculating the reconstructed mass of all the possible leptons combinations and selecting the one which is closer to the expected mass of the Z boson. We can then simply count how many times this second lepton, expected to be tight, has actually been measured as a tight lepton to estimate this \ac{PR}.
-
-The results obtained in this case have been represented in Figure~\ref{fig:PR}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 electron and muon prompt rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2016.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2016.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 electron and muon prompt rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2017.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2017.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 electron and muon prompt rates]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2018.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2018.png}
-\end{minipage} \hfill
-}
-\caption{Electron (on the left) and muon (on the right) \ac{PR} obtained in a Z+jets enriched region by a tag and probe method for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
-\label{fig:PR}
-\end{figure}
-
-\subsubsection*{Fake weight calculation}
-
-Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the \acp{SR} of the analysis (usually, a l2loose region). For this, a simple set of equations can be used. We start by defining the following quantities:
+Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a complete post-processing in order to change its format and reduce the total size of the samples to be considered in the different analyses. Different types of analyses are expected to need different levels of data reduction, so the data is usually accessible at different levels \cite{nanoAOD}:
 
 \begin{itemize}
-\item $N_{pp}$, the number of events where both leptons are prompt
-\item $N_{fp}$, the number of events where one lepton is prompt and the other is fake
-\item $N_{ff}$, the number of events where both leptons are fake
-\item $N_{tx}$ ($x = 0,1,2$), the number of events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
+\item \textbf{Virgin-RAW}: used only in low rate runs with heavy ions collisions (10-15Mb/event)
+\item \textbf{RAW} : standard raw data event content (1Mb/event)
+\item \textbf{RECO}: detailed information on reconstructed physics objects (3Mb/event)
+\item \textbf{\ac{AOD}}: physics objects used in analysis (400-500kB/event)
 \end{itemize}
 
-It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated, we can find an expression relating all these quantities.
-\begin{equation}
-\label{eq:FR1}
-\begin{dcases}
-&N_l = N_{pp} + N_{fp} + N_{ff} = N_{t2} + N_{t1} + N_{t0} \\
-& N_{t0} = (1-p)^2N_{pp} + (1-p)(1-f)N_{fp}+(1-f)^2N_{ff} \\
-& N_{t1} = 2p(1-p)N_{pp} + \big(f(1-p)+p(1-f)\big)N_{fp}+2f(1-f)^2N_{ff} \\
-& N_{t2} = p^2N_{pp} + pfN_{fp}+f^2N_{ff}
-\end{dcases}
-\end{equation}
+Two additional formats were introduced since the end of the Run I. First of all the miniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
 
-These equations can be inverted in order to represent the unknowns with respect to the known variables, as shown in Equation~\ref{eq:FR2}, giving us a way to apply the weights previously calculated to this particular l2loose region.
+Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can actually rely on such files in order for their work. 
 
-\begin{equation}
-\label{eq:FR2}
-\begin{pmatrix}
-N_{pp} \\ N_{fp} \\ N_{ff}
-\end{pmatrix} = \frac{f-p}{-(p-f)^3} \cdot 
-\begin{pmatrix}
-f^2 & -f(1-f) & (1-f)^2 \\ -2fp & p(1-f)+f(1-p) & -2(1-p)(1-f) \\ p^2 & -p(1-p) & (1-p)^2
-\end{pmatrix} \cdot 
-\begin{pmatrix}
-N_{t0} \\ N_{t1} \\ N_{t2}
-\end{pmatrix}
-\end{equation}
+In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds). 
 
-A same sign control region enriched in fakes has also been defined in order to check this background.
+\subsection{Analysis code} \label{section:Code}
 
-The non-prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced.  %This will be done and detailed in Section~\ref{section:SSCR} of this work.
+The code used for the event generation, simulation and reconstruction is the version 10\_4\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package written in C++. 
 
-%\subsubsection*{Limitations}
-%
-%This method is working quite well and allows us to avoid relying on the \ac{MC} for such complex processes, but it does come with some limitations, among which:
-%
-%\begin{itemize}
-%\item 
-%\end{itemize}
+Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This selection will be detailed in Chapter~\ref{chapter:Selection}. This \textit{Latino} framework, written in python, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different corrections to the \ac{MC} samples and produce the histograms needed to perform a search such as this one.
 
-\subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
+\section{Objects definition} \label{section:ObjectDef}
 
-Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WWG) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
+A typical $t/\bar t$ or $t \bar t$+DM event signature is made out of a certain number of (b tagged) jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two neutrinos and from the two \ac{DM} particles created along the way. It is extremely important to describe the \acf{WP} picked and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, chosen in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the misidentification rates of the different objects.
 
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.31\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (qi2) [below left=of a] {q};
-    \vertex (b) [right=of a];
-    \vertex (Zf) [above right=of b] {Z/$\gamma$};
-    \vertex (Wf) [below right=of b] {W};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a),
-      (qi2) -- [fermion] (a) -- [boson, edge label={W}] (b),
-      (b) -- [boson] (Zf),
-      (b) -- [boson] (Wf)  
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.34\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q$};    
-    \vertex (a) [below right=of qi1];
-    \vertex (qi2) [below left=of a] {q};
-    \vertex (b) [right=of a];
-    \vertex (Zf) [above right=of b] {W};
-    \vertex (Wf) [below right=of b] {W};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a),
-      (qi2) -- [fermion] (a) -- [boson, edge label={$\gamma$/Z}] (b),
-      (b) -- [boson] (Zf),
-      (b) -- [boson] (Wf)  
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\begin{minipage}[b]{.22\textwidth}
-\resizebox{\textwidth}{!}{
-\begin{tikzpicture}
-  \begin{feynman}   	
-	\vertex (qi1) {$\bar q$};
-    \vertex (a) [below right=of qi1];
-    \vertex (Zf1) [above right=of a] {Z};
-    \vertex (b) [below=of a];
-    \vertex (qi2) [below left=of b] {q};
-    \vertex (Zf2) [below right=of b] {Z};
- 
-    \diagram* {
-      (qi1) -- [anti fermion] (a) -- [boson] (Zf1),
-      (qi2) -- [fermion] (b) -- [boson] (Zf2),
-      (a) -- [anti fermion] (b)
-    };
-  \end{feynman}
-\end{tikzpicture}
-}
-\end{minipage} 
-\caption{Possible Feynman diagrams for smaller backgrounds of this analysis: WW (on the left), W$\gamma$ and WZ (on the center) and ZZ (on the right).}
-\label{fig:DiBosons}
-\end{figure}
-
-\subsection{Weights and corrections applied} \label{subsection:Weights}
-
-Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.
-
-The \ac{MC} samples are additionally typically reweighed to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed. 
-
-\subsubsection{\ac{MET} corrections}
-
-The \ac{MET} distribution is expected to be independent of $\phi$ because of the rotational symmetry of the collisions around the beam axis but we do observe that the reconstructed \ac{MET} does depend on $\phi$ because of possible anisotropic detector responses, inactive calorimeter cells or tracking regions, detector misalignment, or eventual displacements of the beam spot. XY-shift corrections have therefore been applied to reduce this modulation. In 2017, large level of noise were also observed in the data collected by the \ac{ECAL} at high pseudorapidities. To mitigate this effect, especially on the \ac{MET} tails, the correction consisting in completely excluding jets with raw transverse momentum $< 50$ GeV and $2.650 < |\eta| < 3.139$ from the calculation of the \ac{MET} was considered, as recommended by the JET/MET \ac{POG} \cite{EENoise}. The effect of these corrections is shown in Figure~\ref{fig:metCorrEffect}.
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet_phi.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_phi.png}
-\end{minipage} \hfill
-\caption{Uncorrected MET (on the left) and MET $\phi$ after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
-\label{fig:metCorrEffect}
-\end{figure}
-
-\subsubsection{Top $p_T$ reweighting} \label{subsection:toppt}
-
-Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins_noTopPt.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins.png}
-\end{minipage} \hfill
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) top $p_T$ reweighting corrections in a 2018 top control region.}
-\label{fig:Toppt}
-\end{center}
-\end{figure}
-
-Even though we initially planed on applying this correction factor, as it seems to slightly improve the agreement between data and simulation, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches where $t \bar t$ \ac{MC} is used to model the background, as this correction factor might suppress a potential \ac{BSM} signal and bias the final results. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
-
-\subsubsection{Other factors}
-
-In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2018 inclusive enriched control region is shown in Figure~\ref{fig:Prefiring}.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_jeteta1_noPrefire.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_jeteta1.png}
-\end{minipage} \hfill
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a 2018 top control region.}
-\label{fig:Prefiring}
-\end{center}
-\end{figure}
-
-In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum, as shown in Figure~\ref{fig:HEM} and is therefore taken into account and corrected by introducing another weight to the simulation.
-
-\begin{figure}[htbp]
-\begin{center}
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt.png}
-\end{minipage} \hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_withHEM.png}
-\end{minipage} \hfill
-\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) HEM correction factor in a 2018 top control region.}
-\label{fig:HEM}
-\end{center}
-\end{figure}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Event selection} \label{chapter:Selection}
-
-This Chapter will be dedicated to the analysis itself, by defining first of all the different objects actually used, along with the selection that has been applied to enhance the quality of such objects in this particular search in Section~\ref{section:Selection}. Then, the different \acfp{SR} in which a high purity of signal is expected are defined in Section~\ref{section:SR} while all the different \acfp{CR} defined in order to check the behavior of the \ac{MC} simulation performed for the major backgrounds on this analysis, such as the single top or \ac{SM} $t \bar t$ production, will be introduced in Section~\ref{section:CR}. 
-
-\section{Objects selection} \label{section:Selection}
-
-We already described what to expect from a typical $t/\bar t$ or $t \bar t$+DM event: the signature of such signals is made out of a certain number of b tagged jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two neutrinos and from the two \ac{DM} particles created along the way. It is extremely important to describe the \acf{WP} picked and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, chosen in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the misidentification rates of the different objects.
-
-First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
+%First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
 
 \subsection{Triggers selection} \label{section:Triggers}
 
@@ -3800,7 +2910,7 @@ A few additional quality cuts are applied to both the electrons and muons. We as
 
 Furthermore, lepton candidates trajectories are further required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem in the queue of the \ac{MET} spectrum.
 
-\subsubsection{Veto \ac{WP}}
+\paragraph{Veto \ac{WP}}
 
 As we will see later on, events featuring more than two leptons are rejected, and this is achieved by defining a looser lepton selection. For electrons, the cut based veto ID definition is used, and the requirement of not having missing hits is removed while for muons, candidates satisfying the loose ID and very loose isolation criteria are selected to define the veto \ac{WP}.
 
@@ -3855,9 +2965,9 @@ In this analysis, jets are selected following the tight \ac{WP} definition given
 
 Finally, a slightly different selection (tight \ac{PU} jet ID) is applied to jets having a $p_T < 50$ GeV in order to reject jets coming from \ac{PU} interactions. Following the official \ac{POG} recommendations, jet energy correction and resolution are also taken into account \cite{JEC2, JER}.
 
-\subsubsection{b-jets}
+\paragraph{b-jets}
 
-The b-jets are selected among the jets using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
+The b-jets are selected among all the jets using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
 
 %\begin{table}
 %\begin{center}
@@ -3880,19 +2990,123 @@ The b-jets are selected among the jets using the recommendations given by the B-
 %\end{center}
 %\end{table}
 
-\section{Signal and control regions}
+\section{Weights and corrections applied} \label{subsection:Weights}
 
-Different control and signal regions have been defined in order to constrain and estimate the different backgrounds of the analysis, and to study our signals of interest. 
+Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, which will be discussed in Chapter~\ref{chapter:Selection}, usually directly provided by the different \acfp{POG} for their own default objects definitions.
 
-In this context, an inclusive control region has first of all been defined to spot initial issues and problems with the simulation of the major backgrounds of the analysis, while a pre-selection region has been extensively used throughout this work, as explained in Section~\ref{section:inclusiveCR}. This pre-selection region was mainly used in order to serve as the basis for the definition of our signal regions, as explained in Section~\ref{section:SR}. Finally, the Section~\ref{section:CR} will allow us to introduce two different control regions targeting specifically the \ac{DY} and top processes.
+The \ac{MC} samples are additionally typically reweighed to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed. 
 
-\subsection{Inclusive regions}
+\subsubsection*{\ac{MET} corrections}
 
-\subsubsection{Inclusive control region} \label{section:inclusiveCR}
+The \ac{MET} distribution is expected to be independent of $\phi$ because of the rotational symmetry of the collisions around the beam axis but we do observe that the reconstructed \ac{MET} does depend on $\phi$ because of possible anisotropic detector responses, inactive calorimeter cells or tracking regions, detector misalignment, or eventual displacements of the beam spot. XY-shift corrections have therefore been applied to reduce this modulation. In 2017, large level of noise were also observed in the data collected by the \ac{ECAL} at high pseudorapidities. To mitigate this effect, especially on the \ac{MET} tails, the correction consisting in completely excluding jets with raw transverse momentum $< 50$ GeV and $2.650 < |\eta| < 3.139$ from the calculation of the \ac{MET} was considered, as recommended by the JET/MET \ac{POG} \cite{EENoise}. The effect of these corrections is shown in Figure~\ref{fig:metCorrEffect}.
 
-First of all, several distributions in a control region as inclusive as possible and mostly enriched in \ac{DY} were studied, in all the different channels available. This control region is defined as a two opposite sign tight leptons region, with a veto on any events featuring three leptons, with some small additional cuts ($m_{ll} > 20$ GeV to avoid low mass resonances, while at least 1 jet and 1 medium deep CSV b-jet are also required). The distributions obtained in all the channels in this particular control region are shown in Figure~\ref{fig:inclusiveCR}. 
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_pfmet_phi.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_METcorrected_phi.png}
+\end{minipage} \hfill
+\caption{Uncorrected MET (on the left) and MET $\phi$ after applying the EE noise and XY-shift corrections (on the right) distributions observed in a 2018 \ac{DY} inclusive control region.}
+\label{fig:metCorrEffect}
+\end{figure}
 
-In all the \ac{DY} enriched regions, a slight \ac{MC} mismodeling can typically be observed, and a general problem in the estimation of the pf\ac{MET} in \ac{DY} events is observed. These features are known in \ac{CMS} and mitigated anyway with the analysis cuts applied.
+\subsubsection*{Top $p_T$ reweighting} \label{subsection:toppt}
+
+Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins_noTopPt.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_customBins.png}
+\end{minipage} \hfill
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) top $p_T$ reweighting corrections in a 2018 top control region.}
+\label{fig:Toppt}
+\end{center}
+\end{figure}
+
+Even though we initially planed on applying this correction factor, as it seems to slightly improve the agreement between data and simulation, the most recent recommendation is not to apply this factor for our kind of \ac{BSM} searches where $t \bar t$ \ac{MC} is used to model the background, as this correction factor might suppress a potential \ac{BSM} signal and bias the final results. In this case, the effect of the top $p_T$ mismodeling can be considered covered by the existing uncertainties and no additional correction or uncertainty is needed \cite{topPtReweighting}.
+
+\subsubsection*{Other factors}
+
+In 2016 and 2017 an issue, known as the \textbf{prefiring}, causing highly energetic readout from jets, photons and electrons in the \ac{ECAL} endcap to be assigned by the \ac{L1} trigger to the previous bunch crossing was discovered. To make up for this difference, a weight ($1-x$) is usually applied to all \ac{MC} events, where $x$ is the probability of an event to be prefired \cite{Prefire}. The effect this correction has on the data/\ac{MC} agreement in a 2018 inclusive enriched control region is shown in Figure~\ref{fig:Prefiring}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_jeteta1_noPrefire.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_jeteta1.png}
+\end{minipage} \hfill
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) prefiring corrections in a 2018 top control region.}
+\label{fig:Prefiring}
+\end{center}
+\end{figure}
+
+In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and known as the HEM15/16 issue was reported \cite{HEM}, resulting in a loss of around 2\% of \ac{HCAL} coverage. This issue has a small but measurable effect on the \ac{MET} spectrum, as shown in Figure~\ref{fig:HEM} and is therefore taken into account and corrected by introducing another weight to the simulation.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_ttbarCR_df_METcorrected_pt_withHEM.png}
+\end{minipage} \hfill
+\caption{Data/\ac{MC} agreement without (on the left) and with (on the right) HEM correction factor in a 2018 top control region.}
+\label{fig:HEM}
+\end{center}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Analysis strategy} \label{chapter:Strategy}
+
+This Chapter will be dedicated to the explanation of the strategy followed to perform the analysis, by describing first of all the event selection procedure followed and the \acfp{SR} defined, in which a high purity of signal is expected, in Sections~\ref{section:EventSel} and~\ref{section:SR} respectively.
+
+Then, a description regarding the different variables expected to naturally introduce some discrimination between the $t/\bar t$ and $t \bar t$+DM signals and the different background processes, mainly the \ac{SM} $t \bar t$ and single top process, will be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+
+Finally, the most important background processes will be listed and detailed in Section~\ref{section:CR}, along with a description of all the different \acfp{CR} defined in order to check the behavior of the \ac{MC} simulations for such processes, such as the \ac{SM} $t \bar t$ or single top production. 
+
+\section{Event selection} \label{section:EventSel}
+
+\subsection{Inclusive region} \label{section:inclusiveCR}
+
+For this analysis, only events passing the so-called \textit{inclusive region} were considered. This region, as inclusive as technically possible, is mostly used in order to spot initial issues and problems with the simulation of the major backgrounds of the analysis, and was therefore extensively studided in all the different channels available. It is defined from following cuts:
+
+\begin{itemize}
+\item Exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required;
+\item Then, events with a third lepton having a veto type and a $p_T > 10$ GeV are rejected;
+\item Low mass resonances are removed by asking for $m_{ll} > 20$ GeV;
+\item At least 1 jet and 1 medium deep CSV b-jet are also required.
+\end{itemize}
+
+The distributions obtained in all the channels in this particular region are shown in Figure~\ref{fig:inclusiveCR}. A slight \ac{MC} mismodeling mostly due to the \ac{DY} process can be observed in these plots, but this feature is known in \ac{CMS} mitigated anyway with the analysis cuts applied, and compensated with the introduction of a large systematic uncertainty associated to this \ac{DY} process.
 
 \begin{figure}[htbp]
 \centering
@@ -3927,18 +3141,9 @@ In all the \ac{DY} enriched regions, a slight \ac{MC} mismodeling can typically 
 \label{fig:inclusiveCR}
 \end{figure}
 
-\subsubsection{Pre-selection region} \label{section:PreSelCR}
+\subsection{Pre-selection region}
 
-A global pre-selection region was then defined as the basis for the following control and signal regions, from cuts allowing us to reduce by a large factor the contamination due to several backgrounds, such as the \ac{SM} $t \bar t$ and the \ac{DY} processes:
-
-\begin{itemize}
-\item Exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required;
-\item Then, events with a third lepton having a veto type and a $p_T > 10$ GeV are rejected;
-\item Low mass resonances are removed by asking for $m_{ll} > 20$ GeV;
-\item The \ac{DY} is then strongly reduced by asking for a 15 GeV Z-veto in the $ee$ and $\mu \mu$ channels, and by asking for at least 1 jet with a $p_T > 30 (20)$ GeV for the leading (subsequent) jets, and $|\eta| < 2.4$ in the event;
-\item At least 1 medium deep CSV b-jet is also required;
-\item And, finally, a cut using the stranverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$ GeV has been applied, mainly to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, so that both channels can be combined while removing more background than signal anyway.
-\end{itemize}
+A global \textit{pre-selection region} was then defined as the basis for the following control and signal regions, by applying on top of the inclusive region a cut on the stransverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$. This allows to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, so that both channels can be combined, while removing more background than signal anyway.
 
 Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
@@ -3975,342 +3180,17 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 \label{fig:preSelSR}
 \end{figure}
 
-\subsection{Signal regions} \label{section:SR}
-
-Several different signal regions have then been defined, by applying a few additional cuts on top of the pre-selection region already introduced. One signal region was defined for each \ac{MVA} training performed (more details will be given regarding this process in Section~\ref{section:Discrimination}):
-\begin{itemize}
-\item A different training was done for each combination of $m_\chi$ and mediator spin (scalar or pseudoscalar).
-\item For each of those trainings, two sub-trainings considering each time one particular region were considered: events were in this sense divided into one region enriched in $t/\bar t$+DM (if we observe exactly 1 jet or 2 jets and exactly 1 b-jet in the event), and another one enriched in $t \bar t$+DM (if the event has more than 2 jets, or exactly 2 jets and more than 1 b-jet).
-\end{itemize}
-
-Those two training regions targeting each one of the signals were then combined when applying the weights to our trees depending on the number of jets and b-jets in th event, so that we keep only one signal region per mass point at the end of the day. Some of the distributions obtained in a few signal regions are shown in Figures~\ref{fig:SR1} to~\ref{fig:SR4}.
-
-It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already been seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. %Additionally, only the statistical errors are represented in all the plots, unless stated otherwise.
-
-%\color{red}FIXME: Add final plots everywhere \color{black}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 scalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 scalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 scalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 100 GeV scalar training.}
-\label{fig:SR1}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 scalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 scalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 scalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV scalar training.}
-\label{fig:SR2}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 pseudoscalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 pseudoscalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 pseudoscalar 100 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined obtained from the 100 GeV pseudoscalar training.}
-\label{fig:SR3}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 pseudoscalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 pseudoscalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 pseudoscalar 500 GeV \ac{SR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV pseudoscalar training.}
-\label{fig:SR4}
-\end{figure}
 
 
-\subsection{Background estimation and control regions} \label{section:CR}
+\section{Signal extraction} \label{section:Discrimination}
 
-Two control regions where the data/\ac{MC} agreement can be studied have been defined in order to check the validity of the \ac{MC} simulations performed for the \ac{SM} processes corresponding to the main backgrounds of this analysis. In this context, a \ac{DY} enriched control region is defined in Section~\ref{section:DYCR} a data validation region to ensure the quality of the \ac{MC} prediction of both the $t \bar t$ and single top processes is defined in Sections~\ref{section:TopCR}.% Finally, the $ttV$ and non-prompt contamination processes will be checked in Sections~\ref{section:ttVCR} and~\ref{section:SSCR} respectively.
+In this Section, a description regarding the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
 
-\subsubsection{\acs{DY} control region} \label{section:DYCR}
-
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
-
-At the end of the day, this control region was defined exactly the same as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 \ac{DY} \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the \ac{DY} control region defined.}
-\label{fig:DYCR2}
-\end{figure}
-
-\subsubsection{Top control region} \label{section:TopCR}
-
-The \ac{SM} $t \bar t$ control region is defined from this pre-selection region, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions. Distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
-
-\begin{figure}[htbp]
-\centering
-\subfigure[2016 top \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2017 top \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\subfigure[2018 top \ac{CR}]
- {
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttbarCR_ll_mll.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttbarCR_ll_METcorrected_pt.png}
-\end{minipage} \hfill
-}
-\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the top control region defined.}
-\label{fig:TopCR}
-\end{figure}
-
-%\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
-%
-%An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring at least 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained in this case are shown in Figure~\ref{fig:ttVCR}.
-%
-%\begin{figure}[htbp]
-%\centering
-%\subfigure[2016 $t \bar t$+V \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\subfigure[2017 $t \bar t$+V \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\subfigure[2018 $t \bar t$+V \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the $t \bar t$+V control region defined.}
-%\label{fig:ttVCR}
-%\end{figure}
-%
-%\subsection{Same sign control region} \label{section:SSCR}
-%
-%Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This control region is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
-%
-%\begin{figure}[htbp]
-%\centering
-%\subfigure[2016 same sign \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\subfigure[2017 same sign \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\subfigure[2018 same sign \ac{CR}]
-% {
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_mll.png}
-%\end{minipage}\hfill
-%\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_METcorrected_pt.png}
-%\end{minipage} \hfill
-%}
-%\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the same sign control region defined.}
-%\label{fig:SSCR}
-%\end{figure}
-
-%In order to cover for most of the discrepancies between the data and the simulation observed in the distributions of this control region, a flat 30\% systematic uncertainty is typically associated to this background, as will be discussed in more details in Section~\ref{section:Systematics}.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\chapter{Signal extraction} \label{section:Discrimination}
-
-In this Chapter, a description about the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
-
-\section{Discriminating variables} \label{section:Variables}
+\subsection{Discriminating variables} \label{section:Variables}
 
 Several variables can be used in order to separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power high enough have actually been used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, as described in Section~\ref{section:NN}. 
 
-It is also important to note that some of these variables rely on the information obtained from the top reconstruction performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction.
+It is also important to note that some of these variables rely on the information obtained from the top reconstruction performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction. Note that such non-physical negative values were simply removed from the following distributions.
 
 \subsubsection*{Number of bjets and $m_{bl}^t$}
 
@@ -4682,17 +3562,17 @@ Several variables belonging to this category have been considered, such as $\xi 
 %\end{figure}
 \end{itemize}
 
-\section{Multivariate analysis} \label{section:NN}
+\subsection{Multivariate analysis} \label{section:NN}
 
 As already seen in the previous sections, we know that our signal regions are going to be contaminated with some background processes, given the fact that such backgrounds have kinematics close to our signals of interest. A general \acf{MVA} technique has therefore been used in order to perform the actual signal extraction by combining the discriminating power of several of the variables previously presented in order to find a way to categorize reliably any single event as either more likely to be a signal (either $t/\bar t$+DM or $t \bar t$+DM) or a background event.
 
 The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most relevant background and signal processes and on the other hand, we have data collected by the detector and which needs to be categorized and labeled based on the value of several variables or \textit{features}, by assigning a value of probability of belonging to any of these categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be divided into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
 
-\subsection{Methods considered}
+\subsubsection{Methods considered}
 
 Two different \ac{MVA} methods among the most popular nowadays have been studied in this work: several \acfp{BDT} and a \acfp{ANN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
 
-\subsubsection{\acfp{BDT}}\label{section:BDT}
+\subsubsection*{\acfp{BDT}}\label{section:BDT}
 
 This method relies on the definition of different decision trees, able to split the data recursively from a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given feature until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees and then to combine all of these trees together into a single strong classifier, by giving a weight to each tree depending on their actual accuracy. In our case, a classification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundreds of trees made out of different nodes, train them and apply the training to uncategorized events, labeling every single event as either signal or background-like.
 
@@ -4744,7 +3624,7 @@ The actual parameters used for this particular analysis have been obtained after
 \end{center}
 \end{table}
 
-\subsubsection{\acfp{ANN}}\label{section:DNN}
+\subsubsection*{\acfp{ANN}}\label{section:DNN}
 
 Another large family of \ac{MVA} methods rely on the so-called \textbf{neural networks}, sets of algorithms designed to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to either similarities among the inputs or based on the information available in a training dataset.
 
@@ -4806,7 +3686,7 @@ Batch size & 250 \\
 
 After a trial and error process, the best results have actually been obtained with our \ac{ANN} over the \ac{BDT}, method therefore chosen for the rest of this analysis.%, considering as input a relatively simple set of variables, all described in Section~\ref{section:Variables}. By order of importance, we therefore decided to use as input the stransverse mass $M_{T2}^{ll}$, the angle $\Delta \Phi(E_{T}^{\text{miss}}, ll)$, the pf\ac{MET}, $m_{bl}^t$, one of the two spin correlated variables $\xi = \cos(\theta_i) \cos(\theta_j)$ and the number of b-jets observed. The extensive explanation behind the choice of all these parameters can be found in Appendix~\ref{appendix:Optimization}.
 
-\subsection{Training process}
+\subsubsection{Training process}
 
 One training has been done for each year and each mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{BDT} and \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. 
 
@@ -5013,7 +3893,7 @@ Finally, the output distributions obtained for the \ac{BDT} has been obtained, a
 %\label{fig:inputVar}
 %\end{figure}
 
-\subsection{Evaluation process}
+\subsubsection{Evaluation process}
 
 Once the training performed and the weights of the \ac{BDT} computed, we have been able to use them in order to to estimate the probability of each data and \ac{MC} event to be a background or a signal event. This is simply done by reading the weights previously obtained by the training process, considering either the training that was performed in the $t/\bar t$+DM or $t \bar t$+DM enriched region, depending on the number of (b-)jets observed in the event.
 
@@ -5107,11 +3987,1128 @@ Once the weights were applied to our trees, we have been able to obtain the actu
 
 %\color{red}FIXME: add percentage table for each process? Did we end up using the control region of the MVA or simply  \color{black}
 
-\subsection{Shape analysis} \label{sec:Shape}
+\subsubsection{Shape analysis} \label{sec:Shape}
 
 A general shape analysis has been performed in order to extract the signals of interest from the shape of the output of the \ac{MVA}. In order to perform such an analysis, the binning of this distribution was first of all optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events. Then, once the binning of the \ac{BDT} distributions in the signal region has been defined, a maximum likelihood fit has been simply performed to extract the signal.
 
 \color{red}FIXME: complete this once strategy defined \color{black}
+
+\section{Signal regions} \label{section:SR}
+
+Several different signal regions have been defined, by cutting on the output variable obtained from each \ac{MVA} training performed (i.e., for each combination of data taking period, $m_\chi$ and mediator spin). Some of the distributions obtained in a few signal regions are shown in Figures~\ref{fig:SR1} to~\ref{fig:SR4}.
+
+It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already been seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. %Additionally, only the statistical errors are represented in all the plots, unless stated otherwise.
+
+%\color{red}FIXME: Add final plots everywhere \color{black}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 100 GeV scalar training.}
+\label{fig:SR1}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 scalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV scalar training.}
+\label{fig:SR2}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 pseudoscalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 pseudoscalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 pseudoscalar 100 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined obtained from the 100 GeV pseudoscalar training.}
+\label{fig:SR3}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 pseudoscalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 pseudoscalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 pseudoscalar 500 GeV \ac{SR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV pseudoscalar training.}
+\label{fig:SR4}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Backgrounds prediction} \label{section:CR}
+
+Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In this section, the main backgrounds to consider for this particular analysis will be reviewed, starting with the \ac{SM} top production.
+
+%\begin{itemize}
+%\item The major background of this analysis is the \ac{SM} $t \bar t$, kinematically really close to the $t \bar t$+DM signal searched for (Section~\ref{subsection:ttbar}). The dilepton decay of the top quarks is obviously more important in this analysis, but its semileptonic decay is also considered to cover possible events in which the jet emitted is misreconstructed by the detector. The single top production is also important to consider, being kinematically close to our $t/\bar t$+DM signal (Section~\ref{subsection:singleTop}).
+%\item Because of its huge cross section at 13 TeV, as shown in Figure~\ref{fig:ProcessesXS}, the \ac{DY} process is also important to consider. However, this process is kinematically quite different to our signals and it is therefore relatively easy to reduce it in the actual \acp{SR} with some specific cuts, by removing the Z peak in the $ee$ and $\mu \mu$ channels and applying a cut on the dilepton stranverse mass, for example.%, a specific control region will be dedicated to check this background, taken directly from \ac{MC} (Section~\ref{subsection:DY}).
+%\item The $t \bar t + V$ ($t \bar t + Z$ and $t \bar t + W$) process, with a W or Z boson in the final state able to decay into neutrino(s) and therefore responsible for the production of some \ac{MET}, has a typical event kinematic even closer to our signals than the other processes previously quoted, making it irreducible in most of the cases. This background is therefore extremely important in our signal regions, even though its low cross section does limit its impact.% (Section~\ref{subsection:ttV}).
+%\item Finally, the non-prompt background is another important piece of some analyses mainly because of the particular data-driven method that can be used to compute its expected kinematic and yields, described in Section~\ref{subsection:Fakes}, since the \ac{MC} are not fully reliable to describe such events. However, most of the non-prompt contamination in this analysis comes from semileptonic b-decays, expected to be well modeled. After detailed studies, we therefore decided to exclusively rely on \ac{MC} simulations for this background as well. 
+%\end{itemize}
+%
+%\begin{figure}[htbp]
+%\begin{center}
+%\includegraphics[width=8cm, height=9cm]{figs/ProcessesXS.png}
+%\caption{Production cross section of the most common \ac{SM} processes considering different center of mass energies, such as the 13 TeV of the \ac{LHC}.}
+%\label{fig:ProcessesXS}
+%\end{center}
+%\end{figure}
+%
+%Finally, some smaller backgrounds will be introduced in Section~\ref{subsection:SmallerBkg}, such as the diboson and triboson production. All of the backgrounds used in this analysis are estimated directly from \ac{MC}, even though some weights and corrections are typically applied to these \ac{MC} samples, as will be detailed in Section~\ref{subsection:Weights}. Ways to mitigate the impact these processes have on the signal regions will be presented in Chapter~\ref{chapter:Selection}, and the actual impact of all these different processes on the different signal regions is shown in Table~\ref{tab:yields}.
+%
+%\begin{table}
+%\begin{center}
+%\resizebox{\textwidth}{!}{
+%\begin{tabular}{ c|c|c|c|c } 
+% \hline
+% Process & Scalar 100 GeV \ac{SR} & Scalar 500 GeV \ac{SR} & Pseudoscalar 100 GeV \ac{SR} & Pseudoscalar 500 GeV \ac{SR} \\
+% \hline
+% \ac{SM} $t \bar t$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% Single top & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% DY & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% WW & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% $t \bar t + V$ & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% Non-prompt & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% \hline
+% Data & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) & XXXX (XX\%) \\
+% \hline
+%\end{tabular}
+%}
+%\caption{Number of yields and percentage of different processes in some of the 2018 signal regions.}
+%\label{tab:yields}
+%\end{center}
+%\end{table}	
+%%}
+%
+%\color{red} FIXME: Add corrected yields and percentages after unblinding \color{black}
+
+\section{Top production}
+
+Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
+
+Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. %To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}.
+
+\subsection{The main background: $t \bar t$} \label{subsection:ttbar}
+
+%This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
+
+This background is the most relevant for this analysis because of its large cross section and kinematics, close to our signals of interest.
+
+Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. NNPDF3.0 \cite{NNPDF} was used as the default \ac{PDF}, while the default POWHEG setup with the PYTHIA8 CUETP8M2 (for 2016) and CP5 (for 2017 and 2018) tunes were used for the generation of this particular sample \cite{PythiaTunes}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (g1) {g};    
+    \vertex [below right=of g1] (a);
+    \vertex [right=of a] (b);
+  	\vertex (g2) [below left=of a] {g};
+	\vertex (t1) [above right=of b] {t};
+	\vertex (t2) [below right=of b] {$\bar t$};  
+ 
+    \diagram* {
+      (g1) -- [gluon] (a),
+      (g2) -- [gluon] (a),
+      (a) -- [gluon] (b),
+	  (b) -- [fermion] (t1),
+	  (b) -- [anti fermion] (t2)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} \hfill
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (q1) {$\bar q$};    
+    \vertex [below right=of g1] (a);
+    \vertex [right=of a] (b);
+  	\vertex (q2) [below left=of a] {q};
+	\vertex (t1) [above right=of b] {t};
+	\vertex (t2) [below right=of b] {$\bar t$};  
+ 
+    \diagram* {
+      (q1) -- [anti fermion] (a),
+      (q2) -- [fermion] (a),
+      (a) -- [gluon] (b),
+	  (b) -- [fermion] (t1),
+	  (b) -- [anti fermion] (t2)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} \hfill
+\begin{minipage}[b]{.22\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (g1) {g};    
+    \vertex (a) [below right=of g1];
+    \vertex (b) [below=of a];
+  	\vertex (g2) [below left=of b] {g};
+	\vertex (t1) [above right=of a] {t};
+	\vertex (t2) [below right=of b] {$\bar t$};  
+ 
+    \diagram* {
+      (g1) -- [gluon] (a),
+      (g2) -- [gluon] (b),
+      (a) -- [fermion] (b),
+	  (a) -- [fermion] (t1),
+	  (b) -- [anti fermion] (t2)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} \hfill
+\caption{Main feynman diagrams for the production of the \ac{SM} $t \bar t$ process.}
+\label{fig:ttbarProd}
+\end{figure}
+
+\subsection{Single top} \label{subsection:singleTop}
+
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.22\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi) {$\bar q$};    
+    \vertex (a) [below right=of qi];
+    \vertex (qf) [above right=of a] {$\bar q'$};    
+  	\vertex (b) [below=of a];
+	\vertex (bi) [below left=of b] {b};
+	\vertex (tf) [below right=of b] {t};  
+ 
+    \diagram* {
+      (qi) -- [anti fermion] (a) -- [anti fermion] (qf),
+      (a) -- [boson, edge label={W}] (b),
+      (bi) -- [fermion] (b) -- [fermion] (tf)     
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.28\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi) {g};    
+    \vertex (a) [below right=of gi];
+    \vertex (bf) [above right=of a] {$\bar b$};
+  	\vertex (b) [below right=of a];
+  	\vertex (tf) [right=of b] {t};
+	\vertex (c) [below left=of b];
+	\vertex (qi) [below left=of c] {q};
+	\vertex (qf) [below right=of c] {q'};  
+ 
+    \diagram* {
+      (gi) -- [gluon] (a) -- [anti fermion] (bf),
+      (a) -- [fermion, edge label={b}] (b),
+      (b) -- [fermion] (tf),
+	  (b) -- [boson, edge label={W}] (c),
+	  (qi) -- [fermion] (c) -- [fermion] (qf)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Feynman diagrams for the s-channel production mode of a single top quark.}
+\label{fig:singleTopSChann}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (qi2) [below left=of a] {q};
+  	\vertex (b) [right=of a];
+  	\vertex (bf) [above right=of b] {$\bar b$};
+	\vertex (tf) [below right=of b] {t}; 
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a) -- [anti fermion] (qi2),
+      (a) -- [boson, edge label={W}] (b),
+      (b) -- [anti fermion] (bf),
+	  (b) -- [fermion] (tf)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi) {g};    
+    \vertex (a) [below right=of gi];
+    \vertex (bi) [below left=of a] {b};
+  	\vertex (b) [right=of a];
+	\vertex (Wf) [above right=of b] {W};
+	\vertex (tf) [below right=of b] {t};  
+ 
+    \diagram* {
+      (gi) -- [gluon] (a) -- [anti fermion] (bi),
+      (a) -- [fermion, edge label={b}] (b),
+	  (b) -- [boson] (Wf),
+	  (b) -- [fermion] (tf)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Feynman diagrams for the t-channel (on the left) and tW (on the right) production modes of a single top quark.}
+\label{fig:singleTopOtherChann}
+\end{figure}
+
+\subsection{Top decay} \label{subsection:topDecay}
+
+As previously mentioned, the top is the heaviest particle of the \ac{SM} and is expected to decay inside of the beam pipe itself, usually into a bottom quark, giving us a b-jet, and a W boson; this boson then decays itself into different channels even though only its leptonic decay is usually considered in this particular case. The decay considered for the top/anti-top produced is represented in Figure~\ref{fig:TopDecay}.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (ti) {t};    
+    \vertex (a) [right=of ti];
+    \vertex (W) [above right=of a];
+  	\vertex (bf) [below right=of a] {b};
+  	\vertex (b) [above right=of a];
+	\vertex (lf) [above right=of b] {$l^+$};
+	\vertex (nu) [below right=of b] {$\nu$};  
+ 
+    \diagram* {
+      (ti) -- [fermion] (a),
+      (a) -- [boson, edge label={$W^+$}] (b),
+      (a) -- [fermion] (bf),
+	  (b) -- [fermion] (lf),
+	  (b) -- [fermion] (nu)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (ti) {$\bar t$};    
+    \vertex (a) [right=of ti];
+    \vertex (W) [above right=of a];
+  	\vertex (bf) [below right=of a] {$\bar b$};
+  	\vertex (b) [above right=of a];
+	\vertex (lf) [above right=of b] {$l^-$};
+	\vertex (nu) [below right=of b] {$\bar \nu$};  
+ 
+    \diagram* {
+      (ti) -- [fermion] (a),
+      (a) -- [boson, edge label={$W^-$}] (b),
+      (a) -- [fermion] (bf),
+	  (b) -- [fermion] (lf),
+	  (b) -- [fermion] (nu)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Feynman diagrams for the leptonic decay of the top (on the left) and anti-top (on the right) quarks.}
+\label{fig:TopDecay}
+\end{figure}
+
+The dilepton decay of the top quarks produced is obviously more important in this analysis, but its semileptonic decay is also considered to cover possible events in which the jet emitted is misreconstructed by the detector.
+
+\subsection{Top control region} \label{section:TopCR}
+
+Both these backgrounds are estimated directly from \ac{MC} and checked in a dedicated control region, defined from this pre-selection region, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions. Some of the distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 top \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_mll.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttbarCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 top \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_mll.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttbarCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 top \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttbarCR_ll_mll.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttbarCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the top control region defined.}
+\label{fig:TopCR}
+\end{figure}
+
+\section{Drell-Yan} \label{subsection:DY}
+
+As previously mentioned, most of the \ac{DY} background, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important. Expected to be found mostly in the $ee$ and $\mu \mu$ channels, it does survive even in the $e \mu$ channels because of possible tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). 
+
+The samples for such background are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then split into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV. The HT-binned\footnote{$H_T$ is a variable corresponding to the scalar sum of the transverse momenta of the jets in an event} samples have been chosen for the high mass sample over the inclusive ones in order to increase the statistics available.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {q};
+	\vertex (a) [below right=of qi1];    
+    \vertex (qi2) [below left=of a] {$\bar q$};
+    \vertex (b) [right=of a]; 
+    \vertex (lf1) [above right=of b] {$\bar l$};
+    \vertex (lf2) [below right=of b] {l};
+ 
+    \diagram* {
+      (qi1) -- [fermion] (a) -- [fermion] (qi2),
+      (a) -- [boson, edge label={$\gamma^*$/Z}] (b),
+	  (b) -- [anti fermion] (lf1),
+	  (b) -- [fermion] (lf2)      
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Feynman diagram for the \ac{DY} process involving a virtual $\gamma^*$ or Z boson.}
+\label{fig:DY}
+\end{figure}
+
+Apart from the impact it has on the different control and signal regions, the shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
+
+\subsection{\boldmath$R_{in-out}$ method} \label{subsection:rinout}
+
+The idea behind this semi data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use such vetoed events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+
+\begin{equation}
+\label{eq:DYevents}
+N_{DY}^{total} = N_{DY}^{in} + N_{DY}^{out}
+\end{equation}
+
+The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the number of \ac{MC} or data events outside and inside this Z mass window. This ratio is then simply used to estimate the number of DY events outside the veto region in data from the number of observed events in the veto region, as shown in Equation~\ref{eq:Routin}.
+
+\begin{equation}
+\label{eq:Routin}
+N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+\end{equation}
+
+This equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodeling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodeling does not have a dependence in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}, experimentally determined to be of the order of $\sim 5\%$.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_0bjet_mll.png}
+\end{minipage} \hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/log_cratio_1bjetOrMore_mll.png}
+\end{minipage} \hfill
+\caption{Normalized $m_{ll}$ \ac{DY} distributions obtained using 2018 \ac{MC} simulations in the 0 (on the left) and 1+ b-jet (on the right) bins.}
+\label{fig:Rinoutver}
+\end{center}
+\end{figure}
+
+\begin{equation}
+\label{eq:genRinout}
+R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
+\end{equation}	
+
+%\begin{equation}
+%\label{eq:DYSF}
+%SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
+%\end{equation}
+
+Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single scale factor to the \ac{DY} process, considering a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 30\% in this case).
+
+\begin{figure}[htbp]
+\begin{center}
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2016_data.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2017_data.png}
+\end{center}
+\end{minipage} \hfill
+\begin{minipage}[b]{.99\textwidth}
+\begin{center}
+\includegraphics[width=7.5cm, height=5.6cm]{figs/Rinout2018_data.png}
+\end{center}
+\end{minipage} \hfill
+\caption{$R_{out/in}$ transfer factor obtained with the Rin-out data-driven method in bins of \ac{MET} in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
+\label{fig:Rinoutcheck}
+\end{center}
+\end{figure}
+
+\subsection{\acs{DY} control region} \label{section:DYCR}
+
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
+
+At the end of the day, this control region was defined in the same way as the signal regions, but by simply reversing the Z-veto requirement, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 \ac{DY} \ac{CR}]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_mllpeak.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_dyCR_ll_METcorrected_pt.png}
+\end{minipage} \hfill
+}
+\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the \ac{DY} control region defined.}
+\label{fig:DYCR2}
+\end{figure}
+
+\section{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
+
+These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.31\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q'$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (gf) [right=of a];
+    \vertex (b) [below=of a];
+  	\vertex (qi2) [below left=of b] {q};
+  	\vertex (Wf) [below right=of b] {W/Z};
+  	\vertex (c) [right of=a];
+  	\vertex (tf1) [above right=of c] {t};
+  	\vertex (tf2) [below right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a) -- [gluon] (c) -- [fermion] (tf1),
+      (tf2) -- [fermion] (c),
+      (a) -- [anti fermion] (b),
+      (qi2) -- [fermion] (b) -- [boson] (Wf)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi1) {g};    
+    \vertex (a) [below right=of gi1];
+    \vertex (gi2) [below left=of a] {g}; 
+    \vertex (b) [right=of a];
+    \vertex (tf1) [above right=of b] {t};
+  	\vertex (c) [below right=of b];
+  	\vertex (Zf) [above right=of c] {Z};
+  	\vertex (tf2) [below right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (gi1) -- [gluon] (a) -- [gluon] (b),
+      (gi2) -- [gluon] (a),
+      (b) -- [fermion] (tf1),
+      (b) -- [anti fermion] (c) -- [anti fermion] (tf2),
+      (c) -- [boson] (Zf)
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.29\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi1) {g};    
+    \vertex (a) [right=of gi1];
+    \vertex (b) [below=of a];
+    \vertex (c) [below=of b];
+    \vertex (gi2) [left=of c] {g};
+    \vertex (Zf) [right=of b] {Z};
+    \vertex (tf1) [right=of a] {t};
+  	\vertex (tf2) [right=of c] {$\bar t$};
+ 
+    \diagram* {
+      (gi1) -- [gluon] (a) -- [fermion] (tf1),
+      (gi2) -- [gluon] (c) -- [anti fermion] (tf2),
+      (a) -- [anti fermion, edge label={t}] (b) -- [anti fermion, edge label={t}] (c),  
+      (b) -- [boson] (Zf) 
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Possible Feynman diagrams for the \ac{ISR} $t \bar t$ with a W/Z boson (on the left) and for the production of an \ac{FSR} ttZ (on the center and right).}
+\label{fig:ttV}
+\end{figure}
+
+The resulting cross section of such processes is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
+
+%\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
+%
+%An additional control region targeting both the $t \bar t$+W and $t \bar t$+Z processes has also been obtained, by applying a similar selection than the pre-selection of the signal regions, but by requiring at least 3 leptons instead of 2. This leads us to a region enriched in both of these backgrounds but with a very limited statistics, given the large number of strong cuts applied. Results obtained in this case are shown in Figure~\ref{fig:ttVCR}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2017 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2018 $t \bar t$+V \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttVCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the $t \bar t$+V control region defined.}
+%\label{fig:ttVCR}
+%\end{figure}
+
+\section{Non prompt leptons contamination} \label{subsection:Fakes}
+
+Even though not extremely important in the sense that its kinematics allows us to remove most of its contributions in the signal regions, this background is interesting in the sense that it can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
+
+A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
+\begin{itemize}
+\item First of all, a \textbf{prompt lepton} is defined as a real lepton, in the sense that the lepton is originating from the \ac{PV} of a $pp$ collision.
+\item The \textbf{\ac{PR}} is defined as the number of prompt leptons passing the tight selection criteria of the analysis over the number of leptons passing the loose selection criteria. 
+\item On the other hand, by \textbf{fake} or \textbf{non-prompt lepton}, we usually refer to truly \textbf{fake leptons}, such as jets misidentified by the detector as leptons, as shown in Figure~\ref{fig:FakesW}, and real leptons coming from eventual heavy flavor decays.
+\item The \textbf{\ac{FR}} is then defined similarly to the prompt rate but considering this time fake leptons only for the tight-to-loose ratio. This ratio therefore corresponds to the probability for a fake lepton to be considered as a real lepton in the analysis.
+\end{itemize}
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.19\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (gi) {g};    
+    \vertex (a) [below right=of gi];
+    \vertex (qf) [above right=of a] {q'};
+    \vertex (b) [below=of a];
+  	\vertex (qi) [below left=of b] {q};
+  	\vertex (Wf) [below right=of b] {W};
+ 
+    \diagram* {
+      (gi) -- [gluon] (a) -- [fermion] (qf),
+      (a) -- [anti fermion] (b),
+      (qi) -- [fermion] (b) -- [boson] (Wf)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.22\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q'$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (gf) [above right=of a] {g};
+    \vertex (b) [below=of a];
+  	\vertex (qi2) [below left=of b] {q};
+  	\vertex (Wf) [below right=of b] {W/Z};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a) -- [gluon] (qf),
+      (a) -- [anti fermion] (b),
+      (qi2) -- [fermion] (b) -- [boson] (Wf)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.31\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi) {q};    
+    \vertex (a) [below right=of qi];
+    \vertex (gi) [below left=of a] {g};
+    \vertex (b) [right=of a];
+  	\vertex (Z) [above right=of b] {Z};
+  	\vertex (q) [below right=of b] {q};
+ 
+    \diagram* {
+      (qi) -- [fermion] (a),
+      (gi) -- [gluon] (a),
+      (a) -- [fermion] (b),
+      (b) -- [boson] (Z),
+      (b) -- [fermion] (q)    
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Possible Feynman diagrams for the production of a W/Z boson with a jet.}
+\label{fig:FakesW}
+\end{figure}
+
+This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose data-driven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
+
+In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign control region enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
+
+\subsubsection*{\acf{FR} computation}
+
+Because of its definition, the \ac{FR} is computed in a prompt lepton-free region, typically in a l1loose \ac{QCD} enriched region, defined with the following cuts:
+\begin{multicols}{2}
+\begin{itemize}
+\item Exactly 1 lepton
+\item $p_{T} > 13 \text{ } (10)$ GeV for $e \text{ }(\mu)$ 
+\item $|\eta| < 2.5 \text{ } (2.4)$ for $e \text{ }(\mu)$ 
+\item mtw1 $< 20$ GeV
+\item pf\ac{MET} $< 20$ GeV
+\item PassJets
+\end{itemize}
+\end{multicols}
+
+All the previous cuts have been designed to define a l1loose \ac{QCD} region as pure as possible by removing most of the W+jets and Z+jets contribution. The PassJets cut is a boolean obtained by looping over all the jets of the event trying to find a jet having an $E_T$ higher than a given threshold in order to control the average $p_T$ of the jet that fakes the lepton (actually, different \ac{FR} have been computed for different $E_T$ thresholds, from 10 to 50 GeV). 
+
+Using this method, the jet that fakes a lepton is actually the one recoiling against ($\Delta R > 1.0$) the jet used for the systematics, as shown in Figure~\ref{fig:FakesJet}.
+
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=8cm, height=4cm]{figs/FakesJet.png}
+\caption{Schematic representation of the two jets used for the systematics and for the jet faking a lepton in the tight-to-loose data-driven method.}
+\label{fig:FakesJet}
+\end{center}
+\end{figure}
+
+Events passing the following pre-scaled triggers are then selected in this region:
+
+\begin{subequations}
+\begin{equation}
+\text{Muon triggers = }
+\begin{dcases}
+\text{HLT\_Mu8\_TrkIsoVVL (if }p_T < 20 \text{ GeV}) \\
+\text{HLT\_Mu17\_TrkIsoVVL (if }p_T \geq 20 \text{ GeV}) 
+\end{dcases}
+\end{equation}
+\vspace{-20pt}
+\begin{equation}
+\text{Electron triggers = }
+\begin{dcases}
+\text{HLT\_Ele8\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T < 25 \text{ GeV}) \\
+\text{HLT\_Ele23\_CaloIdL\_TrackIdL\_IsoVL\_PFJet30 (if }p_T \geq 25 \text{ GeV}) 
+\end{dcases}
+\end{equation}
+\end{subequations}
+
+The remaining of the \ac{EWK} processes (W+jets, Z+jets) able to pass the previous cuts of the QCD region, are then simply subtracted: this is the so-called \textbf{\ac{EWK} subtraction}.
+
+Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the lepton) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 electron and muon fake rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2016.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 electron and muon fake rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2017.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 electron and muon fake rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_FR_pt_combined_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_FR_pt_combined_2018.png}
+\end{minipage} \hfill
+}
+\caption{Electron (on the left) and muon (on the right) \ac{FR} obtained in a QCD enriched region for different jet $E_T$ thresholds for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
+\label{fig:FR}
+\end{figure}
+
+\subsubsection*{\acf{PR} computation}
+
+The \ac{PR}, taking into account the real lepton contamination in the region defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore typically be ignored.
+
+In our case, this rate has been calculated as well using a general tag and probe method in a Z+jets enriched sample. The main objective is to reconstruct $Z \rightarrow ll$ events in this region and to select all the events for which the first lepton can be characterized as tight. Then, we search for the second lepton coming from the decay of Z within all the leptons detected by calculating the reconstructed mass of all the possible leptons combinations and selecting the one which is closer to the expected mass of the Z boson. We can then simply count how many times this second lepton, expected to be tight, has actually been measured as a tight lepton to estimate this \ac{PR}.
+
+The results obtained in this case have been represented in Figure~\ref{fig:PR}.
+
+\begin{figure}[htbp]
+\centering
+\subfigure[2016 electron and muon prompt rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2016.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2016.png}
+\end{minipage} \hfill
+}
+\subfigure[2017 electron and muon prompt rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2017.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2017.png}
+\end{minipage} \hfill
+}
+\subfigure[2018 electron and muon prompt rates]
+ {
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Ele_PR_pt_2018.png}
+\end{minipage}\hfill
+\begin{minipage}[b]{.48\textwidth}
+\includegraphics[width=7cm, height=7cm]{figs/Muon_PR_pt_2018.png}
+\end{minipage} \hfill
+}
+\caption{Electron (on the left) and muon (on the right) \ac{PR} obtained in a Z+jets enriched region by a tag and probe method for 2016, 2017 and 2018 with respect to the $p_T$ of the lepton.}
+\label{fig:PR}
+\end{figure}
+
+\subsubsection*{Fake weight calculation}
+
+Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the \acp{SR} of the analysis (usually, a l2loose region). For this, a simple set of equations can be used. We start by defining the following quantities:
+
+\begin{itemize}
+\item $N_{pp}$, the number of events where both leptons are prompt
+\item $N_{fp}$, the number of events where one lepton is prompt and the other is fake
+\item $N_{ff}$, the number of events where both leptons are fake
+\item $N_{tx}$ ($x = 0,1,2$), the number of events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
+\end{itemize}
+
+It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated, we can find an expression relating all these quantities.
+\begin{equation}
+\label{eq:FR1}
+\begin{dcases}
+&N_l = N_{pp} + N_{fp} + N_{ff} = N_{t2} + N_{t1} + N_{t0} \\
+& N_{t0} = (1-p)^2N_{pp} + (1-p)(1-f)N_{fp}+(1-f)^2N_{ff} \\
+& N_{t1} = 2p(1-p)N_{pp} + \big(f(1-p)+p(1-f)\big)N_{fp}+2f(1-f)^2N_{ff} \\
+& N_{t2} = p^2N_{pp} + pfN_{fp}+f^2N_{ff}
+\end{dcases}
+\end{equation}
+
+These equations can be inverted in order to represent the unknowns with respect to the known variables, as shown in Equation~\ref{eq:FR2}, giving us a way to apply the weights previously calculated to this particular l2loose region.
+
+\begin{equation}
+\label{eq:FR2}
+\begin{pmatrix}
+N_{pp} \\ N_{fp} \\ N_{ff}
+\end{pmatrix} = \frac{f-p}{-(p-f)^3} \cdot 
+\begin{pmatrix}
+f^2 & -f(1-f) & (1-f)^2 \\ -2fp & p(1-f)+f(1-p) & -2(1-p)(1-f) \\ p^2 & -p(1-p) & (1-p)^2
+\end{pmatrix} \cdot 
+\begin{pmatrix}
+N_{t0} \\ N_{t1} \\ N_{t2}
+\end{pmatrix}
+\end{equation}
+
+A same sign control region enriched in fakes has also been defined in order to check this background.
+
+The non-prompt contamination of this particular analysis however is expected to be dominated by the semi-leptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations, so we decided at the end of the day to rely on them for the analysis instead of using the data-driven fakes that had been produced.  %This will be done and detailed in Section~\ref{section:SSCR} of this work.
+
+%\subsubsection*{Limitations}
+%
+%This method is working quite well and allows us to avoid relying on the \ac{MC} for such complex processes, but it does come with some limitations, among which:
+%
+%\begin{itemize}
+%\item 
+%\end{itemize}
+
+%\subsection{Same sign control region} \label{section:SSCR}
+%
+%Finally, a same sign control region has also been defined in order to check the non-prompt background, calculated using a data-driven tight-to-loose method described in Section~\ref{subsection:Fakes}. This control region is defined using a similar pre-selection than the one applied to the signal regions, but by asking for two same sign leptons. Some resulting plots can be found in Figure~\ref{fig:SSCR}.
+%
+%\begin{figure}[htbp]
+%\centering
+%\subfigure[2016 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2017 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\subfigure[2018 same sign \ac{CR}]
+% {
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_mll.png}
+%\end{minipage}\hfill
+%\begin{minipage}[b]{.48\textwidth}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_SSCR_ll_METcorrected_pt.png}
+%\end{minipage} \hfill
+%}
+%\caption{Two different variables ($m_{ll}$ on the left and pf\ac{MET} on the right) represented in the same sign control region defined.}
+%\label{fig:SSCR}
+%\end{figure}
+
+%In order to cover for most of the discrepancies between the data and the simulation observed in the distributions of this control region, a flat 30\% systematic uncertainty is typically associated to this background, as will be discussed in more details in Section~\ref{section:Systematics}.
+
+\section{Smaller backgrounds} \label{subsection:SmallerBkg}
+
+Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WWG) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.31\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (qi2) [below left=of a] {q};
+    \vertex (b) [right=of a];
+    \vertex (Zf) [above right=of b] {Z/$\gamma$};
+    \vertex (Wf) [below right=of b] {W};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a),
+      (qi2) -- [fermion] (a) -- [boson, edge label={W}] (b),
+      (b) -- [boson] (Zf),
+      (b) -- [boson] (Wf)  
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.34\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q$};    
+    \vertex (a) [below right=of qi1];
+    \vertex (qi2) [below left=of a] {q};
+    \vertex (b) [right=of a];
+    \vertex (Zf) [above right=of b] {W};
+    \vertex (Wf) [below right=of b] {W};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a),
+      (qi2) -- [fermion] (a) -- [boson, edge label={$\gamma$/Z}] (b),
+      (b) -- [boson] (Zf),
+      (b) -- [boson] (Wf)  
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\begin{minipage}[b]{.22\textwidth}
+\resizebox{\textwidth}{!}{
+\begin{tikzpicture}
+  \begin{feynman}   	
+	\vertex (qi1) {$\bar q$};
+    \vertex (a) [below right=of qi1];
+    \vertex (Zf1) [above right=of a] {Z};
+    \vertex (b) [below=of a];
+    \vertex (qi2) [below left=of b] {q};
+    \vertex (Zf2) [below right=of b] {Z};
+ 
+    \diagram* {
+      (qi1) -- [anti fermion] (a) -- [boson] (Zf1),
+      (qi2) -- [fermion] (b) -- [boson] (Zf2),
+      (a) -- [anti fermion] (b)
+    };
+  \end{feynman}
+\end{tikzpicture}
+}
+\end{minipage} 
+\caption{Possible Feynman diagrams for smaller backgrounds of this analysis: WW (on the left), W$\gamma$ and WZ (on the center) and ZZ (on the right).}
+\label{fig:DiBosons}
+\end{figure}
+
+
+
+
+
 
 
 
@@ -5268,18 +5265,18 @@ Additional uncertainties related to the detector or to the experimental conditio
 
 \begin{itemize}
 \item \textbf{Luminosity}. The actual integrated luminosity collected is not a fixed number and comes with an associated uncertainty of 2.5\%, 2.3\% and 2.5\% for 2016, 2017 and 2018 respectively, based on van der Meer scans performed \cite{Lumi2016, Lumi2017, Lumi2018}.
-\item \textbf{Pileup modeling}. Varying the inelastic cross-section used to calculate the pileup distribution in simulation results in a systematic of the order of 5\% \cite{PUmodel}.
+\item \textbf{Pileup modeling}. Varying the inelastic cross-section used to calculate the pileup distribution in simulation results in a systematic of the order of 5\% \cite{PUmodel}. This systematic uncertainty is considered to be correlated across the years.
 \item \textbf{Lepton trigger}. An uncertainty associated to the lepton trigger efficiency is taken into account. It has an impact of the order of $\sim 2$\%, estimated from a general Tag and Probe method, by varying the Z window considered and the tag lepton $p_T$ selection cut. 
-\item \textbf{\ac{ECAL} prefiring}. An uncertainty accounting for the prefiring of the \ac{ECAL} in 2016 and 2017 is also taken into account, even though its impact is expected to be quite small overall.
 \item \textbf{Lepton efficiency and energy scale}. Scale factors are applied to the \ac{MC} processes in order to mimic the measured lepton reconstruction and selection efficiencies in data, and such scale factors come with estimated $p_T$ and $\eta$ uncertainties of the order of $\sim2$\% for electrons and muons, which have been considered as well.  
 %\begin{itemize}
 %\item In particular, for \textbf{electrons}, efficiencies are computed using a Tag and Probe method as well, involving background and signal fits, for which different fitting functions have been considered for the computation of the systematics. The tag selection has also been updated, mainly with different $p_T$ cuts, studying the impact such change has on the final efficiencies. Uncertainties from such different sources have been added in quadrature to get the final systematic associated to electrons.
 %\item Then, four different parameters have been considered and updated with respect to the nominal Tag and Probe parameters to study their impact on the final \textbf{muon} efficiencies: the isolation of the tag muon, the signal fitting function used, the number of mass bins where the fit is done and finally, the Z-window considered for the calculation. 
 %\end{itemize}
 \item \textbf{\ac{JES} and \ac{JER}}. Single nuisance parameter applied to the $p_T$ of each jet, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}. These uncertainties are expected to be below 3\% across the phase space considered by most of the analyses ($p_T > 30$ GeV, $|\eta| < 5.0$) and even below 1\% in the barrel region ($|\eta| < 1.3$) \cite{JESUncertainty}.
-\item \textbf{\ac{MET} mismodeling}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
+\item \textbf{Unclustered energy}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
 \item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}.
-\item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
+%\item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
+\item \textbf{\ac{ECAL} prefiring}. An uncertainty accounting for the prefiring of the \ac{ECAL} in 2016 and 2017 is also taken into account, even though its impact is expected to be quite small overall.
 \end{itemize}
 
 \subsubsection{Background related uncertainties}
@@ -5288,7 +5285,8 @@ The systematic associated to the backgrounds normalization is typically one of t
 
 \begin{itemize}
 %\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
-\item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodeling of this particular background, especially at high pf\ac{MET} values, a 20\% systematic is associated to this process.
+\item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodeling of this particular background, especially at high pf\ac{MET} values, a 30\% systematic is associated to this process.
+\item An uncertainty of 20\% has been asigned to the normalization of all the minor backgrounds of the analysis (such as WW, WZ, ZZ and VVV).
 %\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method previously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} observed in a same-sign control region enriched in this background.%in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
