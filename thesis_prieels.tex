@@ -2141,9 +2141,9 @@ Flag\_eeBadScFilter & \checkmark & $-$ \\
 
 \section{Top reconstruction} \label{section:RecoTop}
 
-Although not formerly a part of the \ac{PF} algorithm and done off-line, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signal from the different background processes introduced in Section~\ref{section:Variables} are spin correlated variables, sensitive to the nature of the \ac{DM} mediator but which require knowledge of the top quark and anti-quark four-momenta, not immediately available without such complete reconstruction of the $t \bar t$ system. 
+Although not formerly a part of the \ac{PF} algorithm and done off-line, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signal from the different background processes and introduced in Section~\ref{section:Variables} are spin correlated variables, sensitive to the nature of the \ac{DM} mediator but which require knowledge of the top quark and anti-quark four-momenta, not immediately available without such complete reconstruction of the $t \bar t$ system. 
 
-However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the only observable about the neutrinos is the vectorial sum of their transverse momentum which is inferred from the total momentum imbalance of the event and which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino require advanced computation techniques, either numerical or analytical.
+However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the only observable about the neutrinos is the vectorial sum of their transverse momentum which is inferred from the total momentum imbalance of the event and which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino requires advanced computation techniques, either numerical or analytical.
 
 \subsection{Numerical and analytical top reconstruction}
 
@@ -2301,12 +2301,12 @@ First of all, as we already saw, when the two ellipses intersect each other, we 
 
 Then, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations, taken two by two. In practice, the following categories are therefore defined: 
 \begin{itemize}
-\item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions chosen and explained later in Chapter~\ref{chapter:Selection}.
+\item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions chosen.
 \item If 2 or more b-jets are observed, combinations between the two leptons, the first b-jet (ordered in $p_T$) and the other b-jets of the event are considered.
 \item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this set of jets are then tested.
 \end{itemize}
 
-When taking into account all these possible combinations, a reconstruction efficiency of $\sim 61$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. 
+When taking into account all these possible combinations, a reconstruction efficiency of $\sim 71$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. 
 
 Finally, we know any measurement made is not perfect and comes with uncertainties. The impact that imperfectly measured kinematic variables can have on the top reconstruction process can be estimated through the \textbf{smearing} method, by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
 \begin{itemize}
@@ -2922,7 +2922,7 @@ For our analysis, we decided to use directly the medium ID \ac{WP} provided by t
 
 A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be considered valid.
 
-Furthermore, lepton candidates trajectories are further required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem in the queue of the \ac{MET} spectrum.
+Furthermore, lepton candidates trajectories are required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem in the queue of the \ac{MET} spectrum.
 
 \paragraph{Veto \ac{WP}}
 
@@ -3120,7 +3120,7 @@ For this analysis, only events passing the so-called \textit{inclusive region} w
 \item At least 1 jet and 1 medium deep CSV b-jet are also required.
 \end{itemize}
 
-The distributions obtained in all the channels in this particular region are shown in Figure~\ref{fig:inclusiveCR}. A slight \ac{MC} mismodeling mostly due to the \ac{DY} process can be observed in these plots, but this feature is known in \ac{CMS} mitigated anyway with the analysis cuts applied, and compensated with the introduction of a large systematic uncertainty associated to this \ac{DY} process.
+The distributions obtained in all the channels of this particular region are shown in Figure~\ref{fig:inclusiveCR}. A slight \ac{MC} mismodeling mostly due to the \ac{DY} process can be observed in these plots, but this feature is known in \ac{CMS} mitigated anyway with the analysis cuts applied, and compensated with the introduction of a large systematic uncertainty associated to this \ac{DY} process.
 
 \begin{figure}[htbp]
 \centering
@@ -3157,7 +3157,14 @@ The distributions obtained in all the channels in this particular region are sho
 
 \subsection{Pre-selection region}
 
-A global \textit{pre-selection region} was then defined as the basis for the following control and signal regions, by applying on top of the inclusive region a cut on the \ac{MET} ($> 50$ GeV) and on the stransverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll) > 80$. This allows to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, so that both channels can be combined, while removing more background than signal anyway.
+A global \textit{pre-selection region} was then defined, by applying on top of the inclusive region a few cuts:
+\begin{itemize}
+\item A 15 GeV Z-window veto is applied in the $ee$ and $\mu \mu$ channels;
+\item The \ac{MET} should be $> 100$ GeV;
+\item And the stransverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll)$ should be $> 80$ GeV.
+\end{itemize}
+
+This selection serves as the basis for our signal regions and  allows to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel, so that both channels can be combined, while removing more background than signal anyway.
 
 Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
 
@@ -3190,7 +3197,7 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 \includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
-\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the pre-selection region used for the training of the \ac{MVA}.}
+\caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in our pre-selection region.}
 \label{fig:preSelSR}
 \end{figure}
 
@@ -3206,16 +3213,16 @@ Several variables can be used in order to separate one of the signals of interes
 
 It is also important to note that some of these variables rely on the information obtained from the top reconstruction performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction. Note that such non-physical negative values were simply removed from the following distributions.
 
-\subsubsection*{Number of bjets and $m_{bl}^t$}
+\subsubsection*{Number of b-jets and $m_{bl}^t$}
 
-Let's start with the two variables we found to be the most useful in order to separate the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply rejecting events featuring two b-jets or more to define a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes, as shown in Tables~\ref{table:MC2016} to~\ref{table:MC2018}.
+Let's start with the two variables we found to be the most useful in order to separate the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures can have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply rejecting events featuring two b-jets or more to define a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes, as shown in Tables~\ref{table:MC2016} to~\ref{table:MC2018}.
 
 A slightly more effective strategy than vetoing events with multiple b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more b-jets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final distributions obtained for both variables in the pre-selection region are shown in Figure~\ref{fig:SRdiscmblt}.
 
-%\begin{equation}
-%\label{eq:mblt}
-%m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
-%\end{equation}
+\begin{equation}
+\label{eq:mblt}
+m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
+\end{equation}
 %
 %\begin{figure}[htbp]
 %\centering
@@ -3267,7 +3274,7 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{minipage}[b]{.47\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
-\caption{pf\ac{MET} distributions obtained in the 2018 pre-selection region.}
+\caption{pf\ac{MET} distribution obtained in the 2018 pre-selection region.}
 \label{fig:SRdiscMET}
 \end{figure}
 
@@ -3289,7 +3296,7 @@ This equation can be understood in the following way: to compute the $m_{T2}$ va
 
 In this particular analysis, $M_{T2}^{ll}$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}^{ll}$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual \ac{DM} signal does not have this limitation in the $M_{T2}^{ll}$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
 
-A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs can also be defined. This variable is constructed in the same way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept, as shown in Figure~\ref{fig:SRdiscMT2}.
+A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs can also be defined. This variable is constructed in a similar way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept, as shown in Figure~\ref{fig:SRdiscMT2}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -3336,12 +3343,12 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
 \end{minipage}\hfill
-\caption{Dark $p_T$ (on th left) and overlapping factor $R$ (on the right) distributions obtained in the 2018 pre-selection region.}
+\caption{Dark $p_T$ (on the left) and overlapping factor $R$ (on the right) distributions obtained in the 2018 pre-selection region.}
 \label{fig:SRdisc1}
 \end{figure}
 
@@ -3510,7 +3517,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:r2l}
 %\end{figure}
 
-\item We also observed that the variable \textit{massT} which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process helps with the discrimination process.%, as shown in Figure~\ref{fig:SRdisc6}.
+\item We also observed that the variable massT which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process helps with the discrimination process.%, as shown in Figure~\ref{fig:SRdisc6}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -3769,21 +3776,19 @@ Batch size & 250 \\
 \end{center}
 \end{table}
 
-After a trial and error process, the best results have actually been obtained with our \ac{ANN} over the \ac{BDT}, method therefore chosen for the rest of this analysis.%, considering as input a relatively simple set of variables, all described in Section~\ref{section:Variables}. By order of importance, we therefore decided to use as input the stransverse mass $M_{T2}^{ll}$, the angle $\Delta \Phi(E_{T}^{\text{miss}}, ll)$, the pf\ac{MET}, $m_{bl}^t$, one of the two spin correlated variables $\xi = \cos(\theta_i) \cos(\theta_j)$ and the number of b-jets observed. The extensive explanation behind the choice of all these parameters can be found in Appendix~\ref{appendix:Optimization}.
+%After a trial and error process, the best results have actually been obtained with our \ac{BDT} over the \ac{ANN}, method therefore chosen for the rest of this analysis.%, considering as input a relatively simple set of variables, all described in Section~\ref{section:Variables}. By order of importance, we therefore decided to use as input the stransverse mass $M_{T2}^{ll}$, the angle $\Delta \Phi(E_{T}^{\text{miss}}, ll)$, the pf\ac{MET}, $m_{bl}^t$, one of the two spin correlated variables $\xi = \cos(\theta_i) \cos(\theta_j)$ and the number of b-jets observed. The extensive explanation behind the choice of all these parameters can be found in Appendix~\ref{appendix:Optimization}.
 
 \subsubsection{Training process}
 
-One training has been done for each year and each mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{BDT} and \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point. 
+One training has been done for each year and each mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{BDT} and \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point.
 
-For the training process itself, the two signals for a given mass point have been mixed together and trained against the backgrounds which tend to look more like our signals (typically, the \ac{SM} $t \bar t$ and single top), in the pre-selection region defined in Section~\ref{section:SR}. Two different trainings were actually performed for each mass point:
+The two signals for a given mass point have been mixed together and trained against the backgrounds which tend to look more like our signals (typically, the \ac{SM} $t \bar t$ and single top), in the pre-selection region defined in Section~\ref{section:SR}. Two different trainings were actually performed for each mass point:
 \begin{itemize}
 \item One targeting the $t/\bar t$+DM signal, by considering events having 1 or 2 jets and 1 b-jet;
 \item And another one targeting the $t \bar t$+DM signal, by considering this time only the events having more than 2 jets, or exactly 2 jets and more than 1 b-jet.
 \end{itemize}
 
-The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyper-parameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2}, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar} and the \ac{ROC} curves showing the background rejection achievable for a given selected signal efficiency in Figures~\ref{fig:ROC_ST} to~\ref{fig:ROC2}. 
-
-These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a better signal efficiency for a given background rejection value for all the mass points and mediators considered, which is what we are looking for. We therefore decided to use this method for the actual analysis instead of the \ac{ANN}.
+The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2} for each model, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar} and the \ac{ROC} curves showing the background rejection achievable for a given selected signal efficiency in Figures~\ref{fig:ROC_ST} to~\ref{fig:ROC2}. 
 
 \begin{table}
 \begin{center}
@@ -3874,7 +3879,7 @@ These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a
 \includegraphics[width=6.5cm, height=5cm]{figs/ROC_pseudo500_ST.png}
 \end{minipage} \hfill
 }
-\caption{Signal versus background \ac{ROC} curves for the @c{BDT} and the \ac{ANN} obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators, in the $t/\bar t$+DM training region.}
+\caption{Signal versus background \ac{ROC} curves for the \ac{BDT} and the \ac{ANN} obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators, in the $t/\bar t$+DM training region.}
 \label{fig:ROC_ST}
 \end{figure}
 
@@ -3897,7 +3902,7 @@ These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a
 \includegraphics[width=6.5cm, height=5cm]{figs/ROC_pseudo500_TTbar.png}
 \end{minipage} \hfill
 }
-\caption{Signal versus background \ac{ROC} curves obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators, in the $t \bar t$+DM training region.}
+\caption{Signal versus background \ac{ROC} curves for the \ac{BDT} and the \ac{ANN} obtained after the training performed, considering 100 (on the left) and 500 GeV (on the right) mediators, in the $t \bar t$+DM training region.}
 \label{fig:ROC_TTbar}
 \end{figure}
 
@@ -3919,11 +3924,13 @@ These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a
 \includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_pseudo_TTbar.png}
 \end{minipage} \hfill
 }
-\caption{Signal versus background \ac{ROC} curves obtained after the training performed with the \ac{ANN}, considering all the scalar (on the left) and pseudoscalar (on the right) mediators available, in both training regions.}
+\caption{Signal versus background \ac{ROC} curves obtained after the training performed with the \ac{BDT}, considering all the scalar (on the left) and pseudoscalar (on the right) mediators available, in both training regions.}
 \label{fig:ROC2}
 \end{figure}
 
-Finally, the output distributions obtained for the \ac{BDT} has been obtained, as shown in Figures~\ref{fig:overtrainingST} and Figures~\ref{fig:overtrainingTTbar} for both training regions. All these results have been obtained by splitting the dataset available as 50\% for the training process and the remaining 50\% to test the classifier obtained, giving us between 100.000 and 200.000 training events for each mass point.
+These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a better signal efficiency for a given background rejection value for all the mass points and mediators considered, which is what we are looking for. We therefore decided to use this method for the actual analysis instead of the \ac{ANN}.
+
+Finally, the output distributions obtained for the \ac{BDT} have been obtained, as shown in Figures~\ref{fig:overtrainingST} and Figures~\ref{fig:overtrainingTTbar} for both training regions. All these results have been obtained by splitting the dataset available as 70\% for the training process and the remaining 30\% to test the classifier obtained, giving us between 50.000 and 100.000 training events for each mass point.
 
 \begin{figure}[htbp]
 \centering
@@ -4074,13 +4081,13 @@ Once the weights were applied to our trees, we have been able to obtain the actu
 
 \subsubsection{Shape analysis} \label{sec:Shape}
 
-A general shape analysis has been performed in order to extract the signals of interest from the shape of the output of the \ac{MVA}. In order to perform such an analysis, the binning of this distribution was first of all optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events. Then, once the binning of the \ac{BDT} distributions in the signal region has been defined, a maximum likelihood fit has been simply performed to extract the signal.
+A general shape analysis has been performed in order to extract the signals of interest from the shape of the output of the \ac{MVA}. In order to perform such an analysis, the binning of this distribution was first of all optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events. Then, once the binning of the \ac{BDT} distributions in the signal region has been defined, a maximum likelihood fit has been simply performed in order to extract the signal.
 
-\color{red}FIXME: complete this once strategy defined \color{black}
+%\color{red}FIXME: complete this once strategy defined \color{black}
 
 \section{Signal regions} \label{section:SR}
 
-Several different signal regions have been defined, by cutting on the output variable obtained from each \ac{MVA} training performed (i.e., for each combination of data taking period, $m_\chi$ and mediator spin). Some of the distributions obtained in a few signal regions are shown in Figures~\ref{fig:SR1} to~\ref{fig:SR4}.
+Several different signal regions have been defined, by cutting on the output variable obtained from each \ac{MVA} training performed (i.e., for each combination of data taking period, $m_\chi$ and mediator spin) on top of the pre-selection region previously defined. Some of the distributions obtained in a few signal regions are shown in Figures~\ref{fig:SR1} to~\ref{fig:SR4}.
 
 It is important to note at this point that a strict \textbf{blinding policy} has been followed for this search, in order to avoid optimizing the analysis based on what has already been seen. At first, the data available to be plotted in the following signal regions has therefore been limited to 1fb$^{-1}$ for each year, before the unblinding, allowing us to look at the whole Run II dataset. %Additionally, only the statistical errors are represented in all the plots, unless stated otherwise.
 
@@ -4528,7 +4535,7 @@ The dilepton decay of the top quarks produced is obviously more important in thi
 
 \subsection{Top control region} \label{section:TopCR}
 
-Both these backgrounds are estimated directly from \ac{MC} and checked in a dedicated control region, defined from this pre-selection region, but selecting only events having a stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions. Some of the distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
+Both these backgrounds are estimated directly from \ac{MC} and checked in a dedicated control region, defined from the inclusive control region, but selecting only events having a \ac{MET} $> 50$ GeV and stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions by definition. Some of the distributions obtained in this region are shown in Figure~\ref{fig:TopCR}.
 
 \begin{figure}[htbp]
 \centering
@@ -4667,7 +4674,7 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
 
-At the end of the day, tTregions, but by simply reversing the Z-veto requirement and relaxing the \ac{MET} cut down to 20 GeV, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
+At the end of the day, this region is defined from the pre-selection region, but by simply reversing the Z-veto requirement and relaxing the \ac{MET} cut down to 30 GeV, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -5145,7 +5152,7 @@ The non-prompt contamination of this particular analysis however is expected to 
 
 \section{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WWG) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
+Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WW$\gamma$) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
 
 \begin{figure}[htbp]
 \centering
@@ -5385,7 +5392,7 @@ Additional uncertainties related to the detector or to the experimental conditio
 \item \textbf{\ac{JES} and \ac{JER}}. Single nuisance parameter applied to the $p_T$ of each jet, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}. These uncertainties are expected to be below 3\% across the phase space considered by most of the analyses ($p_T > 30$ GeV, $|\eta| < 5.0$) and even below 1\% in the barrel region ($|\eta| < 1.3$) \cite{JESUncertainty}.
 \item \textbf{Unclustered energy}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
 \item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}.
-%\item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
+\item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
 \item \textbf{\ac{ECAL} prefiring}. An uncertainty accounting for the prefiring of the \ac{ECAL} in 2016 and 2017 is also taken into account, even though its impact is expected to be quite small overall.
 \end{itemize}
 
@@ -5413,7 +5420,7 @@ Finally, this category of systematic uncertainties is related directly to the th
 
 The impact plots, showing the impact the each systematic has on the final upper limits obtained, are shown in Appendix~\ref{appendix:Impact}.
 
-\color{red} FIXME: check all systematics, which ones we actually applied and add impact plots \color{black}
+%\color{red} FIXME: check all systematics, which ones we actually applied and add impact plots \color{black}
 
 \section{Results} \label{section:Results}
 
@@ -5472,7 +5479,7 @@ By looking at all these plots, we can draw several different observations and co
 
 At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, more than doubling the previous results obtained in 2016 for the $t \bar t$+DM model alone.
 
-\color{red} FIXME: check conclusions, talk about observed limits \color{black}
+%\color{red} FIXME: check conclusions, talk about observed limits \color{black}
 
 
 
@@ -5510,7 +5517,7 @@ In conclusion, a search for the production of dark matter in association with on
 \item Once this was done, a full top reconstruction method was developed in order to reconstruct in the best was possible the kinematic of the $t \bar t \rightarrow 2l$ process. This method allowed us for example to get the information related to each top quark separately, and to define new discriminating variables, such as as estimation of the mediator \bm $p_T$.
 \item All the signals samples were then produced, first privately and then centrally, considering all the different models that might be of interest for this analysis.
 \item The background were then carefully studied. Even though most of the backgrounds are estimated directly from \ac{MC}, some of them did require a bit extra work, such as the \ac{DY} process, for which a semi data-driven method was used for its estimation. The predictions made for most of the major backgrounds of the analysis were then checked in dedicated control regions.
-\item Several discriminating variables available to us were then explored, and a MVA method was set up in order to combine the discriminating power of all these variables into a single output, used to perform a general shape analysis. The optimization of all the hyper-parameters was thoroughly done, as we ended up choosing an \ac{ANN} to perform the actual analysis, with a simple set of 6 different input variables.
+\item Several discriminating variables available to us were then explored, and a MVA method was set up in order to combine the discriminating power of all these variables into a single output, used to perform a general shape analysis. The optimization of all the hyperparameters was thoroughly done, as we ended up choosing an \ac{ANN} to perform the actual analysis, with a simple set of 6 different input variables.
 \item Finally, exclusion limits on the signal strength at the 95\% confidence level were set for the different models considered.
 \end{itemize}
 
@@ -5646,11 +5653,11 @@ En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarol
 
 \section{Resultados obtenidos}
 
-El resultado m\'{a}s importante de este trabajo consiste en pintar los limites de exclusi\'{o}n de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res, para las dos se\~{n}ales y para los 3 a\~{n}os de toma de datos por separado, y luego combinando todos estos par\'{a}metros. Esto se hace considerando diferentes fuentes de errores estad\'{i}sticos y sistem\'{a}ticos, ambos te\'{o}ricos (tal y como el sistem\'{a}tico relacionado con la estimaci\'{o}n de las \ac{PDF} de los diferentes procesos) y experimentales (tal y como el error asociado a la medida de la´ luminosidad colectada por el detector \ac{CMS}, y el error asociado al uso de \textit{triggers} para colectar los datos).
+El resultado m\'{a}s importante de este trabajo consiste en pintar los limites de exclusi\'{o}n de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res, para las dos se\~{n}ales y para los 3 a\~{n}os de toma de datos por separado, y luego combinando todos estos par\'{a}metros. Esto se hace considerando diferentes fuentes de errores estad\'{i}sticos y sistem\'{a}ticos, ambos te\'{o}ricos (tal y como el sistem\'{a}tico relacionado con la estimaci\'{o}n de las \ac{PDF} de los diferentes procesos) y experimentales (tal y como el error asociado a la medida de la luminosidad colectada por el detector \ac{CMS}, y el error asociado al uso de \textit{triggers} para colectar los datos).
 
-En este sentido, hemos calculado los limites de exclusi\'{o}n observados y esperados de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res al nivel de confianza del 95\%, considerando part\'{i}culas de materia oscura que tengan $m_\chi = 1$ GeV, para cada tipo de mediator y para los tres a\~{n}os por separado. Se combinaron despu\'{e}s estos limites para obtener los limites de exclusi\'{o}n finales que se presentan en la figura~\ref{fig:limits}.
+En este sentido, hemos calculado los limites de exclusi\'{o}n observados y esperados de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res al nivel de confianza del 95\%, considerando part\'{i}culas de materia oscura que tengan $m_\chi = 1$ GeV y couplings $g = 1g$, para cada tipo de mediator y para los tres a\~{n}os por separado. Se combinaron despu\'{e}s estos limites para obtener los limites de exclusi\'{o}n finales que se presentan en la figura~\ref{fig:limits}. En esta figura, vemos que hemos logrado con este an\'{a}lisis excluir los modelos de producci\'{o}n de materia oscura hasta XXX GeV y XXX GeV (XXX y XXX observado) considerando mediadores de tipo scalar y pseudoscalar respectivamente.
 
-\color{red} FIXME: add conclusion once available \color{black}
+%\color{red} FIXME: add conclusion once available \color{black}
 
 
 
@@ -6078,13 +6085,13 @@ VZ & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 
 \chapter{\ac{MVA} optimization} \label{appendix:Optimization}
 
-The study of the different hyper-parameters defining both the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyper-parameters that can have an impact on the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
+The study of the different hyperparameters defining both the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that can have an impact on the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
 
-The global strategy used for the actual optimization process is quite straightforward: even though some of the hyper-parameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. Finally, the training optimization has been performed using the data collected in 2018 and considering the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. %Finally, a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
+The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. Finally, the training optimization has been performed using the data collected in 2018 and considering the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. %Finally, a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
 \subsubsection{Boosted Decisions Trees}
 
-Starting with the \ac{BDT} of the analysis, the first obvious hyper-parameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
+Starting with the \ac{BDT} of the analysis, the first obvious hyperparameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6258,11 +6265,11 @@ The $n_{\text{cut}}$ parameter, corresponding to the granularity used when scann
 \label{fig:optShrinkage}
 \end{figure}
 
-For most of the hyper-parameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyper-parameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
+For most of the hyperparameters described so far, we usually expect that increasing (or decreasing) their values will result in better discrimination results but unfortunately, this usually also increases the time needed to train the \ac{BDT} so a compromise had to be found for each one of the hyperparameters described here, settling at the end for the set of parameters described in Table~\ref{table:BDT}.
 
 \subsubsection{Analysis Neural Network}
 
-The same process has then been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different number of hidden layers and different number of neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results obtained for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 50\%/50\% test/training splitting used, which gave us around 200.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 3 hidden layers made out of 80/80/40 neurons.
+The same process has then been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different numbers of hidden layers and  neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results obtained for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 30\%/70\% test/training splitting used, which gave us around 60.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 4 hidden layers made out of 20/15/15/10 neurons.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6314,7 +6321,7 @@ The same process has then been repeated by considering this time the \ac{ANN} of
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5.7cm]{figs/ANN_arch_TTbar.png}
 \end{minipage} \hfill
-\caption{Background rejection achieved for the \ac{BDT} by trying out different architectures, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\caption{Background rejection achieved for the \ac{ANN} by trying out different architectures, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optLayers}
 \end{figure}
 
@@ -6358,7 +6365,7 @@ After this first step of optimization, we kept the architecture which seemed to 
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5.7cm]{figs/ANN_LR_TTbar.png}
 \end{minipage} \hfill
-\caption{Background rejection achieved for the \ac{BDT} by trying out different learning rates, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\caption{Background rejection achieved for the \ac{ANN} by trying out different learning rates, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optLearning}
 \end{figure}
 
@@ -6402,7 +6409,7 @@ The last parameter that has been optimized in this case is the batch size, allow
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=5.7cm]{figs/ANN_batch_TTbar.png}
 \end{minipage} \hfill
-\caption{Background rejection achieved for the \ac{BDT} by trying out different batch sizes, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\caption{Background rejection achieved for the \ac{ANN} by trying out different batch sizes, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
 \label{fig:optBatch}
 \end{figure}
 
@@ -6606,6 +6613,8 @@ The \ac{ROC} curves for each set of input variables have been obtained and plott
 
 Given the large number of systematic uncertainties considered in this analysis, as described in Section~\ref{section:Systematics}, it is usually useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they allow us to study the quality of the systematic estimation, expressed as the difference between the maximum likelihood estimator and our own estimation, along with the importance of every systematic of the analysis, according to the effect each systematic has on the signal strength $\mu$, by rerunning the fit performed with each nuisance parameters fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
 
+Mathematically, the impact of a nuisance parameter $\theta$ on a parameter of interest $\mu$ (in this, the signal strength) is defined as the shift $\Delta \mu$ this is induced by bringing $\theta$ to its +1$\sigma$ and -1$\sigma$ values.
+
 The impact plots obtained for different mediators are shown in Figures~\ref{fig:impactsScalar2016} to~\ref{fig:impactsPseudo2018}, for several data taking periods, mediator categories and mass points.
 
 \begin{figure}[htbp]
@@ -6614,7 +6623,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_Blinded2016_ttDM_scalar_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_ttDM_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 }
@@ -6622,7 +6631,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_Blinded2016_ttDM_scalar_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_ttDM_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6636,7 +6645,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_Blinded2016_ttDM_pseudo_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_ttDM_pseudo_100.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6644,7 +6653,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_Blinded2016_ttDM_pseudo_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_ttDM_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6658,7 +6667,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_Blinded2017_ttDM_scalar_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_2017_ttDM_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 }
@@ -6666,7 +6675,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_Blinded2017_ttDM_scalar_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_2017_ttDM_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6680,7 +6689,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_Blinded2017_ttDM_pseudo_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_2017_ttDM_pseudo_100.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6688,7 +6697,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_Blinded2017_ttDM_pseudo_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2017/impacts_2017_ttDM_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6702,7 +6711,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_Blinded2018_ttDM_scalar_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_2018_ttDM_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 }
@@ -6710,7 +6719,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_Blinded2018_ttDM_scalar_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_2018_ttDM_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6724,7 +6733,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
 {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_Blinded2018_ttDM_pseudo_100.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_2018_ttDM_pseudo_100.pdf}
 \end{center}
 \end{minipage} \hfill
 }
@@ -6732,7 +6741,7 @@ The impact plots obtained for different mediators are shown in Figures~\ref{fig:
  {
 \begin{minipage}[b]{1.0\textwidth}
 \begin{center}
-\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_Blinded2018_ttDM_pseudo_500.pdf}
+\includegraphics[width=12cm, height=10cm]{figs/2018/impacts_2018_ttDM_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 }
