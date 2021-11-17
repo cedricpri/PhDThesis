@@ -168,7 +168,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, October 2021}
+	{\Large Santander, December 2021}
 	\vfill
 
 \end{titlepage}
@@ -203,7 +203,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Octubre 2021}
+	{\Large Santander, Diciembre 2021}
 	\vfill
 
 \end{titlepage}
@@ -225,9 +225,9 @@
 
 A search for dark matter particles produced in association with one or two top quarks is presented in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. This is the first time that such a search combining the $t/\bar t$ and $t \bar t$+DM models is performed in the dilepton final state.
 
-This search relies on the implementation of advanced Machine Learning techniques, allowing us to isolate the different signals studied with respect to the backgrounds, mainly estimated from Monte-Carlo and mostly made out of Standard Model $t \bar t$ and single top processes, and whose discriminating power was combined into a single output variable used to perform a shape analysis thanks to the definition and previous optimization of a neural network.
+This search relies on the implementation of advanced analytic and Machine Learning techniques, allowing us to perform an efficient reconstruction of the $t \bar t$ system and to isolate the different signals studied with respect to the backgrounds, mainly estimated from Monte-Carlo and mostly made out of Standard Model $t \bar t$ and single top processes, and whose discriminating power was combined into a single output variable used to perform a shape analysis thanks to the definition and previous optimization of a neural network.
 
-Upper limits on the production cross section of different signal models, both scalar and pseudoscalar, were then extracted. At the end of the day, no evidence for the existence of dark matter has been found, but upper limits on the signal strength have been obtained by considering different production models and channels. This analysis allowed us in this sense to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, improving by a factor of more than 2 the previous results obtained in 2016 for the $t \bar t$+DM model alone.
+Upper limits on the production cross section of different signal models, both scalar and pseudoscalar, were then extracted. At the end of the day, no evidence for the existence of dark matter has been found, but upper limits on the signal strength have been obtained by considering different production models and channels. This analysis allowed us in this sense to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 160 (XXX) and 145 (XXX) GeV respectively. Scalar exclusion limits were therefore improved by a factor of 2 with respect to the previous results obtained in 2016 for the $t \bar t$+DM model alone, while a pseudoscalar exclusion was achieved for the first time considering the dilepton final state only.
 
 \chapter*{Acknowledgments}
 
@@ -237,11 +237,11 @@ I would also like to personally thank J\'{o}natan Piedra for supervising this th
 
 Pablo Mart\'{i}nez, I am grateful for the great work you did as the co-director of this thesis, as I am sure this work would not have been possible without your help and dedication to this analysis. You also became a friend over the years and I will never be able to thank you enough for your help, especially in this last year which has undoubtedly been quite challenging for me. 
 
-I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah, Nicole, Alexander and Dominic. Thank you as well to all the people involved in the development of the Latino framework, which quickly became a great tool to work with. I am also deeply grateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the Wednesday mornings special each week. 
+I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah and Victor, both doing an amazing job on the hadronic and semi-leptonic final states, while Nicole, Alexander Danyer and Dominic were a great help at al times in the dilepton final state. Thank you as well to all the people involved in the development of the Latino framework, which quickly became a great tool to work with. I am also deeply grateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the Wednesday mornings a highlight of each week. 
 
 Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
-Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well, as I would never have started this thesis if I hadn't met you. Finally, I would like to especially thank Aline for her patience and incredible support over the past year, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one on your side, as I am sure many great things are waiting for us in the future.
+Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well, as I would never have started this thesis if I had not met you. Finally, I would like to especially thank Aline for her patience and incredible support over the past year, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one by your side, as I am sure many great things are waiting for us in the future.
 
 \newpage
 \pagestyle{empty}
@@ -3176,25 +3176,25 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 \includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 pre-selection region]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in our pre-selection region.}
@@ -3205,11 +3205,11 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 
 \section{Signal extraction} \label{section:Discrimination}
 
-In this Section, a description regarding the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+A description regarding the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
 
 \subsection{Discriminating variables} \label{section:Variables}
 
-Several variables can be used in order to separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power high enough have actually been used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, as described in Section~\ref{section:NN}. 
+Several variables can be used in order to separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power high enough have actually been used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, using methods described in Section~\ref{section:NN}. 
 
 It is also important to note that some of these variables rely on the information obtained from the top reconstruction performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction. Note that such non-physical negative values were simply removed from the following distributions.
 
@@ -3250,10 +3250,10 @@ m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
 \end{minipage} \hfill
 \caption{$m_{bl}^t$ (on the left) and number of b-jets (on the right) distributions in the 2018 pre-selection region.}
 \label{fig:SRdiscmblt}
@@ -3272,7 +3272,7 @@ This is one of the most important variables of this analysis, expected to induce
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_METcorrected_pt.png}
 \end{minipage}\hfill
 \caption{pf\ac{MET} distribution obtained in the 2018 pre-selection region.}
 \label{fig:SRdiscMET}
@@ -3301,10 +3301,10 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 %\end{minipage} \hfill
 %\caption{$M_{T2}^{ll}$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdiscMT2}
@@ -3313,10 +3313,10 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2ll.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2bl.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2bl.png}
 \end{minipage}\hfill
 \caption{$M_{T2}^{ll}$ (on the left) and $M_{T2}(bl, bl)$ (on the right) distributions obtained in the 2018 pre-selection region.}
 \label{fig:SRdiscMT2}
@@ -3325,10 +3325,10 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2bl.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mt2bl.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2bl.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2bl.png}
 %\end{minipage} \hfill
 %\caption{$M_{T2}(bl, bl)$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdiscMT2bl}
@@ -3343,10 +3343,10 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.47\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
 \end{minipage}\hfill
 \caption{Dark $p_T$ (on the left) and overlapping factor $R$ (on the right) distributions obtained in the 2018 pre-selection region.}
 \label{fig:SRdisc1}
@@ -3356,14 +3356,14 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 %\centering
 %\subfigure[Dark $p_T$ variable] {
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
 %\end{minipage} \hfill
 %\begin{minipage}[b]{1.0\textwidth}
 %\begin{center}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dark_pt.png}
 %\end{center}
 %\end{minipage} \hfill
 %}
@@ -3371,14 +3371,14 @@ On one hand, the dark $p_T$ is for example expected to take slightly higher valu
 %\subfigure[Overlapping factor $R$ variable] {
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
 %\end{minipage} \hfill
 %\begin{minipage}[b]{1.0\textwidth}
 %\begin{center}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_overlapping_factor.png}
 %\end{center}
 %\end{minipage} \hfill
 %}
@@ -3395,10 +3395,10 @@ A few additional variables which are expected to introduce some discrimination b
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
 %\end{minipage} \hfill
 %\caption{$m_{bl}^t$ (on the left) and number of b-jets (on the right) distributions in the 2018 pre-selection region.}
 %\label{fig:SRdiscmblt}
@@ -3407,10 +3407,10 @@ A few additional variables which are expected to introduce some discrimination b
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_nbjet.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_nbjet.png}
 %\end{minipage} \hfill
 %\caption{Number of b-jets distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdiscnbjet}
@@ -3443,10 +3443,10 @@ A few additional variables which are expected to introduce some discrimination b
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dphillmet.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dphillmet.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_dphillmet.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_dphillmet.png}
 %\end{minipage} \hfill
 %\caption{$\Delta \Phi(E_{T}^{\text{miss}}, ll)$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdisc4}
@@ -3483,10 +3483,10 @@ A few additional variables which are expected to introduce some discrimination b
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_reco_weight.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_reco_weight.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_reco_weight.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_reco_weight.png}
 %\end{minipage} \hfill
 %\caption{Kinematic reconstruction weight $w$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdisc5}
@@ -3498,19 +3498,19 @@ A few additional variables which are expected to introduce some discrimination b
 %\centering
 %\subfigure[$r2l$ variable] {
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_r2l.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_r2l.png}
 %\end{minipage} \hfill
 %}
 %
 %\subfigure[$r2l4j$ variable] {
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l4j.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l4j.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_r2l4j.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_r2l4j.png}
 %\end{minipage} \hfill
 %}
 %\caption{$r2l$ (on the top) and $r2l4j$ (on the bottom) variables considered for the signal discrimination process in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
@@ -3522,10 +3522,10 @@ A few additional variables which are expected to introduce some discrimination b
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_massT.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_massT.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_massT.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_massT.png}
 %\end{minipage} \hfill
 %\caption{Scalar sum of the transverse energy of the particles produced in the events distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdisc6}
@@ -3538,10 +3538,10 @@ Several variables belonging to this category have been considered, such as $\xi 
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_costhetall.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_costhetall.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_costhetall.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_costhetall.png}
 %\end{minipage} \hfill
 %\caption{$\xi = \cos(\theta_l) \cos(\theta_{\bar l})$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdisc3}
@@ -3550,10 +3550,10 @@ Several variables belonging to this category have been considered, such as $\xi 
 %\begin{figure}[htbp]
 %\centering
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_cosphill.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_cosphill.png}
 %\end{minipage}\hfill
 %\begin{minipage}[b]{.48\textwidth}
-%\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_cosphill.png}
+%\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_cosphill.png}
 %\end{minipage} \hfill
 %\caption{$c_{\text{hel}}$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdisc3bis}
@@ -3631,24 +3631,24 @@ The distributions corresponding to these variables in the 2018 pre-selection reg
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dphillmet.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_dphillmet.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_reco_weight.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_reco_weight.png}
 \end{minipage} \hfill
 
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l4j.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_r2l4j.png}
 \end{minipage} \hfill
 
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_massT.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_massT.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_costhetall.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_costhetall.png}
 \end{minipage} \hfill
 \caption{Some additional discriminating variables represented in the 2018 pre-selection region.}
 \label{fig:otherVar}
@@ -4017,28 +4017,28 @@ Once the weights were applied to our trees, we have been able to obtain the actu
 \centering
 \subfigure[2016 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
 \end{minipage} \hfill
 }
 
 \subfigure[2017 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
 \end{minipage} \hfill
 }
 
 \subfigure[2018 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_output_scalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_output_scalar500_customBins.png}
 \end{minipage} \hfill
 }
 \caption{\ac{BDT} output distribution used in the shape analysis performed later on, for the scalar 100 GeV (on the left) and 500 GeV (on the right) training.}
@@ -4049,28 +4049,28 @@ Once the weights were applied to our trees, we have been able to obtain the actu
 \centering
 \subfigure[2016 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
 \end{minipage} \hfill
 }
 
 \subfigure[2017 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
 \end{minipage} \hfill
 }
 
 \subfigure[2018 pre-selection distributions] {
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_output_pseudoscalar100_customBins.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.49\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_output_pseudoscalar500_customBins.png}
 \end{minipage} \hfill
 }
 \caption{\ac{BDT} output distribution used in the shape analysis performed later on, for the pseudoscalar 100 GeV (on the left) and 500 GeV (on the right) training.}
@@ -4098,28 +4098,28 @@ It is important to note at this point that a strict \textbf{blinding policy} has
 \subfigure[2016 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 100 GeV scalar training.}
@@ -4131,28 +4131,28 @@ It is important to note at this point that a strict \textbf{blinding policy} has
 \subfigure[2016 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 scalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-scalar500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV scalar training.}
@@ -4164,28 +4164,28 @@ It is important to note at this point that a strict \textbf{blinding policy} has
 \subfigure[2016 pseudoscalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 pseudoscalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 pseudoscalar 100 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo100/log_cratio_topCR_ll_BDT_ttDM100_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region defined obtained from the 100 GeV pseudoscalar training.}
@@ -4197,28 +4197,28 @@ It is important to note at this point that a strict \textbf{blinding policy} has
 \subfigure[2016 pseudoscalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2016/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2016/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2017 pseudoscalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2017/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2017/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \subfigure[2018 pseudoscalar 500 GeV \ac{SR}]
  {
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_METcorrected_pt.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/GroupedBkg-SmearSRBlinded-ttDM-pseudo500/log_cratio_topCR_ll_BDT_ttDM500_mt2ll.png}
 \end{minipage} \hfill
 }
 \caption{Two different variables (pf\ac{MET}, on the left, and the stransverse mass $M_{T2}^{ll}$, on the right) represented in the signal region obtained from the 500 GeV pseudoscalar training.}
@@ -4375,7 +4375,7 @@ Different Feynman diagrams contribute to this process at \ac{LO} in a hadron col
 
 \subsection{Single top} \label{subsection:singleTop}
 
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
+Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8, considering the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
 
 \begin{figure}[htbp]
 \centering
@@ -4672,7 +4672,7 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 \subsection{\acs{DY} control region} \label{section:DYCR}
 
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
+Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. %The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
 
 At the end of the day, this region is defined from the pre-selection region, but by simply reversing the Z-veto requirement and relaxing the \ac{MET} cut down to 30 GeV, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
 
@@ -5389,7 +5389,7 @@ Additional uncertainties related to the detector or to the experimental conditio
 %\item In particular, for \textbf{electrons}, efficiencies are computed using a Tag and Probe method as well, involving background and signal fits, for which different fitting functions have been considered for the computation of the systematics. The tag selection has also been updated, mainly with different $p_T$ cuts, studying the impact such change has on the final efficiencies. Uncertainties from such different sources have been added in quadrature to get the final systematic associated to electrons.
 %\item Then, four different parameters have been considered and updated with respect to the nominal Tag and Probe parameters to study their impact on the final \textbf{muon} efficiencies: the isolation of the tag muon, the signal fitting function used, the number of mass bins where the fit is done and finally, the Z-window considered for the calculation. 
 %\end{itemize}
-\item \textbf{\ac{JES} and \ac{JER}}. Single nuisance parameter applied to the $p_T$ of each jet, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}. These uncertainties are expected to be below 3\% across the phase space considered by most of the analyses ($p_T > 30$ GeV, $|\eta| < 5.0$) and even below 1\% in the barrel region ($|\eta| < 1.3$) \cite{JESUncertainty}.
+\item \textbf{\ac{JES}}. Single nuisance parameter applied to the $p_T$ of each jet, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}. These uncertainties are expected to be below 3\% across the phase space considered by most of the analyses ($p_T > 30$ GeV, $|\eta| < 5.0$) and even below 1\% in the barrel region ($|\eta| < 1.3$) \cite{JESUncertainty}.
 \item \textbf{Unclustered energy}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
 \item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}.
 \item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
@@ -5403,7 +5403,7 @@ The systematic associated to the backgrounds normalization is typically one of t
 \begin{itemize}
 %\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
 \item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodeling of this particular background, especially at high pf\ac{MET} values, a 20\% systematic is associated to this process.
-\item \textbf{Minor backgrounds}. An uncertainty of 20\% has been assigned to the normalization of all the minor backgrounds of the analysis (such as WW, WZ, ZZ and VVV).
+\item \textbf{Minor backgrounds}. An uncertainty of 20\% has been assigned to the normalization of all the minor backgrounds of the analysis (such as the di- and tribosons production).
 %\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method previously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} observed in a same-sign control region enriched in this background.%in the same-sign control region defined in Section~\ref{section:SSCR}.
 \end{itemize}
 
@@ -5429,7 +5429,7 @@ Expected and observed upper limits on the different signals production cross-sec
 By looking at all these plots, we can draw several different observations and conclusions:
 \begin{itemize}
 \item First, these plots allow us to see that the \textbf{inclusion of the $t/\bar t$+DM signal is extremely important}, especially at high scalar mediator masses, where the limits obtained are comparable or even better than the ones obtained by considering the $t \bar t$+DM signal only.
-\item We can also observe that the limits obtained in 2018 are slightly better than the other two data taking periods. This is an expected effect as expected limits are roughly expected to decrease with the square root of the luminosity, slightly higher in 2018.
+\item We can also observe that the limits obtained in 2018 are slightly better than the other two data taking periods. This is an expected effect as expected limits are roughly expected to decrease with the square root of the luminosity, slightly higher in 2018. The difference is not	noticeable for all the mass points though, as the log scale can hide this small difference.
 \item Finally, we can observe that low masses mediators are easier to exclude than higher masses simply because, even though they feature a worse global signal/background discrimination, their cross-section is also much higher. In this sense, pseudoscalar exclusion limits are also typically slightly worse than the scalar ones, mainly because of the difference in cross-section between such processes.
 \end{itemize}
 
@@ -5477,7 +5477,7 @@ By looking at all these plots, we can draw several different observations and co
 \label{fig:limitsPerYear}
 \end{figure}
 
-At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, more than doubling the previous results obtained in 2016 for the $t \bar t$+DM model alone.
+At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 160 (XXX) and 145 (XXX) GeV respectively. Even though similar results than the ones obtained in 2016 (as shown in Figure~\ref{fig:Juan}) are found for the 2016 $t \bar t$+DM model alone, the inclusion of more statistics and of the new $t/ \bar t$+DM production model allows us to obtain much better results this time around.
 
 %\color{red} FIXME: check conclusions, talk about observed limits \color{black}
 
