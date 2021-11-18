@@ -49,6 +49,7 @@
 \usepackage{subfiles}
 \usepackage{tikz}
 \usepackage{bm}
+\usepackage{ragged2e}
 \usepackage[compat=1.1.0]{tikz-feynman}
 \usepackage{lscape}
 \usepackage{etoolbox}
@@ -149,17 +150,24 @@
 \begin{titlepage}
 
 	\centering
-	\includegraphics[width=0.15\textwidth]{figs/image_UC.png}\par
-	{\scshape\LARGE Facultad de Ciencias \\ \vspace{-15pt} Universidad de Cantabria \par}
+	\vspace*{-1.4cm}
+	\begin{minipage}[t]{.29\textwidth}
+	\includegraphics[width=0.65\textwidth]{figs/image_UC.png}
+	\end{minipage}
+	\begin{minipage}[t]{.69\textwidth}
+	\begin{flushright}
+	\vspace*{-2.6cm}
+	{\scshape\LARGE Facultad de Ciencias \\ \vspace{-12pt} Universidad de Cantabria \par}
+	\end{flushright}
+	\end{minipage}	
 	
-	\vspace{0.8cm}
+	\vspace{2.5cm}
 	
 	%English title
-	\noindent\rule{15cm}{0.4pt}\par 
-	{\huge\bfseries Search for dark matter production in association with top quarks in the dilepton final state at $\sqrt{s} = $ 13 TeV\par \vspace{10pt}}
+	{\huge\bfseries Search for dark matter production in association with top quarks in the dilepton final state at $\sqrt{s} = $ 13 TeV\par \vspace{65pt}}
 	\noindent\rule{15cm}{0.4pt}\par 
 	
-	{\vspace{20pt} \Large A thesis submitted in fulfillment of the requirements for the \par \LARGE \textbf{Degree of Doctor of Philosophy} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
+	{\vspace{10pt} \Large A thesis submitted in fulfillment of the requirements for the \par \vspace{-6pt} \LARGE \textbf{Degree of Doctor of Philosophy} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
 	
 	\vspace{0.8cm}
 	{\Large Written by \\ \textbf{C\'{e}dric Prie\"{e}ls}\par}
@@ -167,8 +175,8 @@
 	{\Large Under the supervision of \\ \textbf{J\'{o}natan Piedra G\'{o}mez} \\
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
-	\vspace{2.6cm}
-	{\Large Santander, December 2021}
+	\vspace{2.7cm}
+	{\LARGE Santander, December 2021}
 	\vfill
 
 \end{titlepage}
@@ -184,17 +192,24 @@
 \begin{titlepage}
 
 	\centering
-	\includegraphics[width=0.15\textwidth]{figs/image_UC.png}\par
-	{\scshape\LARGE Facultad de Ciencias \\ \vspace{-15pt} Universidad de Cantabria \par}
+	\vspace*{-1.4cm}
+	\begin{minipage}[t]{.29\textwidth}
+	\includegraphics[width=0.65\textwidth]{figs/image_UC.png}
+	\end{minipage}
+	\begin{minipage}[t]{.69\textwidth}
+	\begin{flushright}
+	\vspace*{-2.6cm}
+	{\scshape\LARGE Facultad de Ciencias \\ \vspace{-12pt} Universidad de Cantabria \par}
+	\end{flushright}
+	\end{minipage}	
 	
-	\vspace{0.8cm}
+	\vspace{2.5cm}
 	
-	%English title
+	%Spanish title
+	{\huge\bfseries B\'{u}squeda de materia oscura en asociaci\'{o}n con quarks top en el estado final dilept\'{o}nico a $\sqrt{s} = $ 13 TeV\par \vspace{65pt}}
 	\noindent\rule{15cm}{0.4pt}\par 
-	{\huge\bfseries B\'{u}squeda de materia oscura en asociaci\'{o}n con quarks top en el estado final dilept\'{o}nico a $\sqrt{s} = $ 13 TeV\par \vspace{10pt}}
-	\noindent\rule{15cm}{0.4pt}\par 
 	
-	{\vspace{20pt} \Large Memoria para optar al \par \LARGE \textbf{Grado de doctor} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}
+	{\vspace{10pt} \Large Memoria para optar al \par \vspace{-6pt} \LARGE \textbf{Grado de doctor} \vspace{20pt} \par \noindent\rule{15cm}{0.4pt}}	
 	
 	\vspace{0.8cm}
 	{\Large Escrita por \\ \textbf{C\'{e}dric Prie\"{e}ls}\par}
@@ -203,7 +218,7 @@
 	\vspace{-10pt}
 	\textbf{Pablo Mart\'{i}nez Ru\'{i}z del \'{A}rbol}\\}
 	\vspace{2.6cm}
-	{\Large Santander, Diciembre 2021}
+	{\LARGE Santander, Diciembre 2021}
 	\vfill
 
 \end{titlepage}
@@ -239,7 +254,7 @@ Pablo Mart\'{i}nez, I am grateful for the great work you did as the co-director 
 
 I would also like to thank all the people who helped me at some point: Alicia, Roc\'{i}o, Pupi, Chus and Celso, always there to help me fight the administrative related issues I faced. This work would not have been possible either without the help of all the people involved in this particular analysis, such as Deborah and Victor, both doing an amazing job on the hadronic and semi-leptonic final states, while Nicole, Alexander Danyer and Dominic were a great help at al times in the dilepton final state. Thank you as well to all the people involved in the development of the Latino framework, which quickly became a great tool to work with. I am also deeply grateful to all the students and seniors from the University of Oviedo for all these interesting meetings, making the Wednesday mornings a highlight of each week. 
 
-Thank you also to my past and present (PhD) coworkers who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
+Thank you also to my past and present PhD colleagues who fought alongside me: Pedro, Nicol\`{o}, Celia, Clara, Andrea, Pablo, Barbara and Juan, you made the students office a better place to work in and I wish you all the best, even though I am sure you will all achieve great things in the future.
 
 Of course, I would especially like to thank my parents Philippe and Chantal, and my brothers Antoine and Lucas for giving me the opportunity to come and live in Spain for so long. I never could have reached this far without your presence and support that I felt daily, even more than a thousand kilometers away. Thank you to In\'{e}s as well, as I would never have started this thesis if I had not met you. Finally, I would like to especially thank Aline for her patience and incredible support over the past year, which helped me a lot and for which I am extremely grateful. Even though one chapter now ends, I cannot wait to get started on the next one by your side, as I am sure many great things are waiting for us in the future.
 
@@ -585,7 +600,7 @@ The bullet Cluster is particularly interesting in this context since it actually
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=14.2cm, height=5.8cm]{figs/BulletCluster.png}
-\caption{Mass distributions obtained by the Magellan telescope in the visible (on the left) and the Chandra telescope on the X-rays spectrum (on the right) telescopes of the Bullet Cluster. Being shifted compared to each other, this is yet another clear evidence for the existence of \ac{DM} \cite{BulletClusterSigma}.}
+\caption{Mass distributions obtained by the Magellan telescope in the visible (on the left) and the Chandra telescope on the X-rays spectrum (on the right) telescopes of the Bullet Cluster. Being shifted compared to each other, this is another clear evidence for the existence of \ac{DM} \cite{BulletClusterSigma}.}
 \label{figure:BulletCluster}
 \end{center}
 \end{figure}
@@ -5521,15 +5536,16 @@ In conclusion, a search for the production of dark matter in association with on
 \item Finally, exclusion limits on the signal strength at the 95\% confidence level were set for the different models considered.
 \end{itemize}
 
-At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 200 (XXX) GeV, improving by a factor of more than 2 the previous results obtained in 2016 for the $t \bar t$+DM model alone.
+At the end of the day, this analysis allowed us to achieve an expected (observed) exclusion for both scalar and pseudoscalar mediators up to 165 (XXX) and 140 (XXX) GeV respectively, improving by a factor of more than 2 the previous results obtained in 2016 for the $t \bar t$+DM model alone.
 
-\color{red} FIXME: Check this once analysis done \color{black}
+%\color{red} FIXME: Check this once analysis done \color{black}
 
 \section{Future prospects}
 
 This is the first time that such a search combining the $t/\bar t$ and $t \bar t$+DM models is performed in the dilepton final state. Even though large parts of the phase space have already been excluded, several additions could be considered to improve and complete the results obtained by this analysis:
 
 \begin{itemize}
+\item First of all, the combination of this work with the semi-leptonic and hadronic final states is expected to increase the exclusion limits by at least a factor of 2, given the large branching ratio and therefore sensitivity of such processes.
 \item The remaining models to be excluded correspond to high mediator masses, which feature a large signal/background discrimination on their own but which also have a low cross-section of production. The continuous operation of the \ac{LHC} is therefore expected to give more data to analyze, in turn decreasing the limits on the signal strength roughly as $\sqrt{\frac{1}{\mathcal{L}}}$. This channel will therefore benefit from the larger luminosity collected during the full Run III of the LHC data taking period, expected to start soon in 2021.
 \item A single set of couplings was studied in this work, but exploring other accessible regions of the space (by considering different $m_\chi$ values, even tough they are expected to have a minimal impact on the kinematics of the event, and mostly by changing the value of the couplings considered) would in this sense be an interesting addition to this particular analysis.
 \item One possible addition to this work would be to include a ttH to invisible reinterpretation of this search, given the relative similarities between this kind of model and the dark matter models considered here. 
@@ -5655,7 +5671,7 @@ En este trabajo en concreto, un m\'{e}todo multivariado avanzado ha sido desarol
 
 El resultado m\'{a}s importante de este trabajo consiste en pintar los limites de exclusi\'{o}n de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res, para las dos se\~{n}ales y para los 3 a\~{n}os de toma de datos por separado, y luego combinando todos estos par\'{a}metros. Esto se hace considerando diferentes fuentes de errores estad\'{i}sticos y sistem\'{a}ticos, ambos te\'{o}ricos (tal y como el sistem\'{a}tico relacionado con la estimaci\'{o}n de las \ac{PDF} de los diferentes procesos) y experimentales (tal y como el error asociado a la medida de la luminosidad colectada por el detector \ac{CMS}, y el error asociado al uso de \textit{triggers} para colectar los datos).
 
-En este sentido, hemos calculado los limites de exclusi\'{o}n observados y esperados de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res al nivel de confianza del 95\%, considerando part\'{i}culas de materia oscura que tengan $m_\chi = 1$ GeV y couplings $g = 1g$, para cada tipo de mediator y para los tres a\~{n}os por separado. Se combinaron despu\'{e}s estos limites para obtener los limites de exclusi\'{o}n finales que se presentan en la figura~\ref{fig:limits}. En esta figura, vemos que hemos logrado con este an\'{a}lisis excluir los modelos de producci\'{o}n de materia oscura hasta XXX GeV y XXX GeV (XXX y XXX observado) considerando mediadores de tipo scalar y pseudoscalar respectivamente.
+En este sentido, hemos calculado los limites de exclusi\'{o}n observados y esperados de la secci\'{o}n eficaz de producci\'{o}n de las se\~{n}ales de int\'{e}res al nivel de confianza del 95\%, considerando part\'{i}culas de materia oscura que tengan $m_\chi = 1$ GeV y couplings $g = 1g$, para cada tipo de mediator y para los tres a\~{n}os por separado. Se combinaron despu\'{e}s estos limites para obtener los limites de exclusi\'{o}n finales que se presentan en la figura~\ref{fig:limits}. En esta figura, vemos que hemos logrado con este an\'{a}lisis excluir los modelos de producci\'{o}n de materia oscura hasta 160 GeV y 145 GeV (XXX y XXX observado) considerando mediadores de tipo scalar y pseudoscalar respectivamente. Esto significa que logramos mejorar en un factor 2 los limites scalares obtenidos por \ac{CMS} en 2016, considerando solamente el modelo $t \bar t$+DM en su estado final dileptonico, mientras que logramos excluir modelos de tipo pseudoscalar por primera vez gracias a este an\'{a}lisis.
 
 %\color{red} FIXME: add conclusion once available \color{black}
 
