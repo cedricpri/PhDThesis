@@ -168,7 +168,7 @@
 \justifying
 \begin{columns}
 	\begin{column}{0.5\textwidth}
-All the results presented in this work have been documented in the \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022\_014\_v1.pdf}{\underline{AN-22-014}}. \\
+All the results presented in this work have been documented in the \href{http://cms.cern.ch/iCMS/jsp/openfile.jsp?tp=draft&files=AN2022\_014\_v2.pdf}{\underline{AN-22-014}}. \\
 
 \vspace{15pt}
 Several presentations were regularly made in MET+X meetings:
@@ -230,14 +230,14 @@ The \textbf{typical final state} of such models is made out of:
 \justifying
 \item 1 or 2 b-tagged jets coming from the decay of the top quark(s);
 \item 2 W bosons, seen as a combination of jets and leptons depending on the channel;
-\item Some ptmiss coming from the dark matter and the dileptonic decay of the Ws;
+\item Some ptmiss coming from the dark matter and the leptonic decay of the Ws;
 \end{itemize} \vfill
 
 In particular, we are studying the \alert{dilepton final state} in this work: 
 \begin{itemize}
 \justifying
-\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the tree leptons (contains only $5\%$ of the signal events);
-\item But, leptons can usually be reconstructed better than jets, resulting in lower systematic uncertainties;
+\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the charged leptons (contains only $5\%$ of the signal events);
+\item But, electrons and muons can usually be reconstructed better than jets, resulting in lower systematic uncertainties;
 \item And this channel has the lowest number of backgrounds, with cross-sections typically lower, resulting in a better signal isolation.
 \end{itemize} \vfill
 
@@ -247,7 +247,7 @@ In particular, we are studying the \alert{dilepton final state} in this work:
 \begin{frame}{Previous relevant results I}
 \justifying
 \vspace{5pt}
-A similar analysis has already been carried out by CMS using 2016 data, considering only the $t \bar t$+DM signal and the dilepton final state (AN-2016-478). \vfill % \cite{PreviousDoubleTopAllLep13CMS}. \vfill
+A similar analysis has already been carried out by CMS using 2016 data, considering only the $t \bar t$+DM signal and the dilepton final state (EXO-17-014). \vfill % \cite{PreviousDoubleTopAllLep13CMS}. \vfill
 
 %\vspace{-10pt}
 %\begin{figure}[htbp]
@@ -268,6 +268,7 @@ A similar analysis has already been carried out by CMS using 2016 data, consider
 \end{figure}
 
 This analysis \textbf{excluded scalar mediators} with masses below 80 GeV, while \textbf{no exclusion was achieved} when considering pseudoscalar mediators. \vfill
+A combination of all the different final states was all also performed in EXO-16-049. \vfill
 
 %The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
 %This provided the \alert{most stringent constraints} ever obtained at the time on the scalar dark matter mediator model. \vfill
@@ -557,7 +558,7 @@ All the samples used and their cross-sections are listed in the backup. \vfill
 \begin{block}{\centering B-tag}\end{block}
 \begin{itemize}
 \justifying
-\item B-Tagging and Vertexing POG \alert{deep CSV b-tag medium working point} (high efficiency, misidentification rate for a light jet as a b-jet $\sim 10\%$).
+\item B-Tagging and Vertexing POG \alert{deep CSV b-tag medium working point} (high efficiency, misidentification rate for a light jet as a b-jet $\sim 1\%$).
 %\item B-tagging weight larger than 0.6321, 0.4941 or 0.4184 (2016, 2017 or 2018).
 \end{itemize} \vfill
 
@@ -822,7 +823,7 @@ Same as the pre-selection region but with ptmiss $> 50$ GeV and $60 < M_{T2}^{ll
 
 \begin{frame}{DY Rin-out method}
 \justifying
-We want to \textbf{estimate the DY yields outside of the Z-peak from the data}:
+We want to \textbf{estimate the DY yields outside of the Z-peak from the data} in the minimal event selection region:
 
 \begin{itemize}
 \justifying
@@ -831,7 +832,7 @@ We want to \textbf{estimate the DY yields outside of the Z-peak from the data}:
 N^{out}_{DY} = N^{in}_{DY, data} \cdot \kappa \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv N^{in}_{DY, data} \cdot \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
 \end{equation*}
 \item To avoid any bias, the contamination of non-peaking backgrounds is removed and we correct this factor by the ratio $\kappa$ between the data/MC transfer factors in a CR close to the SR (asking for 0 b-jet instead of 1);
-\item We then get this Rin-out in \textbf{bins of ptmiss and for each channel ($ee$, $\mu \mu$) separately}:
+\item We then get this Rin-out in \textbf{bins of ptmiss and for each channel ($ee$, $\mu \mu$)}:
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -930,7 +931,7 @@ Several different \alert{discriminating variables} (ptmiss, stranverse mass $M_{
 
 Many of such variables require knowledge of the top quark and anti-quark 4-momenta, only available after a \textbf{complete reconstruction of the $t \bar t$ system}, performed whenever possible (details in the backup). \vfill
 
-A BDT combines the discriminating power of all the variables considered, and a ANN is being used as a cross check. \vfill
+A BDT combines the discriminating power of all the variables considered, and a ANN is being used as a cross check. A complete optimization was followed in order to select features which maximize the performance. \vfill
 \end{frame}
 
 \begin{frame}{Discriminating variables I}
@@ -940,7 +941,8 @@ Several discriminating variables (all detailed in the backup) are considered, su
 \item The stransverse mass $M_{T2}^{ll}$
 \item The missing transverse momentum 
 \item The number of b-jets (only in the $t \bar t$+DM signal region) and $m_{bl}^t$ variable, useful to separate our two signals
-\item Several correlated variables
+\item Several spin correlated variables
+\item $r_{2l}$ and $r_{2l4j}$, defined as the ratio between the ptmiss and the $p_T$ of the leptons (+ the 4 first jets for $r_{2l4j}$)
 \item The dark $p_T$ and overlapping factor naturally arising from the top reconstruction
 \item Other variables, such as the angle $\Delta \phi$ between the ptmiss and the two leptons, and total transverse mass massT.
 \end{itemize} \vfill
@@ -953,12 +955,12 @@ Several discriminating variables (all detailed in the backup) are considered, su
  & \multicolumn{2}{c}{\textbf{$t/\bar t$+DM region}} & \multicolumn{2}{c}{\textbf{$t \bar t$+DM region}} \\
  Rank & Variable & Importance & Variable & Importance \\
  \hline
- 1 & $M_{T2}^{ll}$ & $4.17 \cdot 10^{-1}$ & $M_{T2}^{ll}$ & $3.92 \cdot 10^{-1}$ \\
- 2 & $E_{T}^{\text{miss}}$ & $3.41 \cdot 10^{-1}$ & $E_{T}^{\text{miss}}$ & $3.14 \cdot 10^{-1}$ \\
- 3 & massT & $1.28 \cdot 10^{-1}$ & massT & $2.28 \cdot 10^{-1}$ \\ 
- 4 & $r2l4j$ & $1.14 \cdot 10^{-1}$ & $r2l4j$ & $1.91 \cdot 10^{-1}$ \\ 
- 5 & $m_{bl}^t$ & $6.12 \cdot 10^{-2}$ & $m_{bl}^t$ & $9.35 \cdot 10^{-2}$ \\
- 6 & Dark $p_T$ & $1.59 \cdot 10^{-2}$ & nbJet & $1.69 \cdot 10^{-2}$ \\
+ 1 & $M_{T2}^{ll}$ & $5.96 \cdot 10^{-1}$ & $M_{T2}^{ll}$ & $5.87 \cdot 10^{-1}$ \\
+ 2 & $E_{T}^{\text{miss}}$ & $5.32 \cdot 10^{-1}$ & $E_{T}^{\text{miss}}$ & $5.09 \cdot 10^{-1}$ \\
+ 3 & massT & $3.11 \cdot 10^{-1}$ & massT & $3.98 \cdot 10^{-1}$ \\ 
+ 4 & $r2l4j$ & $1.70 \cdot 10^{-1}$ & $r2l4j$ & $3.45 \cdot 10^{-1}$ \\ 
+ 5 & $m_{bl}^t$ & $7.05 \cdot 10^{-2}$ & $m_{bl}^t$ & $1.72 \cdot 10^{-1}$ \\
+ 6 & $r2l$ & $2.63 \cdot 10^{-2}$ & Dark $p_T$ & $3.92 \cdot 10^{-2}$ \\
 \hline
 \end{tabular}
 }
@@ -1134,7 +1136,7 @@ The hyperparameters of the BDT \textbf{have all been fully optimized} one by one
 \resizebox{\textwidth}{!}{
 \begin{tabular}{ c|c } 
 \hline
- DNN parameter & Optimized value \\
+ BDT parameter & Optimized value \\
  \hline
  Maximum depth & 4 \\
  Minimum samples per leaf & 2\% \\
@@ -1383,19 +1385,19 @@ Signal regions
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_ST_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_ST_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_ST_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns}
@@ -1410,19 +1412,19 @@ Signal regions
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
@@ -1438,19 +1440,19 @@ Signal regions
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_ST_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_ST_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_ST_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns}
@@ -1465,19 +1467,19 @@ Signal regions
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-scalar500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-scalar500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar500/log_cratio_topCR_ll_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-scalar500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
@@ -1509,7 +1511,7 @@ On top of statistical uncertainties, \alert{many systematics} have been consider
 
 \begin{itemize}
 \justifying
-\item PDF and higher order corrections ($\sim$4\%), underlying event and parton shower modeling ($\sim$4\%), renormalization and factorization scales (1.5\%).
+\item PDF and higher order corrections ($\sim$4\%), underlying event (1.5\%) and parton shower modeling ($\sim$4\%), renormalization and factorization scales.
 \end{itemize} \vfill
 
 \begin{block}{\centering Experimental uncertainties}\end{block}
@@ -1523,6 +1525,7 @@ On top of statistical uncertainties, \alert{many systematics} have been consider
 
 \begin{itemize}
 \justifying
+\item MC statistical uncertainties
 \item 20\% systematic uncertainty associated to the DY process in order to cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor;
 \item 30\% uncertainty associated to the normalization of all the minor backgrounds, except for the ttV, for which a 50\% systematic uncertainty is associated.
 \end{itemize} \vfill
@@ -1532,18 +1535,18 @@ On top of statistical uncertainties, \alert{many systematics} have been consider
 \justifying
 \begin{figure}[htbp]
 \centering
-\begin{block}{\centering 2016}\end{block}	\vspace{-8pt}
+\begin{block}{\centering 2016, scalar}\end{block}	\vspace{-8pt}
 
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2016/impacts_2016_both_scalar_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2016_both_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2016/impacts_2016_both_scalar_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2016_both_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
@@ -1558,12 +1561,12 @@ Additional impact plots can be found in the backup. \vfill
 %\centering
 %\begin{minipage}[b]{1.0\textwidth}
 %\begin{center}
-%\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_both_pseudo_100.pdf}
+%\includegraphics[width=12cm, height=10cm]{figs/impacts_2016_both_pseudo_100.pdf}
 %\end{center}
 %\end{minipage} \hfill
 %\begin{minipage}[b]{1.0\textwidth}
 %\begin{center}
-%\includegraphics[width=12cm, height=10cm]{figs/2016/impacts_2016_both_pseudo_500.pdf}
+%\includegraphics[width=12cm, height=10cm]{figs/impacts_2016_both_pseudo_500.pdf}
 %\end{center}
 %\end{minipage} \hfill
 %\label{fig:impactsPseudo2016}
@@ -1662,8 +1665,8 @@ Results obtained
 	
 After combining the different years, the following \textbf{expected (observed) exclusion have been achieved}:
 \begin{itemize}
-\item Scalar mediators excluded to 155 (130) GeV;
-\item Pseudoscalar mediators excluded up to 150 (105) GeV. 
+\item Scalar mediators excluded to 215 (180) GeV;
+\item Pseudoscalar mediators excluded up to 250 (220) GeV. 
 \end{itemize} \vfill
 \end{frame}
 
@@ -2715,19 +2718,19 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo100/log_cratio_ST_topCR_ll_BDT_ttDM100_ST_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns}
@@ -2742,19 +2745,19 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo100/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo100/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_pseudoscalar100_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
@@ -2770,19 +2773,19 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column} 
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo500/log_cratio_ST_topCR_ll_BDT_ttDM500_ST_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns}
@@ -2797,19 +2800,19 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2016/SmearSR-ttDM-pseudo500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2017/SmearSR-ttDM-pseudo500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 		\begin{column}{0.33\textwidth}
 			\begin{center}
 				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo500/log_cratio_topCR_ll_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/2018/SmearSR-ttDM-pseudo500/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_pseudoscalar500_customBinsAttempt7.png}
     		\end{center}		
 		\end{column}
 \end{columns} \vfill
@@ -2825,13 +2828,13 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2016/impacts_2016_both_pseudo_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2016_both_pseudo_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2016/impacts_2016_both_pseudo_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2016_both_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
@@ -2846,13 +2849,13 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2017/impacts_2017_both_scalar_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2017_both_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2017/impacts_2017_both_scalar_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2017_both_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
@@ -2867,13 +2870,13 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2017/impacts_2017_both_pseudo_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2017_both_pseudo_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2017/impacts_2017_both_pseudo_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2017_both_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
@@ -2888,13 +2891,13 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2018/impacts_2018_both_scalar_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2018_both_scalar_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2018/impacts_2018_both_scalar_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2018_both_scalar_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
@@ -2909,13 +2912,13 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 100 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2018/impacts_2018_both_pseudo_100.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2018_both_pseudo_100.pdf}
 \end{center}
 \end{minipage}\hfill
 \begin{minipage}[b]{0.49\textwidth}
 \begin{center}
 \centering \begin{block}{\centering 500 GeV}\end{block}	
-\includegraphics[width=5.1cm, height=4.2cm]{figs/2018/impacts_2018_both_pseudo_500.pdf}
+\includegraphics[width=5.1cm, height=4.2cm]{figs/impacts_2018_both_pseudo_500.pdf}
 \end{center}
 \end{minipage} \hfill
 \end{figure}
