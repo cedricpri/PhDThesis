@@ -1853,28 +1853,24 @@ At the end of the day, the \ac{CMS} detector has been built in order to meet the
 
 \chapter{Event reconstruction} \label{chapter:Reco}
 
-The \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particle into electronic signals that can be measured and stored. 
+As we just saw, the \ac{CMS} detector is made out of different layers, each able to convert the interaction of the particles into electronic signals that can be measured and stored. However, such recorded signals contain only low-level, partial information about the particles, in such a way that an algorithmic strategy is needed in order to fully reconstruct physical information such as the number of particles and their charge, momentum and direction. Producing this kind of data is essential for all the off-line analyses performed, which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
 
-However, the recorded electronic signals contain only low-level, partial information about the particles, in such a way that an algorithmic strategy is needed in order to fully reconstruct physical information such as the number of particles and their charge, momentum and direction. Producing this kind of data is essential for all the off-line analyses which usually rely on these high-level physics objects to make precision measurements or search for new physics. 
-
-The algorithm able to combine this raw data and to compute and produce useful kinematic variables and physical objects (such as leptons and jets) is the so-called \acf{PF} algorithm \cite{PF}, which will be first of all described in Section~\ref{section:PF}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as electrons and muons (Section~\ref{section:RecoLep}), jets (Section~\ref{section:RecoJet}), the \ac{MET} (Section~\ref{section:RecoMET}) and the top reconstruction (Section~\ref{section:RecoTop}) of the different $pp$ collisions recorded.
+The algorithm able to combine this raw data and to compute and produce useful kinematic variables and physical objects (such as leptons and jets) is the so-called \acf{PF} algorithm \cite{PF}, which will be first of all described in Section~\ref{section:PF}, along with the method used to identify unequivocally the primary vertex of the interaction in Section~\ref{section:PVDef}. Then, a particular focus will be given to the definition and reconstruction of different objects of our particular analysis, such as electrons and muons (Section~\ref{section:RecoLep}), jets (Section~\ref{section:RecoJet}), the \ac{MET} (Section~\ref{section:RecoMET}) and the reconstruction of the $t \bar t$ system (in Section~\ref{section:RecoTop}).
 
 \section{\acf{PF} algorithm} \label{section:PF}
 
-The \ac{PF} is an algorithm aiming to combine in the best way possible all the information coming from the different parts of the \ac{CMS} detector (mostly, tracks and clusters of energy) in order to identify and reconstruct the hundreds of new particles produced by each $pp$ collision provided by the \ac{LHC}. This reconstruction can be divided into two main steps: first of all, the data coming from the different subsystems of the detector is read in order to identify and measure the properties of some basic stable objects, such as leptons, photos and hadrons. Then, more complex calculations are performed to identify eventual unstable particles, jets from the hadronization of quarks and gluons, and to compute complex variables such as the leptons isolation and the \ac{MET}.
+The \ac{PF} is an algorithm aiming to combine in the best way possible all the information coming from the different parts of the \ac{CMS} detector (mostly tracks and clusters of energy) in order to identify and reconstruct the hundreds of new particles produced by each $pp$ collision provided by the \ac{LHC}. This reconstruction can be divided into two main steps: first of all, the data coming from the different subsystems of the detector is read in order to identify and measure the properties of some basic stable objects, such as leptons, photos and hadrons. Then, more complex calculations are performed to identify eventual unstable particles, jets coming from the hadronization of quarks and gluons, and to compute complex variables such as the leptons isolation and the \ac{MET}.
 
 The most basic elements used by this algorithm for the reconstruction of high-level physics objects are the hits left by charged particles in the tracker and in the muon chambers, and the clusters of energy left in the two calorimeters. For this algorithm to be as efficient as possible, the detector has been carefully designed, as described in Chapter~\ref{chapter:Device}: a magnetic field as intense as possible and a small calorimeter granularity are indeed crucial in order to separate efficiently charged and neutral particles, and the tracker was designed to be as efficient and small as possible to have the smallest material budget possible in front of the calorimeters. The muon system has been carefully designed as well and, in general, the whole detector is obviously as hermetic as possible.
 
 The way the different particles produced in each collision are identified is quite easy to summarize and is represented in Figure~\ref{fig:CMSIdentify}. Basically, the different kinds of particles produced interact with different parts of the detector and the combination of this information then allows to unequivocally identify each particle. The \ac{PF} algorithm starts from the collection of tracks and vertices reconstructed by the dedicated tracking and vertexing algorithms and from the local reconstruction of energy clusters in the calorimeters. The sequence follows a specific order to make this reconstruction process as efficient as possible:
 
 \begin{enumerate}
-\item First of all, the most energetic \textbf{\acf{PV}} is identified by taking into account the \ac{PU} and by assigning the different tracks to the different $pp$ collisions happening during a single bunch-crossing. 
-
-All the tracks originating from less energetic \ac{PV} or from a secondary vertex of interaction are typically ignored and the corresponding hits in the tracker left by such particles can therefore be ignored later on, leaving less hits available for the clustering algorithm later on, allowing for a more efficient reconstruction of the following objects.
-\item Then, \textbf{muons} are the easiest particles to identify since they are at first order the only particles leaving many hits in the muon chambers placed on the outside of the detector. Depending on the version of the algorithm used, each muon identified can be associated to its track in the tracker, where all the hits matching a muon can therefore be subsequently ignored to simplify the following reconstruction steps.
-\item \textbf{Electrons} do have a charge, so they are visible by the tracker, and can interact electromagnetically with the \ac{ECAL}, where they are going to produce an electromagnetic shower. Identifying electrons is a bit more challenging than muons because of their associated bremsstrahlung emission of photons that need to be attached to the original electrons to measure efficiently their complete energy and avoid any double counting. All the tracker hits corresponding to electrons are also ignored for the rest of the reconstruction after identification.
+\item First of all, the \textbf{\acf{PV}} is identified by taking into account the \ac{PU} and by assigning the different tracks to the different $pp$ collisions happening during a single bunch-crossing. All the tracks originating from less energetic vertices or from a secondary vertex of interaction are typically ignored and the corresponding hits in the tracker left by such particles can therefore be ignored later on, leaving less hits available for the clustering algorithm, allowing for a more efficient reconstruction of the following objects.
+\item Then, \textbf{muons} are the easiest particles to identify since they are at first order the only particles leaving many hits in the muon chambers placed on the outer parts of the detector. Depending on the version of the algorithm used, each muon identified can be associated to its track in the tracker, where all the hits matching a muon can therefore be subsequently ignored to simplify the following reconstruction steps.
+\item \textbf{Electrons} do have a charge, so they are visible by the tracker, and can interact electromagnetically with the \ac{ECAL}, where they are going to produce an electromagnetic shower. Identifying electrons is a bit more challenging than muons because of their associated bremsstrahlung emission of photons that need to be attached to the original electrons to measure efficiently and precisely their energy while avoiding any double counting. All the tracker hits corresponding to electrons are also ignored for the rest of the reconstruction after identification.
 \item \textbf{Charged hadrons} also leave hits in the tracker and some energy deposits in the \ac{ECAL}, but mostly in the \ac{HCAL}, so they are easy to identify as well as a fourth step, using the last hits available in the tracker.
-\item \textbf{Photons} are on the other hand neutral particles, so they do not leave any hits in the tracker. They then appear as some energy deposits in the \ac{ECAL} for which no corresponding tracker track can be associated.
+\item \textbf{Photons} are on the other hand neutral particles, so they do not leave any hits in the tracker. They therefore appear as some energy deposits in the \ac{ECAL} for which no corresponding tracker track can be associated.
 \item Finally, \textbf{neutral hadrons} can be identified as particles leaving some energy mostly in the \ac{HCAL} for which no corresponding tracker track has been found as well.
 \end{enumerate}
 
@@ -1890,9 +1886,9 @@ We will now study in more detail the reconstruction method applied in order to r
 
 \section{Primary vertex definition} \label{section:PVDef}
 
-Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}. First of all, we have the set of \textbf{\ac{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC} or eventual remnants coming from a previous collision (the out-of-time \ac{PU}). The \textbf{\ac{PV}} is then defined as the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses, and finally, we have the \textbf{secondary vertices}, mainly due to the eventual presence of hadrons living long enough to travel a significant distance in the detector, decay chains or jets. 
+Different kinds of vertices originating from a single $pp$ collision can usually be defined, as shown in Figure~\ref{fig:LHCPU}. First of all, we have the set of \textbf{\ac{PU} vertices}, corresponding to the different simultaneous collisions of a single bunch-crossing of the \ac{LHC} or eventual remnants coming from a previous collision (the out-of-time \ac{PU}). The \textbf{\acf{PV}} is then defined as the most energetic \ac{PU} vertex and the only vertex considered in most of the physics analyses and finally, we have the \textbf{secondary vertices}, mainly due to the eventual presence of hadrons living long enough to travel a significant distance in the detector, decay chains or jets. 
 
-The \ac{PF} algorithm is not able to reconstruct the vertices itself, but it can use the information coming from a dedicated vertexing algorithm able to identify all these kinds of vertices. This is done by considering all the tracker hits observed, by clustering them together and by performing fits to determine the likelihood these tracks originating from a common vertex. The reconstructed vertex with the largest $p_T^2$ summed over all the physics objects of the event is then assumed to be the \ac{PV}, as it is considered to be the origin of the collision that actually fired the trigger, from which many different tracks are emitted.
+The \ac{PF} algorithm is not able to reconstruct the vertices itself, but it can use the information coming from a dedicated vertexing algorithm able to identify all these kinds of vertices. This is done by considering all the tracker hits observed, by clustering them together and by performing fits to determine the likelihood these tracks originated from a common vertex. The reconstructed vertex with the largest $p_T^2$ summed over all the physics objects of the event is then assumed to be the \ac{PV}, as it is considered to be the origin of the collision that actually fired the trigger, from which many different tracks are emitted.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1904,25 +1900,23 @@ The \ac{PF} algorithm is not able to reconstruct the vertices itself, but it can
 
 \section{Leptons reconstruction} \label{section:RecoLep}
 
-Different kinds of leptons are typically produced by a $pp$ collision. The muons and the electrons and their respective anti-particles can be quite easily identified, mainly because their lifetime and velocity is high enough, meaning that they are not expected to decay inside the \ac{CMS} detector, so they can be directly identified. Taus on the other hand are a bit trickier to deal with because they usually decay inside of the beam pipe itself, $\sim 35\%$ of the time to electrons and muons and $\sim 65\%$ of the time to hadrons. However, since our analysis does not consider taus directly but only the leptons originating from their decays, the details of their reconstruction will not be explained in this section.
+Different kinds of leptons are typically produced by a $pp$ collision. The muons, electrons and their respective anti-particles can be quite easily identified, mainly because their lifetime and velocities are high enough that they are not expected to decay inside the \ac{CMS} detector, so they can be directly identified. Taus on the other hand are a bit trickier to deal with because they usually decay inside of the beam pipe itself, $\sim 35\%$ of the time to electrons and muons and $\sim 65\%$ of the time to hadrons. However, our analysis does not consider taus directly but only the leptons originating from their decays, making the details regarding their reconstruction irrelevant.
 
 \subsection{Muons} \label{subsection:Muons}
 
 Muons are the first leptons to be reconstructed by the \ac{PF} algorithm since, by design and at first order, they are the only particles expected to reach the muon chambers, resulting in an easier and more efficient identification. 
 
-The typical signature of a muon consists of several hits in the silicon tracker forming a track associated with several hits in the muon chambers, electronic signals coming from the wires and strips of these chambers due to the gas ionization induced by the passage of these charged particles. Muons only deposit a negligible amount of energy within the two calorimeters since their interaction cross section is quite low for their full range of energies, going from a few hundreds MeV up to a few TeV.
-
-The data coming from the different subsystems of \ac{CMS} are then combined and fed to the \ac{PF} algorithm, then able to reconstruct different kinds of muons \cite{MuonSystemsEff}.
+The typical signature of a muon consists of several hits in the silicon tracker forming a track associated with several hits in the muon chambers, electronic signals coming from the wires and strips of these chambers due to the gas ionization induced by the passage of these charged particles. Muons only deposit a negligible amount of energy within the two calorimeters since their interaction cross section is quite low for their full range of energies, going from a few hundreds MeV up to a few TeV. The data coming from the different subsystems of \ac{CMS} are then combined and fed to the \ac{PF} algorithm, then able to reconstruct different kinds of muons \cite{MuonSystemsEff}.
 
 \subsubsection*{Standalone muons}
-The standalone muons are muons reconstructed using only the hits observed in the muon system without trying to relate this data to the tracker hits. Basically, the \ac{PF} algorithm looks in this case at the eventual hits left in the \acp{DT}, \acp{CSC} and \acp{RPC} and tries to reconstruct a vector of trajectory in each case using a \ac{KF} \cite{KF}. The segments obtained are then combined in the best statistical possible way in order to form a candidate track for each muon of the event, by extrapolating the innermost vectors obtained to the next chamber and by comparing it with the local track segment; the trajectory parameters are then updated and the process continues until reaching the outermost chamber. Finally, this complete process is repeated in the reverse order, from the outside chambers to the inside, to estimate the innermost track parameters as well.
+The standalone muons are muons reconstructed using only the hits observed in the muon system without trying to relate this data to the tracker hits. Basically, the \ac{PF} algorithm looks in this case at the eventual hits left in the \acp{DT}, \acp{CSC} and \acp{RPC} and tries to reconstruct a vector of trajectory in each case using a \ac{KF} \cite{KF}. The segments obtained are then combined in the best statistical way in order to form a candidate track for each muon of the event, by extrapolating the innermost vectors obtained to the next chamber and by comparing it with the local track segment; the trajectory parameters are then updated and the process continues until reaching the outermost chamber. Finally, this process is repeated in the reverse order, from the outside chambers to the inside, to estimate the innermost track parameters as well.
 
-It is important to note that cosmic rays reaching the Earth every day are an important source of contamination, since we estimate that around 10.000 muons per $m^2$ and per minute coming from such processes can be observed at the sea level. Putting the detector underground removes part of this contamination but, to further limit the possibility of misidentification due to showering of cosmic rays, the tracks need to pass some quality criteria: for example, checking the extrapolation of the trajectory to the point of closest approach to the beam line allows to reduce this contamination. Additionally, at least two hits need to be measured for the fit to be performed, one of them coming from either the \acp{DT} or \acp{CSC}, in order to remove fake segments contamination due to combinatorics.
+It is important to note that cosmic rays reaching the Earth every day are an important source of contamination, since we estimate that around 10.000 muons per $m^2$ and per minute coming from such processes can be observed at sea level. Putting the detector underground removes part of this contamination but, to further limit the possibility of misidentification due to showering of cosmic rays, the tracks need to pass some quality criteria: for example, checking the extrapolation of the trajectory to the point of closest approach to the beam line allows to reduce this contamination. Additionally, at least two hits need to be measured for the fit to be performed, one of them coming from either the \acp{DT} or \acp{CSC}, in order to remove fake segments contamination due to combinatorics.
 
 In any case, candidates reconstructed as standalone muons typically have a worse momentum reconstruction and are more sensitive to cosmic muons contamination.  
 
 \subsubsection*{Tracker muons}
-The algorithm able to reconstruct the so-called tracker muons on the other hand is able to propagate tracks identified in the inner silicon tracker (having a momentum $p > 2.5$ GeV and $p_T > 0.5$ GeV) to the muon system itself in order to try and find corresponding segments in the different muon chambers (these tracks are therefore said to be built \textit{inside-out}). An extrapolated track and a segment are only matched if the difference between their positions in the $x$ coordinate is smaller than 3~cm or if the pull, the ratio of this distance to its uncertainty, is smaller than 4.
+The algorithm able to reconstruct the so-called tracker muons on the other hand is able to propagate tracks identified in the inner silicon tracker (having momenta $p > 2.5$ GeV and $p_T > 0.5$ GeV) to the muon system itself in order to try and find corresponding segments in the different muon chambers (these tracks are therefore said to be built \textit{inside-out}). An extrapolated track and a segment are only matched if the difference between their positions in the $x$ coordinate is smaller than 3~cm or if the pull, the ratio of this distance to its uncertainty, is smaller than 4.
 
 These muons are particularly efficient for less instrumented regions of the detector and for the low $p_T$ end of the energy spectrum but they are also quite contaminated with fake muon tracks, since a single hit in any of the muon chambers is enough for the candidate to be considered a valid tracker muon, even though hadron shower remnants can for example quite easily reach the innermost muon station. The momentum assigned to such muons is the same as the one measured by the silicon tracker track itself.
 
@@ -1935,13 +1929,13 @@ Using this strategy, about 99\% of the muons produced within the geometrical acc
 
 \begin{figure}[htbp]
 \begin{center}
-\includegraphics[width=12cm, height=6cm]{figs/MuonEff.png}
+\includegraphics[width=13cm, height=6.3cm]{figs/MuonEff.png}
 \caption{Muon $p_T$ resolution obtained in simulation in the barrel (on the left) and endcap (on the right) for different muon reconstruction algorithms \cite{Quarkonium}.}
 \label{fig:MuonEff2}
 \end{center}
 \end{figure}
 
-Once reconstructed, candidates are required to pass some selection criteria and are then fed to the actual \ac{PF} algorithm itself to start the global reconstruction of the event. This selection consists mainly in applying identification and isolation (evaluated relative to its $p_T$ by summing up the energy in geometrical cones of radius $\Delta R = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2}$ surrounding the muon in the ($\eta, \phi$) plane, as shown in Figure~\ref{fig:IsoCone}) criteria in order to enhance the purity of the reconstructed prompt muons (muons directly originating from the main collision taking place in the event) by rejecting muons coming from the decay of heavy flavour quarks, typically surrounded by a large amount of hadronic activity. The calculation of the lepton isolation is typically performed considering only the \ac{PV} since higher levels of \ac{PU} are expected to bias this measurement by increasing the hadronic activity.
+Once reconstructed, muon candidates are required to pass some selection criteria and are then fed to the actual \ac{PF} algorithm itself to start the global reconstruction of the event. This selection consists mainly in applying identification and isolation (evaluated relative to its $p_T$ by summing up the energy in geometrical cones of radius $\Delta R = \sqrt{(\Delta \phi)^2 + (\Delta \eta)^2}$ surrounding the muon in the ($\eta, \phi$) plane, as shown in Figure~\ref{fig:IsoCone}) criteria in order to enhance the purity of the reconstructed prompt muons (muons directly originating from the main collision taking place in the event), by rejecting muons coming from the decay of heavy flavour quarks, typically surrounded by a large amount of hadronic activity. The calculation of the lepton isolation is typically performed considering only the \ac{PV} since higher levels of \ac{PU} are expected to bias this measurement by artificially increasing the hadronic activity.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -1953,20 +1947,18 @@ Once reconstructed, candidates are required to pass some selection criteria and 
 
 Different identification \acfp{WP} can then be defined for the off-line analyses, from veto to tight, in order to reject more or less contamination from misidentified leptons, bearing in mind that a tighter selection is cleaner, but less efficient: the loose and tight \ac{WP} have then been defined in order to respectively achieve 95\% and 98\% efficiencies, respectively. These efficiencies are tuned using simulated $Z \rightarrow \mu^+ \mu^-$ events with a $p_T > 20$ GeV, while the efficiency to reject muons in jets is done using simulated QCD and $W$+jets processes \cite{MuonSystemsEff}.
 
-Our particular muon definition is based on the tight \ac{WP} provided centrally by the muon \ac{POG}, but has been slightly modified and made more robust against non-prompt leptons, according to the selection detailed in Chapter~\ref{chapter:Selection}.
+Our particular muon definition is based on the medium \ac{WP} provided centrally by the muon \ac{POG}, but has been slightly modified and made more robust against non-prompt leptons, according to the selection detailed in the Chapter~\ref{chapter:Samples}.
 
 \subsection{Electrons} \label{subsection:Electrons}
 
-Electrons and positrons are reconstructed by combining the tracker tracks and the several clusters of energy deposited in the \ac{ECAL} by the electromagnetic showers appearing due to the interaction between the electron and the crystals composing this sub-detector. 
+Electrons and positrons are reconstructed by combining the tracker tracks and the several clusters of energy deposited in the \ac{ECAL} by the electromagnetic showers appearing due to the interaction between the electrons themselves and the crystals composing this sub-detector. 
 
 It is usually a bit harder to reconstruct electrons than muons mainly because electrons do interact much more with the tracker and this interaction therefore needs to be modeled to understand the exact behaviour of such particles: it is for example responsible for the emission of secondary bremsstrahlung photons crashing into the \ac{ECAL} but not coming from the \ac{PV}. In fact, it is estimated that in \ac{CMS} between 33\% and 86\% of the energy of an electron is actually radiated before it reaches the \ac{ECAL}, depending mostly on its pseudorapidity \cite{EleReco}. In order to measure precisely the energy of an electron, all the photons emitted by bremsstrahlung before reaching the \ac{ECAL} (usually, along the $\phi$ plane because of the deviation implied by the solenoid) then need to be collected as well and associated to the correct electron of the event.
 
 The actual \ac{PF} reconstruction of electrons is performed in different steps:
 
 \begin{enumerate}
-\item A \textbf{clustering algorithm} is first of all defining the so-called \textbf{\acf{SC}}. Its goal is to reconstruct the particle showers individually by identifying a seed crystal for the cluster, defined as the crystal collecting the most energy, since the energy deposited in the \ac{ECAL} is usually spread into several different crystals because of the electromagnetic shower effect discussed in Section~\ref{subsection:ECAL} and because of the bremsstrahlung emission of photons due to the interaction with the tracker. The algorithm therefore searches for eventual crystals around this seed whose energy detected would be superior to 2$\sigma$ of the electronic noise and matching some quality criteria ($E_{\text{seed}} > 230$ MeV in the barrel, $E_{\text{seed}} > 600$ MeV and $E_{\text{seed}}^T > 150$ MeV in the endcaps). 
-
-The excited contiguous crystals found are then grouped into clusters, themselves considered candidates for the final global cluster, the \ac{SC}, if their energy is higher than another given threshold ($E_{\text{cluster}} > 350$ MeV in the barrel, $E_{\text{cluster}}^T > 1$ GeV in the endcaps) \cite{EleReco}. The \ac{SC} energy is then given by the sum of the energies of all its constituent clusters, while its position is calculated as the energy-weighted mean position of the different clusters.
+\item A \textbf{clustering algorithm} is first of all defining the so-called \textbf{\acf{SC}}. Its goal is to reconstruct the particle showers individually by identifying a seed crystal for the cluster, defined as the crystal collecting the most energy, as the energy deposited in the \ac{ECAL} is usually spread into several different crystals because of the electromagnetic shower effect and because of the bremsstrahlung emission of photons due to the interaction with the tracker. The algorithm therefore searches for eventual crystals around this seed whose energy detected would be superior to 2$\sigma$ of the electronic noise and matching some quality criteria ($E_{\text{seed}} > 230$ MeV in the barrel, $E_{\text{seed}} > 600$ MeV and $E_{\text{seed}}^T > 150$ MeV in the endcaps). The excited contiguous crystals found are then grouped into clusters, themselves considered candidates for the final global cluster, the \ac{SC}, if their energy is higher than another given threshold ($E_{\text{cluster}} > 350$ MeV in the barrel, $E_{\text{cluster}}^T > 1$ GeV in the endcaps) \cite{EleReco}. The \ac{SC} energy is then given by the sum of the energies of all its constituent clusters, while its position is calculated as the energy-weighted mean position of the different clusters.
 
 \item Once the \ac{SC} is identified, \textbf{electron tracker tracks} are reconstructed using a procedure a bit different than the usual \ac{KF} reconstruction method for all the tracks of the silicon tracker \cite{KF} because of the large radiative
 losses for electrons in the tracker material. 
@@ -1976,16 +1968,16 @@ This reconstruction is known to be very time consuming, so a good identification
 \begin{itemize}
 \item The \textbf{\ac{ECAL}-based seeding} relies on the information obtained for the \ac{SC} energy and position in order to estimate the electron trajectory to find compatible hits in the tracker. This can be done knowing that the electron is moving according to an helix in the magnetic field of the detector. This seeding is mostly optimized for isolated electrons
 in the $p_T$ range relevant for the Z and W decays.
-\item The other way to proceed is the \textbf{tracker-based seeding}, based on tracks reconstructed using the usual \ac{KF} algorithm and looking for matches within the possible reconstructed \ac{SC}. This seeding is mostly suitable for low $p_T$ electrons and also performs quite well with electrons inside jets.
+\item The other way to proceed is the \textbf{tracker-based seeding}, based on tracks reconstructed using the usual \ac{KF} algorithm and looking for matches within the possible reconstructed \ac{SC}. This seeding is mostly suitable for low $p_T$ electrons and also performs quite well when considering electrons inside jets.
 \end{itemize}
 
-Once the seeds have been identified, the identification of tracks can begin. First of all, the gathering of compatible hits from the different seeds is done using using a dedicated modeling of the electron energy loss and a combinatorial \ac{KF} algorithm allowing to construct possible tracks when compatible hits are found. The compatibility matching between the predicted and found hits is usually chosen to be quite loose in order to maintain a good efficiency even in case of bremsstrahlung emission.
+Once the seeds have been identified, the identification of tracks can begin. First of all, the gathering of compatible hits from the set of available seeds is done using using a dedicated modeling of the electron energy loss and a combinatorial \ac{KF} algorithm allowing to construct possible tracks when compatible hits are found. The compatibility matching between the predicted and found hits is usually chosen to be quite loose in order to maintain a good efficiency even in the case of bremsstrahlung emission.
 
-Finally, once the hits are collected, a \ac{GSF} fit is performed to estimate the different track parameters by reconstructing the layer-to-layer propagation of electrons in the tracker. A mix of Gaussian distributions is used in this case to approximate the loss in each layer, associating a different weight and $\chi^2$ penalty to each distribution, depending for example on the number of missing hits. This fit is also able to take into account sudden changes in the curvature radius caused by an eventual bremsstrahlung photon emission.
+Finally, once the hits are collected, a \ac{GSF} fit is performed to estimate the different track parameters by reconstructing the layer-to-layer propagation of electrons in the tracker. A mix of Gaussian distributions is used in this case to approximate the loss in each layer, associating a different weight and $\chi^2$ penalty to each distribution, depending on several parameters, such as the number of missing hits. This fit is also able to take into account sudden changes in the curvature radius caused by an eventual bremsstrahlung photon emission.
 
-\item The final step consists in identifying the clusters left in the \ac{ECAL} by the photons emitted by extrapolation of the \ac{GSF} track and in \textbf{merging this \ac{GSF} track and the \ac{ECAL} \acp{SC}} previously built. This step is also designed to preserve the highest efficiency possible while keeping the misidentification probability low and ambiguities related to single electron seeds which can often lead to several reconstructed tracks are also resolved at this stage.
+\item The next step consists in identifying the clusters left in the \ac{ECAL} by the photons emitted by extrapolation of the \ac{GSF} track and in \textbf{merging this \ac{GSF} track and the \ac{ECAL} \acp{SC}} previously built. This step is also designed to preserve the highest efficiency possible while keeping the misidentification probability low and eventual ambiguities related to single electron seeds which can often lead to several reconstructed tracks are also resolved at this stage.
 
-Finally, a loose pre-selection is applied to the electron candidates in order to reject fake electrons and the variables related to the energy and geometrical matching between the \ac{GSF} track and the \ac{ECAL} cluster(s) are combined into a \acf{MVA} estimator allowing to define several electron \acp{WP} as well.
+\item Finally, a loose pre-selection is applied to the electron candidates in order to reject fake electrons and the variables related to the energy and geometrical matching between the \ac{GSF} track and the \ac{ECAL} cluster(s) can be combined into a \acf{MVA} estimator allowing to define several electron \acp{WP} as well.
 \end{enumerate}
 
 This electron reconstruction workflow has been summarized in Figure~\ref{fig:EleWorkflow}.
@@ -2001,9 +1993,9 @@ This electron reconstruction workflow has been summarized in Figure~\ref{fig:Ele
 %\subsection{Taus} \label{subsection:Taus}
 \section{Jets reconstruction} \label{section:RecoJet}
 
-Eventual jets originating from quarks and/or gluons produced by a $pp$ collision usually manifest themselves as hadronic jets in the detector because of the colour confinement principle stating that coloured particles, such as the quarks, can not be isolated and therefore be observed on their own. 
+Eventual quarks and/or gluons produced by $pp$ collisions usually manifest themselves as hadronic jets in the detector because of the colour confinement principle stating that coloured particles, such as the quarks, cannot be isolated and therefore be observed on their own. 
 
-This practically means that once a single quark is produced, it will start losing energy by forming new $q \bar q$ pairs, themselves forming additional $q \bar q$ pairs. This chain continues until the resulting pairs of quarks have such a low energy that they can start combining into colourless hadrons. This is called the \textit{hadronization} process and the actual result of the apparition of a quark is a shower of collimated particles, usually called jet, and seen by the detector as a set of tracks and energy deposits in the calorimeters, as shown in Figure~\ref{fig:CMSJets}. %To understand the collision, the reconstruction of these jets by the \ac{PF} algorithm is of course crucial.
+This practically means that once a single quark is produced, it will start losing energy by forming new $q \bar q$ pairs, themselves forming additional $q \bar q$ pairs. This chain continues until the resulting pairs of quarks have such a low energy that they can start combining into colourless hadrons. This is called the \textit{hadronization} process and the actual experimental signature of the apparition of a quark is a shower of collimated particles, usually called jet, and seen by the detector as a set of tracks and energy deposits in the calorimeters, as shown in Figure~\ref{fig:CMSJets}. %To understand the collision, the reconstruction of these jets by the \ac{PF} algorithm is of course crucial.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2013,9 +2005,9 @@ This practically means that once a single quark is produced, it will start losin
 \end{center}
 \end{figure}
 
-Several algorithms can be used to reconstruct the jets by linking the information coming from the tracker and the calorimeters, but the most used tool in \ac{CMS} is the so-called anti-$k_T$ algorithm, able to cluster all the charged and neutral hadrons along with the eventual non-isolated photons or lepton produced and merge them into a single jet \cite{JetReco}. Its main objective is to compute the energy and direction of the original quark as precisely as possible. This is actually the best algorithm developed so far to resolve jets, but the worst for studying jet substructure due to its clustering preference; in this case, other algorithms can be applied.
+Several algorithms can be used to reconstruct the jets by linking the information coming from the tracker and the calorimeters, but the most common tool in \ac{CMS} is the so-called anti-$k_T$ algorithm, able to cluster all the charged and neutral hadrons along with the eventual non-isolated photons or leptons produced and merge them into a single jet \cite{JetReco}. Its main objective is to compute the energy and direction of the original quark as precisely as possible. This is actually the best algorithm developed so far to resolve jets, but the worst for studying jet substructure due to its clustering preference; in this case, other algorithms can be applied.
 
-To perform such a job, sequential clustering algorithms such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij}^2 = (\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2$, the distance between $i$ and $j$ in the ($\eta, \phi$) space, the $p_T^2$ of each particle and the clustering algorithm radius parameters determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. This distance parameter defines a cone in which the momenta of all the particles is summed to get the momentum of the jet itself.
+To perform such a job, sequential clustering algorithms such as this one rely on the value of two distances: $d_{ij}$, the distance between two particles $i$ and $j$ that need to be clustered and $d_{iB}$, the distance between the particle $i$ and the beam axis $B$. As seen in Equation~\ref{eq:antikt}, these distances can be computed using different variables such as $\Delta R_{ij} = \sqrt{(\eta_i - \eta_j)^2 + (\phi_i - \phi_j)^2}$, the distance between $i$ and $j$ in the ($\eta, \phi$) space, the $p_T^2$ of each particle and the clustering algorithm radius parameter determining the final jet size and usually set to 0.4 by the \ac{CMS} collaboration. This distance parameter defines a cone in which the momenta of all the particles observed is summed to get the momentum of the jet itself.
 
 \begin{equation}
 \label{eq:antikt}
@@ -2031,23 +2023,23 @@ The algorithm works by looking at all the $i, j$ combinations, comparing the dis
 \item If $d_{iB}$ is smaller than $d_{ij}$, then $i$ is considered to be the final jet and is therefore removed from the list of jet candidates as well.
 \end{itemize}
 
-Several corrections, mainly the so-called \acp{JEC} \cite{JEC}, are then usually applied to the jets constructed using this algorithm in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \ac{PU} effects and the dependence of the reconstruction on the jet flavor. This typically introduces a source of systematic uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
+Several corrections, mainly the so-called \acp{JEC} \cite{JEC}, are then usually applied to the jets constructed using this algorithm in order to take into account several parameters such as the non-linearity of the response of the calorimeter, the electronic noise, the \ac{PU} effects and the dependence of the reconstruction on the jet flavor. %This typically introduces a source of systematic uncertainty that will be taken into account and discussed in Section~\ref{section:Systematics}.
 
-The efficiency of the \ac{PF} algorithm for jet identification and reconstruction has been checked using simulation, as shown in Figure~\ref{fig:PFSimu}. This study clearly shows that between 95 and 97\% of the energy of the \ac{PF} jet candidates can be reconstructed, compared to a 40-60\% reconstruction efficiency using only the calorimeters data, and that this algorithm also leads to a gain in resolution up to a factor 3, depending on the jet $p_T$.
+The efficiency of the \ac{PF} algorithm for jet identification and reconstruction has been checked using simulation, as shown in Figure~\ref{fig:PFSimu}. This study clearly shows that between 95 and 97\% of the energy of the \ac{PF} jet candidates can be reconstructed, compared to a 40-60\% reconstruction efficiency using only the calorimeters data, and that this algorithm also leads to a gain in resolution up to a factor 3, depending on the value of the jet $p_T$.
 
 \begin{figure}[htbp]
 \begin{center}
 \includegraphics[width=15cm, height=5.5cm]{figs/PFSimu.png}
-\caption{Comparison of the jet energy response (percentage of reconstructed energy, on the left) and jet energy resolution (on the right) for dijets simulated events in the barrel for jets reconstructed using only the calorimeters (in blue) and jet candidates from the \ac{PF} algorithm (in red) \cite{PF2}.}
+\caption{Comparison of the jet energy response (defined as the percentage of reconstructed energy, on the left) and jet energy resolution (on the right) for dijets simulated events in the barrel for jets reconstructed using only the calorimeters (in blue) and jet candidates from the \ac{PF} algorithm (in red) \cite{PF2}.}
 \label{fig:PFSimu}
 \end{center}
 \end{figure}
 
-\subsection{B-tagging}  \label{section:BTag}
+\subsection{B-tagging} \label{section:BTag}
 
-Jets coming from bottom quarks are usually interesting to study in many different fields of particles physics, such as in this analysis which relies heavily on the number of b-jets produced to define the control and signal regions, as will be discussed in Chapter~\ref{chapter:Selection}. 
+Jets coming from bottom quarks are usually interesting to study in many different fields of particles physics, such as in this analysis which relies heavily on the number of b-jets produced to define the control and signal regions, as will be discussed in Chapters~\ref{chapter:CR} and ~\ref{chapter:Strategy}. 
 
-This specific kind of jets can be distinguished from other jets because of the relatively long lifetime of the bottom quark that produces in the detector a secondary vertex displaced by up to a few millimeters with respect to the \ac{PV}, as shown in Figure~\ref{fig:CMSBJets}; and this gives a perfect way to discriminate b-jets and jets coming from light quarks. Another consequence of the large mass of the bottom quark is that a large number of particles is typically present inside this particular kind of jets and that the decay of the bottom quark even leads to the apparition of soft leptons in the decay chain in around 20\% of the cases.
+This specific kind of jets can be distinguished from other jets because of the relatively long lifetime of the bottom quark that produces in the detector a secondary vertex displaced by up to a few millimeters with respect to the \ac{PV}, as shown in Figure~\ref{fig:CMSBJets}; and this gives a perfect way to discriminate b-jets from other jets coming from light quarks. Another consequence of the large mass of the bottom quark is that a large number of particles is typically present inside this particular kind of jets and that the decay of the bottom quark even leads to the apparition of soft leptons in the decay chain in around 20\% of the cases.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2057,9 +2049,9 @@ This specific kind of jets can be distinguished from other jets because of the r
 \end{center}
 \end{figure}
 
-Because of these specific properties, an algorithm can distinguish between jets coming from a bottom quark or from a lighter quark, and this will be a key point in this analysis. In our case, this discrimination is additionally optimized by using a multivariate technique able to combine all the discriminating power of the previous typical characteristics of any heavy flavour jet in the best way possible after reconstruction of all the vertices of the event. The main objective of the algorithm is to be able to identify b-jets as efficiently as possible while reducing the risk of possible misidentification of a jet. 
+Because of these specific properties, some algorithms can distinguish between jets coming from a bottom quark or from a lighter quark, and this will be a key point in this analysis. In our case, this discrimination is additionally optimized by using a multivariate technique able to combine all the discriminating power of the previous typical characteristics of any heavy flavour jet in the best way possible after reconstruction of all the vertices of the event. The main objective of the algorithm is to be able to identify b-jets as efficiently as possible while keeping the risk of possible misidentification of a jet as low as possible. 
 
-In this analysis, the deep \ac{CSV} algorithm able to combine the information on the secondary vertex with the one on the track impact parameters and based on a \ac{ANN}, has been used to identify such b-jets. The performance of this method can be observed in Figure~\ref{fig:CMSBTag}, where we can see that this deep \ac{CSV} algorithm is one of the best b-jets identification algorithms, depending on the phase space, while keeping a relatively low misidentification rate for light-flavor jets (u, d, s and gluons).
+In this analysis, the deep \ac{CSV} algorithm, able to combine the information on the secondary vertex with the one on the track impact parameters and based on a \ac{ANN}, has been used to identify such b-jets. The performance of this method can be observed in Figure~\ref{fig:CMSBTag}, where we can see that this deep \ac{CSV} algorithm is one of the best b-jets identification algorithms, depending on the phase space, while keeping a relatively low misidentification rate for light-flavor jets (u, d, s and gluons).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2069,18 +2061,18 @@ In this analysis, the deep \ac{CSV} algorithm able to combine the information on
 \end{center}
 \end{figure}
 
-Different \acp{WP} are then also made available in order to obtain the desired combo b-jet identification efficiency/misidentification rate. The loose, medium and tight b-jets \acp{WP} have been developed in such a way to limit this misidentification rate of a light jet as a b-jet to 10\%, 1\% and 0.1\% respectively.
+Different \acp{WP} are then also made available in order to obtain the desired combination between b-jet identification efficiency and misidentification rate. The loose, medium and tight b-jets \acp{WP} have been defined in such a way that they limit this misidentification rate of a light jet as a b-jet to 10\%, 1\% and 0.1\% respectively.
 
 \section{\acf{MET}} \label{section:RecoMET}
 
-Since the $pp$ collisions happen mostly head-on, we know that the initial total transverse momentum of the event is exactly equal to 0 before the collision and we expect that it stays 0 afterwards because of the momentum conversation. This statement is not totally true though since we are aware of several effects that could induce an imbalance in this transverse momentum, as shown in Figure~\ref{fig:MET}:
+Since the $pp$ collisions happen mostly head-on, we know that the initial total transverse momentum of the event is exactly equal to 0 before the collision and we expect that it stays 0 afterwards because of the momentum conversation principle. This statement is not totally true though since we are aware of several effects that could induce an imbalance in this transverse momentum:
 
 \begin{itemize}
-\item Even though the \ac{CMS} detector has been carefully designed, some particles could be created outside of its acceptance and therefore escape the detection (a particle can for example be created with such a boost that it could be emitted back to the beam pipe itself, making it impossible to detect it).
-\item Because of their extremely low interaction cross-section, \ac{SM} neutrinos are expected to escape the detector with some energy while staying completely undetected.
-\item The finite momentum resolution of the detector can also lead to some inaccuracies in the measurement of the transverse momentum of all the particles created, leading to an instrumental \ac{MET} in some cases.
-\item Some events also present an anomalous \ac{MET} measurement which can arise because of a variety of reconstruction failures or malfunctioning detectors \cite{anomalousMET}.
-\item Finally, the eventual exotic weakly interacting particles produced, such as \acf{DM}, are typically expected to leave some \ac{MET} in the detector as well.
+\item Even though the \ac{CMS} detector has been carefully designed to be as hermetic as possible, some particles could be created outside of its acceptance and therefore escape the detection (a particle can for example be created with such a boost that it could be emitted back to the beam pipe itself, making it impossible to detect it);
+\item Because of their extremely low interaction cross-section, \ac{SM} neutrinos are expected to escape the detector with some residual energy while staying completely undetected;
+\item The finite momentum resolution of the detector can also lead to some inaccuracies in the measurement of the transverse momentum of all the particles created and actually detected, leading to an instrumental contribution to the \ac{MET} in some cases;
+\item Some events also present an anomalous \ac{MET} measurement which can arise because of a variety of reconstruction failures or malfunctioning detectors \cite{anomalousMET};
+\item Finally, the eventual exotic weakly interacting particles produced, such as dark matter, are typically expected to leave some \ac{MET} in the detector as well.
 \end{itemize}
 
 \begin{figure}[htbp]
@@ -2091,7 +2083,7 @@ Since the $pp$ collisions happen mostly head-on, we know that the initial total 
 \end{center}
 \end{figure}
 
-The $E_{T}^{\text{miss}}$ variable, defined in Equation~\ref{eq:MET} as the negative sum of the transverse momentum of all the particles $j$ of the event, accounts for this eventual imbalance in the transverse momentum and is therefore a key variable in some of the analyses searching for new \ac{BSM} physics, in this particular case when such new physics is not expected to interact with the detector.
+The $E_{T}^{\text{miss}}$ variable, defined in Equation~\ref{eq:MET} as the negative sum of the transverse momentum of all the particles $j$ of the event, accounts for this eventual imbalance in the transverse momentum and is therefore a key variable in some of the analyses searching for new \ac{BSM} physics, typically producing new kinds of exotic particles not expected to interact with the detector.
 
 \begin{equation}
 \label{eq:MET}
@@ -2100,11 +2092,11 @@ E_{T}^{\text{miss}} = \overrightarrow{p}_T^{\text{miss}} = - \sum_j \overrightar
 
 Different algorithms can be used in order to reconstruct this variable, the most common being \cite{METReco}:
 \begin{itemize}
-\item The \textbf{particle flow \ac{MET}} (PfMET), including all the information of the detector (as opposed to the calorimeter or tracker \ac{MET}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses today, because of its simple, robust, yet very efficient estimate of the \ac{MET} spectrum.
-\item The \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, has been developed on top of the PFMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
+\item The \textbf{particle flow \ac{MET}} (pfMET), including all the information of the detector (as opposed to the calorimeter or tracker \ac{MET}, for example) and only the \ac{PF} reconstructed objects to estimate the \ac{MET} value. This is the typical variable used in most of the analyses performed nowadays, because of its simple, robust, yet very efficient estimate of the \ac{MET} spectrum;
+\item And the \textbf{\ac{PUPPI} \ac{MET}} \cite{PUPPI}, developed on top of the pfMET in order to further reduce the dependence on the pileup of this variable by using local shape information around each \ac{PF} candidate in the event along with event \ac{PU} properties and tracking information. %This variable typically gives a better agreement between the data and \ac{MC}, which is something extremely interesting because of the complexity of the estimation of this variable.
 \end{itemize}
 
-For this analysis, we decided to use the PfMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between data and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 $t \bar t$ region, especially in the most interesting regions for us, for high \ac{MET} values. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
+For this analysis, we decided to use the pfMET for simplicity after observing that using the \ac{PUPPI} \ac{MET} did not seem to give a better agreement between data and \ac{MC} in most of the regions defined, as shown in Figure~\ref{fig:metStudy} in a 2018 $t \bar t$ region, especially in the most interesting regions for us, for high \ac{MET} values. In particular, the Type I corrected \ac{MET} is used in this work, replacing the vector sum of transverse momenta of particles which can be clustered as jets with the vector sum of the transverse momenta of the jets to which \acp{JEC} are applied \cite{METTwiki}.
 
 \begin{figure}[htbp]
 \centering
@@ -2114,11 +2106,11 @@ For this analysis, we decided to use the PfMET for simplicity after observing th
 \begin{minipage}[b]{.49\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_ttbarCR_ll_puppimet.png}
 \end{minipage} \hfill
-\caption{PFMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a 2018 $t \bar t$ control region.}
+\caption{pfMET (on the left) and \ac{PUPPI} \ac{MET} (on the right) distributions observed in a general 2018 $t \bar t$ control region.}
 \label{fig:metStudy}
 \end{figure}
 
-Several corrections need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters, detailed in Table~\ref{tab:METfilters}, are extremely important, especially in the end of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
+Several corrections need to be applied to this spectrum to filter anomalous high \ac{MET} events arising because of a variety of reconstruction failures induced by the detector due to several effects, such as the the electronic noise and eventual dead cells in the calorimeters or the presence of an eventual beam halo of particles from the \ac{LHC} itself, leading to a global miscalculation of the final energy of the event. These filters, detailed in Table~\ref{tab:METfilters}, are extremely important, especially in the tail of the \ac{MET} spectrum, as observed in Figure~\ref{fig:METFilters}.
 
 \begin{table}
 \begin{center}
@@ -2158,13 +2150,13 @@ Flag\_eeBadScFilter & \checkmark & $-$ \\
 
 \section{Top reconstruction} \label{section:RecoTop}
 
-Although not formerly a part of the \ac{PF} algorithm and done off-line, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signal from the different background processes are spin correlated variables, sensitive to the nature of the \ac{DM} mediator but which require knowledge of the top quark and anti-quark four-momenta, not immediately available without such complete reconstruction of the $t \bar t$ system. 
+Although not formerly a part of the \ac{PF} algorithm and done off-line, the kinematic reconstruction of the $t \bar t$ system is still an extremely important part of this analysis. Indeed, many variables allowing us to discriminate the signals we are interested in from the different background processes are spin correlated variables, sensitive to the nature of the dark matter mediator and which require knowledge of the top quark and anti-quark four-momenta to be computed, not immediately available without such a complete reconstruction of the $t \bar t$ system. 
 
-However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that neutrinos are not directly observed, meaning that the only observable about the neutrinos is the vectorial sum of their transverse momentum which is inferred from the total momentum imbalance of the event and which frequently has a bad resolution. Additionally, the determination of the individual momenta of each neutrino requires advanced computation techniques, either numerical or analytical.
+However, this reconstruction from channels containing two leptons is typically quite challenging, given the fact that the neutrinos produced at the end of the decay chain of the $t \bar t$ cannot be directly observed. This means that the only observable information we have regarding these neutrinos is the vectorial sum of their transverse momentum, which can be only inferred from the total momentum imbalance of the event and which frequently comes with a bad resolution. In this sense, the determination of the individual momenta of each neutrino requires advanced computation techniques, either numerical or analytical.
 
 \subsection{Numerical and analytical top reconstruction}
 
-Two main methods exist in order to solve this reconstruction problem:
+Two main methods exist in order to reconstruct the $t \bar t$ system:
 \begin{itemize}
 \item The \textbf{Sonnenschein numerical method} \cite{TopReco} first of all relies on the kinematics of the system and on the expression of the four-momenta of the different particles involved in the top quark decay chains (in this case, we consider only the chain $t \rightarrow bW \rightarrow bl\nu$ for the two tops, as previously explained), as expressed in Equations~\ref{eq:ttreco1} to~\ref{eq:ttreco3}, if we assume that the \ac{MET} of the event is coming only from the two neutrinos produced.
 
@@ -2196,21 +2188,21 @@ m_{\bar t}^2 = (E_{\bar b} + E_{l^-} + E_{\bar \nu})^2 - (\overrightarrow{p}_{\b
 
 %In these previous equations, the \ac{PF} reconstruction help with the measurement of the quantities related to the leptons and b-jets, while the energy of the neutrinos is considered equal to their momentum because of their extremely low mass. It is also important to note that the different masses appearing in these equations are typically treated as exactly known even though this is only true at first order since they are actually \ac{BW} distributions. 
 
-In this case, we therefore have 6 equations to solve and exactly 6 unknowns (since the energy of the neutrinos is considered equal to their momentum because of their extremely low mass and if we assume the W boson and top quark masses to be known and fixed) corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved, leading to a quartic equation in $p_{\nu_x}$, analytically solvable but quite ambiguous given the variable number of solutions of such equation (typically, the solution giving the lowest invariant mass for the $t \bar t$ system is then chosen).
+In this case, we therefore have 6 equations to solve and exactly 6 unknowns (since the energy of the neutrinos is considered equal to their momentum because of their extremely low mass, and if we assume the W boson and top quark masses to be known and fixed) corresponding to the three momentum components of each neutrino produced, a problem that can in principle be solved. This leads to a quartic equation in $p_{\nu_x}$, analytically solvable but quite ambiguous given the variable number of solutions of such equation (typically, the solution giving the lowest invariant mass for the $t \bar t$ system is then chosen).
 
 %This method then relies on an additional minimization process of this quartic equation to find the optimal solution, while some of the loss of reconstruction efficiency due to the contribution to the \ac{MET} given by the eventual presence of \ac{DM} particles can typically be recovered. This minimization process allows to estimate the value of the $p_T$ of the mediator of the \ac{DM} interaction, an interesting discriminating variable between the \ac{SM} $t \bar t$ process and our signal that will be described later on this section.
 
 \item The \textbf{Betchart analytical method} \cite{Betchart} on the other hand is able to describe the decay $t \rightarrow bl\nu$ using this time a geometric approach. This method was chosen in this analysis because it offers the following advantages:
 \begin{itemize}
-\item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously. 
+\item With this method, the invariant mass constraints from the top quark and the W boson are both exact and do not suffer the same kind of ambiguity as observed previously;
 
 %\color{red} FIXME: Talk to Pablo about this (cf. email 21/08) \color{black}
 
-\item The solution set for each neutrino momentum in this case is an ellipse that can be described precisely and from which the solutions for the neutrino momenta can be reduced to a discrete set of values, which will be helpful when trying to estimate the $p_T$ of the mediator of the \ac{DM} signals considered, while also giving us information about the precision of this measurement.
+\item The solution set for each neutrino momentum in this case is an ellipse in the $(x,y)$ plane that can be described precisely and from which the solutions for the neutrino momentum can be reduced to a discrete set of values, which will be helpful when trying to estimate the $p_T$ of the mediator of the \ac{DM} signals considered, while also giving us information about the precision of this measurement, as we will see later;
 \item The results obtained here can be useful for other event topologies featuring similar kinematic constraints as well.
 \end{itemize}
 
-Basically, this methods relies on two observations constraining the geometrical shape of the W boson momentum vector. First of all, the decay of top quark constrains this vector to an ellipsoidal surface of revolution about an axis coincident with the bottom quark momentum. The decay of the W boson itself on the other hand additionally constrain this vector to another ellipsoidal surface of revolution about an axis matching the momentum of the resulting charged lepton. The W boson momentum vector will then be defined by the intersection of the surfaces given by these two constraints, resulting in an ellipse in the phase space. The neutrino momentum vector can then be expressed as a translation of this ellipse, using a parametric expression, as described in \cite{Betchart}.
+Basically, this method relies on two observations constraining the geometrical shape of the W boson momentum vector. First of all, the decay of a top quark constrains this vector to an ellipsoidal surface of revolution around an axis coincident with the bottom quark momentum. The decay of the W boson itself on the other hand additionally constrains this vector to another ellipsoidal surface of revolution around an axis matching the momentum of the resulting charged lepton. The W boson momentum vector will then be defined by the intersection of the surfaces given by these two constraints, resulting in an ellipse in the $(x,y)$ plane. The neutrino momentum vector can then be expressed as a translation of this ellipse, using a parametric expression, as described in \cite{Betchart}.
 
 In the two neutrinos final state, it is then possible to show that the elliptical solution sets for the neutrino momenta ($\nu_\perp$, $\bar \nu_\perp$) respective to the two top quarks decaying to leptons are given by Equation~\ref{eq:matrix}, where $N_\perp$ and $\bar N_\perp$ are the solution ellipses of the (anti)neutrino in the transverse plane and expressed in the laboratory coordinate system.
 
@@ -2234,7 +2226,7 @@ Given the fact that the measured components ($\cancel{x}$, $\cancel{y}$) of the 
 \end{pmatrix} \nu_\perp \equiv \Gamma \nu_\perp
 \end{equation}
 
-The solutions for the momenta of the neutrinos will then be given by the intersections of these two ellipses giving either zero, two or four solution pairs ($\bm{p}_\nu, \bm{p}_{\bar \nu}$), as shown in Figure~\ref{fig:ellipses}. If the two ellipses do not intersect, a $\chi^2$ method can be used to check the compatibility between the solution obtained and the standard $t \bar t$ process, the best solution being defined as the point of closest approach between the ellipses.
+The solutions for the momenta of the neutrinos will then be given by the intersections of these two ellipses giving either zero, two or four solution pairs ($\bm{p}_\nu, \bm{p}_{\bar \nu}$), as shown in Figure~\ref{fig:ellipses}. If the two ellipses do not intersect, a $\chi^2$ method can be used to check the compatibility between the best solution obtained and the standard $t \bar t$ process, the best solution being defined as the point of closest approach between the ellipses.
 
 \begin{figure}[htbp]
 \centering
@@ -2247,13 +2239,13 @@ The solutions for the momenta of the neutrinos will then be given by the interse
 \begin{minipage}[b]{.32\textwidth}
 \includegraphics[width=4.3cm, height=4.3cm]{figs/ellipse4.png}
 \end{minipage} \hfill
-\caption{ Three events constraining the neutrino and antineutrino momenta (black and grey arrows, respectively) resulting in 0 (on the left), 2 (on the center) or 4 (on the right) solutions. The dashed ellipse is obtained by using the additional constraint according to which measured \ac{MET} is equal to the sum of neutrino transverse momenta \cite{Betchart}.}
+\caption{ Three events constraining the neutrino and antineutrino momenta (black and grey arrows, respectively) resulting in 0 (on the left), 2 (on the center) or 4 (on the right) solutions. The dashed ellipse is obtained by using the additional constraint according to which the measured \ac{MET} is equal to the sum of neutrino transverse momenta \cite{Betchart}.}
 \label{fig:ellipses}
 \end{figure}
 
 \end{itemize}
 
-So far we have seen two methods able to reconstruct the individual momentum of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adapted to our particular case.
+So far we have seen two methods able to reconstruct the individual momenta of both neutrinos. However, both these methods usually assume that the \ac{MET} is only coming from these neutrinos and this assumption is no longer verified for our signals, for which the \ac{DM} particles produced will contribute by a significant amount to the global \ac{MET}, resulting in a slightly lower reconstruction efficiency compared to the one obtained considering only the standard $t \bar t$ process. The method used then needs to be slightly adapted to our particular case.
 
 \subsection{Top reconstruction with additional dark matter} \label{section:ttrecoDM}
 
@@ -2286,7 +2278,7 @@ By substituting these values into Equation~\ref{eq:matrix}, we then get a new re
 This modification does make the reconstruction a bit more complicated by adding crossed terms between $\bm{\nu_\perp}$ and $\bm{\phi}$, which modify the phase space of solutions. Even though the reconstruction gets more complex in this case, performing it is extremely important because it provides us a way to determine two excellent discriminating variables:
 
 \begin{itemize}
-\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. Indeed, if the system considered does not admit any solution, then there is no intersection between the ellipses formed in the \ac{MET} phase space. However, in this case, the distance between the ellipses gives us a way to approximate by how much we miss a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that the distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimating the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developed later in Section~\ref{section:Variables}.
+\item First of all, the so-called \textbf{dark $p_T$} is a variable estimating the value of the $p_T$ of the eventual mediator of the interaction. If the system considered does not admit any solution, then there is no intersection between the ellipses. However, in this case, the distance between the ellipses gives us a way to approximate by how much we missed a perfect standard $t \bar t$ reconstruction, and it is actually possible to show that the distance between the center of both ellipses is related to the $p_T$ of the mediator of the interaction \cite{Agustin}. This method being completely analytical, estimating the distance between the ellipses is trivial and is giving us the first background-signal discriminating variable that will be developed later in Section~\ref{section:Variables};
 \item The second interesting variable is the so-called \textbf{overlapping factor $R$}, defined in Equation~\ref{eq:overlapping}, where $l_1$ and $l_2$ are the two sizes of the ellipses measured along the axis joining their centers, and $d$ is the distance between these centers.
 
 \begin{equation}
@@ -2312,24 +2304,24 @@ By its definition, this factor is able to take into account not only the distanc
 
 \subsection{Top reconstruction in practice}
 
-The idea of the algorithm is quite simple: it basically take as as input the 4-momenta of the two leptons, the two b-jets, and the two components of the transverse missing momentum and performs all the calculations just described while returning the optimal momenta value for the two neutrinos. However, several complications quickly appears when solving this problem in practice.
+The idea behind the algorithm is quite simple: it basically take as input the 4-momenta of the two leptons, the two b-jets, and the two components of the transverse missing momentum and performs all the calculations just described while returning the optimal momenta value for the two neutrinos. However, several complications quickly appears when solving this problem in practice.
 
-First of all, as we already saw, when the two ellipses intersect each other, we can observe either 2 or 4 solutions, even though only one actually corresponds to the physical momenta of the neutrinos. The solution giving the lowest possible invariant mass for the $t \bar t$ system is then simply chosen and taken in consideration for the analysis since this optimized the probability of making the right choice: indeed, it has been shown \cite{rightChoice} that in 85\% of the cases, the solution satisfying this requisite actually matches the true simulated kinematics.
+First of all, as we already saw, when the two ellipses intersect each other, we can observe either 2 or 4 solutions, even though only one actually corresponds to the physical momenta of the neutrinos. The solution giving the lowest possible invariant mass for the $t \bar t$ system is then simply chosen and taken in consideration for the analysis since this optimizes the probability of making the right choice: indeed, it has been shown \cite{rightChoice} that in 85\% of the cases, the solution satisfying this requisite actually matches the true simulated kinematics.
 
-Then, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations, taken two by two. In practice, the following categories are therefore defined: 
+Then, even though the process studied is always the same and is supposed to give the same final state, each recorded event typically comes with a different number of leptons, jets and b-jets, mostly due to mismeasurements and b-tagging inefficiencies. This means that this algorithm needs to be applied several times, considering all the possible leptons and (b-)jets combinations of the event, taken two by two. In practice, the following categories are therefore defined: 
 \begin{itemize}
-\item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions chosen.
-\item If 2 or more b-jets are observed, combinations between the two leptons, the first b-jet (ordered in $p_T$) and the other b-jets of the event are considered.
-\item Finally, if exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. In this case as well, all the possible combinations between the two leptons and this set of jets are then tested.
+\item If exactly 0 b-jets are observed, the event is not considered in this analysis, according to the selection of the signal regions chosen;
+\item If exactly 1 b-jet is observed, then it is kept and used as input, while all the non b-tagged jets are considered as the second b-jet candidate. All the possible combinations between the two leptons and this set of jets are then tested one by one;
+\item Finally, if 2 or more b-jets are observed, all the combinations between the two leptons, the first b-jet (ordered in $p_T$) and the other b-jets of the event are considered.
 \end{itemize}
 
 When taking into account all these possible combinations, a reconstruction efficiency of $\sim 71$\% has been achieved when considering standard $t \bar t$ \ac{MC} samples. 
 
-Finally, we know any measurement made is not perfect and comes with uncertainties. The impact that imperfectly measured kinematic variables can have on the top reconstruction process can be estimated through the \textbf{smearing} method, by repeating the reconstruction 100 times for each combination previously defined, by updating in each iteration several parameters:
+Finally, we know that any measurement made is not perfect and comes with uncertainties. The impact that imperfectly measured kinematic variables can have on the top reconstruction process can be estimated through the \textbf{smearing method}, by repeating the reconstruction 100 times for each combination previously defined, while updating in each iteration several parameters:
 \begin{itemize}
-\item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a Gaussian distribution whose mean value $\mu$ is null and whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information.
+\item The energy of the jets are updated within their respective uncertainties, using a random number drawn from a Gaussian distribution whose mean value $\mu$ is null and whose standard deviation $\sigma$ has been estimated to 0.3 using the jet energy corrections information;
 
-\item The energy of the leptons is also updated using a random correction factor generated from the distribution shown in Figure~\ref{fig:lepsmearing}, computed in \ac{MC} and representing the energy deviation between the generation and reco information.
+\item The energy of the leptons is also updated using a random correction factor generated from the distribution shown in Figure~\ref{fig:lepsmearing}, computed in \ac{MC} and representing the energy deviation between the generation and reco information;
 
 \begin{figure}[htbp]
 \centering
@@ -2338,7 +2330,7 @@ Finally, we know any measurement made is not perfect and comes with uncertaintie
 \label{fig:lepsmearing}
 \end{figure}
 
-\item The \ac{MET} is also recomputed each time using both these newly calculated parameters, according to Equation~\ref{eq:updateMET}.
+\item The \ac{MET} is also recomputed each time using both these newly calculated parameters, according to Equation~\ref{eq:updateMET};
 
 \begin{equation}
 \label{eq:updateMET}
@@ -2354,7 +2346,7 @@ Finally, we know any measurement made is not perfect and comes with uncertaintie
 \label{fig:angsmearing}
 \end{figure}
 
-The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while the angle $\alpha$ is taken as a random number generated from the distributions of the angle between the particle and detector level direction, as shown in Figure~\ref{fig:angdistributions}. These distributions have been obtained in \ac{MC} using Equation~\ref{eq:alpha}, relating the generation and reco normalized vectors $\hat{p}$ representing the direction of the momentum of a given object (lepton or b-jet).
+The $\omega$ angle is taken from a simple uniform distribution [0, 2$\pi$] while the angle $\alpha$ is taken as a random number generated from the distributions of the angle between the particle and detector level direction, as shown in Figure~\ref{fig:angdistributions}. These distributions have been obtained in \ac{MC} using Equation~\ref{eq:alpha}, relating the generation and reco normalized vectors $\hat{p}$ representing the direction of the momentum of a given object (lepton or b-jet);
 
 \begin{equation}
 \label{eq:alpha}
@@ -2395,7 +2387,7 @@ During each iteration of the smearing process, an individual weight $w$ is compu
 
 A global weight $W$ is then assigned to each lepton/b-jet combination by summing the weight $\sum w(m_{l \bar b}) \cdot w(m_{\bar l b})$ obtained for each smearing iteration, and the combination with the largest weight is considered to be the solution of the event. This weight distribution will be another variable used to discriminate the signal from the backgrounds processes, since the higher this variable is, the larger the likelihood for the event to be an authentic $t \bar t$ event is.
 
-Even though this smearing increases the efficiency of the reconstruction to $\sim 90$\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to find a solution to all the events. If an event does not present any solution, then all its variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values. %Eventual events having such non-physical values are then discarded and simply not considered the analysis.
+Even though this smearing increases the efficiency of the reconstruction to $\sim 90$\% when considering the $t \bar t$ process, this kinematic reconstruction algorithm does not allow us to find a solution to all the events. If an event does not present any solution, then all its kinematic variable which do not depend on the neutrino momenta are still considered for the analysis, while the variables which do require the reconstruction information are set to non-physical default values. %Eventual events having such non-physical values are then discarded and simply not considered the analysis.
 
 
 
@@ -2423,9 +2415,9 @@ Even though this smearing increases the efficiency of the reconstruction to $\si
 
 \chapter{Samples and objects definition} \label{chapter:Samples}
 
-In order to find a possible hint for the production of \ac{DM} in the \ac{LHC} collisions considering our signal models of interest, briefly described in Section~\ref{section:ourChannel}, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All the samples and the code used for this particular search will therefore be thoroughly described in Section~\ref{section:Samples}.
+In order to find a possible hint for the production of dark matter in the \ac{LHC} collisions considering our signal models of interest, the data collected needs to be compared with \acf{MC} simulations produced in a central way for each \ac{SM} process. Indeed, any deviation of the data observed with respect to what we expect to see, obtained from these \ac{MC} simulations, might be the sign of some \ac{BSM} physics. All the samples and the code used for this particular search will therefore be thoroughly described in Section~\ref{section:Samples}.
 
-Another crucial part of the analysis is definition of the objects that we want to consider. Section~\ref{section:ObjectDef} will in this sense be devoted to the definition of the leptons, triggers and (b-)jets used in this work, while the different weights and correction factors that needs to be applied to the \ac{MC} simulation will finally be described in Section~\ref{subsection:Weights}.
+Another crucial part of the analysis is definition of the objects that we want to consider. Section~\ref{section:ObjectDef} will in this sense be devoted to the definition of the leptons, triggers and (b-)jets used in this work, while the different weights and correction factors that needs to be applied to the \ac{MC} simulation in order to be able to compare it to the data collected will finally be described in Section~\ref{subsection:Weights}.
 
 %All of the steps needed to mathematically simulate the $pp$ collisions of the \ac{LHC} and to take into account the effect of the detector on the particles produced will first of all be introduced in Section~\ref{section:MC}. Then, the different formats of files available to perform the analysis and the code used will be briefly introduced in Sections~\ref{section:Files} and~\ref{section:Code} and the different data samples collected during the Run II of operation of the \ac{LHC} will be detailed in Section~\ref{section:Data}, while the signal models and samples considered in this particular analysis along with the \ac{MC} samples used for the simulation of the different backgrounds will be introduced in Sections~\ref{section:Signals} and~\ref{section:Backgrounds} respectively.
 
@@ -2433,17 +2425,15 @@ Another crucial part of the analysis is definition of the objects that we want t
 
 \subsection{Data samples} \label{section:Data}
 
-As already explained in Section~\ref{subsection:Lumi}, the data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
+The data analyzed in this work has been taken at a center of mass energy of 13 TeV during the second part of the Run II of operation of the \ac{LHC}. 
 
-During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$) fb$^{-1}$ (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$) fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of ($137.1 \pm 2.0$) fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to events present in different triggers. All the data samples considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
+During this period, an integrated luminosity of ($35.9 \pm 0.9$) fb$^{-1}$ (2016) \cite{Lumi2016}, ($41.5 \pm 1.0$) fb$^{-1}$ (2017) \cite{Lumi2017} and ($59.7 \pm 1.5$) fb$^{-1}$ (2018) \cite{Lumi2018} has been collected, resulting in a total dataset of ($137.1 \pm 2.0$) fb$^{-1}$ recorded by the \ac{CMS} detector and ready to be analyzed. This data has been obtained by combining a set of single and double lepton triggers that will be described in Section~\ref{section:Triggers} and by taking care of avoiding any eventual double counting due to eventual events which have been collected by several triggers at once. All the data samples actually considered for this analysis are listed in Appendix~\ref{appendix:DataSamples}.
 
 \subsection{The Monte-Carlo simulation method} \label{section:MC}
 
-As previously explained, the generation of \ac{MC} simulations for the most common \ac{SM} processes is a crucial step of any analysis because they are considered to be the reference to which the data collected is compared in order to try and find some discrepancies, which could the sign of the existence of \ac{BSM} physics. Searches for exotic physics therefore heavily depend on these simulations, which need to be generated with great care and to which a large uncertainty is typically associated since the collision between the partons of two protons and the interaction between the particles produced and the detector itself are extremely complex by nature. 
+As previously explained, the generation of \ac{MC} simulations for the most common \ac{SM} processes is a crucial step of any analysis because they are considered to be the reference to which the data collected is compared in order to try and find some discrepancies, which could the sign of the existence of \ac{BSM} physics. Searches for exotic physics therefore heavily depend on these simulations, which need to be generated with great care and to which a large uncertainty is typically associated since the collision between the partons of two protons and the interactions between the particles produced and the detector itself are extremely complex by nature. 
 
-The basic idea of the \ac{MC} simulation consists in using a random number generator to simulate the randomness of nature and produce as many events as computationally possible for all the \ac{SM} processes, taking into account the probability density functions of these processes. This is performed by specific softwares called \textbf{event generators} and it is important to note that since we usually don't know everything about the \ac{SM} or \ac{BSM} process being generated, the perfect event generator does not exist.
-
-To make the generation of such simulations a bit easier, the description of a typical $pp$ collision can usually be divided into several steps, as shown with the color code used in Figure~\ref{fig:MCGen}. The typical approximations used to make this kind of simulation possible from the computational point of view will also be briefly introduced at this point.
+The basic idea behind the \ac{MC} simulation generation  process consists in using a random number generator to simulate the randomness of nature and produce as many events as computationally possible for all the \ac{SM} processes, taking into account the probability density functions of these processes. This is performed by specific softwares called \textbf{event generators} and it is important to note that since we usually do not know everything about the \ac{SM} or \ac{BSM} process being generated, the perfect event generator does not exist. To make the generation of such simulations a bit easier, the description of a typical $pp$ collision can usually be divided into several steps, as shown with the color code used in Figure~\ref{fig:MCGen}. %The typical approximations used to make this kind of simulation possible from the computational point of view will also be briefly introduced at this point.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2464,9 +2454,9 @@ A typical $pp$ collision at a center of mass energy $\sqrt{s}$ is usually descri
 
 In this equation, several variables have been introduced, such as:
 \begin{itemize}
-\item The artificial parameter $\mu^2$ used as the delimitation between short and long range physics.
-\item The \acfp{PDF} $f_i(x, \mu^2)$ of both partons involved in the collision, giving the probability of finding in the proton a parton of flavor $i$ (quark or gluon) carrying a fraction $x$ of the proton momentum.
-\item The integrated parton-level cross section $\hat{\sigma}_{ij \rightarrow A}$ describing the short range physics between the partons, taking into account the phase space and the matrix element obtained considering all the Feynman diagrams of a given process.
+\item The artificial parameter $\mu^2$ used as the delimitation between short and long range physics;
+\item The \acfp{PDF} $f_i(x, \mu^2)$ of both partons involved in the collision, giving the probability of finding in the proton a parton of flavor $i$ (quark or gluon) carrying a fraction $x$ of the proton momentum;
+\item The integrated parton-level cross section $\hat{\sigma}_{ij \rightarrow A}$ describing the short range physics between the partons, taking into account the phase space and the matrix element obtained considering all the Feynman diagrams of a given process;
 \item The square invariant mass of the two partons $\hat{s} = (p_i + p_j)^2$.
 \end{itemize}
 
@@ -2474,15 +2464,15 @@ Many algorithms have been developed in order to select a hard process $ij \right
 
 \subsubsection*{Parton showers}
 
-The parton shower phase is then used to describe what happens to the incoming and outgoing partons after the initial collision that has just been described. The hard process induce by definition a large acceleration to the partons involved, which then tend to emit \ac{QCD} radiation under the forms of gluons, just like accelerated electric charges do by emitting photons. However, the gluons emitted do have a color charge and can therefore emit further radiation until reaching such a low energy that they are able to form colourless hadrons, as discussed in Section~\ref{section:RecoJet}. This process typically leads to the creation of the so-called \textbf{parton showers}, approximate higher-order real-emission corrections to the hard scattering, that need to be simulated by the event generators as well since they are an important part of the kinematics of the collision.
+The parton shower phase is then used to describe what happens to the incoming and outgoing partons after the initial collision that has just been described. The hard process induce by definition a large acceleration to the partons involved, which then tend to emit \ac{QCD} radiation under the forms of gluons, just like accelerated electric charges do by emitting photons. However, the gluons emitted do have a color charge and can therefore emit further radiation until reaching such a low energy that they are able to form colourless hadrons, as discussed in Section~\ref{section:RecoJet}. This process typically leads to the creation of the so-called \textbf{parton showers}, approximate higher-order real emission corrections to the hard scattering, that need to be simulated by the event generators as well since they are an important part of the kinematics of the collision.
 
-The parton showering then consists in simulating these showers for not only the final state particles produced by the hard scattering, but also for the particles in the initial state and for the remnants of the colliding protons, since gluons can actually be emitted by \acf{ISR} and by these remnants themselves.
+The parton showering then consists in simulating these showers for not only the final state particles produced by the hard scattering, but also for the particles in the initial state and for the remnants of the colliding protons, since gluons can actually also be emitted by \acf{ISR} and by these remnants themselves.
 
 \subsubsection*{\acf{UE}}
 
 Once the hard scattering and all the possible gluon emissions simulated, the next step consists in considering the so-called \textbf{\acf{UE}} arising from the parton showers just described and from the secondary collisions between partons not involved in the primary hard process, the so-called \acp{MPI}. The \ac{UE} is usually responsible for the production of particles at low transverse momenta $p_T$ that cannot be experimentally distinguished from particles produced from initial or final state radiation but still need to be accounted for and simulated.
 
-These secondary collisions typically lead to the production of extra hadrons and therefore need to be simulated as well by events generators, usually by distributing the partons of the incoming protons in an area of 1fm$^2$: an increased \ac{UE} will be obtained when the so-called impact parameter, the distance between the parton and the center of this area, is decreased, making the collision mostly central and almost head-on \cite{UE}. The \ac{UE} is typically well simulated using softwares such as Herwig \cite{Herwig} and PYTHIA \cite{PYTHIA}. The spectrum for the generation of some variables in a top enriched sample can be found in Figure~\ref{fig:ComparisonGen}.
+These secondary collisions typically lead to the production of extra hadrons and therefore need to be simulated as well by events generators, usually by distributing the partons of the incoming protons in an area of 1 fm$^2$: an increased \ac{UE} will be obtained when the so-called impact parameter, the distance between the parton and the center of this area, is decreased, making the collision mostly central and almost head-on \cite{UE}. The \ac{UE} is typically well simulated using softwares such as Herwig \cite{Herwig} and PYTHIA \cite{PYTHIA}. The spectrum for the generation of some variables in a top enriched sample can be found in Figure~\ref{fig:ComparisonGen}.
 
 \begin{figure}[htbp]
 \centering
@@ -2498,7 +2488,7 @@ These secondary collisions typically lead to the production of extra hadrons and
 
 \subsubsection*{Hadronization}
 
-Once all the primary and secondary collisions simulated, it is time for the event generators to simulate the \textbf{hadronization} and binding processes of the different coloured partons emitted into colourless hadrons, as explained in Section~\ref{section:RecoJet}. This hadronization process happen at low energies, when the perturbation theory becomes invalid and the dynamics enter a non-perturbative phase, which leads to the formation of the observed final-state hadrons. Non-perturbative calculations then have to be used by the event generators in order to simulate this effect.
+Once all the primary and secondary collisions simulated, the event generators need to simulate the \textbf{hadronization} and binding processes of the different coloured partons emitted into colourless hadrons, following the process explained in Section~\ref{section:RecoJet}. This hadronization process happen at low energies, when the perturbation theory becomes invalid and the dynamics enter a non-perturbative phase, which leads to the formation of the observed final state hadrons. Non-perturbative calculations have to be used by the event generators in order to simulate this effect.
 
 \subsubsection*{Unstable particle decays}
 
@@ -2506,15 +2496,15 @@ The last step of the \ac{MC} generation consists in finding a model allowing the
 
 \subsubsection*{Detector simulation}
 
-Once the event completely simulated using the event generators and the \ac{PU} taken into account by reproducing the hard scattering process several times, another step is required: simulating the interaction between the "perfect" particles previously created and the "imperfect" \ac{CMS} detector. 
+Once the event completely simulated using the event generators and the \ac{PU} taken into account by reproducing the hard scattering process several times, another step is required: simulating the interaction between the "perfect" particles previously generated and the "imperfect" \ac{CMS} detector. 
 
 This is typically done by the GEANT4 software \cite{Geant4}, able to model different effects, such as:
 
 \begin{itemize}
-\item Modeling of the interaction region;
-\item Modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes;
-\item Modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation);
-\item Modeling of the detector's electronic response.
+\item The modeling of the interaction region;
+\item The modeling of the particle passage through the volumes that compose CMS detector and of the accompanying physics processes;
+\item The modeling of the effect of multiple interactions per beam crossing and/or the effect of events overlay (\ac{PU} simulation);
+\item The modeling of the detector electronic response.
 \end{itemize}
 
 This modeling accounts for all the cracks and for the disposition of the subsystems inside of the \ac{CMS} detector. This software is for example able to model the interaction of the electrons with the tracker, responsible for the emission of bremsstrahlung photons, as explained in Section~\ref{subsection:Electrons}.
@@ -2529,11 +2519,11 @@ The results of the comparison between the output of two different versions of th
 \end{center}
 \end{figure}
 
-However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to correct the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}.
+However, the modeling of the detector is not perfect and not all the inefficiencies can be accounted for. In some cases, \ac{SF} are then used to precise the \ac{MC} simulations and correct some expected discrepancies between data and \ac{MC}.
 
 \subsection{Signal samples} \label{section:Signals}
 
-Two different sets of \ac{MC} signal samples have been produced centrally with MADGRAPH and PYTHIA8 at \ac{LO} for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally in both cases, considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
+Two different sets of \ac{MC} signal samples have been produced centrally with MADGRAPH and PYTHIA8 at \ac{LO} for this analysis, corresponding to the $t/\bar t$+DM and to the $t \bar t$+DM signals. Different mass points were produced first privately and then centrally (in the $t \bar t$+DM case), considering different dark matter masses, from 1 to 51 GeV, and different scalar or pseudoscalar mediator masses depending on the model considered, ranging from 10 to 1000 GeV. In this context, 13 (17) different mass points have been produced for each mediator considered for the $t/\bar t$+DM ($t \bar t$+DM, respectively) signals, as listed in Appendix~\ref{appendix:SignalSamples}.
 
 The impact on the kinematics (in this particular case, on the spectrum of the pf\ac{MET}) of these different mass points available can be observed in Figures~\ref{fig:signalSingleScalar} (scalar $t/\bar t$+DM),~\ref{fig:signalSinglePseudo} (pseudoscalar $t/\bar t$+DM),~\ref{fig:signalScalar} (scalar $t \bar t$+DM) and~\ref{fig:signalPseudoscalar} (pseudoscalar $t \bar t$+DM). As expected from Table~\ref{table:ttDMsignals}, we can see first of all in these figures that the higher the mediator mass is, the lowest is its spectrum because of the lower cross section associated to the model. On the other hand, we can also observe that the mass of the \ac{DM} itself has little to no impact regarding to the kinematics of the event, as expected given the decay of such exotic matter to a pair of invisible particles. Finally, we can also observe in these plots the difference in kinematics between the background (in blue) and the different signals, which will be the basis of the analysis performed.
 
@@ -2620,21 +2610,19 @@ Once recorded (or simulated), the data (or \ac{MC}) still needs to go under a co
 \item \textbf{\ac{AOD}}: physics objects used in analysis (400-500kB/event)
 \end{itemize}
 
-Two additional formats were introduced since the end of the Run I. First of all the miniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection.
+Two additional formats were introduced since the end of the Run I. First of all the miniAOD was introduced to reduce the size of the \ac{AOD} by a factor 10 while retaining most of the information about all the particles that were created, without applying any further selection. Then, because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by avoiding the storage of quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can actually rely on such files in order for their work. 
 
-Because of the increased integrated luminosity collected by \ac{CMS} over the last few years, a brand new file format featuring another reduction of the file size of a factor $\sim 50$ was recently introduced: the nanoAOD, able to retain most of the information of each collision in around 1kB of data per event only. This reduction in size was achieved by optimizing the floating point of the variables, by not storing quantities that can be recomputed from the available information and by limiting the number of physics objects available, for example. This means that some low-level analyses cannot use this format to work, but it has been estimated that around 50-70\% of the analyses performed at \ac{CMS} can actually rely on such files in order for their work. 
-
-In this particular case, the 6th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signal and backgrounds). 
+In this case, the 7th version of the nanoAOD, introducing a series of bug fixes and the latest jet energy corrections, was used for both the data and the \ac{MC} samples (signals and backgrounds). 
 
 \subsection{Analysis code} \label{section:Code}
 
 The code used for the event generation, simulation and reconstruction is the version 10\_4\_X of the official software of the \ac{CMS} collaboration, called CMSSW \cite{CMSSW}. This software contains the \ac{CMS} \ac{EDM} which is able to describe every event as a C++ object containing all the RAW and reconstructed information related to the collision. These object are stored using the ROOT file format \cite{ROOT}, an analysis package written in C++. 
 
-Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This selection will be detailed in Chapter~\ref{chapter:Selection}. This \textit{Latino} framework, written in python, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different corrections to the \ac{MC} samples and produce the histograms needed to perform a search such as this one.
+Once all the different samples produced centrally up to the nanoAOD stage, another framework was put in place in order to do a post-processing of such samples, by selecting objects interesting for different dileptonic analyses, reducing therefore even more the size of the samples to be considered by selecting only events having 2 tight leptons. This framework, the so-called \textit{Latino} framework, written in python, is common to several different analyses and has been developed by tens of different people over the past few years, providing several tools to produce samples, read the files, apply different correction factors to the \ac{MC} samples and produce the histograms and datacards needed to perform a search such as this one.
 
 \section{Objects definition} \label{section:ObjectDef}
 
-A typical $t/\bar t$ or $t \bar t$+DM event signature is made out of a certain number of (b tagged) jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two neutrinos and from the two \ac{DM} particles created along the way. It is extremely important to describe the \acf{WP} picked and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, chosen in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the misidentification rates of the different objects.
+A typical $t/\bar t$ or $t \bar t$+DM event signature is made out of a certain number of (b-tagged) jets along with two leptons (electrons and/or muons) and some \ac{MET} coming from the two neutrinos and from the two \ac{DM} particles created along the way. It is extremely important to describe the \acf{WP} picked and the selection applied in order to select the objects of the analysis, such as the leptons and the jets used, chosen in such a way to optimize the lepton reconstruction efficiency while reducing as much as possible the misidentification rates of the different objects.
 
 %First of all, the different triggers used to collect the data will be detailed in Section~\ref{section:Triggers}. Then, the leptons used in this analysis will be introduced in Sections~\ref{section:EleSel} (for electrons) and~\ref{section:MuSel} (for muons). Finally, given the nature of the \ac{DM} signal searched for, a complete description of the jets selected in the analysis will be necessary and performed in Section~\ref{section:JetSel}.
 
@@ -2723,7 +2711,7 @@ DoubleMu & [315252,325175] & HLT\_Mu17\_TrkIsoVVL\_Mu8\_TrkIsoVVL\_DZ\_Mass3p8\_
 
 Our analysis relies on the dilepton final state, so the single lepton trigger are only considered in order to recover some of the efficiency lost in some cases when one lepton passes the tight identification criteria while the second one does not, and does therefore not trigger the event. The logical \textit{or} of all the trigger paths is considered. Eventual events passing several triggers are taken into account as well to make sure to avoid any double counting.
 
-In particular, the trigger efficiency, defined for each trigger as the ratio between the number of events passing our object selection and the trigger itself in the numerator and the number of events passing our selection in the denominator has been computed using orthogonal \ac{MET} datasets to avoid any bias. Studying this efficiency is important in the sense that we want to make sure that the triggers used are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on of any trigger, and because we actually use the computed efficiency to reweight the simulated samples. The efficiencies have been calculated using orthogonal \ac{MET} triggers and a \ac{MET} $> 100$ GeV cut for the different data taking periods and for each channel individually, as shown in Figure~\ref{fig:TriggEff}, following the \ac{CMS} recommendations \cite{triggerEff}. At the end of the day though, 2D efficiencies (representing the leading lepton $p_T$ versus $\eta$, as shown in Figure~\ref{fig:TriggEff2D}) were actually estimated in both data and \ac{MC}. A scale factor was then estimated and used in the analysis to compute the weight of each event that needs to be applied to account for this effect.
+The trigger efficiencies, defined for each trigger as the ratio between the number of events passing our object selection and the trigger itself in the numerator and the number of events passing our selection in the denominator has been computed using orthogonal \ac{MET} datasets to avoid any bias. Studying this efficiency is important in the sense that we want to make sure that the triggers used are efficient enough in the $p_T$ region of the leptons of the analysis to avoid any undesired effect due to the turn-on region of any trigger, and because we actually use the computed efficiency to reweight all the simulated samples used in this analysis. The efficiencies have been calculated using orthogonal \ac{MET} triggers and a \ac{MET} $> 100$ GeV cut for the different data taking periods and for each channel individually, as shown in Figure~\ref{fig:TriggEff}, following the \ac{CMS} recommendations \cite{triggerEff}. At the end of the day though, 2D efficiencies (representing the leading lepton $p_T$ versus $\eta$, as shown in Figure~\ref{fig:TriggEff2D}) were actually estimated in both data and \ac{MC}. A scale factor was then estimated and used in the analysis to compute the weight of each event that needs to be applied to account for this effect.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2742,7 +2730,7 @@ In particular, the trigger efficiency, defined for each trigger as the ratio bet
 \includegraphics[width=7.5cm, height=5.6cm]{figs/Efficiency_pt_2018_2018.png}
 \end{center}
 \end{minipage} \hfill
-\caption{Trigger efficiencies using orthogonal \ac{MET} datasets for each year in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
+\caption{Trigger efficiencies with respect to the leading lepton $p_T$ using orthogonal \ac{MET} datasets for each year in 2016 (on the top left), 2017 (on the top right) and 2018 (on the bottom).}
 \label{fig:TriggEff}
 \end{center}
 \end{figure}
@@ -2804,8 +2792,7 @@ In particular, the trigger efficiency, defined for each trigger as the ratio bet
 \end{center}
 \end{minipage}
 } \hfill
-\caption{Trigger efficiencies obtained for the leading lepton $p_T$ versus $\eta$ value, using orthogonal MET datasets for each data\
-set and for different channels ($ee$ on the left, $e \mu$ on the middle and $\mu \mu$ on the right).}
+\caption{Trigger efficiencies obtained for the leading lepton $p_T$ versus $\eta$, using orthogonal MET datasets for each dataset and for different channels ($ee$ on the left, $e \mu$ on the middle and $\mu \mu$ on the right).}
 \label{fig:TriggEff2D}
 \end{center}
 \end{figure}
@@ -2862,7 +2849,7 @@ set and for different channels ($ee$ on the left, $e \mu$ on the middle and $\mu
 %\end{itemize}
 %\end{itemize}
 
-Four different electron \acp{WP} (veto, loose, medium, tight) are defined by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG} with slightly different quality cuts in the barrel or in the endcaps in order to select electrons with a given efficiency while trying to limit the misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons, to be used when the backgrounds are expected to be large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
+Four different electron \acp{WP} (veto, loose, medium and tight) are defined by the \ac{CMS} EGamma \ac{POG} \cite{ElePOG} with slightly different quality cuts in the barrel and in the endcaps in order to select electrons with a given efficiency while trying to limit their misidentification rate. The tight \ac{WP} is then the one with the lowest electron selection efficiency (of the order of 70\% for electrons with $p_T > 20$ GeV) but the best to reject misidentified electrons, and is to be used mostly when the backgrounds are expected to be quite large. On the other hand, the veto \ac{WP} corresponds to an average electron selection efficiency of the order of 95\%. 
 
 For this analysis, we rely on the cut based medium identification \ac{POG} \ac{WP} to define our electrons \cite{EleWPs}. Electrons originating from photon conversions are rejected by requiring that the electron track does not have missing hits in the innermost layers of the tracker, on top of the conversion veto included in the cut based ID definition.
 
@@ -3000,9 +2987,9 @@ For our analysis, we decided to use directly the medium ID \ac{WP} provided by t
 
 \subsection{Leptons selection} \label{section:LepSel}
 
-A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be pre-selected.
+A few additional quality cuts are applied to both the electrons and muons. We ask them to have a $p_T > 8$ GeV and a pseudo-rapidity $|\eta| < 2.4$ to be pre-selected for the analysis.
 
-Furthermore, lepton candidates trajectories are required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($d_z < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem in the queue of the \ac{MET} spectrum.
+Furthermore, lepton candidates trajectories are required to be compatible with the primary interaction vertex by imposing constraints on their transverse ($|d_0| < 0.05$ cm) and longitudinal ($|d_z| < 0.10$ cm) impact parameters, and on the three-dimensional impact parameter significance ($S^d_{3D} < 4$), computed as the ratio of the three-dimensional impact parameter and its uncertainty. This helps in removing some of the non-prompt contamination, whose misunderstanding might be a problem, mostlyS in the tail of the \ac{MET} spectrum.
 
 \paragraph{Veto \ac{WP}}
 
@@ -3012,7 +2999,7 @@ As we will see later on, events featuring more than two leptons are rejected, an
 
 Jets are an important part of this analysis as well given the final state searched for in this case. As explained in Section~\ref{section:RecoJet}, the jets are clustered from the \ac{PF} candidates using the anti-kT algorithm (with a typical distance parameter $R = 0.4$). 
 
-In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the year of data taking \cite{JetWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 20$ GeV ($30$ GeV for the first jet) and a $|\eta| < 2.4$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting. The recommended jet smearing method is further applied to jets, which consists in using data rather than simulation in order to estimate the amount of \ac{MET} to be expected from multijet production.
+In this analysis, jets are selected following the tight \ac{WP} definition given by the \ac{CMS} JET/MET \ac{POG} \cite{JETMETPOG}, whose selection depends on the pseudorapidity of the jet and on the data taking period \cite{JetWPs}. The tight \ac{POG} \ac{WP} has been chosen since it offers an efficiency higher than 98-99\% for all the jets and a background rejection higher than 98\% for jets having $|\eta| < 3.0$. Jets are further required to have a $p_T > 30$ GeV Sand a $|\eta| < 2.4$ to be considered in this analysis, and jets overlapping with any selected lepton within a cone of radius $R < 0.4$ are removed to prevent signal leptons clustered as jets from entering the jet counting. The recommended jet smearing method is further applied to jets, which consists in using data rather than simulation in order to estimate the amount of \ac{MET} to be expected from multijet production.
 
 %\begin{table}
 %\begin{center}
@@ -3057,11 +3044,11 @@ In this analysis, jets are selected following the tight \ac{WP} definition given
 %\end{center}
 %\end{table}
 
-Finally, a slightly different selection (tight \ac{PU} jet ID) is applied to jets having a $p_T < 50$ GeV in order to reject jets coming from \ac{PU} interactions. Following the official \ac{POG} recommendations, jet energy correction and resolution are also taken into account \cite{JEC2, JER}.
+Finally, a slightly different additional selection (tight \ac{PU} jet ID) is applied to jets having a $p_T < 50$ GeV in order to reject jets coming from \ac{PU} interactions. Following the official \ac{POG} recommendations, jet energy correction and resolution are also taken into account \cite{JEC2, JER}.
 
 \paragraph{b-jets}
 
-The b-jets are selected among all the jets using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 10\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively (medium \ac{POG} working point).
+The b-jets are selected among all the jets using the recommendations given by the B-Tagging and Vertexing \ac{POG} \cite{BTagPOG}. The medium deepCSV b-tagging \ac{WP} is used in this case, as explained in Section~\ref{section:BTag}, for which the rate for misidentifying a light jet as a b-jet is around 1\%. A jet is therefore in particular considered to be a b-jet in this analysis if it passes the jet requirements and if its deep CSV b-tagging weight is larger than 0.6321, 0.4941 or 0.4184 for the year 2016, 2017 and 2018, respectively.
 
 %\begin{table}
 %\begin{center}
@@ -3086,7 +3073,7 @@ The b-jets are selected among all the jets using the recommendations given by th
 
 \section{Weights and corrections applied} \label{subsection:Weights}
 
-Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulation, such as the efficiency of the selection of the different objects, usually directly provided by the different \acfp{POG} for their own default objects definitions.
+Several different weights and \ac{SF} usually need to be applied to the different \ac{MC} processes in order to account for several effects observed in data but not accounted for during the generation of the \ac{MC} simulations, such as the efficiency of the selection of the different objects, usually directly provided by the different \acfp{POG} for their own default objects definitions.
 
 The \ac{MC} samples are additionally typically reweighed to match the distribution of true interactions observed in data due to multiple collisions collisions happening in the same bunch-crossings (the \ac{PU}, as defined in Section~\ref{subsection:PU}). To illustrate the effect of these corrections, a few particular weights that are applied to the \ac{MC} samples will now be detailed. 
 
@@ -3108,7 +3095,7 @@ The \ac{MET} distribution is expected to be independent of $\phi$ because of the
 
 \subsubsection*{Top $p_T$ reweighting} \label{subsection:toppt}
 
-Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark is corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
+Previous studies of the $t \bar t$ generator typically considered in the physics analysis predict a harder top quark $p_T$ spectrum than the one observed in data \cite{topPt}. This known mismodeling of the top quark can be corrected using a general reweighting recipe \cite{TopPtRecipe}, and its effect on the $p_T$ spectrum can be observed in Figure~\ref{fig:Toppt}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3174,7 +3161,7 @@ In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and know
 
 
 \begin{onehalfspacing}
-\chapter{Event selection and backgrounds prediction} \label{section:CR}
+\chapter{Event selection and backgrounds prediction} \label{chapter:CR}
 \end{onehalfspacing}
 
 In order to first of all define the control and signal regions for the analysis, the set of cuts defining the criteria for the event selection needs to be carefully introduced, as will be done in Section~\ref{section:EventSel}
