@@ -3164,7 +3164,7 @@ In 2018, another issue affecting this time two endcaps of the \ac{HCAL} and know
 \chapter{Event selection and backgrounds prediction} \label{chapter:CR}
 \end{onehalfspacing}
 
-In order to first of all define the control and signal regions for the analysis, the set of cuts defining the criteria for the event selection needs to be carefully introduced, as will be done in Section~\ref{section:EventSel}
+In order to first of all define the control and signal regions for the analysis, the set of cuts defining the criteria for our selection of events needs to be introduced, as will be done in Section~\ref{section:EventSel}
 
 Several different \ac{SM} background processes have been considered for this analysis, all listed in Appendix~\ref{appendix:BkgSamples} and mostly estimated directly from \ac{MC}. In Section~\ref{section:BkgPred}, the main backgrounds to consider for this particular analysis and the ways we have in order to check that we can trust the \ac{MC} simulation will be reviewed, starting with the \ac{SM} top production.
 
@@ -3214,22 +3214,20 @@ Several different \ac{SM} background processes have been considered for this ana
 
 \subsection{Inclusive region} \label{section:inclusiveCR}
 
-For this analysis, only events passing the so-called \textit{inclusive region} were considered. This region, as inclusive as technically possible, is mostly used in order to spot initial issues and problems with the simulation of the major backgrounds of the analysis, and was therefore extensively studided in all the different channels available. It is defined from following cuts:
+For this analysis, only events passing the so-called \textit{inclusive region} were considered. This region, as inclusive as technically possible, is mostly used in order to spot initial issues and problems with the simulation of the major backgrounds of the analysis, and was therefore extensively studided. It is defined from the following cuts:
 
 \begin{itemize}
-\item Exactly two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are required;
+\item Two opposite sign good leptons ($p_T > 25$ ($20$) GeV for the leading (trailing) lepton, both having $|\eta| < 2.4$) are first of all required;
 \item Then, events with a third lepton having a veto type and a $p_T > 10$ GeV are rejected;
 \item At least 1 jet is required;
 \item Low mass resonances are removed by asking for $m_{ll} > 20$ GeV.
 \end{itemize}
 
-The distributions obtained in all the channels of this particular region are shown in Figure~\ref{fig:inclusiveCR}. A slight \ac{MC} mismodeling mostly due to the \ac{DY} process can be observed in these plots, but this feature is known in \ac{CMS} mitigated anyway with the analysis cuts applied, and compensated with the introduction of a large systematic uncertainty associated to this \ac{DY} process.
-
-Unless stated otherwise, all the relevant systematic uncertainties are considered to be applied on all the following data/\ac{MC} plots shown.
+Some of the distributions obtained in this particular region are shown in Figure~\ref{fig:inclusiveCR}. A slight \ac{MC} mismodeling mostly due to the \ac{DY} process can be observed in these plots, but this feature is known in \ac{CMS} and mitigated anyway with the analysis cuts applied, and compensated for with the introduction of a large systematic uncertainty associated to this particular process.
 
 \begin{figure}[htbp]
 \centering
-\subfigure[2016 inclusive \ac{CR}]
+\subfigure[2016 inclusive region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_inclusiveCR_ll_mll.png}
@@ -3238,7 +3236,7 @@ Unless stated otherwise, all the relevant systematic uncertainties are considere
 \includegraphics[width=7cm, height=7cm]{figs/2016/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
-\subfigure[2017 inclusive \ac{CR}]
+\subfigure[2017 inclusive region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_inclusiveCR_ll_mll.png}
@@ -3247,7 +3245,7 @@ Unless stated otherwise, all the relevant systematic uncertainties are considere
 \includegraphics[width=7cm, height=7cm]{figs/2017/log_cratio_inclusiveCR_ll_METcorrected_pt.png}
 \end{minipage} \hfill
 }
-\subfigure[2018 inclusive \ac{CR}]
+\subfigure[2018 inclusive region]
  {
 \begin{minipage}[b]{.48\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/log_cratio_inclusiveCR_ll_mll.png}
@@ -3264,7 +3262,7 @@ Unless stated otherwise, all the relevant systematic uncertainties are considere
 
 A global pre-selection region was then defined, by applying on top of the inclusive region a few cuts:
 \begin{itemize}
-\item A 15 GeV Z-window veto is applied in the $ee$ and $\mu \mu$ channels;
+\item A 76-106 GeV Z-window veto is applied in the $ee$ and $\mu \mu$ channels;
 \item The \ac{MET} has to be $> 100$ GeV;
 \item The stransverse mass (defined in Section~\ref{section:Variables}) $M_{T2}(ll)$ should be $> 80$ GeV;
 \item And at least 1 jet and 1 medium deep CSV b-jet are required.
@@ -3272,7 +3270,7 @@ A global pre-selection region was then defined, by applying on top of the inclus
 
 This selection serves as the basis for our signal regions and  allows to keep our signal regions orthogonal to the $t \bar t$ control regions used by the semileptonic channel, so that both channels can be combined, while removing more background than signal anyway.
 
-Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}.
+Some distributions obtained in this pre-selection region are shown in Figure~\ref{fig:preSelSR}. It is important to note at this point that, unless stated otherwise, all the relevant systematic uncertainties are considered to be applied on all the following data/\ac{MC} plots shown.
 
 \begin{figure}[htbp]
 \centering
@@ -3315,13 +3313,13 @@ Some distributions obtained in this pre-selection region are shown in Figure~\re
 
 Because of the relatively high production cross section of top quarks at 13 TeV, the production of one or two top quarks, but without the production of associated \ac{DM}, is obviously the dominant background in both searches. 
 
-Such backgrounds have kinematics quite close to the one expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals, leads to a few differences in kinematics, allowing for some discrimination between these kind of processes. %To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}.
+Such backgrounds actually have kinematics quite close to the ones expected for our signals. However, the additional \ac{MET} expected because of the production of a pair of \ac{DM} particles when considering the signals typically leads to a few differences in kinematics, allowing for some discrimination between these kind of background and signal processes. %To get the best discrimination possible, this work relies on the use of advanced \acf{ML} techniques, as will be discussed in Chapter~\ref{section:Discrimination}.
 
 \subsubsection{The main background: $t \bar t$} \label{subsection:ttbar}
 
 %This background is the most relevant for this analysis because of its large cross section (as seen in Appendix~\ref{appendix:Samples}, it is actually between $\sim 4$ and $\sim 250.000$ times larger than the expected cross section of our signal, depending on the mass point considered!) and kinematics quite close to the expected one for our signal when consider the possible decay of the top quarks into two leptons. 
 
-This background is the most relevant for this analysis because of its large cross section and kinematics, close to our signals of interest.
+This background is the most relevant for this analysis because of its large cross section and kinematics close to our signals of interest.
 
 Different Feynman diagrams contribute to this process at \ac{LO} in a hadron collider, as shown in Figure~\ref{fig:ttbarProd}. NNPDF3.0 \cite{NNPDF} was used as the default \ac{PDF}, while the default POWHEG setup with the PYTHIA8 CUETP8M2 (for 2016) and CP5 (for 2017 and 2018) tunes were used for the generation of this particular sample \cite{PythiaTunes}.
 
@@ -3399,7 +3397,7 @@ Different Feynman diagrams contribute to this process at \ac{LO} in a hadron col
 
 \subsubsection{Single top} \label{subsection:singleTop}
 
-Different Feynman diagrams also account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8, considering the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
+Different Feynman diagrams account for this process in the s-channel (Figure~\ref{fig:singleTopSChann}), t-channel and tW production modes (Figure~\ref{fig:singleTopOtherChann}), the latter being the dominant contribution in this analysis given its kinematics and cross-section. This process is also simulated using POWHEG (or MC@NLO, depending on the year and on the channel) with NNPDF3.0 and PYTHIA8, considering the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes.
 
 \begin{figure}[htbp]
 \centering
@@ -3555,11 +3553,11 @@ As previously mentioned, the top is the heaviest particle of the \ac{SM} and is 
 \label{fig:TopDecay}
 \end{figure}
 
-The dilepton decay of the top quarks produced is obviously more important in this analysis, but its semileptonic decay is also considered to cover possible events in which the jet emitted is misreconstructed by the detector.
+The dilepton decay of the top quarks produced is obviously expected to be dominant in this analysis, but its semileptonic decay is also considered to make sure to cover possible events in which the jet emitted is misreconstructed by the detector.
 
 \subsubsection{Top control region} \label{section:TopCR}
 
-Both these backgrounds are estimated directly from \ac{MC} and checked in a dedicated control region, defined from the inclusive control region, but selecting only events having a \ac{MET} $> 50$ GeV and stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions by definition. Some of the distributions obtained in this region are shown in Figure~\ref{fig:TopCR}. The data-\ac{MC} discrepancies are within the allocated uncertainties so the agreement is considered to be good enough for the analysis.
+Both these backgrounds are estimated directly from \ac{MC} and checked in a dedicated control region, defined from the previous pre-selection control region, but selecting only events having a \ac{MET} $> 50$ GeV and stranverse mass $60 < M_{T2}^{ll} < 80$ GeV, making this region perfectly orthogonal to our signal regions by definition. Some of the distributions obtained in this region are shown in Figure~\ref{fig:TopCR}. The small data-\ac{MC} discrepancies observed in this region are within the allocated uncertainties so the agreement is considered to be good enough for the analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -3596,7 +3594,7 @@ Both these backgrounds are estimated directly from \ac{MC} and checked in a dedi
 
 \subsection{Drell-Yan} \label{subsection:DY}
 
-As previously mentioned, most of the \ac{DY} background, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important. Expected to be found mostly in the $ee$ and $\mu \mu$ channels, it does survive even in the $e \mu$ channels because of possible tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). 
+As previously mentioned, most of the \ac{DY} background, produced through the Feynman diagram represented in Figure~\ref{fig:DY}, is not expected to survive the selection applied to the analysis. However, because of the huge cross section of this process, two to three orders of magnitude larger than the production of a top quark, a thorough description of such process is still extremely important. Expected to be found mostly in the $ee$ and $\mu \mu$ channels, it does survive even in the $e \mu$ channel because of possible tau decays ($Z \gamma^{*} \rightarrow \tau \tau \rightarrow e \mu \nu_e \nu_\mu \nu_\tau \nu_\tau$). 
 
 The samples for such background are generated with the MADGRAPH generator, MLM matching and interfaced to PYTHIA8 with the CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for hadronization. The generation is then split into two distinct Z invariant mass ranges: 10-50 GeV and $>$50 GeV. The HT-binned\footnote{$H_T$ is a variable corresponding to the scalar sum of the transverse momenta of the jets in an event} samples have been chosen for the high mass sample over the inclusive ones in order to increase the statistics available.
 
@@ -3627,11 +3625,11 @@ The samples for such background are generated with the MADGRAPH generator, MLM m
 \label{fig:DY}
 \end{figure}
 
-Apart from the impact it has on the different control and signal regions, the shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data and obtained from a general $R_{\text{in-out}}$ method is applied to this particular process, which is additionally being checked in a specific control region as well.
+Apart from the impact it has on the different control and signal regions, the shape of this background is also estimated from \ac{MC} but a correction factor to its normalization is obtained using data, by using the a general method called $R_{\text{in-out}}$.
 
 \subsubsection{\boldmath$R_{in-out}$ method} \label{subsection:rinout}
 
-The idea behind this semi data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use such vetoed events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
+The idea behind this semi data-driven method is simple: since a 15 GeV veto in the dilepton invariant mass $m_{ll}$ is applied to both the $ee$ and $\mu \mu$ channels to reduce the \ac{DY} contamination in the signal region, then we could use such vetoed events in order to estimate the \ac{DY} contribution outside of the Z mass window defined, referred to as $M_Z$ in the following discussion. Mathematically, we can start by expressing in Equation~\ref{eq:DYevents} the total number of \ac{DY} events $N_{DY}^{total}$ as the sum of events observed inside $N_{DY}^{in}$ and outside $N_{DY}^{out}$ of $M_Z$.
 
 \begin{equation}
 \label{eq:DYevents}
@@ -3645,7 +3643,7 @@ The parameter $R_{out/in,\text{ }}$ is then defined as the ratio between the num
 N^{out}_{DY} = N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
 \end{equation}
 
-This equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, which is not verified when potential mismodeling of the data mass shape by the simulation appear. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodeling does not have a dependence in the number of b-jets, as shown in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}, experimentally determined to be of the order of $\sim 5\%$.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
+This equation relies on several assumptions. First of all, we have to assume that $M_Z$ is dominated by actual \ac{DY} events and peaking backgrounds leading to a similar $R_{out/in}$ factor because of the prompt Z boson present in such backgrounds. Since this is typically a strong assumption to make, we actually decided to remove the contribution of non-peaking backgrounds from the data yields to take this effect into account properly. Additionally, we also have to assume that the $R_{out/in}$ factors measured in data and \ac{MC} are similar, assumption which might not be fully verified if there are data/\ac{MC} discrepancies in the $m_{ll}$ distribution. To account for this effect, we defined a region close to the signal region by reversing the b-jet requirement. If we assume that this mismodeling does not have a dependence in the number of b-jets, as verified in Figure~\ref{fig:Rinoutver}, then we can simply correct the transfer factor previously obtained by a factor $\kappa$ defined in Equation~\ref{eq:genRinout}, and whose value has been determined experimentally to be of the order of $\sim 5\%$.%, which allows us to compute the scale factor to apply to the \ac{DY} process from Equation~\ref{eq:DYSF}.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3670,7 +3668,7 @@ R_{out/in,\text{ } MC}^{corr} = \kappa \cdot R_{out/in,\text{ } MC} = \frac{R_{o
 %SF = \frac{N^{out}_{DY, data}}{N^{in}_{DY, data}} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv  N^{in}_{DY, data} \cdot R_{out/in,\text{ } MC}
 %\end{equation}
 
-Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single scale factor to the \ac{DY} process, considering a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
+Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ } MC}$ across a large range of \ac{MET} values to make sure it is stable enough, as shown in Figure~\ref{fig:Rinoutcheck}. Given the relative flatness of the distributions obtained, we decided to apply a single flat scale factor to the \ac{DY} process, considering additionally a systematic uncertainty simply taken as the observed maximum observed deviation between the central value and the different bins (around 20\% in this case).
 
 \begin{figure}[htbp]
 \begin{center}
@@ -3696,9 +3694,7 @@ Additionally, we checked the behaviour of the transfer factor $R_{out/in,\text{ 
 
 \subsubsection{\acs{DY} control region} \label{section:DYCR}
 
-Given the huge cross section of the \ac{DY}, this process is expected to be present at almost any selection level, making it important to study in a dedicated control region. %The selection applied to the signal regions does reduce it a lot though, especially by specifically asking for a Z-veto in the $ee$ and $\mu \mu$ channels. 
-
-At the end of the day, this region is defined from the pre-selection region, but by simply reversing the Z-veto requirement and relaxing the \ac{MET} cut down to 30 GeV, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in Figure~\ref{fig:DYCR2}. It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
+Given the importance of this process, a dedicated control region was also defined in order to check the behaviour of the \@ac{DY} \ac{MC} simulations as well. This region is defined from the pre-selection region, but by simply reversing the Z-veto requirement and relaxing the \ac{MET} cut down to 30 GeV, making it perfectly orthogonal and allowing us to use the $R_{\text{in-out}}$ method described in Section~\ref{subsection:rinout}, as shown in the distributions of Figure~\ref{fig:DYCR2}. %It is important to keep in mind that this last region is mostly used to compute the $R_{\text{in-out}}$ scale factor, and that the 0-bjet correction factor $\kappa$ described in Section~\ref{subsection:rinout} allows us to take into account the data/MC discrepancies observed. Additionally, a large systematic uncertainty is associated to this particular background, strongly reduced in the signal regions thanks to the cuts applied to the analysis.
 
 \begin{figure}[htbp]
 \centering
@@ -3733,9 +3729,9 @@ At the end of the day, this region is defined from the pre-selection region, but
 \label{fig:DYCR2}
 \end{figure}
 
-\subsection{$t \bar t + W$/$t \bar t + Z$} \label{subsection:ttV}
+\subsection{Top quark production in association with vector bosons} \label{subsection:ttV}
 
-These backgrounds are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
+These backgrounds, usually labelled as $t \bar t + W$ and $t \bar t + Z$, and generically grouped together under the label $t \bar t + V$, are coming from an usual $t \bar t$ production along with an \acf{ISR} or \ac{FSR} production of a W or Z boson, as shown in Figure~\ref{fig:ttV}. The contribution of both these backgrounds is also taken directly from \ac{MC}, generated using either MADGRAPH or MC@NLO, depending on the sample, with the PYTHIA8 CUETP8M1 (for 2016) and CP5 (for 2017 and 2018) tunes for the hadronization process.
 
 \begin{figure}[htbp]
 \centering
@@ -3814,7 +3810,7 @@ These backgrounds are coming from an usual $t \bar t$ production along with an \
 \label{fig:ttV}
 \end{figure}
 
-The resulting cross section of such processes is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give a \ac{SM} neutrino, leading to some actual \ac{MET}.
+The resulting cross section of such processes is a bit lower than the production of the \ac{SM} $t \bar t$ on its own but the kinematics of this background can be extremely close to our signal, since the W or Z boson produced can give some neutrinos, leading to some actual \ac{MET}.
 
 %\subsection{$t \bar t + W$/$t \bar t + Z$ control region} \label{section:ttVCR}
 %
@@ -3856,11 +3852,11 @@ The resulting cross section of such processes is a bit lower than the production
 
 Even though not extremely important in the sense that its kinematics allows us to remove most of its contributions in the signal regions, this background is interesting in the sense that it can be estimated using a data-driven method instead of being taken directly from \ac{MC}.
 
-A few definitions are first of all needed to explain the method used to compute the importance of this background in the different regions of the analysis:
+A few definitions are first of all needed to explain this method used to compute the importance of this background in the different regions of the analysis:
 \begin{itemize}
-\item First of all, a \textbf{prompt lepton} is defined as a real lepton, in the sense that the lepton is originating from the \ac{PV} of a $pp$ collision.
-\item The \textbf{\ac{PR}} is defined as the number of prompt leptons passing the tight selection criteria of the analysis over the number of leptons passing the loose selection criteria. 
-\item On the other hand, by \textbf{fake} or \textbf{non-prompt lepton}, we usually refer to truly \textbf{fake leptons}, such as jets misidentified by the detector as leptons, as shown in Figure~\ref{fig:FakesW}, and real leptons coming from eventual heavy flavor decays.
+\item First of all, a \textbf{prompt lepton} is defined as a real lepton, in the sense that the lepton is originating from the actual \ac{PV} of a $pp$ collision;
+\item The \textbf{\ac{PR}} is defined as the number of prompt leptons passing the tight selection criteria of the analysis over the number of leptons passing the loose selection criteria; 
+\item On the other hand, by \textbf{fake} or \textbf{non-prompt lepton}, we usually refer to truly \textbf{fake leptons}, such as jets misidentified by the detector as leptons, as shown in Figure~\ref{fig:FakesW}, and real leptons coming from eventual heavy flavor decays;
 \item The \textbf{\ac{FR}} is then defined similarly to the prompt rate but considering this time fake leptons only for the tight-to-loose ratio. This ratio therefore corresponds to the probability for a fake lepton to be considered as a real lepton in the analysis.
 \end{itemize}
 
@@ -3932,9 +3928,7 @@ A few definitions are first of all needed to explain the method used to compute 
 \label{fig:FakesW}
 \end{figure}
 
-This background is particularly important at low $p_T$, where the misidentification rate is higher, and is not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose data-driven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. 
-
-In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the \ac{SR} of the analysis and the definition of a same sign control region enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
+This background is particularly important at low $p_T$, where the misidentification rate is higher, and is usually not expected to be modeled correctly by \ac{MC} because of its complexity: a general \textbf{tight-to-loose data-driven method} is then used to compute its kinematics and final contribution in the different regions of the analysis. In general, this method contains three main steps: the computation of the \ac{FR} and \ac{PR}, the extension of these rates in a region kinematically close to the signal region of the analysis and the definition of a same sign control region enriched in fakes in order to perform a closure test of the yields and kinematics of this background.% All these steps will now be detailed.
 
 \subsubsection*{\acf{FR} computation}
 
@@ -3950,7 +3944,7 @@ Because of its definition, the \ac{FR} is computed in a prompt lepton-free regio
 \end{itemize}
 \end{multicols}
 
-All the previous cuts have been designed to define a l1loose \ac{QCD} region as pure as possible by removing most of the W+jets and Z+jets contribution. The PassJets cut is a boolean obtained by looping over all the jets of the event trying to find a jet having an $E_T$ higher than a given threshold in order to control the average $p_T$ of the jet that fakes the lepton (actually, different \ac{FR} have been computed for different $E_T$ thresholds, from 10 to 50 GeV). 
+All the previous cuts have been designed to define a l1loose \ac{QCD} region as pure as possible by removing most of the W+jets and Z+jets contribution. The PassJets cut is a boolean obtained by looping over all the jets of the event trying to find a jet having an $E_T$ higher than a given threshold in order to control the average $p_T$ of the jet that fakes the lepton (actually, different \ac{FR} have been computed for different $E_T$ thresholds, ranging from 10 to 50 GeV). 
 
 Using this method, the jet that fakes a lepton is actually the one recoiling against ($\Delta R > 1.0$) the jet used for the systematics, as shown in Figure~\ref{fig:FakesJet}.
 
@@ -3984,7 +3978,7 @@ Events passing the following pre-scaled triggers are then selected in this regio
 
 The remaining of the \ac{EWK} processes (W+jets, Z+jets) able to pass the previous cuts of the QCD region, are then simply subtracted: this is the so-called \textbf{\ac{EWK} subtraction}.
 
-Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the \acf{WP} chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the lepton) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}.
+Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event and on the working point chosen for the leptons of the analysis, they are computed separately depending on the flavor of the lepton and 2D histograms (accounting for the $p_T$ and $\eta$ of the lepton) need to be created at this stage to calculate this factor, for a given input jet $E_T$ threshold; 1D histograms corresponding to the projections of these 2D histograms along both their axes are also defined at this point, as shown in Figure~\ref{fig:FR}, as they are usually easier to interpret.
 
 \begin{figure}[htbp]
 \centering
@@ -4021,7 +4015,7 @@ Since both the \ac{FR} and \ac{PR} heavily depend on the kinematics of the event
 
 \subsubsection*{\acf{PR} computation}
 
-The \ac{PR}, taking into account the real lepton contamination in the region defined, is also important to calculate, even though the objects \ac{WP} are usually chosen is such a way that this ratio is quite close to 1 and can therefore typically be ignored.
+The \ac{PR}, taking into account the real lepton contamination in the region defined, is also important to calculate, even though the objects working points are usually chosen is such a way that this ratio is quite close to 1 and can therefore typically be ignored.
 
 In our case, this rate has been calculated as well using a general tag and probe method in a Z+jets enriched sample. The main objective is to reconstruct $Z \rightarrow ll$ events in this region and to select all the events for which the first lepton can be characterized as tight. Then, we search for the second lepton coming from the decay of Z within all the leptons detected by calculating the reconstructed mass of all the possible leptons combinations and selecting the one which is closer to the expected mass of the Z boson. We can then simply count how many times this second lepton, expected to be tight, has actually been measured as a tight lepton to estimate this \ac{PR}.
 
@@ -4062,13 +4056,14 @@ The results obtained in this case have been represented in Figure~\ref{fig:PR}.
 
 \subsubsection*{Fake weight calculation}
 
-Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the \acp{SR} of the analysis (usually, a l2loose region). For this, a simple set of equations can be used. We start by defining the following quantities:
-
+Once the fake and prompt rates computed in their specific region, it is still necessary to apply them to a fake-lepton region kinematically close to the signal regions of the analysis (usually, a l2loose region). For this, a simple set of equations can be used.
+\newpage
+We start by defining the following quantities:
 \begin{itemize}
-\item $N_{pp}$, the number of events where both leptons are prompt
-\item $N_{fp}$, the number of events where one lepton is prompt and the other is fake
-\item $N_{ff}$, the number of events where both leptons are fake
-\item $N_{tx}$ ($x = 0,1,2$), the number of events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector
+\item $N_{pp}$, the number of events where both leptons are prompt;
+\item $N_{fp}$, the number of events where one lepton is prompt and the other is fake;
+\item $N_{ff}$, the number of events where both leptons are fake;
+\item $N_{tx}$ ($x = 0,1,2$), the number of events with 0, 1 or 2 leptons passing the right cuts, the \textbf{only quantity directly measurable} by the detector.
 \end{itemize}
 
 It is then possible to see in Equation~\ref{eq:FR1} that, if $p$ is the \ac{PR} and $f$ the \ac{FR} previously calculated, we can find an expression relating all these quantities.
@@ -4099,7 +4094,7 @@ N_{t0} \\ N_{t1} \\ N_{t2}
 
 %A same sign control region enriched in fakes has also been defined in order to check this background.
 
-The non-prompt contamination of this particular analysis however is expected to be dominated by the semileptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations (this assumption can be checked in Figure~\ref{fig:FakesComparison}, obtained in a 2018 same sign control region, in which we do not observe major differences between the two ways we have to estimate the impact of this process). We decided at the end of the day to rely on the \ac{MC} simulation for this analysis mainly because it typically comes with a smaller systematic uncertainty than the data-driven estimation for this process. %This will be done and detailed in Section~\ref{section:SSCR} of this work.
+The non-prompt contamination of this particular analysis however is expected to be dominated by the semileptonic decay of the \ac{SM} $t \bar t$ process, when one of the bottom quarks produced leads to a fake lepton. This particular process, contrary to the W+jets and Z+jets processes, is expected to be modeled quite well by the \ac{MC} simulations (this assumption can be checked in Figure~\ref{fig:FakesComparison}, obtained in a 2018 same sign control region, in which we do not observe major differences between the two ways we have to estimate the impact of this process). We therefore decided to rely on the \ac{MC} simulations only for this analysis mainly because they typically come with a smaller systematic uncertainty than the data-driven estimation for this process. %This will be done and detailed in Section~\ref{section:SSCR} of this work.
 
 \begin{figure}[htbp]
 \begin{center}
@@ -4175,7 +4170,7 @@ The non-prompt contamination of this particular analysis however is expected to 
 
 \subsection{Smaller backgrounds} \label{subsection:SmallerBkg}
 
-Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the \ac{SM} $t \bar t$ decaying semi-leptonically, the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WW$\gamma$) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the different signal regions. 
+Even though quite negligible and reducible, some additional backgrounds still need to be considered, such as the dibosons (WW, WZ and ZZ) and tribosons (WWW, WWZ, WZZ, ZZZ, WW$\gamma$) productions, as shown in Figure~\ref{fig:DiBosons}. All these smaller backgrounds are taken directly from \ac{MC} and account in total for less than 1\% of the total backgrounds in the signal regions. 
 
 \begin{figure}[htbp]
 \centering
@@ -4277,22 +4272,22 @@ Even though quite negligible and reducible, some additional backgrounds still ne
 
 \chapter{Signal extraction} \label{chapter:Strategy}
 
-This Chapter will be dedicated to the explanation of the strategy followed to perform the analysis, by introducing first of all a description regarding the different variables expected to naturally introduce some discrimination between the $t/\bar t$ and $t \bar t$+DM signals and the different background processes, mainly the \ac{SM} $t \bar t$ and single top process, will be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+An explanation of the strategy followed to perform the actual signal extraction will be given in this chapter, by first of all describing the different variables expected to naturally introduce some discrimination between the $t/\bar t$ and $t \bar t$+DM signals and the different background processes, mainly the \ac{SM} $t \bar t$ and single top process, in Section~\ref{section:Variables}. A global description of the \ac{ML} techniques employed in order to optimize the discriminating power of all these variables in the best way possible will then be detailed in Section~\ref{section:NN}.
 
 
 %\section{Signal extraction} \label{section:Discrimination}
 
-A description regarding the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
+%A description regarding the different variables expected to naturally introduce some discrimination of the $t/\bar t$ and $t \bar t$+DM signals with respect to the different backgrounds, mainly the \ac{SM} $t \bar t$ and single top process, will first of all be given in Section~\ref{section:Variables}, while a global description of the \ac{ML} techniques employed in order to optimize the discriminating power of these variables in the best way possible will be detailed in Section~\ref{section:NN}.
 
 \section{Discriminating variables} \label{section:Variables}
 
-Several variables can be used in order to separate one of the signals of interest from the different background processes. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power high enough have actually been used as input to the \ac{MVA} technique developed in order to combine their discriminating power into a single variable, using methods described in Section~\ref{section:NN}. 
+Several variables can be used in order to separate our signals of interest from the different background processes surviving our event selection. Some of the variables now presented did not feature a degree of discrimination as high as expected though and have been left behind in the actual analysis, but the ones featuring a discriminating power sufficiently high have actually been used as input to the \ac{MVA} technique developed. This allowed us to combine their discriminating power into a single output variable, using methods described in Section~\ref{section:NN}. 
 
-It is also important to note that some of these variables rely on the information obtained from the top reconstruction performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. In this case, a default negative value is then assigned, making it easy to select only events which actually pass the $t \bar t$ reconstruction. Note that such non-physical negative values were simply removed from the following distributions.
+It is also important to note that some of these variables rely on the information obtained from the top reconstruction of the $t \bar t$ system performed, which might fail in some cases, as described in Section~\ref{section:RecoTop}. When it happens, a default negative value is then assigned to the variables that need the neutrinos 4-momenta information in order to be computed, making it easy to select only events which actually pass this reconstruction algorithm. Note that such non-physical negative values were simply removed from the following distributions.
 
 \subsubsection*{Number of b-jets and $m_{bl}^t$}
 
-Let's start with the two variables we found to be the most useful in order to separate the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures can have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply rejecting events featuring two b-jets or more to define a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background, especially given the difference in cross-section between the two processes, as shown in Tables~\ref{table:MC2016} to~\ref{table:MC2018}.
+Let's start with the two variables we found to be the most useful in order to introduce some discrimination between the $t/\bar t$+DM and $t \bar t$+DM signals. Since both signatures can have a different number of top quarks in their final state, they are also expected to lead to a different number of observed b-jets, so this quantity is an obvious choice for a good discriminating variable. However, simply rejecting events featuring two b-jets or more to define a region enriched in $t/ \bar t$+DM signal turns out in practice to be an ineffective strategy, mainly since the b-tagger efficiency for our chosen working point is of the order of 85\% only, as discussed in Section~\ref{section:BTag}, which can result in a large surviving $t \bar t$+DM background in this hypothetical $t/\bar t$+DM enriched region, especially given the difference in cross-section between the two processes, as shown in Tables~\ref{table:MC2016} to~\ref{table:MC2018}.
 
 A slightly more effective strategy than vetoing events with multiple b-jets consists in observing that if a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$, defined in Equation~\ref{eq:mblt} \cite{mblt}, where the minimization is performed either over all the possible combinations of jets {$j_a, j_b$} among the b-jets of the events if three or more b-jets are observed, or otherwise over the b-jet(s) observed plus the non b-tagged jet having the highest b-tag weight of the event. The final distributions obtained for both variables in the pre-selection region are shown in Figure~\ref{fig:SRdiscmblt}.
 
@@ -4327,22 +4322,22 @@ m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.48\textwidth}
-\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_nbjet.png}
+\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_mblt.png}
 \end{minipage} \hfill
-\caption{$m_{bl}^t$ (on the left) and number of b-jets (on the right) distributions in the 2018 pre-selection region.}
+\caption{Number of b-jets (on the left) and $m_{bl}^t$ (on the right) distributions in the 2018 pre-selection region.}
 \label{fig:SRdiscmblt}
 \end{figure}
 
-As we can see in these plots, these variables do offer us some discrimination between the different signals considered but even by using them, we cannot easily define a signal region enriched in $t/ \bar t$+DM because of the low cross-section of this process. This is one of the main points on which the \ac{MVA} will become useful later on.
+%As we can see in these plots, both these variables do offer us some discrimination between the different signals considered but even by using them, we cannot easily define a signal region enriched in $t/ \bar t$+DM because of the low cross-section of this process. This is one of the main points on which the \ac{MVA} will become useful later on.
 
 \subsubsection*{Missing transverse momentum}
 
 Already defined in Section~\ref{section:RecoMET}, this variable corresponds to the imbalance in transverse momentum which can be left by different phenomena, such as the apparition of \ac{SM} neutrinos or the existence of \ac{DM} particles, able to escape the detector without being detected.
 
-This is one of the most important variables of this analysis, expected to induce some discrimination between the signal and the backgrounds because, even tough some \ac{SM} processes such as the \ac{SM} $t \bar t$ production in the dilepton final state is also expected to produce some neutrinos and therefore some \ac{MET}, both the $t/ \bar t$+DM and $t \bar t$+DM signal model are expected to have mostly the same contribution to the \ac{MET} from their own neutrinos, plus an additional contribution from the pair $\chi \bar \chi$ produced. The \ac{MET} spectrum is therefore expected to reach higher values for the signals than the backgrounds, as shown in Figure~\ref{fig:SRdiscMET}.
+This is one of the most important variables of this analysis, expected to induce some discrimination between the signals and the backgrounds  processes since, even tough some \ac{SM} processes such as the \ac{SM} $t \bar t$ production in the dilepton final state is also expected to produce some neutrinos and therefore some \ac{MET}, both the $t/ \bar t$+DM and $t \bar t$+DM signal model are expected to have mostly the same contribution to the \ac{MET} from their own neutrinos, plus an additional contribution from the pair $\chi \bar \chi$ produced. The \ac{MET} distribution is in this sense expected to reach higher values for the signals than the backgrounds, as shown in Figure~\ref{fig:SRdiscMET}.
 
 %\color{red} FIXME: Put final plots for all the variables once available \color{black}
 
@@ -4373,7 +4368,7 @@ This equation can be understood in the following way: to compute the $m_{T2}$ va
 
 In this particular analysis, $M_{T2}^{ll}$ is calculated from a general algorithm described in \cite{MT2Calc}, since the role of the visible particles is played by the two final state leptons. This variable is expected to introduce some discrimination because the $M_{T2}^{ll}$ variable for a \ac{SM} $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while an eventual \ac{DM} signal does not have this limitation in the $M_{T2}^{ll}$ spectrum because of the pair of \ac{DM} particles produced, which also contributes to the total \ac{MET} of the event. In practice however, we do observe a tail in this spectrum even for \ac{SM} $t \bar t$ without \ac{DM}, because of the instrumental \ac{MET} sometimes observed or the fact that some selected leptons are not actually prompt leptons but can be jets misidentified as leptons by the detector.
 
-A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pairs can also be defined in a similar way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}(bl, bl)$ is kept, as shown in Figure~\ref{fig:SRdiscMT2}.
+A second variable, $M_{T2}^{bl}$, the stranverse mass of the b-jet lepton/pairs can also be defined in a similar way, except that in this case, the lepton is paired with a b-jet. The b-jet/lepton permutation giving the smallest value of $M_{T2}^{bl}$ is kept, as shown in Figure~\ref{fig:SRdiscMT2}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -4395,7 +4390,7 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 \begin{minipage}[b]{.47\textwidth}
 \includegraphics[width=7cm, height=7cm]{figs/2018/SmearSR-ttDM-scalar100/log_cratio_topCR_ll_mt2bl.png}
 \end{minipage}\hfill
-\caption{$M_{T2}^{ll}$ (on the left) and $M_{T2}(bl, bl)$ (on the right) distributions obtained in the 2018 pre-selection region.}
+\caption{$M_{T2}^{ll}$ (on the left) and $M_{T2}^{bl}$ (on the right) distributions obtained in the 2018 pre-selection region.}
 \label{fig:SRdiscMT2}
 \end{figure}
 
@@ -4407,15 +4402,15 @@ A second variable, $M_{T2}(bl, bl)$, the stranverse mass of the b-jet lepton pai
 %\begin{minipage}[b]{.48\textwidth}
 %\includegraphics[width=7cm, height=7cm]{figs/2018/SmearSRBlinded-ttDM-scalar100/log_cratio_topCR_ll_BDT_ttDM100_mt2bl.png}
 %\end{minipage} \hfill
-%\caption{$M_{T2}(bl, bl)$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
+%\caption{$M_{T2}^{bl}$ distribution in the 2018 pre-selection (on the left) and scalar 100 GeV signal (on the right) signal regions.}
 %\label{fig:SRdiscMT2bl}
 %\end{figure}
 
 \subsubsection*{Dark $p_T$ and overlapping factor $R$}
 
-Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by construction expected to give some discrimination between the signals and the different background processes, mainly the \ac{SM} $t \bar t$. 
+Already introduced with the top reconstruction method in Section~\ref{section:ttrecoDM}, these two variables are by construction expected to give some discrimination between the signals and the different background processes, mainly the dominant \ac{SM} $t \bar t$. 
 
-On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signals, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the plots represented in Figure~\ref{fig:SRdisc1}.
+On one hand, the dark $p_T$ is for example expected to take slightly higher values for the signals, where we expect the ellipses to be further apart from each other due to the production of \ac{DM}. On the other hand, the overlapping factor $R$ defined in Equation~\ref{eq:overlapping} is expected to peak around 1 for the standard $t \bar t$ process (since in this case, we expect to have $d = l_1 + l_2$ for most of the events, as seen in Figure~\ref{fig:ellipsesDM}), and to take slightly lower values for the different signal mass points considered. This intuition is confirmed from the distributions shown in Figure~\ref{fig:SRdisc1}.
 
 \begin{figure}[htbp]
 \centering
@@ -4493,7 +4488,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:SRdiscnbjet}
 %\end{figure}
 
-\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of \ac{DM}, as shown in Figure~\ref{fig:scheme_deltaphi}.% Some distributions obtained for this particular variable can additionally be found in Figure~\ref{fig:SRdisc4}. %In the same way, the difference in azimuthal angle between the system "b-jet and closest lepton" and the pf\ac{MET} $\Delta \Phi(lb^{\Delta R_{\text{min}}}, E_{T}^{\text{miss}})$ has also been considered, as shown in Figure~\ref{fig:SRdisc4bis}.
+\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons, expected to change depending on the eventual production of \ac{DM}, as shown in Figure~\ref{fig:scheme_deltaphi};% Some distributions obtained for this particular variable can additionally be found in Figure~\ref{fig:SRdisc4}. %In the same way, the difference in azimuthal angle between the system "b-jet and closest lepton" and the pf\ac{MET} $\Delta \Phi(lb^{\Delta R_{\text{min}}}, E_{T}^{\text{miss}})$ has also been considered, as shown in Figure~\ref{fig:SRdisc4bis}.
 
 \begin{figure}[htbp]
 \centering
@@ -4513,7 +4508,7 @@ A few additional variables which are expected to introduce some discrimination b
 		\includegraphics[width= 140pt, height= 130pt]{figs/deltaphi_high_mine.jpg} \\
 	}
    \end{minipage} \hfill
-   \captionof{figure}{Schematic representation in the $\Phi$ plane of the distribution of the particles for the $t \bar t$ process (on the left) and the for the $t \bar t$ + DM (on the center and right). \\}
+   \captionof{figure}{Schematic representation in the $\Phi$ plane of the distribution of the particles for the \ac{SM} $t \bar t$ process (on the left) and for the $t \bar t$+DM signal (on the center and right). \\}
    \label{fig:scheme_deltaphi}
   \end{figure}
    
@@ -4555,7 +4550,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:SRdiscMETsign}
 %\end{figure}
 
-\item The kinematic reconstruction weight $w$ obtained from the $t \bar t$ reconstruction is also expected to give us some discrimination, for reasons already explained in Section~\ref{section:RecoTop}.
+\item The kinematic reconstruction weight $w$ obtained from the $t \bar t$ reconstruction is also expected to give us some discrimination, for reasons already explained in Section~\ref{section:RecoTop};
 
 %\begin{figure}[htbp]
 %\centering
@@ -4569,7 +4564,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:SRdisc5}
 %\end{figure}
 
-\item Two other interesting variables used by the \ac{ATLAS} collaboration \cite{PreviousDoubleTopBottomAllLep13ATLAS} for their own analysis are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator.
+\item Two other interesting variables used by the \ac{ATLAS} collaboration \cite{PreviousDoubleTopBottomAllLep13ATLAS} for their own analysis are the so-called $r2l$, defined as the ratio between the pf\ac{MET} and the $p_T$ of the two leptons observed and $r2l4j$ variables, defined in a similar way but considering additionally the $p_T$ of the first 4 jets (if they exist) in the sum in the denominator;
 
 %\begin{figure}[htbp]
 %\centering
@@ -4594,7 +4589,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:r2l}
 %\end{figure}
 
-\item We also observed that the variable massT which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process helps with the discrimination process.%, as shown in Figure~\ref{fig:SRdisc6}.
+\item We also observed that the variable massT which corresponds to the scalar sum of the transverse component of the pf\ac{MET}, the two leptons and the two b-jets obtained by the top reconstruction process helps with the discrimination process;%, as shown in Figure~\ref{fig:SRdisc6}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -4608,9 +4603,7 @@ A few additional variables which are expected to introduce some discrimination b
 %\label{fig:SRdisc6}
 %\end{figure}
 
-\item The know that spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, accessible to us from the top reconstruction method described in Section~\ref{section:RecoTop}. These so-called spin correlated variables are therefore interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator.
-
-Several variables belonging to this category have been considered, such as $\xi = \cos(\theta_l) \cos(\theta_{\bar l})$ and $c_{\text{hel}}$, the full angle between the two leptons in their parent mass.% frame shown in Figure~\ref{fig:SRdisc3bis}.
+\item Finally, whe know that spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can actually be inferred from the top quark decay products, made accessible to us by the top reconstruction method. These so-called spin correlated variables are therefore interesting because the spin correlation in such events depend on the production mechanism and will be influenced by the additional coupling to a scalar or pseudoscalar mediator. Several spin correlated variables have been considered, such as $\xi = \cos(\theta_l) \cos(\theta_{\bar l})$ and $c_{\text{hel}}$, defined as the full opening angle between the two leptons in their parent mass.% frame shown in Figure~\ref{fig:SRdisc3bis}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -4733,36 +4726,36 @@ The distributions corresponding to all these variables in the 2018 pre-selection
 
 \section{Multivariate analysis} \label{section:NN}
 
-As already seen in the previous sections, we know that our signal regions are going to be contaminated with some background processes, given the fact that such backgrounds have kinematics close to our signals of interest. A general \acf{MVA} technique has therefore been used in order to perform the actual signal extraction by combining the discriminating power of several of the variables previously presented in order to find a way to categorize reliably any single event as either more likely to be a signal (either $t/\bar t$+DM or $t \bar t$+DM) or a background event.
+As already seen in the previous sections, we know that our signal regions are going to be contaminated with some background processes, given the fact that such backgrounds have similar kinematics. A general \acf{MVA} technique has therefore been used in order to perform the actual signal extraction by combining the discriminating power of several of the variables previously presented in order to find a way to categorize reliably any single event as either more likely to be a signal (either $t/\bar t$+DM or $t \bar t$+DM) or a background event.
 
-The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most relevant background and signal processes and on the other hand, we have data collected by the detector and which needs to be categorized and labeled based on the value of several variables or \textit{features}, by assigning a value of probability of belonging to any of these categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, and this set of events can be divided into two subsets: one used for the adjustment of different internal parameters of the model used (the so-called \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the so-called \textbf{testing process}).
+The idea behind this kind of techniques is quite simple. We have at our disposal on one hand \ac{MC} simulations of the most relevant background and signal processes and on the other hand, we have data collected by the detector and which needs to be categorized and labeled based on the value of several variables or \textit{features}, by assigning a value of probability of belonging to any of these categories to every single event. By definition, these \ac{MC} simulations do come with a label already assigned, making this a simple supervised learning problem that we need to solve. The full set of events at our disposal can be divided into two subsets: one used for the adjustment of different internal parameters of the model used (the \textbf{training process}), while the other subset is used in order to evaluate the performance of the classifier that has been defined (the \textbf{testing process}). Finally, the model developped will be used by making predictions allowing us to categorize unlabeled data (the \textbf{evaluation process}).
 
 \subsubsection{Methods considered}
 
-Two different \ac{MVA} methods among the most popular nowadays have been studied in this work: several \acfp{BDT} and a \acfp{ANN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
+Two different \ac{MVA} methods among the most popular nowadays have been studied in this work: several \acfp{BDT} and \acfp{ANN} have been defined and optimized separately in order to get the best discriminating power possible. Details regarding this optimization process can be found in Appendix~\ref{appendix:Optimization}.
 
 \subsubsection*{\acfp{BDT}}\label{section:BDT}
 
-This method relies on the definition of different decision trees, able to split the data recursively from a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given feature until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees and then to combine all of these trees together into a single strong classifier, by giving a weight to each tree depending on their actual accuracy. In our case, a classification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundreds of trees made out of different nodes, train them and apply the training to uncategorized events, labeling every single event as either signal or background-like.
+This method relies on the definition of different decision trees, able to split the data recursively from a set of input variables or \textbf{features}. A typical \ac{BDT}, as shown in Figure~\ref{fig:BDT}, is then made out of several \textbf{nodes}, allowing to make a binary decision (yes/no) and split the data based on a given feature until reaching a terminal condition and therefore a \textbf{leaf}, terminal node representing a class label or a probability. The split performed is obviously not chosen randomly, as a thorough training process needs to take place in order to define the optimal splitting based on the features given in such a way to maximize information gain. The \textbf{boosting} process then consists in training several trees and then to combine all of these trees together into a single strong classifier, by giving a weight to each tree depending on their overall accuracy. In our case, a classification is performed, by defining a \ac{BDT} able to read several input variables at once, create hundreds of trees made out of different layers of nodes, train them and apply the training to uncategorized events, labeling every single event as either signal or background-like.
 
-The structure and complexity of a \ac{BDT} usually depends on the problem considered and can be characterized from several different parameters which need to be tuned in order to get the best possible signal extraction accuracy while avoiding overfitting:
-
-\begin{itemize}
-\item First of all, the \textbf{features}, or input variables, allowed to be used by the \ac{BDT} are extremely important. A maximum number of features can be set when building a tree, forcing a random selection of input variables if too many variables are given as input.
-\item The \textbf{maximum depth} is usually chosen as a small number (which depends on the number of training events available) which characterizes the maximum number of vertical levels allowed.
-\item The \textbf{minimum samples per leaf} puts a requirement on the minimum number of samples required in order to create a new leaf.
-\item Regarding the boosting process itself, several additional parameters can be defined:
+The structure and complexity of a \ac{BDT} usually depends on the problem considered and can be characterized from several different parameters which need to be tuned in order to get the best possible signal extraction accuracy while avoiding under- and overfitting:
 
 \begin{itemize}
-\item The \textbf{loss function} is helpful when trying to estimate the distance between the prediction made by the \ac{BDT} and the actual value expected.
-\item The \textbf{learning rate}, or \textbf{shrinkage}, is another important parameter in the sense that it tells how much the weights of the tree should be adjusted after each training iteration. A small shrinkage typically demands more trees to be grown but can significantly improve the accuracy of the prediction made.
-\item The \textbf{number of grid points} $n_\text{cut}$, defined as the granularity used to find the optimal cut when determining the node splitting is also important.
-\item Finally, the actual \textbf{number of trees} used to define the forest is obviously an important parameter as well that needs to be optimized.
+\item First of all, the \textbf{features}, or input variables, allowed to be used by the \ac{BDT} are extremely important. The use of a \textbf{maximum number of features} can be applied when building a tree, forcing a random selection of input variables if too many variables are given as input;
+\item The \textbf{maximum depth} characterizes the maximum number of vertical levels allowed and is usually chosen as a small number (which depends on the number of training events available);
+\item The \textbf{minimum samples per leaf} puts a requirement on the minimum number of samples required in order to create a new leaf;
+\item Regarding the boosting process itself, which consists in training several different \acp{BDT} at once and to combine their individual predictions in order to enhance the accuracy of the overall predictions being made, comes with several additional parameters that can be optimized:
+
+\begin{itemize}
+\item First, the actual \textbf{number of trees} used to define the ensemble of \acp{BDT} is obviously an important parameter that needs to be optimized;
+\item The \textbf{loss function} is helpful when trying to estimate the distance between the prediction made by the \ac{BDT} and the actual value expected;
+\item The \textbf{learning rate}, or \textbf{shrinkage}, is another important parameter in the sense that it tells how much the weights of the tree should be adjusted after each training iteration. A small shrinkage typically demands more trees to be grown but can significantly improve the accuracy of the predictions made;
+\item Finally, the \textbf{number of grid points} $n_\text{cut}$, defined as the granularity used to find the optimal cut when determining the node splitting is also important.
 \end{itemize}
 
 \end{itemize}
 
-The actual parameters used for this particular analysis have been obtained after a thorough optimization process, and can be found in Table~\ref{table:BDT}.
+The actual parameters used for this particular analysis have been obtained after a thorough optimization process and can be found in Table~\ref{table:BDT}.
 
 \begin{figure}[htbp]
 \centering
@@ -4788,16 +4781,16 @@ The actual parameters used for this particular analysis have been obtained after
 \hline
 \end{tabular}
 %}
-\caption{Summary of the parameters used for the training of the \ac{BDT} in this analysis.}
+\caption{Summary of the parameters used for the training of the \acp{BDT} in this analysis.}
 \label{table:BDT}
 \end{center}
 \end{table}
 
 \subsubsection*{\acfp{ANN}}\label{section:DNN}
 
-Another large family of \ac{MVA} methods rely on the so-called \textbf{neural networks}, sets of algorithms designed to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to either similarities among the inputs or based on the information available in a training dataset.
+Another large family of \ac{MVA} methods rely on the so-called \textbf{neural networks}, sets of algorithms designed to be able to learn how to recognize patterns. Neural networks help us cluster any unknown dataset, allowing us to group and classify unlabeled data according to similarities among the inputs or according to the information available in a training dataset.
 
-The principle at the basis of neural networks relies on the human brain itself, a complex system of thousands of billions of neurons interacting with each other and able to perform complex calculations and generate ideas. In this case, highly connected mathematical units called \textbf{neurons} and grouped into \textbf{layers} are defined (as shown in Figure~\ref{fig:NN}) connected with each other with connections (also called \textbf{edges}) characterized by a \textbf{weight}, denoting their significance. At the end of the day, these neurons are simply mathematical tools able to receive an input, modify it and send the computed signal to the next layer of neurons, while the connection to the next neuron will either increase or decrease this signal based on the weight of this connection.
+The principle at the basis of neural networks relies on the human brain itself, a complex system of thousands of billions of neurons interacting with each other and able to perform complex calculations and generate ideas. In this case, highly connected mathematical units called \textbf{neurons} and grouped into \textbf{layers} are defined (as shown in Figure~\ref{fig:NN}), connected with each other with connections (also called \textbf{edges}), each characterized by a \textbf{weight}, denoting their significance. At the end of the day, these neurons are simply mathematical tools able to receive an input, modify it slightly and fire the computed signal to the next layer of neurons. The weight of this connection to each of the neurons in the next layer will then either be increased or decreased based on the overall accuracy of the prediction that has been made, through an extensive training process.
 
 \begin{figure}[htbp]
 \centering
@@ -4806,21 +4799,21 @@ The principle at the basis of neural networks relies on the human brain itself, 
 \label{fig:NN}
 \end{figure}
 
-Mathematically, each neuron $i$ of an intermediate layer receives an input $x_{j}$ from each of the $n$ neurons of the previous layers, and combines them by multiplying them with the weight $\omega_{ij}$ of the corresponding connection between the two neurons involved. Once done, the neuron then applies an internal non-linear \textbf{activation function} $f$ to this previously computed value, and fires the computed final output $y_i$ to the next layer of neurons, as shown in Equation~\ref{eq:NN}. This process is repeated until reaching the output layer.
+Mathematically, each neuron $i$ of an intermediate (laso called \textit{hidden}) layer receives an input $x_{j}$ from the j-th neuron of the previous layer, and combines them by multiplying them with the weight $\omega_{ij}$ of the corresponding connection between the two neurons involved. This process is repeated for each of the $n$ neurones of the previous layer by summing all the actual inputs and, once done, the neuron then applies an internal non-linear \textbf{activation function} $f$ to the previous value, and fires the computed final output $y_i$ to the next layer of neurons, as shown in Equation~\ref{eq:NN}. This process is repeated until reaching the output layer.
 
 \begin{equation}
 \label{eq:NN}
 y_i = f \left (\sum_{j = 0}^n \omega_{ij} x_j \right)
 \end{equation}
 
-The objective of the training process in this case is to find the optimal weights $\bm \omega$ for each connection that are able to deliver an output as faithful to the known event category as possible. This faithfulness of a given set of weights can be obtained from the so-called \textbf{error function}, which can take different forms but usually simply computes the normalized sum of the difference between the expected $\hat{y_i^p}$ and obtained $y_i^p$ values for each neuron $i$ and each of the $p$ events found in the training dataset, as shown in Equation~\ref{eq:NN2}.
+The objective of the training process in this case is to find the optimal weights $\bm \omega$ for each connection that are able to deliver an output as faithful to the known event category as possible. This faithfulness of a given set of weights can be obtained from the so-called accuracy in such a classification problem, defined as a metric used in order to measure how often the algorithm classifies a data point correctly and which needs to be maximized. Another to characterize the goodness of a model is through the definition of the loss function which, unlike the accuracy, is not a percentage but a summation of the errors made for each instance in the training set. In this sense, this function can take different forms but usually simply computes the normalized sum of the difference between the expected $\hat{y_i^p}$ and obtained $y_i^p$ values for each neuron $i$ and each of the $p$ events found in the training dataset, as shown in Equation~\ref{eq:NN2}.
 
 \begin{equation}
 \label{eq:NN2}
 E(\bm \omega) = \sum_{i, p} \left (y_i^p(\bm \omega) - \hat{y_i^p} \right)^2
 \end{equation}
 
-This error function allows us to determine the goodness of the output obtained from a given set of weights, but we still need a way to update these weights at any given training iteration to make this method useful. This can be done using different methods, such as by applying the back-propagation or performing a gradient descent method, which consists in starting from a random set of weights $\bm \omega_0$ and modifying them in the direction of the gradient of the error function $E$ at each iteration $k$, as shown in Equation~\ref{eq:NN3}, with a given \textbf{learning rate} $\eta$. %A compromise needs to be found when optimizing the value of this last parameter, since choosing a value too large will not be efficient enough as we might not be able to reach precisely the minimum of the error function, while a value too small will increase the time needed for the training process and increase the probability of getting stuck in a local minimum of $E(\bm \omega)$.
+This loss function allows us to determine the goodness of the output obtained from a given set of weights, but we still need a way to update these weights at any given training iteration to make this method useful. This can be done using different methods, such as by applying the back-propagation or performing a gradient descent method, which consists in starting from a random set of weights $\bm \omega_0$ and modifying them in the direction of the gradient of the loss function $E$ at each iteration $k$, as shown in Equation~\ref{eq:NN3}, with a given learning rate $\eta$. %A compromise needs to be found when optimizing the value of this last parameter, since choosing a value too large will not be efficient enough as we might not be able to reach precisely the minimum of the error function, while a value too small will increase the time needed for the training process and increase the probability of getting stuck in a local minimum of $E(\bm \omega)$.
 
 \begin{equation}
 \label{eq:NN3}
@@ -4829,7 +4822,7 @@ This error function allows us to determine the goodness of the output obtained f
 
 In this work, we used models with several hidden layers, therefore sometimes referring it as deep neural networks, where the \textbf{depth} parameter is equivalent to the number of hidden layers. The use of such methods with lots of hidden layers is helpful because it allows to solve the feature engineering problem, which states that to get the most of a certain dataset one should previously extract by hand the representations/features helping to solve the problem. However, with deep learning, the features are learned on the fly, without the need of doing a previous transformation by hand. In summary, the \acp{ANN} allow to study phenomena a bit more disrupt, but are usually more sensitive to the overfitting even though some options, such as the dropout, dropping randomly some weights in the network at each training iteration, have been used in this work to mitigate this issue. 
 
-Several parameters are important to optimize during the training of a neural network, such as the number of neurons in each layer, the activation and error functions, the learning rate (giving an idea of how much the weights should be updated after each training iteration, to be optimized in order to reach the minimum of the cost function faster while avoiding getting stuck in an eventual local minimum), the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for every single event. After a complete optimization process extensively described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
+Several parameters are important to optimize during the training of a neural network, such as the \textbf{number of neurons in each layer}, the \textbf{activation} and \textbf{loss functions}, the \textbf{learning rate} (giving an idea of how much the weights should be updated after each training iteration, to be optimized in order to reach the minimum of the loss function faster while avoiding getting stuck in an eventual local minimum), the number of \textbf{training epochs} and the \textbf{batch size}, allowing to reduce the time required for the training by dividing the dataset into mini-batches and updating the weights for each mini-batch instead of doing it for all the features of every single event. After a complete optimization process extensively described in Appendix~\ref{appendix:Optimization}, the actual parameters used for this particular analysis can be found in Table~\ref{table:DNN}.
 
 \begin{table}
 \begin{center}
@@ -4859,15 +4852,13 @@ Batch size & 250 \\
 
 One training has been done for each year and each mediator mass, considering separately the scalar and pseudoscalar mediators in order to enhance the sensitivity of the analysis. Each \ac{BDT} and \ac{ANN} has been trained in order to reduce as much as possible the dependence on the sample itself, by weighting the samples according to the specific cross-section of each mass point.
 
-The two signals for a given mass point have been mixed together and trained against the backgrounds which tend to look more like our signals (typically, the \ac{SM} $t \bar t$ and single top), in the pre-selection region defined in Section~\ref{section:SR}. Only events having a stransverse mass $> 80$ GeV and having at least one b-jet were considered for the training, and two different trainings were actually performed for each mass point:
+The two signals for a given mass point have been mixed together and trained against the backgrounds which tend to look more like our signals (typically, the \ac{SM} $t \bar t$ and single top), in the pre-selection region defined in Section~\ref{section:EventSel}. Only events passing this pre-selection cuts were actually considered for the training, and two different trainings were performed for each mass point, serving as the basis of the selection for our two signal regions:
 \begin{itemize}
-\item One targeting the $t/\bar t$+DM signal, by considering events having exactly 1 jet, or exactly 2 jets and 1 b-jet
+\item One targeting the $t/\bar t$+DM signal, by considering events having exactly 1 jet, or exactly 2 jets and 1 b-jet;
 \item And another one targeting the $t \bar t$+DM signal, by considering this time only the events having exactly 2 jets and more than 1 b-jet, or more than 2 jets.
 \end{itemize}
 
-These requirements are the basis of the selection for our two signal regions, targeting each one of the signals of interest.
-
-The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables given in Tables~\ref{table:importance1} and~\ref{table:importance2} for each model, a plot representing the correlation between these input variables for the backgrounds and the signals in Figure~\ref{fig:correlationVar} and the \ac{ROC} curves showing the background rejection achievable for a given selected signal efficiency in Figures~\ref{fig:ROC_ST} to~\ref{fig:ROC2}. 
+The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}, was used in order to define both the \ac{BDT} and the \ac{ANN} previously defined and to perform the optimization of the different hyperparameters of both methods. Such package is extremely helpful because it automatically gives us plenty of information when training a specific model for a given mass point, such as a ranking of the importance of the input variables, given in Tables~\ref{table:importance1} and~\ref{table:importance2} for each signal region, a plot representing the correlation between these input variables for the backgrounds and the signals, in Figure~\ref{fig:correlationVar}, and the \ac{ROC} curves showing the background rejection achievable for a given selected signal efficiency, in Figures~\ref{fig:ROC_ST} to~\ref{fig:ROC2}. 
 
 \begin{table}
 \begin{center}
@@ -4888,7 +4879,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \hline
 \end{tabular}
 %}
-\caption{Ranking for the importance of the main variables used as input for the \ac{BDT} and \ac{ANN}, considering the scalar 100 GeV training, in both training regions.}
+\caption{Ranking for the importance of the main variables used as input for the \ac{BDT} and \ac{ANN}, considering the scalar 100 GeV training, in both signal regions.}
 \label{table:importance1}
 \end{center}
 \end{table}
@@ -4912,7 +4903,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \hline
 \end{tabular}
 %}
-\caption{Ranking for the importance of the main variables used as input for the \ac{BDT} and \ac{ANN}, considering the scalar 500 GeV training, in both training regions.}
+\caption{Ranking for the importance of the main variables used as input for the \ac{BDT} and \ac{ANN}, considering the scalar 500 GeV training, in both signal regions.}
 \label{table:importance2}
 \end{center}
 \end{table}
@@ -4987,7 +4978,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 
 \begin{figure}[htbp]
 \centering
-\subfigure[$t/\bar t$+DM training region] {
+\subfigure[$t/\bar t$+DM signal region] {
 \begin{minipage}[b]{.49\textwidth}
 \includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_scalar_ST.png}
 \end{minipage} \hfill
@@ -4995,7 +4986,7 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_pseudo_ST.png}
 \end{minipage} \hfill
 }
-\subfigure[$t \bar t$+DM training region] {
+\subfigure[$t \bar t$+DM signal region] {
 \begin{minipage}[b]{.49\textwidth}
 \includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_scalar_TTbar.png}
 \end{minipage} \hfill
@@ -5003,13 +4994,13 @@ The TMVA package, a toolkit for Multivariate Data Analysis with ROOT \cite{TMVA}
 \includegraphics[width=7.8cm, height=5.8cm]{figs/groupedROC_pseudo_TTbar.png}
 \end{minipage} \hfill
 }
-\caption{Signal versus background \ac{ROC} curves obtained after the training performed with the \ac{BDT}, considering all the scalar (on the left) and pseudoscalar (on the right) mediators available, in both training regions.}
+\caption{Signal versus background \ac{ROC} curves obtained after the training performed with the \ac{BDT}, considering all the scalar (on the left) and pseudoscalar (on the right) mediators available, in both signal regions.}
 \label{fig:ROC2}
 \end{figure}
 
-These plots allow us to conclude that our \ac{BDT} seems to be able to achieve a better signal efficiency for a given background rejection value for all the mass points and mediators considered, which is what we are looking for. We therefore decided to use this method for the actual analysis instead of the \ac{ANN}.
+All these plots allowed us to conclude that the \ac{BDT} seems to be able to achieve a better signal efficiency for a given background rejection value for all the mass points and mediators considered in this analysis, which is what we are interested in. We therefore decided to use this method for the rest of the actual analysis instead of the \ac{ANN}.
 
-Finally, the output distributions obtained for the \ac{BDT} have been obtained, as shown in Figures~\ref{fig:overtrainingST} and Figures~\ref{fig:overtrainingTTbar} for both training regions. All these results have been obtained by splitting the dataset available as 70\% for the training process and the remaining 30\% to test the classifier obtained, giving us between 50.000 and 60.000 training events for each mass point.
+Finally, the output distributions obtained for the \ac{BDT} have been obtained in Figures~\ref{fig:overtrainingST} and Figures~\ref{fig:overtrainingTTbar} for both training regions. All these results have been obtained by splitting the dataset available as 70\% for the training process and the remaining 30\% to test the classifier obtained, giving us between 50.000 and 60.000 training events for each mass point.
 
 \begin{figure}[htbp]
 \centering
@@ -5068,7 +5059,7 @@ Finally, the output distributions obtained for the \ac{BDT} have been obtained, 
 
 Once the training performed and the weights of the \ac{BDT} computed, we have been able to use them in order to to estimate the probability of each unknown data and \ac{MC} event to be a background or a signal event. This is simply done by reading the weights previously obtained by the training process, considering either the training that was performed in the $t/\bar t$+DM or $t \bar t$+DM enriched region, depending on the number of (b-)jets observed in the event, by defining similar categories than the ones used for the training process.
 
-Once the weights were applied to our trees, the actual \ac{BDT} output distributions for each mediator mass point an each signal category have been obtained and used in a general shape analysis later on, as shown in Figures~\ref{fig:ANNShapesScalar100} to~\ref{fig:ANNShapesPseudo500}.
+Once the weights were applied to our trees, the actual \ac{BDT} output distributions for each mediator mass point an each signal category have been obtained, as shown in Figures~\ref{fig:ANNShapesScalar100} to~\ref{fig:ANNShapesPseudo500}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -5224,7 +5215,7 @@ Once the weights were applied to our trees, the actual \ac{BDT} output distribut
 
 \subsubsection{Shape analysis} \label{sec:Shape}
 
-A general shape analysis has been performed in order to extract the signals of interest from the shape of the output of the \ac{MVA}. In order to perform such an analysis, the binning of this distribution was first of all optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events. Then, once the binning of the \ac{BDT} distributions in the signal region has been defined, a maximum likelihood fit has been simply performed in order to extract the signal.
+A general shape analysis has finally been performed in order to extract the signals of interest from the shape of the output of the \ac{MVA}. In order to perform such an analysis, the binning of \ac{BDT} distributions in the signal regions was first of all optimized in order to make sure that each bin of the distribution contains a significant number of \ac{MC} events. Then, once this optimal binning has been defined, a maximum likelihood fit has been simply performed in order to extract the actual upper limits on both the signals production cross-sections, as explained in Chapter~\ref{chapter:FinalResults}.
 
 %\color{red}FIXME: complete this once strategy defined \color{black}
 
@@ -5548,11 +5539,11 @@ A general shape analysis has been performed in order to extract the signals of i
 
 \chapter{Results and interpretations} \label{chapter:FinalResults}
 
-We now have all the ingredients needed to proceed with the interpretation of the data in terms of exclusion limits on the signal strength, for the different mediators spins, mass points and signal models considered. In this chapter, a short but necessary theoretical introduction to the statistical concepts used will be performed in Section~\ref{section:Statistics}, before discussing about the impact of the systematics and uncertainties on the final results in Section~\ref{section:Systematics}. Finally, the results and final limits obtained for this particular analysis will be shown in Section~\ref{section:Results}.
+We now have all the ingredients needed to proceed with the interpretation of the data in terms of exclusion limits on the signal strength, for the different mediator categories, mass points and signal models considered. In this chapter, a short but necessary theoretical introduction to the statistical concepts used will be performed in Section~\ref{section:Statistics}, before discussing about the impact of the systematics and uncertainties on the final results in Section~\ref{section:Systematics}. Finally, the results and final limits obtained for this particular analysis will be shown in Section~\ref{section:Results}.
 
 \section{Statistical interpretation} \label{section:Statistics}
 
-The results presented in this chapter follow the recommendations and use the tools given directly by the \ac{LHC} Higgs Combination Group \cite{combine}, result of a collaboration between teams of \ac{ATLAS} and \ac{CMS}. The exclusion limits on the signal strength presented here have been calculated according to the asymptotic formulas described in this section, allowing us to quantify how sensitive the experiment is to the new physics searched for by calculating both the expected and observed significance obtained for a variety of signal hypotheses, corresponding to different mediator spins and mass points, as described previously.
+The results presented in this chapter follow the recommendations and use the tools given directly by the \ac{LHC} Higgs Combination Group \cite{combine}, result of a collaboration between teams of \ac{ATLAS} and \ac{CMS}. The exclusion limits on the signal strength presented here have been calculated according to the asymptotic formulas described in this section, allowing us to quantify how sensitive the experiment is to the new physics searched for by calculating both the expected and observed significance obtained for a variety of signal hypotheses, corresponding to different mediator categories and mass points, as described previously.
 
 Setting limits is typically performed using a frequentist statistical test, which relies on the definition of two hypotheses \cite{stat1, stat2}: 
  
@@ -5577,7 +5568,7 @@ In practice, we can usually not give a definite true or false answer to the ques
 
 In order to establish an eventual discovery or exclude certain models, this analysis then uses a quite typical frequentist significance test using a likelihood ratio, considering parameters of interest, such as the cross-section of the signal process and nuisance parameters, such as the background normalizations, as discussed in Section~\ref{section:Systematics}. 
 
-Mathematically, as shown in \cite{asymptotic}, this method can be understood by considering the $x$ variable corresponding to any of the shape of the \ac{ANN} output distributions previously obtained, containing each a certain expected number of events per bin $E[n_i]$, given by Equation~\ref{eq:count}, where $b_i$ ($s_i$) is the number of background (signal) events in the \textit{i-th} bin and $\mu$ is the so-called \textbf{signal strength}, a positive parameter characterizing the normalization of the signal under consideration and independent on the bin considered ($\mu = 0$ therefore corresponds to the background-only hypothesis and $\mu = 1$ is the nominal signal hypothesis).
+Mathematically, as shown in \cite{asymptotic}, this method can be understood by considering the $x$ variable corresponding to any of the shape of the \ac{BDT} output distributions previously obtained, containing each a certain expected number of events per bin $E[n_i]$, given by Equation~\ref{eq:count}, where $b_i$ ($s_i$) is the number of background (signal) events in the \textit{i-th} bin and $\mu$ is the so-called \textbf{signal strength}, a positive parameter characterizing the normalization of the signal under consideration and independent on the bin considered ($\mu = 0$ therefore corresponds to the background-only hypothesis and $\mu = 1$ is the nominal signal hypothesis).
 
 \begin{equation}
 \label{eq:count}
@@ -5617,7 +5608,7 @@ This last relation is helpful because it allows us to test any value of $\mu$, b
 
 This equation is extremely important in the sense that it gives us a way to test the two hypotheses we have at our disposal against each other: the background-only hypothesis $b$ (if $\mu$ = 0) and the signal+background hypothesis $s + b$ (if $\mu$ = 1). Additionally, this equation allows us to determine which values of signal strength $\mu$ can be discarded at a given confidence level, usually set to 95\% within the \ac{CMS} collaboration. At this stage, it is important to note as well that if a significant excess is observed, additional tests are required to be able to claim for a discovery, as this method only allows to reject some signal models not significant enough.
 
-In order to finally be able to establish upper limits on the value of the parameter $\mu$, one final test-statistic $q_\mu$ is usually defined according to Equation~\ref{eq:q}. Larger values for this parameter than represent higher incompatibilities between the data and the given signal strength. The reason why we set the estimator to 0 when $\hat{\mu} > \mu$ is simply to make sure to have a one-sided confidence interval, because eventual upwards fluctuations of the data able to pass this condition should not be considered as evidence for a $\mu$-strong $s+b$ hypothesis.
+In order to finally be able to establish upper limits on the value of the parameter $\mu$, one final test-statistic $q_\mu$ is usually defined according to Equation~\ref{eq:q}. Larger values for this parameter then represent higher incompatibilities between the data and the given signal strength. The reason why we set the estimator to 0 when $\hat{\mu} > \mu$ is simply to make sure to have a one-sided confidence interval, because eventual upwards fluctuations of the data able to pass this condition should not be considered as evidence for a $\mu$-strong $s+b$ hypothesis.
 
 \begin{equation}
 \label{eq:q}
@@ -5639,7 +5630,7 @@ The confidence level on the signal $CL_s$ for a given signal strength is then de
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[width=8cm, height=6cm]{figs/stat.png}
+\includegraphics[width=8.5cm, height=6cm]{figs/stat.png}
 \caption{Schematic representation of the concept of \ac{PDF} and p-value used in the computation of our test-statistic $q_\mu$, under the hypotheses $\mu = 0$ and $\mu = 1$.}
 \label{fig:stat}
 \end{figure}
@@ -5651,7 +5642,7 @@ CL_s(\mu) = \frac{p_\mu}{1-p_b}
 
 This latest parameter $CL_s$ can finally be tuned by modifying the value of $\mu$ until reaching a given threshold $\alpha$, set to 0.05 in this thesis and in most of the publications of the \ac{CMS} collaboration.
 
-Performing this complete calculation with observed is giving us the so-called \textbf{observed upper limits}, but we also typically need to calculate the expected sensitivity of the analysis, defined as the mean value of $\mu$ expected for a background-only hypothesis, computed from $N$ simulated datasets. Placing all the $\mu$ values obtained for a given threshold and a given dataset in a cumulative histogram then allows us to plot separate curves corresponding to both the observed and expected upper limits along with its corresponding error bars depending on the distribution of the $\mu$ values obtained for all the $N$ datasets. This actually allows us to make sure that the sensitivity of the search is good enough to be able to effectively see a signal if it exists. Getting an expected value of $\mu < 1$ for a given mass point is then typically the sign that if the signal did in fact exist, the analysis should be sensitive enough to see it and, if we don't see any significant deviation between the expected and observed curves, we can then rule out the possibility of such model actually existing.
+Performing this complete calculation with observed d ata is giving us the so-called \textbf{observed upper limits}, but we also typically need to calculate the expected sensitivity of the analysis, defined as the mean value of $\mu$ expected for a background-only hypothesis, computed from $N$ simulated datasets. Placing all the $\mu$ values obtained for a given threshold and a given dataset in a cumulative histogram then allows us to plot separate curves corresponding to both the observed and expected upper limits along with their corresponding error bars depending on the distribution of the $\mu$ values obtained for all the $N$ datasets. This allows us to make sure that the sensitivity of the search is good enough to be able to effectively see a signal if it exists. Getting an expected value of $\mu < 1$ for a given mass point is then the sign that if the signal did in fact exist, the analysis should be sensitive enough to see it and, if we don't see any significant deviation between the expected and observed curves, we can then rule out the possibility of such model actually existing.
 
 Finally, one last important concept can be discussed here. Two different kind of signals are searched for in this work at once, mainly the $t/\bar t$+DM and the $t \bar t$+DM processes. Even though we can search for both processes independently, they are both able to exclude dark matter production models and a combination of both searches is therefore expected to give better results than two separate searches. Some of the nuisance parameters are common between the channels, but not all of them and, if we take the same initial signal strength value for both channels and if the channels are statistically independent, which is a condition verified in this case, then the full likelihood function is simply given by the product of the individual likelihoods in each channel $i$, allowing us to define a common test-statistic parameter shown in Equation~\ref{eq:comb}.
 
@@ -5660,19 +5651,19 @@ Finally, one last important concept can be discussed here. Two different kind of
 \lambda (\mu) = \frac{\prod_i \mathcal{L}_i(\mu, \hat{\bm \theta_{\mu, i}})}{\prod_i \mathcal{L}_i (\hat{\mu}, \hat{\bm \theta_i})} = \prod_i \lambda_i (\mu)
 \end{equation}
 
-Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations can also apply when combining for example the different final states given by the different decays of the $w$ bosons, or when combining the data collected during the different years of operation of the \ac{LHC} during the Run II.
+Because of this, it is possible to determine the values of the profile likelihood ratio separately for each channel, which simplifies greatly the task of estimating the median significance that would result from the full combination. The same considerations can also apply when combining for example the different final states given by the different decays of the W bosons, or when combining the data collected during the different years of operation of the \ac{LHC} during the Run II.
 
 \section{Theoretical, statistiscal and systematic uncertainties} \label{section:Systematics}
 
 All the measurements we can make in high energy physics and in physics in general present some
-uncertainties, and the determination of their value is a critical point of every analysis, especially in this case since we try to detect a really low signal over a large background. Indeed, as we already saw, the nuisance parameters $\bm \theta$ are extremely important when defining the upper limits on the signal strength, so a good characterization of such source of uncertainties is crucial in most of the analyses searching for new physics. The uncertainties considered in this work belong to two major categories:
+uncertainties, and the determination of their value is a critical point of every analysis, especially in this case since we try to detect a really low signal over a large background. Indeed, as we already saw, the nuisance parameters $\bm \theta$ are extremely important when defining the upper limits on the signal strength, so a good characterization of such source of uncertainties is crucial in most of the analyses searching for new physics such as this one. The uncertainties considered in this work belong to two major categories:
 
 \begin{itemize}
 \item On one hand, \textbf{statistical uncertainties} appear in any counting experiment \cite {statistical} since every given measurement, made by definition of a finite set of observations, typically results in different observations when repeated, and the statistical uncertainty is then just a measure giving us an idea about the range of this kind of variations. Given the high rate of collisions happening at the \ac{LHC}, we usually assume that our counting experiment can be approximated with a Poisson distribution, for which we know that the error on the number of measurements is directly given by its square root.
 \item On the other hand, \textbf{systematic uncertainties} are just as important, but are usually harder to estimate and are different in nature \cite{systematics} since they arise directly from the theory or from the detector itself. Some systematic uncertainties are treated as individual nuisance parameters when fitting the \ac{MC} observed to the data, nuisances which can either only affect the normalization of some processes, or affect the shape of the predictions across the distribution of the observables. These uncertainties share the need to be propagated through the full analysis chain all the way to the discriminating distributions.
 \end{itemize}
 
-Even though the signal enriched bins are to be found in a region of the \ac{MVA} discriminant with lower number of events, where the impact of statistical uncertainties is higher, systematic uncertainties still play an important role in most of the analyses performed at \ac{CERN}, including this one.
+Even though the signal enriched bins are to be found in a region of the \ac{MVA} discriminant with lower number of events, where the impact of statistical uncertainties is usually higher, systematic uncertainties still play an important role in most of the analyses performed at \ac{CERN}, including this one.
 
 \subsubsection{Statistical uncertainties}
 
@@ -5692,7 +5683,7 @@ Additional uncertainties related to the detector or to the experimental conditio
 %\item Then, four different parameters have been considered and updated with respect to the nominal Tag and Probe parameters to study their impact on the final \textbf{muon} efficiencies: the isolation of the tag muon, the signal fitting function used, the number of mass bins where the fit is done and finally, the Z-window considered for the calculation. 
 %\end{itemize}
 \item \textbf{\ac{JES}}. Single nuisance parameter applied to the $p_T$ of each jet, as a function of the jet $p_T$ and $\eta$ values. These variations are then coherently propagated to important discriminating variables, such as the $E_T^\text{miss}$ and $M_{T2}^{ll}$, according to a procedure described by the JET/MET \ac{POG} \cite{JETMETPOG}. These uncertainties are expected to be below 3\% across the phase space considered by most of the analyses ($p_T > 30$ GeV, $|\eta| < 5.0$) and even below 1\% in the barrel region ($|\eta| < 1.3$) \cite{JESUncertainty}.
-\item \textbf{Unclustered energy}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
+\item \textbf{\ac{MET} mismodelling}. The uncertainties on jets, electrons and muons that make up the \ac{MET} are applied to the respective objects, while the \ac{MET} is recalculated with the same up  and down variations alongside. Additionally, any eventual unclustered energy, mostly due to \ac{ECAL} or \ac{HCAL} deposits not assigned to any object is shifted up and down, and the impact of such variations has been estimated on the \ac{MET}.
 \item \textbf{b-tagging efficiency}. The b-tagging process is not perfect and its efficiency, typically different in data and \ac{MC} also needs to be taken into account by applying a $p_T$, $\eta$ and flavour dependent scale factor on the \ac{MC}. The uncertainties on such scale factors are measured in an independent control sample and propagated to the analysis \cite{btagEff}.
 \item \textbf{Top quark $p_T$ reweighting}. As described in Section~\ref{subsection:toppt}, the measured $p_T$ spectrum is expected to be softer than the one obtained using simulation, so a factor correcting this effect is usually applied to the \ac{MC}. A systematic assumed correlated through the years and covering for such differences observed between data and \ac{MC} is taken into account.
 \item \textbf{\ac{ECAL} prefiring}. An uncertainty accounting for the prefiring of the \ac{ECAL} in 2016 and 2017 is also taken into account, even though its impact is expected to be quite small overall.
@@ -5704,6 +5695,7 @@ The systematic associated to the backgrounds normalization is typically one of t
 
 \begin{itemize}
 %\item \textbf{Single top and diboson normalization}. Both processes are usually represented in the same control region but the proportion corresponding to each background within this region is typically different than the proportion observed in our signal region. This means that we need to take into account the uncertainty associated to the ratio of the respective cross-sections of both processes, estimated to be equal to 6\% for the $t \bar t$ \cite{ttbarXS} and 5\% for the single top \cite{singletopXS}, resulting in a total uncertainty on the ratio of the order of 8\%.
+\item \textbf{Statistical uncertainties} are first assigned to all the \ac{MC} samples as well.
 \item \textbf{\acf{DY} background}. To cover for the non-flatness of the $R_{\text{in-out}}$ transfer factor and possible mismodeling of this particular background, especially at high pf\ac{MET} values, a 20\% systematic is associated to this process.
 \item \textbf{Minor backgrounds}. An uncertainty of 30\% (for all the minor backgrounds, except for the ttV, for which a 50\% uncertainty was actually used) has been assigned to the normalization of all the minor backgrounds of the analysis.
 %\item \textbf{Non-prompt background}. A normalization and shape uncertainty is associated to the estimation of this background in a specific control region according to the tight-to-loose method previously described. The combined uncertainty due to statistics and the impact of a change in the input jet $E_T$ threshold chosen has been estimated to be less than $\sim15$\%, while an additional flat 30\% systematic is considered for this background to cover for eventual discrepancies between data and \ac{MC} observed in a same-sign control region enriched in this background.%in the same-sign control region defined in Section~\ref{section:SSCR}.
@@ -5859,11 +5851,11 @@ At the end of the day, this analysis allowed us to achieve an expected (observed
 In conclusion, a search for the production of dark matter in association with one or two top quarks has been performed in this work, by studying in particular the dilepton decay channel of both production modes. This analysis was done by considering the full ($137.1 \pm 2.0$) fb$^{-1}$ of proton-proton collisions data collected by the \ac{CMS} detector during the Run II of operation of the \ac{LHC}, at a center of mass energy of $\sqrt{s} = 13$ TeV. No evidence for the existence of dark matter has been found, but upper limits on the signal strength have been obtained by considering different production models and channels.  Several steps where needed to reach this goal:
 
 \begin{itemize}
-\item First, the triggers were chosen in such a way to collect as much interesting data as possible. Different objects were also defined and chosen at this point in coordination with other groups, such as the working point used for leptons and for the b-tag. The choice regarding the \ac{MET} used in this particular analysis was a bit trickier, given the impact this choice might have on the final results, but we finally settled on the usual pf typeI correct \ac{MET}, applying all the corrections recommended to this particular variable.
-\item Once this was done, a full top reconstruction method was developed in order to reconstruct in the best was possible the kinematic of the $t \bar t \rightarrow 2l$ process. This method allowed us for example to get the information related to each top quark separately, and to define new discriminating variables, such as as estimation of the mediator \bm $p_T$.
-\item All the signals samples were then produced, first privately and then centrally, considering all the different models that might be of interest for this analysis.
-\item The background were then carefully studied. Even though most of the backgrounds are estimated directly from \ac{MC}, some of them did require a bit extra work, such as the \ac{DY} process, for which a semi data-driven method was used for its estimation. The predictions made for most of the major backgrounds of the analysis were then checked in dedicated control regions.
-\item Several discriminating variables available to us were then explored, and a MVA method was set up in order to combine the discriminating power of all these variables into a single output, used to perform a general shape analysis. The optimization of all the hyperparameters was thoroughly done, as we ended up choosing an \ac{ANN} to perform the actual analysis, with a simple set of 6 different input variables.
+\item First, the triggers were chosen in such a way to collect as much interesting data as possible. Different objects were also defined and chosen at this point in coordination with other groups, such as the working point used for leptons and for the b-tag. The choice regarding the \ac{MET} used in this particular analysis was a bit trickier, given the impact this choice might have on the final results, but we finally settled on the usual pf typeI corrected \ac{MET}, applying all the corrections recommended to this particular variable;
+\item Once this was done, a full top reconstruction method was developed in order to reconstruct in the best was possible the kinematic of the $t \bar t \rightarrow 2l$ process. This method allowed us for example to get the information related to each top quark and neutrino separately, and to define new discriminating variables, such as as estimation of the mediator \bm $p_T$;
+\item All the signals samples were then produced, first privately and then centrally for the $t \bar t$+DM model, considering all the different models that might be of interest for this analysis;
+\item The background were then carefully studied. Even though most of the backgrounds are estimated directly from \ac{MC}, some of them did require a bit extra work, such as the \ac{DY} process, for which a semi data-driven method was used for its estimation. The predictions made for most of the major backgrounds of the analysis were then checked in dedicated control regions;
+\item Several discriminating variables available to us were then explored, and a MVA method was set up in order to combine the discriminating power of all these variables into a single output, used to perform a general shape analysis. The optimization of all the hyperparameters was thoroughly done, as we ended up choosing an \ac{BDT} to perform the actual analysis, with a simple set of 6 different input variables;
 \item Finally, exclusion limits on the signal strength at the 95\% confidence level were set for the different models considered.
 \end{itemize}
 
@@ -5877,9 +5869,9 @@ This is the first time that such a search combining the $t/\bar t$ and $t \bar t
 
 \begin{itemize}
 \item First of all, the combination of this work with the semileptonic and hadronic final states is expected to increase the exclusion limits by at least a factor of 2, given the large branching ratio and therefore sensitivity of such processes.
-\item The remaining models to be excluded correspond to high mediator masses, which feature a large signal/background discrimination on their own but which also have a low cross-section of production. The continuous operation of the \ac{LHC} is therefore expected to give more data to analyze, in turn decreasing the limits on the signal strength roughly as $\sqrt{\frac{1}{\mathcal{L}}}$. This channel will therefore benefit from the larger luminosity collected during the full Run III of the LHC data taking period, expected to start soon in 2021.
-\item Given that the normalization of the ttV process is consistently the dominant systematic uncertainty in all the signal regions, it might be interesting in the future to define a dedicated control region for this background in order to constrain it a bit more and reduce its overall impact on the final results.
-\item A single set of couplings was studied in this work, but exploring other accessible regions of the space (by considering different $m_\chi$ values, even tough they are expected to have a minimal impact on the kinematics of the event, and mostly by changing the value of the couplings considered) would in this sense be an interesting addition to this particular analysis.
+\item The remaining models to be excluded correspond to high mediator masses, which feature a large signal/background discrimination on their own but which also have a low cross-section of production. The continuous operation of the \ac{LHC} is therefore expected to give more data to analyze, in turn decreasing the limits on the signal strength roughly as $\sqrt{\frac{1}{\mathcal{L}}}$. This channel will therefore benefit from the larger luminosity collected during the full Run III of the LHC data taking period, expected to start soon in 2022;
+\item Given that the normalization of the ttV process is consistently the dominant systematic uncertainty in all the signal regions, it might be interesting in the future to define a dedicated control region for this background in order to constrain it a bit more and reduce its overall impact on the final results;
+\item A single set of couplings was studied in this work, but exploring other accessible regions of the space (by considering different $m_\chi$ values, even tough they are expected to have a minimal impact on the kinematics of the event, and mostly by changing the value of the couplings considered) would in this sense be an interesting addition to this particular analysis;
 \item One possible addition to this work would be to include a ttH to invisible reinterpretation of this search, given the relative similarities between this kind of model and the dark matter models considered here. 
 \end{itemize}
 
@@ -6780,7 +6772,7 @@ Finally, the input variables given to the \ac{MVA} is also an extremely importan
 & $M_{T2}^{ll}$ \\
 \hline
 Set 2 & \textbf{Set 1 and} \\
-& $m_{T2}(bl, bl)$ \\
+& $M_{T2}^{bl}$ \\
 & massT \\
 \hline
 Set 3 & \textbf{Set 2 and} \\
