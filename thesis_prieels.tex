@@ -6000,7 +6000,7 @@ En este sentido, hemos calculado los limites de exclusi\'{o}n observados y esper
 \chapter{Samples used} \label{appendix:Samples}
 \section{Data samples} \label{appendix:DataSamples}
 
-All the data samples considered for this analysis are listed in Tables~\ref{table:Data2016},~\ref{table:Data2017} and~\ref{table:Data2018}. The luminosity of each dataset has been computed using the Brilcalc tool provided by \ac{CMS} \cite{Brilcalc}, while the number of generated events has been obtained using the CERN official \acf{DAS}.
+All the data samples considered for this analysis are listed in Tables~\ref{table:Data2016},~\ref{table:Data2017} and~\ref{table:Data2018} for 2016, 2017 and 2018 respectively. The luminosity of each dataset has been computed using the Brilcalc tool provided by \ac{CMS} \cite{Brilcalc}, while the number of generated events has been obtained using the CERN official \acf{DAS}.
 
 \begin{table}
 \begin{center}
@@ -6154,7 +6154,7 @@ All the data samples considered for this analysis are listed in Tables~\ref{tabl
 
 \section{Signal samples}  \label{appendix:SignalSamples}
 
-The \ac{MC} signal samples have been produced centrally, considering different dark matter and mediator masses and different production channels, for both signals of this analysis. All the mass points considered along with their respective cross sections can be found in Tables~\ref{table:tDMsignals} ($t/ \bar t$+DM signal) and~\ref{table:ttDMsignals} ($t \bar t$+DM signal). The mass points generated are the same for 2016, 2017 and 2018.
+The \ac{MC} signal samples have first been produced privately and then centrally (for the $t \bar t$+DM model only). They were generated considering different dark matter and mediator masses and different production channels, for both our signal models. All the mass points considered along with their respective cross sections can be found in Tables~\ref{table:tDMsignals} ($t/ \bar t$+DM signal) and~\ref{table:ttDMsignals} ($t \bar t$+DM signal). The mass points generated are the same for 2016, 2017 and 2018.
 
 \begin{table}
 \begin{center}
@@ -6195,7 +6195,7 @@ The \ac{MC} signal samples have been produced centrally, considering different d
  \hline
 \end{tabular}
 %}
-\caption{Signal samples mass points and \ac{LO} dileptonic cross-sections considered for the $t/ \bar t$+DM signal used in this analysis.}
+\caption{Signal samples mass points and \ac{LO} dilepton cross-sections considered for the $t/ \bar t$+DM signal model used in this analysis.}
 \label{table:tDMsignals}
 \end{center}
 \end{table}
@@ -6247,14 +6247,14 @@ The \ac{MC} signal samples have been produced centrally, considering different d
  \hline
 \end{tabular}
 }
-\caption{Signal samples mass points and \ac{LO} dileptonic cross-sections considered for the $t \bar t$+DM signal used in this analysis.}
+\caption{Signal samples mass points and \ac{LO} dilepton cross-sections considered for the $t \bar t$+DM signal model used in this analysis.}
 \label{table:ttDMsignals}
 \end{center}
 \end{table}
 
 \section{Backgrounds samples}  \label{appendix:BkgSamples}
 
-All the background \ac{MC} samples considered for this analysis are listed in Tables~\ref{table:MC2016},~\ref{table:MC2017} and~\ref{table:MC2018} for 2016, 2017 and 2018 respectively.
+All the background \ac{MC} samples considered for this analysis, along with their respecti cross-sections, are listed in Tables~\ref{table:MC2016},~\ref{table:MC2017} and~\ref{table:MC2018} for 2016, 2017 and 2018 respectively.
 
 %\begin{landscape}
 \begin{table}
@@ -6421,13 +6421,13 @@ VZ & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 
 \chapter{\ac{MVA} optimization} \label{appendix:Optimization}
 
-The study of the different hyperparameters defining both the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to use optimized parameters when defining our \ac{MVA} and to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform because of the high number of hyperparameters that can have an impact on the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
+The study and optimization of the different hyperparameters defining either the \ac{ANN} and the \ac{BDT} considered in this work was an important part of the analysis, to make sure to get the best possible discrimination between the backgrounds and the two signals of interest, the $t/ \bar t$+DM and the $t \bar t$+DM. In general, such optimization is a complex task to perform mainly because of the high number of hyperparameters that can have an impact on the quality of the final results. As a starting point, the optimal parameters found by DESY (for the \ac{BDT}) and IFCA (for the \ac{ANN}) during the 2016 analysis were used. 
 
-The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually related to each other, we decided for the sake of simplicity to treat them as independent and to optimize the network by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. Finally, the training optimization has been performed using the data collected in 2018 and considering the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematics similarities. %Finally, a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
+The global strategy used for the actual optimization process is quite straightforward: even though some of the hyperparameters considered are actually correlated with each other, we decided for the sake of simplicity to treat them as independent and to optimize the model by optimizing each of these parameters individually. Among all the candidate values for a given parameter, the one leading to the best possible ROC curve while keeping the time needed to train the network reasonably low was then simply chosen for the analysis. Finally, the training optimization has been performed using the data collected in 2018 and considering the 100 GeV scalar mediators for both signal processes, an intermediate mass point that should feature some of the lowest discrimination between the signals and the backgrounds, given their kinematic similarities in this case. %Finally, a similar number of background and signal events was used to train the different methods. %In all the plots presented in this section, corresponding to the most significant hyperparameters which were found to have a significant impact, the signal labeled as \textit{signal0} is the $t \bar t$+DM, while the \textit{signal1} label corresponds to the $t/\bar t$ +DM.
 
 \subsubsection{Boosted Decisions Trees}
 
-Starting with the \ac{BDT} of the analysis, the first obvious hyperparameter among all the parameters typical of a \ac{BDT} and described in Section~\ref{section:BDT} that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
+The first obvious hyperparameter among all the parameters typical of a \ac{BDT}, described in Section~\ref{section:BDT}, that we decided to optimize was the number of trees, whose impact on the final discrimination obtained between the processes can be seen in the \ac{ROC} curves shown in Figure~\ref{fig:optTrees}.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6605,7 +6605,7 @@ For most of the hyperparameters described so far, we usually expect that increas
 
 \subsubsection{Analysis Neural Network}
 
-The same process has then been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different numbers of hidden layers and  neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results obtained for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 30\%/70\% test/training splitting used, which gave us around 60.000 total events for the training, all the networks seem to give similar results. At the end of the day, the best combination between the background rejection and signal efficiency was obtained for the architecture with 4 hidden layers made out of 20/15/15/10 neurons.
+The same process has then been repeated by considering this time the \ac{ANN} of the analysis. In this case, we decided to first of all focus the optimization of the neural network on its actual architecture, trying out different numbers of hidden layers and  neurons in each layer, while trying to keep the validation loss obtained to a minimum. The results obtained for the optimization of this first parameter can be found in Figure~\ref{fig:optLayers}. We can see in these plots that with the 70\%/30\% training/test splitting used, which gave us around 50.000 total events for the training, all the neural networks defined seem to give similar results. At the end of the day though, slightly better results were obtained for the architecture with 4 hidden layers made out of 20/15/15/10 neurons, at least when looking at the combination between the background rejection and signal efficiency obtained.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6661,7 +6661,7 @@ The same process has then been repeated by considering this time the \ac{ANN} of
 \label{fig:optLayers}
 \end{figure}
 
-After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time the learning rate of the Adam algorithm used, as shown in Figure~\ref{fig:optLearning}. Usually, a larger learning rate allow us to avoid any eventual local minimum in the curve corresponding to the error function defined and to reach the minimum global faster, while a lower value is typically a bit more precise. %In this case, it seems that keeping this parameter to a minimum is extremely important in order to avoid seeing discrepancies between the test and training datasets.
+After this first step of optimization, we kept the architecture which seemed to give the best results and started a subsequent optimization process, evaluating this time the learning rate of the Adam algorithm used, as shown in Figure~\ref{fig:optLearning}. Usually, a larger learning rate allow us to avoid any eventual local minimum in the curve corresponding to the error function defined and to reach the minimum global faster, but also increases the risk of not being able to converge to a solution at all, while a lower value is typically a bit more precise but also increases the training time needed in order to reach an optimal solution. Again, this trade-off implies that a comprise needs to be found when choosing the value of this hyperparameter as well. %In this case, it seems that keeping this parameter to a minimum is extremely important in order to avoid seeing discrepancies between the test and training datasets.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6705,7 +6705,7 @@ After this first step of optimization, we kept the architecture which seemed to 
 \label{fig:optLearning}
 \end{figure}
 
-The last parameter that has been optimized in this case is the batch size, allowing us to gain some time by avoiding updating the weight of the network each time an input event is considered but by instead grouping them in batches. The results obtained in this case are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{ANN} with a batch size 20 than a higher value of 100.
+The last parameter that has been optimized in this case is the batch size. Usually, the weights of the neural network have to be updated at each training epoch and this is done by looking at the whole dataset, which in reality can prove to be quite inefficient. This hyperparameter allows us to gain some time by only looking at a small number of events in the dataset before updating the weights of the neural network, therefore accelerating the training process. The results obtained considering different batch sizes are shown in Figure~\ref{fig:optBatch}. In this case, time was an important factor when choosing the parameter to use for the analysis, given the fact that it takes around two to three more times to train a \ac{ANN} with a batch size 20 than a higher value of 100.
 
 %\begin{figure}[htbp]
 %\centering
@@ -6749,7 +6749,7 @@ The last parameter that has been optimized in this case is the batch size, allow
 \label{fig:optBatch}
 \end{figure}
 
-For all the previous tests, we took care of defining a number of epochs high enough by using a simple trial and error process, making sure to run at least 200 epochs and then making sure that the validation loss obtained did not decrease for at least 30 consecutive training epochs.  
+For all the previous tests, we took care of defining a number of training iterations high enough by using a simple trial and error process, making sure to run at least 200 epochs, while implementing a system of early stop in case the validation loss did not decrease for several epochs in a row, in order to avoid overfitting the training data.
 
 \subsubsection{Input variables chosen}
 
@@ -6784,7 +6784,7 @@ Set 5 & \textbf{Set 4 and} \\
 & Overlapping factor $R$ \\
  \hline
 \end{tabular}
-\caption{Sets of input variables considered for the optimization of both the \ac{MVA} methods considered.}
+\caption{Different sets of input variables considered for the optimization of both the \ac{MVA} methods considered.}
 \label{table:sets}
 \end{center}
 \end{table}
@@ -6811,7 +6811,7 @@ The \ac{ROC} curves for each set of input variables have been obtained and plott
 \includegraphics[width=7cm, height=5.2cm]{figs/ANN_input_TTbar.png}
 \end{minipage} \hfill
 }
-\caption{Background rejection achieved for the \ac{BDT} (at the top) and the \ac{ANN} (at the bottom) by trying out different sets of input variables, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) regions.}
+\caption{Background rejection achieved for the \ac{BDT} (at the top) and the \ac{ANN} (at the bottom) by trying out different sets of input variables, for the training done in the $t/ \bar t$+DM (on the left) and $t \bar t$+DM (on the right) signal regions.}
 \label{fig:InputVarROC}
 \end{figure}
 
@@ -6947,7 +6947,7 @@ The \ac{ROC} curves for each set of input variables have been obtained and plott
 
 \chapter{Post-fits, pulls and impacts plots} \label{appendix:Impact}
 
-First of all, plots after performing the fit using the cominbe tool, the so-called post-fit plots, were obtained, allowing us 	to compare the yields before and after performing this fit. Some of the distributions obtained in both signal regions can be found in Figures~\ref{fig:postFits1} to~\ref{fig:postFits4}.
+First of all, plots after performing the fit using the cominbe tool, the so-called post-fit plots, were obtained, allowing us 	to compare the yields before and after performing this fit. Some of the distributions obtained in both signal regions can be found in Figures~\ref{fig:postFits1} to~\ref{fig:postFits4}. In general, we can observe that the fit is doing a good job, and the post-fits look globally better than the pre-fits.
 
 \begin{figure}[htbp]
 \centering
@@ -7077,7 +7077,7 @@ First of all, plots after performing the fit using the cominbe tool, the so-call
 \label{fig:postFits4}
 \end{figure}
 
-Given the large number of systematic uncertainties considered in this analysis, as described in Section~\ref{section:Systematics}, it is also useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they allow us to study the quality of the systematic estimation, expressed as the difference between the maximum likelihood estimator and our own estimation, along with the importance of every systematic of the analysis, according to the effect each systematic has on the signal strength $\mu$, by rerunning the fit performed with each nuisance parameters fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
+Given the large number of systematic uncertainties considered in this analysis, all described in Section~\ref{section:Systematics}, it is also useful to try and understand the impact each one of them has on the final upper limits on the signal strengths obtained. This is where the so-called impact plots become useful, since they allow us to study the quality of the systematic estimation, expressed as the difference between the maximum likelihood estimator and our own estimation, along with the importance of every systematic of the analysis, according to the effect each systematic has on the signal strength $\mu$. This is estimated by rerunning the fit performed with each nuisance parameter fixed at their $\pm 1 \sigma$ values, to understand the impact they might have.
 
 Mathematically, the impact of a nuisance parameter $\theta$ on a parameter of interest $\mu$ (in this, the signal strength) is defined as the shift $\Delta \mu$ this is induced by bringing $\theta$ to its +1$\sigma$ and -1$\sigma$ values.
 
