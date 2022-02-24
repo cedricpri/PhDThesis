@@ -23,6 +23,7 @@
 \usepackage{graphicx}
 \usepackage{bm}
 \usepackage{cancel}
+\usepackage{amsmath}
 \usepackage[document]{ragged2e}
 \usepgfplotslibrary{dateplot}
 \usepackage{xspace}
@@ -831,7 +832,7 @@ The $t/\bar t$+DM process was \textbf{produced privately} (central request has b
 $\rightarrow$ All the samples used and their cross-sections are listed in the backup. \vfill
 \end{frame}
 
-\begin{frame}{Normalized signal samples distributions}
+\begin{frame}{Signal samples distributions with normalization}
 \justifying
 \begin{block}{\centering $t/\bar t$+DM}\end{block} \vspace{-10pt}
 \begin{figure}[htbp]
@@ -865,6 +866,45 @@ $\rightarrow$ All the samples used and their cross-sections are listed in the ba
 \begin{minipage}[b]{.49\textwidth}
 \begin{center}
 \includegraphics[width=5.2cm, height=3.5cm]{figs/pseudoscalarMETmChi1Norm.png}
+\end{center}
+\end{minipage} \hfill
+\end{figure} \vfill
+\end{frame}
+
+\begin{frame}{Signal samples distributions without normalization}
+\justifying
+\begin{block}{\centering $t/\bar t$+DM}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering Scalar}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopScalarMET.png}
+\end{center}
+\end{minipage}
+\begin{minipage}[b]{.02\textwidth}\end{minipage}
+\begin{minipage}[b]{.49\textwidth}
+\vspace{-5pt}
+\begin{block}{\centering Pseudoscalar}\end{block}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopPseudoMET.png}
+\end{center}
+\end{minipage}
+\end{figure} \vfill
+
+\vspace{-5pt}
+\begin{block}{\centering $t \bar t$+DM}\end{block} \vspace{-10pt}
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/scalarMETmChi1.png}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\includegraphics[width=5.2cm, height=3.5cm]{figs/pseudoscalarMETmChi1.png}
 \end{center}
 \end{minipage} \hfill
 \end{figure} \vfill
@@ -1964,6 +2004,116 @@ $\rightarrow$ Additional impact plots can be found in the backup. \vfill
 Results obtained
 \end{frame}
 
+\begin{frame}{Post-fit plots (scalar 100 GeV)}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $t/\bar t$+DM region}\end{block} \vspace{10pt}
+\end{column}
+\end{columns} \vspace{-24pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2016}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2017}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2018}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+
+\vspace{-8pt}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $t \bar t$+DM region}\end{block} \vspace{10pt}
+\end{column}
+\end{columns} \vspace{-16pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
+\begin{frame}{Post-fit plots (scalar 500 GeV)}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $t/\bar t$+DM region}\end{block} \vspace{10pt}
+\end{column}
+\end{columns} \vspace{-24pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2016}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2017}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column} 
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+			\begin{block}{\centering 2018}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+\end{columns}
+
+\vspace{-8pt}
+\begin{columns}
+\begin{column}{1.09\textwidth}
+\begin{block}{\centering $t \bar t$+DM region}\end{block} \vspace{10pt}
+\end{column}
+\end{columns} \vspace{-16pt}
+\begin{columns}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering Puppi MET}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering njet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+		\begin{column}{0.33\textwidth}
+			\begin{center}
+				%\begin{block}{\centering nbjet}\end{block}	
+     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
+    		\end{center}		
+		\end{column}
+\end{columns} \vfill
+\end{frame}
+
 \begin{frame}{Upper limits on the signal regions}
 \begin{columns}
 \begin{column}{1.09\textwidth}
@@ -2166,7 +2316,7 @@ Back up
 \begin{frame}{Gravitational lensing}
 \justifying
 \vspace{5pt}
-Consequence of the general relativity: massive objects placed between distant sources and the observer should be able to act as lenses and bend the light of the source. \vfill
+Consequence of the \alert{general relativity}: massive objects placed between distant sources and the observer should be able to \textbf{act as lenses and bend the light of the source}. \vfill
 
 \begin{itemize}
 \justifying
@@ -2185,9 +2335,8 @@ Consequence of the general relativity: massive objects placed between distant so
 \begin{frame}{Thermal freeze-out}
 \justifying
 \vspace{5pt}
-Schematic representation of the freeze-out process, representing the abundance of a
-500 GeV dark matter with respect to the time and the impact of increasing cross-section annihilation
-values on this freeze-out abundance. \vfill
+Schematic representation of the \alert{freeze-out process}, representing the abundance of a
+500 GeV dark matter with respect to time and the impact increasing cross-section annihilation values have on the remnant freeze-out abundance. \vfill
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2196,69 +2345,59 @@ values on this freeze-out abundance. \vfill
 \end{figure} \vfill
 \end{frame}
 
-\begin{frame}{CMS relevant results}
+\begin{frame}{Additional relevant results I}
 \justifying
-CMS dilepton channel 2016 results published: \vfill
+CMS combination of all the different final states published in 2016:
+
+%\vspace{-10pt}
+\begin{figure}[htbp]
+\begin{center}
+\includegraphics[width=11cm, height=4.8cm]{figs/CMSttbarExclusion.png}
+\end{center}
+\end{figure} \vfill
+
+The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
+\end{frame}
+
+\begin{frame}{Additional relevant results II}
+\justifying
+The ATLAS collaboration obtained \alert{exclusion limits for all the channels}, considering the full Run II dataset. \vfill
 
 \begin{figure}[htbp]
 \centering
 \begin{minipage}[b]{.5\textwidth}
-\includegraphics[width=5.3cm, height=4.9cm]{figs/Juan_scalar_limits.png}
+\includegraphics[width=5.2cm, height=4cm]{figs/ATLASttDM_scalar.png}
 \end{minipage}\hfill
 \begin{minipage}[b]{.5\textwidth}
-\includegraphics[width=5.3cm, height=4.9cm]{figs/Juan_pseudo_limits.png}
+\includegraphics[width=5.2cm, height=4cm]{figs/ATLASttDM_pseudoscalar.png}
 \end{minipage}\hfill
 \end{figure} \vfill
-\end{frame}
 
-\begin{frame}{ATLAS relevant results I}
-\justifying
-ATLAS dilepton channel Run II legacy resuts from ICHEP 2020: \vfill
-
- \begin{figure}[htbp]
-\centering
-\includegraphics[width=10.5cm, height=4.7cm]{figs/ATLASICHEP.png}
-\end{figure} \vfill
-\end{frame}
-
-\begin{frame}{ATLAS relevant results II}
-\justifying
-The ATLAS collaboration does not perform any combination between the different channels though. \vfill
-
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.5\textwidth}
-\includegraphics[width=5.3cm, height=4cm]{figs/ATLASttDM_scalar.png}
-\end{minipage}\hfill
-\begin{minipage}[b]{.5\textwidth}
-\includegraphics[width=5.3cm, height=4cm]{figs/ATLASttDM_pseudoscalar.png}
-\end{minipage}\hfill
-\end{figure} \vfill
+Note that they do not perform any combination between the different channels and typically use NLO cross-sections for the signals. \vfill
 \end{frame}
 
 \begin{frame}{Center of mass energy}
 \justifying
-The center of mass energy is defined as a Lorentz invariant quantity under any kind of boost resulting of the collisions between two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle. \vfill
+The \alert{center of mass energy} is defined as a Lorentz invariant quantity under any kind of boost resulting of the collisions between two protons (defined as $E_1, \overrightarrow{p_1}, m_1$ and $E_2, \overrightarrow{p_2}, m_2$) with a $\theta$ angle. \vfill
 
 \begin{equation*}
 \sqrt{s} = \sqrt{(m_1)^2 + (m_2)^2 + 2 \left (E_1 E_2-2 |\overrightarrow{p_1}| \text{ } |\overrightarrow{p_2}| \text{ cos}(\theta) \right )}
 \end{equation*} \vfill
 
 The LHC started its operation in 2008 running at an energy of 7 TeV, quickly moved to 8 TeV
-and kept this level of energy during the end of the Run I of operation. In 2015, the energy was increased to 13 TeV. \vfill
-An expected value of 14 TeV, the nominal energy for which the LHC was originally built, is
+and kept this level of energy during the end of the Run I of operation. In 2015, the energy was \textbf{increased to 13 TeV}. \vfill
+An expected value of 13.5 to 14 TeV, the nominal energy for which the LHC was originally built, is
 expected to be reached in the near future. \vfill
 \end{frame}
 
 \begin{frame}{Luminosity}
 \justifying
-The luminosity $\mathcal{L}$ gives an indication on the number of collisions per second given by the accelerator. Increasing it is crucial to collect as much data as possible, to be able to isolate processes
-having a low production cross section. \vfill
+The \alert{luminosity $\mathcal{L}$} gives an indication on the \textbf{number of collisions per second} given by the accelerator. Increasing it is crucial to collect as much data as possible, to be able to isolate processes having a low production cross section. \vfill
 
 \begin{columns}
 	\begin{column}{0.4	\textwidth}
 	\justifying	
-The rate of production $R$ of any given process can be expressed from the instantaneous luminosity $\mathcal{L}(t)$ and the process production cross-section $\sigma$:	
+The \textbf{rate of production} $R$ of any given process can be expressed from the instantaneous luminosity $\mathcal{L}(t)$ and the process production cross-section $\sigma$:	
 	
 \begin{equation*}
 \begin{dcases}
@@ -2281,7 +2420,7 @@ N(T) = \sigma \int_0^T \mathcal{L}(t) dt = \sigma L
 \begin{frame}{Pile-up}
 \justifying
 \vspace{5pt}
-Because of the high density of protons within the beams, a bunch crossing in an experiment produces around 30-35 proton collisions. \vfill
+Because of the high density of protons within the beams, a \textbf{bunch crossing in an experiment produces around 30-35 proton collisions}. \vfill
 
 \begin{figure}[htbp]
 \begin{center}
@@ -2289,12 +2428,12 @@ Because of the high density of protons within the beams, a bunch crossing in an 
 \end{center}
 \end{figure} \vfill
 
-The Primary Vertex is defined as the most interesting and energetic vertex, while the other vertices are usually referred to as the pile-up. \vfill
+The \alert{primary vertex} is defined as the most interesting and energetic vertex, while the other vertices are usually referred to as the \alert{pile-up}. \vfill
 \end{frame}
 
 \begin{frame}{LHC operational parameters}
 \justifying
-Key parameters of operation of the LHC, depending on the data-taking period:
+\alert{Key parameters of operation} of the LHC, depending on the data-taking period:
 
 \begin{table}
 \begin{center}
@@ -2319,18 +2458,18 @@ Peak pile-up & 45 & 60 & 55 & 25 \\
 
 \begin{frame}{CMS tracker I}
 \justifying
-The tracker is the innermost piece of CMS, able to reconstruct the trajectories of charged particles issued from the interaction vertices in a quick and precise way:
+The tracker is the \textbf{innermost piece of CMS}, able to reconstruct the trajectories of charged particles issued from the interaction vertices in a quick and precise way:
 \begin{itemize}
 \justifying
-\item Needs to be extremely fast to read the 40MhZ of collision data, while being resistant to the radiation (expected lifetime $\sim 10$ years);
-\item It should be as small as possible to minimize the interaction between the detector and the particles created;
-\item However, fast electronics usually needs to be cooled down, which increases the size of the subdetector.
+\item Needs to be extremely fast to read the 40 MhZ of collision data, while being resistant to the radiation (expected lifetime $\sim 10$ years);
+\item It should be as small as possible in order to minimize the interactions between the detector and the particles created;
+\item However, fast electronics usually needs to be cooled down, which automatically increases the size of this subdetector.
 \end{itemize} \vfill
 
 Made out of two main parts: 
 \begin{itemize}
 \justifying
-\item The \alert{pixel detector}, made out 60 millions pixels which make up the 1856 after an modules of this detector, covering an area of $\sim 1$ m$^2$;
+\item The \alert{pixel detector}, made out 60 millions pixels which make up the 1856 modules of this detector, covering an area of $\sim 1$ m$^2$;
 \item The \alert{silicon strip detector}, covering an area of $\sim 200$ m$^2$, and made out of three different sub-systems for hermeticity.
 \end{itemize} \vfill
 
@@ -2340,11 +2479,11 @@ A charged particle crossing the tracker will leave a hit each time it crosses on
 \begin{frame}{CMS tracker II}
 \justifying
 \vspace{5pt}
-The silicon detector is divided into three main parts:
+The \alert{silicon detector} is divided into three main parts:
 \begin{itemize}
-\item The Tracker Inner Barrel and Disks (TIB/TBD), using micro-strips parallel in the barrel and perpendicular to the beam axis in the endcaps;
-\item The Tracker Outer Barrel (TOB), adding 6 measurement layers to the tracker;
-\item And finally the Tracker EndCaps (TECs), made out of 9 disks, completing the system at high pseudorapidities.
+\item The \textbf{Tracker Inner Barrel and Disks (TIB/TBD)}, using micro-strips parallel in the barrel and perpendicular to the beam axis in the endcaps;
+\item The \textbf{Tracker Outer Barrel (TOB)}, adding 6 measurement layers to the tracker;
+\item And finally the \textbf{Tracker EndCaps (TECs)}, made out of 9 disks, completing the system at high pseudorapidities.
 \end{itemize} \vfill
 
 \begin{figure}[htbp]
@@ -2357,18 +2496,16 @@ The silicon detector is divided into three main parts:
 \begin{frame}{CMS electromagnetic calorimeter I}
 \justifying
 \vspace{5pt}
-The ECAL is a subdetector sitting inside the solenoid but enclosing the tracker
-system that gives information about the energy of electrons and photons, both able to interact
-electromagnetically with its crystals. \vfill
+The \alert{Electromagnetic Calorimeter} is a subdetector sitting inside the solenoid but enclosing the tracker system that gives information about the \textbf{energy of electrons and photons}, both able to interact electromagnetically with its crystals. \vfill
 
 \begin{columns}
 	\begin{column}{0.45 \textwidth}
 	Made out of different layers:
 	\begin{itemize}
 	\justifying
-	\item The barrel part (EB), at $|\eta| < 1.479$, made out of 61 200 lead tungstate (PbWO$_4$) crystals;
-	\item Two endcaps, each made out of 7 324 crystals, increasing the coverage of the detector up to $|\eta| < 3$;
-	\item The preshower, helping with the identification of electrons
+	\item The \textbf{barrel part (EB)}, at $|\eta| < 1.479$, made out of 61 200 lead tungstate (PbWO$_4$) crystals;
+	\item Two \textbf{endcaps}, each made out of 7 324 crystals, increasing the coverage of the detector up to $|\eta| < 3$;
+	\item The \textbf{preshower}, helping with the identification of electrons
 against minimum ionizing particles.
 	\end{itemize}
 	\end{column}
@@ -2391,7 +2528,7 @@ The principle of action of the ECAL is simple, and is based on \alert{electromag
 \item Photons will mainly produce pairs of electrons and anti-electrons;
 \item Electrons themselves tend to emit additional photons by bremsstrahlung effect.
 \end{itemize}
-This results in a chain reaction during which the incident particle gives most of its energy to the detector, energy measurable using photodetectors and photomultipliers. \vfill
+This results in a \textbf{chain reaction during which the incident particle gives most of its energy to the detector}, energy measurable using photodetectors and photomultipliers. \vfill
 
 \begin{columns}
 	\begin{column}{0.45 \textwidth}
@@ -2412,7 +2549,7 @@ This results in a chain reaction during which the incident particle gives most o
 \begin{frame}{CMS hadronic calorimeter I}
 \justifying
 \vspace{10pt}
-Charged hadrons lose energy when they traverse matter due to the ionization process resulting from the strong interaction between them and the nuclei of the detector. \vfill
+Charged hadrons \alert{lose energy when they traverse matter} due to the \textbf{ionization process resulting from the strong interaction} between them and the nuclei of the detector. \vfill
 Showers of particles are typically produced since the primary hadronic interaction will produce several additional hadrons, themselves interacting even more with the detector. \vfill
 
 \begin{columns}
@@ -2421,8 +2558,8 @@ The HCAL is made out of alternating layers:
 \vspace{-10pt}
 \begin{itemize}
 \justifying
-\item Of thick \alert{absorber material}, in which the showers can develop;
-\item And thin layers of \alert{active material} used for the actual detection by sampling the energy deposition.
+\item Of thick \textbf{absorber material}, in which the showers can develop;
+\item And thin layers of \textbf{active material} used for the actual detection by sampling the energy deposition.
 \end{itemize}
 \end{column}
 	\begin{column}{0.45 \textwidth}
@@ -2438,10 +2575,10 @@ The HCAL is made out of alternating layers:
 \vspace{5pt}
 The HCAL is divided into:
 \begin{itemize}
-\item A barrel (HB), up to $|\eta| = 1.3$;
-\item Two endcaps, extending the pseudorapidities coverage up to $|\eta| = 3.0$;
-\item Two symmetrical forward regions (HF), covering up to $|\eta| = 5.2$;
-\item And the Hadron Outer (HO), outside of the solenoid, placed to increase the effective nuclear radiation length $\lambda$, otherwise low at a $90^{\circ}$ incidence angle.
+\item A \textbf{barrel (HB)}, up to $|\eta| = 1.3$;
+\item Two \textbf{endcaps}, extending the pseudorapidities coverage up to $|\eta| = 3.0$;
+\item Two \textbf{symmetrical forward regions (HF)}, covering up to $|\eta| = 5.2$;
+\item And the \textbf{Hadron Outer (HO)}, outside of the solenoid, placed to increase the effective nuclear radiation length $\lambda$, otherwise low at a $90^{\circ}$ incidence angle.
 \end{itemize} \vfill
 
 \begin{figure}[htbp]
@@ -2456,13 +2593,13 @@ The HCAL is divided into:
 \begin{columns}
 	\begin{column}{0.46 \textwidth}
 	\justifying
-The superconducting solenoid:
+The \alert{superconducting solenoid}:
 \begin{itemize}
 \justifying
 \item Is made out of 6 endcap disks and 5 barrel wheels;
 \item Weights more than 12 000 tons in total, with the return yoke;
-\item Is able to produce a 3.8T magnetic field once cooled down to 4.5K;
-\item Stores around 2.6GJ of energy when active.
+\item Is able to produce a 3.8 T magnetic field once cooled down to 4.5K;
+\item Stores around 2.6 GJ of energy when active.
 \end{itemize}
 \end{column}
 	\begin{column}{0.51 \textwidth}
@@ -2474,7 +2611,7 @@ The superconducting solenoid:
 	\end{column}
 	\end{columns} \vfill
 
-It allows the measurement of the momentum and charge of particles by studying the curvature of their tracks, according to the Lorentz equation:
+It allows the \textbf{measurement of the momentum and charge of particles} by studying the curvature of their tracks, according to the Lorentz equation:
 
 \begin{equation*}
 \overrightarrow{F} = \frac{m \overrightarrow{v}^2}{R} =  q \overrightarrow{E} + q \overrightarrow{v} \times \overrightarrow{B} = q \overrightarrow{v} \times \overrightarrow{B}
@@ -2484,11 +2621,11 @@ It allows the measurement of the momentum and charge of particles by studying th
 It has been designed to reach a momentum resolution $\Delta p/p \sim 10$\% at $p = 1$ TeV. \vfill
 \end{frame}
 
-\begin{frame}{CMS muon systems I}
+\begin{frame}{CMS muon system I}
 \justifying
-The muon systems is the outermost section of CMS, covering around 25 000 m$^2$. \vfill 
+The \alert{muon system} is the \textbf{outermost section} of CMS, covering around 25 000 m$^2$. \vfill 
 
-Three different categories of devices have been designed, in order to cope with the specific experimental conditions in the different parts of the detector: the Drift Tubes (DTs), the Cathode Strips Chambers (CSCs), and the Resistive Plate Chambers (RPCs). \vfill
+\textbf{Three different categories} of devices have been designed, in order to cope with the specific experimental conditions in the different parts of the detector: the Drift Tubes (DTs), the Cathode Strips Chambers (CSCs), and the Resistive Plate Chambers (RPCs). \vfill
 
 \begin{center}
 \includegraphics[width=8cm, height=4.9cm]{figs/CMSMuons.png}
@@ -2497,7 +2634,7 @@ Three different categories of devices have been designed, in order to cope with 
 All these detectors are gaseous, distributed over a cylindrical area given the shape of the innermost components of CMS, and cheap, given the large surface they cover. \vfill
 \end{frame}
 
-\begin{frame}{CMS muon systems II}
+\begin{frame}{CMS muon system II}
 Comparison of the different subsystems:
 \begin{table}[h!]
 \begin{center}
@@ -2522,7 +2659,7 @@ Comparison of the different subsystems:
 \begin{frame}{CMS DTs}
 \justifying
 \vspace{5pt}
-Placed in the barrel region (up to $|\eta| = 1.2$), where the background levels and magnetic field are low, this system allows a good efficiency for the muon hits reconstruction into a single track and a good rejection of eventual background hits. \vfill
+Placed in the barrel region (up to $|\eta| = 1.2$), where the background levels and magnetic field are low, this system allows a \textbf{good efficiency for the muon hits reconstruction} into a single track and a \textbf{good rejection of eventual background hits}. \vfill
 
 \begin{columns}
 	\begin{column}{0.48 \textwidth}
@@ -2533,7 +2670,7 @@ This system is:
 \item Able to collect the residuals charges left by the ionization tracks of muons;
 \item Made out of 172 000 sensitive wires, divided in 250 chambers;
 \item Redundant, by the installation of 4 layers, to reduce the impact coming from eventual neutrons or photons;
-\item Has a maximal drift time of 380ns, low enough to avoid the need of multi-hits electronics.
+\item Has a maximal drift time of 380~ns, low enough to avoid the need of multi-hits electronics.
 \end{itemize}
 \end{column}
 	\begin{column}{0.51 \textwidth}
@@ -2546,19 +2683,17 @@ This system is:
 	\end{columns} \vfill
 \end{frame}
 
-\begin{frame}{Additional relevant results}
-\justifying
-CMS combination of all the different final states published in 2016:
 
-%\vspace{-10pt}
-\begin{figure}[htbp]
-\begin{center}
-\includegraphics[width=11cm, height=4.8cm]{figs/CMSttbarExclusion.png}
-\end{center}
-\end{figure} \vfill
 
-The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
-\end{frame}
+
+
+
+
+
+
+
+
+
 
 \begin{frame}{2016 data samples}
 \justifying
@@ -2971,45 +3106,6 @@ VZ & WWTo2L2Nu\_NNPDF31\_TuneCP5\_13TeV-powheg-pythia8 & 12.178 \\
 \end{table}
 \end{frame}
 
-\begin{frame}{Signal samples}
-\justifying
-\begin{block}{\centering $t/\bar t$+DM}\end{block} \vspace{-10pt}
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.49\textwidth}
-\vspace{-5pt}
-\begin{block}{\centering Scalar}\end{block}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopScalarMET.png}
-\end{center}
-\end{minipage}
-\begin{minipage}[b]{.02\textwidth}\end{minipage}
-\begin{minipage}[b]{.49\textwidth}
-\vspace{-5pt}
-\begin{block}{\centering Pseudoscalar}\end{block}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/singleTopPseudoMET.png}
-\end{center}
-\end{minipage}
-\end{figure} \vfill
-
-\vspace{-5pt}
-\begin{block}{\centering $t \bar t$+DM}\end{block} \vspace{-10pt}
-\begin{figure}[htbp]
-\centering
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/scalarMETmChi1.png}
-\end{center}
-\end{minipage}\hfill
-\begin{minipage}[b]{.49\textwidth}
-\begin{center}
-\includegraphics[width=5.2cm, height=3.5cm]{figs/pseudoscalarMETmChi1.png}
-\end{center}
-\end{minipage} \hfill
-\end{figure} \vfill
-\end{frame}
-
 \begin{frame}{2016 triggers}
 \justifying
 \begin{table}
@@ -3195,6 +3291,109 @@ Flag\_ecalBadCalibFilterV2$^{\dagger}$ & \checkmark & \checkmark \\
 \end{table}
 \end{frame}
 
+
+
+
+
+
+
+
+\begin{frame}{Non prompt leptons contamination I}
+\justifying
+For the last few years, we calculated the background caused by fake leptons (particularly important at low $p_T$) using a general \alert{tight to loose data-driven method}, because we \textbf{do not expect the MC to be able to model} this background correctly. \vfill
+By fake leptons, we mean: 
+\begin{itemize}
+\item Truly fakes (e.g. jets taken as electrons)
+\item Real leptons from heavy flavour decay
+\item (Electrons from $\gamma$ conversions)
+\end{itemize} \vfill
+Basically, we look for leptons satisfying the loose criteria \textbf{which pass or fail the tight criteria}. Then, several quantities are defined:
+\begin{itemize}
+\justifying
+\item The \alert{fake rate} is defined as the ratio of fake leptons passing the tight criteria over fake leptons passing the loose criteria. 
+\item The \alert{prompt rate} is defined in a similar way but considering this time prompt leptons (usually assumed to be equal to 1).
+\end{itemize}
+\hspace{10pt} $\rightarrow$ Both these factors depend heavily on the working point chosen and on the kinematics of the event. \vfill
+\end{frame}
+
+\begin{frame}{Non prompt leptons contamination II}
+\justifying
+The \alert{fake rate} $f$ corresponds to the \textit{probability for a fake lepton passing the loose criteria to also pass the tight ones}, and to therefore be considered as a real lepton in the analysis. We can measure it in a prompt lepton-free region (e.g., in a QCD enriched region). \vfill
+\begin{center}
+The fake rate is then given by \textbf{the ratio between leptons passing tight isolation and those passing loose isolation} $\rightarrow$ \textit{tight-to-loose method}.
+\end{center} \vfill
+Once calculated, we need to \alert{apply this weight} to a fake-lepton region \textbf{kinematically close to the signal region} (e.g. a region where one lepton fails the tight isolation criteria but passes the loose one) where we can estimate the number of yields $\rightarrow$ cf. the second part of this talk. \vfill
+We then need to assume that the weights calculated can be applied to another kinematically close region, accounting for the kinematics of the event. \vfill
+\end{frame}
+
+\begin{frame}{Non prompt leptons contamination III}
+\justifying
+To extrapolate these weights to the signal regions, we can define:
+\begin{itemize}
+\item $N_{pp}$ events where both leptons are prompt
+\item $N_{fp}$ events where one lepton is prompt and the other is fake
+\item $N_{ff}$ events where both leptons are fake
+\item $N_{tx}$ ($x = 0,1,2$) events with 0, 1 or 2 leptons passing the right cuts $\rightarrow$ \textbf{only quantity directly measurable}
+\end{itemize}
+It is then straightforward to see that:
+\begin{equation*}
+\begin{cases}
+& N_l = N_{pp} + N_{fp} + N_{ff} = N_{t2} + N_{t1} + N_{t0} \\
+& N_{t0} = (1-p)^2N_{pp} + (1-p)(1-f)N_{fp}+(1-f)^2N_{ff} \\
+& N_{t1} = 2p(1-p)N_{pp} + \left(f(1-p)+p(1-f)\right)N_{fp}+2f(1-f)^2N_{ff} \\
+& N_{t2} = p^2N_{pp} + pfN_{fp}+f^2N_{ff}
+\end{cases}
+\end{equation*}
+\end{frame}
+
+\begin{frame}{Non prompt leptons contamination IV}
+\justifying
+These equations can be inverted, yielding: \\
+\begin{equation*}
+\begin{pmatrix}
+N_{pp} \\ N_{fp} \\ N_{ff}
+\end{pmatrix} = \frac{f-p}{-(p-f)^3} \cdot 
+\begin{pmatrix}
+f^2 & -f(1-f) & (1-f)^2 \\ -2fp & p(1-f)+f(1-p) & -2(1-p)(1-f) \\ p^2 & -p(1-p) & (1-p)^2
+\end{pmatrix} \cdot 
+\begin{pmatrix}
+N_{t0} \\ N_{t1} \\ N_{t2}
+\end{pmatrix}
+\end{equation*} \vfill
+
+$\rightarrow$ This formula gives us the recipe to apply weights to the leptons, which are summed (with the correct signs) over all events in order to \textbf{extract the number of events with prompt leptons only}. \vfill
+\end{frame}
+
+\begin{frame}{Non prompt leptons contamination V}
+\justifying
+The non-prompt contamination of this particular analysis however is expected to be \textbf{dominated by the semileptonic decay of the $\bm{t \bar t}$ process}, when one of the bottom quarks produced leads to a fake lepton. \vfill
+This particular process, contrary to the W+jets and Z+jets processes, is \textbf{expected to be modeled quite well by the MC simulations}. \vfill
+
+\begin{figure}[htbp]
+\centering
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{ \centering Data-driven fakes}\end{block} \vspace{5pt}
+\includegraphics[width=4cm, height=4cm]{figs/log_cratio_SSCR_ll_pfmet_datadriven.png}
+\end{center}
+\end{minipage}\hfill
+\begin{minipage}[b]{.49\textwidth}
+\begin{center}
+\begin{block}{ \centering MC simulations}\end{block} \vspace{5pt}
+\includegraphics[width=4cm, height=4cm]{figs/log_cratio_SSCR_ll_pfmet_MC.png}
+\end{center}
+\end{minipage} \hfill
+\label{fig:fakes}
+\end{figure}
+
+$\rightarrow$ We decided to \alert{rely on the MC simulations} for this analysis as they come with a smaller systematic uncertainty. \vfill
+\end{frame}
+
+
+
+
+
+
 \begin{frame}{Top reconstruction I}
 \justifying
 Many discriminating variables for our signals require knowledge of the top quark and anti-quark 4-momenta, only available after a \alert{complete reconstruction of the $t \bar t$ system}. \vfill
@@ -3224,13 +3423,13 @@ The \textbf{Batchart analytical method} was used, relying on a geometrical appro
 
 \begin{frame}{Top reconstruction II}
 \justifying
-Two discriminating variables naturally arise from this reconstruction: the \textbf{dark $p_T$}, defined as the distance between the centroids of the ellipses, and the \textbf{overlapping factor $R$}, defined as the ratio between the size of the ellipses and the distance between them. \vfill
+Two discriminating variables naturally arise from this reconstruction: the \textbf{dark $\bm{p_T}$}, defined as the distance between the centroids of the ellipses, and the \textbf{overlapping factor $R$}, defined as the ratio between the size of the ellipses and the distance between them. \vfill
 
 In practice, \textbf{several complications} were taken into account:
 \begin{itemize}
 \justifying
-\item 0, 2 or 4 intersections can be observed while only 1 is physical, therefore considered to be the solution with the lowest possible invariant mass for the $t \bar t$ system;
-\item All the leptons and (b-)jets combinations of the event were taken into account;
+\item 0, 2 or 4 intersections can be observed while only 1 is physical, considered to be the solution with the lowest possible invariant mass for the $t \bar t$ system;
+\item All the leptons and (b-)jets permutations of the event were taken into account;
 \item A \alert{smearing process} was followed to evaluate the impact that imperfectly measured kinematic variables can have on this process (100 iterations per event, by updating several parameters such as the energy/direction of the jets and leptons within their respective uncertainties).
 \end{itemize} \vfill
 
@@ -3239,7 +3438,7 @@ These considerations allowed to \textbf{increase the mean top reconstruction eff
 
 \begin{frame}{$m_{bl}^t$ variable}
 \justifying
-If a b-jet is produced in a top-quark decay, its invariant mass is bounded from above by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$: \vfill
+If a b-jet is produced in a top-quark decay, its invariant mass is \textbf{bounded from above} by $\sqrt{m_t^2 - m_{W}^2} = 153$ GeV. Events compatible with two semileptonic top-quark decays can then be selected or rejected by introducing the observable $m_{bl}^t$: \vfill
 
 \begin{equation*}
 m_{bl}^t = \min \left (\max(m_{l_1 j_a}, m_{l_2 j_b}) \right)
@@ -3271,9 +3470,9 @@ This variable is expected to \textbf{give some discrimination} between our two s
 
 \begin{frame}{Stransverse mass $M_{T2}^{ll}$ and $M_{T2}^{bl}$}
 \justifying
-Extension of the transverse mass $m_T$ to cases when pairs of same flavor particles decay into one visible and one invisible particle, such as the double $W \rightarrow l\nu$ decay. \vfill
+Extension of the transverse mass $m_T$ to cases when \textbf{pairs of same flavor particles decay into one visible and one invisible particle}, such as the double $W \rightarrow l\nu$ decay. \vfill
 
-Here, 2 neutrinos contribute to the presence of ptmiss and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_2}}$) to this missing energy cannot be inferred. $M_{T2}^{ll}$ is defined as:
+Here, 2 neutrinos contribute to the presence of ptmiss and the individual contribution of each particle ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_2}}$) to this quantity cannot be inferred. $M_{T2}^{ll}$ is defined as:
 \begin{equation*}
 \begin{dcases}
 M_{T2}^2 = \min_{\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}} \bigg (\max \Big (m_T^2(\bm{p_{T_1}}, \bm{\cancel{p}_{T_{1}}}), m_T^2(\bm{p_{T_2}}, \bm{\cancel{p}_{T_{2}}}) \Big ) \bigg ) \\
@@ -3283,9 +3482,9 @@ m_T^2(\bm{p_{T}}, \bm{\cancel{p}_{T}}) = 4 \text{ } |\bm{p_{T}}| |\bm{\cancel{p}
 
 Different combinations ($\bm{\cancel{p}_{T_{1}}}$, $\bm{\cancel{p}_{T_{2}}}$) satisfying the condition $\bm{\cancel{p}_{T_{1}}} + \bm{\cancel{p}_{T_{2}}} = \bm{\cancel{p}_{T_{\text{tot}}}}$ then need to be probed, keeping only the combination which results in the lowest possible value. \vfill
 
-The $t \bar t$ process is expected to have an endpoint exactly at the mass of the W boson, while our eventual signal does not have this limitation because of the pair of dark matter particles produced. \vfill
+The $t \bar t$ process is \textbf{expected to have an endpoint at the mass of the W}, while our eventual signal \textbf{does not have this limitation} because of the pair of dark matter particles produced. \vfill
 
-The $M_{T2}^{bl}$ variable is defined in a similar case, except that in this case, the lepton is paired with a b-jet. The jet/lepton permutation giving the smallest value is kept. \vfill
+The \alert{$M_{T2}^{bl}$ variable} is defined in a similar case, except that in this case, the lepton is paired with a b-jet. The jet/lepton permutation giving the smallest value is kept. \vfill
 \end{frame}
 
 \begin{frame}{Stransverse mass $M_{T2}^{ll}$ and $M_{T2}^{bl}$}
@@ -3306,8 +3505,8 @@ The $M_{T2}^{bl}$ variable is defined in a similar case, except that in this cas
 \justifying
 Two discriminating variables naturally arise from the top reconstruction:
 \begin{itemize}
-\item The \textbf{dark $p_T$}, defined as the distance between the centroids of the ellipses;
-\item And the \textbf{overlapping factor $R$}, defined as the ratio between the size of the ellipses and the distance between them. 
+\item The \textbf{dark $\bm{p_T}$}, defined as the distance between the centroids of the ellipses;
+\item And the \textbf{overlapping factor $\bm{R}$}, defined as the ratio between the size of the ellipses and the distance between them. 
 \end{itemize} \vfill
 
 \begin{figure}[htbp]
@@ -3324,9 +3523,9 @@ Two discriminating variables naturally arise from the top reconstruction:
 
 \begin{frame}{Top reconstruction weight $W$}
 \justifying
-The top reconstruction smearing process does introduce a new discriminating variable: the \textbf{top reconstruction weight $W$}. \vfill
+The top reconstruction smearing process does introduce a new discriminating variable: the \alert{top reconstruction weight $W$}. \vfill
 
-Indeed, in order to know which lepton/b-jets combination and which smearing iteration performs the best, a weight is assigned to each iteration by comparing the invariant mass obtained $m_{lb}$ with the expected distribution using generation. The combination with the largest weight is then simply considered as the solution of the event. \vfill
+Indeed, in order to know which lepton/b-jets combination and which smearing iteration performs the best, a weight is assigned to each iteration by \textbf{comparing the invariant mass obtained $m_{lb}$ with the expected distribution using generation}. The combination with the largest weight is then simply considered as the solution of the event. \vfill
 
 \begin{figure}[htbp]
 \centering
@@ -3344,7 +3543,7 @@ Indeed, in order to know which lepton/b-jets combination and which smearing iter
 
 \begin{frame}{Spin correlated variables}
 \justifying
-The spin correlation in a $t \bar t$-like event is expected to be conserved, because of the short lifetime of the top quark, and can be inferred from the top quark decay products. \vfill
+The \alert{spin correlation} in a $t \bar t$-like event is \textbf{expected to be conserved}, because of the short lifetime of the top quark, and can be inferred from the top quark decay products. \vfill
 Such variables are interesting because \textbf{the spin correlation depend on the production mechanism} and will be influenced by
 the additional coupling to a scalar or pseudoscalar mediator, making this a perfect candidate to be good discriminating variables:
 \begin{itemize}
@@ -3370,8 +3569,8 @@ the additional coupling to a scalar or pseudoscalar mediator, making this a perf
 Several other variables were considered for their discriminating power:
 \begin{itemize}
 \justifying
-\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the distribution in $\Phi$ of the two leptons is expected to change depending on the eventual production of DM;
-\item massT, which corresponds to the scalar sum of the transverse component of the MET, the two leptons and the two b-jets obtained by the top reconstruction process also helps with the discrimination process.
+\item $\Delta \Phi(E_{T}^{\text{miss}}, ll)$: the \textbf{distribution in} $\bm{\Phi}$ of the two leptons is expected to change depending on the eventual production of DM;
+\item massT, which corresponds to the \textbf{scalar sum of the transverse component of the MET, the two leptons and the two b-jets} obtained by the top reconstruction.
 \end{itemize} \vfill
 
 \begin{figure}[htbp]
@@ -3387,7 +3586,7 @@ Several other variables were considered for their discriminating power:
 
 \begin{frame}{Other discriminating variables II}
 \justifying
-Two other interesting variables used by the ATLAS collaboration for their own analysis:
+\textbf{Two other interesting variables} used by the ATLAS collaboration for their own analysis:
 \vspace{-10pt}
 \begin{itemize}
 \justifying
@@ -3516,7 +3715,7 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \end{figure} \vfill
 \end{frame}
 
-\begin{frame}{Input variables}
+\begin{frame}{Input variables selection}
 \justifying
 
 \begin{figure}[htbp]
@@ -3835,116 +4034,6 @@ Two other interesting variables used by the ATLAS collaboration for their own an
 \end{center}
 \end{minipage} \hfill
 \end{figure}
-\end{frame}
-
-\begin{frame}{Post-fit plots (scalar 100 GeV)}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $t/\bar t$+DM region}\end{block} \vspace{10pt}
-\end{column}
-\end{columns} \vspace{-24pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_ST_topCR_ll_BDT_tDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-\end{columns}
-
-\vspace{-8pt}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $t \bar t$+DM region}\end{block} \vspace{10pt}
-\end{column}
-\end{columns} \vspace{-16pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_TTbar_topCR_ll_BDT_ttDM100_TTbar_BDT_output_scalar100_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-\end{columns} \vfill
-\end{frame}
-
-\begin{frame}{Post-fit plots (scalar 500 GeV)}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $t/\bar t$+DM region}\end{block} \vspace{10pt}
-\end{column}
-\end{columns} \vspace{-24pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2016}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2017}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column} 
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-			\begin{block}{\centering 2018}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_ST_topCR_ll_BDT_tDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-\end{columns}
-
-\vspace{-8pt}
-\begin{columns}
-\begin{column}{1.09\textwidth}
-\begin{block}{\centering $t \bar t$+DM region}\end{block} \vspace{10pt}
-\end{column}
-\end{columns} \vspace{-16pt}
-\begin{columns}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering Puppi MET}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2016/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering njet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2017/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-		\begin{column}{0.33\textwidth}
-			\begin{center}
-				%\begin{block}{\centering nbjet}\end{block}	
-     			\includegraphics[width=1.0\textwidth, height=100pt]{figs/postfits/2018/log_cratio_TTbar_topCR_ll_BDT_ttDM500_TTbar_BDT_output_scalar500_customBinsAttempt7.png}
-    		\end{center}		
-		\end{column}
-\end{columns} \vfill
 \end{frame}
 
 \begin{frame}{Post-fit plots (pseudoscalar 100 GeV)}
