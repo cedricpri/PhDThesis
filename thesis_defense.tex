@@ -92,7 +92,7 @@
 
 \date{\vspace{-3pt}March 28th 2022}
 \author{\textbf{C\'{e}dric Prie\"{e}ls}}
-\institute{PhD thesis defense \\ Instituto de F\'{i}sica de Cantabria}
+\institute{PhD thesis defense \\ Sala de grados, Facultad de Ciencias, Universidad de Cantabria}
 
 \titlegraphic{
    \tikz[overlay,remember picture]
@@ -172,8 +172,8 @@
 \item The dark matter case
 \item The experimental setup
 \begin{itemize}
-\item The CMS detector
 \item The LHC accelerator
+\item The CMS detector
 \end{itemize}
 
 \item Event reconstruction
@@ -198,9 +198,9 @@ A search for the \alert{production of dark matter particles in association with 
 \vspace{-5pt}
 \begin{itemize}
 \justifying
-\item We study the $pp$ collisions produced by the LHC at $\sqrt{s} = 13$ TeV;
+\item We study the proton-proton collisions produced by the LHC at $\sqrt{s} = 13$ TeV;
 \item The data has been collected by the CMS detector;
-\item Legacy analysis, considering the full Run II dataset (data collected in 2016, 2017 and 2018 and summing around 137 fb$^{-1}$).
+\item Part of the legacy analysis, considering the full Run II dataset (data collected in 2016, 2017 and 2018 and summing around 137 fb$^{-1}$).
 \end{itemize} \vfill
 
 \begin{block}{\centering Motivation}\end{block}
@@ -243,14 +243,14 @@ A search for the \alert{production of dark matter particles in association with 
 The dark matter case
 \end{frame}
 
-\begin{frame}{The Standard Model}
+\begin{frame}{The Standard Model of Particle Physics}
 \justifying
-The most accepted model to describe the elementary particles and some of the fundamental interactions between them is the \textbf{Standard Model}:
+The most accepted model to describe the elementary particles and three of the four of the fundamental interactions between them is the \textbf{Standard Model}:
 
 \begin{itemize}
 \justifying
 \item Contains 26 free parameters, among which the masses of the 12 predicted fermions;
-\item \textbf{Many successful predictions made over the years}, such as the existence of the top quark, and the W, Z and Higgs bosons.
+\item \textbf{Many successful predictions made over the years}, such as the existence of the top quark, and the $W^{\pm}$, $Z^{0}$ and Higgs bosons.
 \end{itemize} \vfill
 
 \begin{figure}[htbp]
@@ -259,7 +259,7 @@ The most accepted model to describe the elementary particles and some of the fun
 \end{center}
 \end{figure} \vfill
 
-However, \alert{this model might have several shortcomings}: eventual exotic particles which do not fit within this model (such as dark matter) are extensively searched for nowadays. \vfill
+However, \alert{this model has some fundamental shortcomings}, such as the possible existence of exotic particles which do not fit within this model (such as dark matter), therefore extensively searched for nowadays. \vfill
 \end{frame}
 
 \begin{frame}{At the origins of dark matter I}
@@ -272,7 +272,7 @@ The concept of dark matter can be traced back to the 19th century, and \alert{wa
 \begin{itemize}
 \justifying
 \item Measurement of the mass of the Coma Cluster using the virial theorem;
-\item Concluded that its mass was \textbf{400-500 times larger} than the value obtained by Hubble, considering only visible galaxies. %\cite{Zwicky}.
+\item Concluded that its mass was \textbf{400-500 times larger} than the value obtained by Hubble, considering only visible galaxies\footnote[frame]{These numbers were later proven to overestimated, but the idea behind the calculations is still accepted}. %\cite{Zwicky}.
 \end{itemize} \vfill
 
 \vspace{10pt}	
@@ -285,7 +285,7 @@ The concept of dark matter can be traced back to the 19th century, and \alert{wa
 \vspace{-5pt}	
 \item Stars within spiral galaxies should rotate with a velocity depending on the radius to the galactic center, but \textbf{this is not what is observed experimentally}.% \cite{RotationCurves};
 \vspace{1pt}	
-\item Either our understanding of gravity at large scales or our basic understanding of galaxies as a celestial body made of stars has to be revised.
+\item Either our understanding of gravity at large scales or our basic understanding of galaxies as celestial bodies made of stars has to be revised.
 \end{itemize} 
 \end{column}
 
@@ -345,7 +345,7 @@ Other observations, such as the gravitational lensing effect, \alert{also tend t
 \item It is \textbf{non-baryonic}, because the energy density for the baryonic matter estimated from the CMB is too low to account for dark matter;
 \item We only consider \textbf{cold dark matter} since the widely accepted $\Lambda_{CDM}$ model is based on this assumption and this can explain the large scale structures in the Universe;
 \item It should \textbf{have a mass in the electroweak scale}, between 10 GeV and 1 TeV, because of the relic density obtained from the thermal freeze-out mechanism;% \cite{Freezeout1}.
-\item Finally, it should be \textbf{long-lived}, since we expect them to have been produced during the Big Bang and they are still present in the Universe.
+\item Finally, it should be \textbf{long-lived}, since we expect that it has been produced during the Big Bang and is still present in the Universe.
 \end{itemize}
 
 \end{frame}
@@ -434,29 +434,29 @@ We are searching for \alert{dark matter produced in association with either one 
 
 \begin{frame}{Focus of this thesis II}
 \justifying
-The \alert{typical final state} of such models is made out of:
+The \alert{typical final state} of such topology is made out of:
 \begin{itemize}
 \justifying
-\item 1 or 2 b-tagged jet(s) coming from the decay of the top quark(s);
-\item 2 W bosons, seen as a combination of jets and leptons depending on the channel;
-\item Some ptmiss coming from the dark matter and the leptonic decay of the Ws.
+\item 1 or 2 bottom quarks coming from the decay of the top quark(s);
+\item 2 W bosons, seen as a combination of jets and leptons depending on the channel, produced directly or coming from the decay of the top quarks ($t \rightarrow b + W$);
+\item Some missing transverse energy coming from the dark matter and the neutrinos from the leptonic decay of the Ws.
 \end{itemize} \vfill
 
 In particular, we are studying the \alert{dilepton final state} in this work: 
 \begin{itemize}
 \justifying
-\item Has the lowest branching ratio: BR($W \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the charged leptons (contains only $\sim 5\%$ of the signal events);
-\item But, electrons and muons can usually be reconstructed better than jets, leading to lower systematic uncertainties;
+\item Has the lowest branching ratio: BR($W^+ \rightarrow l^+ + \nu_l) = (10.80 \pm 0.09)\%$ for each of the charged leptons (contains only $\sim 5\%$ of the signal events);
+\item But, electrons and muons can usually be reconstructed better than jets, leading to lower systematic uncertainties (taus are not considered directly in this work);
 \item And this channel has the lowest number of backgrounds, with cross-sections typically lower, resulting in a better signal isolation.
 \end{itemize} \vfill
 
-%This channel is then \textbf{expected to be competitive with the hadronic and semi-leptonic channels}, especially when considering high mediator masses, which feature a higher global signal/background discrimination. \vfill
+%This channel is then \textbf{expected to be competitive with the hadronic and semileptonic channels}, especially when considering high mediator masses, which feature a higher global signal/background discrimination. \vfill
 \end{frame}
 
 \begin{frame}{Previous relevant results I}
 \justifying
 \vspace{5pt}
-A \alert{similar analysis has already been carried out by CMS} using 2016 data, considering only the $t \bar t$+DM signal and the dilepton final state (EXO-17-014). \vfill % \cite{PreviousDoubleTopAllLep13CMS}. \vfill
+A \alert{similar analysis was carried out by CMS} using 2016 data, considering only the $t \bar t$+DM signal and the dilepton final state (EXO-17-014). \vfill % \cite{PreviousDoubleTopAllLep13CMS}. \vfill
 
 %\vspace{-10pt}
 %\begin{figure}[htbp]
@@ -477,7 +477,7 @@ A \alert{similar analysis has already been carried out by CMS} using 2016 data, 
 \end{figure}
 
 This analysis \textbf{excluded scalar mediators} with masses below 80 GeV, while \textbf{no exclusion was achieved} when considering pseudoscalar mediators. \vfill
-A \alert{combination of the three final states} was also performed by CMS (EXO-16-049). \vfill
+A \alert{combination of the three possible final states} (hadronic, semileptonic and dileptonic) was also performed by CMS (EXO-16-049). \vfill
 
 %The observed (expected) limits \textbf{excluded a pseudoscalar mediator} with mass below 220 (320) GeV, and \textbf{a scalar mediator} with mass below 160 (240) GeV. \vfill
 %This provided the \alert{most stringent constraints} ever obtained at the time on the scalar dark matter mediator model. \vfill
@@ -490,7 +490,7 @@ A \alert{combination of both the $t/ \bar t$+DM and $t \bar t$+DM processes} has
 
 \begin{itemize}
 \item Only considered the 2016 data-taking period;
-\item And only considered the semi-leptonic and hadronic final states.
+\item And only considered the semileptonic and hadronic final states.
 \end{itemize} \vfill
 
 \begin{center}
@@ -510,7 +510,7 @@ Scalar (pseudoscalar) mediators were with this combination \textbf{excluded up t
 
 \begin{frame}{Previous relevant results III}
 \justifying
-The \alert{ATLAS collaboration also obtained exclusion limits} using the full Run II legacy dataset and considering the dilepton final state only (ATLAS-CONF-2020-046). \vfill
+The \alert{ATLAS collaboration also obtained exclusion limits} using the full Run II legacy dataset and considering the $t \bar t$+DM dilepton final state only (ATLAS-CONF-2020-046). \vfill
 
  \begin{figure}[htbp]
 \centering
@@ -549,10 +549,10 @@ The data analyzed \alert{has been taken by the Large Hadron Collider}:
 	\begin{column}{0.55	\textwidth}
 	\begin{itemize}
 \justifying
-\item A \textbf{27 km circular underground proton-proton collider}, located at CERN, result of the collaboration of 22 countries;
-\item Built in order to study and reproduce the conditions of the Universe at its origin;
-\item Provided the collisions that lead to the discovery of the Higgs boson in 2012;% \cite{HiggsDiscovery1, HiggsDiscovery2};
-\item Currently the most powerful accelerator in the world with its center of mass energy $\sqrt{s} = 13$ TeV, therefore able to \textbf{scan new parts of the phase space}.
+\item A \textbf{27 km circular underground proton-proton collider}, located at CERN;
+%\item Built in order to study and reproduce the conditions of the Universe at its origin;
+\item Provided the collisions that led to the discovery of the Higgs boson in 2012;% \cite{HiggsDiscovery1, HiggsDiscovery2};
+\item Currently the most powerful accelerator in the world with its $pp$ center of mass energy $\sqrt{s} = 13$ TeV, therefore able to \textbf{scan new parts of the phase space}.
 \end{itemize}
 	\end{column}
 	\begin{column}{0.48\textwidth}
@@ -625,7 +625,7 @@ In a nutshell, CMS:
 
 \begin{frame}{The CMS detector II}
 \justifying
-The CMS detector is also \alert{made out of different layers}, each having its own purpose, allowing to identify unequivocally each particle created and measure their properties. \vfill
+The CMS detector is also \alert{made out of different layers}, each having its own purpose, allowing to identify unequivocally each particle created and measure their properties, thanks to the reconstruction performed by the Particle Flow algorithm. \vfill
 
 \begin{figure}[htbp]
 \begin{center}
@@ -640,7 +640,7 @@ Each subdetector of CMS has been \alert{designed carefully to fulfill a specific
 
 \begin{itemize}
 \justifying
-\item The \textbf{tracker} is the innermost piece of CMS, able to reconstruct the trajectories of charged particles issued from the interaction vertices in a quick and precise way;
+\item The \textbf{tracker} is the innermost piece of CMS, able to reconstruct the trajectories of charged particles issued from the primary and secondary interaction vertices in a quick and precise way;
 \item The \textbf{Electromagnetic Calorimeter}, enclosing the tracker system and able to give information about the energy of electrons and photons;
 \item The \textbf{Hadronic Calorimeter}, able to measure the energy of incident hadrons from the ionization process happening in its core;
 \item The 12.5 meters long and 6 meters large \textbf{solenoid}, allowing to measure precisely the charge and momentum of particles produced using the Lorentz effect, by measuring the curvature of their tracks;
@@ -679,7 +679,7 @@ Analysis context
 
 \begin{frame}{Analysis context}
 \justifying
-Run II legacy paper being worked on, expected to \alert{combine both the $t/\bar t$+DM and $t \bar t$+DM searches}, and the 3 possible final states (hadronic, semi-leptonic and dileptonic). \\
+Run II legacy paper being worked on, expected to \alert{combine both the $t/\bar t$+DM and $t \bar t$+DM searches}, and the 3 possible final states (hadronic, semileptonic and dileptonic). \\
 \hspace{10pt} $\rightarrow$ Pre-approval process expected to start within a few weeks. \vfill
 
 The effort is \textbf{globally common} between the groups (Wisconsin, DESY, IFCA) studying the three different final states:
@@ -715,7 +715,7 @@ All the results presented here have not been published yet, but have been fully 
 
 %\begin{frame}[standout]
 %Hadronic final state \\
-%Semi-leptonic final state
+%Semileptonic final state
 %\end{frame}
 %
 %\begin{frame}{Event selection}
@@ -801,25 +801,25 @@ Samples and objects
 	\end{column} \hfill
 \end{columns} \vfill
 \vspace{5pt}
-A \textbf{blinding policy} has been followed at first, allowing us to only look at $1$~fb$^{-1}$ of data per year near the signal regions. \vfill
+A \textbf{blinding policy} has been followed at first, allowing us to only look at $1$~fb$^{-1}$ of data per year near the signal regions. The \textbf{unblinding} was done with the analysis freezed and the green light received from the conveners. \vfill
 \vspace{10pt}
 \begin{block}{\centering Backgrounds}\end{block}
-The \alert{major backgrounds have been considered from MC} and read from NanoAOD. Each year has its corresponding MC samples:
+The \alert{major backgrounds have been mostly considered from MC}. Each year comes with its corresponding MC samples:
 
 \begin{itemize}
 \justifying
-\item $t \bar t$: decaying to both 1 and 2 leptons;%, TuneCUETP8M2 (2016) and TuneCP5 (2017, 2018);
+\item $t \bar t$: considering both its semileptonic and dileptonic decays;%, TuneCUETP8M2 (2016) and TuneCP5 (2017, 2018);
 \item Single top: s, t and tW channels considered;
 \item Drell-Yan: HT-binned samples to increase the statistics, with a correction factor derived from data applied;
-\item TTZ and TTW: usually grouped together as TTV, and considering both the hadronic and leptonic final states;
+\item $t\bar{t}Z$ and $t\bar{t}W$: usually grouped together as ttV, and considering both the hadronic and leptonic final states;
 \item Others, such dibosons and tribosons production, all taken from MC directly.
 \end{itemize} \vfill
 \end{frame}
 
 \begin{frame}{Signal samples}
 \justifying
-All the \alert{signals samples have been generated} using MADGRAPH and PYTHIA8 (with the CP5 tune) at LO, while simulated events are then interfaced with a realistic model of the CMS detector using Geant4 [113] and are reconstructed using the official CMS reconstruction algorithms. \vfill
-The $t/\bar t$+DM process was \textbf{produced privately} (central request has been made but not yet processed), while the $t \bar t$+DM was \textbf{generated centrally}. In both cases:
+The \alert{signals samples have been generated} using MADGRAPH and PYTHIA8 (CP5 tune) at LO and simulated events are interfaced with a realistic model of the CMS detector using Geant4 and reconstructed using the official CMS reconstruction algorithms. \vfill
+The $t/\bar t$+DM and $t \bar t$+DM processes are both considered:
 
 \begin{itemize}
 \item Both scalar and pseudoscalar mediators are considered;
@@ -927,8 +927,8 @@ $\rightarrow$ All the samples used and their cross-sections are listed in the ba
 \begin{itemize}
 \justifying
 \item Analysis relies on the \textbf{selection of events with two leptons}, with a leading (trailing) $p_T >$ 25 (20) GeV and $|\eta| < 2.4$;
-\item \alert{Medium cut based POG WP used for electrons} without additional ISO cut;
-\item \alert{Medium cut based POG WP for muons} with tight ISO (pfRelIso04\_all $< 0.15$);
+\item \alert{Medium cut based POG WP used for electrons} without additional isolation cut;
+\item \alert{Medium cut based POG WP for muons} with tight isolation (pfRelIso04\_all $< 0.15$);
 \item Additional small cuts on the impact parameters to reduce the non-prompt contamination in the ptmiss tail ($|d_0| < 0.05$ cm, $|d_z| < 0.1$ cm, $S_{3D}^d < 4$).
 \end{itemize}
 \end{frame}
@@ -1010,7 +1010,7 @@ We require for the analysis at least:
 \begin{itemize}
 \item Two opposite sign leptons, with leading (trailing) $p_T >$ 25 (20) GeV;
 \item Third lepton veto ($p_T < 10$ GeV);
-\item $m_{ll} > 20$ GeV to avoid low mass resonances;
+\item A dilepton invariant mass $m_{ll} > 20$ GeV to avoid low mass resonances;
 \item At least 1 jet.
 \end{itemize} \vfill
 
@@ -1022,7 +1022,7 @@ A pre-selection region is then defined by additionally asking for:
 \begin{itemize}
 \item At least 1 medium deep CSV b-jet;
 \item A 76-106 GeV Z-veto on the $ee$ and $\mu \mu$ channels;
-\item ptmiss $>$ 100 GeV and $M_{T2}^{ll} >$ 80 GeV to keep this region orthogonal to the $t \bar t$ control regions used by the semi-leptonic channel.
+\item ptmiss $>$ 100 GeV and stransverse mass $M_{T2}^{ll} >$ 80 GeV to keep this region orthogonal to the $t \bar t$ control regions used by the semileptonic channel.
 \end{itemize} \vfill
 
 This region is used as the \alert{basis for the definition of our signals regions}. \vfill
@@ -1311,17 +1311,17 @@ Signal extraction
 
 \begin{frame}{Global strategy}
 \justifying
-In this analysis, \alert{two different signal regions} are being used, targeting each one of our signals of interest and each based on the pre-selection region:
+In this analysis, \alert{two different signal regions} have been used, targeting each one of our signals of interest and each based on the pre-selection region:
 \begin{itemize}
 \item One \textbf{targeting the $\bm{t/\bar t}$+DM signal}, by considering events having exactly 1 jet, or exactly 2 jets and 1 b-jet;
 \item Another one \textbf{targeting the $\bm{t \bar t}$+DM signal}, by considering events having exactly 2 jets and more than 1 b-jet, or more than 2 jets.
 \end{itemize} \vfill
 
-\alert{Several different discriminating variables} (ptmiss, stranverse mass $M_{T2}^{ll}$, spin correlated variables, etc.) are being considered. \vfill
+\alert{Several different discriminating variables} (ptmiss, stranverse mass $M_{T2}^{ll}$, spin correlated variables, etc.) have been considered. \vfill
 
 Many of such variables require knowledge of the top quark and anti-quark 4-momenta, only available after a \textbf{complete reconstruction of the $t \bar t$ system}, performed whenever possible (details in the backup). \vfill
 
-A \alert{BDT combines the discriminating power} of all the variables considered, and a \textbf{ANN is being used as a cross check}. A complete optimization was followed in order to select the features which maximize the performance. \vfill
+A \alert{BDT combines the discriminating power} of all the variables considered, and an \textbf{ANN is being used as a cross check}. A complete optimization was followed in order to select the features which maximize the performance. \vfill
 \end{frame}
 
 \begin{frame}{Discriminating variables I}
@@ -1330,10 +1330,10 @@ A \alert{BDT combines the discriminating power} of all the variables considered,
 \begin{itemize}
 \item The stransverse mass $M_{T2}^{ll}$ and missing transverse momentum;
 \item The number of b-jets (only in the $t \bar t$+DM signal region) and $m_{bl}^t$ variable, useful to separate our two signals;
-\item Several spin correlated variables;
-\item $r_{2l}$ and $r_{2l4j}$, defined as the ratio between the ptmiss and the $p_T$ of the leptons (+ the 4 first jets for $r_{2l4j}$);
+\item Several spin correlated variables, such as $\xi = \cos(\theta_l) \cos(\theta_{\bar l})$ and $c_{\text{hel}}$;
+\item $r_{2l}$ and $r_{2l4j}$, defined as the ratio between the $p_{\rm T}^{\rm miss}$ and the $p_T$ of the leptons (plus the 4 first eventual jets for $r_{2l4j}$);
 \item The dark $p_T$ and overlapping factor naturally arising from the top reconstruction;
-\item Other variables, such as the angle $\Delta \phi$ between the ptmiss and the two leptons, and total transverse mass massT.
+\item Other variables, such as the angle $\Delta \phi$ between the $p_{\rm T}^{\rm miss}$ and the two leptons, and total transverse mass \textit{massT}.
 \end{itemize} \vfill
 
 \vspace{10pt}
@@ -1354,6 +1354,7 @@ A \alert{BDT combines the discriminating power} of all the variables considered,
 \hline
 \end{tabular}
 }
+\caption{Ranking of importance of the main variables for the scalar 500 GeV case.}
 \end{center}
 \end{table} \vfill	
 \end{frame}
@@ -1362,7 +1363,7 @@ A \alert{BDT combines the discriminating power} of all the variables considered,
 \begin{frame}{Discriminating variables II}
 \begin{columns}
 \begin{column}{1.09\textwidth}
-\begin{block}{\centering 2016}\end{block} \vspace{5pt}
+\begin{block}{\centering 2016, pre-selection region}\end{block} \vspace{5pt}
 \end{column}
 \end{columns} \vspace{-5pt}
 \begin{columns}
@@ -1408,7 +1409,7 @@ A \alert{BDT combines the discriminating power} of all the variables considered,
 \begin{frame}{Discriminating variables III}
 \begin{columns}
 \begin{column}{1.09\textwidth}
-\begin{block}{\centering 2017}\end{block} \vspace{5pt}
+\begin{block}{\centering 2017, pre-selection region}\end{block} \vspace{5pt}
 \end{column}
 \end{columns} \vspace{-5pt}
 \begin{columns}
@@ -1454,7 +1455,7 @@ A \alert{BDT combines the discriminating power} of all the variables considered,
 \begin{frame}{Discriminating variables IV}
 \begin{columns}
 \begin{column}{1.09\textwidth}
-\begin{block}{\centering 2018}\end{block} \vspace{5pt}
+\begin{block}{\centering 2018, pre-selection region}\end{block} \vspace{5pt}
 \end{column}
 \end{columns} \vspace{-5pt}
 \begin{columns}
@@ -1515,7 +1516,7 @@ We \alert{trained both a BDT and an ANN}, featuring the following \textbf{common
 \item 14 different discriminating variables used as input.
 \end{itemize} \vfill
 
-At the end of the day though, the \alert{BDT was chosen for the analysis} over the ANN, given that it gave $\sim$10\% better upper limits once optimized. \vfill
+The \alert{BDT was chosen for the analysis} over the ANN, given that it gave $\sim$10\% better upper limits once optimized. \vfill
 The BDT output shape is then used to perform a general \textbf{shape analysis}. \vfill
 \end{frame}
 
@@ -1578,7 +1579,7 @@ The hyperparameters of the BDT \alert{have all been fully optimized} one by one,
 \begin{frame}{ROC curves}
 \justifying
 %\begin{block}{\centering Scalar mediators}\end{block} \vspace{-10pt}
-\alert{ROC curves have been obtained} for all the different mass points available, from 50 to 500 GeV, for both scalar and pseudoscalar mediators, in both signal regions. \vfill
+\alert{ROC curves have been obtained} for all the different mass points available (50 to 500 GeV), for both scalar (left) and pseudoscalar (right) mediators, in both signal regions. \vfill
 \vspace{-5pt}
 
 \begin{figure}[htbp]
@@ -1782,17 +1783,17 @@ As explained before, in this analysis, \alert{two different signal regions} are 
 \item Another one \textbf{targeting the $\bm{t \bar t}$+DM signal}, by considering events having exactly 2 jets and more than 1 b-jet, or more than 2 jets.
 \end{itemize} \vfill
 
-The BDT output shapes for each mass point were obtained in each signal region, and a \textbf{general shape analysis} was then performed using such distributions in each region in order to \alert{extract upper limits on the signal strength} for each model. 
+The BDT output shapes for each mass point were obtained in each signal region, and a \textbf{general shape analysis} was then performed using such distributions in order to \alert{extract upper limits on the signal strength} for each model\footnote[frame]{The binning of the BDT was chosen as the one optimizing the upper limits obtained while ensuring to have at least a few events ($> 5$) per bin}. 
 
 Such individual results were \textbf{later combined} in order to obtain the final exclusion limits of this analysis, by either:
 \begin{itemize}
 \justifying
-\item One one hand by considering both signal samples together in each signal region separately, and then combining them;
+\item On one hand by considering both signal samples together in each signal region separately, and then combining them;
 \item Or on the other hand by considering each signal of interest separately in both signal regions, and then combining them.
 \end{itemize} \vfill
 \end{frame}
 
-\begin{frame}{BDT scalar 100 GeV output shape}
+\begin{frame}{BDT scalar 100 GeV output pre-fit shapes}
 \begin{columns}
 \begin{column}{1.09\textwidth}
 \begin{block}{\centering $t/\bar t$+DM signal region}\end{block} \vspace{10pt}
@@ -1847,7 +1848,7 @@ Such individual results were \textbf{later combined} in order to obtain the fina
 \end{columns} \vfill
 \end{frame}
 
-\begin{frame}{BDT scalar 500 GeV output shape}
+\begin{frame}{BDT scalar 500 GeV output pre-fit shapes}
 \begin{columns}
 \begin{column}{1.09\textwidth}
 \begin{block}{\centering $t/\bar t$+DM signal region}\end{block} \vspace{10pt}
@@ -1968,7 +1969,7 @@ On top of statistical uncertainties, \alert{many systematics uncertainties} have
 \end{minipage} \hfill
 \end{figure}
 
-The most important systematic in each case is the normalization of the ttV process. \\
+The most important systematic for most mass points is the normalization of the ttV process. \\
 $\rightarrow$ Additional impact plots can be found in the backup. \vfill
 \end{frame}
 
@@ -2274,7 +2275,7 @@ In summary, this search managed to:
 Several \alert{additions and improvements could be considered} to improve the results obtained:
 \begin{itemize}
 \justifying
-\item The \textbf{combination of these results} with the semi-leptonic and hadronic final states will be beneficial given their large branching ratios;
+\item The \textbf{combination of these results} with the semileptonic and hadronic final states will be beneficial given their large branching ratios;
 \item The \textbf{continuous operation of the LHC} and future data yet to be collected is expected to improve these results as well;
 \item Given the importance of the ttV normalization systematic uncertainty, the definition of a \textbf{dedicated control region} might be beneficial as well;
 \item \textbf{Exploring other regions} (different $m_\chi$ or couplings values, for example) can be interesting, as well as the reinterpretation of these results in terms of a \textbf{Higgs to invisible} model.
