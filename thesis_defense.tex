@@ -1213,13 +1213,13 @@ Same as the pre-selection region but with ptmiss $> 50$ GeV and $60 < M_{T2}^{ll
 
 \begin{frame}{DY Rin-out method}
 \justifying
-We want to find a way to \alert{estimate the DY yields outside of the Z-peak from the data}, in the minimal event selection region:
+We want to find a way to \alert{estimate the DY yields outside of the Z-peak from the Z-peak data}, in the minimal event selection region:
 
 \begin{itemize}
 \justifying
 \item Given the presence of large backgrounds (such as $t \bar t$) in the analysis region, we go inside of the Z-peak to compute the \textbf{Rin-out factor}:
 \begin{equation*}
-N^{out}_{DY} = N^{in}_{DY, data} \cdot \kappa \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \equiv N^{in}_{DY, data} \cdot \frac{R_{out/in,\text{ } MC}^{0bj}}{R_{out/in,\text{ } data}^{0bj}} \cdot R_{out/in,\text{ } MC}
+N^{out}_{DY} = \kappa \cdot N^{in}_{DY, data} \cdot \left (\frac{N^{out}_{DY, MC}}{N^{in}_{DY, MC}} \right ) \text{where } \kappa = \frac{R_{in-out,\text{ } MC}^{0bj}}{R_{in-out,\text{ } data}^{0bj}}
 \end{equation*}
 \item To avoid any bias, the contamination of non-peaking backgrounds is removed and we correct this factor by the ratio $\kappa$ between the data/MC transfer factors in a CR close to the SR (asking for 0 b-jet instead of 1);
 \item We then get this Rin-out factor in \textbf{bins of ptmiss and for each channel ($ee$, $\mu \mu$)}:
